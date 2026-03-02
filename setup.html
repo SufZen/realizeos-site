@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup — RealizeOS</title>
+  <meta name="description" content="Interactive step-by-step setup for RealizeOS. Follow along, check off each step, and get your AI operations system running.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Setup Page Layout ===== */
+    .setup { max-width: 780px; margin: 0 auto; padding: calc(64px + 3rem) 1.5rem 4rem; }
+    .setup__back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 2rem; transition: color 0.2s; }
+    .setup__back:hover { color: var(--color-accent); }
+
+    /* ===== Header ===== */
+    .setup__header { text-align: center; margin-bottom: 2.5rem; }
+    .setup__header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 0.5rem; }
+    .setup__header p { color: var(--color-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+    /* ===== Sticky Progress Bar ===== */
+    .progress-bar {
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 1.5rem; display: flex; align-items: center; gap: 1rem;
+      font-size: 0.82rem; transition: opacity 0.3s;
+    }
+    .progress-bar__label { color: var(--color-text-muted); white-space: nowrap; font-family: var(--font-mono); }
+    .progress-bar__track {
+      flex: 1; height: 6px; background: var(--color-surface); border-radius: 3px; overflow: hidden;
+    }
+    .progress-bar__fill {
+      height: 100%; background: var(--color-accent); border-radius: 3px;
+      transition: width 0.4s var(--ease); width: 0%;
+    }
+    .progress-bar__pct { color: var(--color-accent); font-weight: 600; font-family: var(--font-mono); min-width: 36px; text-align: right; }
+
+    /* ===== Tab Controls ===== */
+    .tab-row {
+      display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.5rem 1.25rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500;
+      font-family: var(--font-body); cursor: pointer; transition: all 0.2s;
+      border: 1px solid var(--color-border); background: transparent; color: var(--color-text-secondary);
+    }
+    .tab-btn:hover { border-color: var(--color-accent); color: var(--color-text); }
+    .tab-btn--active {
+      background: var(--color-accent); color: var(--color-accent-text);
+      border-color: var(--color-accent); font-weight: 600;
+    }
+    .tab-row--edition { margin-bottom: 0.5rem; }
+    .tab-row--platform { margin-bottom: 2.5rem; }
+
+    .tab-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--color-text-muted); text-align: center; margin-bottom: 0.5rem;
+    }
+
+    /* ===== Content visibility ===== */
+    .tier-lite, .tier-full { display: none; }
+    .tier-lite.active, .tier-full.active { display: block; }
+    .plat-mac, .plat-win, .plat-linux { display: none; }
+    .plat-mac.active, .plat-win.active, .plat-linux.active { display: block; }
+
+    /* ===== Step Sections ===== */
+    .step {
+      margin-bottom: 3rem; padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .step:first-of-type { border-top: none; padding-top: 0; }
+    .step__header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .step__number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: var(--color-accent); color: var(--color-accent-text);
+      font-weight: 700; font-size: 0.9rem;
+    }
+    .step__title { font-size: 1.3rem; font-weight: 600; }
+    .step__time {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--color-accent); background: var(--color-accent-subtle);
+      padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 500;
+    }
+    .step p { color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1rem; }
+    .step ul, .step ol { color: var(--color-text-secondary); padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .step li { margin-bottom: 0.75rem; line-height: 1.65; }
+    .step li strong { color: var(--color-text); }
+    .step code { background: var(--color-surface); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.87rem; }
+    .step h3 { font-size: 1.05rem; color: var(--color-accent); margin: 1.5rem 0 0.75rem; }
+
+    /* ===== Cards ===== */
+    .card {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .card h4 { font-size: 1rem; margin-bottom: 0.75rem; }
+    .card--success { border-color: #22c55e; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(34, 197, 94, 0.04) 100%); }
+    .card--success h4 { color: #22c55e; }
+    .card--warning { border-color: #f59e0b; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(245, 158, 11, 0.04) 100%); }
+    .card--warning h4 { color: #f59e0b; }
+    .card--accent { border-color: var(--color-accent); background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%); }
+    .card--accent h4 { color: var(--color-accent); }
+    .card--celebrate {
+      border-color: var(--color-accent); text-align: center; padding: 2rem;
+      background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.06) 100%);
+    }
+    .card--celebrate .celebrate-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .card--celebrate h4 { color: var(--color-accent); font-size: 1.3rem; }
+    .card ul { padding-left: 1.25rem; color: var(--color-text-secondary); margin-bottom: 0; }
+    .card li { margin-bottom: 0.5rem; line-height: 1.5; }
+    .card li:last-child { margin-bottom: 0; }
+    .card p { color: var(--color-text-secondary); line-height: 1.6; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ===== Code Blocks ===== */
+    .code-block { position: relative; margin-bottom: 1.5rem; }
+    .code-block pre {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm); padding: 1.25rem; overflow-x: auto; margin: 0;
+    }
+    .code-block pre code {
+      background: none; padding: 0; font-size: 0.85rem; line-height: 1.6; color: var(--color-text);
+      font-family: var(--font-mono);
+    }
+    .code-block__copy {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-text-muted); font-family: var(--font-mono);
+      font-size: 0.72rem; padding: 0.3rem 0.6rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.2s; z-index: 2;
+    }
+    .code-block__copy:hover {
+      background: var(--color-accent); color: var(--color-accent-text);
+      border-color: var(--color-accent);
+    }
+
+    /* ===== Interactive Checklist ===== */
+    .checklist { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+    .checklist li {
+      padding: 0.65rem 0; padding-left: 2rem; position: relative;
+      border-bottom: 1px solid var(--color-border); color: var(--color-text-secondary);
+      cursor: pointer; transition: color 0.2s; user-select: none;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: ''; position: absolute; left: 0; top: 0.7rem;
+      width: 18px; height: 18px; border-radius: 4px;
+      border: 2px solid var(--color-border); transition: all 0.2s;
+    }
+    .checklist li.checked { color: var(--color-text-muted); text-decoration: line-through; }
+    .checklist li.checked::before {
+      background: var(--color-accent); border-color: var(--color-accent);
+    }
+    .checklist li.checked::after {
+      content: '\2713'; position: absolute; left: 3px; top: 0.6rem;
+      font-size: 0.8rem; color: var(--color-accent-text); font-weight: 700;
+    }
+
+    /* ===== Troubleshooting Accordion ===== */
+    .accordion { margin-bottom: 1.5rem; }
+    .accordion__item {
+      border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem; overflow: hidden;
+    }
+    .accordion__trigger {
+      width: 100%; padding: 1rem 1.25rem; background: var(--color-bg-card);
+      border: none; color: var(--color-text); font-family: var(--font-body);
+      font-size: 0.93rem; font-weight: 500; text-align: left;
+      cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.2s;
+    }
+    .accordion__trigger:hover { background: var(--color-bg-card-hover); }
+    .accordion__arrow {
+      transition: transform 0.3s; font-size: 0.8rem; color: var(--color-text-muted);
+    }
+    .accordion__item.open .accordion__arrow { transform: rotate(180deg); }
+    .accordion__body {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+      background: var(--color-bg-elevated);
+    }
+    .accordion__body-inner {
+      padding: 1rem 1.25rem; color: var(--color-text-secondary);
+      font-size: 0.9rem; line-height: 1.7;
+    }
+    .accordion__body-inner code {
+      background: var(--color-surface); padding: 0.1rem 0.4rem;
+      border-radius: 3px; font-family: var(--font-mono); font-size: 0.83rem;
+    }
+    .accordion__body-inner a { color: var(--color-accent); text-decoration: none; }
+
+    /* ===== Download Button ===== */
+    .download-card {
+      text-align: center; padding: 1.5rem;
+      background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%);
+      border: 2px solid var(--color-accent); border-radius: var(--radius); margin-bottom: 1.5rem;
+    }
+    .download-card p { color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 0.75rem; }
+
+    /* ===== Key Tip ===== */
+    .tip {
+      background: var(--color-accent-subtle); border-left: 3px solid var(--color-accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+    }
+    .tip strong { color: var(--color-accent); }
+    .tip p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+    /* ===== Next Steps ===== */
+    .next-steps { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
+    .next-steps h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .community-card {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 1.25rem; text-align: center;
+      transition: border-color 0.2s;
+    }
+    .community-card:hover { border-color: var(--color-accent); }
+    .community-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .community-card p { color: var(--color-text-muted); font-size: 0.82rem; margin-bottom: 0.75rem; }
+    .community-card a { color: var(--color-accent); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .setup { padding-left: 1rem; padding-right: 1rem; }
+      .progress-bar { padding: 0.4rem 1rem; }
+      .progress-bar__label { font-size: 0.72rem; }
+      .community-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .setup { padding-top: calc(64px + 36px + 2rem); }
+      .tab-btn { padding: 0.4rem 0.9rem; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="./" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="guide.html">Full Guide</a>
+        <a href="brand-worksheet.html">Brand Worksheet</a>
+        <a href="./#faq">FAQ</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progress-bar">
+    <span class="progress-bar__label" id="progress-label">Step 0 of 6</span>
+    <div class="progress-bar__track">
+      <div class="progress-bar__fill" id="progress-fill"></div>
+    </div>
+    <span class="progress-bar__pct" id="progress-pct">0%</span>
+  </div>
+
+  <article class="setup">
+    <a href="thank-you.html" class="setup__back">&larr; Back to your purchase</a>
+
+    <!-- Header -->
+    <div class="setup__header">
+      <h1>Get Running with <span style="color:var(--color-accent);">RealizeOS</span></h1>
+      <p>Follow the steps below. Your progress is saved automatically — close the tab and come back anytime.</p>
+    </div>
+
+    <!-- Edition Tabs -->
+    <div class="tab-label">Edition</div>
+    <div class="tab-row tab-row--edition">
+      <button class="tab-btn tab-btn--active" data-tier="lite">Lite Edition</button>
+      <button class="tab-btn" data-tier="full">Full Edition</button>
+    </div>
+
+    <!-- Platform Tabs -->
+    <div class="tab-label">Your Platform</div>
+    <div class="tab-row tab-row--platform">
+      <button class="tab-btn" data-plat="mac">macOS</button>
+      <button class="tab-btn" data-plat="win">Windows</button>
+      <button class="tab-btn" data-plat="linux">Linux</button>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- STEP 0: BEFORE YOU START (shared) -->
+    <!-- ============================================================ -->
+    <section class="step" data-step="0">
+      <div class="step__header">
+        <span class="step__number">0</span>
+        <span class="step__title">Before You Start</span>
+      </div>
+
+      <p>Gather these before you begin. Having them ready means you can go from download to a working AI team in one sitting.</p>
+
+      <ul class="checklist" data-group="prep">
+        <li data-key="prep-name"><strong>Business name</strong> — the name of your business or venture</li>
+        <li data-key="prep-voice"><strong>Brand voice sample</strong> — a paragraph you've written that sounds like "you" (LinkedIn post, email, anything)</li>
+        <li data-key="prep-workflows"><strong>2-3 workflows to automate</strong> — what do you repeat weekly? Content creation? Client proposals? Be specific.</li>
+      </ul>
+
+      <div class="tip">
+        <p><strong>Recommended:</strong> Complete the <a href="brand-worksheet.html" style="color:var(--color-accent);font-weight:500;">Brand Discovery Worksheet</a> first (10 min). It generates markdown you can paste directly into your vault — makes Step 4 much faster.</p>
+      </div>
+
+      <div class="card card--warning">
+        <h4>Save location matters</h4>
+        <p>Save your vault in <strong>Documents</strong>, <strong>not</strong> in a cloud-synced folder (OneDrive, iCloud, Google Drive). Cloud sync causes conflicts with Obsidian.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- LITE EDITION STEPS -->
+    <!-- ============================================================ -->
+    <div class="tier-lite active">
+
+      <!-- LITE STEP 1: Install Tools -->
+      <section class="step" data-step="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <span class="step__title">Install the Tools</span>
+          <span class="step__time">3 min</span>
+        </div>
+
+        <h3>Obsidian (free)</h3>
+        <p>Your knowledge base lives in Obsidian — a free markdown editor that works offline.</p>
+
+        <div class="plat-mac active">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>brew install --cask obsidian</code></pre>
+          </div>
+          <p>Or download directly from <a href="https://obsidian.md/download" target="_blank" rel="noopener" style="color:var(--color-accent);">obsidian.md/download</a></p>
+        </div>
+
+        <div class="plat-win">
+          <p>Download from <a href="https://obsidian.md/download" target="_blank" rel="noopener" style="color:var(--color-accent);">obsidian.md/download</a> and run the installer.</p>
+        </div>
+
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>sudo snap install obsidian --classic</code></pre>
+          </div>
+          <p>Or download the AppImage from <a href="https://obsidian.md/download" target="_blank" rel="noopener" style="color:var(--color-accent);">obsidian.md/download</a></p>
+        </div>
+
+        <h3>Claude Pro ($20/mo)</h3>
+        <p>Sign up at <a href="https://claude.ai" target="_blank" rel="noopener" style="color:var(--color-accent);">claude.ai</a> — this gives you access to Claude Code, which powers your AI team.</p>
+
+        <h3>Claude Code (CLI)</h3>
+        <p>Claude Code is the command-line interface that reads your vault and runs your agents.</p>
+
+        <div class="plat-mac active">
+          <p>Install Node.js first (if you don't have it):</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>brew install node</code></pre>
+          </div>
+          <p>Then install Claude Code:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+          </div>
+        </div>
+
+        <div class="plat-win">
+          <p>Install Node.js first: download from <a href="https://nodejs.org" target="_blank" rel="noopener" style="color:var(--color-accent);">nodejs.org</a> (LTS version). During installation, check "Add to PATH."</p>
+          <p>Then open PowerShell and run:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+          </div>
+        </div>
+
+        <div class="plat-linux">
+          <p>Install Node.js first (if you don't have it):</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs</code></pre>
+          </div>
+          <p>Then install Claude Code:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+          </div>
+        </div>
+
+        <p>Verify the installation:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>claude --version</code></pre>
+        </div>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>A version number (e.g., <code>1.x.x</code>)</li>
+            <li style="color:#f59e0b;">If "claude: command not found" — Node.js isn't installed or not in your PATH. Close and reopen your terminal after installing Node.js.</li>
+          </ul>
+        </div>
+
+        <ul class="checklist" data-group="lite-1">
+          <li data-key="lite-1-obsidian">Obsidian installed and opens</li>
+          <li data-key="lite-1-claude-code"><code>claude --version</code> shows a version number</li>
+        </ul>
+      </section>
+
+      <!-- LITE STEP 2: Download & Open -->
+      <section class="step" data-step="2">
+        <div class="step__header">
+          <span class="step__number">2</span>
+          <span class="step__title">Download &amp; Open Your Vault</span>
+          <span class="step__time">2 min</span>
+        </div>
+
+        <div class="download-card">
+          <a href="#" class="btn btn--primary btn--lg" id="drive-link" target="_blank" rel="noopener">Download Your Package</a>
+          <p>ZIP file from Google Drive. Save it to your Documents folder.</p>
+        </div>
+
+        <ol>
+          <li><strong>Unzip</strong> the downloaded file to your <strong>Documents</strong> folder</li>
+        </ol>
+
+        <div class="plat-mac active">
+          <p>Double-click the ZIP — macOS unzips it automatically. Move the <code>realize_lite/</code> folder to Documents if needed.</p>
+        </div>
+
+        <div class="plat-win">
+          <p>Right-click the ZIP &rarr; "Extract All..." &rarr; Choose your Documents folder.</p>
+        </div>
+
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>unzip ~/Downloads/realize_lite.zip -d ~/Documents/</code></pre>
+          </div>
+        </div>
+
+        <ol start="2">
+          <li>Open <strong>Obsidian</strong> &rarr; Click <strong>"Open folder as vault"</strong> &rarr; Select the <code>realize_lite/</code> folder</li>
+        </ol>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>Obsidian opens with a sidebar showing FABRIC folders: <code>A-agents/</code>, <code>B-brain/</code>, <code>C-creations/</code>, <code>F-foundations/</code>, <code>I-insights/</code>, <code>R-routines/</code></li>
+            <li>A <code>CLAUDE.md</code> file exists at the root</li>
+            <li>A <code>shared/</code> folder with identity files</li>
+            <li style="color:#f59e0b;">If you see an empty vault — you opened the wrong folder. Close it, then select the folder that <em>contains</em> these subfolders.</li>
+          </ul>
+        </div>
+
+        <ul class="checklist" data-group="lite-2">
+          <li data-key="lite-2-folders">FABRIC folders visible in sidebar</li>
+          <li data-key="lite-2-claude-md">CLAUDE.md file exists at root</li>
+        </ul>
+      </section>
+
+      <!-- LITE STEP 3: Identity -->
+      <section class="step" data-step="3">
+        <div class="step__header">
+          <span class="step__number">3</span>
+          <span class="step__title">Define Your Identity</span>
+          <span class="step__time">3 min</span>
+        </div>
+
+        <ol>
+          <li>Open <code>shared/identity.md</code> in Obsidian</li>
+          <li>Fill in your <strong>name</strong>, <strong>role</strong>, <strong>values</strong>, and <strong>communication style</strong></li>
+          <li>This tells the AI <em>who you are</em> and how you prefer to work</li>
+        </ol>
+
+        <div class="tip">
+          <p><strong>Tip:</strong> Be honest and specific. "I prefer direct communication with no fluff" is better than "I like good communication." The more real this is, the better your AI team performs.</p>
+        </div>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>A markdown file with clear sections to fill in</li>
+            <li>Guided prompts telling you what to write in each section</li>
+            <li>If you completed the Brand Worksheet, paste the relevant sections here</li>
+          </ul>
+        </div>
+
+        <ul class="checklist" data-group="lite-3">
+          <li data-key="lite-3-identity"><code>shared/identity.md</code> filled with your actual information</li>
+        </ul>
+      </section>
+
+      <!-- LITE STEP 4: Brand (MOST IMPORTANT) -->
+      <section class="step" data-step="4">
+        <div class="step__header">
+          <span class="step__number">4</span>
+          <span class="step__title">Define Your Brand</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <div class="card card--accent">
+          <h4>This is the most important step</h4>
+          <p>The #1 reason people get generic AI output: they skip or rush the brand definition. 5 minutes here saves hours of frustration later. This single step is the difference between generic AI and <em>your</em> AI.</p>
+        </div>
+
+        <h3>Brand Identity</h3>
+        <ol>
+          <li>Open <code>F-foundations/brand-identity.md</code></li>
+          <li>Fill in: business name, mission, target audience, differentiator, values</li>
+        </ol>
+
+        <h3>Brand Voice</h3>
+        <ol>
+          <li>Open <code>F-foundations/brand-voice.md</code></li>
+          <li>Fill in: personality, tone, vocabulary, dos and don'ts</li>
+        </ol>
+
+        <div class="tip">
+          <p><strong>Key tip:</strong> Paste a real paragraph you've written into the "Good Example" section. This gives the AI a concrete reference for how you sound.</p>
+        </div>
+
+        <div class="tip">
+          <p><strong>Key tip:</strong> Add anti-patterns — what you NEVER want to sound like. Examples: "Never use corporate jargon", "Never start with 'In today's fast-paced world'", "Never use exclamation marks." Anti-patterns are surprisingly powerful.</p>
+        </div>
+
+        <p>If you completed the <a href="brand-worksheet.html" style="color:var(--color-accent);font-weight:500;">Brand Worksheet</a>, paste the exported markdown into these files — most of the work is already done.</p>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>Two markdown files with structured templates</li>
+            <li>Clear guidance on what to write in each section</li>
+            <li>Your specific rules, not placeholder text</li>
+            <li style="color:#f59e0b;">If you leave these vague ("be professional and helpful"), your output will be generic. Be specific.</li>
+          </ul>
+        </div>
+
+        <ul class="checklist" data-group="lite-4">
+          <li data-key="lite-4-brand-id"><code>brand-identity.md</code> filled with your business details</li>
+          <li data-key="lite-4-brand-voice"><code>brand-voice.md</code> has specific tone rules and examples</li>
+          <li data-key="lite-4-anti">At least 3 anti-patterns defined (what your AI should NEVER do)</li>
+        </ul>
+      </section>
+
+      <!-- LITE STEP 5: Launch & Test -->
+      <section class="step" data-step="5">
+        <div class="step__header">
+          <span class="step__number">5</span>
+          <span class="step__title">Launch &amp; Test</span>
+          <span class="step__time">3 min</span>
+        </div>
+
+        <h3>Open Terminal in Your Vault</h3>
+
+        <div class="plat-mac active">
+          <p>In Finder, navigate to your <code>realize_lite/</code> folder. Right-click &rarr; <strong>"New Terminal at Folder"</strong></p>
+          <p>Or open Terminal and <code>cd</code> into it:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>cd ~/Documents/realize_lite</code></pre>
+          </div>
+        </div>
+
+        <div class="plat-win">
+          <p>Open File Explorer, navigate to your <code>realize_lite</code> folder. Click the address bar, type <code>cmd</code> and press Enter.</p>
+          <p>Or open PowerShell and navigate:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>cd $env:USERPROFILE\Documents\realize_lite</code></pre>
+          </div>
+        </div>
+
+        <div class="plat-linux">
+          <p>Right-click in your file manager &rarr; <strong>"Open Terminal Here"</strong></p>
+          <p>Or:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>cd ~/Documents/realize_lite</code></pre>
+          </div>
+        </div>
+
+        <h3>Launch Claude Code</h3>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>claude</code></pre>
+        </div>
+        <p>Claude Code automatically reads your <code>CLAUDE.md</code> file and loads your entire FABRIC knowledge base.</p>
+
+        <h3>Test It</h3>
+        <p>Try this prompt (or modify it for your business):</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>Write a LinkedIn post about the importance of building systems, not just using tools.</code></pre>
+        </div>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>Output is written in <strong>your brand voice</strong> (not generic ChatGPT style)</li>
+            <li>Claude references your brand identity and knowledge base</li>
+            <li>The content matches your tone rules — if you said "no exclamation marks," there should be none</li>
+            <li style="color:#f59e0b;">If the output sounds generic — your <code>brand-voice.md</code> is probably too vague. Go back to Step 4 and add specific rules.</li>
+          </ul>
+        </div>
+
+        <h3>Try the Review Pipeline</h3>
+        <p>Now ask Claude to evaluate what it just wrote:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>Review the post you just wrote. Score it on brand alignment, clarity, impact, and accuracy.</code></pre>
+        </div>
+        <p>The Reviewer agent evaluates on 4 dimensions and gives actionable feedback. This is your built-in quality gate.</p>
+
+        <ul class="checklist" data-group="lite-5">
+          <li data-key="lite-5-launch">Claude Code launched from vault directory</li>
+          <li data-key="lite-5-voice">Output matches your brand voice</li>
+          <li data-key="lite-5-review">Review pipeline produces scored feedback</li>
+        </ul>
+      </section>
+
+      <!-- LITE STEP 6: Done -->
+      <section class="step" data-step="6">
+        <div class="step__header">
+          <span class="step__number">6</span>
+          <span class="step__title">You're Running</span>
+        </div>
+
+        <div class="card card--celebrate">
+          <div class="celebrate-icon">&#127881;</div>
+          <h4>Your RealizeOS Lite is live!</h4>
+          <p style="color:var(--color-text-secondary);margin-top:0.75rem;">You just set up an AI operations system that knows your brand, speaks in your voice, and has a built-in quality gate. Most people never get past "write me something in ChatGPT."</p>
+        </div>
+
+        <h3>Final Checklist</h3>
+        <ul class="checklist" data-group="lite-6">
+          <li data-key="lite-6-obsidian">Obsidian opens with all FABRIC folders</li>
+          <li data-key="lite-6-claude">Claude Code runs in your vault directory</li>
+          <li data-key="lite-6-voice">Output matches your brand voice</li>
+          <li data-key="lite-6-pipeline">Writer + Reviewer pipeline works</li>
+        </ul>
+      </section>
+
+    </div><!-- /.tier-lite -->
+
+    <!-- ============================================================ -->
+    <!-- FULL EDITION STEPS -->
+    <!-- ============================================================ -->
+    <div class="tier-full">
+
+      <!-- FULL STEP 1: Prerequisites -->
+      <section class="step" data-step="1">
+        <div class="step__header">
+          <span class="step__number">1</span>
+          <span class="step__title">Install Prerequisites</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <p>The Full edition runs as a Docker container with a Python backend. You'll need these installed first.</p>
+
+        <h3>Python 3.11+</h3>
+        <div class="plat-mac active">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>brew install python@3.11</code></pre>
+          </div>
+          <p>Or download from <a href="https://python.org/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">python.org</a></p>
+        </div>
+        <div class="plat-win">
+          <p>Download from <a href="https://python.org/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">python.org</a>. <strong>During installation, check "Add Python to PATH."</strong> This is the most commonly missed step.</p>
+        </div>
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>sudo apt update && sudo apt install python3.11 python3.11-venv python3-pip</code></pre>
+          </div>
+        </div>
+
+        <p>Verify:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python --version</code></pre>
+        </div>
+
+        <h3>Docker</h3>
+        <div class="plat-mac active">
+          <p>Download Docker Desktop from <a href="https://docker.com/products/docker-desktop" target="_blank" rel="noopener" style="color:var(--color-accent);">docker.com</a>. Choose <strong>Apple Silicon</strong> or <strong>Intel</strong> depending on your Mac.</p>
+        </div>
+        <div class="plat-win">
+          <p>Download Docker Desktop from <a href="https://docker.com/products/docker-desktop" target="_blank" rel="noopener" style="color:var(--color-accent);">docker.com</a>. If it asks about WSL2, follow the prompts — it's required on Windows.</p>
+        </div>
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER</code></pre>
+          </div>
+          <p>Log out and back in for the group change to take effect.</p>
+        </div>
+
+        <p>Verify:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>docker --version</code></pre>
+        </div>
+
+        <h3>Git</h3>
+        <div class="plat-mac active">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>xcode-select --install</code></pre>
+          </div>
+          <p>This installs Git along with other command-line tools.</p>
+        </div>
+        <div class="plat-win">
+          <p>Download from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">git-scm.com</a>. Default options are fine.</p>
+        </div>
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>sudo apt install git</code></pre>
+          </div>
+        </div>
+
+        <p>Verify:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>git --version</code></pre>
+        </div>
+
+        <ul class="checklist" data-group="full-1">
+          <li data-key="full-1-python"><code>python --version</code> shows 3.11+</li>
+          <li data-key="full-1-docker"><code>docker --version</code> shows a version</li>
+          <li data-key="full-1-git"><code>git --version</code> shows a version</li>
+        </ul>
+      </section>
+
+      <!-- FULL STEP 2: API Keys -->
+      <section class="step" data-step="2">
+        <div class="step__header">
+          <span class="step__number">2</span>
+          <span class="step__title">Get Your API Keys</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <div class="card">
+          <h4>Anthropic API Key (required)</h4>
+          <ol>
+            <li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--color-accent);">console.anthropic.com</a></li>
+            <li>Create an account or sign in</li>
+            <li>Navigate to <strong>API Keys</strong> and create a new key</li>
+            <li>Add $5-10 credit (pay-as-you-go, no subscription required)</li>
+            <li>Save the key somewhere safe</li>
+          </ol>
+          <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:0;">Typical cost: $2-8/month depending on usage. Claude Sonnet handles most tasks.</p>
+        </div>
+
+        <div class="card">
+          <h4>Google AI API Key (recommended)</h4>
+          <ol>
+            <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" style="color:var(--color-accent);">aistudio.google.com/apikey</a></li>
+            <li>Sign in with your Google account</li>
+            <li>Click "Create API Key" and copy it</li>
+          </ol>
+          <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:0;">Gemini Flash has a generous free tier. It handles quick tasks so Claude can focus on complex work.</p>
+        </div>
+
+        <ul class="checklist" data-group="full-2">
+          <li data-key="full-2-anthropic">Anthropic API key created and funded</li>
+          <li data-key="full-2-google">Google AI API key created</li>
+        </ul>
+      </section>
+
+      <!-- FULL STEP 3: Clone & Configure -->
+      <section class="step" data-step="3">
+        <div class="step__header">
+          <span class="step__number">3</span>
+          <span class="step__title">Clone &amp; Configure</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>git clone https://github.com/SufZen/realize-os.git
+cd realize-os</code></pre>
+        </div>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>"Cloning into 'realize-os'..." followed by download progress</li>
+            <li>A new <code>realize-os/</code> folder in your current directory</li>
+            <li style="color:#f59e0b;">If "git is not recognized" — install Git first (Step 1)</li>
+          </ul>
+        </div>
+
+        <p>Copy the environment template:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>cp .env.example .env</code></pre>
+        </div>
+
+        <p>Open <code>.env</code> in any text editor and add your API keys:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>ANTHROPIC_API_KEY=sk-ant-your-key-here
+GOOGLE_AI_API_KEY=your-google-key-here</code></pre>
+        </div>
+
+        <div class="card card--warning">
+          <h4>Common mistakes</h4>
+          <ul>
+            <li><strong>No spaces</strong> around the <code>=</code> sign</li>
+            <li><strong>No quotes</strong> around the key values</li>
+            <li>Make sure you're editing <code>.env</code>, not <code>.env.example</code></li>
+          </ul>
+        </div>
+
+        <h3>Initialize from a template</h3>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python cli.py init --template consulting</code></pre>
+        </div>
+        <p>Other templates: <code>agency</code>, <code>multi-venture</code>, <code>saas</code>, <code>ecommerce</code>. Pick the one closest to your business.</p>
+
+        <ul class="checklist" data-group="full-3">
+          <li data-key="full-3-clone">Repository cloned</li>
+          <li data-key="full-3-env"><code>.env</code> file created with API keys</li>
+          <li data-key="full-3-init">Template initialized</li>
+        </ul>
+      </section>
+
+      <!-- FULL STEP 4: Deploy -->
+      <section class="step" data-step="4">
+        <div class="step__header">
+          <span class="step__number">4</span>
+          <span class="step__title">Deploy</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <p><strong>With Docker (recommended):</strong></p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>docker compose up --build</code></pre>
+        </div>
+
+        <p><strong>Without Docker:</strong></p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>pip install -r requirements.txt
+python cli.py serve</code></pre>
+        </div>
+
+        <div class="card card--success">
+          <h4>What you should see</h4>
+          <ul>
+            <li>Docker: containers building and starting, logs flowing</li>
+            <li>Local: dependencies installing, then "Server running at http://localhost:8080"</li>
+            <li>No red error messages</li>
+            <li style="color:#f59e0b;">If Docker won't start — make sure Docker Desktop is running</li>
+            <li style="color:#f59e0b;">If "port 8080 in use" — change <code>API_PORT=8081</code> in your <code>.env</code></li>
+          </ul>
+        </div>
+
+        <ul class="checklist" data-group="full-4">
+          <li data-key="full-4-running">Server running without errors</li>
+        </ul>
+      </section>
+
+      <!-- FULL STEP 5: Brand -->
+      <section class="step" data-step="5">
+        <div class="step__header">
+          <span class="step__number">5</span>
+          <span class="step__title">Define Your Brand</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <div class="card card--accent">
+          <h4>This is the most important step</h4>
+          <p>The #1 reason people get generic AI output: they skip or rush the brand definition. This is the difference between generic AI and <em>your</em> AI.</p>
+        </div>
+
+        <ol>
+          <li>Edit <code>F-foundations/brand-identity.md</code> — business name, mission, target audience, differentiator</li>
+          <li>Edit <code>F-foundations/brand-voice.md</code> — personality, tone, vocabulary, dos and don'ts</li>
+          <li>If you did the <a href="brand-worksheet.html" style="color:var(--color-accent);">Brand Worksheet</a>, paste your exported markdown into these files</li>
+          <li>Review agents in <code>A-agents/</code> — customize role descriptions if needed</li>
+          <li>Restart the server to pick up changes</li>
+        </ol>
+
+        <div class="tip">
+          <p><strong>Key tip:</strong> Paste a real paragraph you've written into the voice file. Add anti-patterns: what you NEVER want to sound like. These two things have the biggest impact on output quality.</p>
+        </div>
+
+        <ul class="checklist" data-group="full-5">
+          <li data-key="full-5-brand-id"><code>brand-identity.md</code> filled with your business details</li>
+          <li data-key="full-5-brand-voice"><code>brand-voice.md</code> has specific tone rules and examples</li>
+        </ul>
+      </section>
+
+      <!-- FULL STEP 6: Test -->
+      <section class="step" data-step="6">
+        <div class="step__header">
+          <span class="step__number">6</span>
+          <span class="step__title">Test Everything</span>
+          <span class="step__time">5 min</span>
+        </div>
+
+        <div class="card card--accent">
+          <h4>Test 1: Brand Recognition</h4>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "What do you know about my business?", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+          </div>
+          <p><strong>Expected:</strong> The response references your brand identity, business name, and values — not generic filler.</p>
+        </div>
+
+        <div class="card card--accent">
+          <h4>Test 2: Voice Calibration</h4>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Write a social media post about why AI agents should work as a team", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+          </div>
+          <p><strong>Expected:</strong> Output matches your voice rules. Short paragraphs if you said so. No exclamation marks if you banned them.</p>
+        </div>
+
+        <div class="card card--accent">
+          <h4>Test 3: System Health</h4>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>curl http://localhost:8080/status</code></pre>
+          </div>
+          <p><strong>Expected:</strong> JSON response showing "healthy" status, connected LLM providers, and active systems.</p>
+        </div>
+
+        <ul class="checklist" data-group="full-6">
+          <li data-key="full-6-brand">Brand recognition test passes</li>
+          <li data-key="full-6-voice">Voice calibration matches your rules</li>
+          <li data-key="full-6-health">System health returns "healthy"</li>
+        </ul>
+      </section>
+
+      <!-- FULL STEP 7: Done -->
+      <section class="step" data-step="7">
+        <div class="step__header">
+          <span class="step__number">7</span>
+          <span class="step__title">You're Running</span>
+        </div>
+
+        <div class="card card--celebrate">
+          <div class="celebrate-icon">&#127881;</div>
+          <h4>Your RealizeOS Full Edition is live!</h4>
+          <p style="color:var(--color-text-secondary);margin-top:0.75rem;">Multi-LLM routing, API server, tool integrations, and a self-evolving knowledge base — all running on your machine.</p>
+        </div>
+
+        <h3>Final Checklist</h3>
+        <ul class="checklist" data-group="full-7">
+          <li data-key="full-7-server">Server running without errors</li>
+          <li data-key="full-7-brand">Brand voice configured and tested</li>
+          <li data-key="full-7-agents">Agents responding correctly</li>
+          <li data-key="full-7-health">System health check passes</li>
+        </ul>
+      </section>
+
+    </div><!-- /.tier-full -->
+
+    <!-- ============================================================ -->
+    <!-- TROUBLESHOOTING (shared) -->
+    <!-- ============================================================ -->
+    <section class="step" data-step="troubleshooting" style="border-top: 2px solid var(--color-accent);">
+      <div class="step__header">
+        <span class="step__title" style="color:var(--color-accent);">Troubleshooting</span>
+      </div>
+
+      <p>Common issues and their fixes. Click any item to expand.</p>
+
+      <div class="accordion" id="troubleshoot">
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">"Obsidian shows empty vault"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            You likely opened the wrong folder. Close the vault, then re-open by selecting the folder that <em>contains</em> the FABRIC subfolders (<code>A-agents/</code>, <code>B-brain/</code>, etc.). If you unzipped into a nested folder, look one level deeper.
+          </div></div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">"claude: command not found"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            Node.js isn't installed, or it's not in your PATH.<br><br>
+            <strong>Fix 1:</strong> Close and reopen your terminal after installing Node.js.<br>
+            <strong>Fix 2:</strong> Run <code>node --version</code> to check if Node.js is installed.<br>
+            <strong>Fix 3:</strong> On macOS, try <code>brew install node</code>. On Windows, download from <a href="https://nodejs.org">nodejs.org</a> and check "Add to PATH" during install.
+          </div></div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">"Output sounds generic — not my voice"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            Your <code>brand-voice.md</code> is too vague. Vague instructions like "be professional" don't help. Instead, write specific rules:<br><br>
+            &bull; "Use short paragraphs (2-3 sentences)"<br>
+            &bull; "Start with data, not opinions"<br>
+            &bull; "No exclamation marks"<br>
+            &bull; "Never use the word 'synergy'"<br><br>
+            Also paste a real writing sample into the "Good Example" section.
+          </div></div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">"Claude Code doesn't read CLAUDE.md"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            Make sure you're running <code>claude</code> from the correct directory — the one containing the <code>CLAUDE.md</code> file. Check with <code>ls</code> (Mac/Linux) or <code>dir</code> (Windows) that the file exists in your current working directory.
+          </div></div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">"Permission denied" (macOS)<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            macOS may block terminal access to your files.<br><br>
+            <strong>Fix:</strong> Go to System Settings &rarr; Privacy &amp; Security &rarr; Full Disk Access &rarr; Enable your terminal app (Terminal, iTerm2, etc.)
+          </div></div>
+        </div>
+
+        <div class="accordion__item tier-full">
+          <button class="accordion__trigger">"git is not recognized"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            Git isn't installed. Download from <a href="https://git-scm.com/downloads">git-scm.com</a>. After installing, close and reopen your terminal for the PATH to update.
+          </div></div>
+        </div>
+
+        <div class="accordion__item tier-full">
+          <button class="accordion__trigger">"Docker won't start"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            <strong>Windows:</strong> Make sure WSL2 is installed. Open PowerShell as admin and run <code>wsl --install</code>. Restart your computer.<br>
+            <strong>Mac:</strong> Check you downloaded the right version (Apple Silicon vs Intel).<br>
+            <strong>Both:</strong> Make sure Docker Desktop is actually running (check the system tray/menu bar icon). Verify virtualization is enabled in BIOS.
+          </div></div>
+        </div>
+
+        <div class="accordion__item tier-full">
+          <button class="accordion__trigger">"Invalid API key"<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            Check your <code>.env</code> file:<br>
+            &bull; No spaces around the <code>=</code> sign<br>
+            &bull; No quotes around the value<br>
+            &bull; No trailing whitespace — re-type the key if needed<br>
+            &bull; Key might be revoked — create a new one at <a href="https://console.anthropic.com">console.anthropic.com</a>
+          </div></div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">Still stuck?<span class="accordion__arrow">&#9660;</span></button>
+          <div class="accordion__body"><div class="accordion__body-inner">
+            Join the community — someone has probably seen your issue before:<br><br>
+            &bull; <a href="https://t.me/+5r8zjoOignRmOTI0">Telegram Builders Group</a><br>
+            &bull; <a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd">WhatsApp Community</a><br>
+            &bull; Email <a href="mailto:realizeos@realization.co.il">realizeos@realization.co.il</a><br><br>
+            Screenshot your error and share it — we reply within 24 hours.
+          </div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- NEXT STEPS (shared) -->
+    <!-- ============================================================ -->
+    <div class="next-steps">
+      <h2>What's Next</h2>
+
+      <div class="card">
+        <h4>Week 1 Roadmap</h4>
+        <ul>
+          <li><strong>Day 1:</strong> Refine your brand voice — send 3-5 test prompts, adjust rules based on output</li>
+          <li><strong>Day 2-3:</strong> Add domain knowledge to <code>B-brain/</code> (industry data, methodologies, client info)</li>
+          <li><strong>Day 4-5:</strong> Create your first custom skill workflow in <code>R-routines/</code></li>
+          <li><strong>Week 2+:</strong> Expand agents, connect tools, let the system learn from your feedback</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4>Coming to Your Inbox</h4>
+        <ul>
+          <li><strong>Day 3:</strong> Tips for writing great brand voice rules</li>
+          <li><strong>Day 7:</strong> Advanced workflows + connecting Google Workspace</li>
+        </ul>
+      </div>
+
+      <h3 style="margin: 2rem 0 1rem;">Join the Community</h3>
+      <div class="community-grid">
+        <div class="community-card">
+          <h4>Telegram Builders</h4>
+          <p>Ask questions, share wins, get help.</p>
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Join Telegram &rarr;</a>
+        </div>
+        <div class="community-card">
+          <h4>WhatsApp Community</h4>
+          <p>Quick updates and direct support.</p>
+          <a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener">Join WhatsApp &rarr;</a>
+        </div>
+      </div>
+
+      <p style="text-align:center;color:var(--color-text-muted);font-size:0.9rem;">
+        Stuck on anything? Email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);text-decoration:none;">realizeos@realization.co.il</a> — we reply within 24 hours.
+      </p>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+          <p>Part of the <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a> ecosystem.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/SufZen/realize-os" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
+          <a href="mailto:realizeos@realization.co.il">Support</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 RealizeOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    // ===== Configuration =====
+    var params = new URLSearchParams(window.location.search);
+    var currentTier = params.get('tier') || 'lite';
+    var STORAGE_KEY = 'realizeos_setup';
+
+    var driveLinks = {
+      lite: 'https://drive.google.com/uc?export=download&id=14biPd0qhI2qTe4sOc1wtWTqkJawv9ti4',
+      full: 'https://drive.google.com/uc?export=download&id=1TzFPlBZofwm5cWHOcZgdMvswpeha6IPE'
+    };
+
+    // ===== State =====
+    var state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (!state.checked) state.checked = {};
+    if (!state.platform) {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('mac') > -1) state.platform = 'mac';
+      else if (ua.indexOf('linux') > -1) state.platform = 'linux';
+      else state.platform = 'win';
+    }
+    function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+    // ===== Drive Link =====
+    var driveEl = document.getElementById('drive-link');
+    if (driveEl) driveEl.href = driveLinks[currentTier] || driveLinks.lite;
+
+    // ===== Tier Switching =====
+    function setTier(tier) {
+      currentTier = tier;
+      document.querySelectorAll('[data-tier]').forEach(function(btn) {
+        btn.classList.toggle('tab-btn--active', btn.getAttribute('data-tier') === tier);
+      });
+      document.querySelectorAll('.tier-lite').forEach(function(el) {
+        el.classList.toggle('active', tier === 'lite');
+      });
+      document.querySelectorAll('.tier-full').forEach(function(el) {
+        el.classList.toggle('active', tier === 'full');
+      });
+      // Update drive link
+      if (driveEl) driveEl.href = driveLinks[tier] || driveLinks.lite;
+      // Update URL without reload
+      var url = new URL(window.location);
+      url.searchParams.set('tier', tier);
+      history.replaceState(null, '', url);
+      updateProgress();
+    }
+
+    document.querySelectorAll('[data-tier]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setTier(this.getAttribute('data-tier'));
+      });
+    });
+
+    // ===== Platform Switching =====
+    function setPlatform(plat) {
+      state.platform = plat;
+      saveState();
+      document.querySelectorAll('[data-plat]').forEach(function(btn) {
+        btn.classList.toggle('tab-btn--active', btn.getAttribute('data-plat') === plat);
+      });
+      document.querySelectorAll('.plat-mac').forEach(function(el) {
+        el.classList.toggle('active', plat === 'mac');
+      });
+      document.querySelectorAll('.plat-win').forEach(function(el) {
+        el.classList.toggle('active', plat === 'win');
+      });
+      document.querySelectorAll('.plat-linux').forEach(function(el) {
+        el.classList.toggle('active', plat === 'linux');
+      });
+    }
+
+    document.querySelectorAll('[data-plat]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setPlatform(this.getAttribute('data-plat'));
+      });
+    });
+
+    // ===== Interactive Checklist =====
+    document.querySelectorAll('.checklist li[data-key]').forEach(function(li) {
+      var key = li.getAttribute('data-key');
+      if (state.checked[key]) li.classList.add('checked');
+      li.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        state.checked[key] = this.classList.contains('checked');
+        saveState();
+        updateProgress();
+      });
+    });
+
+    // ===== Progress Bar =====
+    function updateProgress() {
+      var tierPrefix = currentTier === 'lite' ? 'lite-' : 'full-';
+      var allItems = document.querySelectorAll('.checklist li[data-key^="' + tierPrefix + '"], .checklist li[data-key^="prep-"]');
+      var checkedCount = 0;
+      allItems.forEach(function(li) {
+        if (state.checked[li.getAttribute('data-key')]) checkedCount++;
+      });
+      var total = allItems.length;
+      var pct = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+
+      // Figure out current step from scroll position
+      var steps = document.querySelectorAll((currentTier === 'lite' ? '.tier-lite' : '.tier-full') + ' .step[data-step]');
+      var totalSteps = steps.length;
+      var currentStep = 0;
+      var scrollY = window.scrollY || window.pageYOffset;
+      var navH = 64 + 36; // nav + progress bar
+      steps.forEach(function(step, i) {
+        if (step.getBoundingClientRect().top + scrollY - navH <= scrollY + 100) {
+          currentStep = i + 1;
+        }
+      });
+
+      document.getElementById('progress-label').textContent = 'Step ' + currentStep + ' of ' + totalSteps;
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('progress-pct').textContent = pct + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress);
+
+    // ===== Copy Buttons =====
+    document.querySelectorAll('.code-block__copy').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var code = this.closest('.code-block').querySelector('code');
+        var text = code.textContent;
+        var button = this;
+        try {
+          navigator.clipboard.writeText(text).then(function() {
+            button.textContent = 'Copied!';
+            setTimeout(function() { button.textContent = 'Copy'; }, 2000);
+          });
+        } catch(e) {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          button.textContent = 'Copied!';
+          setTimeout(function() { button.textContent = 'Copy'; }, 2000);
+        }
+      });
+    });
+
+    // ===== Accordion =====
+    document.querySelectorAll('.accordion__trigger').forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+        var item = this.closest('.accordion__item');
+        var body = item.querySelector('.accordion__body');
+        var isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.accordion__item.open').forEach(function(openItem) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.accordion__body').style.maxHeight = '0';
+        });
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // ===== Mobile Nav =====
+    var navToggle = document.getElementById('nav-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() { navLinks.classList.remove('open'); });
+      });
+    }
+
+    // ===== Initialize =====
+    setTier(currentTier);
+    setPlatform(state.platform);
+    updateProgress();
+  })();
+  </script>
+</body>
+</html>

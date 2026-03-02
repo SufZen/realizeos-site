@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to RealizeOS</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ty { min-height: 100vh; padding: calc(64px + 3rem) 1.5rem 4rem; }
+    .ty__container { max-width: 720px; margin: 0 auto; }
+
+    .ty__header { text-align: center; margin-bottom: 3rem; }
+    .ty__check {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--color-accent); color: var(--color-accent-text);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; margin: 0 auto 1.5rem;
+      box-shadow: 0 0 40px rgba(255, 204, 0, 0.3);
+    }
+    .ty__title { font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 0.5rem; }
+    .ty__edition { color: var(--color-accent); font-weight: 600; }
+    .ty__subtitle { color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; }
+
+    .ty__access {
+      background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%);
+      border: 2px solid var(--color-accent); border-radius: var(--radius-lg);
+      padding: 2rem; text-align: center; margin-bottom: 2rem;
+    }
+    .ty__access h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .ty__access p { color: var(--color-text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .ty__access .btn { margin-bottom: 0.75rem; }
+    .ty__access-alt { color: var(--color-text-muted); font-size: 0.85rem; }
+
+    .ty__code-block { position: relative; margin: 0.75rem auto; max-width: 480px; }
+    .ty__code-block pre {
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm); padding: 0.75rem 1rem; overflow-x: auto; margin: 0;
+    }
+    .ty__code-block pre code {
+      font-family: var(--font-mono); font-size: 0.82rem;
+      color: var(--color-text); background: none; padding: 0;
+    }
+    .ty__code-copy {
+      position: absolute; top: 0.4rem; right: 0.4rem;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-text-muted); font-family: var(--font-mono);
+      font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .ty__code-copy:hover { background: var(--color-accent); color: var(--color-accent-text); border-color: var(--color-accent); }
+
+    .ty__timeline {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 1.5rem 2rem; margin-bottom: 2rem;
+    }
+    .ty__timeline h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .ty__timeline-item {
+      display: flex; gap: 1rem; padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border); font-size: 0.93rem;
+    }
+    .ty__timeline-item:last-child { border-bottom: none; }
+    .ty__timeline-when {
+      font-family: var(--font-mono); font-size: 0.78rem;
+      color: var(--color-accent); font-weight: 500;
+      min-width: 100px; padding-top: 2px;
+    }
+    .ty__timeline-what { color: var(--color-text-secondary); line-height: 1.5; }
+
+    .ty__quickstart {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 1.5rem 2rem; margin-bottom: 2rem;
+    }
+    .ty__quickstart h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .ty__quickstart > p { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    .ty__quickstart ol { padding-left: 1.25rem; color: var(--color-text-secondary); margin-bottom: 1rem; }
+    .ty__quickstart li { margin-bottom: 0.6rem; line-height: 1.5; font-size: 0.95rem; }
+    .ty__quickstart li a { color: var(--color-accent); text-decoration: none; font-weight: 500; }
+    .ty__quickstart li a:hover { text-decoration: underline; }
+    .ty__quickstart-done { font-weight: 600; font-style: italic; color: var(--color-text-secondary); font-size: 0.95rem; }
+
+    .ty__call {
+      background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%);
+      border: 1px solid var(--color-accent); border-radius: var(--radius);
+      padding: 1.5rem 2rem; text-align: center; margin-bottom: 2rem;
+      display: none;
+    }
+    .ty__call h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .ty__call p { color: var(--color-text-secondary); font-size: 0.95rem; margin-bottom: 1rem; }
+    .ty__call .ty__call-tip { color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.75rem; }
+    .ty__call .ty__call-tip a { color: var(--color-accent); text-decoration: none; }
+
+    .ty__community {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;
+    }
+    .ty__community-card {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 1.25rem; text-align: center;
+      transition: border-color 0.2s;
+    }
+    .ty__community-card:hover { border-color: var(--color-accent); }
+    .ty__community-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .ty__community-card p { color: var(--color-text-muted); font-size: 0.82rem; margin-bottom: 0.75rem; }
+    .ty__community-card a { color: var(--color-accent); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+    .ty__community-card a:hover { text-decoration: underline; }
+
+    .ty__support { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.6; }
+    .ty__support a { color: var(--color-accent); text-decoration: none; }
+    .ty__back { text-align: center; margin-top: 2rem; }
+
+    .ty__git-alt { display: none; }
+
+    /* F&F Registration Form */
+    .ty__fnf-gate {
+      max-width: 480px; margin: 0 auto 2rem; text-align: center;
+    }
+    .ty__fnf-gate h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .ty__fnf-gate .ty__fnf-sub {
+      color: var(--color-text-secondary); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;
+    }
+    .ty__fnf-form { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ty__fnf-form input {
+      width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border); background: var(--color-bg-card);
+      color: var(--color-text); font-size: 0.95rem; font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .ty__fnf-form input:focus { outline: none; border-color: var(--color-accent); }
+    .ty__fnf-form input::placeholder { color: var(--color-text-muted); }
+    .ty__fnf-error {
+      color: #ff4444; font-size: 0.85rem; display: none; margin-top: 0.25rem;
+    }
+    .ty__fnf-success {
+      color: var(--color-accent); font-size: 0.95rem; display: none;
+      margin-top: 0.5rem; font-weight: 500;
+    }
+    .ty__main-content { display: block; }
+    .ty__main-content--hidden { display: none; }
+
+    @media (max-width: 640px) {
+      .ty__community { grid-template-columns: 1fr; }
+      .ty__timeline-item { flex-direction: column; gap: 0.25rem; }
+      .ty__timeline-when { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="./" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="guide.html">Setup Guide</a>
+        <a href="brand-worksheet.html">Brand Worksheet</a>
+        <a href="./#faq">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ty">
+    <div class="ty__container">
+
+      <!-- F&F Registration Gate (only shown when source=fnf) -->
+      <div class="ty__fnf-gate" id="fnf-gate" style="display:none;">
+        <div class="ty__check">&#127881;</div>
+        <h2>Welcome to the RealizeOS Launch</h2>
+        <p class="ty__fnf-sub">Enter your details to get instant access to your free <span class="ty__edition" id="fnf-edition-name">Lite Edition</span> package.</p>
+        <form class="ty__fnf-form" id="fnf-form">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <button type="submit" class="btn btn--primary btn--lg" id="fnf-submit">Get Free Access</button>
+          <p class="ty__fnf-error" id="fnf-error">Something went wrong. Please try again.</p>
+          <p class="ty__fnf-success" id="fnf-success">You're in! Check your email for the welcome message.</p>
+        </form>
+      </div>
+
+      <!-- Main content (hidden until F&F form is submitted, or shown immediately for normal flow) -->
+      <div id="main-content">
+
+      <!-- Header -->
+      <div class="ty__header">
+        <div class="ty__check">&#10003;</div>
+        <h1 class="ty__title">Welcome to RealizeOS</h1>
+        <p class="ty__subtitle">
+          Your <span class="ty__edition" id="edition-name">purchase</span> is confirmed. You now own your AI operations system.
+        </p>
+      </div>
+
+      <!-- Access Card -->
+      <div class="ty__access">
+        <h3>Your Files Are Ready</h3>
+        <p>Download your RealizeOS package. Everything you need is inside.</p>
+        <a href="#" class="btn btn--primary btn--lg" id="drive-link" target="_blank" rel="noopener">Download Your Package</a>
+        <p class="ty__access-alt">Your files are also shared via the welcome email.</p>
+
+        <!-- Full/Setup edition: git clone alternative -->
+        <div class="ty__git-alt" id="git-alt">
+          <p class="ty__access-alt" style="margin-top:0.75rem;">Prefer git? Clone the repo directly:</p>
+          <div class="ty__code-block">
+            <button class="ty__code-copy" data-copy>Copy</button>
+            <pre><code>git clone https://github.com/SufZen/realize-os.git</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Communication Timeline -->
+      <div class="ty__timeline">
+        <h3>What Happens Next</h3>
+        <div class="ty__timeline-item">
+          <span class="ty__timeline-when">RIGHT NOW</span>
+          <span class="ty__timeline-what">Download your files via the button above</span>
+        </div>
+        <div class="ty__timeline-item">
+          <span class="ty__timeline-when">WITHIN 1 HOUR</span>
+          <span class="ty__timeline-what">Welcome email with setup walkthrough</span>
+        </div>
+        <div class="ty__timeline-item" id="timeline-call" style="display:none;">
+          <span class="ty__timeline-when">WITHIN 24 HRS</span>
+          <span class="ty__timeline-what">Email to schedule your 1-hour setup call</span>
+        </div>
+        <div class="ty__timeline-item">
+          <span class="ty__timeline-when">DAY 3</span>
+          <span class="ty__timeline-what">Tips for writing great brand voice rules</span>
+        </div>
+        <div class="ty__timeline-item">
+          <span class="ty__timeline-when">DAY 7</span>
+          <span class="ty__timeline-what">Advanced workflows + connecting Google Workspace</span>
+        </div>
+      </div>
+
+      <!-- Quick Start Checklist -->
+      <div class="ty__quickstart">
+        <h3>Your First 15 Minutes</h3>
+        <p>You don't need to do everything today. But if you want to see it working right now:</p>
+        <ol>
+          <li>Open the <a href="guide.html" id="guide-link">Setup Guide</a> and follow the steps for your edition</li>
+          <li>Complete the <a href="brand-worksheet.html">Brand Discovery Worksheet</a> (10 min)</li>
+          <li>Fill in your brand identity and voice rules (5 min)</li>
+          <li>Test your first AI conversation (5 min)</li>
+        </ol>
+        <p class="ty__quickstart-done">That's it — you're running.</p>
+      </div>
+
+      <!-- Setup Call Card (Setup Assistance tier only) -->
+      <div class="ty__call" id="call-card">
+        <h3>Book Your Setup Call</h3>
+        <p>Your 1-hour setup session is included. We'll configure your brand, agents, and first workflow together.</p>
+        <a href="https://tidycal.com/realization/realizeos-setup" class="btn btn--primary btn--lg" id="tidycal-link" target="_blank" rel="noopener">Book Your Call</a>
+        <p class="ty__call-tip">
+          Tip: Complete the <a href="brand-worksheet.html">Brand Worksheet</a> before the call — it saves 15+ minutes.
+        </p>
+      </div>
+
+      <!-- Community Links -->
+      <div class="ty__community">
+        <div class="ty__community-card">
+          <h4>Telegram Builders</h4>
+          <p>Ask questions, share wins, get help from the community.</p>
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Join Telegram &rarr;</a>
+        </div>
+        <div class="ty__community-card">
+          <h4>WhatsApp Community</h4>
+          <p>Quick updates and direct support from the team.</p>
+          <a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener">Join WhatsApp &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Support -->
+      <div class="ty__support">
+        <p>Stuck on anything? Email <a href="mailto:realizeos@realization.co.il">realizeos@realization.co.il</a> — we reply within 24 hours.</p>
+        <p>Check the <a href="guide.html#troubleshooting">Troubleshooting Guide</a> for common setup issues.</p>
+      </div>
+
+      <!-- Back -->
+      <div class="ty__back">
+        <a href="./" class="btn btn--outline btn--lg">Back to Home</a>
+      </div>
+
+      </div><!-- /main-content -->
+
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const tier = params.get('tier') || 'full';
+    const source = params.get('source') || '';
+
+    const editionNames = { lite: 'Lite Edition', full: 'Full Edition', setup: 'Setup Assistance' };
+
+    const driveLinks = {
+      lite: 'https://drive.google.com/uc?export=download&id=14biPd0qhI2qTe4sOc1wtWTqkJawv9ti4',
+      full: 'https://drive.google.com/uc?export=download&id=1TzFPlBZofwm5cWHOcZgdMvswpeha6IPE',
+      setup: 'https://drive.google.com/uc?export=download&id=1TzFPlBZofwm5cWHOcZgdMvswpeha6IPE'
+    };
+
+    const mainContent = document.getElementById('main-content');
+
+    // --- F&F flow ---
+    if (source === 'fnf') {
+      mainContent.style.display = 'none';
+      document.getElementById('fnf-gate').style.display = 'block';
+      var fnfEdEl = document.getElementById('fnf-edition-name');
+      if (fnfEdEl) fnfEdEl.textContent = editionNames[tier] || 'Full Edition';
+
+      document.getElementById('fnf-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = e.target;
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var btn = document.getElementById('fnf-submit');
+        var errEl = document.getElementById('fnf-error');
+        var okEl = document.getElementById('fnf-success');
+        errEl.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Setting up...';
+
+        fetch('https://n8n.realizeos.ai/webhook/fnf-register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, tier: tier, source: 'fnf' })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function() {
+          okEl.style.display = 'block';
+          setTimeout(function() {
+            document.getElementById('fnf-gate').style.display = 'none';
+            mainContent.style.display = 'block';
+          }, 1500);
+        })
+        .catch(function() {
+          errEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Get Free Access';
+        });
+      });
+    }
+
+    // --- Normal page setup ---
+    // Set edition name
+    document.getElementById('edition-name').textContent = editionNames[tier] || 'Full Edition';
+
+    // Set Google Drive link
+    document.getElementById('drive-link').href = driveLinks[tier] || driveLinks.full;
+
+    // Set guide link to edition-specific section
+    const guideAnchors = { lite: '#lite', full: '#full', setup: '#setup-call' };
+    document.getElementById('guide-link').href = 'guide.html' + (guideAnchors[tier] || '#full');
+
+    // Show git clone for Full/Setup tiers
+    if (tier === 'full' || tier === 'setup') {
+      document.getElementById('git-alt').style.display = 'block';
+    }
+
+    // Show setup call card and timeline item for Setup tier
+    if (tier === 'setup') {
+      document.getElementById('call-card').style.display = 'block';
+      document.getElementById('timeline-call').style.display = '';
+    }
+
+    // Copy buttons
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const code = btn.closest('.ty__code-block').querySelector('code');
+        try {
+          await navigator.clipboard.writeText(code.textContent);
+        } catch(e) {
+          const ta = document.createElement('textarea');
+          ta.value = code.textContent;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

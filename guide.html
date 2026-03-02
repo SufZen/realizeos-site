@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup Guide — RealizeOS</title>
+  <meta name="description" content="Step-by-step guide to get RealizeOS running. 15 minutes for Lite, 30 minutes for Full. Mostly copy-paste.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide { max-width: 780px; margin: 0 auto; padding: calc(64px + 3rem) 1.5rem 4rem; }
+    .guide__back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 2rem; transition: color 0.2s; }
+    .guide__back:hover { color: var(--color-accent); }
+    .guide h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .guide__intro { color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem; }
+    .guide__reassure { color: var(--color-text-muted); font-size: 0.95rem; font-style: italic; margin-bottom: 3rem; line-height: 1.6; }
+    .guide h2 { font-size: 1.5rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+    .guide h2:first-of-type { border-top: none; padding-top: 0; }
+    .guide h3 { font-size: 1.15rem; margin: 2rem 0 0.75rem; color: var(--color-accent); }
+    .guide p { color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1rem; }
+    .guide ul, .guide ol { color: var(--color-text-secondary); padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .guide li { margin-bottom: 0.75rem; line-height: 1.65; }
+    .guide li strong { color: var(--color-text); }
+    .guide code { background: var(--color-surface); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.87rem; }
+    .guide__card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .guide__card--accent { border-color: var(--color-accent); background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%); }
+    .guide__card--success { border-color: #22c55e; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(34, 197, 94, 0.04) 100%); }
+    .guide__card--warning { border-color: #f59e0b; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(245, 158, 11, 0.04) 100%); }
+    .guide__card h4 { font-size: 1rem; margin-bottom: 0.75rem; }
+    .guide__card--success h4 { color: #22c55e; }
+    .guide__card--warning h4 { color: #f59e0b; }
+    .guide__checklist { list-style: none; padding-left: 0; }
+    .guide__checklist li { padding: 0.5rem 0; padding-left: 1.75rem; position: relative; border-bottom: 1px solid var(--color-border); }
+    .guide__checklist li:last-child { border-bottom: none; }
+    .guide__checklist li::before { content: '\2610'; position: absolute; left: 0; color: var(--color-accent); font-size: 1.1rem; }
+    .guide__time { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--color-accent-subtle); color: var(--color-accent); padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500; margin-bottom: 1rem; }
+    .guide__cta { text-align: center; padding: 3rem 0 1rem; }
+    .guide__toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem; }
+    .guide__toc h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+    .guide__toc ol { padding-left: 1.25rem; margin-bottom: 0; }
+    .guide__toc li { margin-bottom: 0.4rem; }
+    .guide__toc a { color: var(--color-text-secondary); text-decoration: none; font-size: 0.93rem; transition: color 0.2s; }
+    .guide__toc a:hover { color: var(--color-accent); }
+
+    /* Code blocks with copy button */
+    .code-block { position: relative; }
+    .code-block pre { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; overflow-x: auto; }
+    .code-block pre code { background: none; padding: 0; font-size: 0.85rem; line-height: 1.6; }
+    .code-block__copy {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+    .code-block__copy:hover {
+      background: var(--color-accent);
+      color: var(--color-accent-text);
+      border-color: var(--color-accent);
+    }
+
+    /* Step time badges inline */
+    .step-time {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .guide { padding-left: 1rem; padding-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="./" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="setup.html">Interactive Setup</a>
+        <a href="brand-worksheet.html">Brand Worksheet</a>
+        <a href="./#faq">FAQ</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <article class="guide">
+    <a href="./" class="guide__back">&larr; Back to home</a>
+
+    <div style="background:linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255,204,0,0.04) 100%); border:1px solid var(--color-accent); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:2rem; text-align:center;">
+      <p style="margin:0; color:var(--color-text-secondary); font-size:0.95rem;">
+        New here? Try the <a href="setup.html" style="color:var(--color-accent); font-weight:600;">Interactive Setup</a> — step-by-step with progress tracking, platform-specific instructions, and checklists that save your progress.
+      </p>
+    </div>
+
+    <h1>Setup Guide</h1>
+    <p class="guide__intro">Everything you need to get RealizeOS running — from zero to your first AI conversation. Follow the steps for your edition.</p>
+    <p class="guide__reassure">This is mostly copy-paste. If you can edit a text file, you can do this. And if you get stuck on anything — that's what the community and support email are for.</p>
+
+    <div class="guide__toc">
+      <h4>In This Guide</h4>
+      <ol>
+        <li><a href="#before">Before You Start — What to Prepare</a></li>
+        <li><a href="#worksheet">Recommended: Brand Discovery Worksheet</a></li>
+        <li><a href="#lite">Lite Edition Setup (~15 minutes)</a></li>
+        <li><a href="#full">Full Edition Setup (~30 minutes)</a></li>
+        <li><a href="#setup-call">Preparing for Your Setup Call ($499 tier)</a></li>
+        <li><a href="#first-steps">First Steps After Setup</a></li>
+        <li><a href="#validation">Test Everything Works</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+      </ol>
+    </div>
+
+    <!-- ===== BEFORE YOU START ===== -->
+    <h2 id="before">1. Before You Start — What to Prepare</h2>
+
+    <p>Gather these before you begin. Having them ready means you can go from download to a working AI team in one sitting.</p>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Preparation Checklist</h4>
+      <ul class="guide__checklist">
+        <li><strong>Your business name(s)</strong> — If you run multiple ventures, list each one. RealizeOS creates isolated systems per venture.</li>
+        <li><strong>Brand voice sample</strong> — Any existing content that sounds like "you." A LinkedIn post, email, proposal — anything. This is the single most impactful thing for quality.</li>
+        <li><strong>2-3 workflows to automate first</strong> — What do you repeat weekly? Content creation? Client proposals? Meeting prep? Be specific.</li>
+        <li><strong>API keys</strong> (Full edition only) — Anthropic API key ($5+ credit) and/or Google AI API key (free tier). See <a href="#full" style="color:var(--color-accent);">Section 4</a>.</li>
+        <li><strong>A computer you control</strong> — No corporate restrictions needed. RealizeOS runs locally. No data leaves your machine except LLM API calls.</li>
+      </ul>
+    </div>
+
+    <!-- ===== BRAND WORKSHEET ===== -->
+    <h2 id="worksheet">2. Recommended: Brand Discovery Worksheet</h2>
+    <div class="guide__time">~10 minutes</div>
+
+    <p>Before diving into setup, take 10 minutes to complete the <a href="brand-worksheet.html" style="color:var(--color-accent);font-weight:500;">Brand Discovery Worksheet</a>. It asks 10 questions about your business, audience, and voice — and outputs a markdown file you can paste directly into your vault.</p>
+
+    <p>This makes Step 3 (defining your brand) much faster. You'll already have the answers ready to paste.</p>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Why this matters</h4>
+      <p style="margin-bottom:0;">The #1 reason people get generic AI outputs: they skip the brand definition step. 10 minutes here saves hours of frustration later. <a href="brand-worksheet.html" style="color:var(--color-accent);font-weight:500;">Open the worksheet &rarr;</a></p>
+    </div>
+
+    <!-- ===== LITE EDITION ===== -->
+    <h2 id="lite">3. Lite Edition Setup</h2>
+    <div class="guide__time">~15 minutes total</div>
+
+    <p>The Lite edition runs entirely through Obsidian and Claude Code. No servers, no Docker, no coding. Your knowledge base lives as markdown files that Claude reads and works from.</p>
+
+    <h3>Prerequisites</h3>
+    <ul>
+      <li><strong>Obsidian</strong> (free) — Download from <a href="https://obsidian.md" target="_blank" rel="noopener" style="color:var(--color-accent);">obsidian.md</a></li>
+      <li><strong>Claude Pro subscription</strong> ($20/mo) — From <a href="https://claude.ai" target="_blank" rel="noopener" style="color:var(--color-accent);">claude.ai</a>. This gives you Claude Code access.</li>
+    </ul>
+
+    <div class="guide__card guide__card--warning">
+      <h4>Important: Save location</h4>
+      <p style="margin-bottom:0;">Save the vault in your <strong>Documents</strong> folder, <strong>not</strong> in a cloud-synced folder (OneDrive, iCloud, Google Drive). Cloud sync can cause conflicts with Obsidian. You can back it up manually or with git later.</p>
+    </div>
+
+    <h3>Step 1: Download and Open <span class="step-time">2 min</span></h3>
+    <ol>
+      <li><strong>Download</strong> the RealizeOS Lite package from your Google Drive link (received after purchase).</li>
+      <li><strong>Unzip</strong> the file to your Documents folder.</li>
+      <li>Open <strong>Obsidian</strong> &rarr; Click "Open folder as vault" &rarr; Select the <code>realize_lite/</code> folder.</li>
+    </ol>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>Obsidian opens with a sidebar showing the FABRIC folder structure</li>
+        <li>You can see folders: <code>A-agents/</code>, <code>B-brain/</code>, <code>C-creations/</code>, <code>F-foundations/</code>, <code>I-insights/</code>, <code>R-routines/</code></li>
+        <li>A <code>CLAUDE.md</code> file exists at the root</li>
+        <li style="color:#f59e0b;">If you see an empty vault → you opened the wrong folder. Make sure you selected the folder that <em>contains</em> these subfolders.</li>
+      </ul>
+    </div>
+
+    <h3>Step 2: Define Your Identity <span class="step-time">3 min</span></h3>
+    <ol>
+      <li>Open <code>shared/identity.md</code> in Obsidian</li>
+      <li>Fill in your name, role, values, and communication preferences</li>
+      <li>This tells the AI who you are and how you like to work</li>
+    </ol>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>A markdown file with clear sections to fill in</li>
+        <li>Guided prompts telling you what to write in each section</li>
+        <li>If you completed the Brand Worksheet, paste the relevant sections here</li>
+      </ul>
+    </div>
+
+    <h3>Step 3: Define Your Brand <span class="step-time">5 min</span></h3>
+    <ol>
+      <li>Open <code>F-foundations/brand-identity.md</code> — Fill in business name, mission, audience, values</li>
+      <li>Open <code>F-foundations/brand-voice.md</code> — Define how your content should sound (tone, vocabulary, dos and don'ts)</li>
+    </ol>
+
+    <p><strong>Tip:</strong> Paste an example of writing that nails your voice into the "Good Example" section. This is the most impactful thing you can do for output quality.</p>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>Two markdown files with structured templates</li>
+        <li>Clear guidance on what to write in each section</li>
+        <li>If you did the Brand Worksheet, most of this is copy-paste from your exported markdown</li>
+      </ul>
+    </div>
+
+    <h3>Step 4: Review Your Agents <span class="step-time">2 min</span></h3>
+    <ol>
+      <li>Browse <code>A-agents/</code> — you'll find four pre-built agents</li>
+      <li><strong>Orchestrator</strong> — General coordinator (good default)</li>
+      <li><strong>Writer</strong> — Content creation</li>
+      <li><strong>Reviewer</strong> — Quality gatekeeper</li>
+      <li><strong>Analyst</strong> — Research and strategy</li>
+    </ol>
+    <p>Each agent is just a markdown file. Read through them — customize the role descriptions if you want, or leave the defaults for now.</p>
+
+    <h3>Step 5: Launch Claude Code and Test <span class="step-time">3 min</span></h3>
+    <ol>
+      <li>Open your terminal in the <code>realize_lite/</code> directory</li>
+      <li>Run Claude Code — it automatically reads your <code>CLAUDE.md</code> file</li>
+      <li>Try this test prompt:</li>
+    </ol>
+
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>Write a LinkedIn post about the importance of building systems, not just using tools.</code></pre>
+    </div>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>Claude identifies itself as your Orchestrator agent (or routes to the Writer)</li>
+        <li>The output is written in your brand voice (not generic ChatGPT style)</li>
+        <li>Content references your knowledge base files</li>
+        <li>The Writer drafts, then the Reviewer checks quality</li>
+        <li style="color:#f59e0b;">If the output sounds generic → your brand-voice.md is probably too vague. Add specific rules like "Use short paragraphs. Start with data, not opinions."</li>
+      </ul>
+    </div>
+
+    <p><strong>That's it. Your Lite edition is running.</strong> Go to <a href="#first-steps" style="color:var(--color-accent);">First Steps After Setup</a> for your week-1 roadmap.</p>
+
+    <!-- ===== FULL EDITION ===== -->
+    <h2 id="full">4. Full Edition Setup</h2>
+    <div class="guide__time">~30 minutes total</div>
+
+    <p>The Full edition gives you the complete engine: multi-LLM routing, API server, tool integrations, and self-evolution. Most of this setup is copy-paste commands.</p>
+
+    <h3>Prerequisites</h3>
+    <ul>
+      <li><strong>Python 3.11+</strong> — Check with <code>python --version</code></li>
+      <li><strong>Docker</strong> (recommended) — <a href="https://docker.com" target="_blank" rel="noopener" style="color:var(--color-accent);">docker.com</a></li>
+      <li><strong>Git</strong> — Check with <code>git --version</code></li>
+      <li><strong>API keys</strong> — Anthropic (required) + Google AI (recommended). See below.</li>
+    </ul>
+
+    <div class="guide__card guide__card--warning">
+      <h4>Don't have Python or Git?</h4>
+      <p style="margin-bottom:0;"><strong>Python:</strong> Download from <a href="https://python.org/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">python.org</a>. During installation, check "Add Python to PATH."<br>
+      <strong>Git:</strong> Download from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">git-scm.com</a>. Default options are fine.<br>
+      <strong>Docker:</strong> Download Docker Desktop from <a href="https://docker.com/products/docker-desktop" target="_blank" rel="noopener" style="color:var(--color-accent);">docker.com</a>. Make sure it's running before you continue.</p>
+    </div>
+
+    <h3>Getting Your API Keys <span class="step-time">5 min</span></h3>
+    <p>Lite edition uses your Claude Pro subscription — no API keys needed. Full edition requires these:</p>
+
+    <div class="guide__card">
+      <h4>Anthropic API Key (Claude models)</h4>
+      <ol>
+        <li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--color-accent);">console.anthropic.com</a></li>
+        <li>Create an account or sign in</li>
+        <li>Navigate to <strong>API Keys</strong> and create a new key</li>
+        <li>Add $5-10 credit (pay-as-you-go, no subscription required)</li>
+        <li>Save the key somewhere safe — you'll need it in a few minutes</li>
+      </ol>
+      <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:0;">Typical cost: $2-8/month depending on usage. Claude Sonnet handles most tasks.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Google AI API Key (Gemini Flash — optional but recommended)</h4>
+      <ol>
+        <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" style="color:var(--color-accent);">aistudio.google.com/apikey</a></li>
+        <li>Sign in with your Google account</li>
+        <li>Click "Create API Key"</li>
+        <li>Copy the key — done</li>
+      </ol>
+      <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:0;">Gemini Flash has a generous free tier. It handles quick tasks so Claude can focus on complex work.</p>
+    </div>
+
+    <h3>Step 1: Clone the Repository <span class="step-time">2 min</span></h3>
+    <p><strong>Option A: Docker (recommended)</strong></p>
+
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>git clone https://github.com/SufZen/realize-os.git
+cd realize-os</code></pre>
+    </div>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>Terminal shows "Cloning into 'realize-os'..." followed by download progress</li>
+        <li>A new folder called <code>realize-os/</code> appears in your current directory</li>
+        <li style="color:#f59e0b;">If you see "git is not recognized" → Install Git first (see Prerequisites above)</li>
+        <li style="color:#f59e0b;">If you see "Permission denied" → Try without <code>sudo</code>, or check your SSH keys</li>
+      </ul>
+    </div>
+
+    <h3>Step 2: Configure Your Environment <span class="step-time">5 min</span></h3>
+
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>cp .env.example .env</code></pre>
+    </div>
+
+    <p>Now open <code>.env</code> in any text editor and add your API keys:</p>
+
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>ANTHROPIC_API_KEY=sk-ant-your-key-here
+GOOGLE_AI_API_KEY=your-google-key-here</code></pre>
+    </div>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>A <code>.env</code> file in your project root with your keys filled in</li>
+        <li>No spaces around the <code>=</code> sign</li>
+        <li>No quotes around the key values</li>
+        <li style="color:#f59e0b;">If the file is empty → you may have run <code>cp</code> from the wrong directory. Run <code>ls</code> to check you're in the <code>realize-os/</code> folder.</li>
+      </ul>
+    </div>
+
+    <h3>Step 3: Initialize from a Template <span class="step-time">2 min</span></h3>
+
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>python cli.py init --template consulting</code></pre>
+    </div>
+
+    <p>Other templates available: <code>agency</code>, <code>multi-venture</code>, <code>saas</code>, <code>ecommerce</code>. Pick the one closest to your business.</p>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>Terminal shows "Initializing system from template: consulting..."</li>
+        <li>FABRIC directories are created under your system folder</li>
+        <li>Template files are populated with starter content</li>
+        <li style="color:#f59e0b;">If "python not found" → try <code>python3 cli.py init --template consulting</code></li>
+      </ul>
+    </div>
+
+    <h3>Step 4: Start the Server <span class="step-time">2 min</span></h3>
+
+    <p><strong>With Docker (recommended):</strong></p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>docker compose up</code></pre>
+    </div>
+
+    <p><strong>Without Docker:</strong></p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>pip install -r requirements.txt
+python cli.py serve</code></pre>
+    </div>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>Docker: containers building and starting, logs flowing</li>
+        <li>Local: dependencies installing, then "Server running at http://localhost:8080"</li>
+        <li>No red error messages</li>
+        <li style="color:#f59e0b;">If Docker won't start → Make sure Docker Desktop is running. Try <code>docker compose down</code> then <code>docker compose up --build</code></li>
+        <li style="color:#f59e0b;">If "port 8080 in use" → Change the port in your <code>.env</code> file or stop the other process using that port</li>
+      </ul>
+    </div>
+
+    <h3>Step 5: Send a Test Message <span class="step-time">3 min</span></h3>
+
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Help me plan a content strategy for next quarter",
+    "system_key": "consulting",
+    "user_id": "test-user"
+  }'</code></pre>
+    </div>
+
+    <div class="guide__card guide__card--success">
+      <h4>What you should see</h4>
+      <ul>
+        <li>A JSON response with an AI-generated strategy</li>
+        <li>The response includes an <code>agent</code> field showing which agent handled it</li>
+        <li>Content matches the brand voice defined in your system's Foundations</li>
+        <li style="color:#f59e0b;">If "connection refused" → Server isn't running. Check the terminal where you ran <code>docker compose up</code> for errors.</li>
+        <li style="color:#f59e0b;">If "API key error" → Check your <code>.env</code> file for typos. No spaces around <code>=</code>.</li>
+      </ul>
+    </div>
+
+    <h3>Step 6: Customize Your Brand <span class="step-time">10 min</span></h3>
+    <ol>
+      <li>If you completed the <a href="brand-worksheet.html" style="color:var(--color-accent);">Brand Worksheet</a>, paste your exported markdown into the relevant FABRIC files</li>
+      <li>Edit <code>F-foundations/brand-identity.md</code> — your business description, audience, values</li>
+      <li>Edit <code>F-foundations/brand-voice.md</code> — tone, vocabulary, examples, anti-patterns</li>
+      <li>Review agent definitions in <code>A-agents/</code> — customize roles for your needs</li>
+      <li>Restart the server to pick up changes</li>
+    </ol>
+
+    <p><strong>Your Full edition is running.</strong> Go to <a href="#first-steps" style="color:var(--color-accent);">First Steps After Setup</a> for your week-1 roadmap.</p>
+
+    <!-- ===== SETUP CALL ===== -->
+    <h2 id="setup-call">5. Preparing for Your Setup Call</h2>
+    <p>If you purchased the Setup Assistance package ($499), here's how to make the most of your 1-hour call.</p>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Before the Call — Prepare These</h4>
+      <ul class="guide__checklist">
+        <li><strong>Complete the Brand Worksheet</strong> — <a href="brand-worksheet.html" style="color:var(--color-accent);">brand-worksheet.html</a>. This saves 15+ minutes on the call.</li>
+        <li><strong>Business description</strong> — 2-3 sentences for each venture you want to set up</li>
+        <li><strong>Brand voice samples</strong> — 2-3 pieces of existing content that represent how you want to sound</li>
+        <li><strong>Agent wishlist</strong> — Which roles do you need? Writer, Analyst, Operations, Researcher?</li>
+        <li><strong>Top 3 workflows</strong> — Be specific: "Draft a LinkedIn post from my meeting notes" is better than "content creation"</li>
+        <li><strong>API keys ready</strong> — Anthropic and Google AI keys created and funded (see <a href="#before" style="color:var(--color-accent);">Section 1</a>)</li>
+        <li><strong>Docker or Python installed</strong> — So we can run the system live during the call</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>What Happens During the Call</h4>
+      <ol>
+        <li><strong>Discovery (10 min)</strong> — We review your business, ventures, and goals</li>
+        <li><strong>Brand Configuration (15 min)</strong> — We set up your identity, voice rules, and brand standards</li>
+        <li><strong>Agent Setup (15 min)</strong> — We define and customize your AI team members</li>
+        <li><strong>First Workflow (15 min)</strong> — We build and test your first skill workflow end-to-end</li>
+        <li><strong>Testing &amp; Q&amp;A (5 min)</strong> — We verify everything works and answer questions</li>
+      </ol>
+    </div>
+
+    <div class="guide__card">
+      <h4>After the Call</h4>
+      <ul>
+        <li>Recording of the session shared with you</li>
+        <li>Your custom configuration committed to your repo</li>
+        <li>30 days of priority email support</li>
+        <li>Access to the community channels for ongoing help</li>
+      </ul>
+    </div>
+
+    <!-- ===== FIRST STEPS ===== -->
+    <h2 id="first-steps">6. First Steps After Setup</h2>
+
+    <p>Your system is running. Here's a roadmap for making the most of your first week.</p>
+
+    <div class="guide__card">
+      <h4>Day 1 — Foundations</h4>
+      <ul>
+        <li>Complete your brand identity file (<code>F-foundations/brand-identity.md</code>)</li>
+        <li>Write 5-10 voice rules in <code>F-foundations/brand-voice.md</code></li>
+        <li>Send 3-5 test messages to verify the voice feels right</li>
+        <li>Adjust voice rules based on the output you see</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>Day 2-3 — Knowledge</h4>
+      <ul>
+        <li>Add domain knowledge to <code>B-brain/</code> (industry data, methodologies, client info)</li>
+        <li>Test that agents reference this knowledge in responses</li>
+        <li>Use the ingestion command to import existing documents</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>Day 4-5 — Workflows</h4>
+      <ul>
+        <li>Create your first YAML skill (content pipeline is a great start)</li>
+        <li>Test the writer &rarr; reviewer pipeline with a real task</li>
+        <li>Iterate on agent prompts based on output quality</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>Week 2+ — Expansion</h4>
+      <ul>
+        <li>Connect Google Workspace tools (email, calendar, drive)</li>
+        <li>Add more agents for specialized roles</li>
+        <li>Build more skill workflows for recurring tasks</li>
+        <li>Let the self-evolution engine suggest improvements</li>
+      </ul>
+    </div>
+
+    <!-- ===== VALIDATION ===== -->
+    <h2 id="validation">7. Test Everything Works</h2>
+
+    <p>Run through these tests to confirm your system is properly configured.</p>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Test 1: Brand Recognition</h4>
+      <p>Ask your system:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>What do you know about my business?</code></pre>
+      </div>
+      <p><strong>Expected:</strong> The response should reference your brand identity, business name, audience, and values — not generic AI filler.</p>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Test 2: Voice Calibration</h4>
+      <p>Ask your system:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>Write a social media post about why AI agents should work as a team, not as disconnected tools.</code></pre>
+      </div>
+      <p><strong>Expected:</strong> The output should match your voice rules. If you said "no exclamation marks," there should be none. If you said "short paragraphs," they should be short.</p>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Test 3: System Health (Full edition only)</h4>
+      <p>Open this URL in your browser:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>http://localhost:8080/status</code></pre>
+      </div>
+      <p><strong>Expected:</strong> A JSON response showing "healthy" status, connected LLM providers, and active systems.</p>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Test 4: Agent Routing (Full edition only)</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Analyze the competitive landscape for [your industry]", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+      </div>
+      <p><strong>Expected:</strong> The response should be handled by the Analyst agent (check the <code>agent</code> field in the response), using a more powerful model for complex analysis.</p>
+    </div>
+
+    <!-- ===== TROUBLESHOOTING ===== -->
+    <h2 id="troubleshooting">8. Troubleshooting</h2>
+
+    <p>Common issues and their fixes. If your problem isn't here, ask in the community or email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a>.</p>
+
+    <h3>Installation Issues</h3>
+
+    <div class="guide__card">
+      <h4>"git is not recognized" or "git: command not found"</h4>
+      <p>Git isn't installed. Download from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">git-scm.com</a>. After installing, close and reopen your terminal.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"python: command not found" or wrong Python version</h4>
+      <p>Try <code>python3 --version</code> instead. If Python isn't installed, download from <a href="https://python.org/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">python.org</a>. <strong>During installation, check "Add Python to PATH."</strong> This is the most commonly missed step.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"pip: command not found"</h4>
+      <p>Use <code>python -m pip install -r requirements.txt</code> instead. If that doesn't work, reinstall Python with the "pip" option checked.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Docker Desktop won't start</h4>
+      <p><strong>Windows:</strong> Make sure WSL2 is installed. Open PowerShell as admin and run <code>wsl --install</code>. Restart your computer.<br>
+      <strong>Mac:</strong> Make sure you downloaded the right version (Apple Silicon vs Intel).<br>
+      <strong>Both:</strong> Check that virtualization is enabled in your BIOS settings.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Port 8080 already in use"</h4>
+      <p>Another process is using that port. Either stop it, or change the port in your <code>.env</code> file to something like <code>API_PORT=8081</code>.</p>
+    </div>
+
+    <h3>API Key Issues</h3>
+
+    <div class="guide__card">
+      <h4>"Invalid API key" or "Authentication failed"</h4>
+      <p>Check your <code>.env</code> file. Common mistakes:</p>
+      <ul>
+        <li>Spaces around the <code>=</code> sign (wrong: <code>ANTHROPIC_API_KEY = sk-...</code>)</li>
+        <li>Quotes around the value (wrong: <code>ANTHROPIC_API_KEY="sk-..."</code>)</li>
+        <li>Trailing newline or invisible characters — re-type the key</li>
+        <li>Key was revoked or expired — create a new one at console.anthropic.com</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Insufficient credits" or "Payment required"</h4>
+      <p>Your Anthropic account needs credit. Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--color-accent);">console.anthropic.com</a> &rarr; Billing &rarr; Add at least $5.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Rate limit exceeded"</h4>
+      <p>You're sending too many requests. Wait a minute and try again. For production use, increase your rate limits in the Anthropic console or adjust <code>RATE_LIMIT_PER_MINUTE</code> in your <code>.env</code>.</p>
+    </div>
+
+    <h3>Runtime Issues</h3>
+
+    <div class="guide__card">
+      <h4>"Claude doesn't know my brand voice"</h4>
+      <p>Your <code>F-foundations/brand-voice.md</code> is probably too vague. Vague instructions like "be professional" don't help. Instead, write specific rules: "Use short paragraphs (2-3 sentences). Start with data, not opinions. No exclamation marks. Never use the word 'synergy.'"</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Agents respond generically"</h4>
+      <p>The knowledge base might not be indexed. Run the index command:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>python cli.py index</code></pre>
+      </div>
+      <p>Also check that your agent definitions in <code>A-agents/</code> have specific, detailed role descriptions — not just "handles content."</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Skill doesn't trigger"</h4>
+      <p>Check the YAML syntax in your skill file. Common issues: incorrect indentation, missing <code>triggers</code> array, or the trigger keywords don't match your message. Test with an exact trigger phrase first.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"KB search returns nothing"</h4>
+      <p>Run the index command to rebuild: <code>python cli.py index</code>. Also check that your knowledge files use UTF-8 encoding and have actual content (not just headers).</p>
+    </div>
+
+    <h3>Obsidian / Lite Issues</h3>
+
+    <div class="guide__card">
+      <h4>"Obsidian shows empty vault"</h4>
+      <p>You likely opened the wrong folder. Close the vault, then re-open by selecting the folder that <em>contains</em> the FABRIC subfolders (<code>A-agents/</code>, <code>B-brain/</code>, etc.).</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Claude Code doesn't read CLAUDE.md"</h4>
+      <p>Make sure you're running Claude Code from the correct directory — the one containing the <code>CLAUDE.md</code> file. Check with <code>ls</code> or <code>dir</code> that the file exists in your current working directory.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Can't see files or folders"</h4>
+      <p>In Obsidian, go to Settings &rarr; Files &amp; Links &rarr; Enable "Detect all file extensions." Some markdown files might be hidden by default filters.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Still stuck?</h4>
+      <p>Join the community: <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener" style="color:var(--color-accent);">Telegram Builders Group</a> | <a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener" style="color:var(--color-accent);">WhatsApp Community</a> | Email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a></p>
+      <p>Screenshot your error and share it — we've probably seen it before.</p>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="guide__cta">
+      <p style="color:var(--color-text-secondary); margin-bottom:1.5rem;">Ready to get started?</p>
+      <a href="./#pricing" class="btn btn--primary btn--lg">Choose Your Edition</a>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+          <p>Part of the <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a> ecosystem.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/SufZen/realize-os" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
+          <a href="mailto:realizeos@realization.co.il">Support</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 RealizeOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    // --- Copy buttons for code blocks ---
+    document.querySelectorAll('.code-block__copy').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const code = btn.closest('.code-block').querySelector('code');
+        const text = code.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch(e) {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      });
+    });
+
+    // --- Smooth scroll for TOC ---
+    document.querySelectorAll('.guide__toc a, a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href.startsWith('#')) return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const navHeight = document.querySelector('.nav').offsetHeight;
+          const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
