@@ -1,0 +1,82 @@
+import { Section } from '@/components/layout/Section';
+import { SectionHeader } from '@/components/layout/SectionHeader';
+import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { TierLite } from '@/components/illustrations/TierLite';
+import { TierFull } from '@/components/illustrations/TierFull';
+import { TierSetup } from '@/components/illustrations/TierSetup';
+import { pricingTiers, pricingCompareNote } from '@/data/pricing';
+import { trackEvent } from '@/lib/analytics';
+import { cn } from '@/lib/utils';
+
+const tierIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  'RealizeOS Lite': TierLite,
+  'RealizeOS Full': TierFull,
+  'Setup Assistance': TierSetup,
+};
+
+export function Pricing() {
+  return (
+    <Section id="pricing">
+      <SectionHeader
+        title="Choose Your Edition"
+        subtitle="One-time purchase. Own it forever. No subscriptions, no recurring fees."
+      />
+      <div className="grid gap-6 lg:grid-cols-3">
+        {pricingTiers.map((tier, i) => (
+          <AnimateOnScroll key={tier.name} delay={i * 0.1}>
+            <div
+              className={cn(
+                'glass-card relative flex h-full flex-col rounded-2xl p-6',
+                tier.featured && 'animated-border'
+              )}
+            >
+              {tier.badge && (
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-yellow text-primary-foreground">
+                  {tier.badge}
+                </Badge>
+              )}
+              {(() => {
+                const TierIcon = tierIconMap[tier.name];
+                return TierIcon ? <TierIcon className="mx-auto mb-3 h-12 w-12" /> : null;
+              })()}
+              <div className="mb-4">
+                <h3 className="text-xl font-bold">{tier.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{tier.description}</p>
+              </div>
+              <div className="mb-6">
+                <span className="text-4xl font-bold">${tier.price}</span>
+                <span className="ml-1 text-sm text-muted-foreground">{tier.period}</span>
+              </div>
+              <ul className="mb-8 flex-1 space-y-2.5 text-sm">
+                {tier.features.map((f) => (
+                  <li key={f.text} className="flex items-start gap-2">
+                    <span className="mt-1 text-brand-yellow">&#10003;</span>
+                    <span className={f.bold ? 'font-semibold' : ''}>{f.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                asChild
+                variant={tier.featured ? 'default' : 'outline'}
+                size="lg"
+                className="w-full"
+                onClick={() => trackEvent('cta_click', { cta_name: tier.trackId })}
+              >
+                <a href={tier.ctaUrl}>{tier.ctaText}</a>
+              </Button>
+              <p className="mt-3 text-center text-xs text-muted-foreground">{tier.delivery}</p>
+              <p className="mt-1 text-center text-xs text-muted-foreground">{tier.guarantee}</p>
+            </div>
+          </AnimateOnScroll>
+        ))}
+      </div>
+      <AnimateOnScroll delay={0.3}>
+        <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-muted-foreground">
+          {pricingCompareNote}
+        </p>
+      </AnimateOnScroll>
+    </Section>
+  );
+}

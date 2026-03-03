@@ -182,7 +182,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // --- Email Capture Forms (Main + Popup) ---
-const WEBHOOK_URL = 'https://n8n.realizeos.ai/webhook/lead-capture';
+const WEBHOOK_URL = 'https://n8n.realization.co.il/webhook/lead-capture';
 
 function handleEmailForm(form, successEl, errorEl) {
   if (!form) return;

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealizeOS — The AI Operations System You Own</title>
+  <meta name="description" content="Coordinated AI agent teams, multi-LLM intelligence, and a knowledge base that grows with your business. One-time purchase. Own it forever.">
+  <meta name="author" content="RealizeOS">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://realizeos.ai">
+  <meta name="theme-color" content="#ffcc00">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RealizeOS — The AI Operations System You Own">
+  <meta property="og:description" content="Coordinated AI agent teams, multi-LLM intelligence, and a knowledge base that grows with your business. Installed in hours, not months.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realizeos.ai">
+  <meta property="og:site_name" content="RealizeOS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RealizeOS — The AI Operations System You Own">
+  <meta name="twitter:description" content="Coordinated AI agent teams, multi-LLM intelligence, and a knowledge base that grows with your business.">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "RealizeOS",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Cross-platform",
+    "description": "AI Operations System with coordinated agent teams, multi-LLM routing, and structured knowledge base.",
+    "url": "https://realizeos.ai",
+    "offers": [
+      { "@type": "Offer", "name": "RealizeOS Lite", "price": "79", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "RealizeOS Full", "price": "249", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Setup Assistance", "price": "499", "priceCurrency": "USD" }
+    ],
+    "creator": {
+      "@type": "Organization",
+      "name": "Realization",
+      "url": "https://realization.co.il"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <!-- Replace G-XXXXXXXXXX with your GA4 measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#fabric">FABRIC</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#pricing" class="btn btn--primary btn--sm nav__cta">Get Started</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="container">
+      <div class="hero__badge">Part of the Realization ecosystem</div>
+      <h1 class="hero__title">The AI Operations System<br><span class="hero__accent">You Own</span></h1>
+      <p class="hero__subtitle">Coordinated agent teams. Multi-LLM intelligence. A knowledge base that grows with your business. Installed in hours, not months.</p>
+      <div class="hero__actions">
+        <a href="https://buy.stripe.com/dRm14odTJbcocma3tT6Ri0d" class="btn btn--primary btn--lg" data-track="hero-cta-full">Get RealizeOS — $249</a>
+        <a href="#fabric" class="btn btn--outline btn--lg">See How It Works</a>
+      </div>
+      <div class="hero__proof">
+        <div class="hero__stat"><strong>92</strong> files</div>
+        <div class="hero__stat"><strong>8,800+</strong> lines of code</div>
+        <div class="hero__stat"><strong>13</strong> Google tools</div>
+        <div class="hero__stat" id="github-stars"><strong>--</strong> GitHub stars</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAIN SECTION ===== -->
+  <section class="pain" id="pain">
+    <div class="container">
+      <h2 class="section__title">Stop Duct-Taping AI Tools<br>That Forget You</h2>
+      <p class="section__subtitle">Most AI setups are a mess of disconnected chatbots, lost context, and manual copy-pasting. Your AI should work as a team, not a collection of strangers.</p>
+      <div class="pain__grid">
+        <div class="pain__card animate-on-scroll">
+          <div class="pain__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Fragmented Tools</h3>
+          <p>One chatbot for writing, another for research, a third for email. None of them know about each other.</p>
+        </div>
+        <div class="pain__card animate-on-scroll">
+          <div class="pain__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Lost Context</h3>
+          <p>Every conversation starts from scratch. Your AI doesn't remember your brand, your preferences, or last week's decisions.</p>
+        </div>
+        <div class="pain__card animate-on-scroll">
+          <div class="pain__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>No Coordination</h3>
+          <p>You're the middleware. You copy outputs from one AI to feed into another. That's not automation — it's extra work.</p>
+        </div>
+      </div>
+      <p class="pain__transition">There's a better way. A structured operating system where AI agents work as a coordinated team — from your knowledge base, in your voice, for your business.</p>
+    </div>
+  </section>
+
+  <!-- ===== DEMO VIDEO ===== -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <h2 class="section__title">See It in Action</h2>
+      <p class="section__subtitle">Watch how RealizeOS turns a single message into coordinated agent work — from your knowledge base, in your brand voice.</p>
+      <div class="demo__player">
+        <div class="demo__placeholder" id="demo-placeholder">
+          <div class="demo__play-btn">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <p>Demo video coming soon</p>
+          <span class="demo__duration">3 min walkthrough</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FABRIC ===== -->
+  <section class="fabric" id="fabric">
+    <div class="container">
+      <h2 class="section__title">The FABRIC System</h2>
+      <p class="section__subtitle">Every system in RealizeOS is organized using a structured knowledge architecture. Six directories. One coherent intelligence.</p>
+      <div class="fabric__grid">
+        <div class="fabric__item animate-on-scroll">
+          <div class="fabric__letter">F</div>
+          <div class="fabric__content">
+            <h3>Foundations</h3>
+            <p>Brand identity and voice rules that every agent follows. Your team speaks in your voice, always.</p>
+          </div>
+        </div>
+        <div class="fabric__item animate-on-scroll">
+          <div class="fabric__letter">A</div>
+          <div class="fabric__content">
+            <h3>Agents</h3>
+            <p>Your specialized AI team — writer, analyst, reviewer, orchestrator. Each defined by a markdown file you control.</p>
+          </div>
+        </div>
+        <div class="fabric__item animate-on-scroll">
+          <div class="fabric__letter">B</div>
+          <div class="fabric__content">
+            <h3>Brain</h3>
+            <p>Domain knowledge your team actually remembers. Market data, expertise, research — accessible every conversation.</p>
+          </div>
+        </div>
+        <div class="fabric__item animate-on-scroll">
+          <div class="fabric__letter">R</div>
+          <div class="fabric__content">
+            <h3>Routines</h3>
+            <p>Workflows that chain agents and tools together. "Write a post" triggers writer, then reviewer — automatically.</p>
+          </div>
+        </div>
+        <div class="fabric__item animate-on-scroll">
+          <div class="fabric__letter">I</div>
+          <div class="fabric__content">
+            <h3>Insights</h3>
+            <p>A learning log that makes your team smarter over time. Feedback, decisions, and patterns — nothing gets lost.</p>
+          </div>
+        </div>
+        <div class="fabric__item animate-on-scroll">
+          <div class="fabric__letter">C</div>
+          <div class="fabric__content">
+            <h3>Creations</h3>
+            <p>Deliverables that meet your quality standards. Every output lands in an organized, reviewable structure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section__title">Built for Real Operations</h2>
+      <p class="section__subtitle">Not a toy. Not a wrapper. A complete AI operations engine with the depth to run your business.</p>
+      <div class="features__grid">
+        <div class="feature__card animate-on-scroll">
+          <div class="feature__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <h3>Multi-LLM Routing</h3>
+          <p>Each request routed to the optimal model. Quick questions go to Gemini Flash. Content to Claude Sonnet. Complex strategy to Claude Opus. Automatic.</p>
+        </div>
+        <div class="feature__card animate-on-scroll">
+          <div class="feature__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg></div>
+          <h3>7-Layer Prompt Assembly</h3>
+          <p>Every response built from your identity, brand voice, agent role, relevant knowledge, memory, and session context. Not a generic chatbot — your chatbot.</p>
+        </div>
+        <div class="feature__card animate-on-scroll">
+          <div class="feature__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+          <h3>Multi-Step Skills</h3>
+          <p>YAML-defined workflows that chain agents and tools: search the web, analyze results, draft content, get review — all triggered by one message.</p>
+        </div>
+        <div class="feature__card animate-on-scroll">
+          <div class="feature__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div>
+          <h3>Hybrid KB Search</h3>
+          <p>FTS5 keyword search combined with vector embeddings. Your agents find the right knowledge every time — not just keywords, but meaning.</p>
+        </div>
+        <div class="feature__card animate-on-scroll">
+          <div class="feature__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h3>Creative Pipelines</h3>
+          <p>Multi-agent sessions with stages: briefing, drafting, iterating, reviewing, approved. Your content goes through a real production flow.</p>
+        </div>
+        <div class="feature__card animate-on-scroll">
+          <div class="feature__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><polyline points="21 3 21 8 16 8"/></svg></div>
+          <h3>Self-Evolution</h3>
+          <p>The system tracks what works and what doesn't. Detects gaps, suggests new skills, refines agent prompts — getting better every interaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USE CASES ===== -->
+  <section class="usecases" id="usecases">
+    <div class="container">
+      <h2 class="section__title">Built For How You Work</h2>
+      <p class="section__subtitle">Whether you run one venture or five, RealizeOS adapts to your operations.</p>
+      <div class="usecases__grid">
+        <div class="usecase__card animate-on-scroll">
+          <div class="usecase__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3>Consulting &amp; Advisory</h3>
+          <p>Scale your research, draft proposals, and create client deliverables with agents that know your methodology.</p>
+        </div>
+        <div class="usecase__card animate-on-scroll">
+          <div class="usecase__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h3>Creative Agencies</h3>
+          <p>Automate content pipelines with writer-reviewer workflows. Every piece goes through a brand-consistent quality gate.</p>
+        </div>
+        <div class="usecase__card animate-on-scroll">
+          <div class="usecase__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <h3>Multi-Venture Operators</h3>
+          <p>Run 3+ ventures from one engine. Isolated systems, shared identity, cross-venture intelligence when you need it.</p>
+        </div>
+        <div class="usecase__card animate-on-scroll">
+          <div class="usecase__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+          <h3>SaaS &amp; Product Teams</h3>
+          <p>From user research to release notes. Manage product, marketing, and support knowledge in one coordinated system.</p>
+        </div>
+        <div class="usecase__card animate-on-scroll">
+          <div class="usecase__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+          <h3>E-Commerce</h3>
+          <p>Generate product descriptions, analyze sales data, and automate customer communications — all in your brand voice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDITIONS / PRICING ===== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section__title">Choose Your Edition</h2>
+      <p class="section__subtitle">One-time purchase. Own it forever. No subscriptions, no recurring fees.</p>
+      <div class="pricing__grid">
+
+        <div class="pricing__card animate-on-scroll">
+          <div class="pricing__header">
+            <h3>RealizeOS Lite</h3>
+            <p class="pricing__desc">For operators who want AI assistance without servers</p>
+          </div>
+          <div class="pricing__price">
+            <span class="pricing__amount">$79</span>
+            <span class="pricing__period">one-time</span>
+          </div>
+          <ul class="pricing__features">
+            <li>Pre-structured Obsidian vault (FABRIC)</li>
+            <li>4 agent templates (Orchestrator, Writer, Reviewer, Analyst)</li>
+            <li>Brand identity &amp; voice wizards</li>
+            <li>Skill workflows (YAML-defined pipelines)</li>
+            <li>CLAUDE.md for Claude Code integration</li>
+            <li>Step-by-step setup guide</li>
+            <li>Works with Claude Pro ($20/mo)</li>
+          </ul>
+          <a href="https://buy.stripe.com/9B64gAcPFcgscma6G56Ri0c" class="btn btn--outline btn--lg pricing__cta" id="cta-lite" data-track="pricing-lite">Get Lite Edition</a>
+          <div class="pricing__delivery">Instant delivery via Google Drive</div>
+          <div class="pricing__guarantee">14-day money-back guarantee</div>
+        </div>
+
+        <div class="pricing__card pricing__card--featured animate-on-scroll">
+          <div class="pricing__badge">Most Popular</div>
+          <div class="pricing__header">
+            <h3>RealizeOS Full</h3>
+            <p class="pricing__desc">The complete engine with multi-LLM routing &amp; tools</p>
+          </div>
+          <div class="pricing__price">
+            <span class="pricing__amount">$249</span>
+            <span class="pricing__period">one-time</span>
+          </div>
+          <ul class="pricing__features">
+            <li><strong>Everything in Lite, plus:</strong></li>
+            <li>Multi-LLM routing (Gemini + Claude Sonnet + Opus)</li>
+            <li>7-layer dynamic prompt assembly</li>
+            <li>Hybrid KB search (FTS5 + vector)</li>
+            <li>Multi-step skill executor engine</li>
+            <li>Google Workspace integration (13 tools)</li>
+            <li>Web search, browser automation, MCP</li>
+            <li>REST API + Telegram channels</li>
+            <li>Self-evolution engine</li>
+            <li>Docker one-command deploy</li>
+            <li>CLI tooling + 5 system templates</li>
+          </ul>
+          <a href="https://buy.stripe.com/dRm14odTJbcocma3tT6Ri0d" class="btn btn--primary btn--lg pricing__cta" id="cta-full" data-track="pricing-full">Get Full Edition</a>
+          <div class="pricing__delivery">Instant delivery via Google Drive</div>
+          <div class="pricing__guarantee">14-day money-back guarantee</div>
+        </div>
+
+        <div class="pricing__card animate-on-scroll">
+          <div class="pricing__header">
+            <h3>Setup Assistance</h3>
+            <p class="pricing__desc">Full edition + hands-on help getting started</p>
+          </div>
+          <div class="pricing__price">
+            <span class="pricing__amount">$499</span>
+            <span class="pricing__period">one-time</span>
+          </div>
+          <ul class="pricing__features">
+            <li><strong>Everything in Full, plus:</strong></li>
+            <li>1-hour setup call with the builder</li>
+            <li>Custom KB scaffolding for your business</li>
+            <li>Agent definitions tailored to your needs</li>
+            <li>Brand voice configuration</li>
+            <li>First skill workflow set up together</li>
+            <li>Priority email support for 30 days</li>
+          </ul>
+          <a href="https://buy.stripe.com/4gM14o5nddkwgCqd4t6Ri0e" class="btn btn--outline btn--lg pricing__cta" id="cta-setup" data-track="pricing-setup">Get Setup Assistance</a>
+          <div class="pricing__delivery">Instant delivery + 1-hour setup call</div>
+          <div class="pricing__guarantee">14-day money-back guarantee</div>
+        </div>
+
+      </div>
+
+      <div class="pricing__comparison">
+        <p class="pricing__compare-note">Individual AI agents elsewhere cost $49-99 each. AI operation communities charge $97/month. RealizeOS gives you the complete coordinated system — once, forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPARISON ===== -->
+  <section class="comparison" id="comparison">
+    <div class="container">
+      <h2 class="section__title">The Math Is Simple</h2>
+      <div class="comparison__table">
+        <div class="comparison__col">
+          <div class="comparison__header comparison__header--muted">Hiring a Team</div>
+          <div class="comparison__price">$50,000+<span>/year</span></div>
+          <ul>
+            <li>2-4 week ramp-up per hire</li>
+            <li>Limited to business hours</li>
+            <li>Knowledge walks out the door</li>
+            <li>Coordination overhead</li>
+          </ul>
+        </div>
+        <div class="comparison__col">
+          <div class="comparison__header comparison__header--muted">Individual AI Tools</div>
+          <div class="comparison__price">$1,200+<span>/year</span></div>
+          <ul>
+            <li>$97/mo per community</li>
+            <li>$49-99 per agent config</li>
+            <li>No coordination between tools</li>
+            <li>Context lost every session</li>
+          </ul>
+        </div>
+        <div class="comparison__col comparison__col--featured">
+          <div class="comparison__header">RealizeOS</div>
+          <div class="comparison__price">$249<span> once</span></div>
+          <ul>
+            <li>Running in hours, not weeks</li>
+            <li>Available 24/7, every day</li>
+            <li>Knowledge compounds forever</li>
+            <li>Agents coordinate automatically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2 class="section__title">From Purchase to Working System</h2>
+      <p class="section__subtitle">No waiting. No complicated onboarding. Here's exactly what happens.</p>
+      <div class="how__grid how__grid--5">
+        <div class="how__step animate-on-scroll">
+          <div class="how__number">1</div>
+          <h3>Pick Your Edition</h3>
+          <p>Stripe checkout takes 30 seconds. Choose Lite, Full, or Setup Assistance.</p>
+        </div>
+        <div class="how__step animate-on-scroll">
+          <div class="how__number">2</div>
+          <h3>Get Instant Access</h3>
+          <p>Google Drive link + welcome email + community invite arrive immediately. No waiting.</p>
+        </div>
+        <div class="how__step animate-on-scroll">
+          <div class="how__number">3</div>
+          <h3>Define Your Business</h3>
+          <p>Fill in brand identity and voice rules from guided templates. Use the <a href="brand-worksheet.html" style="color:var(--color-accent);">Brand Worksheet</a> to make it easy.</p>
+          <span class="how__time">5-10 min</span>
+        </div>
+        <div class="how__step animate-on-scroll">
+          <div class="how__number">4</div>
+          <h3>First Conversation</h3>
+          <p>Ask your AI team to write a post. Watch the Writer draft and the Reviewer check quality — in your voice.</p>
+          <span class="how__time">5 min</span>
+        </div>
+        <div class="how__step animate-on-scroll">
+          <div class="how__number">5</div>
+          <h3>Build Your System</h3>
+          <p>Add domain knowledge, create workflows, connect tools. Your AI team gets smarter every week.</p>
+          <span class="how__time">Week 1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT YOU ACTUALLY GET ===== -->
+  <section class="delivery" id="delivery">
+    <div class="container">
+      <h2 class="section__title">What You Actually Get</h2>
+      <p class="section__subtitle">No vaporware. No locked content. Here's exactly what arrives when you purchase.</p>
+      <div class="delivery__grid">
+        <div class="delivery__col animate-on-scroll">
+          <h3>Lite Edition</h3>
+          <div class="delivery__item">
+            <strong>Pre-structured Obsidian vault</strong>
+            <p>~30 files organized in the FABRIC structure. Open it, and you have a working knowledge base.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>4 AI agent definitions</strong>
+            <p>Orchestrator, Writer, Reviewer, Analyst. Each is a markdown file you customize for your business.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>Fill-in-the-blank brand templates</strong>
+            <p>brand-identity.md and brand-voice.md with guided prompts. Takes 5 minutes to fill in.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>2 skill workflows</strong>
+            <p>Content pipeline and research workflow (YAML files), ready to use or customize.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>CLAUDE.md configuration</strong>
+            <p>Drop into Claude Code and it instantly understands your entire business context.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>Step-by-step setup guide</strong>
+            <p>15 minutes from download to your first AI-powered conversation.</p>
+          </div>
+        </div>
+        <div class="delivery__col delivery__col--featured animate-on-scroll">
+          <h3>Full Edition</h3>
+          <p class="delivery__includes">Everything in Lite, plus:</p>
+          <div class="delivery__item">
+            <strong>Complete Python engine (8,800+ lines)</strong>
+            <p>Multi-LLM routing, 7-layer prompt assembly, skill execution, self-evolution. Production-ready code.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>Docker one-command deploy</strong>
+            <p><code>docker compose up</code> and you have a running AI operations server.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>13 Google Workspace tools</strong>
+            <p>Gmail, Calendar, Drive integration built in. OAuth setup included.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>REST API + Telegram channel</strong>
+            <p>Connect from any frontend, or use Telegram as your command center.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>5 industry templates</strong>
+            <p>Consulting, Agency, Multi-Venture, SaaS, E-Commerce. Pick one and customize.</p>
+          </div>
+          <div class="delivery__item">
+            <strong>CLI tooling</strong>
+            <p>init, serve, bot, status, index commands for day-to-day operations.</p>
+          </div>
+        </div>
+      </div>
+      <p class="delivery__note">Both editions include: Instant Google Drive access, setup guide, community access (Telegram + WhatsApp), and onboarding emails for your first week.</p>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section__title">What Early Users Say</h2>
+      <div class="testimonials__grid">
+        <div class="testimonial__card animate-on-scroll">
+          <p class="testimonial__text">"The FABRIC system gave my consulting practice a real structure for AI. Instead of ad-hoc ChatGPT conversations, I now have agents that know my clients and methodology. Setup took 20 minutes."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">YL</div>
+            <div>
+              <strong>Yonatan Levi</strong>
+              <span>Management Consultant, Tel Aviv</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial__card animate-on-scroll">
+          <p class="testimonial__text">"We were spending $97/month on an AI community and still building everything ourselves. RealizeOS gave us the finished system for a one-time payment. The multi-LLM routing alone is worth it."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">JM</div>
+            <div>
+              <strong>James Mitchell</strong>
+              <span>Agency Founder, Austin TX</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial__card animate-on-scroll">
+          <p class="testimonial__text">"I run 3 ventures and each one has its own voice. Before RealizeOS, I was switching between 5 different AI tools. Now one system handles all of them with proper brand isolation."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">RS</div>
+            <div>
+              <strong>Ricardo Santos</strong>
+              <span>Portfolio Operator, Lisbon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="testimonials__note">Built from a production system powering 4 AI bots across 3 real businesses.</p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section__title">Frequently Asked Questions</h2>
+      <div class="faq__list">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">What do I need to get started?</button>
+          <div class="faq__answer">
+            <p><strong>Lite:</strong> Obsidian (free) and a Claude Pro subscription ($20/mo from Anthropic). No coding required.</p>
+            <p><strong>Full:</strong> Python 3.11+, Docker (optional), and API keys for your chosen LLM providers (Anthropic and/or Google AI).</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">Can I host it on my own server?</button>
+          <div class="faq__answer"><p>Yes. The Full edition is designed for self-hosting. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">Which AI models does it support?</button>
+          <div class="faq__answer"><p>The Full edition routes between Gemini Flash (fast/cheap), Claude Sonnet (balanced), and Claude Opus (powerful) — automatically selecting the best model for each task. The Lite edition works with any Claude model through Claude Code.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">Is my data private?</button>
+          <div class="faq__answer"><p>Completely. RealizeOS runs on your machine or server. Your knowledge base, conversations, and business data never leave your infrastructure. The only external calls are to the LLM APIs you configure.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">What if I need help setting up?</button>
+          <div class="faq__answer"><p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — brand voice, agents, first workflow, everything. After purchase, you'll receive a detailed prep checklist. You can also reach out via <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">email</a> at any time.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">Do I get updates?</button>
+          <div class="faq__answer"><p>Yes. As an owner of the system, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want — on your schedule, not ours.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">Can I manage multiple businesses with one system?</button>
+          <div class="faq__answer"><p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and brand voice. One engine, as many ventures as you need.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">What happens after I purchase?</button>
+          <div class="faq__answer">
+            <p>Immediately: you'll get access to download your package (Lite) or the GitHub repo (Full). You'll also receive a welcome email with your setup guide and a video walkthrough.</p>
+            <p>Join the community: <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener" style="color:var(--color-accent);">Telegram Builders Group</a> &amp; <a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener" style="color:var(--color-accent);">WhatsApp Community</a></p>
+            <p>Over the next week, you'll get onboarding emails with tips for defining your brand, customizing agents, and building your first workflow.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">Is there a refund policy?</button>
+          <div class="faq__answer"><p>If you're not satisfied within 14 days of purchase, reach out and we'll make it right. We want you to succeed with RealizeOS, not feel trapped.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="founder" id="founder">
+    <div class="container">
+      <div class="founder__content">
+        <div class="founder__text">
+          <h2>Built from Real Operations</h2>
+          <p>RealizeOS isn't a concept or a demo. It was extracted from a production system running <strong>4 AI bots across 3 business ventures</strong> — processing real messages, managing real brand voices, executing real workflows, every day.</p>
+          <p>I built this because I needed it. Managing multiple ventures with disconnected AI tools was unsustainable. So I built a coordinated system — and now you can use the same engine for your own operations.</p>
+          <div class="founder__meta">
+            <strong>Asaf Eyzenkot</strong>
+            <span>Founder, <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a></span>
+            <div class="founder__links">
+              <a href="https://www.linkedin.com/in/asaf-eyzenkot" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+              <a href="https://github.com/SufZen" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA + EMAIL ===== -->
+  <section class="final-cta" id="final-cta">
+    <div class="container">
+      <div class="final-cta__main">
+        <h2>Start Building Your<br>AI Operations System</h2>
+        <p>One-time purchase. Complete ownership. No recurring fees.</p>
+        <div class="final-cta__buttons">
+          <a href="https://buy.stripe.com/dRm14odTJbcocma3tT6Ri0d" class="btn btn--primary btn--lg" data-track="final-cta">Get RealizeOS</a>
+        </div>
+      </div>
+
+      <div class="final-cta__email" id="email-capture">
+        <h3>Not ready yet?</h3>
+        <p>Start with the free <a href="brand-worksheet.html" style="color:var(--color-accent);font-weight:500;">Brand Discovery Worksheet</a> — 10 questions that help you define your brand for any AI tool. Or get the FABRIC Architecture Guide:</p>
+        <div id="fillout-form">
+          <form class="email-form" id="email-form">
+            <div class="email-form__fields">
+              <input type="text" name="name" placeholder="Your name" class="email-form__input">
+              <input type="email" name="email" placeholder="your@email.com" required class="email-form__input">
+            </div>
+            <input type="text" name="challenge" placeholder="What's your biggest AI operations challenge?" class="email-form__input email-form__input--full">
+            <button type="submit" class="btn btn--primary email-form__btn">Get the Free Guide</button>
+          </form>
+          <div id="form-success" class="email-form__success" style="display:none;">
+            <p>Thanks! Check your inbox for the architecture guide.</p>
+          </div>
+          <div id="form-error" class="email-form__error" style="display:none;">
+            <p>Something went wrong. Please try again or email us directly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+          <p>Part of the <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a> ecosystem.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
+          <a href="mailto:realizeos@realization.co.il">Support</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 RealizeOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== EXIT-INTENT POPUP ===== -->
+  <div class="popup-overlay" id="exit-popup" style="display:none;">
+    <div class="popup">
+      <button class="popup__close" id="popup-close" aria-label="Close">&times;</button>
+      <h3>Before you go...</h3>
+      <p>Get the free <strong>FABRIC Architecture Guide</strong> and see how coordinated AI agents can transform your operations.</p>
+      <form class="email-form" id="popup-form">
+        <input type="email" name="popup_email" placeholder="your@email.com" required class="email-form__input">
+        <button type="submit" class="btn btn--primary email-form__btn">Get the Free Guide</button>
+      </form>
+      <div id="popup-success" style="display:none;">
+        <p style="color: var(--color-accent); font-weight: 500; padding: 0.5rem 0;">Thanks! Check your inbox.</p>
+      </div>
+      <p class="popup__note">No spam. Just the guide + occasional updates.</p>
+    </div>
+  </div>
+
+  <!-- ===== MOBILE STICKY CTA ===== -->
+  <div class="mobile-cta" id="mobile-cta">
+    <a href="#pricing" class="btn btn--primary btn--sm">Get RealizeOS</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

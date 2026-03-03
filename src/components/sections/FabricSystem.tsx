@@ -1,0 +1,34 @@
+import { Section } from '@/components/layout/Section';
+import { SectionHeader } from '@/components/layout/SectionHeader';
+import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
+import { fabricItems } from '@/data/fabric';
+import { FabricDiagram } from '@/components/illustrations/FabricDiagram';
+
+export function FabricSystem() {
+  return (
+    <Section id="fabric">
+      <SectionHeader
+        title="The FABRIC System"
+        subtitle="Every system in RealizeOS is organized using a structured knowledge architecture. Six directories. One coherent intelligence."
+      />
+      <AnimateOnScroll>
+        <FabricDiagram className="mx-auto mb-12 w-full max-w-[320px] illustration-glow" />
+      </AnimateOnScroll>
+      <div className="grid gap-5 md:grid-cols-2">
+        {fabricItems.map((item, i) => (
+          <AnimateOnScroll key={item.letter} delay={i * 0.08}>
+            <div className="glass-card flex items-start gap-5 rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5">
+              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-yellow/10 font-mono text-xl font-bold text-brand-yellow glow-yellow">
+                {item.letter}
+              </span>
+              <div>
+                <h3 className="mb-1 font-semibold">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          </AnimateOnScroll>
+        ))}
+      </div>
+    </Section>
+  );
+}

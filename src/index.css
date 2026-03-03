@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* RealizeOS dark theme — yellow accent, Poppins font */
+    --background: 240 33% 3.7%;         /* #0a0a0f */
+    --foreground: 240 14% 92.5%;        /* #e8e8ed */
+
+    --card: 240 17% 12.2%;             /* #1a1a24 */
+    --card-foreground: 240 14% 92.5%;
+
+    --popover: 240 22% 8.2%;           /* #12121a */
+    --popover-foreground: 240 14% 92.5%;
+
+    --primary: 48 100% 50%;            /* #ffcc00 yellow accent */
+    --primary-foreground: 240 33% 3.7%; /* dark text on yellow */
+
+    --secondary: 240 15% 18.8%;        /* #2a2a36 surface */
+    --secondary-foreground: 240 14% 92.5%;
+
+    --muted: 240 22% 8.2%;             /* #12121a elevated bg */
+    --muted-foreground: 243 12% 64.7%; /* #9a9ab0 */
+
+    --accent: 240 22% 8.2%;
+    --accent-foreground: 240 14% 92.5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.15;
+    --ring: 48 100% 50%;               /* yellow for focus rings */
+
+    --radius: 0.75rem;                 /* 12px */
+
+    /* Custom brand tokens */
+    --accent-hover: 48 100% 58%;       /* #ffd633 */
+    --accent-subtle: 48 100% 50% / 0.10;
+    --bg-elevated: 240 22% 8.2%;
+    --bg-card-hover: 240 18% 15.7%;
+    --text-secondary: 243 12% 64.7%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    line-height: 1.65;
+  }
+  h1, h2, h3, h4 {
+    @apply font-semibold leading-tight tracking-tight;
+  }
+}
+
+/* Glassmorphism utility */
+@layer utilities {
+  .glass {
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(26, 26, 36, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .glass-card:hover {
+    border-color: rgba(255, 204, 0, 0.15);
+    background: rgba(34, 34, 46, 0.8);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.2), 0 0 60px rgba(255, 204, 0, 0.05);
+  }
+  .glow-yellow-hover:hover {
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.4), 0 0 80px rgba(255, 204, 0, 0.1);
+  }
+  .text-gradient-yellow {
+    background: linear-gradient(135deg, #ffcc00 0%, #fff5cc 50%, #ffcc00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-glow-yellow {
+    text-shadow: 0 0 40px rgba(255, 204, 0, 0.3);
+  }
+  .illustration-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.15));
+  }
+}
+
+/* Animated conic-gradient border for featured card */
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.animated-border {
+  border: 2px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image:
+    linear-gradient(hsl(var(--card)), hsl(var(--card))),
+    conic-gradient(from var(--border-angle), #ffcc00, transparent 30%, transparent 70%, #ffcc00);
+  animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+  to { --border-angle: 360deg; }
+}
+
+/* Dot grid background */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 204, 0, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
