@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lite tier document icon">
+  <!-- Document rect -->
+  <rect x="16" y="8" width="32" height="48" rx="4" stroke="#9a9ab0" stroke-width="1.5" fill="rgba(255,255,255,0.03)"/>
+  <!-- Grid cells: 2 columns × 3 rows -->
+  <rect x="22" y="16" width="6" height="6" rx="1" fill="rgba(255,204,0,0.15)"/>
+  <rect x="32" y="16" width="6" height="6" rx="1" fill="rgba(255,204,0,0.15)"/>
+  <rect x="22" y="26" width="6" height="6" rx="1" fill="rgba(255,204,0,0.15)"/>
+  <rect x="32" y="26" width="6" height="6" rx="1" fill="rgba(255,204,0,0.15)"/>
+  <rect x="22" y="36" width="6" height="6" rx="1" fill="rgba(255,204,0,0.15)"/>
+  <rect x="32" y="36" width="6" height="6" rx="1" fill="rgba(255,204,0,0.15)"/>
+</svg>
