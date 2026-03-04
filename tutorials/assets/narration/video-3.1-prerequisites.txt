@@ -1,0 +1,44 @@
+VIDEO 3.1: PREREQUISITES (PYTHON + DOCKER + GIT)
+Duration: ~2:00
+Type: 80% screen recording
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:05 | AI: "3 Prerequisites" title]
+Three installs. Two minutes.
+
+[0:05-0:25 | SCREEN: Python install -- ZOOM on PATH checkbox]
+Python: download, install. CHECK "Add to PATH." Number one mistake.
+
+[0:25-0:35 | SCREEN: Verify python]
+Verify: python dash-dash-version.
+
+[0:35-0:55 | SCREEN: Docker install + WSL2]
+Docker: download, install. Accept WSL2 if prompted. May require restart.
+
+[0:55-1:10 | SCREEN: Docker Desktop + verify]
+Wait for whale icon. Verify: docker dash-dash-version.
+
+[1:10-1:25 | SCREEN: Git verify]
+Git: usually already installed. Verify: git dash-dash-version. If not, download from git-scm.com.
+
+[1:25-1:40 | AI: Mac brew note]
+Mac users: brew install python at three-eleven, download Docker from docker.com.
+
+[1:40-1:50 | SCREEN: Setup checklist]
+Check all three in the setup guide.
+
+[1:50-2:00 | AI: Transition]
+(no narration)
+
+===== RECORDING NOTES =====
+- Total narration: ~70 words.
+- CRITICAL: Zoom on Python PATH checkbox (same importance as Node.js in 2.1).
+- Docker WSL2 prompt varies by Windows version -- show accepting it.
+- If restart is needed for Docker, do a clean cut and resume after restart.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:05: Zoom + circle on "Add Python to PATH" checkbox
+- 0:35: Annotation: "WSL2 = required on Windows"
+- 0:55: Arrow pointing to whale icon in system tray

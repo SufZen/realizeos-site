@@ -1,0 +1,22 @@
+VIDEO 4.3: ADDING KNOWLEDGE TO THE BRAIN
+Duration: ~1:00
+Type: 80% screen recording
+Priority: P2
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:10 | SCREEN: B-brain folder]
+Brain: knowledge your AI team references.
+
+[0:10-0:30 | SCREEN: Create file, add content]
+Create a markdown file. Clear headers. Specific content.
+
+[0:30-0:50 | SCREEN: Claude Code query using the file]
+Ask about it. The AI references what you just wrote.
+
+[0:50-1:00 | AI: Index tip card]
+Full edition: reindex after adding files.
+
+===== RECORDING NOTES =====
+- Total narration: ~25 words. Let the screen demo speak.
+- Speed up typing in Descript (2x).

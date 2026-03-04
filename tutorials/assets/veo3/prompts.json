@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "filename": "01-logo-reveal.mp4",
+    "used_in": "Video 0.1 - Product Demo Reel (0:00-0:08)",
+    "duration": "8 seconds",
+    "prompt": "Professional dark tech logo reveal animation. Deep navy-black background. Hundreds of tiny gold particles floating in space, slowly converging toward the center. The particles assemble into the text 'RealizeOS' in a clean sans-serif font. Once the text forms, a subtle gold glow pulse radiates outward from the letters. Below the logo, smaller text fades in: 'The AI Operations System You Own'. Cinematic, elegant, minimal. No people, no cartoons. 4K quality.",
+    "style_notes": "Background must match #0e0e18 exactly. Gold particles should feel like data points converging. The glow should be warm gold (#ffcc00), not white. Total duration 8 seconds: 5 seconds particle assembly, 2 seconds glow pulse, 1 second subtitle fade-in."
+  },
+  {
+    "id": 2,
+    "filename": "02-llm-routing-diagram.mp4",
+    "used_in": "Video 0.1 - Product Demo Reel (1:00-1:15)",
+    "duration": "15 seconds",
+    "prompt": "Professional dark tech animation of a data routing diagram. Deep navy-black background. A central gold node labeled 'Request' at the left. Three glowing nodes on the right side: top node in light blue labeled 'Gemini Flash' with subtitle 'Quick Tasks', middle node in warm gold labeled 'Claude Sonnet' with subtitle 'Content', bottom node in deep purple labeled 'Claude Opus' with subtitle 'Strategy'. Animated golden data streams flow from the central node, splitting and routing to each of the three destination nodes. The streams pulse with light as data flows through them. Clean technical diagram aesthetic, no cartoons, no people. Minimal and professional.",
+    "style_notes": "Background #0e0e18. The routing paths should animate sequentially: first to Gemini Flash (fast, thin stream), then Claude Sonnet (medium, steady stream), then Claude Opus (thick, deliberate stream). Each node glows when its stream arrives. Total 15 seconds. The overall feel should be 'intelligent routing' -- data finding the optimal path."
+  },
+  {
+    "id": 3,
+    "filename": "03-fabric-hexagon-assembly.mp4",
+    "used_in": "Video 0.2 - What is FABRIC? (full video, 0:00-0:48)",
+    "duration": "48 seconds",
+    "prompt": "Professional dark tech animation of six golden hexagonal tiles. Deep navy-black background. The hexagons appear one at a time, each containing a single gold letter. First hexagon slides in from left with letter 'F', pauses, then expands briefly to show simplified document icons inside before contracting. Second hexagon 'A' appears next to it, expands to show four small human-like silhouette icons, contracts. Third hexagon 'B' with knowledge/book icons. Fourth hexagon 'R' with connected workflow arrows. Fifth hexagon 'I' with a circular feedback loop. Sixth hexagon 'C' with organized file icons. After all six have appeared and expanded, they smoothly rearrange into a compact honeycomb grid pattern. The letters F-A-B-R-I-C glow gold together as a unit. Clean, geometric, professional tech aesthetic. No cartoons, no people.",
+    "style_notes": "Background #0e0e18. Gold #ffcc00 for all hexagon borders and letters. Each hexagon gets 6-7 seconds: 2 seconds entrance, 3-4 seconds expanded showing icons, 1 second contraction. The expansion should feel like 'opening a drawer' -- the hexagon grows to 2x size to reveal contents, then shrinks back. Final assembly into honeycomb takes 5 seconds. This is the hero animation for the FABRIC concept -- it should feel precise and structured, matching the 'organized system' brand. If Veo 3 cannot handle the full 48 seconds, generate in 3 segments: (a) F+A tiles 0-14s, (b) B+R+I+C tiles 14-38s, (c) assembly 38-48s."
+  }
+]

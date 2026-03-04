@@ -1,0 +1,32 @@
+VIDEO 2.4: FIRST CONVERSATION WITH CLAUDE CODE
+Duration: ~1:30
+Type: 90% screen recording
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:15 | SCREEN: Navigate to vault, open PowerShell]
+Navigate to your vault. Type powershell in the address bar.
+
+[0:15-0:30 | SCREEN: Type `claude`, initialization]
+Type claude. It reads your knowledge base automatically.
+
+[0:30-0:55 | SCREEN: Prompt + output with annotations]
+Watch: short paragraphs, your vocabulary, no banned words. Not generic AI. Your AI.
+
+[0:55-1:15 | SCREEN: Review prompt + scores]
+Ask for a review. Four-dimension score. Below 8? Add more voice rules.
+
+[1:15-1:30 | AI: Celebration card]
+You're running.
+
+===== RECORDING NOTES =====
+- This is the "aha" moment video. The output MUST clearly match the brand voice rules set earlier.
+- Pre-configure your vault with good voice rules before recording so the output is impressive.
+- Total narration: ~45 words. Let the Claude Code output speak for itself.
+- Slow down at 0:30-0:55 to let viewers read the output and see the annotations.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:30-0:55: Circle specific phrases matching voice rules
+- 0:30-0:55: Checkmark annotations next to: "short paragraphs", "brand vocabulary", "no banned words"
+- 0:55: Highlight the Reviewer scores

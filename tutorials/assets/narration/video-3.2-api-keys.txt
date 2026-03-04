@@ -1,0 +1,35 @@
+VIDEO 3.2: GETTING API KEYS
+Duration: ~1:30
+Type: 65% screen recording
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:08 | AI: "2 API Keys" title]
+One required. One recommended.
+
+[0:08-0:30 | SCREEN: Anthropic console -> Create Key]
+Anthropic: Create Key, name it realizeos, copy immediately.
+
+[0:30-0:40 | SCREEN: Billing -> add credit]
+Add five dollars credit. Pay-as-you-go.
+
+[0:40-1:00 | SCREEN: Google AI Studio -> Create Key]
+Google AI: Create API Key, copy. Gemini Flash free tier.
+
+[1:00-1:15 | AI: Security warning]
+Treat like passwords. Never share publicly.
+
+[1:15-1:30 | AI: Transition]
+(no narration)
+
+===== RECORDING NOTES =====
+- Total narration: ~40 words.
+- Be careful not to show any real API keys during recording. Use a test key or blur.
+- The Anthropic console UI changes occasionally -- record with current UI.
+- Emphasize "copy immediately" -- keys are shown only once.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:08: Highlight "Create Key" button
+- 0:08: Text: "Copy now -- you won't see it again"
+- 0:30: Blur any sensitive billing information

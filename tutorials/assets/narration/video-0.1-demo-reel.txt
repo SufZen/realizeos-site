@@ -1,0 +1,36 @@
+VIDEO 0.1: PRODUCT DEMO REEL
+Duration: ~2:00
+Type: Mixed (AI-generated + screen recording)
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:08 | AI: Logo reveal]
+What if your AI tools worked together -- as a team -- in your voice, on your machine?
+
+[0:08-0:25 | SCREEN: Obsidian FABRIC folders]
+Six folders. One structure called FABRIC. Everything your AI team needs.
+
+[0:25-0:45 | SCREEN: Claude Code session]
+Launch Claude Code. Output matches your voice rules. Not generic AI. Your AI.
+
+[0:45-1:00 | SCREEN: Reviewer agent]
+Built-in quality gate. The Reviewer checks everything.
+
+[1:00-1:15 | AI: LLM routing diagram]
+Full edition routes each request to the optimal model automatically.
+
+[1:15-1:35 | SCREEN: Docker deploy + API]
+One command to deploy. REST API, Telegram, Google Workspace.
+
+[1:35-1:50 | AI: Comparison graphic]
+One purchase. Own it forever.
+
+[1:50-2:00 | AI: CTA card]
+Lite seventy-nine dollars. Full two-forty-nine. Start today.
+
+===== RECORDING NOTES =====
+- Tone: Calm, direct, confident. No excitement, no filler.
+- Pace: Slightly slower than conversational. Let the visuals breathe.
+- Record narration for screen segments in one take, then for AI segments separately.
+- Total narration: ~120 words. Aim for natural pacing, not rushed.

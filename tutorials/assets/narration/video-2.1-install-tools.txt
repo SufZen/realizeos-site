@@ -1,0 +1,41 @@
+VIDEO 2.1: INSTALL OBSIDIAN + NODE.JS + CLAUDE CODE
+Duration: ~2:00
+Type: Mostly screen recording (80%)
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:05 | AI: "Install 3 Tools" title]
+Three tools. Two minutes.
+
+[0:05-0:20 | SCREEN: Obsidian install]
+Obsidian: download, install, done.
+
+[0:20-0:45 | SCREEN: Node.js install -- ZOOM on PATH checkbox]
+Node.js: download, install. CHECK "Add to PATH." Most common mistake.
+
+[0:45-1:00 | SCREEN: Verify node]
+Close terminal, reopen. Verify: node dash-dash-version.
+
+[1:00-1:20 | SCREEN: npm install Claude Code]
+Install Claude Code globally. Verify: claude dash-dash-version.
+
+[1:20-1:35 | AI: Mac note card]
+Mac users: brew install node, then the same npm command.
+
+[1:35-1:50 | SCREEN: Setup checklist]
+Check off both items in the setup guide.
+
+[1:50-2:00 | AI: Transition]
+(no narration -- visual transition)
+
+===== RECORDING NOTES =====
+- Tone: Instructional, patient. Assume the user has never used a terminal.
+- CRITICAL MOMENT at 0:20-0:45: Slow down, zoom in on the PATH checkbox. This is where most users fail.
+- Emphasize "close and reopen" terminal -- PATH doesn't update in existing windows.
+- Total narration: ~55 words.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:20: Zoom + circle on "Add Python to PATH" checkbox
+- 0:45: Text annotation: "Close terminal completely, then reopen"
+- 1:00: Highlight the npm install command

@@ -1,0 +1,46 @@
+VIDEO 3.3: CLONE, CONFIGURE, DEPLOY
+Duration: ~2:30
+Type: 95% screen recording
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:15 | SCREEN: git clone + cd]
+Clone and enter the directory.
+
+[0:15-0:35 | SCREEN: .env setup -- ZOOM on format]
+No spaces around equals. No quotes. Most common dot-env mistakes.
+
+[0:35-0:50 | SCREEN: python cli.py init]
+Initialize from a template. Consulting, agency, multi-venture, saas, ecommerce.
+
+[0:50-1:15 | SCREEN: docker compose up -- time-lapse]
+Docker builds on first run. Takes a few minutes.
+
+[1:15-1:30 | SCREEN: "Server running" highlighted]
+Server running. You're live.
+
+[1:30-1:50 | SCREEN: Health check curl]
+Health check: healthy.
+
+[1:50-2:10 | SCREEN: Chat test curl]
+If it references your brand, it works end to end.
+
+[2:10-2:20 | SCREEN: Checklist complete]
+Check everything off.
+
+[2:20-2:30 | AI: Celebration card]
+Your engine is running.
+
+===== RECORDING NOTES =====
+- Total narration: ~60 words.
+- Time-lapse the Docker build at 4x speed (0:50-1:15). Don't make users watch a build.
+- CRITICAL at 0:15-0:35: Show correct .env format. Zoom in. Show NO spaces and NO quotes.
+- The chat test response should clearly reference brand identity to prove it works.
+- Prepare the vault with good brand data before recording so the test output is convincing.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:15: Zoom on .env file, annotations showing "correct" (no spaces, no quotes) vs "wrong" format
+- 0:50: Speed indicator "4x" during Docker build time-lapse
+- 1:15: Highlight "Server running at localhost:8080"
+- 1:50: Highlight response text that matches brand identity

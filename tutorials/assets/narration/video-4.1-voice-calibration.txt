@@ -1,0 +1,25 @@
+VIDEO 4.1: BRAND VOICE CALIBRATION
+Duration: ~1:30
+Type: 55% screen recording
+Priority: P2
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:15 | AI: Voice comparison split card]
+Bad rules produce generic output. Good rules produce your voice.
+
+[0:15-0:35 | SCREEN: Write specific rules in Obsidian]
+Specific. Measurable. Add anti-patterns -- what you NEVER say.
+
+[0:35-0:55 | SCREEN: Claude Code test + annotations]
+Test. Short paragraphs? Check. Brand vocabulary? Check.
+
+[0:55-1:15 | SCREEN: Adjust + retest]
+One rule at a time. Test, adjust, repeat.
+
+[1:15-1:30 | AI: Tip card]
+By day three, it sounds like you.
+
+===== RECORDING NOTES =====
+- Total narration: ~40 words.
+- Show a before/after: generic output with bad rules vs branded output with good rules.

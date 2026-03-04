@@ -1,0 +1,19 @@
+VIDEO 4.2: FABRIC FOLDER TOUR
+Duration: ~1:00
+Type: 60% screen recording
+Priority: P2
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:08 | AI: FABRIC diagram]
+Six folders. Here's what goes where.
+
+[0:08-0:45 | SCREEN: Click each folder in Obsidian]
+Foundations: brand. Agents: team. Brain: knowledge. Routines: workflows. Insights: learning. Creations: output.
+
+[0:45-1:00 | AI: Summary card]
+Add knowledge to Brain. Customize Agents. Build Routines.
+
+===== RECORDING NOTES =====
+- Total narration: ~30 words. Rapid tour -- 6 seconds per folder.
+- Click each folder, briefly show one file inside, move to the next.

@@ -1,0 +1,31 @@
+VIDEO 2.2: DOWNLOAD AND OPEN VAULT IN OBSIDIAN
+Duration: ~1:15
+Type: 90% screen recording
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:15 | SCREEN: Download ZIP]
+Download your package from the setup page.
+
+[0:15-0:30 | SCREEN: Extract to Documents]
+Extract to Documents. Not OneDrive, not iCloud.
+
+[0:30-0:50 | SCREEN: Obsidian "Open folder as vault"]
+Open folder as vault. Select realize_lite. FABRIC folders appear.
+
+[0:50-1:05 | SCREEN: Quick FABRIC tour]
+Foundations, Agents, Brain, Routines, Insights, Creations.
+
+[1:05-1:15 | AI: Transition card]
+(no narration)
+
+===== RECORDING NOTES =====
+- Total narration: ~30 words. Very visual -- let the screen do the talking.
+- CRITICAL: Show the exact "Open folder as vault" button in Obsidian. Non-Obsidian users don't know where this is.
+- WARNING annotation at 0:15: "NOT cloud folders" -- OneDrive/iCloud sync causes conflicts.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:15: Warning text: "Do NOT use OneDrive, Google Drive, or iCloud"
+- 0:30: Circle around "Open folder as vault" option
+- 0:50: Quick labels as each folder is clicked (2 sec each)

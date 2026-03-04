@@ -1,0 +1,44 @@
+VIDEO 2.3: BRAND DISCOVERY WORKSHEET
+Duration: ~2:30
+Type: 95% screen recording
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:10 | SCREEN: Open worksheet]
+Ten questions. Ten minutes. Three files your AI team uses for everything.
+
+[0:10-0:25 | SCREEN: Name/role (speed up typing)]
+Be specific. What you build, who you serve.
+
+[0:25-0:40 | SCREEN: Strengths + gaps]
+Strengths the AI amplifies. Gaps it fills.
+
+[0:40-0:55 | SCREEN: Business, mission, UVP]
+If you can't fit your UVP in one sentence, refine it.
+
+[0:55-1:20 | SCREEN: Voice section]
+Describe your tone like a person. The AVOID list is more powerful than USE.
+
+[1:20-1:40 | SCREEN: Good/bad examples]
+One real paragraph you wrote. One anti-example. Contrast teaches boundaries.
+
+[1:40-2:00 | SCREEN: Export + Copy]
+Three files generated. Copy each one.
+
+[2:00-2:20 | SCREEN: Paste into Obsidian]
+Paste into the matching vault files. Save.
+
+[2:20-2:30 | AI: Transition]
+(no narration)
+
+===== RECORDING NOTES =====
+- Pre-fill some fields before recording to save time. Speed up the typing segments in Descript (2x).
+- Total narration: ~75 words.
+- The Voice section (0:55-1:20) is the most important -- slow down and emphasize the AVOID list point.
+- Show realistic example data, not "John Doe" placeholders.
+
+===== DESCRIPT ANNOTATIONS =====
+- 0:55: Highlight the AVOID vocabulary section
+- 1:20: Text annotation: "This contrast is the most powerful input"
+- 2:00: Arrow showing copy -> paste flow between browser and Obsidian

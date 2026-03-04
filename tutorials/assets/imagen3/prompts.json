@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "filename": "01-cta-pricing.png",
+    "used_in": "Video 0.1 - Product Demo Reel (final frame)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered text layout: large gold text 'Lite $79' on the left, 'Full $249' on the right, with a subtle gold divider between them. Below in smaller white text: 'Start today.' Subtle gold glow effect behind the prices. Bottom has a minimal gold line accent."
+  },
+  {
+    "id": 2,
+    "filename": "02-comparison-graphic.png",
+    "used_in": "Video 0.1 - Product Demo Reel (comparison segment)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Three vertical columns comparison chart. Left column: 'Hire a Team' with '$50,000+/year' in muted gray. Middle column: 'AI Tools' with '$1,200+/year' in muted gray. Right column: 'RealizeOS' with '$249 once' in bright gold with a subtle glow behind it. The right column has a thin gold border making it stand out. Clean lines separating columns."
+  },
+  {
+    "id": 3,
+    "filename": "03-welcome-card.png",
+    "used_in": "Video 1.1 - Welcome & Next Steps (opening)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered layout with a small gold checkmark icon at top. Large white text: 'Welcome to RealizeOS'. Below in gold text: 'Your files are ready.' Subtle gold particle effect in corners. Clean and celebratory but professional."
+  },
+  {
+    "id": 4,
+    "filename": "04-onboarding-timeline.png",
+    "used_in": "Video 1.1 - Welcome & Next Steps (timeline)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Horizontal timeline with three gold circular markers connected by a thin gold line. First marker: 'Day 3' with subtitle 'Voice Tips'. Second marker: 'Day 7' with subtitle 'Advanced Workflows'. Third marker: 'Day 14' with subtitle 'Check-in'. Gold dots glow subtly. White text labels."
+  },
+  {
+    "id": 5,
+    "filename": "05-community-card.png",
+    "used_in": "Video 1.1 - Welcome & Next Steps (community)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Two minimal icon outlines in gold: a paper plane icon (representing Telegram) and a chat bubble icon (representing WhatsApp). Below the icons, white text: 'Join the Community'. Smaller text below: 'Real people. Fast help.' Gold accent line at bottom."
+  },
+  {
+    "id": 6,
+    "filename": "06-mac-terminal-note.png",
+    "used_in": "Video 2.0 - Opening a Terminal (Mac note)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. A compact card with thin gold border. Small gold Apple logo outline at top left. White text: 'Mac Users'. Below in monospace font style: 'Cmd + Space -> type Terminal -> Enter'. Gold accent at bottom. Compact and clear."
+  },
+  {
+    "id": 7,
+    "filename": "07-install-3-tools-title.png",
+    "used_in": "Video 2.1 - Install Obsidian + Node.js + Claude Code (title)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Large centered white text: 'Install 3 Tools'. Below, three small gold checkmark icons in a row with labels underneath: 'Obsidian', 'Node.js', 'Claude Code'. Subtle gold line connecting them. Below in smaller white text: '2 minutes.'"
+  },
+  {
+    "id": 8,
+    "filename": "08-mac-brew-node.png",
+    "used_in": "Video 2.1 - Install Obsidian + Node.js + Claude Code (Mac note)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. A compact card with thin gold border. Small gold Apple logo outline at top left. White text: 'Mac Users'. Below in monospace font: 'brew install node'. Then: 'npm install -g @anthropic-ai/claude-code'. Gold accent line at bottom."
+  },
+  {
+    "id": 9,
+    "filename": "09a-transition-open-vault.png",
+    "used_in": "Video 2.1 transition",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered white text: 'Next' with a small gold right arrow. Below in larger gold text: 'Open Your Vault'. Minimal, clean transition card."
+  },
+  {
+    "id": 10,
+    "filename": "09b-transition-define-brand.png",
+    "used_in": "Video 2.2 transition",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered white text: 'Next' with a small gold right arrow. Below in larger gold text: 'Define Your Brand'. Minimal, clean transition card."
+  },
+  {
+    "id": 11,
+    "filename": "09c-transition-test-it.png",
+    "used_in": "Video 2.3 transition",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered white text: 'Brand defined.' with a gold checkmark. Below in larger gold text: 'Let\u2019s test it.' Minimal, clean transition card."
+  },
+  {
+    "id": 12,
+    "filename": "09d-transition-api-keys.png",
+    "used_in": "Video 3.1 transition",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered white text: 'Next' with a small gold right arrow. Below in larger gold text: 'API Keys'. Minimal, clean transition card."
+  },
+  {
+    "id": 13,
+    "filename": "10-celebration-lite.png",
+    "used_in": "Video 2.4 - First Conversation (celebration)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Large centered gold text: 'RealizeOS Lite is Live'. A large gold checkmark icon above the text with a subtle radiating glow effect. Below in white text: 'Your AI team is ready.' Celebratory but professional. Gold particles in corners."
+  },
+  {
+    "id": 14,
+    "filename": "11-prerequisites-title.png",
+    "used_in": "Video 3.1 - Prerequisites (title)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Large centered white text: '3 Prerequisites'. Below, three gold outlined icons in a row: a snake symbol for Python, a whale for Docker, a branch symbol for Git. Labels below each icon. Smaller text: '2 minutes.'"
+  },
+  {
+    "id": 15,
+    "filename": "12-mac-brew-full.png",
+    "used_in": "Video 3.1 - Prerequisites (Mac note)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. A compact card with thin gold border. Small gold Apple logo outline at top left. White text: 'Mac Users'. Below in monospace font: 'brew install python@3.11'. Then: 'Download Docker from docker.com'. Then: 'xcode-select --install (includes Git)'. Gold accent line at bottom."
+  },
+  {
+    "id": 16,
+    "filename": "13-api-keys-title.png",
+    "used_in": "Video 3.2 - Getting API Keys (title)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Large centered white text: '2 API Keys'. Two minimal gold key icons below. Smaller white text: '2 minutes.' One key labeled 'Anthropic (required)' in white, other labeled 'Google AI (recommended)' in lighter gray."
+  },
+  {
+    "id": 17,
+    "filename": "14-security-warning.png",
+    "used_in": "Video 3.2 - Getting API Keys (warning)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00 mixed with warning red #ff4444. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. A warning card with thin red-gold gradient border. Gold lock icon at top center. Bold white text: 'Never commit API keys to git'. Below in smaller text: 'Never share publicly. Treat like passwords.' Serious but clean tone."
+  },
+  {
+    "id": 18,
+    "filename": "15-celebration-full.png",
+    "used_in": "Video 3.3 - Clone, Configure, Deploy (celebration)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Large centered gold text: 'RealizeOS Full is Live'. A large gold checkmark icon above with radiating glow. Below in white text: 'Your engine is running.' More prominent celebration than the Lite version -- slightly larger glow, more gold particles."
+  },
+  {
+    "id": 19,
+    "filename": "16-voice-comparison.png",
+    "used_in": "Video 4.1 - Brand Voice Calibration (comparison)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Split screen comparison. LEFT side has a red-tinted header 'Bad Rules' with examples in gray text: 'Be professional', 'Use a friendly tone', 'Be helpful'. RIGHT side has a gold-tinted header 'Good Rules' with examples in white text: 'Direct and analytical tone', 'Sentences: 8-15 words', 'NEVER use synergy or leverage', 'Start with insight, not warm-up'. Gold vertical divider in center."
+  },
+  {
+    "id": 20,
+    "filename": "17-iteration-tip.png",
+    "used_in": "Video 4.1 - Brand Voice Calibration (tip card)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered tip card with thin gold border. Small gold lightbulb icon at top. White text: '3-5 test prompts per day'. Below: 'Adjust one rule at a time'. Below in larger gold text: 'By Day 3, it sounds like you.' Clean and motivating."
+  },
+  {
+    "id": 21,
+    "filename": "18-fabric-summary.png",
+    "used_in": "Video 4.2 - FABRIC Folder Tour (summary)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Six items in a vertical list with gold letter prefixes. 'F - Foundations: Brand identity and voice'. 'A - Agents: Your AI team'. 'B - Brain: Domain knowledge'. 'R - Routines: Workflows'. 'I - Insights: Learning log'. 'C - Creations: Deliverables'. Gold letters, white descriptions. Below in gold: 'Add to B. Customize A. Build in R.'"
+  },
+  {
+    "id": 22,
+    "filename": "19-index-tip.png",
+    "used_in": "Video 4.3 - Adding Knowledge (tip)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Compact card with thin gold border. Gold terminal icon at left. White label: 'Full Edition Only'. Below in monospace font: 'python cli.py index'. Smaller gray text below: 'Run after adding new knowledge files to rebuild the search index.'"
+  },
+  {
+    "id": 23,
+    "filename": "20-workflow-diagram.png",
+    "used_in": "Video 4.4 - YAML Workflows (diagram)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Horizontal pipeline diagram. Four connected gold-outlined boxes with arrows between them: 'Trigger' -> 'Writer Agent' -> 'Reviewer Agent' -> 'Output'. Arrows are gold with subtle glow. Below in white: 'YAML-defined workflows that chain agents together.' Clean technical diagram style."
+  },
+  {
+    "id": 24,
+    "filename": "21-google-tools-grid.png",
+    "used_in": "Video 4.5 - Google Workspace (grid)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Grid of 13 small gold-outlined icons arranged in rows, each with a label below: Gmail, Calendar, Drive, Sheets, Docs, Slides, Forms, Tasks, Contacts, Keep, Chat, Meet, Admin. Title at top in white: '13 Google Tools'. Gold border around the grid."
+  },
+  {
+    "id": 25,
+    "filename": "22-google-summary.png",
+    "used_in": "Video 4.5 - Google Workspace (summary)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered layout. Large white text: 'Connected'. Five gold-outlined icons in a row: mail, calendar, folder, spreadsheet, document. Labels: 'Gmail, Calendar, Drive, Sheets, Docs'. Below in smaller gold text: '+ 8 more tools available to your agents.' Clean and accomplished."
+  },
+  {
+    "id": 26,
+    "filename": "23-fabric-logo-endcard.png",
+    "used_in": "Video 0.2 - What is FABRIC? (end card)",
+    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background color #0e0e18. Gold accent color #ffcc00. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Centered RealizeOS text logo in gold with subtle glow. Below in white: 'The AI Operations System You Own'. Below that, a thin gold line and smaller text: 'realizeos.ai'. Elegant end card. Gold particles scattered subtly."
+  }
+]

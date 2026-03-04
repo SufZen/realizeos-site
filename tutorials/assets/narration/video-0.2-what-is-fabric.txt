@@ -1,0 +1,30 @@
+VIDEO 0.2: WHAT IS FABRIC?
+Duration: ~1:00
+Type: 100% AI-generated (Veo 3 + Imagen 3)
+Priority: P2
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:08 | AI: Hexagons appear]
+FABRIC organizes everything your AI team needs.
+
+[0:08-0:18 | AI: F and A tiles expand]
+Foundations define your voice. Agents are your AI team.
+
+[0:18-0:28 | AI: B and R tiles expand]
+Brain holds domain knowledge. Routines chain agents together.
+
+[0:28-0:38 | AI: I and C tiles expand]
+Insights learn from usage. Creations are your deliverables.
+
+[0:38-0:48 | AI: Tiles reassemble]
+Six folders. One intelligence.
+
+[0:48-1:00 | AI: Logo end card]
+That is FABRIC.
+
+===== RECORDING NOTES =====
+- Tone: Explanatory but concise. Like a confident product architect.
+- Each sentence is 6-8 words. No filler. Let the animation tell the story.
+- Total narration: ~45 words. Lots of visual breathing room.
+- Record in one take. Clean pauses between segments.

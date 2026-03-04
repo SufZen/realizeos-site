@@ -1,0 +1,26 @@
+VIDEO 1.1: WELCOME AND NEXT STEPS
+Duration: ~1:00
+Type: Mixed (AI graphics + screen recording)
+Priority: P1
+
+===== NARRATION SCRIPT =====
+
+[0:00-0:10 | AI: Welcome card]
+Welcome to RealizeOS. Here's what to do.
+
+[0:10-0:25 | SCREEN: Download + Interactive Setup]
+Download your package. Then open Interactive Setup.
+
+[0:25-0:40 | SCREEN: Brand Worksheet]
+Start with the Brand Worksheet -- ten minutes, three files.
+
+[0:40-0:50 | AI: Timeline graphic]
+Onboarding emails arrive over the next two weeks.
+
+[0:50-1:00 | AI: Community card]
+Join the community. Real people, fast help.
+
+===== RECORDING NOTES =====
+- Tone: Warm but efficient. Like a friend who's done this before.
+- Total narration: ~40 words.
+- Consider opening with 3-5 seconds of face-on-camera for a personal touch, then cut to screen/graphics.
