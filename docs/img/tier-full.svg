@@ -1,0 +1,21 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Full tier server engine icon">
+  <style>
+    .tf-pulse { animation: tfPulse 3s ease-in-out infinite; transform-origin: 32px 32px; }
+    @keyframes tfPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.65; } }
+  </style>
+  <!-- Server/engine shape -->
+  <rect class="tf-pulse" x="14" y="16" width="36" height="32" rx="4" fill="rgba(255,204,0,0.08)" stroke="#ffcc00" stroke-width="1.5"/>
+  <!-- 3 horizontal slot lines -->
+  <line x1="20" y1="26" x2="44" y2="26" stroke="rgba(255,204,0,0.2)" stroke-width="1"/>
+  <line x1="20" y1="32" x2="44" y2="32" stroke="rgba(255,204,0,0.2)" stroke-width="1"/>
+  <line x1="20" y1="38" x2="44" y2="38" stroke="rgba(255,204,0,0.2)" stroke-width="1"/>
+  <!-- Ray right-up -->
+  <path d="M50 24l8-8" stroke="#ffcc00" stroke-width="1" stroke-linecap="round"/>
+  <path d="M56 16l2 0 0 2" stroke="#ffcc00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Ray right -->
+  <path d="M50 32l10 0" stroke="#ffcc00" stroke-width="1" stroke-linecap="round"/>
+  <path d="M58 30l2 2-2 2" stroke="#ffcc00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Ray right-down -->
+  <path d="M50 40l8 8" stroke="#ffcc00" stroke-width="1" stroke-linecap="round"/>
+  <path d="M58 46l0 2-2 0" stroke="#ffcc00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

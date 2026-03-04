@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Discovery Worksheet — RealizeOS</title>
+  <meta name="description" content="10 questions. 10 minutes. One file that makes your AI team actually sound like you. Define your brand for RealizeOS.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* --- Worksheet Layout --- */
+    .worksheet {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: calc(64px + 2rem) 1.5rem 4rem;
+    }
+
+    .worksheet__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .worksheet__back:hover { color: var(--color-accent); }
+
+    /* --- Hero --- */
+    .worksheet__hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .worksheet__hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #ffcc00 0%, #fff5cc 50%, #ffcc00 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .worksheet__hero p {
+      color: var(--color-text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+    .worksheet__meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .worksheet__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--color-accent-subtle);
+      color: var(--color-accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* --- Question Progress (secondary — stepper handles the main progress) --- */
+    .progress {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .progress__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .progress__text {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      min-width: 120px;
+    }
+    .progress__text strong {
+      color: var(--color-accent);
+    }
+    .progress__bar {
+      flex: 1;
+      height: 4px;
+      background: var(--color-surface);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress__fill {
+      height: 100%;
+      background: var(--color-accent);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* --- Section Headers --- */
+    .ws-section {
+      margin-bottom: 2rem;
+    }
+    .ws-section__header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .ws-section__tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+    .ws-section__tag--foundation {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+    }
+    .ws-section__tag--audience {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+    }
+    .ws-section__tag--voice {
+      background: rgba(251, 146, 60, 0.15);
+      color: #fb923c;
+    }
+    .ws-section__title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .ws-section__desc {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* --- Question Cards --- */
+    .ws-question {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .ws-question:focus-within {
+      border-color: var(--color-accent);
+    }
+    .ws-question__header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .ws-question__number {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      min-width: 1.5rem;
+    }
+    .ws-question__label {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+    .ws-question__hint {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+      padding-left: 2.25rem;
+      line-height: 1.5;
+    }
+    .ws-question__input {
+      width: 100%;
+      min-height: 80px;
+      padding: 0.75rem 1rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .ws-question__input:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.1);
+    }
+    .ws-question__input::placeholder {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+    }
+    .ws-question__maps {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      padding-left: 2.25rem;
+      opacity: 0.7;
+    }
+
+    /* --- Export Section --- */
+    .ws-export {
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .ws-export h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #ffcc00 0%, #fff5cc 50%, #ffcc00 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .ws-export p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .ws-export__buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .ws-export__toast {
+      margin-top: 1rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .ws-export__toast.visible {
+      opacity: 1;
+    }
+
+    /* --- Next Steps --- */
+    .ws-next {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .ws-next p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .ws-next a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .ws-next a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Export File Cards --- */
+    .ws-export__files {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .ws-export__file {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .ws-export__file-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .ws-export__file-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+    .ws-export__file-desc {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+    }
+    .ws-export__file-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .worksheet { padding-left: 1rem; padding-right: 1rem; }
+      .ws-question { padding: 1.25rem; }
+      .ws-export { padding: 1.5rem; }
+      .ws-export__file { flex-direction: column; align-items: flex-start; }
+      .ws-export__file-buttons .btn { width: 100%; max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="./" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="./#fabric">FABRIC</a>
+        <a href="./#pricing">Pricing</a>
+        <a href="./#faq">FAQ</a>
+      </div>
+      <a href="./#pricing" class="btn btn--primary btn--sm nav__cta">Get Started</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <article class="worksheet">
+    <a href="./" class="worksheet__back">&larr; Back to home</a>
+
+    <!-- Stepper Progress Bar -->
+    <div data-stepper-progress></div>
+
+    <!-- ===== STEP 1: WELCOME ===== -->
+    <div data-step="1" data-step-title="Welcome">
+      <div class="worksheet__hero">
+        <h1>Stop Feeding AI Generic Prompts.<br>Feed It Your Business.</h1>
+        <p>18 questions. 15 minutes. Three files that make your AI team actually sound like you.</p>
+        <div class="worksheet__meta">
+          <span class="worksheet__badge">~15 minutes</span>
+          <span class="worksheet__badge">Auto-saves as you type</span>
+          <span class="worksheet__badge">Maps to FABRIC structure</span>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:1.5rem;">
+        <p style="color:var(--color-text-secondary); margin-bottom:1rem;">Answer 18 questions across 3 sections. Your answers auto-save as you type.</p>
+      </div>
+    </div>
+
+    <!-- ===== STEP 2: WHO YOU ARE ===== -->
+    <div data-step="2" data-step-title="Who You Are">
+
+    <!-- Secondary progress counter -->
+    <div class="progress" id="progress">
+      <div class="progress__inner">
+        <span class="progress__text"><strong id="progress-count">0</strong> of 18 answered</span>
+        <div class="progress__bar">
+          <div class="progress__fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ws-section">
+      <div class="ws-section__header">
+        <span class="ws-section__tag ws-section__tag--foundation">Part 1</span>
+        <h2 class="ws-section__title">Who You Are</h2>
+      </div>
+      <p class="ws-section__desc">This is about <strong>you</strong> — the person behind the business. Your AI team uses this to understand your perspective and how you like to work.</p>
+
+      <div class="ws-question" data-q="1">
+        <div class="ws-question__header">
+          <span class="ws-question__number">01</span>
+          <span class="ws-question__label">What's your name, and what's your role?</span>
+        </div>
+        <p class="ws-question__hint">E.g., "Sara Cohen, Founder & CEO of Brandly" — the AI will address you and reference your role.</p>
+        <textarea class="ws-question__input" data-key="q1" placeholder="Example: Asaf Levy, Founder at Realization Group. I build AI-powered business systems."></textarea>
+        <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; About You</p>
+      </div>
+
+      <div class="ws-question" data-q="2">
+        <div class="ws-question__header">
+          <span class="ws-question__number">02</span>
+          <span class="ws-question__label">What are your top 3 strengths?</span>
+        </div>
+        <p class="ws-question__hint">What you're best at — the AI should amplify these, not compensate for them.</p>
+        <textarea class="ws-question__input" data-key="q2" placeholder="Example: 1) Systems thinking — I see patterns others miss. 2) Closing deals and building trust fast. 3) Turning complex ideas into simple frameworks."></textarea>
+        <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; Your Strengths</p>
+      </div>
+
+      <div class="ws-question" data-q="3">
+        <div class="ws-question__header">
+          <span class="ws-question__number">03</span>
+          <span class="ws-question__label">Where do you need the most help?</span>
+        </div>
+        <p class="ws-question__hint">Your gaps — where the AI should focus to give you the highest leverage.</p>
+        <textarea class="ws-question__input" data-key="q3" placeholder="Example: Content creation takes me too long. I struggle with detailed financial analysis. I need help staying organized across multiple projects."></textarea>
+        <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; Your Gaps</p>
+      </div>
+
+      <div class="ws-question" data-q="4">
+        <div class="ws-question__header">
+          <span class="ws-question__number">04</span>
+          <span class="ws-question__label">How do you like to receive information?</span>
+        </div>
+        <p class="ws-question__hint">Length, format, and decision style preferences. The AI will adapt to this.</p>
+        <textarea class="ws-question__input" data-key="q4" placeholder="Example: Brief and to the point. Bullet points, not prose. Give me a recommendation, not a list of options. Never start with a long preamble."></textarea>
+        <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; Communication Preferences</p>
+      </div>
+    </div>
+    </div><!-- /step 2 -->
+
+    <!-- ===== STEP 3: YOUR BUSINESS ===== -->
+    <div data-step="3" data-step-title="Your Business">
+    <div class="ws-section">
+      <div class="ws-section__header">
+        <span class="ws-section__tag ws-section__tag--audience">Part 2</span>
+        <h2 class="ws-section__title">Your Business</h2>
+      </div>
+      <p class="ws-section__desc">This is about <strong>your business</strong> — how it should be positioned and what it stands for. Your AI team will represent this to the world.</p>
+
+      <div class="ws-question" data-q="5">
+        <div class="ws-question__header">
+          <span class="ws-question__number">05</span>
+          <span class="ws-question__label">What's your business name and tagline?</span>
+        </div>
+        <p class="ws-question__hint">The tagline should capture what you do in one memorable sentence.</p>
+        <textarea class="ws-question__input" data-key="q5" placeholder="Example: Realization Group — We help ambitious operators build AI-powered business systems."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Business Name &amp; Tagline</p>
+      </div>
+
+      <div class="ws-question" data-q="6">
+        <div class="ws-question__header">
+          <span class="ws-question__number">06</span>
+          <span class="ws-question__label">What's your mission? Why does this business exist?</span>
+        </div>
+        <p class="ws-question__hint">The problem you solve and the outcome you create. Be specific — not "we make the world better."</p>
+        <textarea class="ws-question__input" data-key="q6" placeholder="Example: Most businesses waste hours on repetitive work that AI can handle. We build the systems that free them to focus on what only humans can do."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Mission</p>
+      </div>
+
+      <div class="ws-question" data-q="7">
+        <div class="ws-question__header">
+          <span class="ws-question__number">07</span>
+          <span class="ws-question__label">Who is your ideal customer? Describe one specific person.</span>
+        </div>
+        <p class="ws-question__hint">Role, industry, company size, pain points. Picture a real human, not a segment.</p>
+        <textarea class="ws-question__input" data-key="q7" placeholder="Example: A 38-year-old agency founder running a team of 5-15. Tired of being the bottleneck on content quality. Has tried ChatGPT but gets generic results."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Target Audience</p>
+      </div>
+
+      <div class="ws-question" data-q="8">
+        <div class="ws-question__header">
+          <span class="ws-question__number">08</span>
+          <span class="ws-question__label">What are your 3-5 core values?</span>
+        </div>
+        <p class="ws-question__hint">Values that guide every decision. Include what each one looks like in practice.</p>
+        <textarea class="ws-question__input" data-key="q8" placeholder="Example: 1) Ownership — we never outsource accountability. 2) Clarity — simple beats impressive. 3) Results over process — ship, then refine."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Core Values</p>
+      </div>
+
+      <div class="ws-question" data-q="9">
+        <div class="ws-question__header">
+          <span class="ws-question__number">09</span>
+          <span class="ws-question__label">What makes you different? Finish this sentence:</span>
+        </div>
+        <p class="ws-question__hint">"We are the only [category] that [unique benefit] for [audience] by [method]."</p>
+        <textarea class="ws-question__input" data-key="q9" placeholder="Example: We are the only AI systems consultancy that ships a working multi-agent system in 7 days for operators managing 3+ ventures, by using a pre-built FABRIC framework."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Unique Value Proposition</p>
+      </div>
+
+      <div class="ws-question" data-q="10">
+        <div class="ws-question__header">
+          <span class="ws-question__number">10</span>
+          <span class="ws-question__label">Where do you sit in the market?</span>
+        </div>
+        <p class="ws-question__hint">We ARE: [what you stand for]. We are NOT: [what you're not]. Be honest and specific.</p>
+        <textarea class="ws-question__input" data-key="q10" placeholder="Example: We ARE the premium, done-for-you option for serious operators. We are NOT the cheapest option, a generic AI chatbot agency, or a subscription SaaS tool."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Competitive Positioning</p>
+      </div>
+
+      <div class="ws-question" data-q="11">
+        <div class="ws-question__header">
+          <span class="ws-question__number">11</span>
+          <span class="ws-question__label">What are your main products or services?</span>
+        </div>
+        <p class="ws-question__hint">List 2-4 key offerings with a one-line description each.</p>
+        <textarea class="ws-question__input" data-key="q11" placeholder="Example: 1) RealizeOS Lite — $79 AI operating system for solo operators. 2) RealizeOS Full — $249 self-hosted, multi-LLM version. 3) Setup Assistance — hands-on onboarding."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Key Offerings</p>
+      </div>
+    </div>
+    </div><!-- /step 3 -->
+
+    <!-- ===== STEP 4: YOUR VOICE ===== -->
+    <div data-step="4" data-step-title="Your Voice">
+    <div class="ws-section">
+      <div class="ws-section__header">
+        <span class="ws-section__tag ws-section__tag--voice">Part 3</span>
+        <h2 class="ws-section__title">Your Voice</h2>
+      </div>
+      <p class="ws-section__desc">The difference between AI that sounds like you and AI that sounds like everyone else. This is the most impactful section.</p>
+
+      <div class="ws-question" data-q="12">
+        <div class="ws-question__header">
+          <span class="ws-question__number">12</span>
+          <span class="ws-question__label">If your brand was a person, how would you describe them?</span>
+        </div>
+        <p class="ws-question__hint">Primary tone, secondary tone, and a "sounds like" analogy. E.g., "A trusted advisor who explains complex things simply."</p>
+        <textarea class="ws-question__input" data-key="q12" placeholder="Example: Primary: Direct. Secondary: Analytical. Sounds like a senior engineer who's also a great communicator — no fluff, but never cold."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Tone of Voice</p>
+      </div>
+
+      <div class="ws-question" data-q="13">
+        <div class="ws-question__header">
+          <span class="ws-question__number">13</span>
+          <span class="ws-question__label">Words you use. Words you avoid.</span>
+        </div>
+        <p class="ws-question__hint">5+ words/phrases that feel like your brand, and 3+ words that feel off-brand.</p>
+        <textarea class="ws-question__input" data-key="q13" placeholder="Example: USE: build, ship, system, real, clear, leverage (as a verb). AVOID: synergy, disrupt, game-changing, revolutionary, innovative (overused buzzwords)."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Vocabulary</p>
+      </div>
+
+      <div class="ws-question" data-q="14">
+        <div class="ws-question__header">
+          <span class="ws-question__number">14</span>
+          <span class="ws-question__label">What are your content formatting preferences?</span>
+        </div>
+        <p class="ws-question__hint">Sentence length, paragraph length, use of lists, emoji usage, capitalization style.</p>
+        <textarea class="ws-question__input" data-key="q14" placeholder="Example: Short sentences. 2-3 sentence paragraphs. Lists used frequently. No emojis. Sentence case for headings. Active voice always."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Formatting Rules</p>
+      </div>
+
+      <div class="ws-question" data-q="15">
+        <div class="ws-question__header">
+          <span class="ws-question__number">15</span>
+          <span class="ws-question__label">Your do's and don'ts</span>
+        </div>
+        <p class="ws-question__hint">3-4 rules you always follow, and 3-4 things you never do.</p>
+        <textarea class="ws-question__input" data-key="q15" placeholder="Example: ALWAYS: Lead with the benefit. Use active voice. Include a clear CTA. Back claims with numbers. NEVER: Passive voice. Jargon without explanation. Exclamation marks. Apologetic hedging."></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Do's and Don'ts</p>
+      </div>
+
+      <div class="ws-question" data-q="16">
+        <div class="ws-question__header">
+          <span class="ws-question__number">16</span>
+          <span class="ws-question__label">Write a paragraph that sounds exactly like you</span>
+        </div>
+        <p class="ws-question__hint">A real example from your content, or write one now. This is the single most powerful input for voice calibration.</p>
+        <textarea class="ws-question__input" data-key="q16" placeholder="Example: &quot;Most AI setups are a mess of disconnected chatbots. Your AI should work as a team — a Writer, a Reviewer, an Analyst — all knowing your business. That's what RealizeOS builds.&quot;"></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Voice Examples &gt; Good Example</p>
+      </div>
+
+      <div class="ws-question" data-q="17">
+        <div class="ws-question__header">
+          <span class="ws-question__number">17</span>
+          <span class="ws-question__label">Write a paragraph that sounds nothing like you</span>
+        </div>
+        <p class="ws-question__hint">The counter-example. Useful for the AI to understand what to avoid.</p>
+        <textarea class="ws-question__input" data-key="q17" placeholder="Example: &quot;We leverage cutting-edge, AI-powered solutions to disrupt your industry's paradigm and unlock synergistic growth opportunities. Our game-changing platform drives transformational outcomes.&quot;"></textarea>
+        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Voice Examples &gt; Bad Example</p>
+      </div>
+
+      <div class="ws-question" data-q="18">
+        <div class="ws-question__header">
+          <span class="ws-question__number">18</span>
+          <span class="ws-question__label">What 3 workflows do you repeat every week?</span>
+        </div>
+        <p class="ws-question__hint">Content writing? Client proposals? Market research? These become your first AI skills.</p>
+        <textarea class="ws-question__input" data-key="q18" placeholder="Example: 1) Writing 3-4 LinkedIn posts per week. 2) Drafting client proposals from meeting notes. 3) Weekly competitor research digest."></textarea>
+        <p class="ws-question__maps">maps to &rarr; R-routines/ &gt; Skill Definitions</p>
+      </div>
+    </div>
+    </div><!-- /step 4 -->
+
+    <!-- ===== STEP 5: EXPORT ===== -->
+    <div data-step="5" data-step-title="Export">
+
+    <div style="text-align:center; margin-bottom:1.75rem;">
+      <img src="img/tier-full.svg" alt="" width="80" height="80" style="filter:drop-shadow(0 0 16px rgba(255,204,0,0.3));">
+      <p style="color:var(--color-accent); font-weight:600; margin:0.75rem 0 0; font-size:1.05rem;">All done — your brand is ready for AI.</p>
+    </div>
+
+    <div class="ws-export">
+      <h2>Your Brand, Packaged for AI</h2>
+      <p>Three files. Copy each one into the matching file in your RealizeOS vault. Your AI team will know exactly who you are and how your business sounds.</p>
+
+      <div class="ws-export__files">
+        <div class="ws-export__file">
+          <div class="ws-export__file-header">
+            <span class="ws-export__file-label">shared/identity.md</span>
+            <span class="ws-export__file-desc">Who you are as a person</span>
+          </div>
+          <div class="ws-export__file-buttons">
+            <button class="btn btn--primary btn--sm" data-file="identity">Copy</button>
+            <button class="btn btn--outline btn--sm" data-file="identity" data-action="download">Download</button>
+          </div>
+        </div>
+        <div class="ws-export__file">
+          <div class="ws-export__file-header">
+            <span class="ws-export__file-label">F-foundations/brand-identity.md</span>
+            <span class="ws-export__file-desc">Your business positioning</span>
+          </div>
+          <div class="ws-export__file-buttons">
+            <button class="btn btn--primary btn--sm" data-file="brand-identity">Copy</button>
+            <button class="btn btn--outline btn--sm" data-file="brand-identity" data-action="download">Download</button>
+          </div>
+        </div>
+        <div class="ws-export__file">
+          <div class="ws-export__file-header">
+            <span class="ws-export__file-label">F-foundations/brand-voice.md</span>
+            <span class="ws-export__file-desc">How your content should sound</span>
+          </div>
+          <div class="ws-export__file-buttons">
+            <button class="btn btn--primary btn--sm" data-file="brand-voice">Copy</button>
+            <button class="btn btn--outline btn--sm" data-file="brand-voice" data-action="download">Download</button>
+          </div>
+        </div>
+      </div>
+      <p class="ws-export__toast" id="export-toast">Copied!</p>
+    </div>
+
+    <!-- ===== Next Steps ===== -->
+    <div class="ws-next">
+      <p>Now paste this into your Obsidian vault. After purchasing, you'll get a setup guide showing exactly where to put it.</p>
+      <p>Don't have RealizeOS yet? <a href="./#pricing">Choose your edition</a>.</p>
+    </div>
+
+    </div><!-- /step 5 -->
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+          <p>Part of the <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a> ecosystem.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
+          <a href="mailto:realizeos@realization.co.il">Support</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 RealizeOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/stepper.js"></script>
+  <script>
+  (function() {
+    const STORAGE_KEY = 'realizeos_worksheet_v2';
+    const TOTAL_QUESTIONS = 18;
+    const textareas = document.querySelectorAll('.ws-question__input');
+    const progressCount = document.getElementById('progress-count');
+    const progressFill = document.getElementById('progress-fill');
+    const toast = document.getElementById('export-toast');
+
+    // --- Auto-save & Restore from localStorage ---
+    function saveAll() {
+      const data = {};
+      textareas.forEach(ta => { data[ta.dataset.key] = ta.value; });
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+    }
+
+    function restoreAll() {
+      try {
+        const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (!data) return;
+        textareas.forEach(ta => {
+          if (data[ta.dataset.key]) ta.value = data[ta.dataset.key];
+        });
+      } catch(e) {}
+    }
+
+    // --- Progress tracking ---
+    function updateProgress() {
+      let answered = 0;
+      textareas.forEach(ta => { if (ta.value.trim().length > 0) answered++; });
+      progressCount.textContent = answered;
+      progressFill.style.width = (answered / TOTAL_QUESTIONS * 100) + '%';
+    }
+
+    // --- Auto-resize textareas ---
+    function autoResize(ta) {
+      ta.style.height = 'auto';
+      ta.style.height = Math.max(80, ta.scrollHeight) + 'px';
+    }
+
+    // --- Event listeners ---
+    textareas.forEach(ta => {
+      ta.addEventListener('input', () => {
+        updateProgress();
+        saveAll();
+        autoResize(ta);
+      });
+    });
+
+    // --- Helpers ---
+    const val = key => {
+      const ta = document.querySelector(`[data-key="${key}"]`);
+      return ta && ta.value.trim() ? ta.value.trim() : '[Not filled in]';
+    };
+
+    // --- Generate: shared/identity.md ---
+    function generateIdentity() {
+      return `# Personal Identity
+
+This file defines **who you are** — the person behind the business. The AI team uses this to understand your perspective, values, and communication style.
+
+## About You
+${val('q1')}
+
+## Your Strengths
+${val('q2')}
+
+## Your Gaps
+${val('q3')}
+
+## Communication Preferences
+${val('q4')}
+`;
+    }
+
+    // --- Generate: F-foundations/brand-identity.md ---
+    function generateBrandIdentity() {
+      return `# Brand Identity
+
+This file defines **your business** — how it should look and sound to the world. This guides how all AI agents represent your business.
+
+## Business Name & Tagline
+${val('q5')}
+
+## Mission
+${val('q6')}
+
+## Target Audience
+${val('q7')}
+
+## Core Values
+${val('q8')}
+
+## Unique Value Proposition
+${val('q9')}
+
+## Competitive Positioning
+${val('q10')}
+
+## Key Offerings
+${val('q11')}
+`;
+    }
+
+    // --- Generate: F-foundations/brand-voice.md ---
+    function generateBrandVoice() {
+      return `# Brand Voice Guide
+
+This document defines how all content should sound. Every AI agent MUST follow these rules.
+
+## Tone of Voice
+${val('q12')}
+
+## Vocabulary
+${val('q13')}
+
+## Formatting Rules
+${val('q14')}
+
+## Do's and Don'ts
+${val('q15')}
+
+## Voice Examples
+
+### Good Example
+> ${val('q16')}
+
+### Bad Example
+> ${val('q17')}
+
+## Weekly Workflows to Automate
+${val('q18')}
+`;
+    }
+
+    const generators = {
+      'identity':       { fn: generateIdentity,      filename: 'identity.md' },
+      'brand-identity': { fn: generateBrandIdentity,  filename: 'brand-identity.md' },
+      'brand-voice':    { fn: generateBrandVoice,     filename: 'brand-voice.md' },
+    };
+
+    // --- Copy to clipboard ---
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch(e) {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+    }
+
+    // --- Download as .md ---
+    function downloadText(text, filename) {
+      const blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('visible');
+      setTimeout(() => toast.classList.remove('visible'), 2500);
+    }
+
+    // --- Wire up export buttons ---
+    document.querySelectorAll('[data-file]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const fileKey = btn.dataset.file;
+        const action = btn.dataset.action || 'copy';
+        const gen = generators[fileKey];
+        if (!gen) return;
+        const md = gen.fn();
+        if (action === 'download') {
+          downloadText(md, gen.filename);
+          showToast('Downloaded ' + gen.filename);
+        } else {
+          await copyText(md);
+          showToast('Copied ' + gen.filename + ' to clipboard!');
+        }
+      });
+    });
+
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    // --- Init ---
+    restoreAll();
+    updateProgress();
+    textareas.forEach(autoResize);
+
+    // --- Stepper initialization ---
+    var wizard = new Stepper({
+      container: '.worksheet',
+      steps: '[data-step]',
+      progress: '[data-stepper-progress]',
+      storageKey: 'ws_worksheet_step',
+      onStepChange: function(index, el) {
+        // Auto-resize textareas in the now-visible step
+        var tas = el.querySelectorAll('.ws-question__input');
+        for (var i = 0; i < tas.length; i++) {
+          autoResize(tas[i]);
+        }
+        // Update progress counter (it may be inside a hidden step)
+        updateProgress();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
