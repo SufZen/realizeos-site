@@ -21,7 +21,8 @@
     "id": 4,
     "filename": "04-onboarding-timeline.png",
     "used_in": "Video 1.1 - Welcome & Next Steps (timeline)",
-    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background. Gold amber accent color. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Do not render any color codes or hex values as text. Horizontal timeline with three gold circular markers connected by a thin gold line. First marker: 'Day 3' with subtitle 'Voice Tips'. Second marker: 'Day 7' with subtitle 'Advanced Workflows'. Third marker: 'Day 14' with subtitle 'Check-in'. Gold dots glow subtly. White text labels."
+    "method": "descript-overlay",
+    "prompt": "SKIPPED — create as Descript text overlay. See tutorials/assets/descript-overlays.md for specs."
   },
   {
     "id": 5,
@@ -81,7 +82,8 @@
     "id": 14,
     "filename": "11-prerequisites-title.png",
     "used_in": "Video 3.1 - Prerequisites (title)",
-    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background. Gold amber accent color. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Do not render any color codes or hex values as text. Large centered white text: '3 Prerequisites' (spell exactly: P-r-e-r-e-q-u-i-s-i-t-e-s). Below, three gold outlined icons in a row: a snake symbol for Python, a whale for Docker, a branch symbol for Git. Labels below each icon: 'Python', 'Docker', 'Git'. Smaller text: '2 minutes.'"
+    "method": "descript-overlay",
+    "prompt": "SKIPPED — create as Descript text overlay. See tutorials/assets/descript-overlays.md for specs."
   },
   {
     "id": 15,
@@ -123,7 +125,8 @@
     "id": 21,
     "filename": "18-fabric-summary.png",
     "used_in": "Video 4.2 - FABRIC Folder Tour (summary)",
-    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background. Gold amber accent color. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Do not render any color codes or hex values as text. Six items in a vertical list with gold letter prefixes. 'F - Foundations: Brand identity and voice'. 'A - Agents: Your AI team'. 'B - Brain: Domain knowledge'. 'R - Routines: Workflows'. 'I - Insights: Learning log'. 'C - Creations: Deliverables' (spell exactly: D-e-l-i-v-e-r-a-b-l-e-s). Gold letters, white descriptions. Below in gold: 'Add to B. Customize A. Build in R.'"
+    "method": "descript-overlay",
+    "prompt": "SKIPPED — create as Descript text overlay. See tutorials/assets/descript-overlays.md for specs."
   },
   {
     "id": 22,
@@ -141,7 +144,8 @@
     "id": 24,
     "filename": "21-google-tools-grid.png",
     "used_in": "Video 4.5 - Google Workspace (grid)",
-    "prompt": "Professional dark tech graphic for a software product video. Deep navy-black background. Gold amber accent color. Clean minimalist design. No cartoons, no stock photos, no people. Modern tech aesthetic. Text uses clean sans-serif font. Do not render any color codes or hex values as text. Grid of 13 small gold-outlined icons arranged in rows, each with a unique label below. Row 1: Gmail, Calendar, Drive, Sheets, Docs. Row 2: Slides, Forms, Tasks, Contacts, Keep. Row 3: Chat, Meet, Admin. Important: each tool must appear exactly once, no duplicates. Title at top in white: '13 Google Tools'. Gold border around the grid."
+    "method": "descript-overlay",
+    "prompt": "SKIPPED — create as Descript text overlay. See tutorials/assets/descript-overlays.md for specs."
   },
   {
     "id": 25,
