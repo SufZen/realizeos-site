@@ -1,8 +1,8 @@
 """
 Batch generate all image assets for RealizeOS tutorial videos.
 
-Tries Imagen 3 first, falls back to Gemini 2.0 Flash image generation
-(which works on free AI Studio API keys).
+Uses Gemini native image generation (Nano Banana).
+Falls through model options until one works with your API key.
 
 Usage:
   1. Set your GOOGLE_AI_API_KEY environment variable
@@ -17,7 +17,6 @@ import os
 import json
 import time
 import sys
-import base64
 from pathlib import Path
 
 try:
@@ -48,69 +47,109 @@ with open(PROMPTS_FILE, "r") as f:
 print(f"Loaded {len(prompts)} prompts")
 print(f"Output directory: {OUTPUT_DIR}")
 
-# --- Detect which model to use ---
-IMAGEN_MODEL = "imagen-3.0-generate-002"
-GEMINI_MODEL = "gemini-2.0-flash-exp-image-generation"
-use_gemini_fallback = False
+# --- Detect which model works ---
+# Try models in order of preference
+MODELS_TO_TRY = [
+    "gemini-2.5-flash-image",           # Nano Banana (fast, current)
+    "gemini-3.1-flash-image-preview",   # Newer flash preview
+    "gemini-3-pro-image-preview",       # Pro quality preview
+    "gemini-2.0-flash-exp",             # Older experimental
+]
 
-print(f"\nTesting Imagen 3 ({IMAGEN_MODEL})...")
-try:
-    test = client.models.generate_images(
-        model=IMAGEN_MODEL,
-        prompt="A simple gold circle on a dark background",
-        config=types.GenerateImagesConfig(number_of_images=1),
-    )
-    print(f"  Imagen 3 works! Using {IMAGEN_MODEL}")
-except Exception as e:
-    print(f"  Imagen 3 not available: {e}")
-    print(f"  Falling back to Gemini Flash image generation ({GEMINI_MODEL})")
-    use_gemini_fallback = True
+working_model = None
+test_prompt = "A simple gold circle on a solid dark navy background, minimal, clean"
 
-print("=" * 60)
+for model_name in MODELS_TO_TRY:
+    print(f"\nTesting {model_name}...")
+    try:
+        response = client.models.generate_content(
+            model=model_name,
+            contents=test_prompt,
+            config=types.GenerateContentConfig(
+                response_modalities=["IMAGE", "TEXT"],
+            ),
+        )
+        # Check if we got an image back
+        if response.candidates and response.candidates[0].content.parts:
+            for part in response.candidates[0].content.parts:
+                if hasattr(part, "inline_data") and part.inline_data and part.inline_data.mime_type.startswith("image/"):
+                    working_model = model_name
+                    print(f"  Works! Using {model_name}")
+                    break
+        if working_model:
+            break
+        else:
+            print(f"  Response received but no image data")
+    except Exception as e:
+        print(f"  Not available: {e}")
+
+if not working_model:
+    # Also try Imagen standalone API
+    print(f"\nTrying Imagen 4 standalone API...")
+    try:
+        response = client.models.generate_images(
+            model="imagen-4.0-generate-001",
+            prompt=test_prompt,
+            config=types.GenerateImagesConfig(number_of_images=1),
+        )
+        if response.generated_images:
+            working_model = "imagen-4.0-generate-001"
+            print(f"  Works! Using Imagen 4")
+    except Exception as e:
+        print(f"  Not available: {e}")
+
+if not working_model:
+    print("\n!!! No image generation model available with your API key.")
+    print("Go to https://aistudio.google.com and verify you can generate images there.")
+    print("You may need to enable billing or use a different API key.")
+    sys.exit(1)
+
+USE_IMAGEN_API = working_model.startswith("imagen-")
+print(f"\n{'=' * 60}")
+print(f"Using model: {working_model}")
+print(f"{'=' * 60}\n")
 
 
-def generate_with_imagen(prompt_text, output_path):
-    """Generate image using Imagen 3 API."""
-    response = client.models.generate_images(
-        model=IMAGEN_MODEL,
-        prompt=prompt_text,
-        config=types.GenerateImagesConfig(
-            number_of_images=1,
-            aspect_ratio="16:9",
-            safety_filter_level="BLOCK_ONLY_HIGH",
-        ),
-    )
-    if response.generated_images:
-        img_bytes = response.generated_images[0].image.image_bytes
-        with open(output_path, "wb") as f:
-            f.write(img_bytes)
-        return True
-    return False
-
-
-def generate_with_gemini(prompt_text, output_path):
-    """Generate image using Gemini 2.0 Flash image generation."""
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt_text,
-        config=types.GenerateContentConfig(
-            response_modalities=["IMAGE", "TEXT"],
-        ),
-    )
-
-    # Extract image from response parts
-    if response.candidates and response.candidates[0].content.parts:
-        for part in response.candidates[0].content.parts:
-            if part.inline_data and part.inline_data.mime_type.startswith("image/"):
-                img_bytes = part.inline_data.data
-                # Determine extension from mime type
-                ext = part.inline_data.mime_type.split("/")[-1]
-                # Update output path extension if needed
-                final_path = output_path.with_suffix(f".{ext}")
-                with open(final_path, "wb") as f:
-                    f.write(img_bytes)
-                return True
-    return False
+def generate_image(prompt_text, output_path):
+    """Generate an image using the detected working model."""
+    if USE_IMAGEN_API:
+        response = client.models.generate_images(
+            model=working_model,
+            prompt=prompt_text,
+            config=types.GenerateImagesConfig(
+                number_of_images=1,
+                aspect_ratio="16:9",
+            ),
+        )
+        if response.generated_images:
+            img_bytes = response.generated_images[0].image.image_bytes
+            with open(output_path, "wb") as f:
+                f.write(img_bytes)
+            return True
+        return False
+    else:
+        # Gemini generate_content approach
+        # Add aspect ratio hint to prompt
+        enhanced_prompt = f"{prompt_text} Aspect ratio 16:9 widescreen, 1920x1080 resolution."
+        response = client.models.generate_content(
+            model=working_model,
+            contents=enhanced_prompt,
+            config=types.GenerateContentConfig(
+                response_modalities=["IMAGE", "TEXT"],
+            ),
+        )
+        if response.candidates and response.candidates[0].content.parts:
+            for part in response.candidates[0].content.parts:
+                if hasattr(part, "inline_data") and part.inline_data and part.inline_data.mime_type.startswith("image/"):
+                    img_bytes = part.inline_data.data
+                    ext = part.inline_data.mime_type.split("/")[-1]
+                    if ext == "jpeg":
+                        ext = "jpg"
+                    final_path = output_path.with_suffix(f".{ext}")
+                    with open(final_path, "wb") as f:
+                        f.write(img_bytes)
+                    return True
+        return False
 
 
 # --- Generate all assets ---
@@ -118,12 +157,9 @@ for i, asset in enumerate(prompts):
     filename = asset["filename"]
     output_path = OUTPUT_DIR / filename
 
-    # Skip if already generated (check with and without extension variants)
-    if output_path.exists():
-        print(f"[{i+1}/{len(prompts)}] SKIP (exists): {filename}")
-        continue
-    # Also check for .jpeg/.webp variants from Gemini
-    if any((OUTPUT_DIR / f"{output_path.stem}.{ext}").exists() for ext in ["png", "jpeg", "jpg", "webp"]):
+    # Skip if already generated (check multiple extensions)
+    stem = output_path.stem
+    if any((OUTPUT_DIR / f"{stem}.{ext}").exists() for ext in ["png", "jpg", "jpeg", "webp"]):
         print(f"[{i+1}/{len(prompts)}] SKIP (exists): {filename}")
         continue
 
@@ -131,10 +167,7 @@ for i, asset in enumerate(prompts):
     print(f"  Used in: {asset['used_in']}")
 
     try:
-        if use_gemini_fallback:
-            success = generate_with_gemini(asset["prompt"], output_path)
-        else:
-            success = generate_with_imagen(asset["prompt"], output_path)
+        success = generate_image(asset["prompt"], output_path)
 
         if success:
             print(f"  Saved!")
@@ -150,8 +183,7 @@ for i, asset in enumerate(prompts):
 
     # Rate limiting
     if i < len(prompts) - 1:
-        wait = 5 if use_gemini_fallback else 3
-        time.sleep(wait)
+        time.sleep(5)
 
 print("=" * 60)
 print("Done! Check output directory for generated assets.")
