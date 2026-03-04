@@ -4,88 +4,152 @@
     "filename": "01-logo-reveal.mp4",
     "used_in": "Video 0.1 - Product Demo Reel (0:00-0:08)",
     "duration": "8 seconds",
-    "segments": 1,
-    "prompt": "Professional dark tech logo reveal animation. Deep navy-black background. Hundreds of tiny gold particles floating in space, slowly converging toward the center. The particles assemble into the text 'RealizeOS' in a clean sans-serif font. Once the text forms, a subtle gold glow pulse radiates outward from the letters. Below the logo, smaller text fades in: 'The AI Operations System You Own'. Cinematic, elegant, minimal. No people, no cartoons. 4K quality.",
-    "style_notes": "Background must match #0e0e18 exactly. Gold particles should feel like data points converging. The glow should be warm gold (#ffcc00), not white. Total duration 8 seconds: 5 seconds particle assembly, 2 seconds glow pulse, 1 second subtitle fade-in."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style"],
+      "start_frame": null,
+      "end_frame": null
+    },
+    "prompt": "Cinematic dark tech logo reveal animation. Deep navy-black background, hex color #0e0e18. Hundreds of tiny golden luminous particles drift slowly through empty space. The particles begin accelerating toward the center of frame, converging and assembling into the word 'RealizeOS' rendered in a clean modern sans-serif typeface. The text is gold, hex color #ffcc00. Once fully formed, a warm golden light pulse radiates outward from the letters like a shockwave. Then smaller subtitle text fades in below: 'The AI Operations System You Own' in muted white. Static camera, no camera movement. Cinematic, elegant, minimal motion graphics. Absolutely no people, no cartoons, no live action. Pure particle animation on dark background. 4K quality.",
+    "style_notes": "Use 'Brand Style' ingredient for color/mood reference. Timing: 0-5s particle convergence, 5-6.5s glow pulse, 6.5-8s subtitle fade. The particles should feel like data points finding their place — not random sparkles."
   },
   {
     "id": "2a",
     "filename": "02a-routing-layout.mp4",
     "used_in": "Video 0.1 - Product Demo Reel (1:00-1:08)",
     "duration": "8 seconds",
-    "segment_of": "02-llm-routing-diagram",
-    "segment": "1 of 2",
-    "prompt": "Professional dark tech animation. Deep navy-black background. A golden glowing node labeled 'Request' fades in on the left side of the screen. Then three destination nodes materialize on the right side, appearing one by one from top to bottom: a light blue node labeled 'Gemini Flash', a warm gold node labeled 'Claude Sonnet', and a deep purple node labeled 'Claude Opus'. Thin connecting lines draw themselves from the central Request node to each of the three destination nodes. Clean minimal technical diagram aesthetic. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. This segment establishes the diagram layout. The Request node appears first (0-2s), then the three destination nodes fade in sequentially (2-6s), then connecting lines draw in (6-8s). Each node should have a subtle glow matching its color."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Node Diagram"],
+      "start_frame": null,
+      "end_frame": "save → use as start frame for 02b"
+    },
+    "prompt": "Professional dark tech data visualization animation. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. A single glowing golden circular node fades into existence on the left third of the screen with a label 'Request' in small gold sans-serif text beneath it. After a pause, three destination nodes materialize on the right third of the screen, appearing one by one from top to bottom: first a light blue glowing node labeled 'Gemini Flash', then a warm gold glowing node labeled 'Claude Sonnet', then a deep purple glowing node labeled 'Claude Opus'. Each node has a subtle pulsing glow matching its color. Finally, thin luminous connecting lines draw themselves smoothly from the Request node outward to each of the three destination nodes. Clean minimal technical diagram aesthetic. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure motion graphics. 4K quality.",
+    "style_notes": "Use 'Node Diagram' ingredient for style reference. Timing: Request node 0-2s, three destination nodes appear sequentially 2-6s (1.3s each), lines draw 6-8s. Save final frame as asset for clip 2b. Colors: blue #4fc3f7, gold #ffcc00, purple #7c4dff."
   },
   {
     "id": "2b",
     "filename": "02b-routing-dataflow.mp4",
     "used_in": "Video 0.1 - Product Demo Reel (1:08-1:15)",
     "duration": "8 seconds",
-    "segment_of": "02-llm-routing-diagram",
-    "segment": "2 of 2",
-    "prompt": "Professional dark tech animation. Deep navy-black background. A data routing diagram is already visible: a gold 'Request' node on the left connected by lines to three nodes on the right — light blue 'Gemini Flash' at top, warm gold 'Claude Sonnet' in middle, deep purple 'Claude Opus' at bottom. Animated golden data particles begin streaming from the Request node. A fast thin stream races to Gemini Flash and the node pulses blue. Then a steady medium stream flows to Claude Sonnet and the node pulses gold. Finally a thick deliberate stream flows to Claude Opus and the node pulses purple. The streams continue flowing simultaneously. Clean technical diagram, no cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. The diagram is already laid out from segment 1. This segment is pure animation — data flowing through the paths. Timing: Gemini Flash stream 0-3s, Claude Sonnet stream 2-5s, Claude Opus stream 4-7s, all flowing together 7-8s. The feel is 'intelligent routing' — data finding the optimal path."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Node Diagram"],
+      "start_frame": "use saved frame from 02a",
+      "end_frame": null
+    },
+    "prompt": "Professional dark tech data visualization animation, continuation of a previous scene. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. A data routing diagram is already fully visible: a golden circular node labeled 'Request' on the left, connected by thin luminous lines to three nodes on the right — a light blue node labeled 'Gemini Flash' at top, a warm gold node labeled 'Claude Sonnet' in the middle, a deep purple node labeled 'Claude Opus' at the bottom. Now animated: tiny bright golden data particles begin streaming from the Request node along the connection lines. A fast thin stream of particles races along the top line to Gemini Flash — the blue node pulses brighter. Then a steady medium-speed stream flows along the middle line to Claude Sonnet — the gold node pulses brighter. Then a thick slow deliberate stream flows along the bottom line to Claude Opus — the purple node pulses brighter. All three particle streams continue flowing simultaneously, creating a living data flow visualization. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure motion graphics. 4K quality.",
+    "style_notes": "Use saved frame from 02a as Start Frame for seamless continuity. Timing: Gemini stream starts 0s, Sonnet stream starts 2s, Opus stream starts 4s, all three flowing together 6-8s. The visual metaphor is 'intelligent routing' — different tasks finding optimal paths. Stream thickness implies cost/capability: thin=fast/cheap, thick=slow/powerful."
   },
   {
     "id": "3a",
     "filename": "03a-fabric-F.mp4",
     "used_in": "Video 0.2 - What is FABRIC? (0:00-0:08)",
     "duration": "8 seconds",
-    "segment_of": "03-fabric-hexagon-assembly",
-    "segment": "1 of 7",
-    "prompt": "Professional dark tech animation. Deep navy-black background. A single golden hexagonal tile slides in smoothly from the left side of the screen. Inside the hexagon is the gold letter 'F'. The hexagon pauses at center, then expands to twice its size revealing simplified golden document page icons arranged inside. After a moment, the hexagon contracts back to its original size with just the letter 'F' visible. Clean geometric minimal aesthetic. Gold outlines and accents on dark navy-black background. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. Gold #ffcc00 for hexagon border and letter. Timing: slide in 0-2s, pause 2-3s, expand to show icons 3-5.5s, contract 5.5-7s, settle 7-8s. The expansion should feel like 'opening a drawer'. F = Files."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Gold Hexagon"],
+      "start_frame": null,
+      "end_frame": "save → use as start frame for 03b"
+    },
+    "prompt": "Professional dark tech geometric animation. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. A single golden hexagonal tile with a thin gold border, hex #ffcc00, slides smoothly in from the left edge of the screen toward the center-left area. Inside the hexagon is the bold gold letter 'F'. The hexagon pauses, then smoothly scales up to double its size, revealing inside it several small golden simplified document page icons arranged neatly. After two seconds the hexagon smoothly contracts back to its original compact size, showing just the gold letter 'F'. The hexagon settles in its final position on the left side of center. Subtle golden glow around the hexagon border. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure geometric motion graphics. 4K quality.",
+    "style_notes": "Use 'Gold Hexagon' ingredient for hexagon style reference. Timing: slide in 0-2s, pause 2-3s, expand to reveal icons 3-5.5s, contract 5.5-7s, settle with glow 7-8s. F = Files. Save final frame as asset for 03b. Position the hexagon at roughly 25% from left, vertically centered — leaving room for 5 more hexagons to the right."
   },
   {
     "id": "3b",
     "filename": "03b-fabric-A.mp4",
     "used_in": "Video 0.2 - What is FABRIC? (0:08-0:16)",
     "duration": "8 seconds",
-    "segment_of": "03-fabric-hexagon-assembly",
-    "segment": "2 of 7",
-    "prompt": "Professional dark tech animation. Deep navy-black background. One golden hexagonal tile with letter 'F' is already visible on the left. A second golden hexagonal tile slides in from the right and positions itself next to the first. Inside this new hexagon is the gold letter 'A'. The hexagon expands to twice its size revealing four small golden human silhouette icons arranged in a grid inside. After a moment, the hexagon contracts back to original size showing just the letter 'A'. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. Gold #ffcc00. The 'F' hexagon sits still on the left. 'A' hexagon enters 0-2s, pauses 2-3s, expands with people icons 3-5.5s, contracts 5.5-7s, settles 7-8s. A = Agents."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Gold Hexagon"],
+      "start_frame": "use saved frame from 03a",
+      "end_frame": "save → use as start frame for 03c"
+    },
+    "prompt": "Professional dark tech geometric animation, continuation of a previous scene. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. One golden hexagonal tile with a thin gold border containing the letter 'F' is already visible on the left side. A second identical golden hexagonal tile slides in smoothly from the right edge and positions itself directly next to the first hexagon. Inside this new hexagon is the bold gold letter 'A'. The new hexagon pauses, then smoothly scales up to double its size, revealing inside it four small golden human silhouette icons arranged in a two-by-two grid. After two seconds the hexagon contracts back to its original compact size, showing just the gold letter 'A'. Both hexagons now sit side by side with matching golden glow. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure geometric motion graphics. 4K quality.",
+    "style_notes": "Use saved frame from 03a as Start Frame. Use 'Gold Hexagon' ingredient. Timing mirrors 03a: enter 0-2s, pause 2-3s, expand 3-5.5s, contract 5.5-7s, settle 7-8s. A = Agents. Save final frame for 03c."
   },
   {
     "id": "3c",
     "filename": "03c-fabric-B.mp4",
     "used_in": "Video 0.2 - What is FABRIC? (0:16-0:24)",
     "duration": "8 seconds",
-    "segment_of": "03-fabric-hexagon-assembly",
-    "segment": "3 of 7",
-    "prompt": "Professional dark tech animation. Deep navy-black background. Two golden hexagonal tiles with letters 'F' and 'A' are already visible. A third golden hexagonal tile slides in and positions itself next to them. Inside is the gold letter 'B'. The hexagon expands to twice its size revealing golden book and knowledge icons arranged inside. After a moment, it contracts back to original size showing just the letter 'B'. Three hexagons now sit in a row. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. Gold #ffcc00. F and A hexagons visible and still. B enters 0-2s, pauses 2-3s, expands with book icons 3-5.5s, contracts 5.5-7s, settles 7-8s. B = Brains (knowledge base)."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Gold Hexagon"],
+      "start_frame": "use saved frame from 03b",
+      "end_frame": "save → use as start frame for 03d"
+    },
+    "prompt": "Professional dark tech geometric animation, continuation of a previous scene. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. Two golden hexagonal tiles with thin gold borders are already visible side by side, containing the letters 'F' and 'A'. A third identical golden hexagonal tile slides in smoothly and positions itself next to them in the row. Inside is the bold gold letter 'B'. The new hexagon pauses, then smoothly scales up to double its size, revealing inside it small golden book and open-page knowledge icons arranged neatly. After two seconds the hexagon contracts back to its original compact size, showing just the gold letter 'B'. Three hexagons now sit in a row with matching golden glow. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure geometric motion graphics. 4K quality.",
+    "style_notes": "Use saved frame from 03b as Start Frame. Timing mirrors previous clips. B = Brains (knowledge base). Save final frame for 03d."
   },
   {
     "id": "3d",
     "filename": "03d-fabric-R.mp4",
     "used_in": "Video 0.2 - What is FABRIC? (0:24-0:32)",
     "duration": "8 seconds",
-    "segment_of": "03-fabric-hexagon-assembly",
-    "segment": "4 of 7",
-    "prompt": "Professional dark tech animation. Deep navy-black background. Three golden hexagonal tiles with letters 'F', 'A', and 'B' are already visible in a row. A fourth golden hexagonal tile slides in and positions itself next to them. Inside is the gold letter 'R'. The hexagon expands to twice its size revealing golden connected workflow arrows pointing in a sequence inside. After a moment, it contracts back showing just the letter 'R'. Four hexagons now sit in a row. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. Gold #ffcc00. F, A, B hexagons visible and still. R enters 0-2s, pauses 2-3s, expands with workflow arrows 3-5.5s, contracts 5.5-7s, settles 7-8s. R = Routines (workflows)."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Gold Hexagon"],
+      "start_frame": "use saved frame from 03c",
+      "end_frame": "save → use as start frame for 03e"
+    },
+    "prompt": "Professional dark tech geometric animation, continuation of a previous scene. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. Three golden hexagonal tiles with thin gold borders are already visible in a row, containing the letters 'F', 'A', and 'B'. A fourth identical golden hexagonal tile slides in smoothly and positions itself next to them. Inside is the bold gold letter 'R'. The new hexagon pauses, then smoothly scales up to double its size, revealing inside it small golden arrow icons forming a sequential workflow chain pointing left to right. After two seconds the hexagon contracts back to its original compact size, showing just the gold letter 'R'. Four hexagons now sit in a row with matching golden glow. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure geometric motion graphics. 4K quality.",
+    "style_notes": "Use saved frame from 03c as Start Frame. R = Routines (workflows). Save final frame for 03e."
   },
   {
     "id": "3e",
     "filename": "03e-fabric-IC.mp4",
     "used_in": "Video 0.2 - What is FABRIC? (0:32-0:40)",
     "duration": "8 seconds",
-    "segment_of": "03-fabric-hexagon-assembly",
-    "segment": "5 of 7",
-    "prompt": "Professional dark tech animation. Deep navy-black background. Four golden hexagonal tiles with letters 'F', 'A', 'B', 'R' are already visible in a row. A fifth golden hexagonal tile with the letter 'I' slides in, briefly expands to show a golden circular feedback loop icon, then contracts. Immediately after, a sixth hexagonal tile with the letter 'C' slides in, briefly expands to show golden organized file cabinet icons, then contracts. All six hexagons now form a complete row spelling F-A-B-R-I-C. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. Gold #ffcc00. This segment covers the last two letters faster since the pattern is established. I enters and expands 0-3.5s (I = Interfaces), C enters and expands 3.5-7s (C = Configs), all six visible by 7-8s."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Gold Hexagon"],
+      "start_frame": "use saved frame from 03d",
+      "end_frame": "save → use as start frame for 03f"
+    },
+    "prompt": "Professional dark tech geometric animation, continuation of a previous scene. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. Four golden hexagonal tiles with thin gold borders are already visible in a row, containing the letters 'F', 'A', 'B', 'R'. A fifth golden hexagonal tile slides in quickly and joins the row — inside is the bold gold letter 'I'. It briefly scales up to show a golden circular feedback loop icon, then contracts back. Immediately after, a sixth golden hexagonal tile slides in and joins — inside is the bold gold letter 'C'. It briefly scales up to show golden organized file cabinet icons, then contracts back. All six hexagons now form a complete horizontal row spelling F-A-B-R-I-C with matching golden glow on each. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure geometric motion graphics. 4K quality.",
+    "style_notes": "Use saved frame from 03d as Start Frame. I = Interfaces, C = Configs. These two are faster since the pattern is established. I enters 0-3.5s, C enters 3.5-7s, both settled by 8s. Save final frame for 03f."
   },
   {
     "id": "3f",
     "filename": "03f-fabric-assembly.mp4",
     "used_in": "Video 0.2 - What is FABRIC? (0:40-0:48)",
     "duration": "8 seconds",
-    "segment_of": "03-fabric-hexagon-assembly",
-    "segment": "6 of 7",
-    "prompt": "Professional dark tech animation. Deep navy-black background. Six golden hexagonal tiles in a horizontal row, each containing one letter: F, A, B, R, I, C. The tiles begin to smoothly rearrange, floating and rotating into a compact honeycomb grid pattern — two rows of three hexagons. Once assembled into the honeycomb, all six letters pulse with a warm golden glow simultaneously. A subtle gold light radiates outward from the honeycomb formation. The assembled FABRIC logo holds steady and glows. Clean geometric professional tech aesthetic. Gold on dark background. No cartoons, no people. 4K quality.",
-    "style_notes": "Background #0e0e18. Gold #ffcc00. Timing: row visible 0-1s, tiles begin moving 1-3s, honeycomb formed 3-5s, golden glow pulse 5-7s, hold 7-8s. This is the payoff moment — the six components forming one unified system. Should feel satisfying and precise."
+    "flow_settings": {
+      "model": "Veo 3.1",
+      "quality": "Highest",
+      "aspect_ratio": "16:9",
+      "variations": 2,
+      "ingredients": ["Brand Style", "Gold Hexagon"],
+      "start_frame": "use saved frame from 03e",
+      "end_frame": null
+    },
+    "prompt": "Professional dark tech geometric animation, continuation of a previous scene. Deep navy-black background, hex #0e0e18. Static camera, no camera movement. Six golden hexagonal tiles with thin gold borders are arranged in a horizontal row, each containing one bold gold letter: F, A, B, R, I, C. The tiles begin to float upward and rearrange themselves, smoothly rotating and gliding into a compact honeycomb grid formation — two rows of three hexagons tightly packed together. Once the honeycomb shape is fully assembled, all six hexagon borders pulse with an intense warm golden glow simultaneously. A radiant golden light emanates outward from the honeycomb formation like a halo. The assembled FABRIC honeycomb logo holds steady and glows warmly. Deep navy-black background throughout. Absolutely no people, no cartoons, no live action. Pure geometric motion graphics. 4K quality.",
+    "style_notes": "Use saved frame from 03e as Start Frame. This is the payoff — six components unifying into one system. Timing: row visible 0-1s, tiles begin rearranging 1-3s, honeycomb formed 3-5s, golden glow pulse 5-7s, hold glowing 7-8s. Should feel satisfying and precise, like puzzle pieces clicking into place."
   }
 ]

@@ -1,39 +1,40 @@
-# Veo 3 Video Clip Generation Guide
+# Veo 3 / Google Flow Video Clip Generation
 
-## How to Use These Prompts
+## Quick Start
 
-### Option A: Google AI Studio (Manual)
-1. Go to aistudio.google.com
-2. Select Veo 3 model
-3. Paste each prompt
-4. Download the generated clip
-5. Import into Descript for assembly
-
-### Option B: Gemini API
-```python
-import google.generativeai as genai
-
-genai.configure(api_key="YOUR_GOOGLE_AI_API_KEY")
-
-# Note: Veo 3 API access may require specific model version
-model = genai.GenerativeModel("veo-3")
-
-# Generate video
-response = model.generate_content(prompt)
-# Save video bytes to file
-```
+1. **[FLOW-PROJECT-SETUP.md](./FLOW-PROJECT-SETUP.md)** — Set up your Google Flow project, configure settings, and create Ingredients for visual consistency
+2. **[GENERATE-MANUALLY.md](./GENERATE-MANUALLY.md)** — Step-by-step guide to generate each clip with prompts and frame chaining
+3. **[prompts.json](./prompts.json)** — Machine-readable prompts with Flow settings metadata
 
 ## Clips Overview
 
 | # | Clip | Duration | Used In |
 |---|------|----------|---------|
 | 1 | Logo Reveal | 8 sec | Demo Reel (0.1) opening |
-| 2 | LLM Routing Diagram | 15 sec | Demo Reel (0.1) mid |
-| 3 | FABRIC Hexagon Assembly | 48 sec | What is FABRIC? (0.2) |
+| 2a–2b | LLM Routing Diagram | 16 sec (2 clips) | Demo Reel (0.1) mid |
+| 3a–3f | FABRIC Hexagon Assembly | 48 sec (6 clips) | What is FABRIC? (0.2) |
+
+## Visual Language
+
+All clips share a consistent visual identity:
+
+- **Background:** Deep navy-black `#0e0e18`
+- **Accent color:** Warm gold `#ffcc00`
+- **Style:** Clean geometric motion graphics, no people, no cartoons
+- **Camera:** Static (no camera movement) for all diagram/assembly clips
+
+## Workflow
+
+**Recommended:** Google Flow with Veo 3.1 (Highest Quality)
+- Use **Ingredients** for style consistency across clips
+- Use **Frames-to-Video** (save last frame → use as Start Frame) for seamless transitions
+- Use **Scene Builder** to assemble multi-clip sequences
+
+**Alternative:** Generate in AI Studio → assemble in Descript
 
 ## Important Notes
 
-- Clip 3 (FABRIC) is the longest and most complex. It may need to be generated in 2-3 segments and assembled in Descript.
-- All clips use the same visual language: dark background (#0e0e18), gold accents (#ffcc00), clean geometric shapes.
-- No people, no cartoons, no stock footage. Pure motion graphics.
-- After generation, add narration in Descript (see narration scripts in ../narration/).
+- All clips are 8 seconds, 16:9, 1080p+
+- Generate 2 variations per prompt — pick the best result
+- Text labels may render imperfectly — plan to overlay correct text in your editor
+- Save generated clips to `output/` directory
