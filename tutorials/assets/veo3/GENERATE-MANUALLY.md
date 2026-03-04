@@ -2,93 +2,107 @@
 
 Go to **https://aistudio.google.com** → select **Veo 3** → paste each prompt below.
 
-Save outputs to `tutorials/assets/veo3/output/` with the exact filenames listed.
+All clips are **8 seconds, 16:9, 1080p+**. Save outputs to `tutorials/assets/veo3/output/`.
 
 ---
 
-## Clip 1: Logo Reveal
+## Clip 1: Logo Reveal (1 clip)
 
-- **File:** `01-logo-reveal.mp4`
-- **Duration:** 8 seconds
-- **Used in:** Video 0.1 — Product Demo Reel (0:00–0:08)
-- **Settings:** 16:9, 1080p+
-
-### Prompt (copy this):
+**File:** `01-logo-reveal.mp4` | **Used in:** Video 0.1 (0:00–0:08)
 
 ```
 Professional dark tech logo reveal animation. Deep navy-black background. Hundreds of tiny gold particles floating in space, slowly converging toward the center. The particles assemble into the text 'RealizeOS' in a clean sans-serif font. Once the text forms, a subtle gold glow pulse radiates outward from the letters. Below the logo, smaller text fades in: 'The AI Operations System You Own'. Cinematic, elegant, minimal. No people, no cartoons. 4K quality.
 ```
 
-### Quality check:
-- [ ] Background is very dark navy/black
-- [ ] Particles are gold, not white
-- [ ] Text reads "RealizeOS" (not garbled)
-- [ ] Subtitle text appears below
-- [ ] No people, no cartoons
+---
+
+## Clip 2: LLM Routing Diagram (2 clips → stitch in Descript)
+
+### 2a — Diagram Layout
+
+**File:** `02a-routing-layout.mp4` | **Used in:** Video 0.1 (1:00–1:08)
+
+```
+Professional dark tech animation. Deep navy-black background. A golden glowing node labeled 'Request' fades in on the left side of the screen. Then three destination nodes materialize on the right side, appearing one by one from top to bottom: a light blue node labeled 'Gemini Flash', a warm gold node labeled 'Claude Sonnet', and a deep purple node labeled 'Claude Opus'. Thin connecting lines draw themselves from the central Request node to each of the three destination nodes. Clean minimal technical diagram aesthetic. No cartoons, no people. 4K quality.
+```
+
+### 2b — Data Flow Animation
+
+**File:** `02b-routing-dataflow.mp4` | **Used in:** Video 0.1 (1:08–1:15)
+
+```
+Professional dark tech animation. Deep navy-black background. A data routing diagram is already visible: a gold 'Request' node on the left connected by lines to three nodes on the right — light blue 'Gemini Flash' at top, warm gold 'Claude Sonnet' in middle, deep purple 'Claude Opus' at bottom. Animated golden data particles begin streaming from the Request node. A fast thin stream races to Gemini Flash and the node pulses blue. Then a steady medium stream flows to Claude Sonnet and the node pulses gold. Finally a thick deliberate stream flows to Claude Opus and the node pulses purple. The streams continue flowing simultaneously. Clean technical diagram, no cartoons, no people. 4K quality.
+```
 
 ---
 
-## Clip 2: LLM Routing Diagram
+## Clip 3: FABRIC Hexagon Assembly (6 clips → stitch in Descript)
 
-- **File:** `02-llm-routing-diagram.mp4`
-- **Duration:** 8 seconds (will loop/extend in Descript to fill 15 sec)
-- **Used in:** Video 0.1 — Product Demo Reel (1:00–1:15)
-- **Settings:** 16:9, 1080p+
+### 3a — Letter F (Files)
 
-### Prompt (copy this):
+**File:** `03a-fabric-F.mp4` | **Used in:** Video 0.2 (0:00–0:08)
 
 ```
-Professional dark tech animation of a data routing diagram. Deep navy-black background. A central gold node labeled 'Request' at the left. Three glowing nodes on the right side: top node in light blue labeled 'Gemini Flash' with subtitle 'Quick Tasks', middle node in warm gold labeled 'Claude Sonnet' with subtitle 'Content', bottom node in deep purple labeled 'Claude Opus' with subtitle 'Strategy'. Animated golden data streams flow from the central node, splitting and routing to each of the three destination nodes. The streams pulse with light as data flows through them. Clean technical diagram aesthetic, no cartoons, no people. Minimal and professional.
+Professional dark tech animation. Deep navy-black background. A single golden hexagonal tile slides in smoothly from the left side of the screen. Inside the hexagon is the gold letter 'F'. The hexagon pauses at center, then expands to twice its size revealing simplified golden document page icons arranged inside. After a moment, the hexagon contracts back to its original size with just the letter 'F' visible. Clean geometric minimal aesthetic. Gold outlines and accents on dark navy-black background. No cartoons, no people. 4K quality.
 ```
 
-### Quality check:
-- [ ] Dark background
-- [ ] Central node + 3 destination nodes visible
-- [ ] Data streams animate between nodes
-- [ ] Labels are at least partially readable
-- [ ] No people, no cartoons
+### 3b — Letter A (Agents)
 
-### Note:
-Veo 3 max is ~8 seconds. Generate one clip and extend/loop in Descript to fill 15 seconds. If labels are unreadable, that's fine — add them as Descript text overlays on top.
+**File:** `03b-fabric-A.mp4` | **Used in:** Video 0.2 (0:08–0:16)
+
+```
+Professional dark tech animation. Deep navy-black background. One golden hexagonal tile with letter 'F' is already visible on the left. A second golden hexagonal tile slides in from the right and positions itself next to the first. Inside this new hexagon is the gold letter 'A'. The hexagon expands to twice its size revealing four small golden human silhouette icons arranged in a grid inside. After a moment, the hexagon contracts back to original size showing just the letter 'A'. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.
+```
+
+### 3c — Letter B (Brains)
+
+**File:** `03c-fabric-B.mp4` | **Used in:** Video 0.2 (0:16–0:24)
+
+```
+Professional dark tech animation. Deep navy-black background. Two golden hexagonal tiles with letters 'F' and 'A' are already visible. A third golden hexagonal tile slides in and positions itself next to them. Inside is the gold letter 'B'. The hexagon expands to twice its size revealing golden book and knowledge icons arranged inside. After a moment, it contracts back to original size showing just the letter 'B'. Three hexagons now sit in a row. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.
+```
+
+### 3d — Letter R (Routines)
+
+**File:** `03d-fabric-R.mp4` | **Used in:** Video 0.2 (0:24–0:32)
+
+```
+Professional dark tech animation. Deep navy-black background. Three golden hexagonal tiles with letters 'F', 'A', and 'B' are already visible in a row. A fourth golden hexagonal tile slides in and positions itself next to them. Inside is the gold letter 'R'. The hexagon expands to twice its size revealing golden connected workflow arrows pointing in a sequence inside. After a moment, it contracts back showing just the letter 'R'. Four hexagons now sit in a row. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.
+```
+
+### 3e — Letters I + C (Interfaces + Configs)
+
+**File:** `03e-fabric-IC.mp4` | **Used in:** Video 0.2 (0:32–0:40)
+
+```
+Professional dark tech animation. Deep navy-black background. Four golden hexagonal tiles with letters 'F', 'A', 'B', 'R' are already visible in a row. A fifth golden hexagonal tile with the letter 'I' slides in, briefly expands to show a golden circular feedback loop icon, then contracts. Immediately after, a sixth hexagonal tile with the letter 'C' slides in, briefly expands to show golden organized file cabinet icons, then contracts. All six hexagons now form a complete row spelling F-A-B-R-I-C. Clean geometric minimal aesthetic. Gold outlines on dark navy-black background. No cartoons, no people. 4K quality.
+```
+
+### 3f — Honeycomb Assembly
+
+**File:** `03f-fabric-assembly.mp4` | **Used in:** Video 0.2 (0:40–0:48)
+
+```
+Professional dark tech animation. Deep navy-black background. Six golden hexagonal tiles in a horizontal row, each containing one letter: F, A, B, R, I, C. The tiles begin to smoothly rearrange, floating and rotating into a compact honeycomb grid pattern — two rows of three hexagons. Once assembled into the honeycomb, all six letters pulse with a warm golden glow simultaneously. A subtle gold light radiates outward from the honeycomb formation. The assembled FABRIC logo holds steady and glows. Clean geometric professional tech aesthetic. Gold on dark background. No cartoons, no people. 4K quality.
+```
 
 ---
 
-## Clip 3: FABRIC Hexagon Assembly (P2 — not launch-critical)
+## Summary
 
-- **File:** `03-fabric-hexagon-assembly.mp4`
-- **Duration:** 48 seconds total → generate as **3 segments**
-- **Used in:** Video 0.2 — What is FABRIC? (0:00–0:48)
-- **Settings:** 16:9, 1080p+
+| # | File | Content | Stitch with |
+|---|------|---------|-------------|
+| 1 | `01-logo-reveal.mp4` | Logo particles | standalone |
+| 2a | `02a-routing-layout.mp4` | Diagram appears | → 2b |
+| 2b | `02b-routing-dataflow.mp4` | Data flows | ← 2a |
+| 3a | `03a-fabric-F.mp4` | F = Files | → 3b–3f |
+| 3b | `03b-fabric-A.mp4` | A = Agents | |
+| 3c | `03c-fabric-B.mp4` | B = Brains | |
+| 3d | `03d-fabric-R.mp4` | R = Routines | |
+| 3e | `03e-fabric-IC.mp4` | I + C combined | |
+| 3f | `03f-fabric-assembly.mp4` | Honeycomb finale | |
 
-### Segment A — `03a-fabric-FA.mp4` (8 sec)
+**Total: 9 clips to generate** (all 8 seconds each).
 
-```
-Professional dark tech animation. Deep navy-black background. A golden hexagonal tile slides in from the left containing the letter 'F'. It pauses, expands to show simplified document icons, then contracts. A second golden hexagonal tile with the letter 'A' appears next to it, expands to show four small human silhouette icons, then contracts. Clean geometric minimal aesthetic. Gold color accents on dark background. No cartoons, no people.
-```
-
-### Segment B — `03b-fabric-BRIC.mp4` (8 sec)
-
-```
-Professional dark tech animation continuing a hexagonal tile sequence. Deep navy-black background. Two golden hexagonal tiles already visible (letters F and A). Third tile 'B' with book icons appears, expands, contracts. Fourth tile 'R' with workflow arrow icons. Fifth tile 'I' with circular loop icon. Sixth tile 'C' with file icons. All tiles are gold on dark navy background. Clean geometric minimal style. No cartoons, no people.
-```
-
-### Segment C — `03c-fabric-assembly.mp4` (8 sec)
-
-```
-Professional dark tech animation. Deep navy-black background. Six golden hexagonal tiles in a row, each containing one letter: F, A, B, R, I, C. The tiles smoothly rearrange into a compact honeycomb grid pattern. Once assembled, all letters glow gold together as a unified system. Clean geometric professional aesthetic. Gold accents on dark background. No cartoons, no people.
-```
-
-### Quality check (all 3 segments):
-- [ ] Dark background throughout
-- [ ] Hexagons are gold-bordered
-- [ ] Letters are visible inside hexagons
-- [ ] Motion is smooth
-- [ ] Stitch together in Descript → single 24-sec clip (or slow down to fill 48 sec)
-
----
-
-## After generating
-
-1. Save all files to `tutorials/assets/veo3/output/`
-2. Delete `failed.log` from the output folder
-3. Preview each clip — if text is garbled, plan to overlay correct text in Descript
+In Descript, stitch 2a+2b into one 16-sec clip and 3a–3f into one 48-sec clip.
+If any text/labels come out garbled, overlay correct text in Descript.
