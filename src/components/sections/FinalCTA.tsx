@@ -5,8 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { STRIPE_URLS, WEBHOOK_URL } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
+import { useTranslation } from 'react-i18next';
 
 export function FinalCTA() {
+  const { t } = useTranslation();
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -45,12 +47,12 @@ export function FinalCTA() {
       <AnimateOnScroll>
         <div className="text-center">
           <h2 className="text-gradient-yellow text-3xl font-bold md:text-4xl">
-            Start Building Your
+            {t('finalCta.title1')}
             <br />
-            AI Operations System
+            {t('finalCta.title2')}
           </h2>
           <p className="mt-4 text-muted-foreground">
-            One-time purchase. Complete ownership. No recurring fees.
+            {t('finalCta.subtitle')}
           </p>
           <div className="mt-6">
             <Button
@@ -58,7 +60,7 @@ export function FinalCTA() {
               size="lg"
               onClick={() => trackEvent('cta_click', { cta_name: 'final-cta' })}
             >
-              <a href={STRIPE_URLS.full}>Get RealizeOS</a>
+              <a href={STRIPE_URLS.full}>{t('finalCta.getRealizeOS')}</a>
             </Button>
           </div>
         </div>
@@ -67,46 +69,45 @@ export function FinalCTA() {
       <AnimateOnScroll delay={0.2}>
         <div className="mx-auto mt-16 max-w-lg">
           <div className="glass-card rounded-xl p-6 text-center">
-            <h3 className="mb-2 text-lg font-semibold">Not ready yet?</h3>
+            <h3 className="mb-2 text-lg font-semibold">{t('finalCta.notReadyTitle')}</h3>
             <p className="mb-4 text-sm text-muted-foreground">
-              Start with the free Brand Discovery Worksheet — 10 questions that help you define your
-              brand for any AI tool. Or get the FABRIC Architecture Guide:
+              {t('finalCta.notReadyDesc')}
             </p>
 
             {formState === 'success' ? (
               <p className="py-2 font-medium text-brand-yellow">
-                Thanks! Check your inbox for the architecture guide.
+                {t('finalCta.thanks')}
               </p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Input
-                    placeholder="Your name"
+                    placeholder={t('finalCta.namePlaceholder')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                   <Input
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder={t('finalCta.emailPlaceholder')}
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <Input
-                  placeholder="What's your biggest AI operations challenge?"
+                  placeholder={t('finalCta.challengePlaceholder')}
                   value={challenge}
                   onChange={(e) => setChallenge(e.target.value)}
                 />
                 <Button type="submit" className="w-full" disabled={formState === 'loading'}>
-                  {formState === 'loading' ? 'Sending...' : 'Get the Free Guide'}
+                  {formState === 'loading' ? t('finalCta.sending') : t('finalCta.getGuide')}
                 </Button>
               </form>
             )}
 
             {formState === 'error' && (
               <p className="mt-2 text-sm text-destructive">
-                Something went wrong. Please try again or email us directly.
+                {t('finalCta.error')}
               </p>
             )}
           </div>

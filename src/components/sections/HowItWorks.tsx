@@ -3,7 +3,7 @@ import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { howSteps } from '@/data/how-it-works';
+import { useTranslation } from 'react-i18next';
 import {
   StepPurchaseIcon,
   StepAccessIcon,
@@ -25,14 +25,25 @@ interface HowItWorksProps {
 }
 
 export function HowItWorks({ onOpenWizard }: HowItWorksProps) {
+  const { t } = useTranslation();
+
+  const steps = (t('howItWorks.steps', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    time?: string;
+  }>).map((step, index) => ({
+    number: index + 1,
+    ...step
+  }));
+
   return (
     <Section id="how">
       <SectionHeader
-        title="From Purchase to Working System"
-        subtitle="No waiting. No complicated onboarding. Here's exactly what happens."
+        title={t('howItWorks.header.title')}
+        subtitle={t('howItWorks.header.subtitle')}
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-        {howSteps.map((step, i) => (
+        {steps.map((step, i) => (
           <AnimateOnScroll key={step.number} delay={i * 0.08}>
             <div className="glass-card flex h-full flex-col rounded-xl p-5 text-center">
               {(() => {

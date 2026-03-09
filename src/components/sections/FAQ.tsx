@@ -6,19 +6,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { faqItems } from '@/data/faq';
+import { useTranslation } from 'react-i18next';
 import { trackEvent } from '@/lib/analytics';
 
 export function FAQ() {
+  const { t } = useTranslation();
+  const faqList: { question: string, answer: string }[] = t('faq.items', { returnObjects: true }) as { question: string, answer: string }[];
+
   return (
     <Section id="faq">
-      <SectionHeader title="Frequently Asked Questions" />
+      <SectionHeader title={t('faq.title')} />
       <div className="mx-auto max-w-2xl">
         <Accordion type="single" collapsible>
-          {faqItems.map((item, i) => (
+          {faqList.map((item, i) => (
             <AccordionItem key={i} value={`faq-${i}`}>
               <AccordionTrigger
-                className="text-left text-sm font-medium"
+                className="text-start text-sm font-medium"
                 onClick={() =>
                   trackEvent('faq_open', {
                     question: item.question.substring(0, 50),

@@ -9,18 +9,35 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { deliveryColumns, deliveryNote } from '@/data/delivery';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 
 export function Delivery() {
+  const { t } = useTranslation();
+
+  const cols = [
+    {
+      edition: t('delivery.models.lite.edition'),
+      emotionalPromise: t('delivery.models.lite.emotionalPromise'),
+      items: (t('delivery.models.lite.items', { returnObjects: true }) as Array<{ title: string; description: string }>),
+    },
+    {
+      featured: true,
+      edition: t('delivery.models.full.edition'),
+      emotionalPromise: t('delivery.models.full.emotionalPromise'),
+      includesNote: t('delivery.models.full.includesNote'),
+      items: (t('delivery.models.full.items', { returnObjects: true }) as Array<{ title: string; description: string }>),
+    }
+  ];
+
   return (
     <Section id="delivery">
       <SectionHeader
-        title="What You Actually Get"
-        subtitle="No vaporware. No locked content. Here's exactly what arrives when you purchase."
+        title={t('delivery.header.title')}
+        subtitle={t('delivery.header.subtitle')}
       />
       <div className="grid gap-6 md:grid-cols-2">
-        {deliveryColumns.map((col, i) => (
+        {cols.map((col, i) => (
           <AnimateOnScroll key={col.edition} delay={i * 0.15}>
             <div
               className={cn(
@@ -63,7 +80,7 @@ export function Delivery() {
       </div>
       <AnimateOnScroll delay={0.3}>
         <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-muted-foreground">
-          {deliveryNote}
+          {t('delivery.note')}
         </p>
       </AnimateOnScroll>
     </Section>

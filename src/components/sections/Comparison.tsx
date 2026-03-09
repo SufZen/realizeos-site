@@ -1,10 +1,10 @@
 import { Section } from '@/components/layout/Section';
 import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
+import { useTranslation } from 'react-i18next';
 import { ComparisonTeamIcon } from '@/components/illustrations/ComparisonTeamIcon';
 import { ComparisonToolsIcon } from '@/components/illustrations/ComparisonToolsIcon';
 import { ComparisonRealizeIcon } from '@/components/illustrations/ComparisonRealizeIcon';
-import { comparisonColumns } from '@/data/comparison';
 import { cn } from '@/lib/utils';
 
 const headerIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -14,11 +14,38 @@ const headerIconMap: Record<string, React.ComponentType<{ className?: string }>>
 };
 
 export function Comparison() {
+  const { t } = useTranslation();
+
+  const cols = [
+    {
+      headerIconKey: 'Hiring a Team',
+      header: t('comparison.columns.traditional.header'),
+      price: t('comparison.columns.traditional.price'),
+      priceSuffix: t('comparison.columns.traditional.priceSuffix'),
+      items: (t('comparison.columns.traditional.items', { returnObjects: true }) as string[]).map(text => ({ text })),
+    },
+    {
+      headerIconKey: 'Individual AI Tools',
+      header: t('comparison.columns.tools.header'),
+      price: t('comparison.columns.tools.price'),
+      priceSuffix: t('comparison.columns.tools.priceSuffix'),
+      items: (t('comparison.columns.tools.items', { returnObjects: true }) as string[]).map(text => ({ text })),
+    },
+    {
+      headerIconKey: 'RealizeOS',
+      header: t('comparison.columns.realize.header'),
+      price: t('comparison.columns.realize.price'),
+      priceSuffix: t('comparison.columns.realize.priceSuffix'),
+      featured: true,
+      items: (t('comparison.columns.realize.items', { returnObjects: true }) as string[]).map(text => ({ text })),
+    },
+  ];
+
   return (
     <Section id="comparison">
-      <SectionHeader title="The Math Is Simple" />
+      <SectionHeader title={t('comparison.header.title')} subtitle={t('comparison.header.subtitle')} />
       <div className="grid gap-5 md:grid-cols-3">
-        {comparisonColumns.map((col, i) => (
+        {cols.map((col, i) => (
           <AnimateOnScroll key={col.header} delay={i * 0.1}>
             <div
               className={cn(
@@ -27,7 +54,7 @@ export function Comparison() {
               )}
             >
               {(() => {
-                const Icon = headerIconMap[col.header];
+                const Icon = headerIconMap[col.headerIconKey];
                 return Icon ? <Icon className="mx-auto mb-3 h-10 w-10" /> : null;
               })()}
               <div

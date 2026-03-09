@@ -7,6 +7,7 @@ import { trackEvent } from '@/lib/analytics';
 import { useEffect, useState } from 'react';
 import { LINKS } from '@/lib/constants';
 import { HeroAgentNetwork } from '@/components/illustrations/HeroAgentNetwork';
+import { useTranslation } from 'react-i18next';
 
 const stagger = {
   hidden: {},
@@ -18,14 +19,15 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
-const stats = [
-  { value: 92, suffix: '', label: 'files' },
-  { value: 8800, suffix: '+', label: 'lines of code' },
-  { value: 13, suffix: '', label: 'Google tools' },
-];
-
 export function Hero() {
+  const { t } = useTranslation();
   const [githubStars, setGithubStars] = useState<number | null>(null);
+
+  const stats = [
+    { value: 92, suffix: '', label: t('hero.stats.files') },
+    { value: 8800, suffix: '+', label: t('hero.stats.lines') },
+    { value: 13, suffix: '', label: t('hero.stats.tools') },
+  ];
 
   useEffect(() => {
     fetch(LINKS.githubRepo)
@@ -45,14 +47,14 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-site px-5 flex flex-col lg:flex-row lg:items-center lg:gap-12">
         <motion.div
-          className="lg:flex-1 lg:text-left text-center"
+          className="lg:flex-1 text-center lg:text-start"
           variants={stagger}
           initial="hidden"
           animate="show"
         >
           <motion.div variants={fadeUp}>
             <Badge variant="secondary" className="mb-6 text-xs font-medium">
-              Part of the Realization ecosystem
+              {t('hero.badge')}
             </Badge>
           </motion.div>
 
@@ -60,24 +62,24 @@ export function Hero() {
             variants={fadeUp}
             className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
           >
-            The Operational Engine
+            {t('hero.title_main')}
             <br />
-            <span className="text-gradient-yellow text-glow-yellow">For The Visionary</span>
+            <span className="text-gradient-yellow text-glow-yellow">{t('hero.title_highlight')}</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg lg:mx-0"
           >
-            Stop being the bottleneck in your own business. Reclaim your time and translate abstract vision into physical reality with a coordinated AI team that actually understands your methodology.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
             <Button asChild size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-cta-full' })}>
-              <a href={STRIPE_URLS.full}>Get RealizeOS — $249</a>
+              <a href={STRIPE_URLS.full}>{t('hero.cta_full')}</a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="#fabric">See How It Works</a>
+              <a href="#fabric">{t('hero.cta_how')}</a>
             </Button>
           </motion.div>
 
@@ -96,7 +98,7 @@ export function Hero() {
             {githubStars !== null && (
               <div className="flex items-baseline gap-1.5">
                 <strong className="text-lg font-semibold text-foreground">{githubStars}</strong>
-                GitHub stars
+                {t('hero.stats.github')}
               </div>
             )}
           </motion.div>

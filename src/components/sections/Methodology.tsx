@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Section } from '@/components/layout/Section';
 import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
@@ -9,39 +10,35 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const pillars = [
-    {
-        icon: '◇',
-        title: 'Space',
-        promise:
-            'Every great venture begins with a space — physical or digital. We help you define the boundaries, the flow, and the structure of your operations so nothing is accidental.',
-        technical:
-            'The FABRIC Foundations layer maps your operational topology: team roles, tool integrations, communication flows, and knowledge repositories. This creates a spatial model that AI agents traverse to understand context and authority.',
-    },
-    {
-        icon: '◈',
-        title: 'Business',
-        promise:
-            'Strategy without execution is a slideshow. We translate your vision into coordinated AI operations that compound revenue, automate growth, and free you from the middleware.',
-        technical:
-            'The Agents and Routines layers encode your business logic: pricing models, compliance checks, market analysis workflows, client communication sequences, and vendor coordination. Each process becomes a repeatable, testable, improvable AI skill.',
-    },
-    {
-        icon: '◆',
-        title: 'Story',
-        promise:
-            'Your brand voice, your authority, your narrative — amplified across every channel without you writing a single draft. The system speaks as you, because it learned from you.',
-        technical:
-            'The Brand and Creations layers hold your voice identity (vocabulary, tone, formatting rules, examples). Every output — LinkedIn post, proposal, investor update — runs through a quality-assurance agent that enforces brand consistency before delivery.',
-    },
-] as const;
-
 export function Methodology() {
+    const { t } = useTranslation();
+
+    const pillars = [
+        {
+            icon: '◇',
+            title: t('methodology.pillars.space.title'),
+            promise: t('methodology.pillars.space.promise'),
+            technical: t('methodology.pillars.space.technical'),
+        },
+        {
+            icon: '◈',
+            title: t('methodology.pillars.business.title'),
+            promise: t('methodology.pillars.business.promise'),
+            technical: t('methodology.pillars.business.technical'),
+        },
+        {
+            icon: '◆',
+            title: t('methodology.pillars.story.title'),
+            promise: t('methodology.pillars.story.promise'),
+            technical: t('methodology.pillars.story.technical'),
+        },
+    ] as const;
+
     return (
         <Section id="methodology">
             <SectionHeader
-                title="Space. Business. Story."
-                subtitle="The Realization Framework — a proven methodology for building AI-powered ventures that feel human and perform like machines."
+                title={t('methodology.header.title')}
+                subtitle={t('methodology.header.subtitle')}
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -69,7 +66,7 @@ export function Methodology() {
                                     <AccordionTrigger className="justify-center pt-2 pb-2 text-xs text-muted-foreground hover:text-brand-yellow">
                                         Under the Hood
                                     </AccordionTrigger>
-                                    <AccordionContent className="text-left text-xs leading-relaxed text-muted-foreground/80">
+                                    <AccordionContent className="text-start text-xs leading-relaxed text-muted-foreground/80">
                                         {pillar.technical}
                                     </AccordionContent>
                                 </AccordionItem>
@@ -90,11 +87,7 @@ export function Methodology() {
                 <div className="h-px flex-1 bg-gradient-to-l from-transparent to-brand-yellow/20" />
             </div>
 
-            <p className="mx-auto mt-6 max-w-lg text-center text-sm text-muted-foreground">
-                Built from a decade of hands-on architecture, real estate, and venture work.
-                <br />
-                Now encoded into an AI engine you can deploy in days.
-            </p>
+            <p className="mx-auto mt-6 max-w-lg text-center text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('methodology.footer') }} />
         </Section>
     );
 }

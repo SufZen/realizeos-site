@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { features } from '@/data/features';
+import { useFeatures } from '@/data/features';
 import {
   FeatureMultiLLM,
   FeaturePromptAssembly,
@@ -17,6 +17,7 @@ import {
   FeatureCreativePipeline,
   FeatureSelfEvolution,
 } from '@/components/illustrations';
+import { useTranslation } from 'react-i18next';
 
 const illustrationMap: Record<string, React.FC<{ className?: string }>> = {
   Zap: FeatureMultiLLM,
@@ -28,11 +29,14 @@ const illustrationMap: Record<string, React.FC<{ className?: string }>> = {
 };
 
 export function Features() {
+  const features = useFeatures();
+  const { t } = useTranslation();
+
   return (
     <Section id="features">
       <SectionHeader
-        title="Built for Real Operations"
-        subtitle="Not a toy. Not a wrapper. A complete AI operations engine with the depth to run your business."
+        title={t('features.header.title')}
+        subtitle={t('features.header.subtitle')}
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((f, i) => {
@@ -49,7 +53,7 @@ export function Features() {
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="technical-specs" className="border-none">
                         <AccordionTrigger className="justify-start gap-2 py-0 text-xs font-semibold text-brand-yellow hover:no-underline">
-                          View Technical Flow
+                          {t('features.view_flow')}
                         </AccordionTrigger>
                         <AccordionContent>
                           <p className="pt-3 text-xs text-muted-foreground leading-relaxed">

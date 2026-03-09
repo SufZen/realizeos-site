@@ -4,11 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Logo } from '@/components/layout/Logo';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useTranslation } from 'react-i18next';
 import { NAV_ITEMS } from '@/lib/constants';
+import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 
 export function Navbar() {
   const scrollY = useScrollPosition();
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <nav
@@ -17,7 +20,7 @@ export function Navbar() {
         borderBottom: `1px solid rgba(255,255,255,${scrollY > 50 ? 0.1 : 0.05})`,
       }}
     >
-      <div className="mx-auto flex max-w-site items-center justify-between px-5 py-3">
+      <div className="mx-auto flex max-w-site items-center gap-4 justify-between px-5 py-3">
         <a href="#" className="flex items-center gap-0">
           <Logo />
         </a>
@@ -30,14 +33,15 @@ export function Navbar() {
               href={item.href}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              {item.label}
+              {t(`navItems.${item.label.toLowerCase()}`)}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 ms-auto md:ms-0">
+          <LanguageSwitcher />
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <a href="#pricing">Get Started</a>
+            <a href="#pricing">{t('nav.getStarted')}</a>
           </Button>
 
           {/* Mobile menu */}
@@ -45,7 +49,7 @@ export function Navbar() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">{t('nav.toggleMenu')}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="glass w-64 border-border">
@@ -58,12 +62,12 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
                   >
-                    {item.label}
+                    {t(`navItems.${item.label.toLowerCase()}`)}
                   </a>
                 ))}
                 <Button asChild className="mt-4">
                   <a href="#pricing" onClick={() => setOpen(false)}>
-                    Get Started
+                    {t('nav.getStarted')}
                   </a>
                 </Button>
               </div>

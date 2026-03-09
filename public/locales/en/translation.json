@@ -1,0 +1,536 @@
+{
+  "hero": {
+    "badge": "Part of the Realization ecosystem",
+    "title_main": "The Operational Engine",
+    "title_highlight": "For The Visionary",
+    "description": "Stop being the bottleneck in your own business. Reclaim your time and translate abstract vision into physical reality with a coordinated AI team that actually understands your methodology.",
+    "cta_full": "Get RealizeOS — $249",
+    "cta_how": "See How It Works",
+    "stats": {
+      "files": "files",
+      "lines": "lines of code",
+      "tools": "Google tools",
+      "github": "GitHub stars"
+    }
+  },
+  "features": {
+    "header": {
+      "title": "Built for Real Operations",
+      "subtitle": "Not a toy. Not a wrapper. A complete AI operations engine with the depth to run your business."
+    },
+    "routing": {
+      "title": "Multi-LLM Routing",
+      "promise": "Instant intelligence scaled securely across your operations. We direct your strategic requests to the right mind automatically.",
+      "technical": "Each request is routed to the optimal model. Quick questions hit Gemini Flash for speed. Deep content drafting goes to Claude Sonnet. Complex strategy calculations leverage Claude Opus. All handled under the hood."
+    },
+    "assembly": {
+      "title": "Dynamic Identity Assembly",
+      "promise": "It speaks like you, knows your projects, and acts like your best partner. Not a generic chatbot—it is your digital clone.",
+      "technical": "Every response is built using 7-layer prompt assembly. The system dynamically pulls your identity, brand voice, role profile, relevant knowledge (vector search), memory, and session context before hitting the LLM."
+    },
+    "execution": {
+      "title": "Multi-Step Execution",
+      "promise": "Send one message, and watch an entire team execute a project from logic to completion without babysitting.",
+      "technical": "YAML-defined workflows that chain agents and tools: search the web, analyze results, execute custom scripts, draft content, and request human review—all triggered sequentially by a single message."
+    },
+    "retrieval": {
+      "title": "Hybrid Knowledge Retrieval",
+      "promise": "Your entire firm's history, methodologies, and data securely mapped and instantly accessible when you need it.",
+      "technical": "FTS5 keyword search combined with deep vector embeddings. Your AI agents find the exact right document or conversational memory every time—understanding intent, not just keyword matching."
+    },
+    "pipelines": {
+      "title": "Production Pipelines",
+      "promise": "Real architecture and venture structuring require rigid phases. RealizeOS mimics your actual operational flow perfectly.",
+      "technical": "Structured multi-agent sessions transition through rigid stages: from initial briefing, to data drafting, iterative analysis, final review, and approved deployment."
+    },
+    "evolution": {
+      "title": "Continuous Evolution",
+      "promise": "Your operations engine gets smarter with every single interaction, constantly closing gaps and refining your playbook.",
+      "technical": "The system uses an evolution loop to track successful paths vs failed ones. It detects knowledge gaps, dynamically suggests new skills, and refines agent prompts based on interaction history."
+    },
+    "view_flow": "View Technical Flow"
+  },
+  "pricing": {
+    "header": {
+      "title": "Choose Your Edition",
+      "subtitle": "One-time purchase. Own it forever. No subscriptions, no recurring fees."
+    },
+    "compareNote": "Individual AI agents elsewhere cost $49-99 each. AI operation communities charge $97/month. RealizeOS gives you the complete coordinated system — once, forever.",
+    "tiers": {
+      "lite": {
+        "name": "RealizeOS Lite",
+        "description": "For operators seeking pure knowledge management structure.",
+        "emotionalPromise": "Stop starting from scratch. Establish a pristine, interconnected operations vault instantly.",
+        "features": [
+          "Pre-structured Obsidian vault (FABRIC)",
+          "4 agent templates (Orchestrator, Writer, Reviewer, Analyst)",
+          "Brand identity & voice wizards",
+          "Skill workflows (YAML-defined pipelines)",
+          "CLAUDE.md for Claude Code integration",
+          "Step-by-step setup guide",
+          "Works with Claude Pro ($20/mo)"
+        ],
+        "ctaText": "Get Lite Edition",
+        "delivery": "Instant delivery via Google Drive",
+        "guarantee": "14-day money-back guarantee"
+      },
+      "full": {
+        "name": "RealizeOS Full",
+        "description": "The production-grade infrastructure powering the Realization group.",
+        "emotionalPromise": "Step securely out of the bottleneck constraint into the visionary seat. Complete automated control.",
+        "badge": "Most Popular",
+        "features": {
+          "header": "Everything in Lite, plus:",
+          "list": [
+            "Multi-LLM routing (Gemini + Claude Sonnet + Opus)",
+            "7-layer dynamic prompt assembly",
+            "Hybrid KB search (FTS5 + vector)",
+            "Multi-step skill executor engine",
+            "Google Workspace integration (13 tools)",
+            "Web search, browser automation, MCP",
+            "REST API + Telegram channels",
+            "Self-evolution engine",
+            "Docker one-command deploy",
+            "CLI tooling + 5 system templates"
+          ]
+        },
+        "ctaText": "Get Full Edition",
+        "delivery": "Instant delivery via Google Drive",
+        "guarantee": "14-day money-back guarantee"
+      },
+      "setup": {
+        "name": "Setup Assistance",
+        "description": "Direct collaboration with the architect of RealizeOS.",
+        "emotionalPromise": "Fast-track your freedom. We configure the system directly around your unique venture.",
+        "features": {
+          "header": "Everything in Full, plus:",
+          "list": [
+            "1-hour setup call with the builder",
+            "Custom KB scaffolding for your business",
+            "Agent definitions tailored to your needs",
+            "Brand voice configuration",
+            "First skill workflow set up together",
+            "Priority email support for 30 days"
+          ]
+        },
+        "ctaText": "Get Setup Assistance",
+        "delivery": "Instant delivery + 1-hour setup call",
+        "guarantee": "14-day money-back guarantee"
+      }
+    }
+  },
+  "usecases": {
+    "header": {
+      "title": "Built For How You Work",
+      "subtitle": "Whether you run one venture or five, RealizeOS adapts to your operations."
+    },
+    "arch": {
+      "title": "Architecture Firms",
+      "description": "Stop drowning in compliance checks and vendor emails. Reclaim your time to focus on what you actually love: designing the future.",
+      "tasks": [
+        "Draft RFQ responses based on past successful bids",
+        "Automate preliminary zoning and compliance checks",
+        "Generate project narratives from raw meeting notes",
+        "Extract insights from complex municipal building codes",
+        "Manage vendor coordination emails in your tone"
+      ]
+    },
+    "realestate": {
+      "title": "Real Estate Investment",
+      "description": "Transform anxiety into absolute clarity. Make high-stakes decisions with an engine that instantly surfaces the exact insights you need.",
+      "tasks": [
+        "Extract key metrics from financial prospectuses",
+        "Draft investment committee memos from raw data",
+        "Analyze market trends to spot emerging yield opportunities",
+        "Standardize property due diligence reports",
+        "Summarize quarterly portfolio performance"
+      ]
+    },
+    "venture": {
+      "title": "Venture Studios",
+      "description": "Achieve the impossible: extreme scale without the burnout. Run three ventures with the mental clarity of running one.",
+      "tasks": [
+        "Switch between ventures without losing context",
+        "Draft go-to-market strategies for new spin-offs",
+        "Generate investor updates for each venture separately",
+        "Research new market opportunities across all verticals",
+        "Maintain unified branding rules across discrete teams"
+      ]
+    },
+    "engineering": {
+      "title": "Engineering & Operations",
+      "description": "Bring order to the chaos of physical deployment. Feel the total relief of knowing every fragmented detail is structured and tracked.",
+      "tasks": [
+        "Translate technical specs into client-friendly updates",
+        "Structure fragmented site reports into coherent logs",
+        "Draft operational playbooks and standard procedures",
+        "Review contractor bids against project requirements",
+        "Automate follow-ups for outstanding project deliverables"
+      ]
+    },
+    "urban": {
+      "title": "Urban Planning",
+      "description": "Navigate the labyrinth of public policy and community feedback with an engine that synthesizes thousands of voices into clear direction.",
+      "tasks": [
+        "Summarize hours of town hall meeting transcripts",
+        "Draft public engagement reports and summaries",
+        "Cross-reference master plans with new zoning laws",
+        "Generate accessible community update newsletters",
+        "Analyze demographic data for neighborhood impact"
+      ]
+    },
+    "asset": {
+      "title": "Asset Management",
+      "description": "Gain ultimate peace of mind. Protect your portfolio's value with an always-on operational layer that never misses a detail.",
+      "tasks": [
+        "Automate tenant communication and maintenance routing",
+        "Generate monthly owner statements and narrative reports",
+        "Monitor lease expiration schedules proactively",
+        "Draft vendor RFPs for capital improvement projects",
+        "Analyze operating expense variances across properties"
+      ]
+    }
+  },
+  "founder": {
+    "title": "Built from Real Operations",
+    "p1": "RealizeOS isn't a concept or a demo. It was born from BOA Architects and the Realization Group—extracted from a production engine running <strong className=\"text-foreground\">international architecture, real estate, and venture operations</strong> every single day.",
+    "p2": "I built this because the alternative was breaking down. Trying to scale physical, complex ventures using scattered, generic AI tools was exhausting. Everything felt fragile. I needed absolute clarity and total control. I built RealizeOS to buy back my freedom—and now you can use our exact engine to reclaim yours.",
+    "role": "Founder,"
+  },
+  "methodology": {
+    "header": {
+      "title": "Space. Business. Story.",
+      "subtitle": "The Realization Framework — a proven methodology for building AI-powered ventures that feel human and perform like machines."
+    },
+    "pillars": {
+      "space": {
+        "title": "Space",
+        "promise": "Every great venture begins with a space — physical or digital. We help you define the boundaries, the flow, and the structure of your operations so nothing is accidental.",
+        "technical": "The FABRIC Foundations layer maps your operational topology: team roles, tool integrations, communication flows, and knowledge repositories. This creates a spatial model that AI agents traverse to understand context and authority."
+      },
+      "business": {
+        "title": "Business",
+        "promise": "Strategy without execution is a slideshow. We translate your vision into coordinated AI operations that compound revenue, automate growth, and free you from the middleware.",
+        "technical": "The Agents and Routines layers encode your business logic: pricing models, compliance checks, market analysis workflows, client communication sequences, and vendor coordination. Each process becomes a repeatable, testable, improvable AI skill."
+      },
+      "story": {
+        "title": "Story",
+        "promise": "Your brand voice, your authority, your narrative — amplified across every channel without you writing a single draft. The system speaks as you, because it learned from you.",
+        "technical": "The Brand and Creations layers hold your voice identity (vocabulary, tone, formatting rules, examples). Every output — LinkedIn post, proposal, investor update — runs through a quality-assurance agent that enforces brand consistency before delivery."
+      }
+    },
+    "footer": "Built from a decade of hands-on architecture, real estate, and venture work.<br />Now encoded into an AI engine you can deploy in days."
+  },
+  "painPoints": {
+    "header": {
+      "title": "Stop Duct-Taping AI Tools<br>That Forget You",
+      "subtitle": "Most AI setups are a mess of disconnected chatbots, lost context, and manual copy-pasting. Your AI should work as a team, not a collection of strangers."
+    },
+    "items": {
+      "layers": {
+        "title": "The Friction Trap",
+        "description": "Your best ideas die in the handoff. You're constantly translating between disconnected tools, watching momentum stall and deadlines slip entirely."
+      },
+      "clock": {
+        "title": "Execution Paralysis",
+        "description": "The overwhelming anxiety of turning a massive physical project into reality. The sheer volume of unstructured details paralyzes your ability to lead."
+      },
+      "users": {
+        "title": "Middleware Madness",
+        "description": "You've become the bottleneck. Instead of designing the future, you're manually duct-taping generic AI outputs together at 2 AM. It's exhausting."
+      }
+    },
+    "transition": "You shouldn't feel this way. Step out of the middleware and into the visionary seat. Command a coordinated operational engine that builds your reality for you."
+  },
+  "demoVideo": {
+    "header": {
+      "title": "See It in Action",
+      "subtitle": "Watch how RealizeOS turns a single message into coordinated agent work — from your knowledge base, in your brand voice."
+    },
+    "comingSoon": "Demo video coming soon",
+    "duration": "3 min walkthrough"
+  },
+  "caseStudies": {
+    "header": {
+      "title": "From the Ecosystem That Built It",
+      "subtitle": "These aren't hypothetical scenarios — they are live operations running on the same engine you're about to deploy."
+    },
+    "howItWorks": "How It Works Technically",
+    "items": {
+      "boa": {
+        "title": "BOA Architects",
+        "industry": "Architecture & Design",
+        "metric": "40 hrs/week saved",
+        "quote": "We stopped drowning in compliance paperwork. Now the system drafts, reviews, and files — while we focus on designing spaces people actually want to live in.",
+        "technical": "Multi-agent workflow: a Researcher agent scans updated building codes per municipality, a Writer agent drafts compliance documents, a Reviewer agent flags inconsistencies against the project spec, and a Tools agent auto-files via Google Drive integration. The knowledge base stores 200+ regulatory templates across Portugal, Spain, and Israel."
+      },
+      "burtucala": {
+        "title": "Burtucala Real Estate",
+        "industry": "Real Estate Investment",
+        "metric": "3× faster deal flow",
+        "quote": "Every market opportunity is surfaced, analyzed, and briefed before we even finish our morning coffee. We went from reactive to proactive overnight.",
+        "technical": "Scheduled intelligence routines run at 06:00 daily: an Analyst agent pulls market data from idealista, INE, and Banco de Portugal APIs. A Writer agent packages findings into a structured brief. A Knowledge agent cross-references against portfolio parameters stored in the vault. Alerts are pushed to Telegram with one-click approval for deeper analysis."
+      },
+      "realization": {
+        "title": "Realization Group",
+        "industry": "Venture Consulting",
+        "metric": "5 ventures, 1 operator",
+        "quote": "I run architecture, real estate, consulting, content, and a SaaS product — all from one control room. The system doesn't just assist, it operates.",
+        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, brand voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brand layer ensures consistent voice across 4 different brands. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Intelligence layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
+      }
+    }
+  },
+  "fabricSystem": {
+    "header": {
+      "title": "The FABRIC System",
+      "subtitle": "Every system in RealizeOS is organized using a structured knowledge architecture. Six directories. One coherent intelligence."
+    },
+    "items": {
+      "F": {
+        "title": "Foundations",
+        "description": "System methodology, identity, and rules that every agent follows. Your team builds to your exact specifications, always."
+      },
+      "A": {
+        "title": "Agents",
+        "description": "Your specialized AI team — drafter, analyst, reviewer, orchestrator. Each defined by a structure you control."
+      },
+      "B": {
+        "title": "Brain",
+        "description": "Domain knowledge your team actually remembers. Market data, building codes, expertise, deal history — accessible every conversation."
+      },
+      "R": {
+        "title": "Routines",
+        "description": "Workflows that chain agents and tools together. \"Draft project narrative\" triggers writer, then reviewer — automatically."
+      },
+      "I": {
+        "title": "Insights",
+        "description": "A learning log that makes your team smarter over time. Feedback, execution decisions, and patterns — nothing gets lost."
+      },
+      "C": {
+        "title": "Creations",
+        "description": "Deployments that meet your quality standards. Every output lands in an organized, reviewable structure."
+      }
+    }
+  },
+  "comparison": {
+    "header": {
+      "title": "The Unfair Advantage",
+      "subtitle": "How a coordinated engine compares to traditional operations."
+    },
+    "columns": {
+      "traditional": {
+        "header": "Hiring a Team",
+        "price": "$50,000+",
+        "priceSuffix": "/year",
+        "items": [
+          "2-4 week ramp-up per hire",
+          "Limited to business hours",
+          "Knowledge walks out the door",
+          "Coordination overhead"
+        ]
+      },
+      "tools": {
+        "header": "Individual AI Tools",
+        "price": "$1,200+",
+        "priceSuffix": "/year",
+        "items": [
+          "$97/mo per community",
+          "$49-99 per agent config",
+          "No coordination between tools",
+          "Context lost every session"
+        ]
+      },
+      "realize": {
+        "header": "RealizeOS",
+        "price": "$249",
+        "priceSuffix": " once",
+        "items": [
+          "Running in hours, not weeks",
+          "Available 24/7, every day",
+          "Knowledge compounds forever",
+          "Agents coordinate automatically"
+        ]
+      }
+    }
+  },
+  "howItWorks": {
+    "header": {
+      "title": "Deployment Process",
+      "subtitle": "How we transition you from chaotic middleware to a unified engine."
+    },
+    "steps": [
+      {
+        "title": "Pick Your Edition",
+        "description": "Stripe checkout takes 30 seconds. Choose Lite, Full, or Setup Assistance.",
+        "time": ""
+      },
+      {
+        "title": "Get Instant Access",
+        "description": "Google Drive link + welcome email + community invite arrive immediately. No waiting.",
+        "time": ""
+      },
+      {
+        "title": "Define Who You Are & Your Business",
+        "description": "Fill in your personal identity, brand identity, and voice rules from guided templates. Use the Brand Worksheet to make it easy.",
+        "time": "5-10 min"
+      },
+      {
+        "title": "First Conversation",
+        "description": "Ask your AI team to write a post. Watch the Writer draft and the Reviewer check quality — in your voice.",
+        "time": "5 min"
+      },
+      {
+        "title": "Build Your System",
+        "description": "Add domain knowledge, create workflows, connect tools. Your AI team gets smarter every week.",
+        "time": "Week 1"
+      }
+    ]
+  },
+  "delivery": {
+    "header": {
+      "title": "What You Actually Get",
+      "subtitle": "We don't sell software subscriptions. We build and hand over a functioning operational engine."
+    },
+    "models": {
+      "lite": {
+        "edition": "Lite Edition",
+        "emotionalPromise": "From scattered chaos to a single source of truth. Instant clarity and structure for your business operations.",
+        "items": [
+          {
+            "title": "Pre-structured Obsidian vault",
+            "description": "~30 files organized in the FABRIC structure. Open it, and you have a working knowledge base."
+          },
+          {
+            "title": "4 AI agent definitions",
+            "description": "Orchestrator, Writer, Reviewer, Analyst. Each is a markdown file you customize for your business."
+          },
+          {
+            "title": "Fill-in-the-blank brand templates",
+            "description": "brand-identity.md and brand-voice.md with guided prompts. Takes 5 minutes to fill in."
+          },
+          {
+            "title": "2 skill workflows",
+            "description": "Content pipeline and research workflow (YAML files), ready to use or customize."
+          },
+          {
+            "title": "CLAUDE.md configuration",
+            "description": "Drop into Claude Code and it instantly understands your entire business context."
+          },
+          {
+            "title": "Step-by-step setup guide",
+            "description": "15 minutes from download to your first AI-powered conversation."
+          }
+        ]
+      },
+      "full": {
+        "edition": "Full Edition",
+        "includesNote": "Everything in Lite, plus:",
+        "emotionalPromise": "From overwhelmed operator to focused visionary. Claim your fully automated, production-ready operational engine.",
+        "items": [
+          {
+            "title": "Complete Python engine (8,800+ lines)",
+            "description": "Multi-LLM routing, 7-layer prompt assembly, skill execution, self-evolution. Production-ready code."
+          },
+          {
+            "title": "Docker one-command deploy",
+            "description": "docker compose up and you have a running AI operations server."
+          },
+          {
+            "title": "13 Google Workspace tools",
+            "description": "Gmail, Calendar, Drive integration built in. OAuth setup included."
+          },
+          {
+            "title": "REST API + Telegram channel",
+            "description": "Connect from any frontend, or use Telegram as your command center."
+          },
+          {
+            "title": "5 industry templates",
+            "description": "Consulting, Agency, Multi-Venture, SaaS, E-Commerce. Pick one and customize."
+          },
+          {
+            "title": "CLI tooling",
+            "description": "init, serve, bot, status, index commands for day-to-day operations."
+          }
+        ]
+      }
+    },
+    "note": "Both editions include: Instant Google Drive access, setup guide, community access (Telegram + WhatsApp), and onboarding emails for your first week."
+  },
+  "nav": {
+    "getStarted": "Get Started",
+    "toggleMenu": "Toggle menu"
+  },
+  "navItems": {
+    "fabric": "FABRIC",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ"
+  },
+  "footer": {
+    "partOf": "Part of the",
+    "ecosystem": "ecosystem.",
+    "realization": "Realization",
+    "links": {
+      "telegram": "Telegram",
+      "support": "Support",
+      "faq": "FAQ"
+    },
+    "rights": "RealizeOS. All rights reserved."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What do I need to get started?",
+        "answer": "<p><strong>Lite:</strong> Obsidian (free) and a Claude Pro subscription ($20/mo from Anthropic). No coding required.</p><p><strong>Full:</strong> Python 3.11+, Docker (optional), and API keys for your chosen LLM providers (Anthropic and/or Google AI).</p>"
+      },
+      {
+        "question": "Can I host it on my own server?",
+        "answer": "<p>Yes. The Full edition is designed for self-hosting. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p>"
+      },
+      {
+        "question": "Which AI models does it support?",
+        "answer": "<p>The Full edition routes between Gemini Flash (fast/cheap), Claude Sonnet (balanced), and Claude Opus (powerful) — automatically selecting the best model for each task. The Lite edition works with any Claude model through Claude Code.</p>"
+      },
+      {
+        "question": "Is my data private?",
+        "answer": "<p>Completely. RealizeOS runs on your machine or server. Your knowledge base, conversations, and business data never leave your infrastructure. The only external calls are to the LLM APIs you configure.</p>"
+      },
+      {
+        "question": "What if I need help setting up?",
+        "answer": "<p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — brand voice, agents, first workflow, everything. After purchase, you'll receive a detailed prep checklist. You can also reach out via email at any time.</p>"
+      },
+      {
+        "question": "Do I get updates?",
+        "answer": "<p>Yes. As an owner of the system, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want — on your schedule, not ours.</p>"
+      },
+      {
+        "question": "Can I manage multiple businesses with one system?",
+        "answer": "<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and brand voice. One engine, as many ventures as you need.</p>"
+      },
+      {
+        "question": "What happens after I purchase?",
+        "answer": "<p>Immediately: you'll get access to download your package (Lite) or the GitHub repo (Full). You'll also receive a welcome email with your setup guide and a video walkthrough.</p><p>Join the community: Telegram Builders Group &amp; WhatsApp Community</p><p>Over the next week, you'll get onboarding emails with tips for defining your brand, customizing agents, and building your first workflow.</p>"
+      },
+      {
+        "question": "Is there a refund policy?",
+        "answer": "<p>If you're not satisfied within 14 days of purchase, reach out and we'll make it right. We want you to succeed with RealizeOS, not feel trapped.</p>"
+      }
+    ]
+  },
+  "finalCta": {
+    "title1": "Start Building Your",
+    "title2": "AI Operations System",
+    "subtitle": "One-time purchase. Complete ownership. No recurring fees.",
+    "getRealizeOS": "Get RealizeOS",
+    "notReadyTitle": "Not ready yet?",
+    "notReadyDesc": "Start with the free Brand Discovery Worksheet — 10 questions that help you define your brand for any AI tool. Or get the FABRIC Architecture Guide:",
+    "thanks": "Thanks! Check your inbox for the architecture guide.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "challengePlaceholder": "What's your biggest AI operations challenge?",
+    "sending": "Sending...",
+    "getGuide": "Get the Free Guide",
+    "error": "Something went wrong. Please try again or email us directly."
+  }
+}
