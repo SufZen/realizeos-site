@@ -11,6 +11,12 @@ i18n
         fallbackLng: 'en',
         supportedLngs: ['en', 'he', 'pt'],
         debug: false,
+        detection: {
+            order: ['localStorage', 'cookie', 'querystring'],
+            lookupLocalStorage: 'i18nextLng',
+            lookupCookie: 'i18nextLng',
+            caches: ['localStorage', 'cookie'],
+        },
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },

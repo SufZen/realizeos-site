@@ -58,6 +58,13 @@ export function Hero() {
             </Badge>
           </motion.div>
 
+          <motion.p
+            variants={fadeUp}
+            className="mb-4 text-sm font-medium tracking-wide text-brand-yellow/80 italic md:text-base"
+          >
+            {t('hero.tagline')}
+          </motion.p>
+
           <motion.h1
             variants={fadeUp}
             className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"

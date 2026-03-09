@@ -1,6 +1,7 @@
 {
   "hero": {
     "badge": "Part of the Realization ecosystem",
+    "tagline": "RealizeOS is an AI operations system designed for businesses to own and manage their operations, Intelligently.",
     "title_main": "The Operational Engine",
     "title_highlight": "For The Visionary",
     "description": "Stop being the bottleneck in your own business. Reclaim your time and translate abstract vision into physical reality with a coordinated AI team that actually understands your methodology.",
@@ -193,8 +194,8 @@
   },
   "founder": {
     "title": "Built from Real Operations",
-    "p1": "RealizeOS isn't a concept or a demo. It was born from BOA Architects and the Realization Group—extracted from a production engine running <strong className=\"text-foreground\">international architecture, real estate, and venture operations</strong> every single day.",
-    "p2": "I built this because the alternative was breaking down. Trying to scale physical, complex ventures using scattered, generic AI tools was exhausting. Everything felt fragile. I needed absolute clarity and total control. I built RealizeOS to buy back my freedom—and now you can use our exact engine to reclaim yours.",
+    "p1": "RealizeOS was born from the Realization Group's everyday work and challenges, drawn from a production engine that runs international architecture, real estate, and venture operations every single day.",
+    "p2": "I built this because the alternative was breaking down. Trying to scale physical, complex ventures using scattered, generic AI tools was exhausting. Everything felt fragile. I needed absolute clarity and total control. I built RealizeOS to buy back my freedom — and now you can use our exact engine to reclaim yours.",
     "role": "Founder,"
   },
   "methodology": {
@@ -276,7 +277,7 @@
         "industry": "Venture Consulting",
         "metric": "5 ventures, 1 operator",
         "quote": "I run architecture, real estate, consulting, content, and a SaaS product — all from one control room. The system doesn't just assist, it operates.",
-        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, brand voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brand layer ensures consistent voice across 4 different brands. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Intelligence layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
+        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, brand voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brain layer ensures consistent voice across 4 different brands. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Insights layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
       }
     }
   },
@@ -517,5 +518,31 @@
         "answer": "<p>If you're not satisfied within 14 days of purchase, reach out and we'll make it right. We want you to succeed with RealizeOS, not feel trapped.</p>"
       }
     ]
+  },
+  "finalCta": {
+    "title1": "Start Building Your",
+    "title2": "AI Operations System",
+    "subtitle": "One-time purchase. Complete ownership. No recurring fees.",
+    "getRealizeOS": "Get RealizeOS",
+    "notReadyTitle": "Not ready yet?",
+    "notReadyDesc": "Start with the free Brand Discovery Worksheet — 10 questions that help you define your brand for any AI tool. Or get the FABRIC Architecture Guide:",
+    "thanks": "Thanks! Check your inbox for the architecture guide.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "challengePlaceholder": "What's your biggest AI operations challenge?",
+    "sending": "Sending...",
+    "getGuide": "Get the Free Guide",
+    "error": "Something went wrong. Please try again or email us directly."
+  },
+  "exitPopup": {
+    "title": "Wait — before you go",
+    "description": "Leave your email and we'll send you practical AI operations tips and early access to new features.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "cta": "Stay in the Loop",
+    "sending": "Sending...",
+    "success": "You're in! We'll be in touch.",
+    "error": "Something went wrong. Please try again.",
+    "disclaimer": "No spam. Just real value and updates."
   }
 }

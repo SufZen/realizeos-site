@@ -1,13 +1,14 @@
 {
   "hero": {
     "badge": "Parte do ecossistema Realization",
+    "tagline": "O RealizeOS é um sistema de operações de IA concebido para as empresas gerirem as suas operações, de forma inteligente.",
     "title_main": "O Motor Operacional",
-    "title_highlight": "Para O Visionário",
-    "description": "Pare de ser o gargalo no seu próprio negócio. Recupere o seu tempo e traduza uma visão abstrata em realidade física com uma equipe de IA coordenada que realmente entende a sua metodologia.",
-    "cta_full": "Obtenha o RealizeOS — $249",
+    "title_highlight": "Para o Visionário",
+    "description": "Deixe de ser o estrangulamento do seu próprio negócio. Recupere o seu tempo e transforme uma visão abstrata em realidade — com uma equipa de IA coordenada que compreende verdadeiramente a sua metodologia.",
+    "cta_full": "Adquira o RealizeOS — $249",
     "cta_how": "Veja Como Funciona",
     "stats": {
-      "files": "arquivos",
+      "files": "ficheiros",
       "lines": "linhas de código",
       "tools": "ferramentas Google",
       "github": "estrelas no GitHub"
@@ -15,307 +16,307 @@
   },
   "features": {
     "header": {
-      "title": "Construído para Operações Reais",
-      "subtitle": "Não é um brinquedo. Não é um wrapper. Um motor completo de operações de IA com profundidade para administrar seu negócio."
+      "title": "Construído Para Operações Reais",
+      "subtitle": "Não é um brinquedo. Não é um wrapper. Um motor de operações de IA completo, com a profundidade necessária para gerir o seu negócio."
     },
     "routing": {
-      "title": "Roteamento Multi-LLM",
-      "promise": "Inteligência instantânea dimensionada de forma segura em todas as suas operações. Nós direcionamos seus pedidos estratégicos para a mente certa automaticamente.",
-      "technical": "Cada requisição é roteada para o modelo ideal. Perguntas rápidas vão para o Gemini Flash pela velocidade. Redação profunda de conteúdo vai para o Claude Sonnet. Cálculos estratégicos complexos usam o Claude Opus. Tudo é tratado nos bastidores."
+      "title": "Routing Multi-LLM",
+      "promise": "Inteligência instantânea e segura em todas as suas operações. Direcionamos os seus pedidos estratégicos para o modelo certo — automaticamente.",
+      "technical": "Cada pedido é encaminhado para o modelo ideal: perguntas rápidas vão para o Gemini Flash pela velocidade. Redação de conteúdo profundo vai para o Claude Sonnet. Cálculos estratégicos complexos usam o Claude Opus. Tudo tratado nos bastidores."
     },
     "assembly": {
       "title": "Montagem Dinâmica de Identidade",
-      "promise": "Fala como você, conhece seus projetos e age como seu melhor parceiro. Não é um chatbot genérico—é o seu clone digital.",
-      "technical": "Toda resposta é construída usando uma montagem de prompt de 7 camadas. O sistema extrai dinamicamente sua identidade, voz da marca, perfil de função, conhecimento relevante (busca vetorial), memória e contexto da sessão antes de atingir o LLM."
+      "promise": "Fala como você, conhece os seus projetos e age como o seu melhor parceiro. Não é um chatbot genérico — é o seu clone digital.",
+      "technical": "Cada resposta é construída através da montagem de prompts em 7 camadas. O sistema extrai dinamicamente a sua identidade, voz da marca, perfil de função, conhecimento relevante (pesquisa vetorial), memória e contexto de sessão antes de chegar ao LLM."
     },
     "execution": {
-      "title": "Execução em Múltiplas Etapas",
-      "promise": "Envie uma mensagem e assista a uma equipe inteira executar um projeto da lógica à conclusão sem supervisão.",
-      "technical": "Workflows definidos em YAML que encadeiam agentes e ferramentas: pesquise na web, analise resultados, execute scripts personalizados, redija conteúdo e solicite revisão humana—tudo acionado sequencialmente por uma única mensagem."
+      "title": "Execução Multi-Etapas",
+      "promise": "Envie uma mensagem e veja uma equipa inteira executar um projeto do início ao fim — sem micro-gestão.",
+      "technical": "Workflows definidos em YAML que encadeiam agentes e ferramentas: pesquisa na web, análise de resultados, execução de scripts, redação de conteúdo e pedido de revisão humana — tudo acionado por uma única mensagem."
     },
     "retrieval": {
-      "title": "Recuperação de Conhecimento Híbrido",
-      "promise": "Todo o histórico, metodologias e dados da sua empresa mapeados de forma segura e acessíveis instantaneamente quando você precisar.",
-      "technical": "Busca por palavras-chave FTS5 combinada com embeddings de vetores profundos. Seus agentes de IA encontram exatamente o documento certo ou a memória da conversa todas as vezes—entendendo a intenção, não apenas a correspondência de palavras-chave."
+      "title": "Pesquisa Híbrida de Conhecimento",
+      "promise": "Todo o histórico, metodologias e dados da sua empresa mapeados de forma segura e acessíveis no instante em que precisa.",
+      "technical": "Pesquisa por palavras-chave FTS5 combinada com embeddings vetoriais profundos. Os seus agentes de IA encontram o documento certo ou a memória de conversa exata sempre — compreendendo a intenção, não apenas palavras-chave."
     },
     "pipelines": {
       "title": "Pipelines de Produção",
-      "promise": "A verdadeira arquitetura e a estruturação de empreendimentos requerem fases rígidas. O RealizeOS imita o seu fluxo operacional real perfeitamente.",
-      "technical": "Sessões estruturadas com múltiplos agentes transitam por etapas rígidas: desde o briefing inicial, passando pelo rascunho de dados, análise iterativa, revisão final e implantação aprovada."
+      "promise": "Arquitetura real e estruturação de empreendimentos exigem fases rigorosas. O RealizeOS replica fielmente o seu fluxo operacional.",
+      "technical": "Sessões multi-agente estruturadas passam por etapas rígidas: desde o briefing inicial, passando pelo rascunho de dados, análise iterativa, revisão final e deploy aprovado."
     },
     "evolution": {
       "title": "Evolução Contínua",
-      "promise": "Seu motor de operações fica mais inteligente com cada interação, constantemente fechando lacunas e refazendo seu playbook.",
-      "technical": "O sistema usa um ciclo de evolução para monitorar caminhos de sucesso vs caminhos que falharam. Ele detecta lacunas de conhecimento, sugere dinamicamente novas habilidades e refina os prompts dos agentes baseados no histórico de interações."
+      "promise": "O seu motor operacional fica mais inteligente a cada interação — colmatando lacunas e afinando o seu playbook.",
+      "technical": "O sistema utiliza um ciclo de evolução para registar caminhos de sucesso versus caminhos que falharam. Deteta lacunas de conhecimento, sugere novas competências e refina os prompts dos agentes com base no histórico de interações."
     },
     "view_flow": "Ver Fluxo Técnico"
   },
   "pricing": {
     "header": {
-      "title": "Escolha Sua Edição",
-      "subtitle": "Compra única. Seu para sempre. Sem assinaturas, sem taxas recorrentes."
+      "title": "Escolha a Sua Edição",
+      "subtitle": "Compra única. Seu para sempre. Sem assinaturas, sem mensalidades."
     },
-    "compareNote": "Agentes individuais de IA em outros lugares custam de $49-$99 cada. Comunidades de operação de IA cobram $97/mês. O RealizeOS oferece a você o sistema coordenado completo — uma vez, para sempre.",
+    "compareNote": "Agentes de IA individuais noutras plataformas custam $49-$99 cada. Comunidades de AI Operations cobram $97/mês. O RealizeOS oferece o sistema coordenado completo — uma única vez, para sempre.",
     "tiers": {
       "lite": {
         "name": "RealizeOS Lite",
-        "description": "Para operadores buscando pura estrutura de gestão de conhecimento.",
-        "emotionalPromise": "Pare de começar do zero. Estabeleça um cofre de operações imaculado e interconectado instantaneamente.",
+        "description": "Para quem procura uma estrutura sólida de gestão de conhecimento.",
+        "emotionalPromise": "Deixe de recomeçar do zero. Estabeleça um sistema de operações organizado e interligado — instantaneamente.",
         "features": [
           "Cofre Obsidian pré-estruturado (FABRIC)",
-          "4 templates de agentes (Orquestrador, Escritor, Revisor, Analista)",
-          "Assistentes de identidade e voz da marca",
-          "Workflows de habilidades (pipelines definidos em YAML)",
+          "4 templates de agentes (Orchestrator, Writer, Reviewer, Analyst)",
+          "Wizards de identidade e voz de marca",
+          "Workflows de competências (pipelines YAML)",
           "CLAUDE.md para integração com Claude Code",
-          "Guia de configuração passo-a-passo",
+          "Guia de configuração passo a passo",
           "Funciona com Claude Pro ($20/mês)"
         ],
         "ctaText": "Obter a Edição Lite",
         "delivery": "Entrega instantânea via Google Drive",
-        "guarantee": "Garantia de devolução do dinheiro em 14 dias"
+        "guarantee": "Garantia de reembolso a 14 dias"
       },
       "full": {
         "name": "RealizeOS Full",
-        "description": "A infraestrutura de nível de produção que capacita o grupo Realization.",
-        "emotionalPromise": "Saia com segurança do gargalo operativo para assumir o papel de visionário. Controle automatizado completo.",
+        "description": "A infraestrutura de nível de produção que sustenta o grupo Realization.",
+        "emotionalPromise": "Saia do estrangulamento e assuma o papel de visionário. Controlo total e automatizado.",
         "badge": "Mais Popular",
         "features": {
-          "header": "Tudo na Edição Lite, mais:",
+          "header": "Tudo na edição Lite, mais:",
           "list": [
-            "Roteamento Multi-LLM (Gemini + Claude Sonnet + Opus)",
-            "Montagem dinâmica de prompt em 7 camadas",
-            "Pesquisa híbrida no KB (FTS5 + vetor)",
-            "Motor executor de habilidades em múltiplas etapas",
-            "Integração Google Workspace (13 ferramentas)",
+            "Routing Multi-LLM (Gemini + Claude Sonnet + Opus)",
+            "Montagem dinâmica de prompts em 7 camadas",
+            "Pesquisa híbrida na Knowledge Base (FTS5 + vetorial)",
+            "Motor de execução de skills multi-etapas",
+            "Integração com Google Workspace (13 ferramentas)",
             "Pesquisa web, automação de browser, MCP",
             "REST API + canais Telegram",
-            "Motor de autoevolução",
+            "Motor de auto-evolução",
             "Deploy com um comando Docker",
             "Ferramentas CLI + 5 templates de sistema"
           ]
         },
         "ctaText": "Obter a Edição Full",
         "delivery": "Entrega instantânea via Google Drive",
-        "guarantee": "Garantia de devolução do dinheiro em 14 dias"
+        "guarantee": "Garantia de reembolso a 14 dias"
       },
       "setup": {
-        "name": "Assistência de Configuração",
+        "name": "Acompanhamento na Implementação",
         "description": "Colaboração direta com o arquiteto do RealizeOS.",
-        "emotionalPromise": "Acelere a sua liberdade. Nós configuramos o sistema diretamente em torno de seu empreendimento único.",
+        "emotionalPromise": "Acelere o caminho para a autonomia. Configuramos o sistema em torno do seu negócio específico.",
         "features": {
-          "header": "Tudo na Edição Full, mais:",
+          "header": "Tudo na edição Full, mais:",
           "list": [
-            "1 hora de call de configuração com o criador",
-            "Estrutura base customizada para o seu negócio no KB",
+            "Chamada de configuração de 1 hora com o criador",
+            "Estrutura de Knowledge Base personalizada para o seu negócio",
             "Definições de agentes adaptadas às suas necessidades",
             "Configuração da voz da marca",
-            "Primeiro fluxo de trabalho montado juntos",
-            "Suporte por e-mail prioritário por 30 dias"
+            "Primeiro workflow montado em conjunto",
+            "Suporte prioritário por e-mail durante 30 dias"
           ]
         },
-        "ctaText": "Obter Assistência de Configuração",
-        "delivery": "Entrega instantânea + call de setup de 1 hora",
-        "guarantee": "Garantia de devolução do dinheiro em 14 dias"
+        "ctaText": "Obter Acompanhamento",
+        "delivery": "Entrega instantânea + chamada de setup de 1 hora",
+        "guarantee": "Garantia de reembolso a 14 dias"
       }
     }
   },
   "usecases": {
     "header": {
-      "title": "Construído Para A Forma Como Você Trabalha",
-      "subtitle": "Seja operando um empreendimento ou cinco, o RealizeOS se adapta às suas operações."
+      "title": "Construído Para a Sua Forma de Trabalhar",
+      "subtitle": "Quer opere um empreendimento ou cinco, o RealizeOS adapta-se às suas operações."
     },
     "arch": {
-      "title": "Empresas de Arquitetura",
-      "description": "Pare de se afogar em verificações de conformidade e e-mails de fornecedores. Recupere seu tempo para focar no que você realmente ama: desenhar o futuro.",
+      "title": "Gabinetes de Arquitetura",
+      "description": "Deixe de se afogar em verificações de conformidade e e-mails de fornecedores. Recupere o seu tempo para o que realmente importa: projetar o futuro.",
       "tasks": [
-        "Redigir respostas a RFQs baseadas em propostas bem-sucedidas anteriores",
-        "Automatizar verificações preliminares de zoneamento e conformidade",
-        "Gerar descritivos de projetos a partir de notas brutas de reunião",
+        "Redigir respostas a RFQs com base em propostas anteriores bem-sucedidas",
+        "Automatizar verificações preliminares de zonamento e conformidade",
+        "Gerar descritivos de projeto a partir de notas brutas de reunião",
         "Extrair insights de códigos municipais complexos de construção",
-        "Gerenciar e-mails de coordenação de fornecedores no seu tom"
+        "Gerir e-mails de coordenação com fornecedores no seu tom"
       ]
     },
     "realestate": {
       "title": "Investimento Imobiliário",
-      "description": "Transforme a ansiedade em clareza absoluta. Tome decisões de alto risco com um motor que instantaneamente exibe as percepções exatas que você precisa.",
+      "description": "Transforme ansiedade em clareza absoluta. Tome decisões de alto impacto com um motor que apresenta instantaneamente as informações exatas de que precisa.",
       "tasks": [
-        "Extrair métricas-chave de prospectos financeiros",
-        "Rascunhar memorandos do comitê de investimento a partir de dados brutos",
+        "Extrair métricas-chave de prospeções financeiras",
+        "Elaborar memorandos para o comité de investimento a partir de dados brutos",
         "Analisar tendências de mercado para identificar oportunidades de retorno emergentes",
         "Padronizar relatórios de due diligence imobiliária",
-        "Resumir o desempenho do portfólio trimestral"
+        "Resumir o desempenho trimestral do portefólio"
       ]
     },
     "venture": {
-      "title": "Venture Studios",
-      "description": "Alcançar o impossível: escala extrema sem burnout. Opere três empreendimentos com a clareza mental de operar um.",
+      "title": "Estúdios de Empreendedorismo (Venture Studios)",
+      "description": "Alcance o impossível: escala extrema sem esgotamento. Opere três empreendimentos com a clareza mental de gerir apenas um.",
       "tasks": [
-        "Transitar entre os empreendimentos sem perder o contexto",
-        "Elaborar estratégias de lançamento no mercado para novos spin-offs",
-        "Gerar atualizações para investidores para cada empreendimento separadamente",
-        "Pesquisar novas oportunidades de mercado em todos os setores",
-        "Manter diretrizes de marca unificadas através de equipes distintas"
+        "Alternar entre empreendimentos sem perder o contexto",
+        "Elaborar estratégias de go-to-market para novos spin-offs",
+        "Gerar relatórios para investidores de cada empreendimento separadamente",
+        "Investigar novas oportunidades de mercado em todos os setores",
+        "Manter diretrizes de marca unificadas entre equipas distintas"
       ]
     },
     "engineering": {
       "title": "Engenharia e Operações",
-      "description": "Traga ordem ao caos da execução física. Sinta o alívio total de saber que todo detalhe fragmentado está estruturado e monitorado.",
+      "description": "Traga ordem ao caos da execução física. Sinta o alívio total de saber que cada detalhe está estruturado e monitorizado.",
       "tasks": [
-        "Traduzir especificações técnicas em atualizações amigáveis para clientes",
-        "Estruturar relatórios fragmentados de canteiro de obras em registros coerentes",
-        "Redigir roteiros operacionais e procedimentos padrão",
-        "Analisar cotações de prestadores frente às exigências do projeto",
-        "Automatizar o follow-up para os itens não entregues do projeto"
+        "Traduzir especificações técnicas em atualizações compreensíveis para clientes",
+        "Estruturar relatórios fragmentados de obra em registos coerentes",
+        "Redigir manuais operacionais e procedimentos normalizados",
+        "Analisar propostas de empreiteiros face aos requisitos do projeto",
+        "Automatizar follow-ups de entregáveis pendentes do projeto"
       ]
     },
     "urban": {
-      "title": "Planejamento Urbano",
-      "description": "Navegue pelo labirinto da política pública e pelo feedback da comunidade com um motor que sintetiza milhares de vozes em uma direção clara.",
+      "title": "Planeamento Urbano",
+      "description": "Navegue pelo labirinto da política pública e do feedback comunitário com um motor que sintetiza milhares de vozes numa direção clara.",
       "tasks": [
-        "Resumir horas de transcrições de reuniões comunitárias públicas",
-        "Rascunhar relatórios e resumos de engajamento público",
-        "Cruzar planos diretores com novas leis de zoneamento",
-        "Gerar newsletters informativas e acessíveis de atualização local",
-        "Analisar dados demográficos para estimar o impacto no bairro"
+        "Resumir horas de transcrições de assembleias públicas",
+        "Elaborar relatórios de participação pública e sínteses",
+        "Cruzar planos diretores com nova legislação de zonamento",
+        "Gerar newsletters acessíveis para atualização da comunidade",
+        "Analisar dados demográficos para avaliar o impacto no bairro"
       ]
     },
     "asset": {
       "title": "Gestão de Ativos",
-      "description": "Alcance o máximo de paz de espírito. Proteja o valor do seu portfólio com uma base operacional sempre ativa que jamais deixa passar nenhum detalhe.",
+      "description": "Tranquilidade total. Proteja o valor do seu portefólio com uma camada operacional permanente que não deixa escapar nenhum detalhe.",
       "tasks": [
-        "Automatizar a comunicação com os inquilinos e o direcionamento de manutenção",
-        "Gerar demonstrativos mensais para proprietários e relatórios narrativos",
-        "Monitorar preventivamente os cronogramas de expiração de contratos de locação",
-        "Rascunhar RFPs para os prestadores visando a melhoria do capital",
-        "Analisar as estimativas e variações em custos logísticos em todos imoveis"
+        "Automatizar a comunicação com inquilinos e o encaminhamento de manutenção",
+        "Gerar extratos mensais para proprietários com relatórios narrativos",
+        "Monitorizar proativamente prazos de término de contratos de arrendamento",
+        "Redigir cadernos de encargos para projetos de beneficiação de imóveis",
+        "Analisar desvios nas despesas operacionais em todos os imóveis"
       ]
     }
   },
   "founder": {
-    "title": "Construído de Operações Reais",
-    "p1": "O RealizeOS não é um conceito ou uma demonstração. Nasceu a partir da BOA Architects e do Realization Group—extraído de um motor em produção que gere <strong className=\"text-foreground\">arquitetura internacional, imobiliário e operações de investimento</strong> todos os dias.",
-    "p2": "Construí isto porque a alternativa era a rutura. Tentar escalar projetos físicos e complexos usando ferramentas genéricas e dispersas de IA era exaustivo. Tudo parecia frágil. Eu precisava de absoluta clareza e total controlo. Construí o RealizeOS para comprar a minha liberdade de volta—e agora você pode usar o nosso sistema exato para reclamar a sua.",
+    "title": "Construído a Partir de Operações Reais",
+    "p1": "O RealizeOS nasceu do trabalho e dos desafios diários do Realization Group, extraído de um motor de produção que gere operações internacionais de arquitetura, imobiliário e empreendedorismo — todos os dias.",
+    "p2": "Construí isto porque a alternativa era colapsar. Tentar escalar projetos físicos e complexos com ferramentas de IA dispersas e genéricas era exaustivo. Tudo parecia frágil. Precisava de clareza absoluta e controlo total. Construí o RealizeOS para reconquistar a minha liberdade — e agora pode usar exatamente o mesmo motor para reconquistar a sua.",
     "role": "Fundador,"
   },
   "methodology": {
     "header": {
-      "title": "Espaço. Negócio. História.",
-      "subtitle": "A Estrutura Realization — uma metodologia comprovada para construir projetos baseados em IA que parecem humanos mas funcionam como máquinas."
+      "title": "Espaço. Negócio. Narrativa.",
+      "subtitle": "O Framework Realization — uma metodologia comprovada para construir empreendimentos baseados em IA que parecem humanos e funcionam como máquinas."
     },
     "pillars": {
       "space": {
         "title": "Espaço (Space)",
-        "promise": "Todos os grandes projetos começam com um espaço — físico ou digital. Ajudamos a definir os limites, o fluxo e a estrutura das suas operações para que nada seja acidental.",
-        "technical": "A camada FABRIC Foundations (Fundações) mapeia a toplogia operacional: funções das equipas, integrações de ferramentas, fluxos de comunicação e repositórios de conhecimento. Cria um modelo espacial em que agentes de IA navegam para compreender o contexto e a autoridade."
+        "promise": "Todo o grande empreendimento começa com um espaço — físico ou digital. Ajudamos a definir os limites, o fluxo e a estrutura das suas operações para que nada seja acidental.",
+        "technical": "A camada Foundations do FABRIC mapeia a topologia operacional: funções da equipa, integrações de ferramentas, fluxos de comunicação e repositórios de conhecimento. Isto cria um modelo espacial onde os agentes de IA navegam para compreender contexto e autoridade."
       },
       "business": {
         "title": "Negócio (Business)",
-        "promise": "Estratégia sem execução é um slideshow. Traduzimos a sua visão para operações de IA coordenadas que acumulam receita, escalam o crescimento de forma autónoma e libertam o trabalho de rotina.",
-        "technical": "As camadas Agents (Agentes) e Routines (Rotinas) codificam a sua lógica empresarial: modelos de preços, verificação de conformidade, análise de workflows financeiros, sequências de clientes e gestão de fornecedores. Cada processo torna-se numa competência de IA repetível e testável."
+        "promise": "Estratégia sem execução é um slideshow. Traduzimos a sua visão em operações de IA coordenadas que acumulam receita, automatizam o crescimento e libertam-no do trabalho repetitivo.",
+        "technical": "As camadas Agents e Routines codificam a sua lógica de negócio: modelos de preços, verificações de conformidade, workflows de análise de mercado, sequências de comunicação com clientes e coordenação de fornecedores. Cada processo torna-se numa competência de IA repetível, testável e otimizável."
       },
       "story": {
-        "title": "História (Story)",
-        "promise": "A sua voz de marca, e a sua autoridade — ampliada em cada canal sem sequer ter de escrever um rascunho de raiz. O sistema comunica ativamente como você, porque foi treinado e aprendeu consigo.",
-        "technical": "As camadas Brand (Marca) e Creations (Criações) contêm a sua identidade de voz (vocabulário, tom, formato, exemplos base). Todos os outputs — post no LinkedIn, propostas, relatórios de parceiros — passam por um Agente (QA) que obriga a consistência de marca antes de ser entregue."
+        "title": "Narrativa (Story)",
+        "promise": "A sua voz de marca, a sua autoridade, o seu discurso — amplificados em todos os canais sem escrever uma única linha de raiz. O sistema comunica por si, porque aprendeu consigo.",
+        "technical": "As camadas Brand e Creations contêm a sua identidade vocal (vocabulário, tom, regras de formatação, exemplos). Todo o output — post no LinkedIn, proposta, relatório para investidores — passa por um agente de controlo de qualidade (QA) que garante consistência de marca antes da entrega."
       }
     },
-    "footer": "Construído a partir de uma década de experiência ativa em startups, imobiliário e arquitetura.<br />Agora compilado dentro de um motor IA pronto a descolar em dias."
+    "footer": "Construído a partir de uma década de experiência prática em arquitetura, imobiliário e empreendedorismo.<br />Agora codificado num motor de IA pronto a implementar em dias."
   },
   "painPoints": {
     "header": {
-      "title": "Pare de unir ferramentas IA<br>que se esquecem de si",
-      "subtitle": "A maioria das configurações IA são uma confusão de chatbots desconectados, contexto perdido e puro copiar e colar manual. A sua IA devia trabalhar em equipa, não como uma coleção de estranhos."
+      "title": "Pare de Remendar Ferramentas de IA<br>Que Se Esquecem de Si",
+      "subtitle": "A maioria dos setups de IA são uma confusão de chatbots desligados, contexto perdido e copiar-colar manual. A sua IA devia funcionar como equipa, não como um conjunto de estranhos."
     },
     "items": {
       "layers": {
-        "title": "A Armadilha do Atrito",
-        "description": "As suas melhores ideias morrem na transição. Anda sempre a traduzir contexto entre ferramentas isoladas, a ver o momento parar e a falhar deadlines."
+        "title": "A Armadilha da Fricção",
+        "description": "As suas melhores ideias morrem na transição. Está constantemente a traduzir contexto entre ferramentas isoladas, a ver o momento parar e prazos a escapar."
       },
       "clock": {
         "title": "Paralisia de Execução",
-        "description": "A enorme ansiedade de traduzir um projeto gigante para o mundo físico. O puro volume de detalhes não estruturados paralisa a sua capacidade de liderar."
+        "description": "A ansiedade avassaladora de transformar um projeto físico enorme em realidade. O volume imenso de detalhes não estruturados paralisa a sua capacidade de liderar."
       },
       "users": {
-        "title": "A Loucura de ser o Intermediário",
-        "description": "Tornou-se no gargalo do seu próprio negócio. Em vez de projetar o futuro, anda a copiar peças genéricas de IA às 2 da madrugada para as juntar. É exausto."
+        "title": "O Pesadelo do Intermediário",
+        "description": "Tornou-se no estrangulamento. Em vez de projetar o futuro, anda a colar outputs genéricos de IA às duas da manhã. É extenuante."
       }
     },
-    "transition": "Não devia sentir-se assim. Saia do papel de intermediário e ocupe o lugar de visionário. Comando um motor operacional coordenado que constrói a sua realidade por si."
+    "transition": "Não tem de ser assim. Saia do papel de intermediário e ocupe o lugar de visionário. Comande um motor operacional coordenado que constrói a sua realidade por si."
   },
   "demoVideo": {
     "header": {
-      "title": "Veja-o em Ação",
-      "subtitle": "Observe como o RealizeOS converte uma única mensagem num trabalho coordenado de agentes — da sua base de conhecimento, e com a sua voz."
+      "title": "Veja em Ação",
+      "subtitle": "Observe como o RealizeOS transforma uma única mensagem em trabalho coordenado de agentes — a partir da sua base de conhecimento, na sua voz de marca."
     },
-    "comingSoon": "Vídeo de demonstração em breve",
-    "duration": "Guia de 3 minutos"
+    "comingSoon": "Vídeo de demonstração brevemente",
+    "duration": "Demonstração de 3 minutos"
   },
   "caseStudies": {
     "header": {
       "title": "Do Ecossistema Que o Construiu",
-      "subtitle": "Estes não são cenários hipotéticos — são operações em direto a rolar no exato mesmo motor que está prestes a usar."
+      "subtitle": "Estes não são cenários hipotéticos — são operações reais a funcionar no mesmo motor que está prestes a implementar."
     },
     "howItWorks": "Como Funciona Tecnicamente",
     "items": {
       "boa": {
         "title": "BOA Architects",
         "industry": "Arquitetura e Design",
-        "metric": "40 hrs/semana salvas",
-        "quote": "Deixámos de nos afogar em papelada de regulamentação. Agora o sistema rascunha, audita e submete processos legais — enquanto nós focamos no design de espaços onde as pessoas realmente querem viver.",
-        "technical": "Workflow multi-agente: um agente de Pesquisa audita os códigos de câmara municipais, um agente Escritor rascunha relatórios de conformidade arquitetónica, um Revisor assinala incompatibilidades no projeto e um agente de Ferramentas auto-guarda os pdf's através de uma integração do Google Drive. A base de conhecimentos guarda mais de 200 moldes regulamentares em Portugal, Espanha e Israel."
+        "metric": "40 horas/semana poupadas",
+        "quote": "Deixámos de nos afogar em papelada regulamentar. Agora o sistema redige, revê e arquiva — enquanto nos concentramos em projetar espaços onde as pessoas realmente queiram viver.",
+        "technical": "Workflow multi-agente: um agente de Pesquisa audita códigos de construção municipais atualizados. Um agente Escritor redige documentos de conformidade. Um agente Revisor sinaliza inconsistências face à especificação do projeto. Um agente de Ferramentas arquiva automaticamente via integração Google Drive. A Knowledge Base armazena mais de 200 templates regulamentares de Portugal, Espanha e Israel."
       },
       "burtucala": {
         "title": "Burtucala Real Estate",
         "industry": "Investimento Imobiliário",
-        "metric": "Prospeção 3× mais rápida",
-        "quote": "Cada oportunidade de mercado é recolhida, analisada e apresentada ainda antes de terminarmos o nosso café da manhã. Passamos de reativos a proativos da noite para o dia.",
-        "technical": "Rotinas programadas de inteligência arrancam às 06:00: um Agente Analista recolhe informação do mercado de parceiros API do idealista, INE e Banco de Portugal. Um Escritor compila os achados para um documento estruturado e um Agente de Conhecimento cruza-os contra as características do portfólio. Finalmente um alerta chega ao telemóvel por Telegram com um pedido de aprovação imediato para uma análise profunda."
+        "metric": "Deal flow 3× mais rápido",
+        "quote": "Cada oportunidade de mercado é detetada, analisada e apresentada antes de acabarmos o café da manhã. Passámos de reativos a proativos de um dia para o outro.",
+        "technical": "Rotinas de inteligência programadas às 06:00: um agente Analista recolhe dados de mercado das APIs do idealista, INE e Banco de Portugal. Um agente Escritor compila os resultados num briefing estruturado. Um agente de Conhecimento cruza-os com os parâmetros do portefólio armazenados no Vault. Alertas são enviados para o Telegram com aprovação de um clique para análise mais profunda."
       },
       "realization": {
         "title": "Realization Group",
-        "industry": "Consultoria & Projetos",
-        "metric": "5 empresas, 1 operador",
-        "quote": "Giro os meus negócios de arquitetura, investimento, consultoria, criação de conteúdo e software — tudo partir de uma central. O sistema não só assiste, opera ativamente.",
-        "technical": "Aplicação da total metodologia FABRIC. Camada Foundation guarda o núcleo, identidade, e estratégias de empresas. A camada de Agentes coordena 6 agentes por cada área. Camada Brand assegura as 4 vozes separadas por cada marca isolada. A camada de Rotinas prevê e resolve publicações relatórios aos Domingo e de LinkedIn a cada x tempo. Outputs complexos e propostas seguem todos a mesma rigorosa linha de produção."
+        "industry": "Consultoria de Empreendimentos",
+        "metric": "5 empreendimentos, 1 operador",
+        "quote": "Dirijo arquitetura, imobiliário, consultoria, conteúdo e um produto SaaS — tudo a partir de uma sala de controlo. O sistema não só apoia — opera ativamente.",
+        "technical": "Deploy completo do FABRIC: a camada Foundations contém identidade, voz de marca e documentos de estratégia. A camada Agents coordena 6 agentes especializados em todos os empreendimentos. A camada Brand assegura consistência vocal em 4 marcas distintas. A camada Routines automatiza relatórios semanais, publicações no LinkedIn e atualizações a investidores. A camada Intelligence monitoriza KPIs transversais. A camada Creations produz propostas para clientes, artigos de blog e pitch decks."
       }
     }
   },
   "fabricSystem": {
     "header": {
       "title": "O Sistema FABRIC",
-      "subtitle": "Cada sistema no RealizeOS está organizado via uma arquitetura de conhecimento. Seis diretórios. Uma grande inteligência."
+      "subtitle": "Cada sistema no RealizeOS está organizado segundo uma arquitetura de conhecimento estruturada. Seis diretórios. Uma inteligência coerente."
     },
     "items": {
       "F": {
-        "title": "Fundações (Foundations)",
-        "description": "A metedologia e regras que a sua equipa adota incondicionalmente para todas os outputs e visões."
+        "title": "Foundations (Fundações)",
+        "description": "Metodologia do sistema, identidade e regras que cada agente segue. A equipa constrói exatamente segundo as suas especificações — sempre."
       },
       "A": {
-        "title": "Agentes (Agents)",
-        "description": "A sua equipa IA — redator, analista, revisor, orquestrador. Todos eles construídos exatamente ao seu gosto."
+        "title": "Agents (Agentes)",
+        "description": "A sua equipa de IA especializada — redator, analista, revisor, orquestrador. Todos definidos por uma estrutura que controla."
       },
       "B": {
-        "title": "Cérebro (Brain)",
-        "description": "O conhecimento real que as pastas dominam: códigos governamentais e mercados na base de dados das IA."
+        "title": "Brain (Cérebro)",
+        "description": "Conhecimento de domínio que a equipa realmente memoriza. Dados de mercado, códigos de construção, expertise, histórico de negócios — acessível em cada conversa."
       },
       "R": {
-        "title": "Rotinas (Routines)",
-        "description": "Atividades repetidas que dão autonomia cega aos processos de negócio. Inserções interativas e autónomas."
+        "title": "Routines (Rotinas)",
+        "description": "Workflows que encadeiam agentes e ferramentas. 'Redigir resumo de projeto' aciona o escritor, depois o revisor — automaticamente."
       },
       "I": {
         "title": "Insights",
-        "description": "Um registo constante do motor na medida das lições partilhadas. Tudo guardado aos limites para ficar mais fiel a si."
+        "description": "Um registo de aprendizagem que torna a equipa mais inteligente com o tempo. Feedback, decisões de execução e padrões — nada se perde."
       },
       "C": {
-        "title": "Criações (Creations)",
-        "description": "Geração pura de propostas sólidas, análises financeiras ou código de programação formatado sem falhas."
+        "title": "Creations (Criações)",
+        "description": "Outputs que cumprem os seus padrões de qualidade. Cada resultado fica numa estrutura organizada, pronto para revisão e ação."
       }
     }
   },
   "comparison": {
     "header": {
-      "title": "A Vantagem Injusta",
-      "subtitle": "Como o nosso motor compara perante soluções tradicionais."
+      "title": "A Vantagem Competitiva",
+      "subtitle": "Como um motor coordenado se compara às operações tradicionais."
     },
     "columns": {
       "traditional": {
@@ -323,32 +324,32 @@
         "price": "$50.000+",
         "priceSuffix": "/ano",
         "items": [
-          "2-4 semanas de inserção por agente",
-          "Limitado ao horário laboral regular",
-          "O conhecimento retido perde-se ao sair do seu controlo",
-          "Sobrecusto temporal com despesas"
+          "2-4 semanas de integração por contratação",
+          "Limitado ao horário de expediente",
+          "O conhecimento vai-se embora quando alguém sai",
+          "Custos de coordenação"
         ]
       },
       "tools": {
-        "header": "Ferramentas IA Comuns",
+        "header": "Ferramentas de IA Isoladas",
         "price": "$1.200+",
         "priceSuffix": "/ano",
         "items": [
-          "$97 p/ comunidade",
-          "$49 p/ bots soltos e instáveis",
-          "Nenhuma sintonia orgânica de ferramentas cruzadas",
-          "Falta total em contexto memorizado"
+          "$97/mês por comunidade",
+          "$49-99 por configuração de agente",
+          "Zero coordenação entre ferramentas",
+          "Contexto perdido a cada sessão"
         ]
       },
       "realize": {
         "header": "RealizeOS",
         "price": "$249",
-        "priceSuffix": " de uma vez",
+        "priceSuffix": " uma vez",
         "items": [
-          "Processo limpo em horas não semanas",
-          "Totalmente online em background 24x7",
-          "Constante de valor exponencial na memorização constante",
-          "Agentes cooperativos com rotinas exímias"
+          "Operacional em horas, não semanas",
+          "Disponível 24/7, todos os dias",
+          "Conhecimento acumula-se para sempre",
+          "Agentes coordenam-se automaticamente"
         ]
       }
     }
@@ -356,105 +357,105 @@
   "howItWorks": {
     "header": {
       "title": "Processo de Implementação",
-      "subtitle": "Como transita de caos manual e esgotado para o poder unificado IA."
+      "subtitle": "Como o levamos do caos operacional a um motor unificado."
     },
     "steps": [
       {
-        "title": "Decida Qual a Edição",
-        "description": "Pague limpo no Stripe em 30 segundos — Edition lite, Base Total ou Assistência Pessoal.",
+        "title": "Escolha a Sua Edição",
+        "description": "Pagamento por Stripe em 30 segundos. Escolha Lite, Full ou Acompanhamento na Implementação.",
         "time": ""
       },
       {
-        "title": "Iniciação ao Suporte Imparável",
-        "description": "Bem-vindo imediatamente. Entregas Drive. Passaporte aberto da comunidade central sem reservas.",
+        "title": "Acesso Imediato",
+        "description": "Link do Google Drive + e-mail de boas-vindas + convite para a comunidade chegam de imediato. Sem espera.",
         "time": ""
       },
       {
-        "title": "Declare e Ensine a Sua Imagem",
-        "description": "Inscreva moldes de base num piscar de olhos de auto preenchimento (Branding, Personalidade, Guia).",
+        "title": "Defina a Sua Identidade e Negócio",
+        "description": "Preencha a identidade pessoal, identidade de marca e regras de voz através de templates guiados.",
         "time": "5-10 min"
       },
       {
-        "title": "Primeira Interação Magnífica",
-        "description": "Mande rascunhar o primeiro ensaio. O escritor foca-se nas directrizes e o revisor aperfeiçoa o rigor analítico.",
+        "title": "Primeira Conversa",
+        "description": "Peça à equipa de IA para escrever um post. Veja o Writer a redigir e o Reviewer a verificar a qualidade — na sua voz.",
         "time": "5 min"
       },
       {
-        "title": "Afine As Ligações do Sistema",
-        "description": "Expanda as raízes do conhecimento da máquina — API's externas e outras ferramentas moldáveis num clique.",
-        "time": "1 Semana"
+        "title": "Construa o Seu Sistema",
+        "description": "Adicione conhecimento de domínio, crie workflows, ligue ferramentas. A sua equipa de IA fica mais inteligente a cada semana.",
+        "time": "Semana 1"
       }
     ]
   },
   "delivery": {
     "header": {
-      "title": "O Que Na Verdade Entrega",
-      "subtitle": "Nós não vendemos assinaturas de software. Construímos e passamos as chaves para usar um motor operacional em pleno controlo."
+      "title": "O Que Recebe Efetivamente",
+      "subtitle": "Não vendemos subscrições de software. Construímos e entregamos um motor operacional funcional."
     },
     "models": {
       "lite": {
-        "edition": "Lite Edição",
-        "emotionalPromise": "A fundação para quem constrói e gere bases fortes da equipa IA de forma fluida a passos curtos.",
+        "edition": "Edição Lite",
+        "emotionalPromise": "Do caos disperso a uma fonte única de verdade. Clareza e estrutura imediatas para as suas operações.",
         "items": [
           {
-            "title": "Um Obsidian perfeitamente centralizado",
-            "description": "~30 Ficheiros essenciais num local arrumadinho de forma magistral das raízes da metologia."
+            "title": "Cofre Obsidian pré-estruturado",
+            "description": "~30 ficheiros organizados na estrutura FABRIC. Abra e tem uma Knowledge Base funcional."
           },
           {
-            "title": "4 perfis IA nativos bem detalhados",
-            "description": "Os agentes Orquestradotes + Analíticos + Exímios Críticos no texto central formatados aos perfis ideais."
+            "title": "4 definições de agentes de IA",
+            "description": "Orchestrator, Writer, Reviewer, Analyst. Cada um é um ficheiro Markdown que personaliza para o seu negócio."
           },
           {
-            "title": "Identidade flexível mas rigorosa formatada",
-            "description": "Ficheiros prompt essenciais sem limites da sua forma e regras precisas para o estilo de cópia perfeito e tom visual."
+            "title": "Templates de marca para preencher",
+            "description": "brand-identity.md e brand-voice.md com indicações guiadas. 5 minutos para completar."
           },
           {
-            "title": "2 modelos essenciais de Workflows",
-            "description": "Um passo automatizado na produção ou prospecção analítica pronta numa simples compilação diária yaml de rotinas."
+            "title": "2 workflows de competências",
+            "description": "Pipeline de conteúdo e workflow de investigação (ficheiros YAML) — prontos a usar ou personalizar."
           },
           {
-            "title": "O Mestre de Instruções em CLAUDE.md",
-            "description": "Diz à aplicação como coordenar ferramentas sob a ótica da sua exata base operacional a 100% nativa localmente."
+            "title": "Configuração CLAUDE.md",
+            "description": "Insira no Claude Code e ele compreende instantaneamente todo o contexto do seu negócio."
           },
           {
-            "title": "Livro Aberto para Iniciar Passos Base",
-            "description": "15 min orientados e organizados por ordem e num clique, como ligar ferramentas do bot a um simples terminal digital."
+            "title": "Guia de configuração passo a passo",
+            "description": "15 minutos desde o download até à sua primeira conversa com IA."
           }
         ]
       },
       "full": {
-        "edition": "Full Edition",
-        "includesNote": "Conteúdo completo da base Lite, entre mais extras:",
-        "emotionalPromise": "Foque nos objetivos do sistema, remova do papel e delegue ativamente as suas mais confusas preocupações base.",
+        "edition": "Edição Full",
+        "includesNote": "Tudo na Lite, mais:",
+        "emotionalPromise": "De operador sobrecarregado a visionário focado. O seu motor operacional, automatizado e pronto para produção.",
         "items": [
           {
-            "title": "Mais de 8,000 linhas puras na linguagem de Python",
-            "description": "Comandos, scripts complexos formatados pelas rotas centrais prontas do exímio LLM interno robusto escalável do backend do zero."
+            "title": "Motor Python completo (+8.800 linhas de código)",
+            "description": "Routing multi-LLM, montagem de prompts em 7 camadas, execução de skills, auto-evolução. Código pronto para produção."
           },
           {
-            "title": "Um Deploy imediato da base de servidor limpa e centralizada",
-            "description": "Num clique execute de imediato contentores limpos em qualquer terminal docker para isolar o sistema."
+            "title": "Deploy com um comando Docker",
+            "description": "docker compose up e tem um servidor de AI Operations a funcionar."
           },
           {
-            "title": "13 Ferramentas integradas da fundação de produtividade online de nuvem e agenda",
-            "description": "Encaixe no email google perfeito de agendamentos automatizados a anexos cloud do ecossistema central perfeitamente afinado em tokens seguros."
+            "title": "13 ferramentas Google Workspace",
+            "description": "Gmail, Calendar, Drive integrados nativamente. Configuração OAuth incluída."
           },
           {
-            "title": "APIs puras ligadas ao canal nativo por Telegram para o servidor central ativado para notificar clientes com ações 1click base instantâneas via mobile.",
-            "description": "Utilize uma REST API simples como base controladora interna móvel, limpa do sistema complexo sob sua segurança máxima nos servidores que você determinar livre de bloqueio extra limitador por corporação grande e cúpulas isoladas cegas de IA."
+            "title": "REST API + canal Telegram",
+            "description": "Ligue a partir de qualquer frontend ou use o Telegram como centro de comando."
           },
           {
-            "title": "As vertentes principais com bases e guião ideais por ramo pronto a explorar e testar",
-            "description": "Eixos do Saas e negócios em massa das marcas nativas das indústrias operacionais limpas prontas para base em formato prático do seu modelo exato sem atritos nenhuns!"
+            "title": "5 templates por indústria",
+            "description": "Consultoria, Agência, Multi-Empreendimento, SaaS, E-Commerce. Escolha e personalize."
           },
           {
-            "title": "O canivete de scripts complexo prumo da Consola digital programada de ações prontas",
-            "description": "Execute os módulos robustos com apenas uma só base simples de inicialização rotineira na sua frente à vontade ao seu conforto visual num segundo no seu telemóvel ao acordar."
+            "title": "Ferramentas CLI",
+            "description": "init, serve, bot, status, index — comandos para operações do dia a dia."
           }
         ]
       }
     },
-    "note": "Ambos contam rigoroso acesso cloud de suporte formatado nativo em emails regulares do suporte da rede social oficial comunitário da corporação a acompanhar as bases dos utilizadores ativos em rede fechada num acompanhamento das dúvidas 1-1."
+    "note": "Ambas as edições incluem: acesso instantâneo ao Google Drive, guia de configuração, acesso à comunidade (Telegram + WhatsApp) e e-mails de onboarding para a primeira semana."
   },
   "nav": {
     "getStarted": "Começar",
@@ -462,12 +463,12 @@
   },
   "navItems": {
     "fabric": "FABRIC",
-    "features": "Recursos",
+    "features": "Funcionalidades",
     "pricing": "Preços",
     "faq": "FAQ"
   },
   "footer": {
-    "partOf": "Parte do ecossistema da",
+    "partOf": "Parte do ecossistema",
     "ecosystem": ".",
     "realization": "Realization",
     "links": {
@@ -481,41 +482,67 @@
     "title": "Perguntas Frequentes",
     "items": [
       {
-        "question": "O que preciso para começar?",
-        "answer": "<p><strong>Lite:</strong> Obsidian (grátis) e assinatura Claude Pro ($20/mês Anthropic). Não precisa programar.</p><p><strong>Full:</strong> Python 3.11+, Docker (opcional) e chaves API LLMs (Anthropic / Google AI).</p>"
+        "question": "Do que preciso para começar?",
+        "answer": "<p><strong>Lite:</strong> Obsidian (gratuito) e subscrição Claude Pro ($20/mês da Anthropic). Sem necessidade de programação.</p><p><strong>Full:</strong> Python 3.11+, Docker (opcional) e chaves API para os seus fornecedores de LLM (Anthropic e/ou Google AI).</p>"
       },
       {
-        "question": "Posso hospedar no meu próprio servidor?",
-        "answer": "<p>Sim. A edição Full foi projetada para auto-hospedagem. Implante com Docker em qualquer VPS, nuvem ou máquina. Seus dados permanecem seguros com você.</p>"
+        "question": "Posso alojar no meu próprio servidor?",
+        "answer": "<p>Sim. A edição Full foi desenhada para auto-alojamento. Implemente com Docker em qualquer VPS, instância cloud ou máquina local. Os seus dados permanecem na sua infraestrutura.</p>"
       },
       {
-        "question": "Quais modelos de IA são suportados?",
-        "answer": "<p>A Full intercala Gemini Flash (rápido/barato), Claude Sonnet (equilibrado) e Opus (poderoso) — selecionando o melhor modelo. A Lite funciona com qualquer modelo Claude via Claude Code.</p>"
+        "question": "Que modelos de IA suporta?",
+        "answer": "<p>A edição Full encaminha entre Gemini Flash (rápido/económico), Claude Sonnet (equilibrado) e Claude Opus (poderoso) — selecionando automaticamente o melhor modelo para cada tarefa. A edição Lite funciona com qualquer modelo Claude via Claude Code.</p>"
       },
       {
-        "question": "Meus dados são privados?",
-        "answer": "<p>Completamente. O RealizeOS roda na sua máquina/servidor. Base de conhecimento e conversas não saem da sua infraestrutura. Chamadas externas ocorrem apenas para as APIs configuradas.</p>"
+        "question": "Os meus dados são privados?",
+        "answer": "<p>Completamente. O RealizeOS funciona na sua máquina ou servidor. A sua Knowledge Base, conversas e dados de negócio nunca saem da sua infraestrutura. As únicas chamadas externas são para as APIs de LLM que configurar.</p>"
       },
       {
         "question": "E se precisar de ajuda na configuração?",
-        "answer": "<p>O pacote de Assistência ($499) tem ligação de 1 hora para configurarmos juntos — voz da marca, agentes, primeiro workflow. Após comprar, receberá checklist e suporte contínuo.</p>"
+        "answer": "<p>O pacote de Acompanhamento ($499) inclui uma chamada de 1 hora onde configuramos o sistema juntos — voz de marca, agentes, primeiro workflow, tudo. Após a compra, recebe uma checklist de preparação detalhada. Também pode contactar por e-mail a qualquer momento.</p>"
       },
       {
-        "question": "Recebo as atualizações?",
-        "answer": "<p>Sim. Você tem acesso a atualizações via repositório GitHub. Puxe o código novo sempre que desejar.</p>"
+        "question": "Recebo atualizações?",
+        "answer": "<p>Sim. Enquanto proprietário do sistema, tem acesso a todas as atualizações via o repositório GitHub. Faça pull das últimas alterações quando quiser — ao seu ritmo, não ao nosso.</p>"
       },
       {
-        "question": "Posso gerenciar vários negócios juntos?",
-        "answer": "<p>Com certeza. O RealizeOS é ideal para multi-empreendedores. Cada negócio tem agentes, conhecimento e voz isolados. Um motor, quantos empreendimentos precisar.</p>"
+        "question": "Posso gerir vários negócios com um único sistema?",
+        "answer": "<p>Sem dúvida. O RealizeOS foi construído para operadores multi-empreendimento. Cada negócio tem os seus agentes isolados, Knowledge Base e voz de marca. Um motor, quantos empreendimentos precisar.</p>"
       },
       {
-        "question": "O que ocorre depois de comprar?",
-        "answer": "<p>Imediato: acesso ao download (Lite) ou repo GitHub (Full), e-mail de boas-vindas com manual e vídeo.</p><p>Comunidade: Telegram Builders e WhatsApp.</p><p>Nos dias seguintes, dicas de integração, personalização de agentes e fluxos de trabalho.</p>"
+        "question": "O que acontece depois de comprar?",
+        "answer": "<p>Imediatamente: acesso para descarregar o seu pacote (Lite) ou o repositório GitHub (Full). E-mail de boas-vindas com guia de configuração e vídeo de demonstração.</p><p>Comunidade: Grupo Builders no Telegram e comunidade WhatsApp.</p><p>Ao longo da semana seguinte, receberá e-mails de onboarding com dicas para definir a sua marca, personalizar agentes e construir o seu primeiro workflow.</p>"
       },
       {
         "question": "Existe política de reembolso?",
-        "answer": "<p>Se não estiver satisfeito em até 14 dias, resolvemos da melhor forma. O objetivo é seu sucesso, não te prender no ecossistema.</p>"
+        "answer": "<p>Se não estiver satisfeito nos 14 dias após a compra, contacte-nos e resolvemos. Queremos que tenha sucesso com o RealizeOS, não que se sinta preso.</p>"
       }
     ]
+  },
+  "finalCta": {
+    "title1": "Comece a Construir o",
+    "title2": "Seu Sistema de AI Operations",
+    "subtitle": "Compra única. Propriedade total. Sem mensalidades.",
+    "getRealizeOS": "Obter o RealizeOS",
+    "notReadyTitle": "Ainda não está pronto?",
+    "notReadyDesc": "Comece pela Ficha de Descoberta de Marca gratuita — 10 perguntas que ajudam a definir a sua marca para qualquer ferramenta de IA. Ou obtenha o Guia de Arquitetura FABRIC:",
+    "thanks": "Obrigado! Verifique a sua caixa de entrada para o guia de arquitetura.",
+    "namePlaceholder": "O seu nome",
+    "emailPlaceholder": "o-seu@email.com",
+    "challengePlaceholder": "Qual é o seu maior desafio em AI Operations?",
+    "sending": "A enviar...",
+    "getGuide": "Obter o Guia Gratuito",
+    "error": "Algo correu mal. Por favor, tente novamente ou envie-nos um e-mail diretamente."
+  },
+  "exitPopup": {
+    "title": "Espere — antes de sair",
+    "description": "Deixe o seu e-mail e enviaremos dicas práticas sobre operações com IA e acesso antecipado a novas funcionalidades.",
+    "namePlaceholder": "O seu nome",
+    "emailPlaceholder": "o-seu@email.com",
+    "cta": "Manter-me Atualizado",
+    "sending": "A enviar...",
+    "success": "Está dentro! Entraremos em contacto.",
+    "error": "Algo correu mal. Tente novamente.",
+    "disclaimer": "Sem spam. Apenas valor real e atualizações."
   }
 }

@@ -15,7 +15,9 @@ export function Founder() {
           <h2 className="text-gradient-yellow mb-6 text-3xl font-bold md:text-4xl">
             {t('founder.title')}
           </h2>
-          <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('founder.p1') }} />
+          <p className="text-muted-foreground">
+            {t('founder.p1')}
+          </p>
           <p className="mt-4 text-muted-foreground">
             {t('founder.p2')}
           </p>

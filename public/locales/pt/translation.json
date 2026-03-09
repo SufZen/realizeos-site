@@ -1,6 +1,7 @@
 {
   "hero": {
     "badge": "Parte do ecossistema Realization",
+    "tagline": "O RealizeOS é um sistema de operações de IA concebido para as empresas gerirem as suas operações, de forma inteligente.",
     "title_main": "O Motor Operacional",
     "title_highlight": "Para o Visionário",
     "description": "Deixe de ser o estrangulamento do seu próprio negócio. Recupere o seu tempo e transforme uma visão abstrata em realidade — com uma equipa de IA coordenada que compreende verdadeiramente a sua metodologia.",
@@ -193,7 +194,7 @@
   },
   "founder": {
     "title": "Construído a Partir de Operações Reais",
-    "p1": "O RealizeOS não é um conceito nem uma demo. Nasceu da BOA Architects e do Realization Group — extraído de um motor em produção que gere <strong className=\"text-foreground\">operações internacionais de arquitetura, imobiliário e empreendedorismo</strong> todos os dias.",
+    "p1": "O RealizeOS nasceu do trabalho e dos desafios diários do Realization Group, extraído de um motor de produção que gere operações internacionais de arquitetura, imobiliário e empreendedorismo — todos os dias.",
     "p2": "Construí isto porque a alternativa era colapsar. Tentar escalar projetos físicos e complexos com ferramentas de IA dispersas e genéricas era exaustivo. Tudo parecia frágil. Precisava de clareza absoluta e controlo total. Construí o RealizeOS para reconquistar a minha liberdade — e agora pode usar exatamente o mesmo motor para reconquistar a sua.",
     "role": "Fundador,"
   },
@@ -532,5 +533,16 @@
     "sending": "A enviar...",
     "getGuide": "Obter o Guia Gratuito",
     "error": "Algo correu mal. Por favor, tente novamente ou envie-nos um e-mail diretamente."
+  },
+  "exitPopup": {
+    "title": "Espere — antes de sair",
+    "description": "Deixe o seu e-mail e enviaremos dicas práticas sobre operações com IA e acesso antecipado a novas funcionalidades.",
+    "namePlaceholder": "O seu nome",
+    "emailPlaceholder": "o-seu@email.com",
+    "cta": "Manter-me Atualizado",
+    "sending": "A enviar...",
+    "success": "Está dentro! Entraremos em contacto.",
+    "error": "Algo correu mal. Tente novamente.",
+    "disclaimer": "Sem spam. Apenas valor real e atualizações."
   }
 }
