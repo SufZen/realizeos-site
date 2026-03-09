@@ -12,22 +12,26 @@ import {
 import { TierLite } from '@/components/illustrations/TierLite';
 import { TierFull } from '@/components/illustrations/TierFull';
 import { TierSetup } from '@/components/illustrations/TierSetup';
-import { pricingTiers, pricingCompareNote } from '@/data/pricing';
+import { usePricing } from '@/data/pricing';
+import { useTranslation } from 'react-i18next';
 import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 const tierIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  'RealizeOS Lite': TierLite,
-  'RealizeOS Full': TierFull,
-  'Setup Assistance': TierSetup,
+  'pricing-lite': TierLite,
+  'pricing-full': TierFull,
+  'pricing-setup': TierSetup,
 };
 
 export function Pricing() {
+  const { t } = useTranslation();
+  const { tiers: pricingTiers, compareNote: pricingCompareNote } = usePricing();
+
   return (
     <Section id="pricing">
       <SectionHeader
-        title="Choose Your Edition"
-        subtitle="One-time purchase. Own it forever. No subscriptions, no recurring fees."
+        title={t('pricing.header.title')}
+        subtitle={t('pricing.header.subtitle')}
       />
       <div className="grid gap-6 lg:grid-cols-3">
         {pricingTiers.map((tier, i) => (
@@ -44,7 +48,7 @@ export function Pricing() {
                 </Badge>
               )}
               {(() => {
-                const TierIcon = tierIconMap[tier.name];
+                const TierIcon = tierIconMap[tier.trackId];
                 return TierIcon ? <TierIcon className="mx-auto mb-3 h-12 w-12" /> : null;
               })()}
               <div className="mb-4">
@@ -58,10 +62,10 @@ export function Pricing() {
 
               <div className="mb-6">
                 <span className="text-4xl font-bold">${tier.price}</span>
-                <span className="ml-1 text-sm text-muted-foreground">{tier.period}</span>
+                <span className="ms-1 text-sm text-muted-foreground">{tier.period}</span>
               </div>
 
-              <Accordion type="single" collapsible className="mb-6 w-full text-left">
+              <Accordion type="single" collapsible className="mb-6 w-full text-start">
                 <AccordionItem value="included-features" className="border-none">
                   <AccordionTrigger className="justify-start gap-2 py-0 text-sm font-semibold text-brand-yellow hover:no-underline">
                     What's Included Technically
