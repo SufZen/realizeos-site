@@ -100,7 +100,7 @@ export function FinalCTA() {
                   onChange={(e) => setChallenge(e.target.value)}
                 />
                 <Button type="submit" className="w-full" disabled={formState === 'loading'}>
-                  {formState === 'loading' ? t('finalCta.sending') : t('finalCta.getGuide')}
+                  {formState === 'loading' ? t('finalCta.sending') : t('finalCta.submit')}
                 </Button>
               </form>
             )}

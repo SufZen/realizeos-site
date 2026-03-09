@@ -525,13 +525,13 @@
     "subtitle": "One-time purchase. Complete ownership. No recurring fees.",
     "getRealizeOS": "Get RealizeOS",
     "notReadyTitle": "Not ready yet?",
-    "notReadyDesc": "Start with the free Brand Discovery Worksheet — 10 questions that help you define your brand for any AI tool. Or get the FABRIC Architecture Guide:",
-    "thanks": "Thanks! Check your inbox for the architecture guide.",
+    "notReadyDesc": "Tell us about your biggest operations challenge. We'll get back to you with honest, practical advice — no sales pitch.",
+    "thanks": "Thanks! We'll review your challenge and get back to you.",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your@email.com",
     "challengePlaceholder": "What's your biggest AI operations challenge?",
     "sending": "Sending...",
-    "getGuide": "Get the Free Guide",
+    "submit": "Send My Challenge",
     "error": "Something went wrong. Please try again or email us directly."
   },
   "exitPopup": {

@@ -525,13 +525,13 @@
     "subtitle": "Compra única. Propriedade total. Sem mensalidades.",
     "getRealizeOS": "Obter o RealizeOS",
     "notReadyTitle": "Ainda não está pronto?",
-    "notReadyDesc": "Comece pela Ficha de Descoberta de Marca gratuita — 10 perguntas que ajudam a definir a sua marca para qualquer ferramenta de IA. Ou obtenha o Guia de Arquitetura FABRIC:",
-    "thanks": "Obrigado! Verifique a sua caixa de entrada para o guia de arquitetura.",
+    "notReadyDesc": "Conte-nos o seu maior desafio operacional. Responderemos com conselhos práticos e honestos — sem discurso de vendas.",
+    "thanks": "Obrigado! Vamos analisar o seu desafio e entrar em contacto.",
     "namePlaceholder": "O seu nome",
     "emailPlaceholder": "o-seu@email.com",
     "challengePlaceholder": "Qual é o seu maior desafio em AI Operations?",
     "sending": "A enviar...",
-    "getGuide": "Obter o Guia Gratuito",
+    "submit": "Enviar o Meu Desafio",
     "error": "Algo correu mal. Por favor, tente novamente ou envie-nos um e-mail diretamente."
   },
   "exitPopup": {
