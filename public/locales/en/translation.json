@@ -276,7 +276,7 @@
         "industry": "Venture Consulting",
         "metric": "5 ventures, 1 operator",
         "quote": "I run architecture, real estate, consulting, content, and a SaaS product — all from one control room. The system doesn't just assist, it operates.",
-        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, brand voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brand layer ensures consistent voice across 4 different brands. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Intelligence layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
+        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, brand voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brain layer ensures consistent voice across 4 different brands. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Insights layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
       }
     }
   },

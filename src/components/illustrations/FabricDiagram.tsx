@@ -13,9 +13,9 @@ interface Props {
 const layers = [
   { letter: 'F', title: 'Foundations', y: 50, side: 'right' as const },
   { letter: 'A', title: 'Agents', y: 114, side: 'left' as const },
-  { letter: 'B', title: 'Brand', y: 178, side: 'right' as const },
+  { letter: 'B', title: 'Brain', y: 178, side: 'right' as const },
   { letter: 'R', title: 'Routines', y: 242, side: 'left' as const },
-  { letter: 'I', title: 'Intelligence', y: 306, side: 'right' as const },
+  { letter: 'I', title: 'Insights', y: 306, side: 'right' as const },
   { letter: 'C', title: 'Creations', y: 370, side: 'left' as const },
 ] as const;
 

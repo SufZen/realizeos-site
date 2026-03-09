@@ -32,7 +32,7 @@ export function FabricSystem() {
               <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-yellow/10 font-mono text-xl font-bold text-brand-yellow glow-yellow">
                 {item.letter}
               </span>
-              <div>
+              <div className="min-w-0 text-start">
                 <h3 className="mb-1 font-semibold">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
