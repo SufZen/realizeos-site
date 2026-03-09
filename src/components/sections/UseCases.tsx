@@ -17,6 +17,8 @@ const illustrationMap: Record<string, React.FC<{ className?: string }>> = {
   Briefcase: UseCaseMultiVenture,
   Flag: UseCaseSaaS,
   ShoppingCart: UseCaseEcommerce,
+  Layers: UseCaseSaaS, // Recycling SVGs until Phase 2
+  Home: UseCaseEcommerce, // Recycling SVGs until Phase 2
 };
 
 export function UseCases() {

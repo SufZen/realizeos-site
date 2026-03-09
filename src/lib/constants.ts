@@ -14,7 +14,7 @@ export const LINKS = {
   whatsapp: 'https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd',
   brandWorksheet: 'brand-worksheet.html',
   supportEmail: 'realizeos@realization.co.il',
-  linkedin: 'https://www.linkedin.com/in/asaf-eyzenkot',
+  linkedin: 'https://www.linkedin.com/in/sufzen',
   github: 'https://github.com/SufZen',
   realization: 'https://realization.co.il',
   githubRepo: 'https://api.github.com/repos/SufZen/realize-os',

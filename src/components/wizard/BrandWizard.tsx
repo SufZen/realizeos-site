@@ -112,6 +112,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved) setState({ ...emptyWizardState, ...JSON.parse(saved) });
     } catch { /* ignore */ }
   }, []);
@@ -139,9 +140,8 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
             {STEPS.map((s) => (
               <div key={s.id} className="flex flex-1 flex-col items-center gap-1">
                 <div
-                  className={`h-1 w-full rounded-full transition-colors ${
-                    s.id <= step ? 'bg-brand-yellow' : 'bg-white/10'
-                  }`}
+                  className={`h-1 w-full rounded-full transition-colors ${s.id <= step ? 'bg-brand-yellow' : 'bg-white/10'
+                    }`}
                 />
                 <span className={`text-[10px] ${s.id === step ? 'text-brand-yellow' : 'text-muted-foreground'}`}>
                   {s.label}

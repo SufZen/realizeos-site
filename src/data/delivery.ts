@@ -7,12 +7,14 @@ export interface DeliveryColumn {
   edition: string;
   featured?: boolean;
   includesNote?: string;
+  emotionalPromise: string;
   items: DeliveryItem[];
 }
 
 export const deliveryColumns: DeliveryColumn[] = [
   {
     edition: 'Lite Edition',
+    emotionalPromise: 'From scattered chaos to a single source of truth. Instant clarity and structure for your business operations.',
     items: [
       {
         title: 'Pre-structured Obsidian vault',
@@ -44,6 +46,7 @@ export const deliveryColumns: DeliveryColumn[] = [
     edition: 'Full Edition',
     featured: true,
     includesNote: 'Everything in Lite, plus:',
+    emotionalPromise: 'From overwhelmed operator to focused visionary. Claim your fully automated, production-ready operational engine.',
     items: [
       {
         title: 'Complete Python engine (8,800+ lines)',

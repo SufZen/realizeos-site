@@ -27,6 +27,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Founder />
         <PainPoints />
         <DemoVideo />
         <FabricSystem />
@@ -38,7 +39,6 @@ export default function App() {
         <Delivery />
         <Testimonials />
         <FAQ />
-        <Founder />
         <FinalCTA />
       </main>
       <Footer />

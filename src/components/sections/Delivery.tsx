@@ -3,6 +3,12 @@ import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { PackageLite } from '@/components/illustrations/PackageLite';
 import { PackageFull } from '@/components/illustrations/PackageFull';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { deliveryColumns, deliveryNote } from '@/data/delivery';
 import { cn } from '@/lib/utils';
 
@@ -28,17 +34,29 @@ export function Delivery() {
                 <PackageLite className="mx-auto mb-4 h-16 w-16" />
               )}
               <h3 className="mb-4 text-xl font-bold">{col.edition}</h3>
+              <p className="mb-6 text-base text-muted-foreground">{col.emotionalPromise}</p>
+
               {col.includesNote && (
                 <p className="mb-4 text-sm font-medium text-brand-yellow">{col.includesNote}</p>
               )}
-              <div className="space-y-4">
-                {col.items.map((item) => (
-                  <div key={item.title}>
-                    <strong className="text-sm">{item.title}</strong>
-                    <p className="mt-0.5 text-sm text-muted-foreground">{item.description}</p>
-                  </div>
-                ))}
-              </div>
+
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="technical-specs" className="border-none">
+                  <AccordionTrigger className="justify-start gap-2 py-2 text-sm font-semibold text-brand-yellow hover:no-underline">
+                    View Technical Details
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-4 pt-4">
+                      {col.items.map((item) => (
+                        <div key={item.title}>
+                          <strong className="text-sm">{item.title}</strong>
+                          <p className="mt-0.5 text-sm text-muted-foreground">{item.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </AnimateOnScroll>
         ))}

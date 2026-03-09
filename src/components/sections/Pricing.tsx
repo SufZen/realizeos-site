@@ -3,6 +3,12 @@ import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { TierLite } from '@/components/illustrations/TierLite';
 import { TierFull } from '@/components/illustrations/TierFull';
 import { TierSetup } from '@/components/illustrations/TierSetup';
@@ -43,20 +49,38 @@ export function Pricing() {
               })()}
               <div className="mb-4">
                 <h3 className="text-xl font-bold">{tier.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{tier.description}</p>
+                <p className="mt-1 text-sm text-foreground">{tier.description}</p>
               </div>
+
+              <div className="mb-6 flex-1">
+                <p className="text-sm font-medium text-muted-foreground">{tier.emotionalPromise}</p>
+              </div>
+
               <div className="mb-6">
                 <span className="text-4xl font-bold">${tier.price}</span>
                 <span className="ml-1 text-sm text-muted-foreground">{tier.period}</span>
               </div>
-              <ul className="mb-8 flex-1 space-y-2.5 text-sm">
-                {tier.features.map((f) => (
-                  <li key={f.text} className="flex items-start gap-2">
-                    <span className="mt-1 text-brand-yellow">&#10003;</span>
-                    <span className={f.bold ? 'font-semibold' : ''}>{f.text}</span>
-                  </li>
-                ))}
-              </ul>
+
+              <Accordion type="single" collapsible className="mb-6 w-full text-left">
+                <AccordionItem value="included-features" className="border-none">
+                  <AccordionTrigger className="justify-start gap-2 py-0 text-sm font-semibold text-brand-yellow hover:no-underline">
+                    What's Included Technically
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="mt-4 space-y-2.5 text-sm">
+                      {tier.features.map((f) => (
+                        <li key={f.text} className="flex items-start gap-2">
+                          <span className="mt-0.5 text-brand-yellow">&#10003;</span>
+                          <span className={cn('text-muted-foreground', f.bold && 'font-semibold text-foreground')}>
+                            {f.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
               <Button
                 asChild
                 variant={tier.featured ? 'default' : 'outline'}

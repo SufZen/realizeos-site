@@ -13,17 +13,14 @@ export function Founder() {
             Built from Real Operations
           </h2>
           <p className="text-muted-foreground">
-            RealizeOS isn't a concept or a demo. It was extracted from a production system running{' '}
+            RealizeOS isn't a concept or a demo. It was born from BOA Architects and the Realization Group—extracted from a production engine running{' '}
             <strong className="text-foreground">
-              4 AI bots across 3 business ventures
+              international architecture, real estate, and venture operations
             </strong>{' '}
-            — processing real messages, managing real brand voices, executing real workflows, every
-            day.
+            every single day.
           </p>
           <p className="mt-4 text-muted-foreground">
-            I built this because I needed it. Managing multiple ventures with disconnected AI tools
-            was unsustainable. So I built a coordinated system — and now you can use the same engine
-            for your own operations.
+            I built this because the alternative was breaking down. Trying to scale physical, complex ventures using scattered, generic AI tools was exhausting. Everything felt fragile. I needed absolute clarity and total control. I built RealizeOS to buy back my freedom—and now you can use our exact engine to reclaim yours.
           </p>
           <FounderPhotoFrame className="mx-auto mb-4 h-24 w-24" />
           <Separator className="mx-auto my-6 w-16" />

@@ -33,7 +33,7 @@ export function Hero() {
       .then((d) => {
         if (d.stargazers_count) setGithubStars(d.stargazers_count);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   return (
@@ -60,17 +60,16 @@ export function Hero() {
             variants={fadeUp}
             className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
           >
-            The AI Operations System
+            The Operational Engine
             <br />
-            <span className="text-gradient-yellow text-glow-yellow">You Own</span>
+            <span className="text-gradient-yellow text-glow-yellow">For The Visionary</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg lg:mx-0"
           >
-            Coordinated agent teams. Multi-LLM intelligence. A knowledge base that grows with your
-            business. Installed in hours, not months.
+            Stop being the bottleneck in your own business. Reclaim your time and translate abstract vision into physical reality with a coordinated AI team that actually understands your methodology.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">

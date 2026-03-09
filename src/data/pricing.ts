@@ -6,6 +6,7 @@ export interface PricingFeature {
 export interface PricingTier {
   name: string;
   description: string;
+  emotionalPromise: string;
   price: number;
   period: string;
   features: PricingFeature[];
@@ -21,7 +22,8 @@ export interface PricingTier {
 export const pricingTiers: PricingTier[] = [
   {
     name: 'RealizeOS Lite',
-    description: 'For operators who want AI assistance without servers',
+    description: 'For operators seeking pure knowledge management structure.',
+    emotionalPromise: 'Stop starting from scratch. Establish a pristine, interconnected operations vault instantly.',
     price: 79,
     period: 'one-time',
     features: [
@@ -41,7 +43,8 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: 'RealizeOS Full',
-    description: 'The complete engine with multi-LLM routing & tools',
+    description: 'The production-grade infrastructure powering the Realization group.',
+    emotionalPromise: 'Step securely out of the bottleneck constraint into the visionary seat. Complete automated control.',
     price: 249,
     period: 'one-time',
     featured: true,
@@ -67,7 +70,8 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: 'Setup Assistance',
-    description: 'Full edition + hands-on help getting started',
+    description: 'Direct collaboration with the architect of RealizeOS.',
+    emotionalPromise: 'Fast-track your freedom. We configure the system directly around your unique venture.',
     price: 499,
     period: 'one-time',
     features: [
