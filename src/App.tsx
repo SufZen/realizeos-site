@@ -15,6 +15,8 @@ import { FAQ } from '@/components/sections/FAQ';
 import { Founder } from '@/components/sections/Founder';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
+import { CaseStudies } from '@/components/sections/CaseStudies';
+import { Methodology } from '@/components/sections/Methodology';
 import { ExitIntentPopup } from '@/components/shared/ExitIntentPopup';
 import { MobileStickyBar } from '@/components/shared/MobileStickyBar';
 import { BrandWizard } from '@/components/wizard/BrandWizard';
@@ -28,8 +30,10 @@ export default function App() {
       <main>
         <Hero />
         <Founder />
+        <Methodology />
         <PainPoints />
         <DemoVideo />
+        <CaseStudies />
         <FabricSystem />
         <Features />
         <UseCases />

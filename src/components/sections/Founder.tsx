@@ -22,7 +22,7 @@ export function Founder() {
           <p className="mt-4 text-muted-foreground">
             I built this because the alternative was breaking down. Trying to scale physical, complex ventures using scattered, generic AI tools was exhausting. Everything felt fragile. I needed absolute clarity and total control. I built RealizeOS to buy back my freedom—and now you can use our exact engine to reclaim yours.
           </p>
-          <FounderPhotoFrame className="mx-auto mb-4 h-24 w-24" />
+          <FounderPhotoFrame className="mx-auto mb-4 h-24 w-24" src="/img/founder.png" />
           <Separator className="mx-auto my-6 w-16" />
           <div>
             <strong>Asaf Eyzenkot</strong>
