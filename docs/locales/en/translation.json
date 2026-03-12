@@ -8,10 +8,10 @@
     "cta_full": "Get RealizeOS — $249",
     "cta_how": "See How It Works",
     "stats": {
-      "files": "files",
-      "lines": "lines of code",
-      "tools": "Google tools",
-      "github": "GitHub stars"
+      "models": "AI Models",
+      "channels": "Channels",
+      "tools": "Tools",
+      "strategies": "Routing Strategies"
     }
   },
   "features": {
@@ -22,7 +22,7 @@
     "routing": {
       "title": "Multi-LLM Routing",
       "promise": "Instant intelligence scaled securely across your operations. We direct your strategic requests to the right mind automatically.",
-      "technical": "Each request is routed to the optimal model. Quick questions hit Gemini Flash for speed. Deep content drafting goes to Claude Sonnet. Complex strategy calculations leverage Claude Opus. All handled under the hood."
+      "technical": "Provider-agnostic routing across 4 providers (Claude, Gemini, OpenAI, Ollama) with 20+ models. 4 routing strategies — cost, quality, balanced, speed — automatically select the optimal model for each request. 9 task modalities with intelligent classifier and per-call cost tracking."
     },
     "assembly": {
       "title": "Dynamic Identity Assembly",
@@ -32,7 +32,7 @@
     "execution": {
       "title": "Multi-Step Execution",
       "promise": "Send one message, and watch an entire team execute a project from logic to completion without babysitting.",
-      "technical": "YAML-defined workflows that chain agents and tools: search the web, analyze results, execute custom scripts, draft content, and request human review—all triggered sequentially by a single message."
+      "technical": "Workflow engine with 7 node types (agent, tool, condition, loop, parallel, human-review, sub-workflow) plus event triggers. YAML-defined pipelines chain agents and tools: search the web, analyze results, execute custom scripts, draft content, and request human review — all triggered by a single message or scheduled event."
     },
     "retrieval": {
       "title": "Hybrid Knowledge Retrieval",
@@ -47,7 +47,17 @@
     "evolution": {
       "title": "Continuous Evolution",
       "promise": "Your operations engine gets smarter with every single interaction, constantly closing gaps and refining your playbook.",
-      "technical": "The system uses an evolution loop to track successful paths vs failed ones. It detects knowledge gaps, dynamically suggests new skills, and refines agent prompts based on interaction history."
+      "technical": "5 evolution types: prompt refinement, skill creation, knowledge gap detection, workflow optimization, and agent behavior tuning. Built-in risk assessment scores each proposed change. Automatic rollback if quality degrades. Full audit trail of every evolution event."
+    },
+    "multichannel": {
+      "title": "Multi-Channel Gateway",
+      "promise": "Reach your AI team from anywhere — WhatsApp, Web, Webhooks, or scheduled tasks. One brain, every channel.",
+      "technical": "5 channel adapters: REST API, Telegram, WhatsApp Cloud API, Web/WebSocket, Webhooks (HMAC-signed). Plus cron-based scheduler. Channel-agnostic message routing with attachment handling."
+    },
+    "security": {
+      "title": "Enterprise Security",
+      "promise": "Multi-user access control, encrypted credentials, audit trails. Your AI operations, secured.",
+      "technical": "Role-based access control with 16 permissions across 5 default roles. AES-256 encrypted credential vault. Full audit logging with structured events. Prompt injection detection and filtering."
     },
     "view_flow": "View Technical Flow"
   },
@@ -65,9 +75,10 @@
         "features": [
           "Pre-structured Obsidian vault (FABRIC)",
           "4 agent templates (Orchestrator, Writer, Reviewer, Analyst)",
-          "Brand identity & voice wizards",
-          "Skill workflows (YAML-defined pipelines)",
-          "CLAUDE.md for Claude Code integration",
+          "Brand identity & voice wizards + interactive Brand Worksheet",
+          "6 skill workflows (proposals, campaigns, social, reviews, content, research)",
+          "3 shared methods (competitive analysis, content repurposing, decision framework)",
+          "Enhanced CLAUDE.md protocol (155 lines)",
           "Step-by-step setup guide",
           "Works with Claude Pro ($20/mo)"
         ],
@@ -83,16 +94,20 @@
         "features": {
           "header": "Everything in Lite, plus:",
           "list": [
-            "Multi-LLM routing (Gemini + Claude Sonnet + Opus)",
+            "Provider-agnostic LLM routing (Claude, Gemini, OpenAI, Ollama)",
+            "20+ models with 4 routing strategies (cost, quality, balanced, speed)",
             "7-layer dynamic prompt assembly",
             "Hybrid KB search (FTS5 + vector)",
-            "Multi-step skill executor engine",
+            "Workflow engine with 7 node types + triggers",
+            "Multi-channel: WhatsApp, Web/WebSocket, Webhooks, Scheduler",
             "Google Workspace integration (13 tools)",
             "Web search, browser automation, MCP",
-            "REST API + Telegram channels",
-            "Self-evolution engine",
+            "Tool SDK & extensibility framework",
+            "Security: RBAC, encrypted vault, audit logging",
+            "Media processing (image analysis, transcription, generation)",
+            "Auto-evolution engine with risk assessment & rollback",
             "Docker one-command deploy",
-            "CLI tooling + 5 system templates"
+            "CI/CD pipeline (GitHub Actions + pytest)"
           ]
         },
         "ctaText": "Get Full Edition",
@@ -297,7 +312,7 @@
       },
       "B": {
         "title": "Brain",
-        "description": "Domain knowledge your team actually remembers. Market data, building codes, expertise, deal history — accessible every conversation."
+        "description": "Domain knowledge your team actually remembers. Market data, expertise, deal history — accessible every conversation."
       },
       "R": {
         "title": "Routines",
@@ -406,16 +421,20 @@
             "description": "Orchestrator, Writer, Reviewer, Analyst. Each is a markdown file you customize for your business."
           },
           {
-            "title": "Fill-in-the-blank brand templates",
-            "description": "brand-identity.md and brand-voice.md with guided prompts. Takes 5 minutes to fill in."
+            "title": "Fill-in-the-blank brand templates + Brand Worksheet",
+            "description": "brand-identity.md, brand-voice.md, and the interactive 130-line Brand Worksheet wizard. Define your brand in minutes."
           },
           {
-            "title": "2 skill workflows",
-            "description": "Content pipeline and research workflow (YAML files), ready to use or customize."
+            "title": "6 skill workflows",
+            "description": "Proposals, campaigns, social media, reviews, content pipeline, and research (YAML files). Ready to use or customize."
           },
           {
-            "title": "CLAUDE.md configuration",
-            "description": "Drop into Claude Code and it instantly understands your entire business context."
+            "title": "3 shared methods",
+            "description": "Competitive analysis, content repurposing, and decision framework. Reusable across all your workflows."
+          },
+          {
+            "title": "Enhanced CLAUDE.md protocol (155 lines)",
+            "description": "Drop into Claude Code and it instantly understands your entire business context with full operational rules."
           },
           {
             "title": "Step-by-step setup guide",
@@ -429,28 +448,40 @@
         "emotionalPromise": "From overwhelmed operator to focused visionary. Claim your fully automated, production-ready operational engine.",
         "items": [
           {
-            "title": "Complete Python engine (8,800+ lines)",
-            "description": "Multi-LLM routing, 7-layer prompt assembly, skill execution, self-evolution. Production-ready code."
+            "title": "Complete Python engine (11,000+ lines)",
+            "description": "Multi-LLM routing, 7-layer prompt assembly, workflow engine, self-evolution, security, media processing. Production-ready code."
           },
           {
             "title": "Docker one-command deploy",
             "description": "docker compose up and you have a running AI operations server."
           },
           {
+            "title": "5 channels (REST, Telegram, WhatsApp, Web/WebSocket, Webhooks) + Scheduler",
+            "description": "Reach your AI from anywhere. Channel-agnostic message routing with attachment handling."
+          },
+          {
             "title": "13 Google Workspace tools",
             "description": "Gmail, Calendar, Drive integration built in. OAuth setup included."
           },
           {
-            "title": "REST API + Telegram channel",
-            "description": "Connect from any frontend, or use Telegram as your command center."
+            "title": "Security: RBAC, encrypted vault, audit logging",
+            "description": "16 permissions across 5 roles, AES-256 encrypted credentials, structured audit events, prompt injection detection."
           },
           {
-            "title": "5 industry templates",
-            "description": "Consulting, Agency, Multi-Venture, SaaS, E-Commerce. Pick one and customize."
+            "title": "Tool SDK & extensibility framework",
+            "description": "7 tool categories with MCP support. Build custom integrations with the plugin architecture."
           },
           {
-            "title": "CLI tooling",
-            "description": "init, serve, bot, status, index commands for day-to-day operations."
+            "title": "Media processing",
+            "description": "Image analysis (vision), audio transcription, and content generation. Built-in media pipeline."
+          },
+          {
+            "title": "8 industry templates",
+            "description": "Consulting, Agency, Multi-Venture, SaaS, E-Commerce, Freelance, Coaching, Accounting. Pick one and customize."
+          },
+          {
+            "title": "CLI scaffolding + dev process templates",
+            "description": "init, serve, bot, status, index commands plus CI/CD pipeline (GitHub Actions + pytest)."
           }
         ]
       }
@@ -483,7 +514,7 @@
     "items": [
       {
         "question": "What do I need to get started?",
-        "answer": "<p><strong>Lite:</strong> Obsidian (free) and a Claude Pro subscription ($20/mo from Anthropic). No coding required.</p><p><strong>Full:</strong> Python 3.11+, Docker (optional), and API keys for your chosen LLM providers (Anthropic and/or Google AI).</p>"
+        "answer": "<p><strong>Lite:</strong> Obsidian (free) and a Claude Pro subscription ($20/mo from Anthropic). No coding required.</p><p><strong>Full:</strong> Python 3.11+, Docker (optional), and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for local inference).</p>"
       },
       {
         "question": "Can I host it on my own server?",
@@ -491,11 +522,11 @@
       },
       {
         "question": "Which AI models does it support?",
-        "answer": "<p>The Full edition routes between Gemini Flash (fast/cheap), Claude Sonnet (balanced), and Claude Opus (powerful) — automatically selecting the best model for each task. The Lite edition works with any Claude model through Claude Code.</p>"
+        "answer": "<p>The Full edition supports 4 providers — Claude (Anthropic), Gemini (Google), OpenAI, and Ollama (local) — with 20+ models total. 4 routing strategies (cost, quality, balanced, speed) automatically select the optimal model for each task. 9 task modalities ensure the right model handles the right work. The Lite edition works with any Claude model through Claude Code.</p>"
       },
       {
         "question": "Is my data private?",
-        "answer": "<p>Completely. RealizeOS runs on your machine or server. Your knowledge base, conversations, and business data never leave your infrastructure. The only external calls are to the LLM APIs you configure.</p>"
+        "answer": "<p>Completely. RealizeOS runs on your machine or server. Your knowledge base, conversations, and business data never leave your infrastructure. Security features include role-based access control (RBAC) with 16 permissions, AES-256 encrypted credential vault, and full audit logging. For maximum privacy, use Ollama for fully local inference — no data leaves your network at all.</p>"
       },
       {
         "question": "What if I need help setting up?",

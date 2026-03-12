@@ -8,10 +8,10 @@
     "cta_full": "Adquira o RealizeOS — $249",
     "cta_how": "Veja Como Funciona",
     "stats": {
-      "files": "ficheiros",
-      "lines": "linhas de código",
-      "tools": "ferramentas Google",
-      "github": "estrelas no GitHub"
+      "models": "Modelos de IA",
+      "channels": "Canais",
+      "tools": "Ferramentas",
+      "strategies": "Estratégias de Routing"
     }
   },
   "features": {
@@ -22,7 +22,7 @@
     "routing": {
       "title": "Routing Multi-LLM",
       "promise": "Inteligência instantânea e segura em todas as suas operações. Direcionamos os seus pedidos estratégicos para o modelo certo — automaticamente.",
-      "technical": "Cada pedido é encaminhado para o modelo ideal: perguntas rápidas vão para o Gemini Flash pela velocidade. Redação de conteúdo profundo vai para o Claude Sonnet. Cálculos estratégicos complexos usam o Claude Opus. Tudo tratado nos bastidores."
+      "technical": "Routing agnóstico de fornecedor em 4 provedores (Claude, Gemini, OpenAI, Ollama) com 20+ modelos. 4 estratégias de routing — custo, qualidade, equilíbrio, velocidade — selecionam automaticamente o modelo ideal para cada pedido. 9 modalidades de tarefa com classificador inteligente e rastreamento de custos por chamada."
     },
     "assembly": {
       "title": "Montagem Dinâmica de Identidade",
@@ -32,7 +32,7 @@
     "execution": {
       "title": "Execução Multi-Etapas",
       "promise": "Envie uma mensagem e veja uma equipa inteira executar um projeto do início ao fim — sem micro-gestão.",
-      "technical": "Workflows definidos em YAML que encadeiam agentes e ferramentas: pesquisa na web, análise de resultados, execução de scripts, redação de conteúdo e pedido de revisão humana — tudo acionado por uma única mensagem."
+      "technical": "Motor de workflow com 7 tipos de nós (agente, ferramenta, condição, loop, paralelo, revisão humana, sub-workflow) e triggers de eventos. Pipelines definidos em YAML encadeiam agentes e ferramentas: pesquisa web, análise de resultados, execução de scripts, redação de conteúdo e pedido de revisão humana — acionados por uma única mensagem ou evento agendado."
     },
     "retrieval": {
       "title": "Pesquisa Híbrida de Conhecimento",
@@ -47,7 +47,17 @@
     "evolution": {
       "title": "Evolução Contínua",
       "promise": "O seu motor operacional fica mais inteligente a cada interação — colmatando lacunas e afinando o seu playbook.",
-      "technical": "O sistema utiliza um ciclo de evolução para registar caminhos de sucesso versus caminhos que falharam. Deteta lacunas de conhecimento, sugere novas competências e refina os prompts dos agentes com base no histórico de interações."
+      "technical": "5 tipos de evolução: refinamento de prompts, criação de skills, deteção de lacunas de conhecimento, otimização de workflows e afinação de comportamento dos agentes. Avaliação de risco integrada para cada alteração proposta. Rollback automático se a qualidade diminuir. Registo completo de auditoria de cada evento de evolução."
+    },
+    "multichannel": {
+      "title": "Gateway Multi-Canal",
+      "promise": "Chegue à sua equipa de IA de qualquer lugar — WhatsApp, Web, Webhooks, ou tarefas agendadas. Um cérebro, todos os canais.",
+      "technical": "5 adaptadores de canal: REST API, Telegram, WhatsApp Cloud API, Web/WebSocket, Webhooks (com assinatura HMAC). Mais agendador cron. Routing de mensagens agnóstico de canal com gestão de anexos."
+    },
+    "security": {
+      "title": "Segurança Empresarial",
+      "promise": "Controlo de acesso multi-utilizador, credenciais encriptadas, trilhos de auditoria. As suas operações de IA, protegidas.",
+      "technical": "Controlo de acesso baseado em funções (RBAC) com 16 permissões em 5 funções predefinidas. Cofre de credenciais encriptado AES-256. Registo de auditoria completo com eventos estruturados. Deteção e filtragem de prompt injection."
     },
     "view_flow": "Ver Fluxo Técnico"
   },
@@ -65,9 +75,10 @@
         "features": [
           "Cofre Obsidian pré-estruturado (FABRIC)",
           "4 templates de agentes (Orchestrator, Writer, Reviewer, Analyst)",
-          "Wizards de identidade e voz de marca",
-          "Workflows de competências (pipelines YAML)",
-          "CLAUDE.md para integração com Claude Code",
+          "Wizards de identidade e voz de marca + Brand Worksheet interativo",
+          "6 workflows de competências (propostas, campanhas, social, revisões, conteúdo, pesquisa)",
+          "3 métodos partilhados (análise competitiva, reciclagem de conteúdo, framework de decisão)",
+          "Protocolo CLAUDE.md melhorado (155 linhas)",
           "Guia de configuração passo a passo",
           "Funciona com Claude Pro ($20/mês)"
         ],
@@ -83,16 +94,20 @@
         "features": {
           "header": "Tudo na edição Lite, mais:",
           "list": [
-            "Routing Multi-LLM (Gemini + Claude Sonnet + Opus)",
+            "Routing LLM agnóstico de fornecedor (Claude, Gemini, OpenAI, Ollama)",
+            "20+ modelos com 4 estratégias de routing (custo, qualidade, equilíbrio, velocidade)",
             "Montagem dinâmica de prompts em 7 camadas",
             "Pesquisa híbrida na Knowledge Base (FTS5 + vetorial)",
-            "Motor de execução de skills multi-etapas",
+            "Motor de workflow com 7 tipos de nós + triggers",
+            "Multi-canal: WhatsApp, Web/WebSocket, Webhooks, Agendador",
             "Integração com Google Workspace (13 ferramentas)",
             "Pesquisa web, automação de browser, MCP",
-            "REST API + canais Telegram",
-            "Motor de auto-evolução",
+            "Tool SDK e framework de extensibilidade",
+            "Segurança: RBAC, cofre encriptado, registo de auditoria",
+            "Processamento de média (análise de imagem, transcrição, geração)",
+            "Motor de auto-evolução com avaliação de risco e rollback",
             "Deploy com um comando Docker",
-            "Ferramentas CLI + 5 templates de sistema"
+            "Pipeline CI/CD (GitHub Actions + pytest)"
           ]
         },
         "ctaText": "Obter a Edição Full",
@@ -297,7 +312,7 @@
       },
       "B": {
         "title": "Brain (Cérebro)",
-        "description": "Conhecimento de domínio que a equipa realmente memoriza. Dados de mercado, códigos de construção, expertise, histórico de negócios — acessível em cada conversa."
+        "description": "Conhecimento de domínio que a equipa memoriza. Dados de mercado, expertise, histórico — acessível em cada conversa."
       },
       "R": {
         "title": "Routines (Rotinas)",
@@ -406,16 +421,20 @@
             "description": "Orchestrator, Writer, Reviewer, Analyst. Cada um é um ficheiro Markdown que personaliza para o seu negócio."
           },
           {
-            "title": "Templates de marca para preencher",
-            "description": "brand-identity.md e brand-voice.md com indicações guiadas. 5 minutos para completar."
+            "title": "Templates de marca para preencher + Brand Worksheet",
+            "description": "brand-identity.md, brand-voice.md, e o wizard interativo de 130 linhas. Defina a sua marca em minutos."
           },
           {
-            "title": "2 workflows de competências",
-            "description": "Pipeline de conteúdo e workflow de investigação (ficheiros YAML) — prontos a usar ou personalizar."
+            "title": "6 workflows de competências",
+            "description": "Propostas, campanhas, redes sociais, revisões, pipeline de conteúdo e pesquisa (ficheiros YAML). Prontos a usar ou personalizar."
           },
           {
-            "title": "Configuração CLAUDE.md",
-            "description": "Insira no Claude Code e ele compreende instantaneamente todo o contexto do seu negócio."
+            "title": "3 métodos partilhados",
+            "description": "Análise competitiva, reciclagem de conteúdo e framework de decisão. Reutilizáveis em todos os workflows."
+          },
+          {
+            "title": "Protocolo CLAUDE.md melhorado (155 linhas)",
+            "description": "Insira no Claude Code e ele compreende instantaneamente todo o contexto do seu negócio com regras operacionais completas."
           },
           {
             "title": "Guia de configuração passo a passo",
@@ -429,28 +448,40 @@
         "emotionalPromise": "De operador sobrecarregado a visionário focado. O seu motor operacional, automatizado e pronto para produção.",
         "items": [
           {
-            "title": "Motor Python completo (+8.800 linhas de código)",
-            "description": "Routing multi-LLM, montagem de prompts em 7 camadas, execução de skills, auto-evolução. Código pronto para produção."
+            "title": "Motor Python completo (+11.000 linhas de código)",
+            "description": "Routing multi-LLM, montagem de prompts em 7 camadas, motor de workflows, auto-evolução, segurança, processamento de média. Código pronto para produção."
           },
           {
             "title": "Deploy com um comando Docker",
             "description": "docker compose up e tem um servidor de AI Operations a funcionar."
           },
           {
+            "title": "5 canais (REST, Telegram, WhatsApp, Web/WebSocket, Webhooks) + Agendador",
+            "description": "Chegue à sua IA de qualquer lugar. Routing de mensagens agnóstico de canal com gestão de anexos."
+          },
+          {
             "title": "13 ferramentas Google Workspace",
             "description": "Gmail, Calendar, Drive integrados nativamente. Configuração OAuth incluída."
           },
           {
-            "title": "REST API + canal Telegram",
-            "description": "Ligue a partir de qualquer frontend ou use o Telegram como centro de comando."
+            "title": "Segurança: RBAC, cofre encriptado, registo de auditoria",
+            "description": "16 permissões em 5 funções, encriptação AES-256, eventos de auditoria estruturados, deteção de prompt injection."
           },
           {
-            "title": "5 templates por indústria",
-            "description": "Consultoria, Agência, Multi-Empreendimento, SaaS, E-Commerce. Escolha e personalize."
+            "title": "Tool SDK e framework de extensibilidade",
+            "description": "7 categorias de ferramentas com suporte MCP. Construa integrações personalizadas com a arquitetura de plugins."
           },
           {
-            "title": "Ferramentas CLI",
-            "description": "init, serve, bot, status, index — comandos para operações do dia a dia."
+            "title": "Processamento de média",
+            "description": "Análise de imagem (visão), transcrição de áudio e geração de conteúdo. Pipeline de média integrado."
+          },
+          {
+            "title": "8 templates por indústria",
+            "description": "Consultoria, Agência, Multi-Empreendimento, SaaS, E-Commerce, Freelance, Coaching, Contabilidade. Escolha e personalize."
+          },
+          {
+            "title": "CLI Scaffolding + templates Dev Process",
+            "description": "init, serve, bot, status, index — mais pipeline CI/CD (GitHub Actions + pytest)."
           }
         ]
       }
@@ -483,7 +514,7 @@
     "items": [
       {
         "question": "Do que preciso para começar?",
-        "answer": "<p><strong>Lite:</strong> Obsidian (gratuito) e subscrição Claude Pro ($20/mês da Anthropic). Sem necessidade de programação.</p><p><strong>Full:</strong> Python 3.11+, Docker (opcional) e chaves API para os seus fornecedores de LLM (Anthropic e/ou Google AI).</p>"
+        "answer": "<p><strong>Lite:</strong> Obsidian (gratuito) e subscrição Claude Pro ($20/mês da Anthropic). Sem necessidade de programação.</p><p><strong>Full:</strong> Python 3.11+, Docker (opcional) e chaves API para os seus fornecedores de LLM (Anthropic, Google AI, OpenAI e/ou Ollama para inferência local).</p>"
       },
       {
         "question": "Posso alojar no meu próprio servidor?",
@@ -491,11 +522,11 @@
       },
       {
         "question": "Que modelos de IA suporta?",
-        "answer": "<p>A edição Full encaminha entre Gemini Flash (rápido/económico), Claude Sonnet (equilibrado) e Claude Opus (poderoso) — selecionando automaticamente o melhor modelo para cada tarefa. A edição Lite funciona com qualquer modelo Claude via Claude Code.</p>"
+        "answer": "<p>A edição Full suporta 4 fornecedores — Claude (Anthropic), Gemini (Google), OpenAI e Ollama (local) — com 20+ modelos no total. 4 estratégias de routing (custo, qualidade, equilíbrio, velocidade) selecionam automaticamente o modelo ideal para cada tarefa. 9 modalidades de tarefa garantem que o modelo certo trata do trabalho certo. A edição Lite funciona com qualquer modelo Claude via Claude Code.</p>"
       },
       {
         "question": "Os meus dados são privados?",
-        "answer": "<p>Completamente. O RealizeOS funciona na sua máquina ou servidor. A sua Knowledge Base, conversas e dados de negócio nunca saem da sua infraestrutura. As únicas chamadas externas são para as APIs de LLM que configurar.</p>"
+        "answer": "<p>Completamente. O RealizeOS funciona na sua máquina ou servidor. A sua Knowledge Base, conversas e dados de negócio nunca saem da sua infraestrutura. As funcionalidades de segurança incluem controlo de acesso baseado em funções (RBAC) com 16 permissões, cofre de credenciais encriptado AES-256 e registo de auditoria completo. Para privacidade máxima, use Ollama para inferência totalmente local — nenhum dado sai da sua rede.</p>"
       },
       {
         "question": "E se precisar de ajuda na configuração?",

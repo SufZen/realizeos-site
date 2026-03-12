@@ -19,6 +19,8 @@ export { FeatureSkills } from './FeatureSkills';
 export { FeatureKBSearch } from './FeatureKBSearch';
 export { FeatureCreativePipeline } from './FeatureCreativePipeline';
 export { FeatureSelfEvolution } from './FeatureSelfEvolution';
+export { FeatureMultiChannel } from './FeatureMultiChannel';
+export { FeatureSecurity } from './FeatureSecurity';
 
 // Pain point illustrations
 export { PainFragmented } from './PainFragmented';

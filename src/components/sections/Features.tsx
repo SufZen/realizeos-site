@@ -16,6 +16,8 @@ import {
   FeatureKBSearch,
   FeatureCreativePipeline,
   FeatureSelfEvolution,
+  FeatureMultiChannel,
+  FeatureSecurity,
 } from '@/components/illustrations';
 import { useTranslation } from 'react-i18next';
 
@@ -26,6 +28,8 @@ const illustrationMap: Record<string, React.FC<{ className?: string }>> = {
   SearchPlus: FeatureKBSearch,
   PenTool: FeatureCreativePipeline,
   RefreshCw: FeatureSelfEvolution,
+  Radio: FeatureMultiChannel,
+  Shield: FeatureSecurity,
 };
 
 export function Features() {
@@ -38,7 +42,7 @@ export function Features() {
         title={t('features.header.title')}
         subtitle={t('features.header.subtitle')}
       />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((f, i) => {
           const Illustration = illustrationMap[f.icon];
           return (

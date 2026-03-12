@@ -47,5 +47,17 @@ export const useFeatures = (): Feature[] => {
       promise: t('features.evolution.promise'),
       technical: t('features.evolution.technical'),
     },
+    {
+      icon: 'Radio',
+      title: t('features.multichannel.title'),
+      promise: t('features.multichannel.promise'),
+      technical: t('features.multichannel.technical'),
+    },
+    {
+      icon: 'Shield',
+      title: t('features.security.title'),
+      promise: t('features.security.promise'),
+      technical: t('features.security.technical'),
+    },
   ];
 };

@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter';
 import { STRIPE_URLS } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
-import { useEffect, useState } from 'react';
-import { LINKS } from '@/lib/constants';
 import { HeroAgentNetwork } from '@/components/illustrations/HeroAgentNetwork';
 import { useTranslation } from 'react-i18next';
 
@@ -21,22 +19,13 @@ const fadeUp = {
 
 export function Hero() {
   const { t } = useTranslation();
-  const [githubStars, setGithubStars] = useState<number | null>(null);
 
   const stats = [
-    { value: 92, suffix: '', label: t('hero.stats.files') },
-    { value: 8800, suffix: '+', label: t('hero.stats.lines') },
+    { value: 20, suffix: '+', label: t('hero.stats.models') },
+    { value: 5, suffix: '', label: t('hero.stats.channels') },
     { value: 13, suffix: '', label: t('hero.stats.tools') },
+    { value: 4, suffix: '', label: t('hero.stats.strategies') },
   ];
-
-  useEffect(() => {
-    fetch(LINKS.githubRepo)
-      .then((r) => r.json())
-      .then((d) => {
-        if (d.stargazers_count) setGithubStars(d.stargazers_count);
-      })
-      .catch(() => { });
-  }, []);
 
   return (
     <header className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28" id="hero">
@@ -102,12 +91,6 @@ export function Hero() {
                 {s.label}
               </div>
             ))}
-            {githubStars !== null && (
-              <div className="flex items-baseline gap-1.5">
-                <strong className="text-lg font-semibold text-foreground">{githubStars}</strong>
-                {t('hero.stats.github')}
-              </div>
-            )}
           </motion.div>
         </motion.div>
 

@@ -25,16 +25,20 @@ export const deliveryColumns: DeliveryColumn[] = [
         description: 'Orchestrator, Writer, Reviewer, Analyst. Each is a markdown file you customize for your business.',
       },
       {
-        title: 'Fill-in-the-blank brand templates',
-        description: 'brand-identity.md and brand-voice.md with guided prompts. Takes 5 minutes to fill in.',
+        title: 'Fill-in-the-blank brand templates + Brand Worksheet',
+        description: 'brand-identity.md, brand-voice.md, and the interactive 130-line Brand Worksheet wizard. Define your brand in minutes.',
       },
       {
-        title: '2 skill workflows',
-        description: 'Content pipeline and research workflow (YAML files), ready to use or customize.',
+        title: '6 skill workflows',
+        description: 'Proposals, campaigns, social media, reviews, content pipeline, and research (YAML files). Ready to use or customize.',
       },
       {
-        title: 'CLAUDE.md configuration',
-        description: 'Drop into Claude Code and it instantly understands your entire business context.',
+        title: '3 shared methods',
+        description: 'Competitive analysis, content repurposing, and decision framework. Reusable across all your workflows.',
+      },
+      {
+        title: 'Enhanced CLAUDE.md protocol (155 lines)',
+        description: 'Drop into Claude Code and it instantly understands your entire business context with full operational rules.',
       },
       {
         title: 'Step-by-step setup guide',
@@ -49,28 +53,40 @@ export const deliveryColumns: DeliveryColumn[] = [
     emotionalPromise: 'From overwhelmed operator to focused visionary. Claim your fully automated, production-ready operational engine.',
     items: [
       {
-        title: 'Complete Python engine (8,800+ lines)',
-        description: 'Multi-LLM routing, 7-layer prompt assembly, skill execution, self-evolution. Production-ready code.',
+        title: 'Complete Python engine (11,000+ lines)',
+        description: 'Multi-LLM routing, 7-layer prompt assembly, workflow engine, self-evolution, security, media processing. Production-ready code.',
       },
       {
         title: 'Docker one-command deploy',
         description: 'docker compose up and you have a running AI operations server.',
       },
       {
+        title: '5 channels (REST, Telegram, WhatsApp, Web/WebSocket, Webhooks) + Scheduler',
+        description: 'Reach your AI from anywhere. Channel-agnostic message routing with attachment handling.',
+      },
+      {
         title: '13 Google Workspace tools',
         description: 'Gmail, Calendar, Drive integration built in. OAuth setup included.',
       },
       {
-        title: 'REST API + Telegram channel',
-        description: 'Connect from any frontend, or use Telegram as your command center.',
+        title: 'Security: RBAC, encrypted vault, audit logging',
+        description: '16 permissions across 5 roles, AES-256 encrypted credentials, structured audit events, prompt injection detection.',
       },
       {
-        title: '5 industry templates',
-        description: 'Consulting, Agency, Multi-Venture, SaaS, E-Commerce. Pick one and customize.',
+        title: 'Tool SDK & extensibility framework',
+        description: '7 tool categories with MCP support. Build custom integrations with the plugin architecture.',
       },
       {
-        title: 'CLI tooling',
-        description: 'init, serve, bot, status, index commands for day-to-day operations.',
+        title: 'Media processing',
+        description: 'Image analysis (vision), audio transcription, and content generation. Built-in media pipeline.',
+      },
+      {
+        title: '8 industry templates',
+        description: 'Consulting, Agency, Multi-Venture, SaaS, E-Commerce, Freelance, Coaching, Accounting. Pick one and customize.',
+      },
+      {
+        title: 'CLI scaffolding + dev process templates',
+        description: 'init, serve, bot, status, index commands plus CI/CD pipeline (GitHub Actions + pytest).',
       },
     ],
   },
