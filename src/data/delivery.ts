@@ -54,7 +54,7 @@ export const deliveryColumns: DeliveryColumn[] = [
     items: [
       {
         title: 'Complete Python engine (11,000+ lines)',
-        description: 'Multi-LLM routing, 7-layer prompt assembly, workflow engine, self-evolution, security, media processing. Production-ready code.',
+        description: 'Multi-LLM routing, multi-layer prompt assembly, workflow engine, self-evolution, security, media processing. Production-ready code.',
       },
       {
         title: 'Docker one-command deploy',

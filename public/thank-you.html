@@ -111,7 +111,7 @@
     .ty__support a { color: var(--color-accent); text-decoration: none; }
     .ty__back { text-align: center; margin-top: 2rem; }
 
-    .ty__git-alt { display: none; }
+
 
     /* F&F Registration Form */
     .ty__fnf-gate {
@@ -200,14 +200,6 @@
         <a href="#" class="btn btn--primary btn--lg" id="drive-link" target="_blank" rel="noopener">Download Your Package</a>
         <p class="ty__access-alt">Your files are also shared via the welcome email.</p>
 
-        <!-- Full/Setup edition: git clone alternative -->
-        <div class="ty__git-alt" id="git-alt">
-          <p class="ty__access-alt" style="margin-top:0.75rem;">Prefer git? Clone the repo directly:</p>
-          <div class="ty__code-block">
-            <button class="ty__code-copy" data-copy>Copy</button>
-            <pre><code>git clone https://github.com/SufZen/realize-os.git</code></pre>
-          </div>
-        </div>
       </div>
 
       <!-- Communication Timeline -->
@@ -361,11 +353,6 @@
 
     // Set setup link to edition-specific tier
     document.getElementById('guide-link').href = 'setup.html?tier=' + (tier === 'setup' ? 'full' : tier);
-
-    // Show git clone for Full/Setup tiers
-    if (tier === 'full' || tier === 'setup') {
-      document.getElementById('git-alt').style.display = 'block';
-    }
 
     // Show setup call card and timeline item for Setup tier
     if (tier === 'setup') {

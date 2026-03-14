@@ -1,10 +1,10 @@
 {
   "hero": {
-    "badge": "Parte do ecossistema Realization",
-    "tagline": "O RealizeOS é um sistema de operações de IA concebido para as empresas gerirem as suas operações, de forma inteligente.",
-    "title_main": "O Motor Operacional",
-    "title_highlight": "Para o Visionário",
-    "description": "Deixe de ser o estrangulamento do seu próprio negócio. Recupere o seu tempo e transforme uma visão abstrata em realidade — com uma equipa de IA coordenada que compreende verdadeiramente a sua metodologia.",
+    "badge": "Por Realization",
+    "tagline": "Operações de IA que você controla.",
+    "title_main": "Crie,",
+    "title_highlight": "Inteligentemente!",
+    "description": "Recupere o seu tempo. Transforme visão em realidade com uma equipa de IA que compreende a sua metodologia.",
     "cta_full": "Adquira o RealizeOS — $249",
     "cta_how": "Veja Como Funciona",
     "stats": {
@@ -27,7 +27,7 @@
     "assembly": {
       "title": "Montagem Dinâmica de Identidade",
       "promise": "Fala como você, conhece os seus projetos e age como o seu melhor parceiro. Não é um chatbot genérico — é o seu clone digital.",
-      "technical": "Cada resposta é construída através da montagem de prompts em 7 camadas. O sistema extrai dinamicamente a sua identidade, voz da marca, perfil de função, conhecimento relevante (pesquisa vetorial), memória e contexto de sessão antes de chegar ao LLM."
+      "technical": "Cada resposta é construída através da montagem de prompts em múltiplas camadas. O sistema extrai dinamicamente a sua identidade, voz da marca, perfil de função, conhecimento relevante (pesquisa vetorial), memória e contexto de sessão antes de chegar ao LLM."
     },
     "execution": {
       "title": "Execução Multi-Etapas",
@@ -96,7 +96,7 @@
           "list": [
             "Routing LLM agnóstico de fornecedor (Claude, Gemini, OpenAI, Ollama)",
             "20+ modelos com 4 estratégias de routing (custo, qualidade, equilíbrio, velocidade)",
-            "Montagem dinâmica de prompts em 7 camadas",
+            "Montagem dinâmica de prompts em múltiplas camadas",
             "Pesquisa híbrida na Knowledge Base (FTS5 + vetorial)",
             "Motor de workflow com 7 tipos de nós + triggers",
             "Multi-canal: WhatsApp, Web/WebSocket, Webhooks, Agendador",
@@ -449,7 +449,7 @@
         "items": [
           {
             "title": "Motor Python completo (+11.000 linhas de código)",
-            "description": "Routing multi-LLM, montagem de prompts em 7 camadas, motor de workflows, auto-evolução, segurança, processamento de média. Código pronto para produção."
+            "description": "Routing multi-LLM, montagem de prompts em múltiplas camadas, motor de workflows, auto-evolução, segurança, processamento de média. Código pronto para produção."
           },
           {
             "title": "Deploy com um comando Docker",

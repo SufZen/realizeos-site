@@ -186,6 +186,20 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 onChange={(v) => set('commPrefs', v)}
                 placeholder="E.g. Brief and to the point. Bullet points, not prose. Give me a recommendation. Never start with a long preamble."
               />
+              <Field
+                label="What are your top 3 personal values?"
+                hint="What drives your decisions? How do these values show up in your work?"
+                value={state.personalValues}
+                onChange={(v) => set('personalValues', v)}
+                placeholder="E.g. 1) Ownership — I never outsource accountability. 2) Clarity — simple beats impressive. 3) Results over process."
+              />
+              <Field
+                label="What frustrates you or wastes your time?"
+                hint="Anti-patterns the AI should avoid. Be specific."
+                value={state.antiPatterns}
+                onChange={(v) => set('antiPatterns', v)}
+                placeholder="E.g. Don't give me long preambles. Don't ask five questions at once. Don't use corporate jargon."
+              />
             </>
           )}
 
@@ -245,6 +259,14 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 onChange={(v) => set('offerings', v)}
                 placeholder="E.g. 1) RealizeOS Lite — $79 AI operating system. 2) RealizeOS Full — $249 self-hosted version. 3) Setup Assistance — hands-on onboarding."
               />
+              <Field
+                label="If your brand were a person, pick 3-5 adjectives"
+                hint="These adjectives define your brand personality and guide tone across all content."
+                value={state.brandPersonality}
+                onChange={(v) => set('brandPersonality', v)}
+                placeholder="E.g. Professional, Approachable, Bold, Analytical, Warm"
+                rows={2}
+              />
             </>
           )}
 
@@ -280,6 +302,13 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 value={state.dosDonts}
                 onChange={(v) => set('dosDonts', v)}
                 placeholder="E.g. ALWAYS: Lead with the benefit. Active voice. Clear CTA. NEVER: Passive voice. Jargon without explanation. Exclamation marks."
+              />
+              <Field
+                label="Any channel-specific voice adjustments?"
+                hint="How does your tone shift for LinkedIn vs email vs social media?"
+                value={state.channelAdjustments}
+                onChange={(v) => set('channelAdjustments', v)}
+                placeholder="E.g. LinkedIn: slightly more formal, always include a personal insight. Email: brief, conversational. Social: more energetic, hook in the first line."
               />
             </>
           )}
@@ -318,24 +347,24 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
           {step === 5 && (
             <>
               <p className="mb-4 text-sm text-muted-foreground">
-                Three files are ready. Copy each one into the matching file in your RealizeOS vault. Auto-saves in your browser — you can close and come back anytime.
+                Three files are ready. Download each file and place it in the matching location in your RealizeOS vault: identity.md goes in shared/, the other two go in systems/my-business-1/F-foundations/. Auto-saves in your browser — you can close and come back anytime.
               </p>
               <div className="space-y-3">
                 <ExportFile
                   label="shared/identity.md"
-                  sublabel="Who you are as a person"
+                  sublabel="Who you are as a person — place in shared/"
                   content={identityMd}
                   filename="identity.md"
                 />
                 <ExportFile
-                  label="F-foundations/brand-identity.md"
-                  sublabel="Your business positioning"
+                  label="systems/my-business-1/F-foundations/brand-identity.md"
+                  sublabel="Your business positioning — place in systems/my-business-1/F-foundations/"
                   content={brandIdentityMd}
                   filename="brand-identity.md"
                 />
                 <ExportFile
-                  label="F-foundations/brand-voice.md"
-                  sublabel="How your content should sound"
+                  label="systems/my-business-1/F-foundations/brand-voice.md"
+                  sublabel="How your content should sound — place in systems/my-business-1/F-foundations/"
                   content={brandVoiceMd}
                   filename="brand-voice.md"
                 />

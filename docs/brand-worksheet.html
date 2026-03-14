@@ -362,7 +362,7 @@
     <div data-step="1" data-step-title="Welcome">
       <div class="worksheet__hero">
         <h1>Stop Feeding AI Generic Prompts.<br>Feed It Your Business.</h1>
-        <p>18 questions. 15 minutes. Three files that make your AI team actually sound like you.</p>
+        <p>22 questions. 15 minutes. Three files that make your AI team actually sound like you.</p>
         <div class="worksheet__meta">
           <span class="worksheet__badge">~15 minutes</span>
           <span class="worksheet__badge">Auto-saves as you type</span>
@@ -370,7 +370,7 @@
         </div>
       </div>
       <div style="text-align:center; margin-top:1.5rem;">
-        <p style="color:var(--color-text-secondary); margin-bottom:1rem;">Answer 18 questions across 3 sections. Your answers auto-save as you type.</p>
+        <p style="color:var(--color-text-secondary); margin-bottom:1rem;">Answer 22 questions across 3 sections. Your answers auto-save as you type.</p>
       </div>
     </div>
 
@@ -380,7 +380,7 @@
     <!-- Secondary progress counter -->
     <div class="progress" id="progress">
       <div class="progress__inner">
-        <span class="progress__text"><strong id="progress-count">0</strong> of 18 answered</span>
+        <span class="progress__text"><strong id="progress-count">0</strong> of 22 answered</span>
         <div class="progress__bar">
           <div class="progress__fill" id="progress-fill"></div>
         </div>
@@ -433,6 +433,26 @@
         <textarea class="ws-question__input" data-key="q4" placeholder="Example: Brief and to the point. Bullet points, not prose. Give me a recommendation, not a list of options. Never start with a long preamble."></textarea>
         <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; Communication Preferences</p>
       </div>
+
+      <div class="ws-question" data-q="19">
+        <div class="ws-question__header">
+          <span class="ws-question__number">05</span>
+          <span class="ws-question__label">What are your top 3 personal values?</span>
+        </div>
+        <p class="ws-question__hint">What drives your decisions? How do these values show up in your work?</p>
+        <textarea class="ws-question__input" data-key="q19" placeholder="Example: 1) Ownership — I never outsource accountability. 2) Clarity — simple beats impressive. 3) Results over process."></textarea>
+        <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; Your Values</p>
+      </div>
+
+      <div class="ws-question" data-q="20">
+        <div class="ws-question__header">
+          <span class="ws-question__number">06</span>
+          <span class="ws-question__label">What frustrates you or wastes your time?</span>
+        </div>
+        <p class="ws-question__hint">Anti-patterns the AI should avoid. Be specific.</p>
+        <textarea class="ws-question__input" data-key="q20" placeholder="Example: Don't give me long preambles. Don't ask five questions at once. Don't use corporate jargon."></textarea>
+        <p class="ws-question__maps">maps to &rarr; shared/identity.md &gt; Anti-Patterns</p>
+      </div>
     </div>
     </div><!-- /step 2 -->
 
@@ -447,72 +467,82 @@
 
       <div class="ws-question" data-q="5">
         <div class="ws-question__header">
-          <span class="ws-question__number">05</span>
+          <span class="ws-question__number">07</span>
           <span class="ws-question__label">What's your business name and tagline?</span>
         </div>
         <p class="ws-question__hint">The tagline should capture what you do in one memorable sentence.</p>
         <textarea class="ws-question__input" data-key="q5" placeholder="Example: Realization Group — We help ambitious operators build AI-powered business systems."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Business Name &amp; Tagline</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Business Name &amp; Tagline</p>
       </div>
 
       <div class="ws-question" data-q="6">
         <div class="ws-question__header">
-          <span class="ws-question__number">06</span>
+          <span class="ws-question__number">08</span>
           <span class="ws-question__label">What's your mission? Why does this business exist?</span>
         </div>
         <p class="ws-question__hint">The problem you solve and the outcome you create. Be specific — not "we make the world better."</p>
         <textarea class="ws-question__input" data-key="q6" placeholder="Example: Most businesses waste hours on repetitive work that AI can handle. We build the systems that free them to focus on what only humans can do."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Mission</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Mission</p>
       </div>
 
       <div class="ws-question" data-q="7">
         <div class="ws-question__header">
-          <span class="ws-question__number">07</span>
+          <span class="ws-question__number">09</span>
           <span class="ws-question__label">Who is your ideal customer? Describe one specific person.</span>
         </div>
         <p class="ws-question__hint">Role, industry, company size, pain points. Picture a real human, not a segment.</p>
         <textarea class="ws-question__input" data-key="q7" placeholder="Example: A 38-year-old agency founder running a team of 5-15. Tired of being the bottleneck on content quality. Has tried ChatGPT but gets generic results."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Target Audience</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Target Audience</p>
       </div>
 
       <div class="ws-question" data-q="8">
         <div class="ws-question__header">
-          <span class="ws-question__number">08</span>
+          <span class="ws-question__number">10</span>
           <span class="ws-question__label">What are your 3-5 core values?</span>
         </div>
         <p class="ws-question__hint">Values that guide every decision. Include what each one looks like in practice.</p>
         <textarea class="ws-question__input" data-key="q8" placeholder="Example: 1) Ownership — we never outsource accountability. 2) Clarity — simple beats impressive. 3) Results over process — ship, then refine."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Core Values</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Core Values</p>
       </div>
 
       <div class="ws-question" data-q="9">
         <div class="ws-question__header">
-          <span class="ws-question__number">09</span>
+          <span class="ws-question__number">11</span>
           <span class="ws-question__label">What makes you different? Finish this sentence:</span>
         </div>
         <p class="ws-question__hint">"We are the only [category] that [unique benefit] for [audience] by [method]."</p>
         <textarea class="ws-question__input" data-key="q9" placeholder="Example: We are the only AI systems consultancy that ships a working multi-agent system in 7 days for operators managing 3+ ventures, by using a pre-built FABRIC framework."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Unique Value Proposition</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Unique Value Proposition</p>
       </div>
 
       <div class="ws-question" data-q="10">
         <div class="ws-question__header">
-          <span class="ws-question__number">10</span>
+          <span class="ws-question__number">12</span>
           <span class="ws-question__label">Where do you sit in the market?</span>
         </div>
         <p class="ws-question__hint">We ARE: [what you stand for]. We are NOT: [what you're not]. Be honest and specific.</p>
         <textarea class="ws-question__input" data-key="q10" placeholder="Example: We ARE the premium, done-for-you option for serious operators. We are NOT the cheapest option, a generic AI chatbot agency, or a subscription SaaS tool."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Competitive Positioning</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Competitive Positioning</p>
       </div>
 
       <div class="ws-question" data-q="11">
         <div class="ws-question__header">
-          <span class="ws-question__number">11</span>
+          <span class="ws-question__number">13</span>
           <span class="ws-question__label">What are your main products or services?</span>
         </div>
         <p class="ws-question__hint">List 2-4 key offerings with a one-line description each.</p>
         <textarea class="ws-question__input" data-key="q11" placeholder="Example: 1) RealizeOS Lite — $79 AI operating system for solo operators. 2) RealizeOS Full — $249 self-hosted, multi-LLM version. 3) Setup Assistance — hands-on onboarding."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-identity.md &gt; Key Offerings</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Key Offerings</p>
+      </div>
+
+      <div class="ws-question" data-q="21">
+        <div class="ws-question__header">
+          <span class="ws-question__number">14</span>
+          <span class="ws-question__label">If your brand were a person, pick 3-5 adjectives</span>
+        </div>
+        <p class="ws-question__hint">These adjectives define your brand personality and guide tone across all content.</p>
+        <textarea class="ws-question__input" data-key="q21" placeholder="Example: Professional, Approachable, Bold, Analytical, Warm"></textarea>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-identity.md &gt; Brand Personality</p>
       </div>
     </div>
     </div><!-- /step 3 -->
@@ -528,67 +558,77 @@
 
       <div class="ws-question" data-q="12">
         <div class="ws-question__header">
-          <span class="ws-question__number">12</span>
+          <span class="ws-question__number">15</span>
           <span class="ws-question__label">If your brand was a person, how would you describe them?</span>
         </div>
         <p class="ws-question__hint">Primary tone, secondary tone, and a "sounds like" analogy. E.g., "A trusted advisor who explains complex things simply."</p>
         <textarea class="ws-question__input" data-key="q12" placeholder="Example: Primary: Direct. Secondary: Analytical. Sounds like a senior engineer who's also a great communicator — no fluff, but never cold."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Tone of Voice</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Tone of Voice</p>
       </div>
 
       <div class="ws-question" data-q="13">
         <div class="ws-question__header">
-          <span class="ws-question__number">13</span>
+          <span class="ws-question__number">16</span>
           <span class="ws-question__label">Words you use. Words you avoid.</span>
         </div>
         <p class="ws-question__hint">5+ words/phrases that feel like your brand, and 3+ words that feel off-brand.</p>
         <textarea class="ws-question__input" data-key="q13" placeholder="Example: USE: build, ship, system, real, clear, leverage (as a verb). AVOID: synergy, disrupt, game-changing, revolutionary, innovative (overused buzzwords)."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Vocabulary</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Vocabulary</p>
       </div>
 
       <div class="ws-question" data-q="14">
         <div class="ws-question__header">
-          <span class="ws-question__number">14</span>
+          <span class="ws-question__number">17</span>
           <span class="ws-question__label">What are your content formatting preferences?</span>
         </div>
         <p class="ws-question__hint">Sentence length, paragraph length, use of lists, emoji usage, capitalization style.</p>
         <textarea class="ws-question__input" data-key="q14" placeholder="Example: Short sentences. 2-3 sentence paragraphs. Lists used frequently. No emojis. Sentence case for headings. Active voice always."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Formatting Rules</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Formatting Rules</p>
       </div>
 
       <div class="ws-question" data-q="15">
         <div class="ws-question__header">
-          <span class="ws-question__number">15</span>
+          <span class="ws-question__number">18</span>
           <span class="ws-question__label">Your do's and don'ts</span>
         </div>
         <p class="ws-question__hint">3-4 rules you always follow, and 3-4 things you never do.</p>
         <textarea class="ws-question__input" data-key="q15" placeholder="Example: ALWAYS: Lead with the benefit. Use active voice. Include a clear CTA. Back claims with numbers. NEVER: Passive voice. Jargon without explanation. Exclamation marks. Apologetic hedging."></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Do's and Don'ts</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Do's and Don'ts</p>
+      </div>
+
+      <div class="ws-question" data-q="22">
+        <div class="ws-question__header">
+          <span class="ws-question__number">19</span>
+          <span class="ws-question__label">Any channel-specific voice adjustments?</span>
+        </div>
+        <p class="ws-question__hint">How does your tone shift for LinkedIn vs email vs social media?</p>
+        <textarea class="ws-question__input" data-key="q22" placeholder="Example: LinkedIn: slightly more formal, always include a personal insight. Email: brief, conversational. Social: more energetic, hook in the first line."></textarea>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Channel-Specific Adjustments</p>
       </div>
 
       <div class="ws-question" data-q="16">
         <div class="ws-question__header">
-          <span class="ws-question__number">16</span>
+          <span class="ws-question__number">20</span>
           <span class="ws-question__label">Write a paragraph that sounds exactly like you</span>
         </div>
         <p class="ws-question__hint">A real example from your content, or write one now. This is the single most powerful input for voice calibration.</p>
         <textarea class="ws-question__input" data-key="q16" placeholder="Example: &quot;Most AI setups are a mess of disconnected chatbots. Your AI should work as a team — a Writer, a Reviewer, an Analyst — all knowing your business. That's what RealizeOS builds.&quot;"></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Voice Examples &gt; Good Example</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Voice Examples &gt; Good Example</p>
       </div>
 
       <div class="ws-question" data-q="17">
         <div class="ws-question__header">
-          <span class="ws-question__number">17</span>
+          <span class="ws-question__number">21</span>
           <span class="ws-question__label">Write a paragraph that sounds nothing like you</span>
         </div>
         <p class="ws-question__hint">The counter-example. Useful for the AI to understand what to avoid.</p>
         <textarea class="ws-question__input" data-key="q17" placeholder="Example: &quot;We leverage cutting-edge, AI-powered solutions to disrupt your industry's paradigm and unlock synergistic growth opportunities. Our game-changing platform drives transformational outcomes.&quot;"></textarea>
-        <p class="ws-question__maps">maps to &rarr; F-foundations/brand-voice.md &gt; Voice Examples &gt; Bad Example</p>
+        <p class="ws-question__maps">maps to &rarr; systems/my-business-1/F-foundations/brand-voice.md &gt; Voice Examples &gt; Bad Example</p>
       </div>
 
       <div class="ws-question" data-q="18">
         <div class="ws-question__header">
-          <span class="ws-question__number">18</span>
+          <span class="ws-question__number">22</span>
           <span class="ws-question__label">What 3 workflows do you repeat every week?</span>
         </div>
         <p class="ws-question__hint">Content writing? Client proposals? Market research? These become your first AI skills.</p>
@@ -608,13 +648,13 @@
 
     <div class="ws-export">
       <h2>Your Brand, Packaged for AI</h2>
-      <p>Three files. Copy each one into the matching file in your RealizeOS vault. Your AI team will know exactly who you are and how your business sounds.</p>
+      <p>Three files. Download each file and place it in the matching location in your RealizeOS vault: identity.md goes in shared/, the other two go in systems/my-business-1/F-foundations/.</p>
 
       <div class="ws-export__files">
         <div class="ws-export__file">
           <div class="ws-export__file-header">
             <span class="ws-export__file-label">shared/identity.md</span>
-            <span class="ws-export__file-desc">Who you are as a person</span>
+            <span class="ws-export__file-desc">Who you are as a person — place in shared/</span>
           </div>
           <div class="ws-export__file-buttons">
             <button class="btn btn--primary btn--sm" data-file="identity">Copy</button>
@@ -623,8 +663,8 @@
         </div>
         <div class="ws-export__file">
           <div class="ws-export__file-header">
-            <span class="ws-export__file-label">F-foundations/brand-identity.md</span>
-            <span class="ws-export__file-desc">Your business positioning</span>
+            <span class="ws-export__file-label">systems/my-business-1/F-foundations/brand-identity.md</span>
+            <span class="ws-export__file-desc">Your business positioning — place in systems/my-business-1/F-foundations/</span>
           </div>
           <div class="ws-export__file-buttons">
             <button class="btn btn--primary btn--sm" data-file="brand-identity">Copy</button>
@@ -633,8 +673,8 @@
         </div>
         <div class="ws-export__file">
           <div class="ws-export__file-header">
-            <span class="ws-export__file-label">F-foundations/brand-voice.md</span>
-            <span class="ws-export__file-desc">How your content should sound</span>
+            <span class="ws-export__file-label">systems/my-business-1/F-foundations/brand-voice.md</span>
+            <span class="ws-export__file-desc">How your content should sound — place in systems/my-business-1/F-foundations/</span>
           </div>
           <div class="ws-export__file-buttons">
             <button class="btn btn--primary btn--sm" data-file="brand-voice">Copy</button>
@@ -677,7 +717,7 @@
   <script>
   (function() {
     const STORAGE_KEY = 'realizeos_worksheet_v2';
-    const TOTAL_QUESTIONS = 18;
+    const TOTAL_QUESTIONS = 22;
     const textareas = document.querySelectorAll('.ws-question__input');
     const progressCount = document.getElementById('progress-count');
     const progressFill = document.getElementById('progress-fill');
@@ -733,10 +773,13 @@
     function generateIdentity() {
       return `# Personal Identity
 
-This file defines **who you are** — the person behind the business. The AI team uses this to understand your perspective, values, and communication style.
+This file defines **who you are** — the person behind the business(es). The AI team uses this to understand your perspective, values, and communication style.
 
 ## About You
 ${val('q1')}
+
+## Your Values
+${val('q19')}
 
 ## Your Strengths
 ${val('q2')}
@@ -746,10 +789,13 @@ ${val('q3')}
 
 ## Communication Preferences
 ${val('q4')}
+
+## Anti-Patterns
+${val('q20')}
 `;
     }
 
-    // --- Generate: F-foundations/brand-identity.md ---
+    // --- Generate: systems/my-business-1/F-foundations/brand-identity.md ---
     function generateBrandIdentity() {
       return `# Brand Identity
 
@@ -775,10 +821,13 @@ ${val('q10')}
 
 ## Key Offerings
 ${val('q11')}
+
+## Brand Personality
+${val('q21')}
 `;
     }
 
-    // --- Generate: F-foundations/brand-voice.md ---
+    // --- Generate: systems/my-business-1/F-foundations/brand-voice.md ---
     function generateBrandVoice() {
       return `# Brand Voice Guide
 
@@ -788,12 +837,18 @@ This document defines how all content should sound. Every AI agent MUST follow t
 ${val('q12')}
 
 ## Vocabulary
+
+### Words We Use
+### Words We Avoid
 ${val('q13')}
 
 ## Formatting Rules
 ${val('q14')}
 
 ## Do's and Don'ts
+
+### Always Do
+### Never Do
 ${val('q15')}
 
 ## Voice Examples
@@ -803,6 +858,9 @@ ${val('q15')}
 
 ### Bad Example
 > ${val('q17')}
+
+## Channel-Specific Adjustments
+${val('q22')}
 
 ## Weekly Workflows to Automate
 ${val('q18')}

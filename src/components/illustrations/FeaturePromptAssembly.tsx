@@ -28,13 +28,13 @@ export function FeaturePromptAssembly({ className }: Props) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
-      aria-label="Seven stacked layers representing 7-layer prompt assembly"
+      aria-label="Stacked layers representing multi-layer prompt assembly"
       variants={staggerContainer(0.06)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      {/* 7 layers stacking from top */}
+      {/* Multi-layer stacking from top */}
       {layers.map((layer, i) => {
         const y = startY + i * (layerHeight + gap);
         const x = (80 - layer.width) / 2;

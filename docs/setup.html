@@ -636,22 +636,23 @@ sudo usermod -aG docker $USER</code></pre>
       <section class="step tier-full" data-step="3">
         <div class="step__header">
           <span class="step__number">3</span>
-          <span class="step__title">Clone &amp; Configure</span>
+          <span class="step__title">Download &amp; Configure</span>
           <span class="step__time">5 min</span>
         </div>
 
+        <p>Download and unzip your RealizeOS package, then open a terminal in the <code>realize-os/</code> folder.</p>
+
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>git clone https://github.com/SufZen/realize-os.git
-cd realize-os</code></pre>
+          <pre><code>cd realize-os
+pip install -r requirements.txt</code></pre>
         </div>
 
         <div class="card card--success">
           <h4>What you should see</h4>
           <ul>
-            <li>"Cloning into 'realize-os'..." followed by download progress</li>
-            <li>A new <code>realize-os/</code> folder in your current directory</li>
-            <li style="color:#f59e0b;">If "git is not recognized" — install Git first (Step 1)</li>
+            <li>A <code>realize-os/</code> folder with all package files</li>
+            <li>Dependencies installed successfully</li>
           </ul>
         </div>
 
@@ -682,10 +683,19 @@ GOOGLE_AI_API_KEY=your-google-key-here</code></pre>
           <button class="code-block__copy" data-copy>Copy</button>
           <pre><code>python cli.py init --template consulting</code></pre>
         </div>
-        <p>Other templates: <code>agency</code>, <code>multi-venture</code>, <code>saas</code>, <code>ecommerce</code>. Pick the one closest to your business.</p>
+        <p>Other templates: <code>agency</code>, <code>portfolio</code>, <code>saas</code>, <code>ecommerce</code>, <code>accounting</code>, <code>coaching</code>, <code>freelance</code>. Pick the one closest to your business.</p>
+
+        <h3>Manage ventures</h3>
+        <p>Create additional ventures or list existing ones:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python cli.py venture list
+python cli.py venture create --key my-venture --name "My Venture"
+python cli.py venture delete --key my-venture --confirm my-venture</code></pre>
+        </div>
 
         <ul class="checklist" data-group="full-3">
-          <li data-key="full-3-clone">Repository cloned</li>
+          <li data-key="full-3-clone">Package downloaded and unzipped</li>
           <li data-key="full-3-env"><code>.env</code> file created with API keys</li>
           <li data-key="full-3-init">Template initialized</li>
         </ul>

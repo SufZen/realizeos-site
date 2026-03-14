@@ -1,10 +1,10 @@
 {
   "hero": {
-    "badge": "Part of the Realization ecosystem",
-    "tagline": "RealizeOS is an AI operations system designed for businesses to own and manage their operations, Intelligently.",
-    "title_main": "The Operational Engine",
-    "title_highlight": "For The Visionary",
-    "description": "Stop being the bottleneck in your own business. Reclaim your time and translate abstract vision into physical reality with a coordinated AI team that actually understands your methodology.",
+    "badge": "By Realization",
+    "tagline": "AI operations you own and control.",
+    "title_main": "Create,",
+    "title_highlight": "Intelligently!",
+    "description": "Reclaim your time. Turn vision into reality with an AI team that understands your methodology.",
     "cta_full": "Get RealizeOS — $249",
     "cta_how": "See How It Works",
     "stats": {
@@ -27,7 +27,7 @@
     "assembly": {
       "title": "Dynamic Identity Assembly",
       "promise": "It speaks like you, knows your projects, and acts like your best partner. Not a generic chatbot—it is your digital clone.",
-      "technical": "Every response is built using 7-layer prompt assembly. The system dynamically pulls your identity, brand voice, role profile, relevant knowledge (vector search), memory, and session context before hitting the LLM."
+      "technical": "Every response is built using multi-layer prompt assembly. The system dynamically pulls your identity, brand voice, role profile, relevant knowledge (vector search), memory, and session context before hitting the LLM."
     },
     "execution": {
       "title": "Multi-Step Execution",
@@ -96,7 +96,7 @@
           "list": [
             "Provider-agnostic LLM routing (Claude, Gemini, OpenAI, Ollama)",
             "20+ models with 4 routing strategies (cost, quality, balanced, speed)",
-            "7-layer dynamic prompt assembly",
+            "multi-layer dynamic prompt assembly",
             "Hybrid KB search (FTS5 + vector)",
             "Workflow engine with 7 node types + triggers",
             "Multi-channel: WhatsApp, Web/WebSocket, Webhooks, Scheduler",
@@ -449,7 +449,7 @@
         "items": [
           {
             "title": "Complete Python engine (11,000+ lines)",
-            "description": "Multi-LLM routing, 7-layer prompt assembly, workflow engine, self-evolution, security, media processing. Production-ready code."
+            "description": "Multi-LLM routing, multi-layer prompt assembly, workflow engine, self-evolution, security, media processing. Production-ready code."
           },
           {
             "title": "Docker one-command deploy",
