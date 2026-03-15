@@ -632,7 +632,7 @@ sudo usermod -aG docker $USER</code></pre>
         </ul>
       </section>
 
-      <!-- FULL: Clone & Configure -->
+      <!-- FULL: Download & Configure -->
       <section class="step tier-full" data-step="3">
         <div class="step__header">
           <span class="step__number">3</span>
@@ -644,60 +644,96 @@ sudo usermod -aG docker $USER</code></pre>
 
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>cd realize-os
-pip install -r requirements.txt</code></pre>
+          <pre><code>cd realize-os</code></pre>
+        </div>
+
+        <p>Install dependencies:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>pip install -r requirements.txt</code></pre>
         </div>
 
         <div class="card card--success">
           <h4>What you should see</h4>
           <ul>
             <li>A <code>realize-os/</code> folder with all package files</li>
-            <li>Dependencies installed successfully</li>
+            <li>Dependencies installed successfully (no red error messages)</li>
           </ul>
         </div>
 
-        <p>Copy the environment template:</p>
+        <h3>Option A: Setup file (recommended)</h3>
+        <p>Copy the setup template and fill in your API keys and business info:</p>
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>cp .env.example .env</code></pre>
+          <pre><code>cp setup.yaml.example setup.yaml</code></pre>
         </div>
 
-        <p>Open <code>.env</code> in any text editor and add your API keys:</p>
+        <div class="plat-win">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>copy setup.yaml.example setup.yaml</code></pre>
+          </div>
+        </div>
+
+        <p>Open <code>setup.yaml</code> in any text editor and fill in your API keys, template choice, and business name. Then run:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python cli.py init --setup setup.yaml</code></pre>
+        </div>
+        <p>This single command creates your <code>.env</code>, copies the template config, builds the FABRIC knowledge structure, and pre-populates your brand files — all from one file.</p>
+
+        <h3>Option B: Template only (manual .env)</h3>
+        <p>If you prefer to configure manually, initialize with just a template:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python cli.py init --template consulting</code></pre>
+        </div>
+        <p>This creates a <code>.env</code> from the example file — open it and add your API keys:</p>
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
           <pre><code>ANTHROPIC_API_KEY=sk-ant-your-key-here
 GOOGLE_AI_API_KEY=your-google-key-here</code></pre>
         </div>
+        <p>Other templates: <code>agency</code>, <code>portfolio</code>, <code>saas</code>, <code>ecommerce</code>, <code>accounting</code>, <code>coaching</code>, <code>freelance</code>. Pick the one closest to your business.</p>
 
         <div class="card card--warning">
-          <h4>Common mistakes</h4>
+          <h4>Common mistakes with .env</h4>
           <ul>
             <li><strong>No spaces</strong> around the <code>=</code> sign</li>
             <li><strong>No quotes</strong> around the key values</li>
-            <li>Make sure you're editing <code>.env</code>, not <code>.env.example</code></li>
+            <li><strong>No inline comments</strong> — Docker can't parse them. Put comments on their own line.</li>
           </ul>
         </div>
 
-        <h3>Initialize from a template</h3>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>python cli.py init --template consulting</code></pre>
-        </div>
-        <p>Other templates: <code>agency</code>, <code>portfolio</code>, <code>saas</code>, <code>ecommerce</code>, <code>accounting</code>, <code>coaching</code>, <code>freelance</code>. Pick the one closest to your business.</p>
-
         <h3>Manage ventures</h3>
-        <p>Create additional ventures or list existing ones:</p>
+        <p>Your first venture is created by <code>init</code>. To manage additional ventures:</p>
+
+        <p>List existing ventures:</p>
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>python cli.py venture list
-python cli.py venture create --key my-venture --name "My Venture"
-python cli.py venture delete --key my-venture --confirm my-venture</code></pre>
+          <pre><code>python cli.py venture list</code></pre>
+        </div>
+
+        <p>Create a new venture:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python cli.py venture create --key my-venture</code></pre>
+        </div>
+
+        <p>Delete a venture:</p>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>python cli.py venture delete --key my-venture</code></pre>
+        </div>
+
+        <div class="tip">
+          <p><strong>Cross-platform:</strong> All commands work identically on macOS, Windows, and Linux. The CLI handles file creation internally — no platform-specific copy commands needed (except for <code>setup.yaml</code> in Option A).</p>
         </div>
 
         <ul class="checklist" data-group="full-3">
           <li data-key="full-3-clone">Package downloaded and unzipped</li>
-          <li data-key="full-3-env"><code>.env</code> file created with API keys</li>
-          <li data-key="full-3-init">Template initialized</li>
+          <li data-key="full-3-deps">Dependencies installed with <code>pip install</code></li>
+          <li data-key="full-3-init">Initialized with <code>setup.yaml</code> or template</li>
         </ul>
       </section>
 
@@ -768,6 +804,11 @@ python cli.py venture delete --key my-venture --confirm my-venture</code></pre>
           <span class="step__time">5 min</span>
         </div>
 
+        <div class="card card--warning">
+          <h4>Prerequisite</h4>
+          <p>Make sure Step 3 is complete — <code>init</code> must have run successfully before deploying. You should see a <code>.env</code> file and <code>realize-os.yaml</code> in your project directory.</p>
+        </div>
+
         <p><strong>With Docker (recommended):</strong></p>
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
@@ -777,18 +818,17 @@ python cli.py venture delete --key my-venture --confirm my-venture</code></pre>
         <p><strong>Without Docker:</strong></p>
         <div class="code-block">
           <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>pip install -r requirements.txt
-python cli.py serve</code></pre>
+          <pre><code>python cli.py serve</code></pre>
         </div>
 
         <div class="card card--success">
           <h4>What you should see</h4>
           <ul>
             <li>Docker: containers building and starting, logs flowing</li>
-            <li>Local: dependencies installing, then "Server running at http://localhost:8080"</li>
+            <li>Local: "Server running at http://localhost:8080"</li>
             <li>No red error messages</li>
             <li style="color:#f59e0b;">If Docker won't start — make sure Docker Desktop is running</li>
-            <li style="color:#f59e0b;">If "port 8080 in use" — change <code>API_PORT=8081</code> in your <code>.env</code></li>
+            <li style="color:#f59e0b;">If "port 8080 in use" — change <code>REALIZE_PORT=8081</code> in your <code>.env</code></li>
           </ul>
         </div>
 
@@ -893,21 +933,45 @@ python cli.py serve</code></pre>
           <p>The #1 reason people get generic AI output: they skip or rush the brand definition. This is the difference between generic AI and <em>your</em> AI.</p>
         </div>
 
+        <div class="tip">
+          <p><strong>Already pre-populated:</strong> If you used <code>setup.yaml</code> in Step 3, your business name and description are already filled in. Review and refine them — don't start from scratch.</p>
+        </div>
+
         <ol>
-          <li>Edit <code>F-foundations/brand-identity.md</code> — business name, mission, target audience, differentiator</li>
-          <li>Edit <code>F-foundations/brand-voice.md</code> — personality, tone, vocabulary, dos and don'ts</li>
+          <li>Edit <code>systems/&lt;your-venture&gt;/F-foundations/brand-identity.md</code> — business name, mission, target audience, differentiator</li>
+          <li>Edit <code>systems/&lt;your-venture&gt;/F-foundations/brand-voice.md</code> — personality, tone, vocabulary, dos and don'ts</li>
           <li>If you did the <a href="brand-worksheet.html" style="color:var(--color-accent);">Brand Worksheet</a>, paste your exported markdown into these files</li>
-          <li>Review agents in <code>A-agents/</code> — customize role descriptions if needed</li>
-          <li>Restart the server to pick up changes</li>
+          <li>Review agents in <code>systems/&lt;your-venture&gt;/A-agents/</code> — customize role descriptions if needed</li>
         </ol>
+        <p style="color:var(--color-text-muted); font-size:0.85rem;">Replace <code>&lt;your-venture&gt;</code> with your venture key (e.g., <code>consulting</code>). Run <code>python cli.py venture list</code> to see your ventures.</p>
 
         <div class="tip">
           <p><strong>Key tip:</strong> Paste a real paragraph you've written into the voice file. Add anti-patterns: what you NEVER want to sound like. These two things have the biggest impact on output quality.</p>
         </div>
 
+        <div class="card card--warning">
+          <h4>Restart after editing</h4>
+          <p>The server needs to reload your brand files to pick up changes.</p>
+          <p><strong>Docker:</strong></p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>docker compose restart</code></pre>
+          </div>
+          <p><strong>Local:</strong> Press <code>Ctrl+C</code> to stop the server, then:</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python cli.py serve</code></pre>
+          </div>
+        </div>
+
+        <div class="tip">
+          <p><strong>Complete this step before testing.</strong> The tests in Step 6 check that your brand voice and identity are loaded correctly.</p>
+        </div>
+
         <ul class="checklist" data-group="full-5">
           <li data-key="full-5-brand-id"><code>brand-identity.md</code> filled with your business details</li>
           <li data-key="full-5-brand-voice"><code>brand-voice.md</code> has specific tone rules and examples</li>
+          <li data-key="full-5-restart">Server restarted after brand changes</li>
         </ul>
       </section>
 
@@ -953,6 +1017,24 @@ python cli.py serve</code></pre>
           <span class="step__time">5 min</span>
         </div>
 
+        <div class="tip">
+          <p><strong>About <code>system_key</code>:</strong> Replace <code>consulting</code> in the commands below with your venture key. Run <code>python cli.py venture list</code> to see your available ventures.</p>
+        </div>
+
+        <div class="tip">
+          <p><strong>About authentication:</strong> By default, <code>REALIZE_API_KEY</code> is empty — no auth header needed for local dev. If you set a key in <code>.env</code>, add <code>-H "Authorization: Bearer YOUR_KEY"</code> to each curl command.</p>
+        </div>
+
+        <div class="card card--accent">
+          <h4>Test 0: Verify Config</h4>
+          <p>Start here — this confirms your server is running and your ventures are loaded.</p>
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>curl http://localhost:8080/status</code></pre>
+          </div>
+          <p><strong>Expected:</strong> JSON response showing "healthy" status, connected LLM providers, and a non-empty list of systems (your ventures). If systems is empty, re-run <code>python cli.py init</code>.</p>
+        </div>
+
         <div class="card card--accent">
           <h4>Test 1: Brand Recognition</h4>
           <div class="code-block">
@@ -961,6 +1043,7 @@ python cli.py serve</code></pre>
   -H "Content-Type: application/json" \
   -d '{"message": "What do you know about my business?", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
           </div>
+          <p class="plat-win" style="color:var(--color-text-muted); font-size:0.85rem;"><strong>Windows note:</strong> In PowerShell, use double quotes for the outer string and escape inner quotes, or save the JSON to a file and use <code>-d @body.json</code>.</p>
           <p><strong>Expected:</strong> The response references your brand identity, business name, and values — not generic filler.</p>
         </div>
 
@@ -975,19 +1058,10 @@ python cli.py serve</code></pre>
           <p><strong>Expected:</strong> Output matches your voice rules. Short paragraphs if you said so. No exclamation marks if you banned them.</p>
         </div>
 
-        <div class="card card--accent">
-          <h4>Test 3: System Health</h4>
-          <div class="code-block">
-            <button class="code-block__copy" data-copy>Copy</button>
-            <pre><code>curl http://localhost:8080/status</code></pre>
-          </div>
-          <p><strong>Expected:</strong> JSON response showing "healthy" status, connected LLM providers, and active systems.</p>
-        </div>
-
         <ul class="checklist" data-group="full-6">
+          <li data-key="full-6-config">Config check shows healthy status and loaded systems</li>
           <li data-key="full-6-brand">Brand recognition test passes</li>
           <li data-key="full-6-voice">Voice calibration matches your rules</li>
-          <li data-key="full-6-health">System health returns "healthy"</li>
         </ul>
       </section>
 
@@ -1101,13 +1175,40 @@ python cli.py serve</code></pre>
           </div>
 
           <div class="accordion__item tier-full">
-            <button class="accordion__trigger">"Invalid API key"<span class="accordion__arrow">&#9660;</span></button>
+            <button class="accordion__trigger">"Server returns 401 Unauthorized"<span class="accordion__arrow">&#9660;</span></button>
             <div class="accordion__body"><div class="accordion__body-inner">
-              Check your <code>.env</code> file:<br>
-              &bull; No spaces around the <code>=</code> sign<br>
-              &bull; No quotes around the value<br>
-              &bull; No trailing whitespace — re-type the key if needed<br>
-              &bull; Key might be revoked — create a new one at <a href="https://console.anthropic.com">console.anthropic.com</a>
+              This means your <code>REALIZE_API_KEY</code> doesn't match.<br><br>
+              <strong>Quick fix:</strong> If you're running locally for dev, set <code>REALIZE_API_KEY=</code> (empty value) in your <code>.env</code> — this disables auth entirely.<br><br>
+              <strong>If you set a key:</strong> Make sure your curl commands include <code>-H "Authorization: Bearer YOUR_KEY"</code> with the exact same value as in <code>.env</code>.<br><br>
+              <strong>Docker users:</strong> Make sure your <code>.env</code> has <strong>no inline comments</strong> (e.g., <code>REALIZE_API_KEY=mykey # my key</code>). Docker's <code>env_file</code> parses the comment as part of the value, causing a mismatch. Put comments on their own line.
+            </div></div>
+          </div>
+
+          <div class="accordion__item tier-full">
+            <button class="accordion__trigger">"LLM returns invalid API key" (Anthropic/Google)<span class="accordion__arrow">&#9660;</span></button>
+            <div class="accordion__body"><div class="accordion__body-inner">
+              This is your LLM provider rejecting the key, not the RealizeOS server. Check which provider is failing:<br><br>
+              <strong>Anthropic (<code>ANTHROPIC_API_KEY</code>):</strong><br>
+              &bull; Key starts with <code>sk-ant-</code><br>
+              &bull; No spaces or quotes around the value in <code>.env</code><br>
+              &bull; Key might be revoked — create a new one at <a href="https://console.anthropic.com">console.anthropic.com</a><br>
+              &bull; Check your credit balance — $0 balance returns auth errors<br><br>
+              <strong>Google AI (<code>GOOGLE_AI_API_KEY</code>):</strong><br>
+              &bull; Create or verify at <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a><br>
+              &bull; Make sure the key is for the correct Google Cloud project
+            </div></div>
+          </div>
+
+          <div class="accordion__item tier-full">
+            <button class="accordion__trigger">"Docker loads wrong config values"<span class="accordion__arrow">&#9660;</span></button>
+            <div class="accordion__body"><div class="accordion__body-inner">
+              Docker's <code>env_file</code> parser treats everything after <code>=</code> as the value — including inline comments.<br><br>
+              <strong>Bad:</strong> <code>REALIZE_API_KEY=mykey # this is my key</code><br>
+              Docker sees the value as: <code>mykey # this is my key</code><br><br>
+              <strong>Good:</strong><br>
+              <code># This is my key</code><br>
+              <code>REALIZE_API_KEY=mykey</code><br><br>
+              Fix: Remove all inline comments from your <code>.env</code> file. Put each comment on its own line above the variable. Then rebuild: <code>docker compose down && docker compose up --build</code>
             </div></div>
           </div>
 
