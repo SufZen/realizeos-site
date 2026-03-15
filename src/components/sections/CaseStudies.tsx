@@ -70,7 +70,7 @@ export function CaseStudies() {
 
                             {/* Technical accordion */}
                             <Accordion type="single" collapsible>
-                                <AccordionItem value="tech" className="border-white/5">
+                                <AccordionItem value="tech" className="border-border/50">
                                     <AccordionTrigger className="pt-2 pb-2 text-xs text-muted-foreground hover:text-brand-yellow">
                                         {t('caseStudies.howItWorks')}
                                     </AccordionTrigger>

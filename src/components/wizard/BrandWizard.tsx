@@ -38,7 +38,7 @@ function Field({
       <FieldLabel>{label}</FieldLabel>
       {hint && <Hint>{hint}</Hint>}
       <textarea
-        className="w-full resize-y rounded-md border border-white/10 bg-black/40 p-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-brand-yellow/60 focus:outline-none focus:ring-1 focus:ring-brand-yellow/30"
+        className="w-full resize-y rounded-md border border-border bg-background/40 p-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-brand-yellow/60 focus:outline-none focus:ring-1 focus:ring-brand-yellow/30"
         rows={rows}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -87,7 +87,7 @@ function ExportFile({ label, sublabel, content, filename }: {
   label: string; sublabel: string; content: string; filename: string;
 }) {
   return (
-    <div className="rounded-lg border border-white/10 bg-black/30 p-4">
+    <div className="rounded-lg border border-border bg-background/30 p-4">
       <p className="mb-0.5 font-mono text-xs font-medium text-brand-yellow">{label}</p>
       <p className="mb-3 text-xs text-muted-foreground">{sublabel}</p>
       <CopyButton text={content} filename={filename} />
@@ -128,9 +128,9 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex max-h-[90vh] w-full max-w-2xl flex-col gap-0 overflow-hidden border-white/10 bg-[#0e0e18] p-0">
+      <DialogContent className="flex max-h-[90vh] w-full max-w-2xl flex-col gap-0 overflow-hidden border-border bg-card p-0">
         {/* Header */}
-        <div className="border-b border-white/10 px-6 py-4">
+        <div className="border-b border-border px-6 py-4">
           <DialogTitle className="text-base font-semibold">Brand Wizard</DialogTitle>
           <p className="mt-0.5 text-xs text-muted-foreground">
             Fill in your answers — three files will be generated, ready to paste into your vault.
@@ -140,7 +140,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
             {STEPS.map((s) => (
               <div key={s.id} className="flex flex-1 flex-col items-center gap-1">
                 <div
-                  className={`h-1 w-full rounded-full transition-colors ${s.id <= step ? 'bg-brand-yellow' : 'bg-white/10'
+                  className={`h-1 w-full rounded-full transition-colors ${s.id <= step ? 'bg-brand-yellow' : 'bg-border'
                     }`}
                 />
                 <span className={`text-[10px] ${s.id === step ? 'text-brand-yellow' : 'text-muted-foreground'}`}>
@@ -377,7 +377,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
         </div>
 
         {/* Footer nav */}
-        <div className="flex items-center justify-between border-t border-white/10 px-6 py-4">
+        <div className="flex items-center justify-between border-t border-border px-6 py-4">
           <Button
             variant="outline"
             size="sm"

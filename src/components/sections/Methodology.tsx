@@ -62,7 +62,7 @@ export function Methodology() {
 
                             {/* Technical accordion */}
                             <Accordion type="single" collapsible>
-                                <AccordionItem value="tech" className="border-white/5">
+                                <AccordionItem value="tech" className="border-border/50">
                                     <AccordionTrigger className="justify-center pt-2 pb-2 text-xs text-muted-foreground hover:text-brand-yellow">
                                         Under the Hood
                                     </AccordionTrigger>
