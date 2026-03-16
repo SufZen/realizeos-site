@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lite Edition Guide — RealizeOS</title>
+  <meta name="description" content="Comprehensive post-setup guide for RealizeOS Lite — agents, skills, business templates, and your first-week roadmap.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide { max-width: 780px; margin: 0 auto; padding: calc(64px + 3rem) 1.5rem 4rem; }
+    .guide__back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 2rem; transition: color 0.2s; }
+    .guide__back:hover { color: var(--color-accent); }
+    .guide h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .guide__intro { color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem; }
+    .guide__reassure { color: var(--color-text-muted); font-size: 0.95rem; font-style: italic; margin-bottom: 3rem; line-height: 1.6; }
+    .guide h2 { font-size: 1.5rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+    .guide h2:first-of-type { border-top: none; padding-top: 0; }
+    .guide h3 { font-size: 1.15rem; margin: 2rem 0 0.75rem; color: var(--color-accent); }
+    .guide p { color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1rem; }
+    .guide ul, .guide ol { color: var(--color-text-secondary); padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .guide li { margin-bottom: 0.75rem; line-height: 1.65; }
+    .guide li strong { color: var(--color-text); }
+    .guide code { background: var(--color-surface); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.87rem; }
+    .guide__card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .guide__card--accent { border-color: var(--color-accent); background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%); }
+    .guide__card--success { border-color: #22c55e; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(34, 197, 94, 0.04) 100%); }
+    .guide__card--warning { border-color: #f59e0b; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(245, 158, 11, 0.04) 100%); }
+    .guide__card h4 { font-size: 1rem; margin-bottom: 0.75rem; }
+    .guide__card--success h4 { color: #22c55e; }
+    .guide__card--warning h4 { color: #f59e0b; }
+    .guide__card--accent h4 { color: var(--color-accent); }
+    .guide__toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem; }
+    .guide__toc h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+    .guide__toc ol { padding-left: 1.25rem; margin-bottom: 0; }
+    .guide__toc li { margin-bottom: 0.4rem; }
+    .guide__toc a { color: var(--color-text-secondary); text-decoration: none; font-size: 0.93rem; transition: color 0.2s; }
+    .guide__toc a:hover { color: var(--color-accent); }
+
+    /* Code blocks with copy button */
+    .code-block { position: relative; }
+    .code-block pre { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; overflow-x: auto; }
+    .code-block pre code { background: none; padding: 0; font-size: 0.85rem; line-height: 1.6; }
+    .code-block__copy {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-text-muted); font-family: var(--font-mono);
+      font-size: 0.72rem; padding: 0.3rem 0.6rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.2s; z-index: 2;
+    }
+    .code-block__copy:hover {
+      background: var(--color-accent); color: var(--color-accent-text); border-color: var(--color-accent);
+    }
+
+    /* Download button */
+    .guide__download {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-text-secondary); font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+      text-decoration: none; transition: all 0.2s; margin-bottom: 2rem;
+    }
+    .guide__download:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .guide__download svg { width: 16px; height: 16px; }
+
+    /* Agent table */
+    .guide__table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+    .guide__table th, .guide__table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); font-size: 0.9rem; }
+    .guide__table th { color: var(--color-accent); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .guide__table td { color: var(--color-text-secondary); }
+    .guide__table td strong { color: var(--color-text); }
+
+    /* Business type tabs */
+    .biz-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .biz-tab {
+      padding: 0.45rem 0.9rem; border-radius: 100px; font-size: 0.82rem; font-weight: 500;
+      font-family: var(--font-body); cursor: pointer; transition: all 0.2s;
+      border: 1px solid var(--color-border); background: transparent; color: var(--color-text-secondary);
+    }
+    .biz-tab:hover { border-color: var(--color-accent); color: var(--color-text); }
+    .biz-tab--active { background: var(--color-accent); color: var(--color-accent-text); border-color: var(--color-accent); font-weight: 600; }
+    .biz-panel { display: none; }
+    .biz-panel.active { display: block; }
+
+    /* FABRIC dirs */
+    .fabric-list { list-style: none; padding-left: 0; }
+    .fabric-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--color-border); display: flex; gap: 0.75rem; align-items: baseline; }
+    .fabric-list li:last-child { border-bottom: none; }
+    .fabric-letter { font-family: var(--font-mono); font-weight: 700; color: var(--color-accent); min-width: 28px; font-size: 1.1rem; }
+
+    .step-time { display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent); background: var(--color-accent-subtle); padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 500; }
+
+    @media (max-width: 768px) {
+      .guide { padding-left: 1rem; padding-right: 1rem; }
+      .biz-tabs { gap: 0.3rem; }
+      .biz-tab { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="./" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="guide.html">Guides</a>
+        <a href="setup.html">Setup</a>
+        <a href="brand-worksheet.html">Brand Worksheet</a>
+        <a href="./#faq">FAQ</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <article class="guide">
+    <a href="guide.html" class="guide__back">&larr; All Guides</a>
+
+    <a href="downloads/post-setup-guide-lite.md" download class="guide__download">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+      Download as Markdown
+    </a>
+
+    <!-- Stepper Progress -->
+    <div data-stepper-progress></div>
+
+    <!-- ===== STEP 1: WELCOME ===== -->
+    <div data-step="1" data-step-title="Welcome">
+
+    <div style="background:linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255,204,0,0.06) 100%); border:1px solid var(--color-accent); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:2rem; text-align:center;">
+      <p style="margin:0; font-size:1.5rem;">&#127881;</p>
+      <p style="margin:0.5rem 0 0; color:var(--color-text); font-weight:600; font-size:1.05rem;">Your RealizeOS Lite is running.</p>
+    </div>
+
+    <h1>Lite Edition Guide</h1>
+    <p class="guide__intro">Your Obsidian vault is now an AI operations center. This guide covers everything after setup — from understanding your AI team to building custom workflows.</p>
+    <p class="guide__reassure">Bookmark this page. You'll come back to it as you build out your system.</p>
+
+    <div class="guide__toc">
+      <h4>In This Guide</h4>
+      <ol>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(1)">Welcome & What You Built</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(2)">Understanding Your AI Team</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(3)">Your Operations System by Business Type</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(4)">Working with Skills</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(5)">Your First Week Roadmap</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(6)">Customizing & Growing</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(7)">Troubleshooting</a></li>
+      </ol>
+    </div>
+
+    <h3>How It Works</h3>
+    <div class="guide__card">
+      <p style="margin-bottom:0.5rem; font-family:var(--font-mono); font-size:0.85rem; color:var(--color-text);">You speak naturally &rarr; Claude reads CLAUDE.md &rarr; Picks the right agent &rarr; Loads your brand + knowledge &rarr; Responds in your voice</p>
+    </div>
+
+    <h3>Your FABRIC Directory</h3>
+    <ul class="fabric-list">
+      <li><span class="fabric-letter">F</span> <span><strong>Foundations</strong> &mdash; Brand identity, voice rules, core standards</span></li>
+      <li><span class="fabric-letter">A</span> <span><strong>Agents</strong> &mdash; AI team definitions and routing</span></li>
+      <li><span class="fabric-letter">B</span> <span><strong>Brain</strong> &mdash; Domain knowledge, market data, expertise</span></li>
+      <li><span class="fabric-letter">R</span> <span><strong>Routines</strong> &mdash; Skills, workflows, state maps</span></li>
+      <li><span class="fabric-letter">I</span> <span><strong>Insights</strong> &mdash; Learning log, feedback, decisions</span></li>
+      <li><span class="fabric-letter">C</span> <span><strong>Creations</strong> &mdash; Output: deliverables, drafts, final assets</span></li>
+    </ul>
+
+    <h3>Quick Health Check</h3>
+    <p>Open your terminal in the vault directory and start Claude Code:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>claude</code></pre>
+    </div>
+    <p>Then ask:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>What do you know about my business?</code></pre>
+    </div>
+    <p><strong>Expected:</strong> A response that references your brand identity, business name, audience, and values — not generic AI filler.</p>
+
+    </div><!-- /step 1 -->
+
+    <!-- ===== STEP 2: AI TEAM ===== -->
+    <div data-step="2" data-step-title="Your AI Team">
+    <h2>Understanding Your AI Team</h2>
+
+    <h3>The 4 Default Agents</h3>
+    <table class="guide__table">
+      <thead><tr><th>Agent</th><th>Role</th><th>Triggers</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Orchestrator</strong></td><td>Strategic planning, coordination</td><td>"Help me plan...", "Prioritize..."</td></tr>
+        <tr><td><strong>Writer</strong></td><td>Content creation, drafting</td><td>"Write a post...", "Draft an email..."</td></tr>
+        <tr><td><strong>Reviewer</strong></td><td>Quality control, brand compliance</td><td>"Review this...", "Check the tone..."</td></tr>
+        <tr><td><strong>Analyst</strong></td><td>Research, data analysis</td><td>"Analyze...", "Research competitors..."</td></tr>
+      </tbody>
+    </table>
+
+    <h3>How Routing Works</h3>
+    <p>Claude reads the <code>routing</code> config in <code>realize-os.yaml</code> and picks the right agent based on your message:</p>
+    <ul>
+      <li><strong>Content tasks</strong> (write, draft, post) &rarr; Writer &rarr; Reviewer pipeline</li>
+      <li><strong>Strategy tasks</strong> (plan, prioritize, advise) &rarr; Analyst &rarr; Orchestrator</li>
+      <li><strong>Research tasks</strong> (analyze, compare, evaluate) &rarr; Analyst</li>
+      <li><strong>General tasks</strong> (help, think) &rarr; Orchestrator</li>
+    </ul>
+
+    <h3>Talk to a Specific Agent</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>Switch to the Analyst for this — analyze the competitive landscape for my industry.</code></pre>
+    </div>
+
+    <h3>Customizing Agents</h3>
+    <p>Each agent is a <code>.md</code> file in <code>A-agents/</code>. Open any file and edit the role description, tone, constraints, and examples.</p>
+
+    <h3>Adding New Agents</h3>
+    <ol>
+      <li>Create a new <code>.md</code> file in <code>A-agents/</code> (e.g., <code>client-comms.md</code>)</li>
+      <li>Define the role, tone, and constraints</li>
+      <li>Add routing keywords in <code>realize-os.yaml</code> under <code>agent_routing</code></li>
+      <li>Auto-discovered on next conversation start</li>
+    </ol>
+
+    <div class="guide__card guide__card--accent">
+      <h4>The Review Pipeline</h4>
+      <p style="margin-bottom:0;">When <code>review_pipeline: true</code> is set, any content task goes through a two-step process: the Writer creates a draft, then the Reviewer evaluates it against your brand standards. Pass = delivered. Fail = Writer iterates with feedback. This ensures consistent quality without manual review.</p>
+    </div>
+
+    </div><!-- /step 2 -->
+
+    <!-- ===== STEP 3: BUSINESS TYPES ===== -->
+    <div data-step="3" data-step-title="Business Types">
+    <h2>Your Operations System by Business Type</h2>
+    <p>RealizeOS ships with 8 pre-configured templates. Select yours below to see tailored examples and first-week tasks.</p>
+
+    <div class="biz-tabs" id="biz-tabs">
+      <button class="biz-tab biz-tab--active" data-biz="consulting">Consulting</button>
+      <button class="biz-tab" data-biz="agency">Agency</button>
+      <button class="biz-tab" data-biz="portfolio">Portfolio</button>
+      <button class="biz-tab" data-biz="saas">SaaS</button>
+      <button class="biz-tab" data-biz="ecommerce">E-Commerce</button>
+      <button class="biz-tab" data-biz="accounting">Accounting</button>
+      <button class="biz-tab" data-biz="coaching">Coaching</button>
+      <button class="biz-tab" data-biz="freelance">Freelance</button>
+    </div>
+
+    <!-- Consulting -->
+    <div class="biz-panel active" data-biz-panel="consulting">
+      <div class="guide__card">
+        <h4>Consulting &mdash; Solo consultants, advisory firms</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Draft a client proposal for a 3-month strategy engagement"</li>
+          <li>"Research competitors in the management consulting space"</li>
+          <li>"Write a LinkedIn post about why AI agents should work as a team"</li>
+          <li>"Create a quarterly review template for my advisory clients"</li>
+          <li>"Draft an onboarding email sequence for new clients"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Analyst handles strategy and research, Writer creates proposals and thought leadership, Reviewer ensures brand consistency.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Draft a real client proposal and iterate on it 3 times to calibrate your voice.</p>
+      </div>
+    </div>
+
+    <!-- Agency -->
+    <div class="biz-panel" data-biz-panel="agency">
+      <div class="guide__card">
+        <h4>Agency &mdash; Creative and marketing agencies</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Run this content brief through the pipeline"</li>
+          <li>"Write 5 social media post variations for this campaign"</li>
+          <li>"Audit the brand voice consistency on our latest copy"</li>
+          <li>"Create a content calendar for next month"</li>
+          <li>"Draft campaign concepts for a product launch"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Writer handles creative copy and campaigns, Analyst manages audience and SEO insights, Reviewer enforces brand guidelines.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Put your best-performing content through the pipeline and compare the output to the original.</p>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="biz-panel" data-biz-panel="portfolio">
+      <div class="guide__card">
+        <h4>Portfolio &mdash; Multi-venture operators</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Give me a cross-venture status update"</li>
+          <li>"Compare performance metrics across my businesses"</li>
+          <li>"Draft investor update covering all ventures"</li>
+          <li>"Prioritize tasks across my portfolio for this week"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Orchestrator coordinates across ventures, Analyst tracks cross-venture metrics.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Set up your second venture and test cross-system context sharing.</p>
+      </div>
+    </div>
+
+    <!-- SaaS -->
+    <div class="biz-panel" data-biz-panel="saas">
+      <div class="guide__card">
+        <h4>SaaS &mdash; SaaS founders, product teams</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Write a feature spec for user onboarding improvements"</li>
+          <li>"Analyze user feedback from last month's surveys"</li>
+          <li>"Draft release notes for v2.1"</li>
+          <li>"Create a competitive analysis of the top 3 competitors"</li>
+          <li>"Write documentation for our new API endpoint"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Writer handles specs and docs, Analyst processes user feedback and market data.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Draft release notes for your last 3 releases and compare them for consistency.</p>
+      </div>
+    </div>
+
+    <!-- E-Commerce -->
+    <div class="biz-panel" data-biz-panel="ecommerce">
+      <div class="guide__card">
+        <h4>E-Commerce &mdash; Online stores, D2C brands</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Write 20 product descriptions for our new collection"</li>
+          <li>"Draft abandoned cart email sequences"</li>
+          <li>"Analyze sales data and suggest pricing adjustments"</li>
+          <li>"Create seasonal campaign copy for summer sale"</li>
+          <li>"Write SEO-optimized category page descriptions"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Writer produces high-volume product copy, Analyst handles sales and conversion data.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Rewrite 10 existing product descriptions and A/B test the originals vs. the AI versions.</p>
+      </div>
+    </div>
+
+    <!-- Accounting -->
+    <div class="biz-panel" data-biz-panel="accounting">
+      <div class="guide__card">
+        <h4>Accounting &mdash; Accountants, bookkeepers, financial advisors</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Draft a client communication about upcoming tax deadlines"</li>
+          <li>"Write a report summary for the quarterly review"</li>
+          <li>"Create an FAQ document for new clients"</li>
+          <li>"Draft a professional letter regarding billing changes"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Writer handles professional client communications, Analyst manages financial report summaries.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Draft this quarter's client newsletter and refine the tone until it matches your firm's style.</p>
+      </div>
+    </div>
+
+    <!-- Coaching -->
+    <div class="biz-panel" data-biz-panel="coaching">
+      <div class="guide__card">
+        <h4>Coaching &mdash; Coaches, course creators, trainers</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Create session notes template for client meetings"</li>
+          <li>"Draft program materials for my 8-week coaching course"</li>
+          <li>"Write a LinkedIn post about a coaching methodology"</li>
+          <li>"Create intake questionnaire for new coaching clients"</li>
+          <li>"Draft follow-up emails after coaching sessions"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Writer creates program content, Orchestrator manages session workflows.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Create a complete session notes template and test it with your next 3 clients.</p>
+      </div>
+    </div>
+
+    <!-- Freelance -->
+    <div class="biz-panel" data-biz-panel="freelance">
+      <div class="guide__card">
+        <h4>Freelance &mdash; Freelance professionals</h4>
+        <p><strong>Example tasks to try:</strong></p>
+        <ul>
+          <li>"Draft a project proposal for the website redesign"</li>
+          <li>"Write a scope of work document"</li>
+          <li>"Create an invoice cover letter for this month"</li>
+          <li>"Draft a project brief for the new client"</li>
+          <li>"Write a case study based on my last project"</li>
+        </ul>
+        <p><strong>Agent focus:</strong> Writer handles proposals and briefs, Orchestrator manages project coordination.</p>
+        <p style="margin-bottom:0;"><strong>First-week suggestion:</strong> Write a case study for your best recent project to calibrate the voice for client-facing work.</p>
+      </div>
+    </div>
+
+    </div><!-- /step 3 -->
+
+    <!-- ===== STEP 4: SKILLS ===== -->
+    <div data-step="4" data-step-title="Skills">
+    <h2>Working with Skills</h2>
+
+    <p>Skills are <strong>YAML-defined workflows</strong> that automate multi-step processes. Instead of giving instructions step by step, you trigger a skill with a natural phrase and it runs the full pipeline.</p>
+
+    <h3>6 Pre-Built Skills</h3>
+    <table class="guide__table">
+      <thead><tr><th>Skill</th><th>Trigger Examples</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Content Pipeline</strong></td><td>"write a blog post", "create content"</td></tr>
+        <tr><td><strong>Research Workflow</strong></td><td>"research", "analyze", "compare"</td></tr>
+        <tr><td><strong>Email Campaign</strong></td><td>"email campaign", "newsletter"</td></tr>
+        <tr><td><strong>Social Media</strong></td><td>"linkedin post", "write a post"</td></tr>
+        <tr><td><strong>Client Proposal</strong></td><td>"proposal", "scope of work"</td></tr>
+        <tr><td><strong>Weekly Review</strong></td><td>"weekly review", "plan my week"</td></tr>
+      </tbody>
+    </table>
+
+    <h3>How to Trigger</h3>
+    <p>Just say the trigger phrase naturally:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>Write a blog post about AI operations for consulting firms.</code></pre>
+    </div>
+    <p>This triggers the <strong>Content Pipeline</strong> skill: Writer creates draft &rarr; Reviewer evaluates against brand voice &rarr; pass = delivered, fail = iterate.</p>
+
+    <h3>Create Your First Custom Skill</h3>
+    <p>Create a new file at <code>R-routines/skills/meeting-prep.yaml</code>:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>name: meeting_prep
+triggers:
+  - "prepare for meeting"
+  - "meeting prep"
+  - "get ready for meeting"
+task_type: strategy
+pipeline:
+  - analyst
+  - writer
+  - orchestrator</code></pre>
+    </div>
+    <p>This skill has the Analyst research context, Writer draft talking points, and Orchestrator create an action plan. Skills are auto-discovered — no restart needed.</p>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Tips for Great Skills</h4>
+      <ul style="margin-bottom:0;">
+        <li>Use 3-5 specific trigger phrases per skill</li>
+        <li>Avoid generic triggers that overlap with other skills</li>
+        <li>YAML is sensitive to spacing — use spaces, not tabs</li>
+        <li>Test with an exact trigger phrase first, then try variations</li>
+      </ul>
+    </div>
+
+    </div><!-- /step 4 -->
+
+    <!-- ===== STEP 5: FIRST WEEK ===== -->
+    <div data-step="5" data-step-title="First Week">
+    <h2>Your First Week Roadmap</h2>
+
+    <div class="guide__card">
+      <h4>Day 1 &mdash; Foundations <span class="step-time">~30 min</span></h4>
+      <ul style="margin-bottom:0;">
+        <li>Send 5-10 test messages to check your brand voice</li>
+        <li>Refine rules in <code>F-foundations/brand-voice.md</code> based on what you see</li>
+        <li>Add 3-5 anti-patterns (what your AI should NEVER say or do)</li>
+        <li>Complete your <code>F-foundations/brand-identity.md</code> with specific details</li>
+      </ul>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Why Anti-Patterns Matter</h4>
+      <p style="margin-bottom:0;">Anti-patterns have outsized impact. "Never use exclamation marks" or "Never start with 'In today's fast-paced world'" dramatically improves output quality. Add at least 3.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Day 2-3 &mdash; Knowledge <span class="step-time">~1 hour</span></h4>
+      <ul style="margin-bottom:0;">
+        <li>Add domain knowledge to <code>B-brain/</code> &mdash; industry data, methodologies, past work</li>
+        <li>Test that agents reference this knowledge in responses</li>
+        <li>Drop in any existing documents you want the AI to know about</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>Day 4-5 &mdash; Workflows <span class="step-time">~1 hour</span></h4>
+      <ul style="margin-bottom:0;">
+        <li>Create your first custom YAML skill (content pipeline is a great start)</li>
+        <li>Test it with a real task from your actual workflow</li>
+        <li>Iterate on agent prompts &mdash; small changes make big differences</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>Week 2+ &mdash; Expansion</h4>
+      <ul style="margin-bottom:0;">
+        <li>Add specialized agents for roles you need</li>
+        <li>Build skill workflows for recurring tasks</li>
+        <li>Activate a second venture if you manage multiple businesses</li>
+        <li>Consider upgrading to Full edition for API access and integrations</li>
+      </ul>
+    </div>
+
+    </div><!-- /step 5 -->
+
+    <!-- ===== STEP 6: CUSTOMIZING ===== -->
+    <div data-step="6" data-step-title="Customizing">
+    <h2>Customizing &amp; Growing</h2>
+
+    <h3>Add Knowledge</h3>
+    <p>Drop <code>.md</code> files into <code>B-brain/</code>:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>B-brain/
+  industry-trends.md
+  competitor-analysis.md
+  client-personas.md
+  pricing-strategy.md</code></pre>
+    </div>
+
+    <h3>Refine Brand Voice</h3>
+    <p>Edit <code>F-foundations/brand-voice.md</code> with specific rules:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>## Voice Rules
+- Use short paragraphs (2-3 sentences max)
+- Start with data or a specific observation, not a generic claim
+- No exclamation marks
+- Never use "synergy", "leverage", or "game-changer"
+- Write at a 10th-grade reading level</code></pre>
+    </div>
+
+    <h3>Feature Flags</h3>
+    <p>Edit <code>realize-os.yaml</code> to toggle features:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>features:
+  review_pipeline: true    # Auto-route content through Reviewer
+  auto_memory: true        # Log learnings to I-insights/
+  proactive_mode: true     # Suggest next steps, ask clarifying questions
+  cross_system: false      # Share context across ventures</code></pre>
+    </div>
+
+    <h3>Multi-Venture</h3>
+    <p>Your Lite license includes 3 venture slots. To activate a new venture:</p>
+    <ol>
+      <li>Fill in <code>systems/my-business-2/F-foundations/</code> with identity and voice files</li>
+      <li>Add the system entry in <code>realize-os.yaml</code></li>
+      <li>Tell the agent: <strong>"Create a new venture"</strong> and it will walk you through it</li>
+    </ol>
+
+    <div class="guide__card guide__card--accent">
+      <h4>When to Consider Full Edition</h4>
+      <ul style="margin-bottom:0;">
+        <li><strong>REST API</strong> &mdash; Connect from any app, not just Claude Code</li>
+        <li><strong>Always-on</strong> &mdash; Docker 24/7, not just when terminal is open</li>
+        <li><strong>Multi-LLM</strong> &mdash; Claude + Gemini + OpenAI, auto-route by complexity</li>
+        <li><strong>Google Workspace</strong> &mdash; Gmail, Calendar, Drive (13 tools)</li>
+        <li><strong>Telegram bot</strong> &mdash; Webhooks, Make.com, n8n, Zapier</li>
+        <li><strong>Self-evolution</strong> &mdash; Auto gap detection and skill suggestion</li>
+      </ul>
+    </div>
+
+    </div><!-- /step 6 -->
+
+    <!-- ===== STEP 7: TROUBLESHOOTING ===== -->
+    <div data-step="7" data-step-title="Troubleshooting">
+    <h2>Troubleshooting</h2>
+
+    <p>Common issues and their fixes. If your problem isn't here, ask in the community or email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a>.</p>
+
+    <div class="guide__card">
+      <h4>Claude Code doesn't read CLAUDE.md</h4>
+      <p>Make sure you're running <code>claude</code> from the correct directory:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>cd /path/to/your/realize-lite-vault
+ls CLAUDE.md    # Should show the file
+claude          # Now start Claude Code</code></pre>
+      </div>
+    </div>
+
+    <div class="guide__card">
+      <h4>Output sounds generic — not my voice</h4>
+      <p>Your <code>F-foundations/brand-voice.md</code> is too vague. Replace generic rules like "be professional" with specific ones:</p>
+      <ul style="margin-bottom:0;">
+        <li>"Use short paragraphs (2-3 sentences)"</li>
+        <li>"Start with data or a specific observation"</li>
+        <li>"No exclamation marks"</li>
+        <li>"Never use the word 'synergy'"</li>
+        <li>Paste a real writing sample as a "Good Example"</li>
+      </ul>
+    </div>
+
+    <div class="guide__card">
+      <h4>Skill doesn't trigger</h4>
+      <p style="margin-bottom:0;">Check YAML syntax (indentation matters — use spaces, not tabs). Verify the <code>triggers</code> array contains phrases that match your message. Test with an exact trigger phrase first.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Obsidian shows empty vault</h4>
+      <p style="margin-bottom:0;">You opened the wrong folder. Close the vault, then re-open by selecting the folder that <em>contains</em> the FABRIC subfolders (<code>A-agents/</code>, <code>B-brain/</code>, etc.). If you unzipped into a nested folder, look one level deeper.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Agents respond generically — don't reference my knowledge</h4>
+      <p style="margin-bottom:0;">Check that <code>A-agents/</code> contains detailed agent definitions with specific role descriptions. Add more context to <code>B-brain/</code>. Make sure <code>F-foundations/brand-identity.md</code> has specific business details.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"claude: command not found"</h4>
+      <p style="margin-bottom:0;">Node.js isn't installed or isn't in your PATH. Close and reopen your terminal after installing Node.js. On macOS: <code>brew install node</code>. On Windows: download from nodejs.org and check "Add to PATH" during install.</p>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Still stuck?</h4>
+      <ul style="margin-bottom:0;">
+        <li><a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener" style="color:var(--color-accent);">Telegram Builders Group</a> &mdash; active community, fast responses</li>
+        <li><a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener" style="color:var(--color-accent);">WhatsApp Community</a> &mdash; quick updates and direct support</li>
+        <li>Email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a> &mdash; we reply within 24 hours</li>
+      </ul>
+    </div>
+
+    </div><!-- /step 7 -->
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+          <p>Part of the <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a> ecosystem.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/SufZen/realize-os" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
+          <a href="mailto:realizeos@realization.co.il">Support</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 RealizeOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/stepper.js"></script>
+  <script>
+  (function() {
+    // --- Copy buttons ---
+    document.querySelectorAll('.code-block__copy').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var code = btn.closest('.code-block').querySelector('code');
+        var text = code.textContent;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch(function() {});
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+      });
+    });
+
+    // --- Business type tabs ---
+    var tabs = document.querySelectorAll('.biz-tab');
+    var panels = document.querySelectorAll('.biz-panel');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var biz = tab.getAttribute('data-biz');
+        tabs.forEach(function(t) { t.classList.remove('biz-tab--active'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('biz-tab--active');
+        var panel = document.querySelector('[data-biz-panel="' + biz + '"]');
+        if (panel) panel.classList.add('active');
+      });
+    });
+
+    // --- Mobile nav toggle ---
+    var navToggle = document.getElementById('nav-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() { navLinks.classList.remove('open'); });
+      });
+    }
+
+    // --- Stepper ---
+    var wizard = new Stepper({
+      container: '.guide',
+      steps: '[data-step]',
+      progress: '[data-stepper-progress]',
+      storageKey: 'guide_lite_step',
+      anchorAliases: {
+        'welcome': 1, 'agents': 2, 'business': 3,
+        'skills': 4, 'roadmap': 5, 'customizing': 6, 'troubleshooting': 7
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

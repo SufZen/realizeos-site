@@ -3,73 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What's Next — RealizeOS</title>
-  <meta name="description" content="After your RealizeOS setup — test everything, your first week roadmap, setup call prep, and troubleshooting.">
+  <title>Your Guide to RealizeOS</title>
+  <meta name="description" content="Post-setup guides for RealizeOS — choose your edition to get started with agents, skills, integrations, and your first-week roadmap.">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .guide { max-width: 780px; margin: 0 auto; padding: calc(64px + 3rem) 1.5rem 4rem; }
-    .guide__back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 2rem; transition: color 0.2s; }
-    .guide__back:hover { color: var(--color-accent); }
-    .guide h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .guide__intro { color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem; }
-    .guide__reassure { color: var(--color-text-muted); font-size: 0.95rem; font-style: italic; margin-bottom: 3rem; line-height: 1.6; }
-    .guide h2 { font-size: 1.5rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
-    .guide h2:first-of-type { border-top: none; padding-top: 0; }
-    .guide h3 { font-size: 1.15rem; margin: 2rem 0 0.75rem; color: var(--color-accent); }
-    .guide p { color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1rem; }
-    .guide ul, .guide ol { color: var(--color-text-secondary); padding-left: 1.5rem; margin-bottom: 1.5rem; }
-    .guide li { margin-bottom: 0.75rem; line-height: 1.65; }
-    .guide li strong { color: var(--color-text); }
-    .guide code { background: var(--color-surface); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.87rem; }
-    .guide__card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
-    .guide__card--accent { border-color: var(--color-accent); background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%); }
-    .guide__card--success { border-color: #22c55e; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(34, 197, 94, 0.04) 100%); }
-    .guide__card--warning { border-color: #f59e0b; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(245, 158, 11, 0.04) 100%); }
-    .guide__card h4 { font-size: 1rem; margin-bottom: 0.75rem; }
-    .guide__card--success h4 { color: #22c55e; }
-    .guide__card--warning h4 { color: #f59e0b; }
-    .guide__card--accent h4 { color: var(--color-accent); }
-    .guide__checklist { list-style: none; padding-left: 0; }
-    .guide__checklist li { padding: 0.5rem 0; padding-left: 1.75rem; position: relative; border-bottom: 1px solid var(--color-border); }
-    .guide__checklist li:last-child { border-bottom: none; }
-    .guide__checklist li::before { content: '\2610'; position: absolute; left: 0; color: var(--color-accent); font-size: 1.1rem; }
-    .guide__time { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--color-accent-subtle); color: var(--color-accent); padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500; margin-bottom: 1rem; }
-    .guide__cta { text-align: center; padding: 3rem 0 1rem; }
-    .guide__toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem; }
-    .guide__toc h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 0.75rem; }
-    .guide__toc ol { padding-left: 1.25rem; margin-bottom: 0; }
-    .guide__toc li { margin-bottom: 0.4rem; }
-    .guide__toc a { color: var(--color-text-secondary); text-decoration: none; font-size: 0.93rem; transition: color 0.2s; }
-    .guide__toc a:hover { color: var(--color-accent); }
+    .guide-router { max-width: 780px; margin: 0 auto; padding: calc(64px + 4rem) 1.5rem 4rem; }
+    .guide-router__back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 2rem; transition: color 0.2s; }
+    .guide-router__back:hover { color: var(--color-accent); }
+    .guide-router h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.75rem; text-align: center; }
+    .guide-router__intro { color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; text-align: center; max-width: 600px; margin: 0 auto 3rem; }
 
-    /* Code blocks with copy button */
-    .code-block { position: relative; }
-    .code-block pre { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; overflow-x: auto; }
-    .code-block pre code { background: none; padding: 0; font-size: 0.85rem; line-height: 1.6; }
-    .code-block__copy {
-      position: absolute; top: 0.5rem; right: 0.5rem;
-      background: var(--color-surface); border: 1px solid var(--color-border);
-      color: var(--color-text-muted); font-family: var(--font-mono);
-      font-size: 0.72rem; padding: 0.3rem 0.6rem; border-radius: 4px;
-      cursor: pointer; transition: all 0.2s; z-index: 2;
+    .guide-router__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+
+    .guide-router__card {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 2rem; text-decoration: none;
+      transition: all 0.3s var(--ease); display: flex; flex-direction: column;
     }
-    .code-block__copy:hover {
-      background: var(--color-accent); color: var(--color-accent-text); border-color: var(--color-accent);
+    .guide-router__card:hover {
+      border-color: var(--color-accent); transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 204, 0, 0.08);
+    }
+    .guide-router__card--featured {
+      border-color: var(--color-accent);
+      background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%);
     }
 
-    /* Step time badges inline */
-    .step-time {
-      display: inline-block; font-family: var(--font-mono); font-size: 0.75rem;
-      color: var(--color-accent); background: var(--color-accent-subtle);
-      padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; font-weight: 500;
+    .guide-router__badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.25rem 0.7rem; border-radius: 100px; margin-bottom: 1rem; width: fit-content;
     }
+    .guide-router__badge--lite { background: var(--color-surface); color: var(--color-text-secondary); }
+    .guide-router__badge--full { background: var(--color-accent); color: var(--color-accent-text); }
+
+    .guide-router__card h2 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--color-text); }
+    .guide-router__card p { color: var(--color-text-secondary); font-size: 0.93rem; line-height: 1.65; margin-bottom: 1rem; }
+    .guide-router__steps { list-style: none; padding: 0; margin-bottom: 1.5rem; flex: 1; }
+    .guide-router__steps li {
+      padding: 0.4rem 0; font-size: 0.87rem; color: var(--color-text-muted);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .guide-router__steps li:last-child { border-bottom: none; }
+    .guide-router__steps li strong { color: var(--color-text-secondary); }
+
+    .guide-router__cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-weight: 600; font-size: 0.95rem; color: var(--color-accent); transition: gap 0.2s;
+    }
+    .guide-router__card:hover .guide-router__cta { gap: 0.75rem; }
+
+    /* Quick links section */
+    .guide-router__quick { margin-bottom: 3rem; }
+    .guide-router__quick h3 {
+      font-size: 1.1rem; color: var(--color-text-muted); text-align: center;
+      margin-bottom: 1.25rem; font-weight: 500;
+    }
+    .guide-router__links {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .guide-router__link {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm); padding: 0.75rem 1.25rem;
+      color: var(--color-text-secondary); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+    }
+    .guide-router__link:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
     @media (max-width: 768px) {
-      .guide { padding-left: 1rem; padding-right: 1rem; }
+      .guide-router { padding-left: 1rem; padding-right: 1rem; }
+      .guide-router__cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -92,318 +98,63 @@
     </div>
   </nav>
 
-  <article class="guide">
-    <a href="setup.html" class="guide__back">&larr; Back to Setup</a>
+  <div class="guide-router">
+    <a href="setup.html" class="guide-router__back">&larr; Back to Setup</a>
 
-    <!-- Stepper Progress -->
-    <div data-stepper-progress></div>
+    <h1>Your Guide to RealizeOS</h1>
+    <p class="guide-router__intro">You've completed setup. Choose your edition below to access your comprehensive post-setup guide &mdash; covering agents, skills, business templates, integrations, and your first-week roadmap.</p>
 
-    <!-- ===== STEP 1: WELCOME ===== -->
-    <div data-step="1" data-step-title="What's Next">
+    <div class="guide-router__cards">
 
-    <div style="background:linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255,204,0,0.06) 100%); border:1px solid var(--color-accent); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:2rem; text-align:center;">
-      <p style="margin:0; font-size:1.5rem;">&#127881;</p>
-      <p style="margin:0.5rem 0 0; color:var(--color-text); font-weight:600; font-size:1.05rem;">Your RealizeOS is running.</p>
+      <!-- Lite Card -->
+      <a href="guide-lite.html" class="guide-router__card">
+        <span class="guide-router__badge guide-router__badge--lite">Lite Edition</span>
+        <h2>Lite Guide</h2>
+        <p>Obsidian + Claude Code. Your vault is your AI operations center.</p>
+        <ul class="guide-router__steps">
+          <li><strong>7 steps</strong> covering:</li>
+          <li>Your AI agent team &amp; routing</li>
+          <li>8 business templates with examples</li>
+          <li>Skills &amp; custom workflows</li>
+          <li>First-week roadmap</li>
+          <li>Customizing &amp; growing</li>
+          <li>Troubleshooting</li>
+        </ul>
+        <span class="guide-router__cta">Open Lite Guide &rarr;</span>
+      </a>
+
+      <!-- Full Card -->
+      <a href="guide-full.html" class="guide-router__card guide-router__card--featured">
+        <span class="guide-router__badge guide-router__badge--full">Full Edition</span>
+        <h2>Full Guide</h2>
+        <p>Self-hosted Docker engine with REST API, multi-LLM routing, and integrations.</p>
+        <ul class="guide-router__steps">
+          <li><strong>12 steps</strong> covering:</li>
+          <li>API usage &amp; first conversation</li>
+          <li>Multi-LLM routing (Flash/Sonnet/Opus)</li>
+          <li>8 business templates with curl examples</li>
+          <li>v2 skills with tools &amp; conditions</li>
+          <li>Telegram, Google Workspace, Make.com</li>
+          <li>MCP, webhooks, multi-venture</li>
+          <li>Self-evolution engine</li>
+          <li>Full API reference &amp; troubleshooting</li>
+        </ul>
+        <span class="guide-router__cta">Open Full Guide &rarr;</span>
+      </a>
     </div>
 
-    <h1>What's Next</h1>
-    <p class="guide__intro">You've completed setup. This guide covers everything that comes after — verifying your system works, your first-week roadmap, how to prepare for your setup call (if included), and a full troubleshooting reference.</p>
-    <p class="guide__reassure">Bookmark this page. You'll come back to it as you build out your AI operations system.</p>
-
-    <div class="guide__toc">
-      <h4>In This Guide</h4>
-      <ol>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(2)">Test Everything — Verify your setup works</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(3)">First Steps — Your week-1 roadmap</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(4)">Setup Call Prep — For Setup Assistance ($499) tier</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(5)">Troubleshooting — Detailed fixes for common issues</a></li>
-      </ol>
-    </div>
-
-    </div><!-- /step 1 -->
-
-    <!-- ===== STEP 2: TEST EVERYTHING ===== -->
-    <div data-step="2" data-step-title="Test Everything">
-    <h2 id="validation">1. Test Everything Works</h2>
-
-    <p>Run through these tests right now to confirm your system is properly configured. It's much easier to catch and fix issues early than after you've built on top of the system.</p>
-
-    <div class="guide__card guide__card--accent">
-      <h4>Test 1: Brand Recognition</h4>
-      <p>Ask your system:</p>
-      <div class="code-block">
-        <button class="code-block__copy" data-copy>Copy</button>
-        <pre><code>What do you know about my business?</code></pre>
+    <div class="guide-router__quick">
+      <h3>Quick Links</h3>
+      <div class="guide-router__links">
+        <a href="guide-lite.html#troubleshooting" class="guide-router__link">Troubleshooting (Lite)</a>
+        <a href="guide-full.html#troubleshooting" class="guide-router__link">Troubleshooting (Full)</a>
+        <a href="guide-full.html#integrations" class="guide-router__link">Integrations</a>
+        <a href="setup.html" class="guide-router__link">Back to Setup</a>
+        <a href="brand-worksheet.html" class="guide-router__link">Brand Worksheet</a>
       </div>
-      <p style="margin-bottom:0;"><strong>Expected:</strong> The response references your brand identity, business name, audience, and values — not generic AI filler. If it gives generic output, your <code>brand-identity.md</code> needs more detail.</p>
     </div>
 
-    <div class="guide__card guide__card--accent">
-      <h4>Test 2: Voice Calibration</h4>
-      <p>Ask your system:</p>
-      <div class="code-block">
-        <button class="code-block__copy" data-copy>Copy</button>
-        <pre><code>Write a social media post about why AI agents should work as a team, not as disconnected tools.</code></pre>
-      </div>
-      <p style="margin-bottom:0;"><strong>Expected:</strong> The output matches your voice rules. If you said "no exclamation marks," there should be none. If you said "short paragraphs," they should be short. If it sounds generic, your <code>brand-voice.md</code> needs more specific rules.</p>
-    </div>
-
-    <div class="guide__card guide__card--accent">
-      <h4>Test 3: System Health <span class="step-time">Full edition only</span></h4>
-      <p>Open in your browser:</p>
-      <div class="code-block">
-        <button class="code-block__copy" data-copy>Copy</button>
-        <pre><code>http://localhost:8080/status</code></pre>
-      </div>
-      <p style="margin-bottom:0;"><strong>Expected:</strong> A JSON response showing "healthy" status, connected LLM providers, and active systems.</p>
-    </div>
-
-    <div class="guide__card guide__card--accent">
-      <h4>Test 4: Agent Routing <span class="step-time">Full edition only</span></h4>
-      <div class="code-block">
-        <button class="code-block__copy" data-copy>Copy</button>
-        <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Analyze the competitive landscape for [your industry]", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
-      </div>
-      <p style="margin-bottom:0;"><strong>Expected:</strong> The response is handled by the Analyst agent (check the <code>agent</code> field), using a more capable model for complex analysis.</p>
-    </div>
-
-    <div class="guide__card guide__card--success">
-      <h4>All tests pass?</h4>
-      <p style="margin-bottom:0;">You're in good shape. Move to <a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(3)" style="color:var(--color-accent);">First Steps</a> to start building. If something's off, jump to <a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(5)" style="color:var(--color-accent);">Troubleshooting</a>.</p>
-    </div>
-
-    </div><!-- /step 2 -->
-
-    <!-- ===== STEP 3: FIRST STEPS ===== -->
-    <div data-step="3" data-step-title="First Steps">
-    <h2 id="first-steps">2. First Steps After Setup</h2>
-
-    <p>Your system is running. Here's a roadmap for making the most of your first week — organized by what has the highest impact at each stage.</p>
-
-    <div class="guide__card">
-      <h4>Day 1 — Foundations</h4>
-      <ul style="margin-bottom:0;">
-        <li>Send 5-10 test messages to check your brand voice — refine the rules based on what you see</li>
-        <li>Complete your brand identity file (<code>F-foundations/brand-identity.md</code>) — add specifics you might have skimped during setup</li>
-        <li>Write 5-10 concrete voice rules in <code>F-foundations/brand-voice.md</code> — the more specific, the better</li>
-        <li><strong>Key tip:</strong> Add 3-5 anti-patterns (what your AI should NEVER say or do). These have outsized impact.</li>
-      </ul>
-    </div>
-
-    <div class="guide__card">
-      <h4>Day 2-3 — Knowledge</h4>
-      <ul style="margin-bottom:0;">
-        <li>Add domain knowledge to <code>B-brain/</code> — industry data, methodologies, your past work, client context</li>
-        <li>Test that agents reference this knowledge in their responses</li>
-        <li>Use the ingestion command to import existing documents you already have</li>
-      </ul>
-    </div>
-
-    <div class="guide__card">
-      <h4>Day 4-5 — Workflows</h4>
-      <ul style="margin-bottom:0;">
-        <li>Create your first YAML skill — a content pipeline (writer → reviewer → save) is a great starting point</li>
-        <li>Test it with a real task from your actual workflow</li>
-        <li>Iterate on agent prompts based on output quality — small prompt changes make big differences</li>
-      </ul>
-    </div>
-
-    <div class="guide__card">
-      <h4>Week 2+ — Expansion</h4>
-      <ul style="margin-bottom:0;">
-        <li>Connect Google Workspace tools (email, calendar, drive)</li>
-        <li>Add specialized agents for roles you need (researcher, ops, client comms)</li>
-        <li>Build skill workflows for your top recurring tasks</li>
-        <li>Let the self-evolution engine suggest improvements based on your usage patterns</li>
-      </ul>
-    </div>
-
-    <div class="guide__card guide__card--accent">
-      <h4>What's coming to your inbox</h4>
-      <ul style="margin-bottom:0;">
-        <li><strong>Day 3:</strong> Tips for writing great brand voice rules — the patterns that actually work</li>
-        <li><strong>Day 7:</strong> Advanced workflows + connecting Google Workspace</li>
-        <li><strong>Day 14:</strong> We'll check in — how's it going?</li>
-      </ul>
-    </div>
-
-    </div><!-- /step 3 -->
-
-    <!-- ===== STEP 4: SETUP CALL ===== -->
-    <div data-step="4" data-step-title="Setup Call Prep">
-    <h2 id="setup-call">3. Preparing for Your Setup Call</h2>
-
-    <div class="guide__card guide__card--accent">
-      <h4>This step is for Setup Assistance ($499) tier</h4>
-      <p style="margin-bottom:0;">If you purchased the Setup Assistance package, your 1-hour setup call is included. This section tells you exactly how to prepare so we can make the most of every minute.</p>
-    </div>
-
-    <p>The call is most productive when you've already installed the prerequisites and thought through what you want to build. Come prepared and we'll configure your full system live, together.</p>
-
-    <div class="guide__card guide__card--accent">
-      <h4>Before the Call — Prepare These</h4>
-      <ul class="guide__checklist">
-        <li><strong>Complete the Brand Worksheet</strong> — <a href="brand-worksheet.html" style="color:var(--color-accent);">brand-worksheet.html</a>. This saves 15+ minutes on the call and ensures you've thought through your voice before we meet.</li>
-        <li><strong>Install prerequisites</strong> — Python, Docker, and Git installed (use the <a href="setup.html?tier=full" style="color:var(--color-accent);">Interactive Setup</a> to verify). We run the system live during the call.</li>
-        <li><strong>Business description</strong> — 2-3 sentences for each venture you want to configure</li>
-        <li><strong>Brand voice samples</strong> — 2-3 pieces of existing content that represent how you want to sound (LinkedIn posts, emails, proposals)</li>
-        <li><strong>Agent wishlist</strong> — Which roles do you need? Writer, Analyst, Operations, Researcher, Client Comms?</li>
-        <li><strong>Top 3 specific workflows</strong> — "Draft a LinkedIn post from my meeting notes" beats "content creation." Be specific.</li>
-        <li><strong>API keys ready</strong> — Anthropic and Google AI keys created and funded</li>
-      </ul>
-    </div>
-
-    <div class="guide__card">
-      <h4>What Happens During the Call</h4>
-      <ol>
-        <li><strong>Discovery (10 min)</strong> — We review your business, ventures, and goals</li>
-        <li><strong>Brand Configuration (15 min)</strong> — We set up your identity, voice rules, and brand standards live</li>
-        <li><strong>Agent Setup (15 min)</strong> — We define and customize your AI team for your specific needs</li>
-        <li><strong>First Workflow (15 min)</strong> — We build and test your first skill workflow end-to-end</li>
-        <li><strong>Testing &amp; Q&amp;A (5 min)</strong> — We verify everything works and answer your questions</li>
-      </ol>
-    </div>
-
-    <div class="guide__card">
-      <h4>After the Call</h4>
-      <ul style="margin-bottom:0;">
-        <li>Recording of the session shared with you</li>
-        <li>Your custom configuration committed to your repo</li>
-        <li>30 days of priority email support</li>
-        <li>Full access to community channels for ongoing help</li>
-      </ul>
-    </div>
-
-    </div><!-- /step 4 -->
-
-    <!-- ===== STEP 5: TROUBLESHOOTING ===== -->
-    <div data-step="5" data-step-title="Troubleshooting">
-    <h2 id="troubleshooting">4. Troubleshooting</h2>
-
-    <p>Common issues and their fixes. If your problem isn't here, ask in the community or email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a>.</p>
-
-    <h3>Installation Issues</h3>
-
-    <div class="guide__card">
-      <h4>"git is not recognized" or "git: command not found"</h4>
-      <p style="margin-bottom:0;">Git isn't installed. Download from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">git-scm.com</a>. After installing, close and reopen your terminal for the PATH to update.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"python: command not found" or wrong Python version</h4>
-      <p style="margin-bottom:0;">Try <code>python3 --version</code> instead. If Python isn't installed, download from <a href="https://python.org/downloads" target="_blank" rel="noopener" style="color:var(--color-accent);">python.org</a>. <strong>During installation, check "Add Python to PATH."</strong> This is the most commonly missed step.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"pip: command not found"</h4>
-      <p style="margin-bottom:0;">Use <code>python -m pip install -r requirements.txt</code> instead. If that doesn't work, reinstall Python with the "pip" option checked.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>Docker Desktop won't start</h4>
-      <p><strong>Windows:</strong> Make sure WSL2 is installed. Open PowerShell as admin and run <code>wsl --install</code>. Restart your computer.<br>
-      <strong>Mac:</strong> Make sure you downloaded the right version (Apple Silicon vs Intel).<br>
-      <strong>Both:</strong> Check that virtualization is enabled in your BIOS settings. Make sure Docker Desktop is actually running (check the system tray icon).</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Port 8080 already in use"</h4>
-      <p style="margin-bottom:0;">Another process is using that port. Either stop it, or change the port in your <code>.env</code> file: set <code>API_PORT=8081</code>.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Obsidian shows empty vault"</h4>
-      <p style="margin-bottom:0;">You opened the wrong folder. Close the vault, then re-open by selecting the folder that <em>contains</em> the FABRIC subfolders (<code>A-agents/</code>, <code>B-brain/</code>, etc.). If you unzipped into a nested folder, look one level deeper.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"claude: command not found"</h4>
-      <p style="margin-bottom:0;">Node.js isn't installed or isn't in your PATH. Close and reopen your terminal after installing Node.js. On macOS: <code>brew install node</code>. On Windows: download from <a href="https://nodejs.org" style="color:var(--color-accent);">nodejs.org</a> and check "Add to PATH" during install.</p>
-    </div>
-
-    <h3>API Key Issues</h3>
-
-    <div class="guide__card">
-      <h4>"Invalid API key" or "Authentication failed"</h4>
-      <p>Check your <code>.env</code> file. Common mistakes:</p>
-      <ul style="margin-bottom:0;">
-        <li>Spaces around the <code>=</code> sign (wrong: <code>ANTHROPIC_API_KEY = sk-...</code>)</li>
-        <li>Quotes around the value (wrong: <code>ANTHROPIC_API_KEY="sk-..."</code>)</li>
-        <li>Trailing spaces or invisible characters — re-type the key manually</li>
-        <li>Key was revoked — create a new one at <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--color-accent);">console.anthropic.com</a></li>
-      </ul>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Insufficient credits" or "Payment required"</h4>
-      <p style="margin-bottom:0;">Your Anthropic account needs credit. Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--color-accent);">console.anthropic.com</a> &rarr; Billing &rarr; Add at least $5. Usage is pay-as-you-go, typically $2-8/month.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Rate limit exceeded"</h4>
-      <p style="margin-bottom:0;">You're sending too many requests too quickly. Wait a minute and try again. For production use, adjust <code>RATE_LIMIT_PER_MINUTE</code> in your <code>.env</code> or increase your tier limits in the Anthropic console.</p>
-    </div>
-
-    <h3>Runtime Issues</h3>
-
-    <div class="guide__card">
-      <h4>"Output sounds generic — not my voice"</h4>
-      <p>Your <code>F-foundations/brand-voice.md</code> is too vague. Vague instructions like "be professional" don't help. Write specific rules:</p>
-      <ul style="margin-bottom:0;">
-        <li>"Use short paragraphs (2-3 sentences)"</li>
-        <li>"Start with data or a specific observation, not a generic claim"</li>
-        <li>"No exclamation marks"</li>
-        <li>"Never use the word 'synergy'"</li>
-        <li>Also paste a real writing sample from your own work into the "Good Example" section</li>
-      </ul>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Agents respond generically — don't reference my knowledge base"</h4>
-      <p>The knowledge base might not be indexed. Run:</p>
-      <div class="code-block">
-        <button class="code-block__copy" data-copy>Copy</button>
-        <pre><code>python cli.py index</code></pre>
-      </div>
-      <p style="margin-bottom:0;">Also check that your agent definitions in <code>A-agents/</code> have specific, detailed role descriptions — not just "handles content."</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Skill doesn't trigger"</h4>
-      <p style="margin-bottom:0;">Check the YAML syntax in your skill file. Common issues: incorrect indentation, missing <code>triggers</code> array, or the trigger keywords don't match your message. Test with an exact trigger phrase first. YAML is sensitive to spacing — use a validator if unsure.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"KB search returns nothing"</h4>
-      <p style="margin-bottom:0;">Run <code>python cli.py index</code> to rebuild the index. Also check that your knowledge files use UTF-8 encoding and have actual content — not just headers and empty sections.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Claude Code doesn't read CLAUDE.md"</h4>
-      <p style="margin-bottom:0;">Make sure you're running <code>claude</code> from the correct directory — the one containing the <code>CLAUDE.md</code> file. Check with <code>ls</code> (Mac/Linux) or <code>dir</code> (Windows) that the file exists in your current working directory.</p>
-    </div>
-
-    <div class="guide__card">
-      <h4>"Permission denied" (macOS)</h4>
-      <p style="margin-bottom:0;">macOS may block terminal access to your files. Go to System Settings &rarr; Privacy &amp; Security &rarr; Full Disk Access &rarr; Enable your terminal app (Terminal, iTerm2, etc.).</p>
-    </div>
-
-    <div class="guide__card guide__card--accent">
-      <h4>Still stuck?</h4>
-      <p>Join the community — someone has probably seen your issue before:</p>
-      <ul style="margin-bottom:0;">
-        <li><a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener" style="color:var(--color-accent);">Telegram Builders Group</a> — active community, fast responses</li>
-        <li><a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener" style="color:var(--color-accent);">WhatsApp Community</a> — quick updates and direct support</li>
-        <li>Email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a> — we reply within 24 hours</li>
-      </ul>
-      <p style="margin-bottom:0; margin-top:0.75rem; color:var(--color-text-muted); font-size:0.87rem;">Screenshot your error and share it — we've probably seen it before.</p>
-    </div>
-
-    </div><!-- /step 5 -->
-
-  </article>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -425,55 +176,16 @@
     </div>
   </footer>
 
-  <script src="js/stepper.js"></script>
   <script>
   (function() {
-    // --- Copy buttons for code blocks ---
-    document.querySelectorAll('.code-block__copy').forEach(btn => {
-      btn.addEventListener('click', async () => {
-        const code = btn.closest('.code-block').querySelector('code');
-        const text = code.textContent;
-        try {
-          await navigator.clipboard.writeText(text);
-        } catch(e) {
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-      });
-    });
-
-    // --- Mobile nav toggle ---
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
+    var navToggle = document.getElementById('nav-toggle');
+    var navLinks = document.getElementById('nav-links');
     if (navToggle) {
-      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      navToggle.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() { navLinks.classList.remove('open'); });
       });
     }
-
-    // --- Stepper initialization ---
-    var wizard = new Stepper({
-      container: '.guide',
-      steps: '[data-step]',
-      progress: '[data-stepper-progress]',
-      storageKey: 'whats_next_step',
-      anchorAliases: {
-        'validation': 2,
-        'first-steps': 3,
-        'google-workspace': 3,
-        'setup-call': 4,
-        'troubleshooting': 5
-      }
-    });
   })();
   </script>
 </body>

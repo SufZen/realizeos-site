@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Edition Guide — RealizeOS</title>
+  <meta name="description" content="Comprehensive post-setup guide for RealizeOS Full — API, integrations, multi-LLM routing, Telegram, Google Workspace, and self-evolution.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide { max-width: 780px; margin: 0 auto; padding: calc(64px + 3rem) 1.5rem 4rem; }
+    .guide__back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 2rem; transition: color 0.2s; }
+    .guide__back:hover { color: var(--color-accent); }
+    .guide h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .guide__intro { color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem; }
+    .guide__reassure { color: var(--color-text-muted); font-size: 0.95rem; font-style: italic; margin-bottom: 3rem; line-height: 1.6; }
+    .guide h2 { font-size: 1.5rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+    .guide h2:first-of-type { border-top: none; padding-top: 0; }
+    .guide h3 { font-size: 1.15rem; margin: 2rem 0 0.75rem; color: var(--color-accent); }
+    .guide p { color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1rem; }
+    .guide ul, .guide ol { color: var(--color-text-secondary); padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .guide li { margin-bottom: 0.75rem; line-height: 1.65; }
+    .guide li strong { color: var(--color-text); }
+    .guide code { background: var(--color-surface); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.87rem; }
+    .guide__card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .guide__card--accent { border-color: var(--color-accent); background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255, 204, 0, 0.04) 100%); }
+    .guide__card--success { border-color: #22c55e; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(34, 197, 94, 0.04) 100%); }
+    .guide__card--warning { border-color: #f59e0b; background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(245, 158, 11, 0.04) 100%); }
+    .guide__card h4 { font-size: 1rem; margin-bottom: 0.75rem; }
+    .guide__card--success h4 { color: #22c55e; }
+    .guide__card--warning h4 { color: #f59e0b; }
+    .guide__card--accent h4 { color: var(--color-accent); }
+    .guide__toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem; }
+    .guide__toc h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+    .guide__toc ol { padding-left: 1.25rem; margin-bottom: 0; }
+    .guide__toc li { margin-bottom: 0.4rem; }
+    .guide__toc a { color: var(--color-text-secondary); text-decoration: none; font-size: 0.93rem; transition: color 0.2s; }
+    .guide__toc a:hover { color: var(--color-accent); }
+    .code-block { position: relative; }
+    .code-block pre { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem; overflow-x: auto; }
+    .code-block pre code { background: none; padding: 0; font-size: 0.85rem; line-height: 1.6; }
+    .code-block__copy {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-text-muted); font-family: var(--font-mono);
+      font-size: 0.72rem; padding: 0.3rem 0.6rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.2s; z-index: 2;
+    }
+    .code-block__copy:hover { background: var(--color-accent); color: var(--color-accent-text); border-color: var(--color-accent); }
+    .guide__download {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-text-secondary); font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+      text-decoration: none; transition: all 0.2s; margin-bottom: 2rem;
+    }
+    .guide__download:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .guide__download svg { width: 16px; height: 16px; }
+    .guide__table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+    .guide__table th, .guide__table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); font-size: 0.9rem; }
+    .guide__table th { color: var(--color-accent); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .guide__table td { color: var(--color-text-secondary); }
+    .guide__table td strong { color: var(--color-text); }
+    .biz-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .biz-tab {
+      padding: 0.45rem 0.9rem; border-radius: 100px; font-size: 0.82rem; font-weight: 500;
+      font-family: var(--font-body); cursor: pointer; transition: all 0.2s;
+      border: 1px solid var(--color-border); background: transparent; color: var(--color-text-secondary);
+    }
+    .biz-tab:hover { border-color: var(--color-accent); color: var(--color-text); }
+    .biz-tab--active { background: var(--color-accent); color: var(--color-accent-text); border-color: var(--color-accent); font-weight: 600; }
+    .biz-panel { display: none; }
+    .biz-panel.active { display: block; }
+    .step-time { display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent); background: var(--color-accent-subtle); padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 500; }
+    /* Integration sub-sections */
+    .int-label { display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent-text); background: var(--color-accent); padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600; margin-bottom: 0.5rem; }
+    @media (max-width: 768px) {
+      .guide { padding-left: 1rem; padding-right: 1rem; }
+      .biz-tabs { gap: 0.3rem; }
+      .biz-tab { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="./" class="nav__logo">
+        <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="guide.html">Guides</a>
+        <a href="setup.html">Setup</a>
+        <a href="brand-worksheet.html">Brand Worksheet</a>
+        <a href="./#faq">FAQ</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <article class="guide">
+    <a href="guide.html" class="guide__back">&larr; All Guides</a>
+
+    <a href="downloads/post-setup-guide-full.md" download class="guide__download">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+      Download as Markdown
+    </a>
+
+    <div data-stepper-progress></div>
+
+    <!-- ===== STEP 1: WELCOME ===== -->
+    <div data-step="1" data-step-title="Welcome">
+
+    <div style="background:linear-gradient(180deg, var(--color-bg-card) 0%, rgba(255,204,0,0.06) 100%); border:1px solid var(--color-accent); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:2rem; text-align:center;">
+      <p style="margin:0; font-size:1.5rem;">&#9889;</p>
+      <p style="margin:0.5rem 0 0; color:var(--color-text); font-weight:600; font-size:1.05rem;">Your RealizeOS Full engine is running.</p>
+    </div>
+
+    <h1>Full Edition Guide</h1>
+    <p class="guide__intro">Your self-hosted AI operations engine is live. This guide covers everything from your first API call to advanced integrations, multi-LLM routing, and self-evolution.</p>
+    <p class="guide__reassure">Bookmark this page. It's your reference for the entire system.</p>
+
+    <div class="guide__toc">
+      <h4>In This Guide &mdash; 12 Steps</h4>
+      <ol>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(1)">Welcome & What You Built</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(2)">Full vs Lite — What You Gained</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(3)">Your First Conversation</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(4)">Understanding Your Agent Team</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(5)">Your Operations System by Business Type</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(6)">Working with Skills</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(7)">Connecting Tools & Integrations</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(8)">Managing Multiple Ventures</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(9)">Daily Workflow</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(10)">Self-Evolution</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(11)">Customizing & Growing</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(12)">Troubleshooting</a></li>
+      </ol>
+    </div>
+
+    <h3>Architecture</h3>
+    <div class="guide__card">
+      <p style="margin-bottom:0; font-family:var(--font-mono); font-size:0.82rem; color:var(--color-text); line-height:1.8;">
+        Message &rarr; Channel (API / Telegram / Webhook)<br>
+        &rarr; Base Handler (Session &rarr; Skill &rarr; Agent routing)<br>
+        &rarr; LLM Router (simple&rarr;Flash, content&rarr;Sonnet, complex&rarr;Opus)<br>
+        &rarr; Prompt Builder (12 layers from KB)<br>
+        &rarr; Tools (Google / Web / Browser / MCP)<br>
+        &rarr; Evolution Engine &rarr; Response
+      </p>
+    </div>
+
+    <h3>Quick Health Check</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl http://localhost:8080/status</code></pre>
+    </div>
+    <p><strong>Expected:</strong> JSON showing healthy status, connected LLM providers, active systems, and available tools.</p>
+
+    </div><!-- /step 1 -->
+
+    <!-- ===== STEP 2: FULL VS LITE ===== -->
+    <div data-step="2" data-step-title="Full vs Lite">
+    <h2>Full vs Lite &mdash; What You Gained</h2>
+
+    <table class="guide__table">
+      <thead><tr><th>Capability</th><th>Lite</th><th>Full</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Interface</strong></td><td>Claude Code CLI</td><td>REST API &mdash; connect from anywhere</td></tr>
+        <tr><td><strong>Always-on</strong></td><td>When terminal is open</td><td>Docker 24/7</td></tr>
+        <tr><td><strong>Channels</strong></td><td>Claude Code only</td><td>API, Telegram, webhooks, scheduler</td></tr>
+        <tr><td><strong>LLMs</strong></td><td>Claude only ($20/mo)</td><td>Claude + Gemini + OpenAI + Ollama</td></tr>
+        <tr><td><strong>Cost control</strong></td><td>Fixed subscription</td><td>Route simple&rarr;cheap, complex&rarr;powerful</td></tr>
+        <tr><td><strong>Tools</strong></td><td>Manual</td><td>Google Workspace (13), web, browser, MCP</td></tr>
+        <tr><td><strong>Skills</strong></td><td>Manually followed</td><td>Auto-triggered by engine</td></tr>
+        <tr><td><strong>Evolution</strong></td><td>Manual</td><td>Self-evolution (gap detection)</td></tr>
+        <tr><td><strong>Integrations</strong></td><td>None</td><td>Webhooks, Make.com, n8n, Zapier</td></tr>
+        <tr><td><strong>Multi-user</strong></td><td>Single</td><td>API keys, user IDs, concurrent</td></tr>
+      </tbody>
+    </table>
+
+    </div><!-- /step 2 -->
+
+    <!-- ===== STEP 3: FIRST CONVERSATION ===== -->
+    <div data-step="3" data-step-title="First Conversation">
+    <h2>Your First Conversation</h2>
+
+    <h3>Send a Message (bash/curl)</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "What do you know about my business?",
+    "system_key": "consulting",
+    "user_id": "me"
+  }'</code></pre>
+    </div>
+
+    <h3>PowerShell</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>$body = @{
+    message = "What do you know about my business?"
+    system_key = "consulting"
+    user_id = "me"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
+    -Method POST `
+    -ContentType "application/json" `
+    -Body $body</code></pre>
+    </div>
+
+    <h3>Request Fields</h3>
+    <table class="guide__table">
+      <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>message</strong></td><td>string</td><td>Yes</td><td>Your message</td></tr>
+        <tr><td><strong>system_key</strong></td><td>string</td><td>Yes</td><td>Target system (e.g., <code>consulting</code>)</td></tr>
+        <tr><td><strong>user_id</strong></td><td>string</td><td>No</td><td>User identifier (default: <code>api-user</code>)</td></tr>
+        <tr><td><strong>agent_key</strong></td><td>string</td><td>No</td><td>Force a specific agent</td></tr>
+        <tr><td><strong>channel</strong></td><td>string</td><td>No</td><td>Channel for formatting (default: <code>api</code>)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Response</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>{
+  "response": "Based on your brand identity, you are...",
+  "system_key": "consulting",
+  "agent_key": "orchestrator",
+  "user_id": "me"
+}</code></pre>
+    </div>
+
+    <h3>Force a Specific Agent</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Analyze the competitive landscape for AI consulting",
+    "system_key": "consulting",
+    "user_id": "me",
+    "agent_key": "analyst"
+  }'</code></pre>
+    </div>
+
+    <h3>Authentication</h3>
+    <p>If <code>REALIZE_API_KEY</code> is set in <code>.env</code>, include it in requests:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>-H "Authorization: Bearer YOUR_API_KEY"
+# or
+-H "X-API-Key: YOUR_API_KEY"</code></pre>
+    </div>
+
+    </div><!-- /step 3 -->
+
+    <!-- ===== STEP 4: AGENT TEAM ===== -->
+    <div data-step="4" data-step-title="Agent Team">
+    <h2>Understanding Your Agent Team</h2>
+
+    <h3>The 4 Default Agents</h3>
+    <table class="guide__table">
+      <thead><tr><th>Agent</th><th>Role</th><th>Triggers</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Orchestrator</strong></td><td>Strategic planning, coordination</td><td>plan, help, think, prioritize</td></tr>
+        <tr><td><strong>Writer</strong></td><td>Content creation, drafting</td><td>write, draft, post, blog, content, proposal</td></tr>
+        <tr><td><strong>Reviewer</strong></td><td>Quality control, brand compliance</td><td>review, check, quality, approve</td></tr>
+        <tr><td><strong>Analyst</strong></td><td>Research, data analysis</td><td>analyze, research, data, market, compare</td></tr>
+      </tbody>
+    </table>
+
+    <h3>LLM Routing</h3>
+    <p>Tasks are automatically routed to the optimal LLM based on complexity:</p>
+    <table class="guide__table">
+      <thead><tr><th>Task Class</th><th>Default Model</th><th>When Used</th></tr></thead>
+      <tbody>
+        <tr><td><strong>simple</strong></td><td>Gemini Flash</td><td>Quick lookups, simple questions</td></tr>
+        <tr><td><strong>content</strong></td><td>Claude Sonnet</td><td>Writing, analysis, reasoning</td></tr>
+        <tr><td><strong>complex</strong></td><td>Claude Opus</td><td>Strategy, multi-step planning</td></tr>
+      </tbody>
+    </table>
+
+    <h3>API: List Agents</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl http://localhost:8080/api/systems/consulting/agents</code></pre>
+    </div>
+
+    <h3>API: Hot Reload Config</h3>
+    <p>After editing agents, skills, or config:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl -X POST http://localhost:8080/api/systems/reload</code></pre>
+    </div>
+
+    <h3>Adding New Agents</h3>
+    <ol>
+      <li>Create a <code>.md</code> file in <code>systems/&lt;key&gt;/A-agents/</code></li>
+      <li>Add keywords in <code>realize-os.yaml</code> under <code>agent_routing</code></li>
+      <li>Hot reload: <code>POST /api/systems/reload</code></li>
+    </ol>
+
+    </div><!-- /step 4 -->
+
+    <!-- ===== STEP 5: BUSINESS TYPES ===== -->
+    <div data-step="5" data-step-title="Business Types">
+    <h2>Your Operations System by Business Type</h2>
+    <p>Select your template to see tailored examples with API commands.</p>
+
+    <div class="biz-tabs" id="biz-tabs">
+      <button class="biz-tab biz-tab--active" data-biz="consulting">Consulting</button>
+      <button class="biz-tab" data-biz="agency">Agency</button>
+      <button class="biz-tab" data-biz="portfolio">Portfolio</button>
+      <button class="biz-tab" data-biz="saas">SaaS</button>
+      <button class="biz-tab" data-biz="ecommerce">E-Commerce</button>
+      <button class="biz-tab" data-biz="accounting">Accounting</button>
+      <button class="biz-tab" data-biz="coaching">Coaching</button>
+      <button class="biz-tab" data-biz="freelance">Freelance</button>
+    </div>
+
+    <!-- Consulting -->
+    <div class="biz-panel active" data-biz-panel="consulting">
+      <div class="guide__card">
+        <h4>Consulting &mdash; Solo consultants, advisory firms</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Draft a client proposal for a 3-month strategy engagement"</li>
+          <li>"Research competitors in the management consulting space"</li>
+          <li>"Write a LinkedIn post about AI agent teams"</li>
+          <li>"Create a quarterly review template"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Draft a client proposal for a 3-month strategy engagement", "system_key": "consulting", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Google Calendar (meetings), Gmail (proposals), web search (research).</p>
+      </div>
+    </div>
+
+    <!-- Agency -->
+    <div class="biz-panel" data-biz-panel="agency">
+      <div class="guide__card">
+        <h4>Agency &mdash; Creative and marketing agencies</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Run this content brief through the pipeline"</li>
+          <li>"Write 5 social post variations for this campaign"</li>
+          <li>"Create a content calendar for next month"</li>
+          <li>"Draft campaign concepts for a product launch"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Write 5 social post variations for our product launch", "system_key": "agency", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Google Drive (assets), Make.com (distribution), Telegram (team).</p>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="biz-panel" data-biz-panel="portfolio">
+      <div class="guide__card">
+        <h4>Portfolio &mdash; Multi-venture operators</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Cross-venture status update"</li>
+          <li>"Compare performance across businesses"</li>
+          <li>"Draft investor update for all ventures"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Draft investor update covering all ventures", "system_key": "portfolio", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Webhooks (multi-system), Google Sheets (reporting).</p>
+      </div>
+    </div>
+
+    <!-- SaaS -->
+    <div class="biz-panel" data-biz-panel="saas">
+      <div class="guide__card">
+        <h4>SaaS &mdash; SaaS founders, product teams</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Write a feature spec for user onboarding"</li>
+          <li>"Analyze user feedback from surveys"</li>
+          <li>"Draft release notes for v2.1"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Write a feature spec for user onboarding", "system_key": "saas", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> GitHub webhooks, web search (competitors).</p>
+      </div>
+    </div>
+
+    <!-- E-Commerce -->
+    <div class="biz-panel" data-biz-panel="ecommerce">
+      <div class="guide__card">
+        <h4>E-Commerce &mdash; Online stores, D2C brands</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Write 20 product descriptions for our new collection"</li>
+          <li>"Draft abandoned cart email sequences"</li>
+          <li>"Create seasonal campaign copy"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Write 20 product descriptions for the new collection", "system_key": "store", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Gmail (customers), Make.com (orders), web search (trends).</p>
+      </div>
+    </div>
+
+    <!-- Accounting -->
+    <div class="biz-panel" data-biz-panel="accounting">
+      <div class="guide__card">
+        <h4>Accounting &mdash; Accountants, bookkeepers</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Draft client communication about tax deadlines"</li>
+          <li>"Write quarterly review report summary"</li>
+          <li>"Create FAQ for new clients"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Draft a client letter about upcoming tax deadlines", "system_key": "accounting", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Gmail (clients), Google Calendar (deadlines).</p>
+      </div>
+    </div>
+
+    <!-- Coaching -->
+    <div class="biz-panel" data-biz-panel="coaching">
+      <div class="guide__card">
+        <h4>Coaching &mdash; Coaches, course creators</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Create session notes template"</li>
+          <li>"Draft 8-week coaching program materials"</li>
+          <li>"Write follow-up emails after sessions"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Draft program materials for my 8-week coaching course", "system_key": "coaching", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Google Calendar (sessions), Gmail (follow-ups).</p>
+      </div>
+    </div>
+
+    <!-- Freelance -->
+    <div class="biz-panel" data-biz-panel="freelance">
+      <div class="guide__card">
+        <h4>Freelance &mdash; Freelance professionals</h4>
+        <p><strong>Example tasks:</strong></p>
+        <ul>
+          <li>"Draft a project proposal for the website redesign"</li>
+          <li>"Write a scope of work document"</li>
+          <li>"Create a case study from my last project"</li>
+        </ul>
+        <div class="code-block">
+          <button class="code-block__copy" data-copy>Copy</button>
+          <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Draft a project proposal for the website redesign", "system_key": "freelance", "user_id": "me"}'</code></pre>
+        </div>
+        <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Gmail (clients), Google Calendar (deadlines).</p>
+      </div>
+    </div>
+
+    </div><!-- /step 5 -->
+
+    <!-- ===== STEP 6: SKILLS ===== -->
+    <div data-step="6" data-step-title="Skills">
+    <h2>Working with Skills</h2>
+
+    <p>The Full edition supports both <strong>v1 skills</strong> (simple pipelines) and <strong>v2 skills</strong> (multi-step with tools, conditions, and human-in-the-loop).</p>
+
+    <h3>Pre-Built Skills</h3>
+    <table class="guide__table">
+      <thead><tr><th>Skill</th><th>Trigger Examples</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Content Pipeline</strong></td><td>"write a blog post", "create content"</td></tr>
+        <tr><td><strong>Research Workflow</strong></td><td>"research", "analyze", "compare"</td></tr>
+        <tr><td><strong>Email Campaign</strong></td><td>"email campaign", "newsletter"</td></tr>
+        <tr><td><strong>Social Media</strong></td><td>"linkedin post", "write a post"</td></tr>
+        <tr><td><strong>Client Proposal</strong></td><td>"proposal", "scope of work"</td></tr>
+        <tr><td><strong>Weekly Review</strong></td><td>"weekly review", "plan my week"</td></tr>
+      </tbody>
+    </table>
+
+    <h3>v1: Simple Pipeline</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>name: content_pipeline
+triggers:
+  - "write a post"
+  - "create content"
+  - "draft an article"
+task_type: content
+pipeline:
+  - writer
+  - reviewer</code></pre>
+    </div>
+
+    <h3>v2: Multi-Step with Tools</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>name: competitor_analysis
+version: "2.0"
+description: "Research competitors and produce analysis"
+triggers:
+  - "analyze competitor"
+  - "competitive analysis"
+task_type: research
+steps:
+  - id: search
+    type: tool
+    action: web_search
+    label: "Search for competitor info"
+    params:
+      query: "{user_message} site:linkedin.com OR site:crunchbase.com"
+
+  - id: analyze
+    type: agent
+    agent: analyst
+    label: "Analyze findings"
+    inject_context: [search]
+
+  - id: confirm
+    type: human
+    question: "Should I create a detailed report?"
+
+  - id: report
+    type: agent
+    agent: writer
+    label: "Write the report"
+    inject_context: [search, analyze]</code></pre>
+    </div>
+
+    <h3>4 Step Types</h3>
+    <table class="guide__table">
+      <thead><tr><th>Type</th><th>Purpose</th><th>Key Fields</th></tr></thead>
+      <tbody>
+        <tr><td><strong>agent</strong></td><td>Call an LLM agent</td><td><code>agent</code>, <code>inject_context</code>, <code>prompt</code></td></tr>
+        <tr><td><strong>tool</strong></td><td>Execute a tool action</td><td><code>action</code>, <code>params</code></td></tr>
+        <tr><td><strong>condition</strong></td><td>Branch logic</td><td><code>check</code>, <code>branches</code></td></tr>
+        <tr><td><strong>human</strong></td><td>Ask user for input</td><td><code>question</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Available Tool Actions</h3>
+    <table class="guide__table">
+      <thead><tr><th>Category</th><th>Actions</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Web</strong></td><td><code>web_search</code>, <code>web_fetch</code></td></tr>
+        <tr><td><strong>Gmail</strong></td><td><code>gmail_search</code>, <code>gmail_read</code>, <code>gmail_send</code>, <code>gmail_create_draft</code></td></tr>
+        <tr><td><strong>Calendar</strong></td><td><code>calendar_list_events</code>, <code>calendar_create_event</code>, <code>calendar_update_event</code>, <code>calendar_find_free_time</code></td></tr>
+        <tr><td><strong>Drive</strong></td><td><code>drive_search</code>, <code>drive_list_folder</code>, <code>drive_read_content</code>, <code>drive_create_doc</code>, <code>drive_append_doc</code></td></tr>
+        <tr><td><strong>Browser</strong></td><td><code>browser_navigate</code>, <code>browser_click</code>, <code>browser_type</code>, <code>browser_screenshot</code>, <code>browser_extract</code>, <code>browser_scroll</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>API: List Skills</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl http://localhost:8080/api/systems/consulting/skills</code></pre>
+    </div>
+
+    </div><!-- /step 6 -->
+
+    <!-- ===== STEP 7: INTEGRATIONS ===== -->
+    <div data-step="7" data-step-title="Integrations">
+    <h2>Connecting Tools &amp; Integrations</h2>
+
+    <!-- 7a: Telegram -->
+    <span class="int-label">7a</span>
+    <h3>Telegram Bot</h3>
+
+    <ol>
+      <li>Open Telegram and message <strong>@BotFather</strong></li>
+      <li>Send <code>/newbot</code> and follow the prompts</li>
+      <li>Copy the bot token and add to your <code>.env</code>:</li>
+    </ol>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>TELEGRAM_BOT_TOKEN=your_token_here</code></pre>
+    </div>
+    <p>Start the bot:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>python cli.py bot</code></pre>
+    </div>
+    <p>Or add to Docker and restart: <code>docker compose up -d</code>. Now message your bot on Telegram &mdash; it routes through the same agent system.</p>
+
+    <!-- 7b: Google Workspace -->
+    <span class="int-label">7b</span>
+    <h3>Google Workspace (Gmail, Calendar, Drive)</h3>
+
+    <ol>
+      <li>Go to <strong>Google Cloud Console</strong> &rarr; Create/select project</li>
+      <li>Enable <strong>Gmail API</strong>, <strong>Google Calendar API</strong>, <strong>Google Drive API</strong></li>
+      <li>Create <strong>OAuth 2.0 credentials</strong> (Desktop app) &rarr; download JSON</li>
+      <li>Save as <code>.credentials/credentials.json</code></li>
+      <li>Run authorization:</li>
+    </ol>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>python cli.py auth google</code></pre>
+    </div>
+    <p>This opens a browser for OAuth consent. After authorizing, tokens are saved automatically.</p>
+
+    <div class="guide__card">
+      <h4>13 Google Workspace Tools</h4>
+      <table class="guide__table" style="margin-bottom:0;">
+        <tbody>
+          <tr><td><strong>Gmail</strong></td><td><code>gmail_search</code>, <code>gmail_read</code>, <code>gmail_send</code>, <code>gmail_create_draft</code></td></tr>
+          <tr><td><strong>Calendar</strong></td><td><code>calendar_list_events</code>, <code>calendar_create_event</code>, <code>calendar_update_event</code>, <code>calendar_find_free_time</code></td></tr>
+          <tr><td><strong>Drive</strong></td><td><code>drive_search</code>, <code>drive_list_folder</code>, <code>drive_read_content</code>, <code>drive_create_doc</code>, <code>drive_append_doc</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Write operations (send, create, update) always require confirmation before executing.</p>
+
+    <!-- 7c: Web Search -->
+    <span class="int-label">7c</span>
+    <h3>Web Search (Brave API)</h3>
+
+    <ol>
+      <li>Get a Brave Search API key</li>
+      <li>Add to <code>.env</code>:</li>
+    </ol>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>BRAVE_API_KEY=your_key_here</code></pre>
+    </div>
+    <p>Restart the server. Web search is available in skills and direct queries.</p>
+
+    <!-- 7d: Make.com -->
+    <span class="int-label">7d</span>
+    <h3>Make.com / n8n / Zapier</h3>
+
+    <p>Connect any automation platform via the REST API:</p>
+    <ol>
+      <li>Create a new scenario/workflow</li>
+      <li>Add an <strong>HTTP</strong> module (POST request)</li>
+      <li>Configure:</li>
+    </ol>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>URL:     http://YOUR_SERVER_IP:8080/api/chat
+Method:  POST
+Headers: Content-Type: application/json
+         Authorization: Bearer YOUR_API_KEY
+Body:
+{
+  "message": "{{trigger_data}}",
+  "system_key": "consulting",
+  "user_id": "make-automation"
+}</code></pre>
+    </div>
+    <p><strong>Example flow:</strong> New email in Gmail &rarr; summarize with RealizeOS &rarr; post summary to Slack.</p>
+
+    <!-- 7e: MCP -->
+    <span class="int-label">7e</span>
+    <h3>MCP Servers</h3>
+    <p>MCP (Model Context Protocol) lets you connect external tool servers. The system auto-discovers and registers all tools exposed by MCP servers, making them available to agents and skills.</p>
+
+    <!-- 7f: Webhooks -->
+    <span class="int-label">7f</span>
+    <h3>Inbound Webhooks</h3>
+    <p>Trigger agent actions from external events by posting to the chat API:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "message": "New GitHub push to main: 3 commits. Summarize and notify.",
+    "system_key": "saas",
+    "user_id": "github-webhook"
+  }'</code></pre>
+    </div>
+    <p>Works with GitHub webhooks, Stripe events, form submissions, or any HTTP-capable system.</p>
+
+    </div><!-- /step 7 -->
+
+    <!-- ===== STEP 8: VENTURES ===== -->
+    <div data-step="8" data-step-title="Ventures">
+    <h2>Managing Multiple Ventures</h2>
+
+    <h3>Create a New Venture</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>python cli.py venture create --key my-saas --name "My SaaS Product"</code></pre>
+    </div>
+
+    <h3>List Ventures</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>curl http://localhost:8080/api/systems</code></pre>
+    </div>
+
+    <h3>Switch Between Ventures</h3>
+    <p>Use the <code>system_key</code> field in API calls:</p>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code># Consulting system
+curl -X POST http://localhost:8080/api/chat \
+  -d '{"message": "...", "system_key": "consulting", "user_id": "me"}'
+
+# SaaS system
+curl -X POST http://localhost:8080/api/chat \
+  -d '{"message": "...", "system_key": "my-saas", "user_id": "me"}'</code></pre>
+    </div>
+
+    <h3>Cross-System Context</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code># Enable in realize-os.yaml:
+features:
+  cross_system: true</code></pre>
+    </div>
+    <p>When enabled, agents can reference context from other ventures &mdash; useful for portfolio operators.</p>
+
+    <h3>Delete a Venture</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>python cli.py venture delete --key my-saas --confirm my-saas</code></pre>
+    </div>
+
+    </div><!-- /step 8 -->
+
+    <!-- ===== STEP 9: DAILY WORKFLOW ===== -->
+    <div data-step="9" data-step-title="Daily Workflow">
+    <h2>Daily Workflow</h2>
+
+    <div class="guide__card">
+      <h4>Morning</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>"What's on my calendar today and what should I prioritize?"</code></pre>
+      </div>
+      <p style="margin-bottom:0;">The system checks your calendar, reviews pending tasks, and suggests priorities.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Working Session</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>"Draft a client proposal for the Acme Corp engagement"</code></pre>
+      </div>
+      <p style="margin-bottom:0;">Skills auto-trigger. The content pipeline handles drafting and review.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>End of Day</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>"Summarize what I accomplished today and plan tomorrow"</code></pre>
+      </div>
+      <p style="margin-bottom:0;">Reviews conversations, logs learnings, creates tomorrow's action items.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Weekly Review</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>"Plan my week — review last week and set priorities"</code></pre>
+      </div>
+      <p style="margin-bottom:0;">Triggers the Weekly Review skill &mdash; cross-references outcomes with goals.</p>
+    </div>
+
+    </div><!-- /step 9 -->
+
+    <!-- ===== STEP 10: SELF-EVOLUTION ===== -->
+    <div data-step="10" data-step-title="Self-Evolution">
+    <h2>Self-Evolution</h2>
+
+    <p>The Full edition includes a self-evolution engine that continuously improves your system based on usage patterns.</p>
+
+    <div class="guide__card">
+      <h4>How It Works</h4>
+      <ol style="margin-bottom:0;">
+        <li><strong>Interaction Tracking</strong> &mdash; Every request logged with metadata (agent, task type, duration)</li>
+        <li><strong>Gap Detection</strong> &mdash; Finds unhandled patterns and repeated ad-hoc requests</li>
+        <li><strong>Skill Suggestion</strong> &mdash; Auto-generates skill YAML for detected gaps</li>
+        <li><strong>Prompt Refinement</strong> &mdash; Suggests agent prompt improvements from feedback</li>
+      </ol>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Example</h4>
+      <p>After you manually create competitor analyses 5 times, the system detects the pattern:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>Gap detected: "competitor analysis" requested 5 times with no matching skill.
+Suggested skill: competitor_analysis.yaml
+Approve? [yes/no]</code></pre>
+      </div>
+      <p style="margin-bottom:0;">All changes require your explicit approval. Nothing is modified automatically.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>Risk-Gated Approval</h4>
+      <ul style="margin-bottom:0;">
+        <li><strong>Low risk</strong> (new skill, prompt tweak) &rarr; Simple yes/no</li>
+        <li><strong>Medium risk</strong> (agent modification) &rarr; Shows diff before applying</li>
+        <li><strong>High risk</strong> (config change) &rarr; Requires explicit confirmation with details</li>
+      </ul>
+    </div>
+
+    </div><!-- /step 10 -->
+
+    <!-- ===== STEP 11: CUSTOMIZING ===== -->
+    <div data-step="11" data-step-title="Customizing">
+    <h2>Customizing &amp; Growing</h2>
+
+    <h3>LLM Routing</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code># realize-os.yaml
+llm:
+  default_model: claude-sonnet
+  routing:
+    simple: gemini-flash        # Quick lookups — cheapest
+    content: claude-sonnet      # Writing and analysis
+    complex: claude-opus        # Strategy and planning</code></pre>
+    </div>
+    <p><strong>Fallback chain:</strong> Claude &rarr; Gemini &rarr; OpenAI &rarr; Ollama</p>
+
+    <h3>LLM Providers</h3>
+    <table class="guide__table">
+      <thead><tr><th>Provider</th><th>Env Variable</th><th>Models</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Anthropic</strong></td><td><code>ANTHROPIC_API_KEY</code></td><td>Claude Sonnet, Opus</td></tr>
+        <tr><td><strong>Google AI</strong></td><td><code>GOOGLE_AI_API_KEY</code></td><td>Gemini Flash</td></tr>
+        <tr><td><strong>OpenAI</strong></td><td><code>OPENAI_API_KEY</code></td><td>GPT-4o, GPT-4o Mini</td></tr>
+        <tr><td><strong>Ollama</strong></td><td><code>OLLAMA_BASE_URL</code></td><td>Any Ollama model</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Feature Flags</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>features:
+  review_pipeline: true    # Auto review pipeline for content
+  auto_memory: true        # Log learnings after interactions
+  proactive_mode: true     # Proactive suggestions
+  cross_system: false      # Share context across ventures
+  skills_v2: true          # Enable v2 multi-step skills</code></pre>
+    </div>
+
+    <h3>Running Modes</h3>
+    <div class="code-block">
+      <button class="code-block__copy" data-copy>Copy</button>
+      <pre><code>python cli.py serve                  # API on port 8080
+python cli.py serve --port 3000     # Custom port
+python cli.py serve --reload        # Auto-reload on changes
+docker compose up -d                 # Docker (background)
+python cli.py bot                    # Telegram bot</code></pre>
+    </div>
+
+    <h3>All API Endpoints</h3>
+    <table class="guide__table">
+      <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>POST</strong></td><td><code>/api/chat</code></td><td>Send message, get response</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/api/systems</code></td><td>List all systems</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/api/systems/{key}</code></td><td>System details</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/api/systems/{key}/agents</code></td><td>List agents</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/api/systems/{key}/skills</code></td><td>List skills</td></tr>
+        <tr><td><strong>POST</strong></td><td><code>/api/systems/reload</code></td><td>Hot-reload config</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/api/conversations/{key}/{uid}</code></td><td>Conversation history</td></tr>
+        <tr><td><strong>DELETE</strong></td><td><code>/api/conversations/{key}/{uid}</code></td><td>Clear history</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/health</code></td><td>Health check</td></tr>
+        <tr><td><strong>GET</strong></td><td><code>/status</code></td><td>Detailed status</td></tr>
+      </tbody>
+    </table>
+
+    </div><!-- /step 11 -->
+
+    <!-- ===== STEP 12: TROUBLESHOOTING ===== -->
+    <div data-step="12" data-step-title="Troubleshooting">
+    <h2>Troubleshooting</h2>
+
+    <p>Common issues and their fixes. If your problem isn't here, ask in the community or email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a>.</p>
+
+    <h3>Docker Issues</h3>
+
+    <div class="guide__card">
+      <h4>"Docker daemon not running"</h4>
+      <p>Make sure Docker Desktop is running (check system tray).</p>
+      <p><strong>Windows:</strong> Ensure WSL2 is installed:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>wsl --install</code></pre>
+      </div>
+      <p style="margin-bottom:0;">Restart your computer after installing WSL2.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Port 8080 already in use"</h4>
+      <p style="margin-bottom:0;">Change the port in <code>.env</code>: <code>API_PORT=8081</code>. Then update your docker-compose or CLI command.</p>
+    </div>
+
+    <h3>API Issues</h3>
+
+    <div class="guide__card">
+      <h4>"401 Unauthorized"</h4>
+      <p style="margin-bottom:0;">If <code>REALIZE_API_KEY</code> is set in <code>.env</code>, you must include <code>Authorization: Bearer YOUR_KEY</code> in every request.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"System not found"</h4>
+      <p>Your <code>system_key</code> doesn't match any entry in <code>realize-os.yaml</code>. Check with:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>curl http://localhost:8080/api/systems</code></pre>
+      </div>
+    </div>
+
+    <h3>LLM Issues</h3>
+
+    <div class="guide__card">
+      <h4>"Invalid API key" or "Authentication failed"</h4>
+      <p style="margin-bottom:0;">Check your <code>.env</code> file: no spaces around <code>=</code>, no quotes, no trailing spaces. Verify the key hasn't been revoked.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Insufficient credits"</h4>
+      <p style="margin-bottom:0;">Add credit to your API provider. Anthropic: console.anthropic.com &rarr; Billing &rarr; Add at least $5.</p>
+    </div>
+
+    <h3>Config Issues</h3>
+
+    <div class="guide__card">
+      <h4>"Config reload failed"</h4>
+      <p>YAML syntax error. Validate:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>python -c "import yaml; yaml.safe_load(open('realize-os.yaml'))"</code></pre>
+      </div>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Output sounds generic"</h4>
+      <p style="margin-bottom:0;">Your <code>F-foundations/brand-voice.md</code> needs more specific rules. Add concrete do/don't rules and paste real writing samples.</p>
+    </div>
+
+    <div class="guide__card">
+      <h4>"Wrong agent handles my task"</h4>
+      <p style="margin-bottom:0;">Add more keywords to <code>agent_routing</code> in <code>realize-os.yaml</code>, or force an agent with <code>agent_key</code> in the API call.</p>
+    </div>
+
+    <h3>Backup &amp; Updates</h3>
+
+    <div class="guide__card">
+      <h4>Backup your system</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>cp -r systems/ systems-backup-$(date +%Y%m%d)/
+cp realize-os.yaml realize-os.yaml.backup
+cp .env .env.backup</code></pre>
+      </div>
+    </div>
+
+    <div class="guide__card">
+      <h4>Update</h4>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code>git pull origin main
+pip install -r requirements.txt
+docker compose build && docker compose up -d</code></pre>
+      </div>
+    </div>
+
+    <div class="guide__card guide__card--accent">
+      <h4>Still stuck?</h4>
+      <ul style="margin-bottom:0;">
+        <li><a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener" style="color:var(--color-accent);">Telegram Builders Group</a> &mdash; active community, fast responses</li>
+        <li><a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener" style="color:var(--color-accent);">WhatsApp Community</a> &mdash; quick updates and direct support</li>
+        <li>Email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a> &mdash; we reply within 24 hours</li>
+      </ul>
+    </div>
+
+    </div><!-- /step 12 -->
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="nav__logo-realize">Realize</span><span class="nav__logo-os">OS</span>
+          <p>Part of the <a href="https://realization.co.il" target="_blank" rel="noopener">Realization</a> ecosystem.</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/SufZen/realize-os" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
+          <a href="mailto:realizeos@realization.co.il">Support</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 RealizeOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/stepper.js"></script>
+  <script>
+  (function() {
+    // --- Copy buttons ---
+    document.querySelectorAll('.code-block__copy').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var code = btn.closest('.code-block').querySelector('code');
+        var text = code.textContent;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch(function() {});
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+      });
+    });
+
+    // --- Business type tabs ---
+    var tabs = document.querySelectorAll('.biz-tab');
+    var panels = document.querySelectorAll('.biz-panel');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var biz = tab.getAttribute('data-biz');
+        tabs.forEach(function(t) { t.classList.remove('biz-tab--active'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        tab.classList.add('biz-tab--active');
+        var panel = document.querySelector('[data-biz-panel="' + biz + '"]');
+        if (panel) panel.classList.add('active');
+      });
+    });
+
+    // --- Mobile nav ---
+    var navToggle = document.getElementById('nav-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() { navLinks.classList.remove('open'); });
+      });
+    }
+
+    // --- Stepper ---
+    var wizard = new Stepper({
+      container: '.guide',
+      steps: '[data-step]',
+      progress: '[data-stepper-progress]',
+      storageKey: 'guide_full_step',
+      anchorAliases: {
+        'welcome': 1, 'comparison': 2, 'first-conversation': 3,
+        'agents': 4, 'business': 5, 'skills': 6, 'integrations': 7,
+        'ventures': 8, 'workflow': 9, 'evolution': 10,
+        'customizing': 11, 'troubleshooting': 12
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
