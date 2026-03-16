@@ -7,6 +7,7 @@ import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useTranslation } from 'react-i18next';
 import { NAV_ITEMS } from '@/lib/constants';
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 export function Navbar() {
   const scrollY = useScrollPosition();
@@ -39,6 +40,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3 ms-auto md:ms-0">
+          <ThemeToggle />
           <LanguageSwitcher />
           <Button asChild size="sm" className="hidden md:inline-flex">
             <a href="#pricing">{t('nav.getStarted')}</a>

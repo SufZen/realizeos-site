@@ -4,6 +4,45 @@
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 48 100% 50%;            /* #ffcc00 */
+    --primary-foreground: 240 33% 3.7%; 
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom brand tokens - Light Mode */
+    --accent-hover: 48 100% 45%;       /* #e6b800 slightly darker for contrast */
+    --accent-subtle: 48 100% 50% / 0.10;
+    --bg-elevated: 0 0% 100%;
+    --bg-card-hover: 240 4.8% 95.9%;
+    --text-secondary: 240 3.8% 46.1%;
+  }
+
+  .dark {
     /* RealizeOS dark theme — yellow accent, Poppins font */
     --background: 240 33% 3.7%;         /* #0a0a0f */
     --foreground: 240 14% 92.5%;        /* #e8e8ed */
@@ -33,8 +72,6 @@
     --input: 0 0% 100% / 0.15;
     --ring: 48 100% 50%;               /* yellow for focus rings */
 
-    --radius: 0.75rem;                 /* 12px */
-
     /* Custom brand tokens */
     --accent-hover: 48 100% 58%;       /* #ffd633 */
     --accent-subtle: 48 100% 50% / 0.10;
@@ -60,36 +97,73 @@
 /* Glassmorphism utility */
 @layer utilities {
   .glass {
-    background: rgba(10, 10, 15, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
+  .dark .glass {
+    background: rgba(10, 10, 15, 0.85);
+  }
+
   .glass-card {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .dark .glass-card {
     background: rgba(26, 26, 36, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
+
   .glass-card:hover {
+    border-color: rgba(204, 163, 0, 0.15); /* darker yellow for light mode border */
+    background: rgba(250, 250, 250, 0.8);
+  }
+  .dark .glass-card:hover {
     border-color: rgba(255, 204, 0, 0.15);
     background: rgba(34, 34, 46, 0.8);
   }
+
   .glow-yellow {
+    /* Subdued glow in light mode */
+    box-shadow: 0 4px 15px rgba(204, 163, 0, 0.15);
+  }
+  .dark .glow-yellow {
     box-shadow: 0 0 20px rgba(255, 204, 0, 0.2), 0 0 60px rgba(255, 204, 0, 0.05);
   }
+
   .glow-yellow-hover:hover {
+    box-shadow: 0 6px 20px rgba(204, 163, 0, 0.2);
+  }
+  .dark .glow-yellow-hover:hover {
     box-shadow: 0 0 25px rgba(255, 204, 0, 0.4), 0 0 80px rgba(255, 204, 0, 0.1);
   }
+
   .text-gradient-yellow {
+    background: linear-gradient(135deg, #cc9900 0%, #e6b800 50%, #cc9900 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .dark .text-gradient-yellow {
     background: linear-gradient(135deg, #ffcc00 0%, #fff5cc 50%, #ffcc00 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   .text-glow-yellow {
+    text-shadow: none; /* remove glow in light mode */
+  }
+  .dark .text-glow-yellow {
     text-shadow: 0 0 40px rgba(255, 204, 0, 0.3);
   }
+
   .illustration-glow {
+    filter: drop-shadow(0 0 6px rgba(180, 140, 0, 0.25));
+  }
+  .dark .illustration-glow {
     filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.15));
   }
 }

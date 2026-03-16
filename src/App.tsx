@@ -1,54 +1,23 @@
-import { useState } from 'react';
-import { Navbar } from '@/components/sections/Navbar';
-import { Hero } from '@/components/sections/Hero';
-import { PainPoints } from '@/components/sections/PainPoints';
-import { DemoVideo } from '@/components/sections/DemoVideo';
-import { FabricSystem } from '@/components/sections/FabricSystem';
-import { Features } from '@/components/sections/Features';
-import { UseCases } from '@/components/sections/UseCases';
-import { Pricing } from '@/components/sections/Pricing';
-import { Comparison } from '@/components/sections/Comparison';
-import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Delivery } from '@/components/sections/Delivery';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { FAQ } from '@/components/sections/FAQ';
-import { Founder } from '@/components/sections/Founder';
-import { FinalCTA } from '@/components/sections/FinalCTA';
-import { Footer } from '@/components/sections/Footer';
-import { CaseStudies } from '@/components/sections/CaseStudies';
-import { Methodology } from '@/components/sections/Methodology';
-import { ExitIntentPopup } from '@/components/shared/ExitIntentPopup';
-import { MobileStickyBar } from '@/components/shared/MobileStickyBar';
-import { BrandWizard } from '@/components/wizard/BrandWizard';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from '@/pages/Home';
+import { LegalLayout } from '@/components/layout/LegalLayout';
+import { TermsAndConditions } from '@/pages/TermsAndConditions';
+import { PrivacyPolicy } from '@/pages/PrivacyPolicy';
+import { Accessibility } from '@/pages/Accessibility';
+import { CookieBanner } from '@/components/shared/CookieBanner';
 
 export default function App() {
-  const [wizardOpen, setWizardOpen] = useState(false);
-
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Founder />
-        <Methodology />
-        <PainPoints />
-        <DemoVideo />
-        <CaseStudies />
-        <FabricSystem />
-        <Features />
-        <UseCases />
-        <Pricing />
-        <Comparison />
-        <HowItWorks onOpenWizard={() => setWizardOpen(true)} />
-        <Delivery />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
-      </main>
-      <Footer />
-      <ExitIntentPopup />
-      <MobileStickyBar />
-      <BrandWizard open={wizardOpen} onOpenChange={setWizardOpen} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route element={<LegalLayout />}>
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+        </Route>
+      </Routes>
+      <CookieBanner />
     </>
   );
 }

@@ -146,6 +146,11 @@
       .ty__timeline-when { min-width: auto; }
     }
   </style>
+
+  <!-- Chatbase AI Assistant -->
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="xtepJqTNtoUCU9JPHelia";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
 </head>
 <body>
 
@@ -267,7 +272,7 @@
 
       <!-- Support -->
       <div class="ty__support">
-        <p>Stuck on anything? Email <a href="mailto:realizeos@realization.co.il">realizeos@realization.co.il</a> — we reply within 24 hours.</p>
+        <p>Stuck on anything? Email <a href="mailto:info@realizeos.ai">info@realizeos.ai</a> — we reply within 24 hours.</p>
         <p>Check the <a href="guide.html#troubleshooting">Troubleshooting Guide</a> for common setup issues.</p>
       </div>
 
@@ -353,8 +358,6 @@
 
     // Set setup link to edition-specific tier
     document.getElementById('guide-link').href = 'setup.html?tier=' + (tier === 'setup' ? 'full' : tier);
-
-
 
     // Show setup call card and timeline item for Setup tier
     if (tier === 'setup') {

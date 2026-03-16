@@ -1,6 +1,7 @@
 import { Logo } from '@/components/layout/Logo';
 import { LINKS } from '@/lib/constants';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const { t } = useTranslation();
@@ -44,8 +45,14 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} {t('footer.rights')}
+        <div className="mt-8 flex flex-col items-center gap-4 text-xs text-muted-foreground md:flex-row md:justify-center">
+          <span>&copy; {new Date().getFullYear()} {t('footer.rights')}</span>
+          <div className="hidden md:block mx-2 h-4 border-l border-border" />
+          <div className="flex gap-4">
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
+          </div>
         </div>
       </div>
     </footer>

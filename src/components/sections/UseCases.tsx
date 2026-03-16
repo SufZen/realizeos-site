@@ -44,10 +44,10 @@ export function UseCases() {
                 )}
                 <h3 className="mb-1 font-semibold">{uc.title}</h3>
                 <p className="mb-3 text-sm text-muted-foreground">{uc.description}</p>
-                <ul className="mt-auto space-y-1 border-t border-white/10 pt-3 text-start">
+                <ul className="mt-auto space-y-1 border-t border-border pt-3 text-start">
                   {uc.tasks.map((task) => (
                     <li key={task} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <span className="mt-0.5 shrink-0 text-[#ffcc00]">›</span>
+                      <span className="mt-0.5 shrink-0 text-brand-yellow">›</span>
                       <span>{task}</span>
                     </li>
                   ))}
