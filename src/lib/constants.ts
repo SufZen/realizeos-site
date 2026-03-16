@@ -13,7 +13,7 @@ export const LINKS = {
   telegram: 'https://t.me/+5r8zjoOignRmOTI0',
   whatsapp: 'https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd',
   brandWorksheet: 'brand-worksheet.html',
-  supportEmail: 'realizeos@realization.co.il',
+  supportEmail: 'info@realizeos.ai',
   linkedin: 'https://www.linkedin.com/in/sufzen',
   github: 'https://github.com/SufZen',
   realization: 'https://realization.co.il',

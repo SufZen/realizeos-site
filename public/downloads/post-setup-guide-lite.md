@@ -388,7 +388,7 @@ Node.js isn't installed or isn't in your PATH. Close and reopen your terminal af
 
 - **Telegram Builders Group** — active community, fast responses
 - **WhatsApp Community** — quick updates and direct support
-- **Email** realizeos@realization.co.il — we reply within 24 hours
+- **Email** info@realizeos.ai — we reply within 24 hours
 
 Screenshot your error and share it — we've probably seen it before.
 

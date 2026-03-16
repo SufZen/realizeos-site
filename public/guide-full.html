@@ -127,20 +127,21 @@
     <p class="guide__reassure">Bookmark this page. It's your reference for the entire system.</p>
 
     <div class="guide__toc">
-      <h4>In This Guide &mdash; 12 Steps</h4>
+      <h4>In This Guide &mdash; 13 Steps</h4>
       <ol>
         <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(1)">Welcome & What You Built</a></li>
         <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(2)">Full vs Lite — What You Gained</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(3)">Your First Conversation</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(4)">Understanding Your Agent Team</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(5)">Your Operations System by Business Type</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(6)">Working with Skills</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(7)">Connecting Tools & Integrations</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(8)">Managing Multiple Ventures</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(9)">Daily Workflow</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(10)">Self-Evolution</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(11)">Customizing & Growing</a></li>
-        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(12)">Troubleshooting</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(3)">Connect Your AI Tools (MCP Toolkit)</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(4)">Your First Conversation</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(5)">Understanding Your Agent Team</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(6)">Your Operations System by Business Type</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(7)">Working with Skills</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(8)">Connecting Tools & Integrations</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(9)">Managing Multiple Ventures</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(10)">Daily Workflow</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(11)">Self-Evolution</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(12)">Customizing & Growing</a></li>
+        <li><a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(13)">Troubleshooting</a></li>
       </ol>
     </div>
 
@@ -187,86 +188,146 @@
 
     </div><!-- /step 2 -->
 
-    <!-- ===== STEP 3: FIRST CONVERSATION ===== -->
-    <div data-step="3" data-step-title="First Conversation">
-    <h2>Your First Conversation</h2>
+    <!-- ===== STEP 3: CONNECT AI TOOLS ===== -->
+    <div data-step="3" data-step-title="Connect AI Tools">
+    <h2>Connect Your AI Tools (MCP Toolkit)</h2>
 
-    <h3>Send a Message (bash/curl)</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "What do you know about my business?",
-    "system_key": "consulting",
-    "user_id": "me"
-  }'</code></pre>
+    <div class="guide__card guide__card--accent">
+      <h4>&#9889; The Fastest Way to Talk to Your Engine</h4>
+      <p style="margin-bottom:0;">Docker Desktop includes a built-in <strong>MCP Toolkit</strong> that lets you connect Claude Code Desktop, Claude Code CLI, and Gemini CLI to your running RealizeOS container &mdash; with just a few clicks. No manual API calls needed.</p>
     </div>
 
-    <h3>PowerShell</h3>
+    <h3>What Is MCP?</h3>
+    <p>The <strong>Model Context Protocol (MCP)</strong> is an open standard that lets AI tools (like Claude Code and Gemini) communicate with external services. Docker Desktop&rsquo;s MCP Toolkit turns your running containers into MCP servers automatically, so your AI tools can call your RealizeOS engine directly.</p>
+
+    <h3>Prerequisites</h3>
+    <ul>
+      <li><strong>Docker Desktop 4.62+</strong> &mdash; MCP Toolkit is built-in from this version</li>
+      <li>Your RealizeOS container running (via <code>docker compose up -d</code>)</li>
+      <li>At least one AI tool installed: Claude Code Desktop, Claude Code CLI, or Gemini CLI</li>
+    </ul>
+
+    <h3>Step-by-Step Setup</h3>
+    <ol>
+      <li>
+        <strong>Open Docker Desktop</strong> and verify your RealizeOS container is running (green status).
+      </li>
+      <li>
+        <strong>Navigate to the MCP Toolkit</strong> &mdash; find it in the Docker Desktop sidebar (look for the MCP Toolkit or Extensions section).
+      </li>
+      <li>
+        <strong>Go to the &ldquo;Clients&rdquo; tab</strong> in the MCP Toolkit. You&rsquo;ll see a list of supported AI tools.
+      </li>
+      <li>
+        <strong>Enable your preferred clients:</strong>
+        <ul>
+          <li><strong>Claude Code Desktop</strong> &mdash; toggle on, Docker configures it automatically</li>
+          <li><strong>Claude Code CLI</strong> &mdash; toggle on for terminal-based usage</li>
+          <li><strong>Gemini CLI</strong> &mdash; toggle on if you use Google&rsquo;s Gemini tools</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Restart your AI tool</strong> if it was already open. The MCP connection is detected on startup.
+      </li>
+    </ol>
+
+    <h3>Verify the Connection</h3>
+    <p>After enabling, verify your AI tool can see the Docker MCP gateway:</p>
+
     <div class="code-block">
       <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>$body = @{
-    message = "What do you know about my business?"
-    system_key = "consulting"
-    user_id = "me"
-} | ConvertTo-Json
+      <pre><code># Claude Code CLI — list MCP servers
+claude mcp list
 
-Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
-    -Method POST `
-    -ContentType "application/json" `
-    -Body $body</code></pre>
+# You should see the Docker MCP gateway listed</code></pre>
     </div>
 
-    <h3>Request Fields</h3>
-    <table class="guide__table">
-      <thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td><strong>message</strong></td><td>string</td><td>Yes</td><td>Your message</td></tr>
-        <tr><td><strong>system_key</strong></td><td>string</td><td>Yes</td><td>Target system (e.g., <code>consulting</code>)</td></tr>
-        <tr><td><strong>user_id</strong></td><td>string</td><td>No</td><td>User identifier (default: <code>api-user</code>)</td></tr>
-        <tr><td><strong>agent_key</strong></td><td>string</td><td>No</td><td>Force a specific agent</td></tr>
-        <tr><td><strong>channel</strong></td><td>string</td><td>No</td><td>Channel for formatting (default: <code>api</code>)</td></tr>
-      </tbody>
-    </table>
+    <p>For <strong>Claude Code Desktop</strong>, open the app and check Settings &rarr; MCP Servers. The Docker gateway should appear automatically.</p>
 
-    <h3>Response</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>{
-  "response": "Based on your brand identity, you are...",
-  "system_key": "consulting",
-  "agent_key": "orchestrator",
-  "user_id": "me"
+    <h3>How It Works Behind the Scenes</h3>
+    <div class="guide__card">
+      <p style="margin-bottom:0.5rem;">The MCP Toolkit registers a gateway that proxies MCP requests to your container:</p>
+      <div class="code-block">
+        <button class="code-block__copy" data-copy>Copy</button>
+        <pre><code># The gateway config that Docker Desktop registers:
+{
+  "command": "docker",
+  "args": ["mcp", "gateway", "run"]
 }</code></pre>
+      </div>
+      <p style="margin-bottom:0;">This runs <code>docker mcp gateway run</code> which connects your AI tool to all MCP-enabled containers, including RealizeOS.</p>
     </div>
 
-    <h3>Force a Specific Agent</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "Analyze the competitive landscape for AI consulting",
-    "system_key": "consulting",
-    "user_id": "me",
-    "agent_key": "analyst"
-  }'</code></pre>
+    <h3>What You Can Do After Connecting</h3>
+    <p>Once connected, your AI tool can interact with RealizeOS directly. Instead of writing curl commands, you just talk to Claude or Gemini naturally:</p>
+    <ul>
+      <li>&ldquo;Ask my RealizeOS consultant agent to draft a proposal&rdquo;</li>
+      <li>&ldquo;Check the health status of my RealizeOS engine&rdquo;</li>
+      <li>&ldquo;List all agents in my consulting system&rdquo;</li>
+      <li>&ldquo;Run a skill on my RealizeOS instance&rdquo;</li>
+    </ul>
+
+    <div class="guide__card guide__card--success">
+      <h4>&#10003; Why This Matters</h4>
+      <p style="margin-bottom:0;">The MCP Toolkit is the <strong>recommended way</strong> to interact with your RealizeOS engine day-to-day. It eliminates the need to memorize API endpoints or write curl commands &mdash; your AI tools become a natural interface to your entire operations system.</p>
     </div>
 
-    <h3>Authentication</h3>
-    <p>If <code>REALIZE_API_KEY</code> is set in <code>.env</code>, include it in requests:</p>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>-H "Authorization: Bearer YOUR_API_KEY"
-# or
--H "X-API-Key: YOUR_API_KEY"</code></pre>
+    <div class="guide__card guide__card--warning">
+      <h4>&#9888; Troubleshooting</h4>
+      <ul style="margin-bottom:0;">
+        <li><strong>Don&rsquo;t see MCP Toolkit?</strong> Update Docker Desktop to version 4.62 or later.</li>
+        <li><strong>Gateway not appearing in Claude Code?</strong> Restart the AI tool after enabling in Docker Desktop.</li>
+        <li><strong>Container not detected?</strong> Make sure RealizeOS is running (<code>docker compose ps</code>).</li>
+        <li><strong>Manual config needed?</strong> You can also add the gateway manually to your AI tool&rsquo;s MCP config with: <code>{"command": "docker", "args": ["mcp", "gateway", "run"]}</code></li>
+      </ul>
     </div>
 
     </div><!-- /step 3 -->
 
-    <!-- ===== STEP 4: AGENT TEAM ===== -->
-    <div data-step="4" data-step-title="Agent Team">
+    <!-- ===== STEP 4: FIRST CONVERSATION ===== -->
+    <div data-step="4" data-step-title="First Conversation">
+    <h2>Your First Conversation</h2>
+
+    <div class="guide__card guide__card--accent">
+      <h4>&#128172; Now that your AI tool is connected&hellip;</h4>
+      <p style="margin-bottom:0;">Just open Claude Code, Gemini CLI, or whichever tool you connected in Step 3, and start talking naturally. No commands or code needed.</p>
+    </div>
+
+    <h3>Try These First Messages</h3>
+    <p>Open your connected AI tool and type any of these:</p>
+    <ul>
+      <li><strong>&ldquo;What do you know about my business?&rdquo;</strong> &mdash; The system reads your brand identity from the knowledge base and responds in context.</li>
+      <li><strong>&ldquo;What agents are available?&rdquo;</strong> &mdash; Lists your AI team and their specialties.</li>
+      <li><strong>&ldquo;Check the health status of my RealizeOS engine&rdquo;</strong> &mdash; Confirms everything is running correctly.</li>
+    </ul>
+
+    <h3>Talking to a Specific Agent</h3>
+    <p>The system auto-routes to the right agent based on your message, but you can also be explicit:</p>
+    <ul>
+      <li><strong>&ldquo;Ask the analyst to research competitors in the AI consulting space&rdquo;</strong></li>
+      <li><strong>&ldquo;Have the writer draft a LinkedIn post about our latest project&rdquo;</strong></li>
+      <li><strong>&ldquo;Ask the reviewer to check this proposal for brand consistency&rdquo;</strong></li>
+    </ul>
+
+    <h3>What Happens Behind the Scenes</h3>
+    <p>When you send a message, the engine:</p>
+    <ol>
+      <li>Identifies the right <strong>agent</strong> (or uses the one you specified)</li>
+      <li>Routes to the optimal <strong>LLM</strong> (Flash for simple, Sonnet for content, Opus for complex)</li>
+      <li>Builds a <strong>12-layer prompt</strong> from your knowledge base (brand voice, templates, context)</li>
+      <li>Executes any needed <strong>tools</strong> (search, calendar, email)</li>
+      <li>Returns the response through your AI tool</li>
+    </ol>
+
+    <div class="guide__card">
+      <h4>&#128295; For developers: direct API access</h4>
+      <p>You can also interact with the engine via REST API. See the <a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(12)" style="color:var(--color-accent);">Customizing &amp; Growing</a> step for the full API reference and curl examples.</p>
+    </div>
+
+    </div><!-- /step 4 -->
+
+    <!-- ===== STEP 5: AGENT TEAM ===== -->
+    <div data-step="5" data-step-title="Agent Team">
     <h2>Understanding Your Agent Team</h2>
 
     <h3>The 4 Default Agents</h3>
@@ -291,32 +352,27 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
       </tbody>
     </table>
 
-    <h3>API: List Agents</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl http://localhost:8080/api/systems/consulting/agents</code></pre>
-    </div>
-
-    <h3>API: Hot Reload Config</h3>
-    <p>After editing agents, skills, or config:</p>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl -X POST http://localhost:8080/api/systems/reload</code></pre>
-    </div>
+    <h3>Interacting with Your Agents</h3>
+    <p>Just ask naturally &mdash; the engine routes to the right agent automatically:</p>
+    <ul>
+      <li><strong>&ldquo;List all available agents&rdquo;</strong> &mdash; shows your full team</li>
+      <li><strong>&ldquo;Ask the writer to draft a blog post&rdquo;</strong> &mdash; targets a specific agent</li>
+      <li><strong>&ldquo;Reload the system config&rdquo;</strong> &mdash; hot-reloads after changes</li>
+    </ul>
 
     <h3>Adding New Agents</h3>
     <ol>
       <li>Create a <code>.md</code> file in <code>systems/&lt;key&gt;/A-agents/</code></li>
       <li>Add keywords in <code>realize-os.yaml</code> under <code>agent_routing</code></li>
-      <li>Hot reload: <code>POST /api/systems/reload</code></li>
+      <li>Tell your AI tool: <strong>&ldquo;Reload the RealizeOS config&rdquo;</strong></li>
     </ol>
 
-    </div><!-- /step 4 -->
+    </div><!-- /step 5 -->
 
-    <!-- ===== STEP 5: BUSINESS TYPES ===== -->
-    <div data-step="5" data-step-title="Business Types">
+    <!-- ===== STEP 6: BUSINESS TYPES ===== -->
+    <div data-step="6" data-step-title="Business Types">
     <h2>Your Operations System by Business Type</h2>
-    <p>Select your template to see tailored examples with API commands.</p>
+    <p>Select your template to see example prompts you can use with your connected AI tool.</p>
 
     <div class="biz-tabs" id="biz-tabs">
       <button class="biz-tab biz-tab--active" data-biz="consulting">Consulting</button>
@@ -340,12 +396,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Write a LinkedIn post about AI agent teams"</li>
           <li>"Create a quarterly review template"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Draft a client proposal for a 3-month strategy engagement", "system_key": "consulting", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Google Calendar (meetings), Gmail (proposals), web search (research).</p>
       </div>
     </div>
@@ -361,12 +412,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Create a content calendar for next month"</li>
           <li>"Draft campaign concepts for a product launch"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Write 5 social post variations for our product launch", "system_key": "agency", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Google Drive (assets), Make.com (distribution), Telegram (team).</p>
       </div>
     </div>
@@ -381,12 +427,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Compare performance across businesses"</li>
           <li>"Draft investor update for all ventures"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Draft investor update covering all ventures", "system_key": "portfolio", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Webhooks (multi-system), Google Sheets (reporting).</p>
       </div>
     </div>
@@ -401,12 +442,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Analyze user feedback from surveys"</li>
           <li>"Draft release notes for v2.1"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Write a feature spec for user onboarding", "system_key": "saas", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> GitHub webhooks, web search (competitors).</p>
       </div>
     </div>
@@ -421,12 +457,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Draft abandoned cart email sequences"</li>
           <li>"Create seasonal campaign copy"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Write 20 product descriptions for the new collection", "system_key": "store", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Gmail (customers), Make.com (orders), web search (trends).</p>
       </div>
     </div>
@@ -441,12 +472,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Write quarterly review report summary"</li>
           <li>"Create FAQ for new clients"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Draft a client letter about upcoming tax deadlines", "system_key": "accounting", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Gmail (clients), Google Calendar (deadlines).</p>
       </div>
     </div>
@@ -461,12 +487,7 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Draft 8-week coaching program materials"</li>
           <li>"Write follow-up emails after sessions"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Draft program materials for my 8-week coaching course", "system_key": "coaching", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Google Calendar (sessions), Gmail (follow-ups).</p>
       </div>
     </div>
@@ -481,20 +502,15 @@ Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
           <li>"Write a scope of work document"</li>
           <li>"Create a case study from my last project"</li>
         </ul>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Draft a project proposal for the website redesign", "system_key": "freelance", "user_id": "me"}'</code></pre>
-        </div>
+        <p><strong>Try it:</strong> Just tell your AI tool any of the above &mdash; the system routes to the right agent automatically.</p>
         <p style="margin-bottom:0;"><strong>Suggested integrations:</strong> Gmail (clients), Google Calendar (deadlines).</p>
       </div>
     </div>
 
-    </div><!-- /step 5 -->
+    </div><!-- /step 6 -->
 
-    <!-- ===== STEP 6: SKILLS ===== -->
-    <div data-step="6" data-step-title="Skills">
+    <!-- ===== STEP 7: SKILLS ===== -->
+    <div data-step="7" data-step-title="Skills">
     <h2>Working with Skills</h2>
 
     <p>The Full edition supports both <strong>v1 skills</strong> (simple pipelines) and <strong>v2 skills</strong> (multi-step with tools, conditions, and human-in-the-loop).</p>
@@ -584,20 +600,21 @@ steps:
       </tbody>
     </table>
 
-    <h3>API: List Skills</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl http://localhost:8080/api/systems/consulting/skills</code></pre>
-    </div>
+    <h3>Managing Skills</h3>
+    <p>Ask your AI tool naturally:</p>
+    <ul>
+      <li><strong>&ldquo;List all available skills&rdquo;</strong></li>
+      <li><strong>&ldquo;Reload the config&rdquo;</strong> &mdash; after adding or editing skill YAML files</li>
+    </ul>
 
-    </div><!-- /step 6 -->
+    </div><!-- /step 7 -->
 
-    <!-- ===== STEP 7: INTEGRATIONS ===== -->
-    <div data-step="7" data-step-title="Integrations">
+    <!-- ===== STEP 8: INTEGRATIONS ===== -->
+    <div data-step="8" data-step-title="Integrations">
     <h2>Connecting Tools &amp; Integrations</h2>
 
-    <!-- 7a: Telegram -->
-    <span class="int-label">7a</span>
+    <!-- 8a: Telegram -->
+    <span class="int-label">8a</span>
     <h3>Telegram Bot</h3>
 
     <ol>
@@ -616,8 +633,8 @@ steps:
     </div>
     <p>Or add to Docker and restart: <code>docker compose up -d</code>. Now message your bot on Telegram &mdash; it routes through the same agent system.</p>
 
-    <!-- 7b: Google Workspace -->
-    <span class="int-label">7b</span>
+    <!-- 8b: Google Workspace -->
+    <span class="int-label">8b</span>
     <h3>Google Workspace (Gmail, Calendar, Drive)</h3>
 
     <ol>
@@ -645,8 +662,8 @@ steps:
     </div>
     <p>Write operations (send, create, update) always require confirmation before executing.</p>
 
-    <!-- 7c: Web Search -->
-    <span class="int-label">7c</span>
+    <!-- 8c: Web Search -->
+    <span class="int-label">8c</span>
     <h3>Web Search (Brave API)</h3>
 
     <ol>
@@ -659,8 +676,8 @@ steps:
     </div>
     <p>Restart the server. Web search is available in skills and direct queries.</p>
 
-    <!-- 7d: Make.com -->
-    <span class="int-label">7d</span>
+    <!-- 8d: Make.com -->
+    <span class="int-label">8d</span>
     <h3>Make.com / n8n / Zapier</h3>
 
     <p>Connect any automation platform via the REST API:</p>
@@ -684,78 +701,48 @@ Body:
     </div>
     <p><strong>Example flow:</strong> New email in Gmail &rarr; summarize with RealizeOS &rarr; post summary to Slack.</p>
 
-    <!-- 7e: MCP -->
-    <span class="int-label">7e</span>
+    <!-- 8e: MCP -->
+    <span class="int-label">8e</span>
     <h3>MCP Servers</h3>
     <p>MCP (Model Context Protocol) lets you connect external tool servers. The system auto-discovers and registers all tools exposed by MCP servers, making them available to agents and skills.</p>
 
-    <!-- 7f: Webhooks -->
-    <span class="int-label">7f</span>
+    <!-- 8f: Webhooks -->
+    <span class="int-label">8f</span>
     <h3>Inbound Webhooks</h3>
-    <p>Trigger agent actions from external events by posting to the chat API:</p>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -d '{
-    "message": "New GitHub push to main: 3 commits. Summarize and notify.",
-    "system_key": "saas",
-    "user_id": "github-webhook"
-  }'</code></pre>
-    </div>
-    <p>Works with GitHub webhooks, Stripe events, form submissions, or any HTTP-capable system.</p>
+    <p>External services (GitHub, Stripe, forms) can trigger your agents by posting to the <code>/api/chat</code> endpoint. The message is processed like any other request &mdash; routed to the right agent with full context.</p>
+    <p>Works with GitHub webhooks, Stripe events, form submissions, or any HTTP-capable system. See the <a href="javascript:void(0)" onclick="window.__stepper&&window.__stepper.goTo(12)" style="color:var(--color-accent);">API reference</a> for endpoint details.</p>
 
-    </div><!-- /step 7 -->
+    </div><!-- /step 8 -->
 
-    <!-- ===== STEP 8: VENTURES ===== -->
-    <div data-step="8" data-step-title="Ventures">
+    <!-- ===== STEP 9: VENTURES ===== -->
+    <div data-step="9" data-step-title="Ventures">
     <h2>Managing Multiple Ventures</h2>
 
-    <h3>Create a New Venture</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>python cli.py venture create --key my-saas --name "My SaaS Product"</code></pre>
-    </div>
+    <p>RealizeOS supports running multiple businesses from a single instance. Each venture gets its own agents, knowledge base, skills, and conversation history.</p>
 
-    <h3>List Ventures</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>curl http://localhost:8080/api/systems</code></pre>
-    </div>
-
-    <h3>Switch Between Ventures</h3>
-    <p>Use the <code>system_key</code> field in API calls:</p>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code># Consulting system
-curl -X POST http://localhost:8080/api/chat \
-  -d '{"message": "...", "system_key": "consulting", "user_id": "me"}'
-
-# SaaS system
-curl -X POST http://localhost:8080/api/chat \
-  -d '{"message": "...", "system_key": "my-saas", "user_id": "me"}'</code></pre>
-    </div>
+    <h3>Working with Ventures</h3>
+    <p>Ask your AI tool naturally:</p>
+    <ul>
+      <li><strong>&ldquo;Create a new venture called My SaaS Product&rdquo;</strong></li>
+      <li><strong>&ldquo;List all my ventures&rdquo;</strong></li>
+      <li><strong>&ldquo;Switch to my SaaS system and draft release notes&rdquo;</strong></li>
+      <li><strong>&ldquo;Delete the test venture&rdquo;</strong> &mdash; requires confirmation</li>
+    </ul>
 
     <h3>Cross-System Context</h3>
+    <p>Enable in <code>realize-os.yaml</code> to let agents reference context from other ventures:</p>
     <div class="code-block">
       <button class="code-block__copy" data-copy>Copy</button>
       <pre><code># Enable in realize-os.yaml:
 features:
   cross_system: true</code></pre>
     </div>
-    <p>When enabled, agents can reference context from other ventures &mdash; useful for portfolio operators.</p>
+    <p>Useful for portfolio operators who need a holistic view across businesses.</p>
 
-    <h3>Delete a Venture</h3>
-    <div class="code-block">
-      <button class="code-block__copy" data-copy>Copy</button>
-      <pre><code>python cli.py venture delete --key my-saas --confirm my-saas</code></pre>
-    </div>
+    </div><!-- /step 9 -->
 
-    </div><!-- /step 8 -->
-
-    <!-- ===== STEP 9: DAILY WORKFLOW ===== -->
-    <div data-step="9" data-step-title="Daily Workflow">
+    <!-- ===== STEP 10: DAILY WORKFLOW ===== -->
+    <div data-step="10" data-step-title="Daily Workflow">
     <h2>Daily Workflow</h2>
 
     <div class="guide__card">
@@ -794,10 +781,10 @@ features:
       <p style="margin-bottom:0;">Triggers the Weekly Review skill &mdash; cross-references outcomes with goals.</p>
     </div>
 
-    </div><!-- /step 9 -->
+    </div><!-- /step 10 -->
 
-    <!-- ===== STEP 10: SELF-EVOLUTION ===== -->
-    <div data-step="10" data-step-title="Self-Evolution">
+    <!-- ===== STEP 11: SELF-EVOLUTION ===== -->
+    <div data-step="11" data-step-title="Self-Evolution">
     <h2>Self-Evolution</h2>
 
     <p>The Full edition includes a self-evolution engine that continuously improves your system based on usage patterns.</p>
@@ -833,10 +820,10 @@ Approve? [yes/no]</code></pre>
       </ul>
     </div>
 
-    </div><!-- /step 10 -->
+    </div><!-- /step 11 -->
 
-    <!-- ===== STEP 11: CUSTOMIZING ===== -->
-    <div data-step="11" data-step-title="Customizing">
+    <!-- ===== STEP 12: CUSTOMIZING ===== -->
+    <div data-step="12" data-step-title="Customizing">
     <h2>Customizing &amp; Growing</h2>
 
     <h3>LLM Routing</h3>
@@ -901,13 +888,13 @@ python cli.py bot                    # Telegram bot</code></pre>
       </tbody>
     </table>
 
-    </div><!-- /step 11 -->
+    </div><!-- /step 12 -->
 
-    <!-- ===== STEP 12: TROUBLESHOOTING ===== -->
-    <div data-step="12" data-step-title="Troubleshooting">
+    <!-- ===== STEP 13: TROUBLESHOOTING ===== -->
+    <div data-step="13" data-step-title="Troubleshooting">
     <h2>Troubleshooting</h2>
 
-    <p>Common issues and their fixes. If your problem isn't here, ask in the community or email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a>.</p>
+    <p>Common issues and their fixes. If your problem isn't here, ask in the community or email <a href="mailto:info@realizeos.ai" style="color:var(--color-accent);">info@realizeos.ai</a>.</p>
 
     <h3>Docker Issues</h3>
 
@@ -1003,11 +990,11 @@ docker compose build && docker compose up -d</code></pre>
       <ul style="margin-bottom:0;">
         <li><a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener" style="color:var(--color-accent);">Telegram Builders Group</a> &mdash; active community, fast responses</li>
         <li><a href="https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd" target="_blank" rel="noopener" style="color:var(--color-accent);">WhatsApp Community</a> &mdash; quick updates and direct support</li>
-        <li>Email <a href="mailto:realizeos@realization.co.il" style="color:var(--color-accent);">realizeos@realization.co.il</a> &mdash; we reply within 24 hours</li>
+        <li>Email <a href="mailto:info@realizeos.ai" style="color:var(--color-accent);">info@realizeos.ai</a> &mdash; we reply within 24 hours</li>
       </ul>
     </div>
 
-    </div><!-- /step 12 -->
+    </div><!-- /step 13 -->
 
   </article>
 
@@ -1022,7 +1009,7 @@ docker compose build && docker compose up -d</code></pre>
         <div class="footer__links">
           <a href="https://github.com/SufZen/realize-os" target="_blank" rel="noopener">GitHub</a>
           <a href="https://t.me/+5r8zjoOignRmOTI0" target="_blank" rel="noopener">Telegram</a>
-          <a href="mailto:realizeos@realization.co.il">Support</a>
+          <a href="mailto:info@realizeos.ai">Support</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -1083,10 +1070,10 @@ docker compose build && docker compose up -d</code></pre>
       progress: '[data-stepper-progress]',
       storageKey: 'guide_full_step',
       anchorAliases: {
-        'welcome': 1, 'comparison': 2, 'first-conversation': 3,
-        'agents': 4, 'business': 5, 'skills': 6, 'integrations': 7,
-        'ventures': 8, 'workflow': 9, 'evolution': 10,
-        'customizing': 11, 'troubleshooting': 12
+        'welcome': 1, 'comparison': 2, 'mcp-toolkit': 3, 'connect-ai': 3,
+        'first-conversation': 4, 'agents': 5, 'business': 6, 'skills': 7,
+        'integrations': 8, 'ventures': 9, 'workflow': 10, 'evolution': 11,
+        'customizing': 12, 'troubleshooting': 13
       }
     });
   })();

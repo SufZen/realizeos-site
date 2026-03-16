@@ -60,91 +60,114 @@ Invoke-RestMethod http://localhost:8080/status | ConvertTo-Json -Depth 5
 
 ---
 
-## Step 3: Your First Conversation
+## Step 3: Connect Your AI Tools (MCP Toolkit)
 
-### Sending a Message via API
+### The Fastest Way to Talk to Your Engine
 
-**Bash/curl:**
+Docker Desktop includes a built-in **MCP Toolkit** that lets you connect Claude Code Desktop, Claude Code CLI, and Gemini CLI to your running RealizeOS container — with just a few clicks. No manual API calls needed.
+
+### What Is MCP?
+
+The **Model Context Protocol (MCP)** is an open standard that lets AI tools (like Claude Code and Gemini) communicate with external services. Docker Desktop's MCP Toolkit turns your running containers into MCP servers automatically, so your AI tools can call your RealizeOS engine directly.
+
+### Prerequisites
+
+- **Docker Desktop 4.62+** — MCP Toolkit is built-in from this version
+- Your RealizeOS container running (via `docker compose up -d`)
+- At least one AI tool installed: Claude Code Desktop, Claude Code CLI, or Gemini CLI
+
+### Step-by-Step Setup
+
+1. **Open Docker Desktop** and verify your RealizeOS container is running (green status).
+2. **Navigate to the MCP Toolkit** — find it in the Docker Desktop sidebar (look for the MCP Toolkit or Extensions section).
+3. **Go to the "Clients" tab** in the MCP Toolkit. You'll see a list of supported AI tools.
+4. **Enable your preferred clients:**
+   - **Claude Code Desktop** — toggle on, Docker configures it automatically
+   - **Claude Code CLI** — toggle on for terminal-based usage
+   - **Gemini CLI** — toggle on if you use Google's Gemini tools
+5. **Restart your AI tool** if it was already open. The MCP connection is detected on startup.
+
+### Verify the Connection
+
+After enabling, verify your AI tool can see the Docker MCP gateway:
 
 ```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "What do you know about my business?",
-    "system_key": "consulting",
-    "user_id": "me"
-  }'
+# Claude Code CLI — list MCP servers
+claude mcp list
+
+# You should see the Docker MCP gateway listed
 ```
 
-**PowerShell:**
+For **Claude Code Desktop**, open the app and check Settings → MCP Servers. The Docker gateway should appear automatically.
 
-```powershell
-$body = @{
-    message = "What do you know about my business?"
-    system_key = "consulting"
-    user_id = "me"
-} | ConvertTo-Json
+### How It Works Behind the Scenes
 
-Invoke-RestMethod -Uri "http://localhost:8080/api/chat" `
-    -Method POST `
-    -ContentType "application/json" `
-    -Body $body
-```
-
-### Request Fields
-
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `message` | string | Yes | Your message |
-| `system_key` | string | Yes | Target system (e.g., `consulting`, `agency`, `store`) |
-| `user_id` | string | No | User identifier (default: `api-user`) |
-| `agent_key` | string | No | Force a specific agent (e.g., `analyst`) |
-| `channel` | string | No | Channel for formatting (default: `api`) |
-
-### Response Format
+The MCP Toolkit registers a gateway that proxies MCP requests to your container:
 
 ```json
 {
-  "response": "Based on your brand identity, you are...",
-  "system_key": "consulting",
-  "agent_key": "orchestrator",
-  "user_id": "me"
+  "command": "docker",
+  "args": ["mcp", "gateway", "run"]
 }
 ```
 
-### Force a Specific Agent
+This runs `docker mcp gateway run` which connects your AI tool to all MCP-enabled containers, including RealizeOS.
 
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "Analyze the competitive landscape for AI consulting",
-    "system_key": "consulting",
-    "user_id": "me",
-    "agent_key": "analyst"
-  }'
-```
+### What You Can Do After Connecting
 
-### Authentication
+Once connected, your AI tool can interact with RealizeOS directly. Instead of writing curl commands, you just talk to Claude or Gemini naturally:
 
-If you set `REALIZE_API_KEY` in your `.env`, include it in requests:
+- "Ask my RealizeOS consultant agent to draft a proposal"
+- "Check the health status of my RealizeOS engine"
+- "List all agents in my consulting system"
+- "Run a skill on my RealizeOS instance"
 
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -d '{"message": "Hello", "system_key": "consulting", "user_id": "me"}'
-```
+> **Why This Matters:** The MCP Toolkit is the recommended way to interact with your RealizeOS engine day-to-day. It eliminates the need to memorize API endpoints or write curl commands — your AI tools become a natural interface to your entire operations system.
 
-Or use the `X-API-Key` header:
+### Troubleshooting
 
-```bash
--H "X-API-Key: YOUR_API_KEY"
-```
+- **Don't see MCP Toolkit?** Update Docker Desktop to version 4.62 or later.
+- **Gateway not appearing in Claude Code?** Restart the AI tool after enabling in Docker Desktop.
+- **Container not detected?** Make sure RealizeOS is running (`docker compose ps`).
+- **Manual config needed?** Add the gateway manually to your AI tool's MCP config with: `{"command": "docker", "args": ["mcp", "gateway", "run"]}`
 
 ---
 
-## Step 4: Understanding Your Agent Team
+## Step 4: Your First Conversation
+
+Now that your AI tool is connected, just open it and start talking. No API calls, no curl commands — your AI tool talks to RealizeOS through the MCP connection you set up in Step 3.
+
+### Try These First Prompts
+
+Open Claude Code, Claude Desktop, or Gemini CLI and type:
+
+- **"What do you know about my business?"** — The system reads your brand identity and knowledge base, then summarizes what it knows.
+- **"What agents are available?"** — Lists your agent team and what each one does.
+- **"Check the health status"** — Confirms your engine is running and shows connected services.
+
+### Talking to Specific Agents
+
+RealizeOS automatically routes your message to the right agent, but you can also direct your request explicitly:
+
+- **"Ask the analyst to research competitors in the AI consulting space"**
+- **"Tell the writer to draft a LinkedIn post about our new service"**
+- **"Have the reviewer check the tone of this email"**
+
+The system understands natural references to agents and routes accordingly.
+
+### What Happens Behind the Scenes
+
+When you send a message, the engine handles everything automatically:
+
+1. Your AI tool sends the message through the MCP connection
+2. RealizeOS detects the intent, selects the right agent, and picks the optimal LLM
+3. The response comes back to your AI tool naturally
+
+> **For developers:** Direct API access is available — see Step 12 for the full API reference.
+
+---
+
+## Step 5: Understanding Your Agent Team
 
 ### The 4 Default Agents
 
@@ -176,19 +199,17 @@ Tasks are automatically routed to the optimal LLM based on complexity:
 
 This means simple tasks cost fractions of a cent while complex tasks get the best model available.
 
-### API: List Agents
+### List Agents
 
-```bash
-curl http://localhost:8080/api/systems/consulting/agents
-```
+Ask your AI tool:
 
-### API: Hot Reload Config
+> "List all available agents"
 
-After editing agents, skills, or config:
+### Hot Reload Config
 
-```bash
-curl -X POST http://localhost:8080/api/systems/reload
-```
+After editing agents, skills, or config, tell your AI tool:
+
+> "Reload the RealizeOS config"
 
 ### Customizing Agents
 
@@ -203,13 +224,13 @@ Each agent is defined as a `.md` file in the system's `A-agents/` directory. Edi
 
 1. Create a new `.md` file in `systems/<key>/A-agents/` (e.g., `client-comms.md`)
 2. Add routing keywords in `realize-os.yaml` under `agent_routing`
-3. Hot reload: `POST /api/systems/reload`
+3. Tell your AI tool: "Reload the RealizeOS config"
 
 ---
 
-## Step 5: Your Operations System by Business Type
+## Step 6: Your Operations System by Business Type
 
-RealizeOS ships with 8 pre-configured operations templates. Here's what each is optimized for, with API examples.
+RealizeOS ships with 8 pre-configured operations templates. Here's what each is optimized for.
 
 ### Consulting
 
@@ -220,12 +241,6 @@ RealizeOS ships with 8 pre-configured operations templates. Here's what each is 
 - "Research competitors in the management consulting space"
 - "Write a LinkedIn post about why AI agents should work as a team"
 - "Create a quarterly review template for my advisory clients"
-
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Draft a client proposal for a 3-month strategy engagement", "system_key": "consulting", "user_id": "me"}'
-```
 
 **Suggested integrations:** Google Calendar (client meetings), Gmail (proposals), web search (research).
 
@@ -238,12 +253,6 @@ curl -X POST http://localhost:8080/api/chat \
 - "Write 5 social media post variations for this campaign"
 - "Audit the brand voice on our latest copy"
 - "Create a content calendar for next month"
-
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Write 5 social post variations for our product launch", "system_key": "agency", "user_id": "me"}'
-```
 
 **Suggested integrations:** Google Drive (asset management), Make.com (content distribution), Telegram (team notifications).
 
@@ -267,12 +276,6 @@ curl -X POST http://localhost:8080/api/chat \
 - "Analyze user feedback from last month's surveys"
 - "Draft release notes for v2.1"
 
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Write a feature spec for user onboarding", "system_key": "saas", "user_id": "me"}'
-```
-
 **Suggested integrations:** GitHub webhooks (deploy notifications), web search (competitor monitoring).
 
 ### E-Commerce
@@ -284,12 +287,6 @@ curl -X POST http://localhost:8080/api/chat \
 - "Draft abandoned cart email sequences"
 - "Analyze sales data and suggest pricing adjustments"
 - "Create seasonal campaign copy for summer sale"
-
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Write 20 product descriptions for the new collection", "system_key": "store", "user_id": "me"}'
-```
 
 **Suggested integrations:** Gmail (customer comms), Make.com (order notifications), web search (trend research).
 
@@ -326,9 +323,11 @@ curl -X POST http://localhost:8080/api/chat \
 
 **Suggested integrations:** Gmail (client comms), Google Calendar (deadlines), Make.com (project notifications).
 
+> **Try it:** Just tell your AI tool any of the above — the system routes to the right agent automatically. No need to specify system keys or endpoints.
+
 ---
 
-## Step 6: Working with Skills
+## Step 7: Working with Skills
 
 ### What Are Skills?
 
@@ -414,19 +413,21 @@ steps:
 | **Drive** | `drive_search`, `drive_list_folder`, `drive_read_content`, `drive_create_doc`, `drive_append_doc` |
 | **Browser** | `browser_navigate`, `browser_click`, `browser_type`, `browser_screenshot`, `browser_extract`, `browser_scroll` |
 
-### API: List Skills
+### List Skills
 
-```bash
-curl http://localhost:8080/api/systems/consulting/skills
-```
+Ask your AI tool:
 
-Skills are auto-loaded from `systems/<key>/R-routines/skills/`. Hot reload with `POST /api/systems/reload`.
+> "List all available skills"
+
+Skills are auto-loaded from `systems/<key>/R-routines/skills/`. After editing, tell your AI tool:
+
+> "Reload the config"
 
 ---
 
-## Step 7: Connecting Tools & Integrations
+## Step 8: Connecting Tools & Integrations
 
-### 7a. Telegram Bot
+### 8a. Telegram Bot
 
 **Step 1:** Open Telegram and message [@BotFather](https://t.me/BotFather)
 
@@ -452,7 +453,7 @@ docker compose up -d
 
 Now message your bot on Telegram — it routes through the same agent system.
 
-### 7b. Google Workspace (Gmail, Calendar, Drive)
+### 8b. Google Workspace (Gmail, Calendar, Drive)
 
 **Step 1:** Go to [Google Cloud Console](https://console.cloud.google.com/)
 
@@ -497,7 +498,7 @@ This opens a browser for OAuth consent. After authorizing, tokens are saved auto
 
 Write operations (send, create, update) always require confirmation before executing.
 
-### 7c. Web Search (Brave API)
+### 8c. Web Search (Brave API)
 
 **Step 1:** Get a Brave Search API key from [brave.com/search/api](https://brave.com/search/api/)
 
@@ -519,7 +520,7 @@ BRAVE_API_KEY=your_key_here
     count: 5
 ```
 
-### 7d. Make.com / n8n / Zapier
+### 8d. Make.com / n8n / Zapier
 
 Connect any automation platform to RealizeOS via the REST API.
 
@@ -549,68 +550,45 @@ Connect any automation platform to RealizeOS via the REST API.
 
 **Zapier Setup:** Use the "Webhooks by Zapier" action with a POST request to the same endpoint.
 
-### 7e. MCP Servers
+### 8e. MCP Servers
 
 MCP (Model Context Protocol) lets you connect external tool servers to RealizeOS.
 
 Add MCP server configuration to your system setup. The system will discover and register all tools exposed by the MCP server, making them available to agents and skills.
 
-### 7f. Inbound Webhooks
+### 8f. Inbound Webhooks
 
-Register webhook endpoints to trigger agent actions from external events:
+External services (GitHub, Stripe, form builders, etc.) can trigger agent actions by posting to your RealizeOS `/api/chat` endpoint. Any system that can send an HTTP POST request can act as a webhook source — just point it at your server and include a message describing the event.
 
-```bash
-curl -X POST http://localhost:8080/api/chat \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -d '{
-    "message": "New GitHub push to main branch: 3 commits by dev-team. Summarize changes and notify.",
-    "system_key": "saas",
-    "user_id": "github-webhook"
-  }'
-```
+For example, a GitHub webhook could send "New push to main branch: 3 commits by dev-team. Summarize changes and notify." and RealizeOS will route it to the right agent automatically.
 
-Use this pattern with GitHub webhooks, Stripe events, form submissions, or any system that can send HTTP requests.
+> **For developers:** See Step 12 for the full API reference, including request format, authentication headers, and endpoint details.
 
 ---
 
-## Step 8: Managing Multiple Ventures
+## Step 9: Managing Multiple Ventures
 
 ### Create a New Venture
 
-```bash
-python cli.py venture create --key my-saas --name "My SaaS Product"
-```
+Ask your AI tool:
 
-This creates:
-- `systems/my-saas/` with all FABRIC subdirectories
-- Entry in `realize-os.yaml`
+> "Create a new venture called My SaaS Product"
+
+This creates a new system directory with all FABRIC subdirectories and adds an entry in `realize-os.yaml`.
 
 ### List Ventures
 
-```bash
-python cli.py venture list
-```
+Ask your AI tool:
 
-Or via API:
-
-```bash
-curl http://localhost:8080/api/systems
-```
+> "List all my ventures"
 
 ### Switch Between Ventures
 
-Use the `system_key` field in API calls:
+Just mention the venture you want to talk to:
 
-```bash
-# Talk to consulting system
-curl -X POST http://localhost:8080/api/chat \
-  -d '{"message": "...", "system_key": "consulting", "user_id": "me"}'
+> "Switch to my SaaS system and draft release notes"
 
-# Talk to SaaS system
-curl -X POST http://localhost:8080/api/chat \
-  -d '{"message": "...", "system_key": "my-saas", "user_id": "me"}'
-```
+The system routes your message to the correct venture automatically.
 
 ### Cross-System Context
 
@@ -625,13 +603,15 @@ When enabled, agents can reference context from other ventures — useful for po
 
 ### Delete a Venture
 
-```bash
-python cli.py venture delete --key my-saas --confirm my-saas
-```
+Ask your AI tool:
+
+> "Delete the test venture"
+
+The system will ask for confirmation before removing anything.
 
 ---
 
-## Step 9: Daily Workflow
+## Step 10: Daily Workflow
 
 ### Morning Routine
 
@@ -665,7 +645,7 @@ The system reviews conversations, logs learnings, and creates tomorrow's action 
 
 ---
 
-## Step 10: Self-Evolution
+## Step 11: Self-Evolution
 
 The Full edition includes a self-evolution engine that continuously improves your system.
 
@@ -696,7 +676,7 @@ All changes require your explicit approval. Nothing is modified automatically.
 
 ---
 
-## Step 11: Customizing & Growing
+## Step 12: Customizing & Growing
 
 ### LLM Routing
 
@@ -750,7 +730,7 @@ python cli.py bot                    # Telegram bot
 
 ---
 
-## Step 12: Troubleshooting
+## Step 13: Troubleshooting
 
 ### Docker Issues
 
@@ -852,7 +832,7 @@ docker compose build && docker compose up -d
 
 - **Telegram Builders Group** — active community, fast responses
 - **WhatsApp Community** — quick updates and direct support
-- **Email** realizeos@realization.co.il — we reply within 24 hours
+- **Email** info@realizeos.ai — we reply within 24 hours
 
 Screenshot your error and share it — we've probably seen it before.
 
