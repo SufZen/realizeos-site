@@ -370,7 +370,14 @@ function SplitSlide({ slide }: SlideRendererProps) {
       {Illust && (
         <div className="flex w-full items-center justify-center md:w-2/5">
           <div className="illustration-glow">
-            <Illust className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80" />
+            {slide.illustration === 'FounderPhotoFrame' ? (
+              <FounderPhotoFrame
+                className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80"
+                src="/img/founder.png"
+              />
+            ) : (
+              <Illust className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80" />
+            )}
           </div>
         </div>
       )}
