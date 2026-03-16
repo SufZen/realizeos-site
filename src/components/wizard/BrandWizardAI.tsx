@@ -1,18 +1,19 @@
 /* ─────────────────────────────────────────────
  * BrandWizardAI — Main orchestrator
  *
- * A full-page, AI-powered brand wizard that replaces
+ * A full-page, AI-powered venture wizard that replaces
  * the original 5-step form dialog with a conversational,
  * document-ingestion-first experience.
  * ───────────────────────────────────────────── */
 import { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Brain, Upload as UploadIcon, MessageSquare, ClipboardCheck, Download } from 'lucide-react';
+import { ArrowLeft, Brain, Upload as UploadIcon, MessageSquare, ClipboardCheck, Download, Mail } from 'lucide-react';
 import { WizardUpload } from './WizardUpload';
 import { WizardAnalyzing } from './WizardAnalyzing';
 import { WizardChat } from './WizardChat';
 import { WizardReview } from './WizardReview';
 import { WizardExport } from './WizardExport';
+import { WizardEmailGate } from './WizardEmailGate';
 import {
   type WizardPhase,
   type BrandFieldValues,
@@ -44,7 +45,8 @@ const PHASE_STEPS: PhaseStep[] = [
   { id: 'analyzing', label: 'Analyze', icon: <Brain className="h-3.5 w-3.5" /> },
   { id: 'conversation', label: 'Chat', icon: <MessageSquare className="h-3.5 w-3.5" /> },
   { id: 'review', label: 'Review', icon: <ClipboardCheck className="h-3.5 w-3.5" /> },
-  { id: 'export', label: 'Export', icon: <Download className="h-3.5 w-3.5" /> },
+  { id: 'email-gate', label: 'Get Files', icon: <Mail className="h-3.5 w-3.5" /> },
+  { id: 'export', label: 'Download', icon: <Download className="h-3.5 w-3.5" /> },
 ];
 
 function phaseIndex(phase: WizardPhase): number {
@@ -65,6 +67,7 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const [isThinking, setIsThinking] = useState(false);
   const [analyzeFieldsFound, setAnalyzeFieldsFound] = useState(0);
+  const [userEmail, setUserEmail] = useState<string | undefined>();
 
   // ── Derived ──
   const filledCount = useMemo(
@@ -290,7 +293,7 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
           <div className="flex-1">
             <h1 className="flex items-center gap-2 text-base font-semibold">
               <Brain className="h-5 w-5 text-brand-yellow" />
-              <span>Brand Intelligence Engine</span>
+              <span>Venture Intelligence Engine</span>
             </h1>
           </div>
           {phase !== 'upload' && (
@@ -350,10 +353,19 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
               <div className="space-y-6">
                 <div className="text-center">
                   <h2 className="text-2xl font-bold text-gradient-yellow text-glow-yellow">
-                    Define Your Brand, Intelligently
+                    Define Your Venture, Intelligently
                   </h2>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-md mx-auto">
-                    Upload your existing materials — pitch decks, websites, brand guides — and I'll extract everything I need. No blank forms.
+                    Upload your existing materials — pitch decks, websites, venture docs — and I'll extract everything I need. No blank forms.
+                  </p>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Prefer a simple form?{' '}
+                    <a
+                      href="/?openWizard=1"
+                      className="text-brand-yellow underline-offset-2 hover:underline"
+                    >
+                      Use the classic wizard →
+                    </a>
                   </p>
                 </div>
                 <WizardUpload
@@ -391,8 +403,20 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
                 fields={fields}
                 fieldConfidence={fieldConfidence}
                 onFieldChange={handleFieldChange}
-                onFinalize={() => setPhase('export')}
+                onFinalize={() => setPhase('email-gate')}
                 onBack={() => setPhase('conversation')}
+              />
+            )}
+
+            {phase === 'email-gate' && (
+              <WizardEmailGate
+                fieldsCompleted={filledCount}
+                totalFields={totalFields}
+                onContinue={(email) => {
+                  if (email) setUserEmail(email);
+                  setPhase('export');
+                }}
+                onBack={() => setPhase('review')}
               />
             )}
 
@@ -401,7 +425,8 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
                 fields={fields}
                 analysisResult={analysisResult}
                 onReset={handleReset}
-                onBack={() => setPhase('review')}
+                onBack={() => setPhase('email-gate')}
+                userEmail={userEmail}
               />
             )}
           </motion.div>

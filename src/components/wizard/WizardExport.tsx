@@ -18,6 +18,7 @@ interface WizardExportProps {
   analysisResult: AnalysisResult | null;
   onReset: () => void;
   onBack: () => void;
+  userEmail?: string;
 }
 
 interface ExportableFile {
@@ -32,7 +33,7 @@ interface ExportableFile {
 function generateBrandStrategyMd(result: AnalysisResult | null): string | null {
   if (!result || !result.bonusInsights.competitors.length) return null;
   const { competitors, marketClues } = result.bonusInsights;
-  return `# Brand Strategy — Competitive Landscape
+  return `# Venture Strategy — Competitive Landscape
 
 This file was auto-generated from your uploaded materials. Review and update as your market evolves.
 
@@ -85,7 +86,7 @@ function CopyDownloadButton({ text, filename }: { text: string; filename: string
   );
 }
 
-export function WizardExport({ fields, analysisResult, onReset, onBack }: WizardExportProps) {
+export function WizardExport({ fields, analysisResult, onReset, onBack, userEmail }: WizardExportProps) {
   const [downloadedAll, setDownloadedAll] = useState(false);
 
   // Generate file contents — reuse existing markdown generators
@@ -105,26 +106,26 @@ export function WizardExport({ fields, analysisResult, onReset, onBack }: Wizard
         content: identityMd,
       },
       {
-        label: 'brand-identity.md',
+        label: 'venture-identity.md',
         sublabel: 'Your business positioning — goes in F-foundations/',
-        filename: 'brand-identity.md',
-        path: 'systems/my-business-1/F-foundations/brand-identity.md',
+        filename: 'venture-identity.md',
+        path: 'systems/my-business-1/F-foundations/venture-identity.md',
         content: brandIdentityMd,
       },
       {
-        label: 'brand-voice.md',
+        label: 'venture-voice.md',
         sublabel: 'How your content sounds — goes in F-foundations/',
-        filename: 'brand-voice.md',
-        path: 'systems/my-business-1/F-foundations/brand-voice.md',
+        filename: 'venture-voice.md',
+        path: 'systems/my-business-1/F-foundations/venture-voice.md',
         content: brandVoiceMd,
       },
     ];
     if (brandStrategyMd) {
       base.push({
-        label: 'brand-strategy.md',
+        label: 'venture-strategy.md',
         sublabel: 'Competitive insights — auto-generated from your docs',
-        filename: 'brand-strategy.md',
-        path: 'systems/my-business-1/F-foundations/brand-strategy.md',
+        filename: 'venture-strategy.md',
+        path: 'systems/my-business-1/F-foundations/venture-strategy.md',
         content: brandStrategyMd,
         isNew: true,
       });
@@ -155,9 +156,13 @@ export function WizardExport({ fields, analysisResult, onReset, onBack }: Wizard
         <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-brand-yellow/10">
           <Sparkles className="h-6 w-6 text-brand-yellow" />
         </div>
-        <h3 className="text-lg font-semibold text-foreground">Your Brand Files Are Ready</h3>
+        <h3 className="text-lg font-semibold text-foreground">Your Venture Files Are Ready</h3>
         <p className="mt-1 text-sm text-muted-foreground">
-          {files.length} file{files.length > 1 ? 's' : ''} generated. Download and place them in your RealizeOS vault.
+          {files.length} file{files.length > 1 ? 's' : ''} generated.{' '}
+          {userEmail
+            ? <>We'll also send them to <strong className="text-brand-yellow">{userEmail}</strong>.</>
+            : 'Download and place them in your RealizeOS vault.'
+          }
         </p>
       </motion.div>
 

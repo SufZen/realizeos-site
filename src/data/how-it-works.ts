@@ -19,7 +19,7 @@ export const howSteps: HowStep[] = [
   {
     number: 3,
     title: 'Define Who You Are & Your Business',
-    description: 'Fill in your personal identity, brand identity, and voice rules from guided templates. Use the Brand Worksheet to make it easy.',
+    description: 'Fill in your personal identity, venture identity, and voice rules from guided templates. Use the Venture Wizard to make it easy.',
     time: '5-10 min',
   },
   {

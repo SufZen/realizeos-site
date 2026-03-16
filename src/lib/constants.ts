@@ -27,7 +27,7 @@ export const WEBHOOK_URL = 'https://n8n.realization.co.il/webhook/lead-capture';
 export const LINKS = {
   telegram: 'https://t.me/+5r8zjoOignRmOTI0',
   whatsapp: 'https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd',
-  brandWorksheet: 'brand-worksheet.html',
+  brandWorksheet: 'venture-worksheet.html',
   supportEmail: 'info@realizeos.ai',
   linkedin: 'https://www.linkedin.com/in/sufzen',
   github: 'https://github.com/SufZen',

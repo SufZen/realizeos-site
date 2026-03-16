@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
@@ -23,6 +23,16 @@ import { BrandWizard } from '@/components/wizard/BrandWizard';
 
 export function Home() {
   const [wizardOpen, setWizardOpen] = useState(false);
+
+  // Auto-open old wizard when /?openWizard=1 is used (fallback from AI wizard)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('openWizard') === '1') {
+      setWizardOpen(true);
+      // Clean up URL
+      window.history.replaceState({}, '', '/');
+    }
+  }, []);
 
   return (
     <>

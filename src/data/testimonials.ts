@@ -19,7 +19,7 @@ export const testimonials: Testimonial[] = [
     initials: 'JM',
   },
   {
-    text: 'I run 3 ventures and each one has its own voice. Before RealizeOS, I was switching between 5 different AI tools. Now one system handles all of them with proper brand isolation.',
+    text: 'I run 3 ventures and each one has its own voice. Before RealizeOS, I was switching between 5 different AI tools. Now one system handles all of them with proper venture isolation.',
     authorName: 'Ricardo Santos',
     authorRole: 'Portfolio Operator, Lisbon',
     initials: 'RS',

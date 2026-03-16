@@ -25,8 +25,8 @@ export const deliveryColumns: DeliveryColumn[] = [
         description: 'Orchestrator, Writer, Reviewer, Analyst. Each is a markdown file you customize for your business.',
       },
       {
-        title: 'Fill-in-the-blank brand templates + Brand Worksheet',
-        description: 'brand-identity.md, brand-voice.md, and the interactive 130-line Brand Worksheet wizard. Define your brand in minutes.',
+        title: 'Fill-in-the-blank venture templates + Venture Wizard',
+        description: 'venture-identity.md, venture-voice.md, and the interactive 130-line Venture Wizard. Define your venture in minutes.',
       },
       {
         title: '6 skill workflows',

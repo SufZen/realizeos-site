@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
- * Brand Analysis API Service — Smart Demo Layer
+ * Venture Analysis API Service — Smart Demo Layer
  *
  * This module provides:
  * 1. Real client-side text extraction from uploaded files

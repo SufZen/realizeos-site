@@ -337,7 +337,7 @@ export function getSlides(): Slide[] {
         { titleKey: 'pres.lite.brand.title', descKey: 'pres.lite.brand.desc' },
         { titleKey: 'pres.lite.skills.title', descKey: 'pres.lite.skills.desc' },
       ],
-      speakerNotes: 'Lite deliverables: vault, agents, brand templates, workflows.',
+      speakerNotes: 'Lite deliverables: vault, agents, venture templates, workflows.',
     },
     { // 30 — lite-more (improved copy + illustration)
       id: 'lite-more',

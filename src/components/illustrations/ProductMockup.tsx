@@ -109,7 +109,7 @@ export function ProductMockup({ className }: Props) {
           docs in your knowledge base. Here&apos;s an outline
         </text>
         <text x={178} y={166} fill="#c0c0d0" fontSize={9} fontFamily="sans-serif">
-          with your brand voice applied...
+          with your venture voice applied...
         </text>
       </motion.g>
 

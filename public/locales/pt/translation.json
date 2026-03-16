@@ -27,7 +27,7 @@
     "assembly": {
       "title": "Montagem Dinâmica de Identidade",
       "promise": "Fala como você, conhece os seus projetos e age como o seu melhor parceiro. Não é um chatbot genérico — é o seu clone digital.",
-      "technical": "Cada resposta é construída através da montagem de prompts em múltiplas camadas. O sistema extrai dinamicamente a sua identidade, voz da marca, perfil de função, conhecimento relevante (pesquisa vetorial), memória e contexto de sessão antes de chegar ao LLM."
+      "technical": "Cada resposta é construída através da montagem de prompts em múltiplas camadas. O sistema extrai dinamicamente a sua identidade, Venture Voice, perfil de função, conhecimento relevante (pesquisa vetorial), memória e contexto de sessão antes de chegar ao LLM."
     },
     "execution": {
       "title": "Execução Multi-Etapas",
@@ -75,7 +75,7 @@
         "features": [
           "Cofre Obsidian pré-estruturado (FABRIC)",
           "4 templates de agentes (Orchestrator, Writer, Reviewer, Analyst)",
-          "Wizards de identidade e voz de marca + Brand Worksheet interativo",
+          "Wizards de identidade e Venture Voice + Venture Worksheet interativo",
           "6 workflows de competências (propostas, campanhas, social, revisões, conteúdo, pesquisa)",
           "3 métodos partilhados (análise competitiva, reciclagem de conteúdo, framework de decisão)",
           "Protocolo CLAUDE.md melhorado (155 linhas)",
@@ -124,7 +124,7 @@
             "Chamada de configuração de 1 hora com o criador",
             "Estrutura de Knowledge Base personalizada para o seu negócio",
             "Definições de agentes adaptadas às suas necessidades",
-            "Configuração da voz da marca",
+            "Configuração da Venture Voice",
             "Primeiro workflow montado em conjunto",
             "Suporte prioritário por e-mail durante 30 dias"
           ]
@@ -170,7 +170,7 @@
         "Elaborar estratégias de go-to-market para novos spin-offs",
         "Gerar relatórios para investidores de cada empreendimento separadamente",
         "Investigar novas oportunidades de mercado em todos os setores",
-        "Manter diretrizes de marca unificadas entre equipas distintas"
+        "Manter diretrizes de Venture unificadas entre equipas distintas"
       ]
     },
     "engineering": {
@@ -231,8 +231,8 @@
       },
       "story": {
         "title": "Narrativa (Story)",
-        "promise": "A sua voz de marca, a sua autoridade, o seu discurso — amplificados em todos os canais sem escrever uma única linha de raiz. O sistema comunica por si, porque aprendeu consigo.",
-        "technical": "As camadas Brand e Creations contêm a sua identidade vocal (vocabulário, tom, regras de formatação, exemplos). Todo o output — post no LinkedIn, proposta, relatório para investidores — passa por um agente de controlo de qualidade (QA) que garante consistência de marca antes da entrega."
+        "promise": "A sua Venture Voice, a sua autoridade, o seu discurso — amplificados em todos os canais sem escrever uma única linha de raiz. O sistema comunica por si, porque aprendeu consigo.",
+        "technical": "As camadas Venture e Creations contêm a sua identidade vocal (vocabulário, tom, regras de formatação, exemplos). Todo o output — post no LinkedIn, proposta, relatório para investidores — passa por um agente de controlo de qualidade (QA) que garante consistência de venture antes da entrega."
       }
     },
     "footer": "Construído a partir de uma década de experiência prática em arquitetura, imobiliário e empreendedorismo.<br />Agora codificado num motor de IA pronto a implementar em dias."
@@ -261,7 +261,7 @@
   "demoVideo": {
     "header": {
       "title": "Veja em Ação",
-      "subtitle": "Observe como o RealizeOS transforma uma única mensagem em trabalho coordenado de agentes — a partir da sua base de conhecimento, na sua voz de marca."
+      "subtitle": "Observe como o RealizeOS transforma uma única mensagem em trabalho coordenado de agentes — a partir da sua base de conhecimento, na sua Venture Voice."
     },
     "comingSoon": "Vídeo de demonstração brevemente",
     "duration": "Demonstração de 3 minutos"
@@ -292,7 +292,7 @@
         "industry": "Consultoria de Empreendimentos",
         "metric": "5 empreendimentos, 1 operador",
         "quote": "Dirijo arquitetura, imobiliário, consultoria, conteúdo e um produto SaaS — tudo a partir de uma sala de controlo. O sistema não só apoia — opera ativamente.",
-        "technical": "Deploy completo do FABRIC: a camada Foundations contém identidade, voz de marca e documentos de estratégia. A camada Agents coordena 6 agentes especializados em todos os empreendimentos. A camada Brand assegura consistência vocal em 4 marcas distintas. A camada Routines automatiza relatórios semanais, publicações no LinkedIn e atualizações a investidores. A camada Intelligence monitoriza KPIs transversais. A camada Creations produz propostas para clientes, artigos de blog e pitch decks."
+        "technical": "Deploy completo do FABRIC: a camada Foundations contém identidade, Venture Voice e documentos de estratégia. A camada Agents coordena 6 agentes especializados em todos os empreendimentos. A camada Venture assegura consistência vocal em 4 ventures distintos. A camada Routines automatiza relatórios semanais, publicações no LinkedIn e atualizações a investidores. A camada Intelligence monitoriza KPIs transversais. A camada Creations produz propostas para clientes, artigos de blog e pitch decks."
       }
     }
   },
@@ -387,7 +387,7 @@
       },
       {
         "title": "Defina a Sua Identidade e Negócio",
-        "description": "Preencha a identidade pessoal, identidade de marca e regras de voz através de templates guiados.",
+        "description": "Preencha a identidade pessoal, Venture Identity e regras de voz através de templates guiados.",
         "time": "5-10 min"
       },
       {
@@ -421,8 +421,8 @@
             "description": "Orchestrator, Writer, Reviewer, Analyst. Cada um é um ficheiro Markdown que personaliza para o seu negócio."
           },
           {
-            "title": "Templates de marca para preencher + Brand Worksheet",
-            "description": "brand-identity.md, brand-voice.md, e o wizard interativo de 130 linhas. Defina a sua marca em minutos."
+            "title": "Templates de Venture para preencher + Venture Worksheet",
+            "description": "venture-identity.md, venture-voice.md, e o wizard interativo de 130 linhas. Defina o seu Venture em minutos."
           },
           {
             "title": "6 workflows de competências",
@@ -530,7 +530,7 @@
       },
       {
         "question": "E se precisar de ajuda na configuração?",
-        "answer": "<p>O pacote de Acompanhamento ($499) inclui uma chamada de 1 hora onde configuramos o sistema juntos — voz de marca, agentes, primeiro workflow, tudo. Após a compra, recebe uma checklist de preparação detalhada. Também pode contactar por e-mail a qualquer momento.</p>"
+        "answer": "<p>O pacote de Acompanhamento ($499) inclui uma chamada de 1 hora onde configuramos o sistema juntos — Venture Voice, agentes, primeiro workflow, tudo. Após a compra, recebe uma checklist de preparação detalhada. Também pode contactar por e-mail a qualquer momento.</p>"
       },
       {
         "question": "Recebo atualizações?",
@@ -538,11 +538,11 @@
       },
       {
         "question": "Posso gerir vários negócios com um único sistema?",
-        "answer": "<p>Sem dúvida. O RealizeOS foi construído para operadores multi-empreendimento. Cada negócio tem os seus agentes isolados, Knowledge Base e voz de marca. Um motor, quantos empreendimentos precisar.</p>"
+        "answer": "<p>Sem dúvida. O RealizeOS foi construído para operadores multi-venture. Cada negócio tem os seus agentes isolados, Knowledge Base e Venture Voice. Um motor, quantos ventures precisar.</p>"
       },
       {
         "question": "O que acontece depois de comprar?",
-        "answer": "<p>Imediatamente: acesso para descarregar o seu pacote (Lite) ou o repositório GitHub (Full). E-mail de boas-vindas com guia de configuração e vídeo de demonstração.</p><p>Comunidade: Grupo Builders no Telegram e comunidade WhatsApp.</p><p>Ao longo da semana seguinte, receberá e-mails de onboarding com dicas para definir a sua marca, personalizar agentes e construir o seu primeiro workflow.</p>"
+        "answer": "<p>Imediatamente: acesso para descarregar o seu pacote (Lite) ou o repositório GitHub (Full). E-mail de boas-vindas com guia de configuração e vídeo de demonstração.</p><p>Comunidade: Grupo Builders no Telegram e comunidade WhatsApp.</p><p>Ao longo da semana seguinte, receberá e-mails de onboarding com dicas para definir o seu Venture, personalizar agentes e construir o seu primeiro workflow.</p>"
       },
       {
         "question": "Existe política de reembolso?",

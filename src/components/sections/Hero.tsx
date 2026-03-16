@@ -74,9 +74,19 @@ export function Hero() {
             <Button asChild size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-cta-full' })}>
               <a href={STRIPE_URLS.full}>{t('hero.cta_full')}</a>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="#fabric">{t('hero.cta_how')}</a>
+            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-wizard-cta' })}>
+              <a href="/wizard">✨ Get 3 Free Venture Files</a>
             </Button>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="mt-4 flex justify-center lg:justify-start">
+            <a
+              href="#fabric"
+              className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-yellow"
+            >
+              {t('hero.cta_how')}
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
+            </a>
           </motion.div>
 
           <motion.div

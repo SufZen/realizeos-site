@@ -131,10 +131,20 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
       <DialogContent className="flex max-h-[90vh] w-full max-w-2xl flex-col gap-0 overflow-hidden border-border bg-card p-0">
         {/* Header */}
         <div className="border-b border-border px-6 py-4">
-          <DialogTitle className="text-base font-semibold">Brand Wizard</DialogTitle>
+          <DialogTitle className="text-base font-semibold">Venture Wizard</DialogTitle>
           <p className="mt-0.5 text-xs text-muted-foreground">
             Fill in your answers — three files will be generated, ready to paste into your vault.
           </p>
+          {/* AI wizard promo */}
+          <a
+            href="/wizard"
+            className="mt-3 flex items-center gap-2 rounded-lg border border-brand-yellow/20 bg-brand-yellow/5 px-3 py-2 text-xs text-muted-foreground transition-colors hover:border-brand-yellow/40 hover:text-foreground"
+          >
+            <span className="text-brand-yellow">✨</span>
+            <span>
+              <strong className="text-foreground">New:</strong> Upload your docs and let AI fill this for you →
+            </span>
+          </a>
           {/* Progress steps */}
           <div className="mt-4 flex gap-1">
             {STEPS.map((s) => (
@@ -357,16 +367,16 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                   filename="identity.md"
                 />
                 <ExportFile
-                  label="systems/my-business-1/F-foundations/brand-identity.md"
+                  label="systems/my-business-1/F-foundations/venture-identity.md"
                   sublabel="Your business positioning — place in systems/my-business-1/F-foundations/"
                   content={brandIdentityMd}
-                  filename="brand-identity.md"
+                  filename="venture-identity.md"
                 />
                 <ExportFile
-                  label="systems/my-business-1/F-foundations/brand-voice.md"
+                  label="systems/my-business-1/F-foundations/venture-voice.md"
                   sublabel="How your content should sound — place in systems/my-business-1/F-foundations/"
                   content={brandVoiceMd}
-                  filename="brand-voice.md"
+                  filename="venture-voice.md"
                 />
               </div>
               <p className="mt-4 text-center text-xs text-muted-foreground">

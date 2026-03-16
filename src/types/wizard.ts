@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
- * AI Brand Wizard — Shared Types & Schema
+ * AI Venture Wizard — Shared Types & Schema
  * ───────────────────────────────────────────── */
 
 // ── Wizard field schema (maps 1-to-1 with generate-markdown.ts) ──
@@ -11,7 +11,7 @@ export interface BrandField {
   placeholder: string;
   section: 'identity' | 'business' | 'voice' | 'examples';
   /** Which output file this field maps to */
-  outputFile: 'identity.md' | 'brand-identity.md' | 'brand-voice.md';
+  outputFile: 'identity.md' | 'venture-identity.md' | 'venture-voice.md';
 }
 
 export interface BrandFieldValues {
@@ -22,7 +22,7 @@ export interface BrandFieldValues {
   commPrefs: string;
   personalValues: string;
   antiPatterns: string;
-  // Step 2: Your Business → brand-identity.md
+  // Step 2: Your Business → venture-identity.md
   bizNameTagline: string;
   mission: string;
   audience: string;
@@ -31,13 +31,13 @@ export interface BrandFieldValues {
   positioning: string;
   offerings: string;
   brandPersonality: string;
-  // Step 3: Your Voice → brand-voice.md
+  // Step 3: Your Voice → venture-voice.md
   tone: string;
   vocabulary: string;
   formatting: string;
   dosDonts: string;
   channelAdjustments: string;
-  // Step 4: Examples → appended to brand-voice.md
+  // Step 4: Examples → appended to venture-voice.md
   goodExample: string;
   badExample: string;
   workflows: string;
@@ -112,6 +112,7 @@ export type WizardPhase =
   | 'analyzing'    // Step 2: LLM is processing
   | 'conversation' // Step 3: Conversational gap-fill
   | 'review'       // Step 4: Review & refine
+  | 'email-gate'   // Step 4b: Email capture (lead magnet gate)
   | 'export';      // Step 5: Generate & download
 
 // ── Session state (persisted in localStorage) ──
@@ -139,22 +140,22 @@ export const BRAND_FIELDS: BrandField[] = [
   { key: 'personalValues', label: 'Personal Values', hint: 'Top 3 values that drive your decisions', placeholder: 'E.g. Ownership, Clarity, Results', section: 'identity', outputFile: 'identity.md' },
   { key: 'antiPatterns', label: 'Anti-Patterns', hint: 'What frustrates you', placeholder: 'E.g. Long preambles, jargon, too many questions at once', section: 'identity', outputFile: 'identity.md' },
   // Business
-  { key: 'bizNameTagline', label: 'Business Name & Tagline', hint: 'What you do in one sentence', placeholder: 'E.g. TechFlow — Self-serve analytics for mid-market teams', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'mission', label: 'Mission', hint: 'The problem you solve', placeholder: 'E.g. We make data analytics accessible to every team', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'audience', label: 'Ideal Customer', hint: 'Picture one specific person', placeholder: 'E.g. A VP of Analytics at a 200-person company', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'values', label: 'Core Values', hint: '3-5 values with examples', placeholder: 'E.g. Transparency, Speed, Simplicity', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'uvp', label: 'Unique Value Proposition', hint: '"We are the only [X] that [Y] for [Z]"', placeholder: 'E.g. The only analytics platform that…', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'positioning', label: 'Market Positioning', hint: 'What you ARE vs what you\'re NOT', placeholder: 'E.g. We ARE the self-serve option. We are NOT an enterprise suite.', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'offerings', label: 'Key Offerings', hint: '2-4 products/services', placeholder: 'E.g. 1) Platform — $99/mo. 2) Enterprise — custom pricing', section: 'business', outputFile: 'brand-identity.md' },
-  { key: 'brandPersonality', label: 'Brand Personality', hint: '3-5 adjectives for your brand', placeholder: 'E.g. Professional, Approachable, Bold', section: 'business', outputFile: 'brand-identity.md' },
+  { key: 'bizNameTagline', label: 'Business Name & Tagline', hint: 'What you do in one sentence', placeholder: 'E.g. TechFlow — Self-serve analytics for mid-market teams', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'mission', label: 'Mission', hint: 'The problem you solve', placeholder: 'E.g. We make data analytics accessible to every team', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'audience', label: 'Ideal Customer', hint: 'Picture one specific person', placeholder: 'E.g. A VP of Analytics at a 200-person company', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'values', label: 'Core Values', hint: '3-5 values with examples', placeholder: 'E.g. Transparency, Speed, Simplicity', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'uvp', label: 'Unique Value Proposition', hint: '"We are the only [X] that [Y] for [Z]"', placeholder: 'E.g. The only analytics platform that…', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'positioning', label: 'Market Positioning', hint: 'What you ARE vs what you\'re NOT', placeholder: 'E.g. We ARE the self-serve option. We are NOT an enterprise suite.', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'offerings', label: 'Key Offerings', hint: '2-4 products/services', placeholder: 'E.g. 1) Platform — $99/mo. 2) Enterprise — custom pricing', section: 'business', outputFile: 'venture-identity.md' },
+  { key: 'brandPersonality', label: 'Venture Personality', hint: '3-5 adjectives for your venture', placeholder: 'E.g. Professional, Approachable, Bold', section: 'business', outputFile: 'venture-identity.md' },
   // Voice
-  { key: 'tone', label: 'Tone of Voice', hint: 'How your brand sounds', placeholder: 'E.g. Direct but warm. Like a senior engineer who communicates well.', section: 'voice', outputFile: 'brand-voice.md' },
-  { key: 'vocabulary', label: 'Vocabulary', hint: 'Words you use vs avoid', placeholder: 'USE: build, ship, clear. AVOID: synergy, disrupt, game-changing', section: 'voice', outputFile: 'brand-voice.md' },
-  { key: 'formatting', label: 'Formatting Rules', hint: 'Sentence length, lists, emoji usage', placeholder: 'E.g. Short sentences. Bullet points. No emojis. Active voice.', section: 'voice', outputFile: 'brand-voice.md' },
-  { key: 'dosDonts', label: "Do's and Don'ts", hint: 'Rules you always/never follow', placeholder: 'ALWAYS: Lead with benefit. NEVER: Passive voice, jargon', section: 'voice', outputFile: 'brand-voice.md' },
-  { key: 'channelAdjustments', label: 'Channel Adjustments', hint: 'Tone shift per platform', placeholder: 'E.g. LinkedIn: formal. Email: brief. Social: energetic.', section: 'voice', outputFile: 'brand-voice.md' },
+  { key: 'tone', label: 'Tone of Voice', hint: 'How your venture sounds', placeholder: 'E.g. Direct but warm. Like a senior engineer who communicates well.', section: 'voice', outputFile: 'venture-voice.md' },
+  { key: 'vocabulary', label: 'Vocabulary', hint: 'Words you use vs avoid', placeholder: 'USE: build, ship, clear. AVOID: synergy, disrupt, game-changing', section: 'voice', outputFile: 'venture-voice.md' },
+  { key: 'formatting', label: 'Formatting Rules', hint: 'Sentence length, lists, emoji usage', placeholder: 'E.g. Short sentences. Bullet points. No emojis. Active voice.', section: 'voice', outputFile: 'venture-voice.md' },
+  { key: 'dosDonts', label: "Do's and Don'ts", hint: 'Rules you always/never follow', placeholder: 'ALWAYS: Lead with benefit. NEVER: Passive voice, jargon', section: 'voice', outputFile: 'venture-voice.md' },
+  { key: 'channelAdjustments', label: 'Channel Adjustments', hint: 'Tone shift per platform', placeholder: 'E.g. LinkedIn: formal. Email: brief. Social: energetic.', section: 'voice', outputFile: 'venture-voice.md' },
   // Examples
-  { key: 'goodExample', label: 'Good Example', hint: 'A paragraph that sounds like you', placeholder: '"Most AI setups are a mess of disconnected chatbots…"', section: 'examples', outputFile: 'brand-voice.md' },
-  { key: 'badExample', label: 'Bad Example', hint: 'A paragraph that sounds nothing like you', placeholder: '"We leverage cutting-edge solutions to disrupt paradigms…"', section: 'examples', outputFile: 'brand-voice.md' },
-  { key: 'workflows', label: 'Weekly Workflows', hint: '3 tasks you repeat every week', placeholder: 'E.g. LinkedIn posts, client proposals, competitor research', section: 'examples', outputFile: 'brand-voice.md' },
+  { key: 'goodExample', label: 'Good Example', hint: 'A paragraph that sounds like you', placeholder: '"Most AI setups are a mess of disconnected chatbots…"', section: 'examples', outputFile: 'venture-voice.md' },
+  { key: 'badExample', label: 'Bad Example', hint: 'A paragraph that sounds nothing like you', placeholder: '"We leverage cutting-edge solutions to disrupt paradigms…"', section: 'examples', outputFile: 'venture-voice.md' },
+  { key: 'workflows', label: 'Weekly Workflows', hint: '3 tasks you repeat every week', placeholder: 'E.g. LinkedIn posts, client proposals, competitor research', section: 'examples', outputFile: 'venture-voice.md' },
 ];

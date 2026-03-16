@@ -22,7 +22,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'What if I need help setting up?',
-    answer: '<p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — brand voice, agents, first workflow, everything. After purchase, you\'ll receive a detailed prep checklist. You can also reach out via email at any time.</p>',
+    answer: '<p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — venture voice, agents, first workflow, everything. After purchase, you\'ll receive a detailed prep checklist. You can also reach out via email at any time.</p>',
   },
   {
     question: 'Do I get updates?',
@@ -30,11 +30,11 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'Can I manage multiple businesses with one system?',
-    answer: '<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and brand voice. One engine, as many ventures as you need.</p>',
+    answer: '<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and venture voice. One engine, as many ventures as you need.</p>',
   },
   {
     question: 'What happens after I purchase?',
-    answer: '<p>Immediately: you\'ll get access to download your package (Lite) or the GitHub repo (Full). You\'ll also receive a welcome email with your setup guide and a video walkthrough.</p><p>Join the community: Telegram Builders Group &amp; WhatsApp Community</p><p>Over the next week, you\'ll get onboarding emails with tips for defining your brand, customizing agents, and building your first workflow.</p>',
+    answer: '<p>Immediately: you\'ll get access to download your package (Lite) or the GitHub repo (Full). You\'ll also receive a welcome email with your setup guide and a video walkthrough.</p><p>Join the community: Telegram Builders Group &amp; WhatsApp Community</p><p>Over the next week, you\'ll get onboarding emails with tips for defining your venture, customizing agents, and building your first workflow.</p>',
   },
   {
     question: 'Is there a refund policy?',

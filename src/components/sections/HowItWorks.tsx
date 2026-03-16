@@ -67,7 +67,7 @@ export function HowItWorks({ onOpenWizard }: HowItWorksProps) {
                   className="mx-auto mt-3 border-brand-yellow/40 text-[10px] text-brand-yellow hover:bg-brand-yellow/10"
                   onClick={onOpenWizard}
                 >
-                  Launch Brand Wizard →
+                  Launch Venture Wizard →
                 </Button>
               )}
             </div>

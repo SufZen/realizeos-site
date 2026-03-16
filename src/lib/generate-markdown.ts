@@ -6,7 +6,7 @@ export interface WizardState {
   commPrefs: string;
   personalValues: string;
   antiPatterns: string;
-  // Step 2: Your Business → systems/my-business-1/F-foundations/brand-identity.md
+  // Step 2: Your Business → systems/my-business-1/F-foundations/venture-identity.md
   bizNameTagline: string;
   mission: string;
   audience: string;
@@ -15,13 +15,13 @@ export interface WizardState {
   positioning: string;
   offerings: string;
   brandPersonality: string;
-  // Step 3: Your Voice → systems/my-business-1/F-foundations/brand-voice.md
+  // Step 3: Your Voice → systems/my-business-1/F-foundations/venture-voice.md
   tone: string;
   vocabulary: string;
   formatting: string;
   dosDonts: string;
   channelAdjustments: string;
-  // Step 4: Voice Examples → appended to brand-voice.md
+  // Step 4: Voice Examples → appended to venture-voice.md
   goodExample: string;
   badExample: string;
   workflows: string;
@@ -66,7 +66,7 @@ ${fill(s.antiPatterns)}
 }
 
 export function generateBrandIdentityMd(s: WizardState): string {
-  return `# Brand Identity
+  return `# Venture Identity
 
 This file defines **your business** — how it should look and sound to the world. This guides how all AI agents represent your business.
 
@@ -91,13 +91,13 @@ ${fill(s.positioning)}
 ## Key Offerings
 ${fill(s.offerings)}
 
-## Brand Personality
+## Venture Personality
 ${fill(s.brandPersonality)}
 `;
 }
 
 export function generateBrandVoiceMd(s: WizardState): string {
-  return `# Brand Voice Guide
+  return `# Venture Voice Guide
 
 This document defines how all content should sound. Every AI agent MUST follow these rules.
 
@@ -122,10 +122,10 @@ ${fill(s.dosDonts)}
 ## Voice Examples
 
 ### Good Example
-> ${fill(s.goodExample, '[Paste a paragraph that sounds exactly like your brand]')}
+> ${fill(s.goodExample, '[Paste a paragraph that sounds exactly like your venture]')}
 
 ### Bad Example
-> ${fill(s.badExample, '[Paste a counter-example — what your brand should NOT sound like]')}
+> ${fill(s.badExample, '[Paste a counter-example — what your venture should NOT sound like]')}
 
 ## Channel-Specific Adjustments
 ${fill(s.channelAdjustments)}
