@@ -6,6 +6,7 @@
     "title_highlight": "Intelligently!",
     "description": "Reclaim your time. Turn vision into reality with an AI team that understands your methodology.",
     "cta_full": "Get RealizeOS — $249",
+    "cta_wizard": "Get 3 Free Venture Files",
     "cta_how": "See How It Works",
     "stats": {
       "models": "AI Models",
@@ -27,7 +28,7 @@
     "assembly": {
       "title": "Dynamic Identity Assembly",
       "promise": "It speaks like you, knows your projects, and acts like your best partner. Not a generic chatbot—it is your digital clone.",
-      "technical": "Every response is built using multi-layer prompt assembly. The system dynamically pulls your identity, brand voice, role profile, relevant knowledge (vector search), memory, and session context before hitting the LLM."
+      "technical": "Every response is built using multi-layer prompt assembly. The system dynamically pulls your identity, venture voice, role profile, relevant knowledge (vector search), memory, and session context before hitting the LLM."
     },
     "execution": {
       "title": "Multi-Step Execution",
@@ -129,7 +130,7 @@
             "1-hour setup call with the builder",
             "Custom KB scaffolding for your business",
             "Agent definitions tailored to your needs",
-            "Brand voice configuration",
+            "Venture voice configuration",
             "First skill workflow set up together",
             "Priority email support for 30 days"
           ]
@@ -176,7 +177,7 @@
         "Draft go-to-market strategies for new spin-offs",
         "Generate investor updates for each venture separately",
         "Research new market opportunities across all verticals",
-        "Maintain unified branding rules across discrete teams"
+        "Maintain unified venture rules across discrete teams"
       ]
     },
     "engineering": {
@@ -237,8 +238,8 @@
       },
       "story": {
         "title": "Story",
-        "promise": "Your brand voice, your authority, your narrative — amplified across every channel without you writing a single draft. The system speaks as you, because it learned from you.",
-        "technical": "The Brand and Creations layers hold your voice identity (vocabulary, tone, formatting rules, examples). Every output — LinkedIn post, proposal, investor update — runs through a quality-assurance agent that enforces brand consistency before delivery."
+        "promise": "Your venture voice, your authority, your narrative — amplified across every channel without you writing a single draft. The system speaks as you, because it learned from you.",
+        "technical": "The Venture and Creations layers hold your voice identity (vocabulary, tone, formatting rules, examples). Every output — LinkedIn post, proposal, investor update — runs through a quality-assurance agent that enforces venture consistency before delivery."
       }
     },
     "footer": "Built from a decade of hands-on architecture, real estate, and venture work.<br />Now encoded into an AI engine you can deploy in days."
@@ -267,7 +268,7 @@
   "demoVideo": {
     "header": {
       "title": "See It in Action",
-      "subtitle": "Watch how RealizeOS turns a single message into coordinated agent work — from your knowledge base, in your brand voice."
+      "subtitle": "Watch how RealizeOS turns a single message into coordinated agent work — from your knowledge base, in your venture voice."
     },
     "comingSoon": "Demo video coming soon",
     "duration": "3 min walkthrough"
@@ -298,7 +299,7 @@
         "industry": "Venture Consulting",
         "metric": "5 ventures, 1 operator",
         "quote": "I run architecture, real estate, consulting, content, and a SaaS product — all from one control room. The system doesn't just assist, it operates.",
-        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, brand voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brain layer ensures consistent voice across 4 different brands. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Insights layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
+        "technical": "Full FABRIC stack deployment: Foundations layer holds identity, venture voice, and strategy documents. The Agent layer coordinates 6 specialized agents across all ventures. Brain layer ensures consistent voice across 4 different ventures. Routines layer automates weekly reports, LinkedIn posts, and investor updates. Insights layer tracks cross-venture KPIs. Creations layer outputs client proposals, blog posts, and pitch decks."
       }
     }
   },
@@ -393,7 +394,7 @@
       },
       {
         "title": "Define Who You Are & Your Business",
-        "description": "Fill in your personal identity, brand identity, and voice rules from guided templates. Use the Brand Worksheet to make it easy.",
+        "description": "Fill in your personal identity, venture identity, and voice rules from guided templates. Use the Venture Worksheet to make it easy.",
         "time": "5-10 min"
       },
       {
@@ -427,8 +428,8 @@
             "description": "Orchestrator, Writer, Reviewer, Analyst. Each is a markdown file you customize for your business."
           },
           {
-            "title": "Fill-in-the-blank brand templates + Brand Worksheet",
-            "description": "brand-identity.md, brand-voice.md, and the interactive 130-line Brand Worksheet wizard. Define your brand in minutes."
+            "title": "Fill-in-the-blank venture templates + Venture Worksheet",
+            "description": "venture-identity.md, venture-voice.md, and the interactive 130-line Venture Worksheet wizard. Define your venture in minutes."
           },
           {
             "title": "6 skill workflows",
@@ -536,7 +537,7 @@
       },
       {
         "question": "What if I need help setting up?",
-        "answer": "<p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — brand voice, agents, first workflow, everything. After purchase, you'll receive a detailed prep checklist. You can also reach out via email at any time.</p>"
+        "answer": "<p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — venture voice, agents, first workflow, everything. After purchase, you'll receive a detailed prep checklist. You can also reach out via email at any time.</p>"
       },
       {
         "question": "Do I get updates?",
@@ -544,11 +545,11 @@
       },
       {
         "question": "Can I manage multiple businesses with one system?",
-        "answer": "<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and brand voice. One engine, as many ventures as you need.</p>"
+        "answer": "<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and venture voice. One engine, as many ventures as you need.</p>"
       },
       {
         "question": "What happens after I purchase?",
-        "answer": "<p>Immediately: you'll get access to download your package (Lite) or the GitHub repo (Full). You'll also receive a welcome email with your setup guide and a video walkthrough.</p><p>Join the community: Telegram Builders Group &amp; WhatsApp Community</p><p>Over the next week, you'll get onboarding emails with tips for defining your brand, customizing agents, and building your first workflow.</p>"
+        "answer": "<p>Immediately: you'll get access to download your package (Lite) or the GitHub repo (Full). You'll also receive a welcome email with your setup guide and a video walkthrough.</p><p>Join the community: Telegram Builders Group &amp; WhatsApp Community</p><p>Over the next week, you'll get onboarding emails with tips for defining your venture, customizing agents, and building your first workflow.</p>"
       },
       {
         "question": "Is there a refund policy?",
@@ -598,10 +599,10 @@
       },
       "content": {
         "title": "Content & Communication",
-        "description": "Produce brand-consistent content across every channel without writing drafts.",
+        "description": "Produce venture-consistent content across every channel without writing drafts.",
         "items": [
           "Generate LinkedIn posts, newsletters, and proposals in your voice",
-          "Maintain brand consistency across all outputs automatically",
+          "Maintain venture consistency across all outputs automatically",
           "Draft client communications and investor updates",
           "Repurpose content across formats and channels"
         ]
@@ -621,7 +622,7 @@
         "description": "Run multiple businesses from one control room without losing context.",
         "items": [
           "Switch between ventures with full context preserved",
-          "Maintain separate brand voices and knowledge bases",
+          "Maintain separate venture voices and knowledge bases",
           "Generate per-venture reports and investor updates",
           "Coordinate cross-venture strategy and operations"
         ]
@@ -647,7 +648,7 @@
       "nextStepsItems": [
         "Choose your edition (Lite / Full / Setup)",
         "Get instant access via Google Drive",
-        "Define your brand identity (5-10 min)",
+        "Define your venture identity (5-10 min)",
         "First AI conversation within the hour"
       ],
       "questionsTitle": "Questions & Answers",
@@ -728,7 +729,7 @@
   "pres": {
     "welcome": {
       "title": "Your AI Team Is Ready",
-      "hook": "One engine that remembers your brand.\nKnows your projects.\nExecutes like a coordinated team.\nNo subscriptions.\nNo duct-taping.\nProduction-grade AI ops you own."
+      "hook": "One engine that remembers your venture.\nKnows your projects.\nExecutes like a coordinated team.\nNo subscriptions.\nNo duct-taping.\nProduction-grade AI ops you own."
     },
     "stats": {
       "models": "20+",
@@ -804,7 +805,7 @@
     "lite": {
       "vault": { "title": "FABRIC Vault", "desc": "30 pre-structured files. Open it and you have a working knowledge base." },
       "agents": { "title": "4 AI Agents", "desc": "Orchestrator, Writer, Reviewer, Analyst — customize in minutes." },
-      "brand": { "title": "Brand Wizards", "desc": "Identity, voice, and the 130-line Brand Worksheet." },
+      "brand": { "title": "Venture Wizards", "desc": "Identity, voice, and the 130-line Venture Worksheet." },
       "skills": { "title": "6 Skill Workflows", "desc": "Proposals, campaigns, social, reviews, content, research." },
       "methods": { "title": "3 Shared Methods", "desc": "Competitive analysis, content repurposing, decision framework." },
       "claude": { "title": "CLAUDE.md Protocol", "desc": "155 lines that make Claude Code understand your entire business." },
@@ -814,7 +815,7 @@
       "items": [
         "Pick your edition — 30 seconds",
         "Instant access — Google Drive link arrives immediately",
-        "Define your brand — fill in the templates (5-10 min)",
+        "Define your venture — fill in the templates (5-10 min)",
         "First conversation — Writer drafts, Reviewer checks, in YOUR voice",
         "Build your system — add knowledge, workflows, tools. Week 1."
       ]
@@ -826,7 +827,7 @@
       "knowledge": "Turn scattered documents into an AI-searchable knowledge vault. Automate compliance checks that used to take hours. Build operational playbooks that execute themselves — while you sleep.",
       "content": "Brand-consistent content across every channel. LinkedIn, newsletters, proposals — in YOUR voice.",
       "research": "Market analysis at machine speed. Financial docs, competitive landscapes, executive summaries.",
-      "multiventure": "Run 3 ventures with the mental clarity of running 1. Switch contexts instantly. Separate brands, unified control. This isn't theory — it's how we run 5 businesses from one dashboard."
+      "multiventure": "Run 3 ventures with the mental clarity of running 1. Switch contexts instantly. Separate ventures, unified control. This isn't theory — it's how we run 5 businesses from one dashboard."
     },
     "pricing": {
       "urgency": "Launch pricing ends March 31st.\nThese prices will never come back.",

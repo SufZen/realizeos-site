@@ -6,6 +6,7 @@
     "title_highlight": "בצורה חכמה שחוסכת עבודה שחורה!",
     "description": "קחו בחזרה את הזמן שלכם. הפכו ויז'ן לפרודקשן עם AI Team שמבין את המיינדסט והמתודולוגיה שלכם.",
     "cta_full": "קבלו את RealizeOS ב- $249",
+    "cta_wizard": "קבלו 3 קבצי Venture בחינם",
     "cta_how": "ראו איך זה עובד (Demo)",
     "stats": {
       "models": "AI Models",
@@ -27,7 +28,7 @@
     "assembly": {
       "title": "הרכבת זהות דינמית ב-Runtime",
       "promise": "המערכת מדברת בשפה שלכם, מכירה את הסטטוס של הפרויקטים שלכם, ופועלת כמו ה-Co-founder הוירטואלי שלכם. זה לא סתם צ׳אטבוט — זה ה-Digital Twin שלכם.",
-      "technical": "כל response נבנה על ידי הרכבת Prompt מרובת שכבות. המערכת מושכת דינמית את הקונטקסט העסקי, Brand Voice, הבנת תפקיד (Role), ידע רלוונטי (Vector Search), Memory והקשר שיחה (Conversation Context) — עוד לפני הפנייה ל-LLM."
+      "technical": "כל response נבנה על ידי הרכבת Prompt מרובת שכבות. המערכת מושכת דינמית את הקונטקסט העסקי, Venture Voice, הבנת תפקיד (Role), ידע רלוונטי (Vector Search), Memory והקשר שיחה (Conversation Context) — עוד לפני הפנייה ל-LLM."
     },
     "execution": {
       "title": "Multi-Step Execution",
@@ -78,7 +79,7 @@
         "features": [
           "Pre-built Obsidian Vault (ארכיטקטורת FABRIC)",
           "4 תבניות ל-Agents וירטואליים (Orchestrator, Writer, Reviewer, Analyst)",
-          "וויזארדים ל-Brand Identity ו-Voice & Tone + גיליון עבודה אינטראקטיבי",
+          "וויזארדים ל-Venture Identity ו-Voice & Tone + גיליון עבודה אינטראקטיבי",
           "6 תהליכי Workflows סטנדרטיים (Proposals, קמפיינים, סושיאל, אישורים, תוכן, מחקר)",
           "3 מתודולוגיות משותפות (Competitive Analysis, Content Repurposing, Decision Framework)",
           "פרוטוקול CLAUDE.md מתקדם (155 שורות של Context Injection)",
@@ -129,7 +130,7 @@
             "שיחת Setup של שעה מלאה עם היוצרים של המערכת",
             "הקמה בסיסית של ה-Knowledge Base עבור הצרכים העסקיים שלכם",
             "Setup ותרגום הגדרות ל-Agents שלכם",
-            "קונפיגורציית Brand Voice (טון דיבור) שישמע בדיוק כמו שצריך",
+            "קונפיגורציית Venture Voice (טון דיבור) שישמע בדיוק כמו שצריך",
             "קינפוג ובניית ה-Workflow / Pipeline הראשון לייב ביחד",
             "תעדוף (Priority Email Support) מלא ל-30 יום"
           ]
@@ -237,8 +238,8 @@
       },
       "story": {
         "title": "סיפור (Story)",
-        "promise": "הקול המותגי שלכם, הסמכות שלכם, הנרטיב שלכם — מוגברים בכל ערוץ בלי שתכתבו שורה אחת. המערכת מדברת בשמכם, כי היא למדה מכם.",
-        "technical": "שכבות ה-Brand וה-Creations מחזיקות את זהות הקול שלכם (אוצר מילים, טון, גריד עיצובי, דוגמאות). כל Output — פוסט בלינקדאין, הצעת מחיר, עדכון משקיעים — עובר דרך סוכן QA (Reviewer) שאוכף אחידות מותגית לפני ה-Delivery."
+        "promise": "הקול של ה-Venture שלכם, הסמכות שלכם, הנרטיב שלכם — מוגברים בכל ערוץ בלי שתכתבו שורה אחת. המערכת מדברת בשמכם, כי היא למדה מכם.",
+        "technical": "שכבות ה-Venture וה-Creations מחזיקות את זהות הקול שלכם (אוצר מילים, טון, גריד עיצובי, דוגמאות). כל Output — פוסט בלינקדאין, הצעת מחיר, עדכון משקיעים — עובר דרך סוכן QA (Reviewer) שאוכף אחידות מותגית לפני ה-Delivery."
       }
     },
     "footer": "נבנה מעשור של ניסיון מעשי באדריכלות, נדל\"ן ויזמות.<br />מקודד עכשיו לתוך מנוע AI שניתן לפרוס תוך ימים."
@@ -393,7 +394,7 @@
       },
       {
         "title": "הגדירו Voice, Tone \u0026 Identity",
-        "description": "מלאו מסמכי זהות אישית, רגולציות מותג (Brand Guidelines), ואוריינטציה דרך אשפי המערכת.",
+        "description": "מלאו מסמכי זהות אישית, Venture Guidelines, ואוריינטציה דרך אשפי המערכת.",
         "time": "5-10 דקות"
       },
       {
@@ -428,7 +429,7 @@
           },
           {
             "title": "וויזארדים ל-Voice & Tone ו-Identity",
-            "description": "brand-identity.md, brand-voice.md, ותבנית-על לעיצוב הזהות בת 130 שורות. לקנפג את ה-Brand Positioning שלכם בעשר דקות טס אל ה-Agents."
+            "description": "venture-identity.md, venture-voice.md, ותבנית-על לעיצוב הזהות בת 130 שורות. לקנפג את ה-Venture Positioning שלכם בעשר דקות טס אל ה-Agents."
           },
           {
             "title": "6 תהליכי Runbooks (ליבת Skills)",
@@ -444,7 +445,7 @@
           },
           {
             "title": "מדריך Onboarding שלב-אחר-שלב",
-            "description": "15 דקות מקליק להורדה (Download) עד לקימוט של Output ראשון שעבר את ביקורת ה-Brand Voice של המערכת."
+            "description": "15 דקות מקליק להורדה (Download) עד לקימוט של Output ראשון שעבר את ביקורת ה-Venture Voice של המערכת."
           }
         ]
       },
@@ -568,8 +569,8 @@
     "notReadyTitle": "עוד नहीं מוכנים לעשות Deploy?",
     "notReadyDesc": "ספרו לנו מה צוואר הבקבוק (Bottleneck) מונע האופרציה שלכם היום — נחזור עם עצה מעשית טהורה שנופלת ב-Inbox שלכם (אפס Bullshit במכירות).",
     "thanks": "תודה רבה! נכנס לקריאה ונחזיר תשובה תוך יומיים גג.",
-    "namePlaceholder": "השם המלא או ה-Brand",
-    "emailPlaceholder": "founder@brand.com",
+    "namePlaceholder": "השם המלא או ה-Venture",
+    "emailPlaceholder": "founder@venture.io",
     "challengePlaceholder": "באיזה תהליך Manual אתם 'שורפים' הכי הרבה שעות ו-Overhead כרגע?",
     "sending": "מבצע PUSH...",
     "submit": "שגרו אלינו את האתגר",
@@ -651,7 +652,7 @@
       "nextStepsItems": [
         "בחרו מהדורה (Lite / Full / Setup)",
         "קבלו גישה מיידית דרך Google Drive",
-        "הגדירו את זהות המותג שלכם (5-10 דקות)",
+        "הגדירו את זהות ה-Venture שלכם (5-10 דקות)",
         "שיחת AI ראשונה תוך שעה"
       ],
       "questionsTitle": "שאלות ותשובות",
@@ -732,7 +733,7 @@
   "pres": {
     "welcome": {
       "title": "צוות ה-AI שלכם מוכן",
-      "hook": "מנוע אחד שזוכר את ה-Brand.\nמכיר את הפרויקטים.\nמריץ כמו צוות מתואם.\nבלי מנויים.\nבלי קופי-פייסט.\nמערכת AI Operations ברמת Production שהיא שלכם."
+      "hook": "מנוע אחד שזוכר את ה-Venture.\nמכיר את הפרויקטים.\nמריץ כמו צוות מתואם.\nבלי מנויים.\nבלי קופי-פייסט.\nמערכת AI Operations ברמת Production שהיא שלכם."
     },
     "stats": {
       "models": "20+",
@@ -808,7 +809,7 @@
     "lite": {
       "vault": { "title": "כספת FABRIC", "desc": "30 קבצים מובנים. פתחו את התיקייה — ויש לכם Knowledge Base עובד." },
       "agents": { "title": "4 סוכני AI", "desc": "Orchestrator, Writer, Reviewer, Analyst — התאמה אישית בדקות." },
-      "brand": { "title": "אשפי Brand", "desc": "Identity, Voice, וגיליון העבודה האינטראקטיבי בן 130 שורות." },
+      "brand": { "title": "אשפי Venture", "desc": "Identity, Voice, וגיליון העבודה האינטראקטיבי בן 130 שורות." },
       "skills": { "title": "6 תהליכי Skills", "desc": "הצעות, קמפיינים, סושיאל, אישורים, תוכן, מחקר." },
       "methods": { "title": "3 מתודולוגיות", "desc": "ניתוח תחרותי, המרת תוכן, Framework החלטות." },
       "claude": { "title": "פרוטוקול CLAUDE.md", "desc": "155 שורות שגורמות ל-Claude Code להבין את כל העסק שלכם." },
@@ -818,7 +819,7 @@
       "items": [
         "בחרו מהדורה — 30 שניות",
         "גישה מיידית — לינק ל-Google Drive מגיע ברגע",
-        "הגדירו את ה-Brand — מלאו את התבניות (5-10 דקות)",
+        "הגדירו את ה-Venture — מלאו את התבניות (5-10 דקות)",
         "שיחה ראשונה — Writer מנסח, Reviewer בודק, בקול שלכם",
         "בנו את המערכת — הוסיפו ידע, Workflows, כלים. שבוע 1."
       ]
@@ -828,7 +829,7 @@
     },
     "usecase": {
       "knowledge": "הפכו מסמכים מפוזרים לכספת ידע שה-AI חופר בתוכה. אוטומציה של בדיקות Compliance שלקחו שעות. Playbooks תפעוליים שרצים לבד — בזמן שאתם ישנים.",
-      "content": "תוכן עקבי עם ה-Brand בכל ערוץ. LinkedIn, ניוזלטרים, הצעות — בקול שלכם.",
+      "content": "תוכן עקבי עם ה-Venture בכל ערוץ. LinkedIn, ניוזלטרים, הצעות — בקול שלכם.",
       "research": "ניתוח שוק במהירות מכונה. דוחות פיננסיים, מודיעין תחרותי, סיכומים מנהליים.",
       "multiventure": "נהלו 3 מיזמים עם הצלילות של אחד. החלפת קונטקסט ברגע. מותגים נפרדים, שליטה אחודה. זה לא תיאוריה — ככה אנחנו מנהלים 5 עסקים מ-Dashboard אחד."
     },
