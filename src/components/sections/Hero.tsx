@@ -75,7 +75,7 @@ export function Hero() {
               <a href={STRIPE_URLS.full}>{t('hero.cta_full')}</a>
             </Button>
             <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-wizard-cta' })}>
-              <a href="/wizard">✨ Get 3 Free Venture Files</a>
+              <a href="/wizard">✨ {t('hero.cta_wizard')}</a>
             </Button>
           </motion.div>
 

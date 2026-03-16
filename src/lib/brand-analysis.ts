@@ -155,9 +155,9 @@ export function getWelcomeMessage(
     return {
       id: 'welcome',
       role: 'assistant',
-      content: `🎉 Amazing — I found information for **all ${totalFields} fields** from your documents! Your brand profile is fully populated.\n\nYou can go straight to **Review** to fine-tune anything, or we can refine specific answers together.`,
+      content: `🎉 Amazing — I found information for **all ${totalFields} fields** from your documents! Your venture profile is fully populated.\n\nYou can go straight to **Review** to fine-tune anything, or we can refine specific answers together.`,
       timestamp: Date.now(),
-      suggestions: ['Review my brand profile', 'Let\'s refine some answers'],
+      suggestions: ['Review my venture profile', 'Let\'s refine some answers'],
     };
   }
 
@@ -189,7 +189,7 @@ export function getWelcomeMessage(
   return {
     id: 'welcome',
     role: 'assistant',
-    content: "Let's build your brand profile from scratch. I'll ask you 22 questions across 4 areas: who you are, your business, your voice, and some examples.\n\nLet's start — what's your name and what's your role?",
+    content: "Let's build your venture profile from scratch. I'll ask you 22 questions across 4 areas: who you are, your business, your voice, and some examples.\n\nLet's start — what's your name and what's your role?",
     timestamp: Date.now(),
   };
 }

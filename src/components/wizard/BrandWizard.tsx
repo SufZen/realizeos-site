@@ -270,8 +270,8 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 placeholder="E.g. 1) RealizeOS Lite — $79 AI operating system. 2) RealizeOS Full — $249 self-hosted version. 3) Setup Assistance — hands-on onboarding."
               />
               <Field
-                label="If your brand were a person, pick 3-5 adjectives"
-                hint="These adjectives define your brand personality and guide tone across all content."
+                label="If your venture were a person, pick 3-5 adjectives"
+                hint="These adjectives define your venture personality and guide tone across all content."
                 value={state.brandPersonality}
                 onChange={(v) => set('brandPersonality', v)}
                 placeholder="E.g. Professional, Approachable, Bold, Analytical, Warm"
@@ -286,7 +286,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 The difference between AI that sounds like you and AI that sounds like everyone else.
               </p>
               <Field
-                label="If your brand was a person, how would you describe them?"
+                label="If your venture was a person, how would you describe them?"
                 hint="Primary tone, secondary tone, and a 'sounds like' analogy."
                 value={state.tone}
                 onChange={(v) => set('tone', v)}
@@ -294,7 +294,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
               />
               <Field
                 label="Words you use. Words you avoid."
-                hint="5+ brand words/phrases, and 3+ words that feel off-brand."
+                hint="5+ venture words/phrases, and 3+ words that feel off-venture."
                 value={state.vocabulary}
                 onChange={(v) => set('vocabulary', v)}
                 placeholder="E.g. USE: build, ship, system, real, clear. AVOID: synergy, disrupt, game-changing, revolutionary (overused buzzwords)."

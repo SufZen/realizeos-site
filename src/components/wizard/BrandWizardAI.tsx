@@ -151,7 +151,7 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
       setMessages([{
         id: 'error-fallback',
         role: 'assistant',
-        content: "I had trouble analyzing your documents, but no worries — let's build your brand profile through a quick conversation instead. What's your name and role?",
+        content: "I had trouble analyzing your documents, but no worries — let's build your venture profile through a quick conversation instead. What's your name and role?",
         timestamp: Date.now(),
       }]);
       setPhase('conversation');
@@ -220,7 +220,7 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
         const doneMsg: ChatMessage = {
           id: `done-${Date.now()}`,
           role: 'assistant',
-          content: '🎉 All fields are complete! Your brand profile is ready for review.',
+          content: '🎉 All fields are complete! Your venture profile is ready for review.',
           timestamp: Date.now(),
           suggestions: ['Review my profile'],
         };
