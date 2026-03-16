@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Section } from '@/components/layout/Section';
@@ -8,39 +8,23 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
-/* ------------------------------------------------------------------ */
-/*  TidyCal embed – dynamically loads the script & re-inits on change */
-/* ------------------------------------------------------------------ */
-const TIDYCAL_SCRIPT = 'https://asset-tidycal.b-cdn.net/js/embed.js';
 
+/* ------------------------------------------------------------------ */
+/*  TidyCal iframe embed – reliable across language switches           */
+/* ------------------------------------------------------------------ */
 function TidyCalEmbed({ dataPath }: { dataPath: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    // Clear previous embed content
-    container.innerHTML = '';
-
-    // Create the TidyCal div
-    const embedDiv = document.createElement('div');
-    embedDiv.className = 'tidycal-embed';
-    embedDiv.setAttribute('data-path', dataPath);
-    container.appendChild(embedDiv);
-
-    // Load (or re-run) the TidyCal script
-    const script = document.createElement('script');
-    script.src = TIDYCAL_SCRIPT;
-    script.async = true;
-    container.appendChild(script);
-
-    return () => {
-      container.innerHTML = '';
-    };
-  }, [dataPath]);
-
-  return <div ref={containerRef} className="min-h-[400px] w-full" />;
+  return (
+    <iframe
+      key={dataPath}
+      src={`https://tidycal.com/${dataPath}`}
+      width="100%"
+      height="650"
+      frameBorder="0"
+      title="TidyCal Booking"
+      className="rounded-xl"
+      style={{ border: 'none', minHeight: 650 }}
+    />
+  );
 }
 
 /* ------------------------------------------------------------------ */
