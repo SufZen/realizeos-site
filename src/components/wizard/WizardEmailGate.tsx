@@ -30,37 +30,37 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, onContinue, onBa
     if (!email) return;
     setStatus('loading');
 
+    // Fire-and-forget: always let the user proceed.
+    // The lead-capture webhook is best-effort — if it fails,
+    // the user should still get their files.
     try {
-      const resp = await fetch(WEBHOOK_URL, {
+      fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: name || 'Anonymous',
           email,
-          source: 'brand-wizard',
+          source: 'venture-wizard',
           fieldsCompleted,
           totalFields,
           timestamp: new Date().toISOString(),
         }),
-      });
-      if (resp.ok || resp.status === 0) {
-        setStatus('success');
-        trackEvent('email_capture', {
-          source: 'brand-wizard',
-          fields_completed: fieldsCompleted,
-        });
-        // Brief pause to show success, then continue
-        setTimeout(() => onContinue(email), 1200);
-      } else {
-        throw new Error('Failed');
-      }
+      }).catch(() => {/* swallow — best-effort */});
     } catch {
-      setStatus('error');
+      /* swallow */
     }
+
+    // Always succeed for the user
+    setStatus('success');
+    trackEvent('email_capture', {
+      source: 'venture-wizard',
+      fields_completed: fieldsCompleted,
+    });
+    setTimeout(() => onContinue(email), 1200);
   }
 
   function handleSkip() {
-    trackEvent('email_gate_skip', { source: 'brand-wizard' });
+    trackEvent('email_gate_skip', { source: 'venture-wizard' });
     onContinue();
   }
 
