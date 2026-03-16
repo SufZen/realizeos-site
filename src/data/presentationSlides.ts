@@ -389,7 +389,7 @@ export function getSlides(): Slide[] {
         { titleKey: 'webinar.presentation.exclusivePromo.details.3' },
       ],
       customData: { promoCode: 'webinar.presentation.exclusivePromo.code' },
-      speakerNotes: 'EXCLUSIVE OFFER. 20% off Full & Setup for first 10 webinar guests. Code: WEBINAR20. Expires tomorrow midnight. Create urgency — drop the code in chat NOW.',
+      speakerNotes: 'EXCLUSIVE OFFER. 20% off Full & Setup for first 10 webinar guests. Code: LAUNCH20OFF. Expires TONIGHT at midnight. Create urgency — drop the code in chat NOW.',
     },
     {
       id: 'case-study-1',

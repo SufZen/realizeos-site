@@ -659,7 +659,7 @@
       "exclusivePromo": {
         "title": "Exclusive Webinar Offer",
         "subtitle": "20% off Full & Setup Assistance — first 10 guests only",
-        "code": "WEBINAR20",
+        "code": "LAUNCH20OFF",
         "codeLabel": "Use promo code at checkout:",
         "details": [
           "20% off RealizeOS Full — $199 instead of $249",
@@ -667,7 +667,7 @@
           "Limited to the first 10 guests",
           "Expires tonight at midnight"
         ],
-        "urgency": "Only available until tomorrow midnight. First 10 only."
+        "urgency": "Expires tonight at midnight. First 10 only."
       }
     },
     "booking": {
