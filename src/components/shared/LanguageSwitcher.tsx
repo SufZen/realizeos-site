@@ -13,7 +13,6 @@ export function LanguageSwitcher() {
 
     const languages = [
         { code: 'en', label: 'English' },
-        { code: 'he', label: 'עברית' },
         { code: 'pt', label: 'Português' },
     ];
 
