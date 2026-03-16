@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx.cmd --version)",
+      "Bash(npx --version)",
+      "Bash(npx serve:*)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 24624 //F)",
+      "WebSearch",
+      "Bash(while read:*)",
+      "Bash(do sed:*)",
+      "Bash(done)"
+    ]
+  }
+}
