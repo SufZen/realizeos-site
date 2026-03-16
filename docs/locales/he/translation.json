@@ -64,7 +64,10 @@
   "pricing": {
     "header": {
       "title": "בחרו את ה-Tier שלכם",
-      "subtitle": "תשלום חד-פעמי (One-time). הקוד שלכם לתמיד. בלי סאבסקרייפשנים, בלי ריטיינרים חודשיים."
+      "subtitle": "תמחור בלעדי Friends & Family. רכישה חד-פעמית. הקוד שלכם לתמיד.",
+      "promoBadge": "מבצע השקה — עד 31 במרץ",
+      "urgencyText": "המחיר עולה ב-1 באפריל",
+      "countdownLabel": "זמן שנותר"
     },
     "compareNote": "AI Agents סינגולריים עולים בשוק $49-$99 לכל Agent. קהילות אוטומציה עולות $97 לחודש. RealizeOS נותן לכם Base System מתואם וקומפלט — פעם אחת, לתמיד.",
     "tiers": {
@@ -82,6 +85,7 @@
           "מדריך Setup ו-Onboarding שלב-אחר-שלב",
           "תומך ב-Claude Pro ($20/חודש)"
         ],
+        "originalPrice": "149",
         "ctaText": "קבלו גישה ל-Lite",
         "delivery": "אינסטנט דליברי (Instant Setup) דרך Google Drive",
         "guarantee": "14 יום Money Back Guarantee (החזר כספי מלא)"
@@ -110,6 +114,7 @@
             "CI/CD Pipeline קומפלט (GitHub Actions + Pytest Suites)"
           ]
         },
+        "originalPrice": "449",
         "ctaText": "קבלו את המערכת המלאה",
         "delivery": "קבלת קוד ולייסנס מיידית (Drive + Github)",
         "guarantee": "14 יום Money Back Guarantee במלואו"
@@ -129,6 +134,7 @@
             "תעדוף (Priority Email Support) מלא ל-30 יום"
           ]
         },
+        "originalPrice": "849",
         "ctaText": "קבלו את ליווי ההקמה (Setup)",
         "delivery": "אינסטנט לייב + תאום שיחת סשן Onboarding בת שעה",
         "guarantee": "14 יום Money Back Guarantee מלא"
@@ -579,5 +585,108 @@
     "success": "הבקשה אושרה. נעלה אתכם מיד ל-Queue של הלופ הבא בסינכרונים.",
     "error": "אופס. נפלה שגיאה ב-API של ה-Subscribe. רפרשו (Refresh) עמוד ונסו לאשר שוב.",
     "disclaimer": "שום ספאם. לא מוכרים פרטים אישיים, אפס התפשרות על פרטיות לקוח (Privacy Base)."
+  },
+  "webinar": {
+    "useCases": {
+      "sectionTitle": "מה אפשר לבנות?",
+      "sectionSubtitle": "ארבע קטגוריות אוניברסליות. כל תעשייה. חבילות ספציפיות לתחומים — בקרוב.",
+      "knowledge": {
+        "title": "ידע ותפעול",
+        "description": "מבנו את כל הידע העסקי שלכם והפכו תהליכים תפעוליים לאוטומטיים.",
+        "items": [
+          "בנו כספת ידע מובנית שסוכני AI באמת משתמשים בה",
+          "אוטומציה של בדיקות Compliance, דוחות ותיעוד",
+          "צרו Playbooks תפעוליים שמריצים את עצמם",
+          "עקבו ושלפו ידע ארגוני מצטבר בין צוותים"
+        ]
+      },
+      "content": {
+        "title": "תוכן ותקשורת",
+        "description": "הפיקו תוכן עקבי עם המותג שלכם בכל ערוץ — בלי לכתוב טיוטות.",
+        "items": [
+          "ג'נרוט פוסטים ללינקדאין, ניוזלטרים והצעות מחיר בקול שלכם",
+          "שמירה אוטומטית על עקביות מותגית בכל הפלטים",
+          "ניסוח תקשורת ללקוחות ועדכוני משקיעים",
+          "המרת תוכן בין פורמטים וערוצים"
+        ]
+      },
+      "research": {
+        "title": "מחקר וניתוח",
+        "description": "שלפו תובנות מנתונים, מסמכים ושווקים במהירות מכונה.",
+        "items": [
+          "ניתוח מגמות שוק ונופים תחרותיים",
+          "חילוץ מדדי מפתח ממסמכים ודוחות פיננסיים",
+          "הצלבת מקורות מידע לתובנות עמוקות יותר",
+          "יצירת סיכומים מנהליים ממאגרי נתונים מורכבים"
+        ]
+      },
+      "multiVenture": {
+        "title": "ניהול מולטי-מיזמי",
+        "description": "נהלו מספר עסקים מחדר בקרה אחד בלי לאבד הקשר.",
+        "items": [
+          "מעבר בין מיזמים עם שמירה מלאה על הקשר",
+          "שמירה על קולות מותג ומאגרי ידע נפרדים",
+          "יצירת דוחות ועדכוני משקיעים לכל מיזם בנפרד",
+          "תיאום אסטרטגיה ותפעול חוצה-מיזמים"
+        ]
+      }
+    },
+    "presentation": {
+      "speakerNotesToggle": "הצג/הסתר הערות מציג (N)",
+      "progress": "{{current}} / {{total}}",
+      "exitPresentation": "יציאה",
+      "liveDemo": "הדגמה חיה",
+      "liveDemoSubtitle": "שיתוף מסך — סיור במערכת האמיתית",
+      "agenda": "סדר יום",
+      "whoIsThisFor": "למי זה מתאים?",
+      "whoIsThisForItems": [
+        "מייסדים שמנהלים אופרציות מורכבות",
+        "מפעילי מולטי-מיזמים שמחפשים בהירות",
+        "צוותים שטובעים בכלי AI מנותקים",
+        "כל מי שרוצה AI שבאמת זוכר אותו"
+      ],
+      "whatYouGet": "מה מקבלים",
+      "purchaseNow": "רכשו עכשיו",
+      "nextSteps": "הצעדים הבאים",
+      "nextStepsItems": [
+        "בחרו מהדורה (Lite / Full / Setup)",
+        "קבלו גישה מיידית דרך Google Drive",
+        "הגדירו את זהות המותג שלכם (5-10 דקות)",
+        "שיחת AI ראשונה תוך שעה"
+      ],
+      "questionsTitle": "שאלות ותשובות",
+      "questionsSubtitle": "בואו נדבר — שאלו הכל",
+      "contactInfo": "hello@realizeos.ai",
+      "meetLink": "https://meet.google.com/vcr-zgsw-xix",
+      "thankYou": "תודה רבה",
+      "thankYouSubtitle": "בואו נבנה יחד את מערכת ה-AI Operations שלכם.",
+      "exclusivePromo": {
+        "title": "הצעה בלעדית למשתתפי הוובינר",
+        "subtitle": "20% הנחה על Full ו-Setup Assistance — 10 ראשונים בלבד",
+        "code": "WEBINAR20",
+        "codeLabel": "הזינו קוד קופון בתשלום:",
+        "details": [
+          "20% הנחה על RealizeOS Full — $199 במקום $249",
+          "20% הנחה על ליווי Setup — $399 במקום $499",
+          "מוגבל ל-10 רוכשים ראשונים בלבד",
+          "בתוקף עד מחר בחצות"
+        ],
+        "urgency": "בתוקף עד מחר בחצות בלבד. 10 ראשונים בלבד."
+      }
+    },
+    "booking": {
+      "title": "קבעו סשן",
+      "subtitle": "תאמו שיחת Setup בת שעה או הירשמו לוובינר הבא.",
+      "setupCall": "קבעו שיחת הקמה",
+      "upcoming": "וובינרים קרובים",
+      "upcomingDescription": "הצטרפו לסשן Friends & Family הבא וראו את RealizeOS בפעולה.",
+      "joinWebinar": "הצטרפו דרך Google Meet",
+      "accessRequired": "נדרשת גישה",
+      "accessMessage": "רכשו חבילת RealizeOS כדי לקבל גישה להזמנת סשן.",
+      "goToPricing": "צפו באפשרויות התמחור",
+      "calendarPlaceholder": "ווידג'ט הזמנה יופיע כאן.",
+      "successTitle": "!ברוכים הבאים ל-RealizeOS",
+      "successMessage": "הרכישה אושרה. קבעו סשן Setup למטה או הצטרפו לוובינר הקרוב."
+    }
   }
 }

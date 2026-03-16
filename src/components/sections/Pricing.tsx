@@ -14,6 +14,7 @@ import { TierFull } from '@/components/illustrations/TierFull';
 import { TierSetup } from '@/components/illustrations/TierSetup';
 import { usePricing } from '@/data/pricing';
 import { useTranslation } from 'react-i18next';
+import { useCountdown } from '@/hooks/useCountdown';
 import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
@@ -23,9 +24,44 @@ const tierIconMap: Record<string, React.ComponentType<{ className?: string }>> =
   'pricing-setup': TierSetup,
 };
 
+const PROMO_END = new Date('2026-03-31T23:59:59');
+
+function CountdownDisplay() {
+  const { t } = useTranslation();
+  const { days, hours, minutes, seconds, isExpired } = useCountdown(PROMO_END);
+
+  if (isExpired) return null;
+
+  const segments = [
+    { value: days, label: 'D' },
+    { value: hours, label: 'H' },
+    { value: minutes, label: 'M' },
+    { value: seconds, label: 'S' },
+  ];
+
+  return (
+    <div className="flex flex-col items-center gap-3">
+      <p className="text-xs text-muted-foreground">{t('pricing.header.countdownLabel')}</p>
+      <div className="flex gap-2">
+        {segments.map((seg) => (
+          <div key={seg.label} className="flex flex-col items-center">
+            <span className="glass-card rounded-lg px-3 py-1.5 font-mono text-xl font-bold text-brand-yellow">
+              {String(seg.value).padStart(2, '0')}
+            </span>
+            <span className="mt-1 text-[10px] text-muted-foreground">{seg.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Pricing() {
   const { t } = useTranslation();
   const { tiers: pricingTiers, compareNote: pricingCompareNote } = usePricing();
+  const { isExpired } = useCountdown(PROMO_END);
+
+  const showPromo = !isExpired;
 
   return (
     <Section id="pricing">
@@ -33,6 +69,21 @@ export function Pricing() {
         title={t('pricing.header.title')}
         subtitle={t('pricing.header.subtitle')}
       />
+
+      {showPromo && (
+        <AnimateOnScroll>
+          <div className="mx-auto mb-10 flex max-w-lg flex-col items-center gap-4 rounded-2xl border border-brand-yellow/20 bg-brand-yellow/5 p-6 text-center">
+            <Badge className="bg-brand-yellow text-primary-foreground">
+              {t('pricing.header.promoBadge')}
+            </Badge>
+            <CountdownDisplay />
+            <p className="text-sm font-medium text-brand-yellow/80">
+              {t('pricing.header.urgencyText')}
+            </p>
+          </div>
+        </AnimateOnScroll>
+      )}
+
       <div className="grid gap-6 lg:grid-cols-3">
         {pricingTiers.map((tier, i) => (
           <AnimateOnScroll key={tier.name} delay={i * 0.1}>
@@ -61,6 +112,11 @@ export function Pricing() {
               </div>
 
               <div className="mb-6">
+                {showPromo && tier.originalPrice && (
+                  <span className="me-2 text-lg text-muted-foreground line-through">
+                    ${tier.originalPrice}
+                  </span>
+                )}
                 <span className="text-4xl font-bold">${tier.price}</span>
                 <span className="ms-1 text-sm text-muted-foreground">{tier.period}</span>
               </div>

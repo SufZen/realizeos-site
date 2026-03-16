@@ -57,6 +57,20 @@
   }
   </script>
 
+  <!-- GitHub Pages SPA redirect restore -->
+  <script type="text/javascript">
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&');
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,8 +88,8 @@
   <script>
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="xtepJqTNtoUCU9JPHelia";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
-  <script type="module" crossorigin src="/assets/index-CVIv0lb4.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DtTVnQ4f.css">
+  <script type="module" crossorigin src="/assets/index-Do2GlVOj.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C1iZFx3y.css">
 </head>
 
 <body>

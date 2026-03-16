@@ -10,6 +10,7 @@ export interface PricingTier {
   description: string;
   emotionalPromise: string;
   price: number;
+  originalPrice?: string;
   period: string;
   features: PricingFeature[];
   ctaText: string;
@@ -30,6 +31,7 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
       description: t('pricing.tiers.lite.description'),
       emotionalPromise: t('pricing.tiers.lite.emotionalPromise'),
       price: 79,
+      originalPrice: t('pricing.tiers.lite.originalPrice', { defaultValue: '' }) || undefined,
       period: 'one-time',
       features: (t('pricing.tiers.lite.features', { returnObjects: true }) as string[]).map(feature => ({ text: feature })),
       ctaText: t('pricing.tiers.lite.ctaText'),
@@ -43,6 +45,7 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
       description: t('pricing.tiers.full.description'),
       emotionalPromise: t('pricing.tiers.full.emotionalPromise'),
       price: 249,
+      originalPrice: t('pricing.tiers.full.originalPrice', { defaultValue: '' }) || undefined,
       period: 'one-time',
       featured: true,
       badge: t('pricing.tiers.full.badge'),
@@ -61,6 +64,7 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
       description: t('pricing.tiers.setup.description'),
       emotionalPromise: t('pricing.tiers.setup.emotionalPromise'),
       price: 499,
+      originalPrice: t('pricing.tiers.setup.originalPrice', { defaultValue: '' }) || undefined,
       period: 'one-time',
       features: [
         { text: t('pricing.tiers.setup.features.header'), bold: true },

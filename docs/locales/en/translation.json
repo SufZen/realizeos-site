@@ -64,7 +64,10 @@
   "pricing": {
     "header": {
       "title": "Choose Your Edition",
-      "subtitle": "One-time purchase. Own it forever. No subscriptions, no recurring fees."
+      "subtitle": "Friends & Family launch pricing. One-time purchase. Own it forever.",
+      "promoBadge": "Launch Promotion — Ends March 31st",
+      "urgencyText": "Price increases April 1st",
+      "countdownLabel": "Time remaining"
     },
     "compareNote": "Individual AI agents elsewhere cost $49-99 each. AI operation communities charge $97/month. RealizeOS gives you the complete coordinated system — once, forever.",
     "tiers": {
@@ -82,6 +85,7 @@
           "Step-by-step setup guide",
           "Works with Claude Pro ($20/mo)"
         ],
+        "originalPrice": "149",
         "ctaText": "Get Lite Edition",
         "delivery": "Instant delivery via Google Drive",
         "guarantee": "14-day money-back guarantee"
@@ -110,6 +114,7 @@
             "CI/CD pipeline (GitHub Actions + pytest)"
           ]
         },
+        "originalPrice": "449",
         "ctaText": "Get Full Edition",
         "delivery": "Instant delivery via Google Drive",
         "guarantee": "14-day money-back guarantee"
@@ -129,6 +134,7 @@
             "Priority email support for 30 days"
           ]
         },
+        "originalPrice": "849",
         "ctaText": "Get Setup Assistance",
         "delivery": "Instant delivery + 1-hour setup call",
         "guarantee": "14-day money-back guarantee"
@@ -575,5 +581,108 @@
     "success": "You're in! We'll be in touch.",
     "error": "Something went wrong. Please try again.",
     "disclaimer": "No spam. Just real value and updates."
+  },
+  "webinar": {
+    "useCases": {
+      "sectionTitle": "What Can You Build?",
+      "sectionSubtitle": "Four universal categories. Any industry. Field-specific packages coming soon.",
+      "knowledge": {
+        "title": "Knowledge & Operations",
+        "description": "Structure your entire business knowledge and automate operational workflows.",
+        "items": [
+          "Build a structured knowledge vault that AI agents actually use",
+          "Automate compliance checks, reports, and documentation",
+          "Create operational playbooks that execute themselves",
+          "Track and surface institutional knowledge across teams"
+        ]
+      },
+      "content": {
+        "title": "Content & Communication",
+        "description": "Produce brand-consistent content across every channel without writing drafts.",
+        "items": [
+          "Generate LinkedIn posts, newsletters, and proposals in your voice",
+          "Maintain brand consistency across all outputs automatically",
+          "Draft client communications and investor updates",
+          "Repurpose content across formats and channels"
+        ]
+      },
+      "research": {
+        "title": "Research & Analysis",
+        "description": "Surface insights from data, documents, and markets at machine speed.",
+        "items": [
+          "Analyze market trends and competitive landscapes",
+          "Extract key metrics from financial documents and reports",
+          "Cross-reference data sources for deeper insights",
+          "Generate executive summaries from complex datasets"
+        ]
+      },
+      "multiVenture": {
+        "title": "Multi-Venture Management",
+        "description": "Run multiple businesses from one control room without losing context.",
+        "items": [
+          "Switch between ventures with full context preserved",
+          "Maintain separate brand voices and knowledge bases",
+          "Generate per-venture reports and investor updates",
+          "Coordinate cross-venture strategy and operations"
+        ]
+      }
+    },
+    "presentation": {
+      "speakerNotesToggle": "Toggle speaker notes (N)",
+      "progress": "{{current}} / {{total}}",
+      "exitPresentation": "Exit",
+      "liveDemo": "Live Demo",
+      "liveDemoSubtitle": "Screen share — real system walkthrough",
+      "agenda": "Agenda",
+      "whoIsThisFor": "Who Is This For?",
+      "whoIsThisForItems": [
+        "Founders running complex operations",
+        "Multi-venture operators seeking clarity",
+        "Teams drowning in disconnected AI tools",
+        "Anyone who wants AI that actually remembers them"
+      ],
+      "whatYouGet": "What You Get",
+      "purchaseNow": "Purchase Now",
+      "nextSteps": "Next Steps",
+      "nextStepsItems": [
+        "Choose your edition (Lite / Full / Setup)",
+        "Get instant access via Google Drive",
+        "Define your brand identity (5-10 min)",
+        "First AI conversation within the hour"
+      ],
+      "questionsTitle": "Questions & Answers",
+      "questionsSubtitle": "Let's talk — ask anything",
+      "contactInfo": "hello@realizeos.ai",
+      "meetLink": "https://meet.google.com/vcr-zgsw-xix",
+      "thankYou": "Thank You",
+      "thankYouSubtitle": "Let's build your AI operations system together.",
+      "exclusivePromo": {
+        "title": "Exclusive Webinar Offer",
+        "subtitle": "20% off Full & Setup Assistance — first 10 guests only",
+        "code": "WEBINAR20",
+        "codeLabel": "Use promo code at checkout:",
+        "details": [
+          "20% off RealizeOS Full — $199 instead of $249",
+          "20% off Setup Assistance — $399 instead of $499",
+          "Limited to the first 10 guests",
+          "Expires tonight at midnight"
+        ],
+        "urgency": "Only available until tomorrow midnight. First 10 only."
+      }
+    },
+    "booking": {
+      "title": "Book Your Session",
+      "subtitle": "Schedule your 1-hour setup call or register for the next webinar.",
+      "setupCall": "Book Your Setup Call",
+      "upcoming": "Upcoming Webinars",
+      "upcomingDescription": "Join our next Friends & Family session and see RealizeOS in action.",
+      "joinWebinar": "Join via Google Meet",
+      "accessRequired": "Access Required",
+      "accessMessage": "Purchase a RealizeOS package to unlock booking access.",
+      "goToPricing": "View Pricing Options",
+      "calendarPlaceholder": "Calendar booking widget will appear here.",
+      "successTitle": "Welcome to RealizeOS!",
+      "successMessage": "Your purchase is confirmed. Book your setup session below or join an upcoming webinar."
+    }
   }
 }
