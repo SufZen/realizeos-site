@@ -9,12 +9,14 @@ import { CookieBanner } from '@/components/shared/CookieBanner';
 
 const WebinarPresentation = lazy(() => import('@/pages/WebinarPresentation'));
 const WebinarBooking = lazy(() => import('@/pages/WebinarBooking'));
+const BrandWizardPage = lazy(() => import('@/pages/BrandWizardPage'));
 
 export default function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/wizard" element={<BrandWizardPage />} />
         <Route path="/webinar/presentation" element={<WebinarPresentation />} />
         <Route path="/webinar/booking" element={<WebinarBooking />} />
         <Route path="/webinar/booking/setup" element={<WebinarBooking tier="setup" />} />
@@ -23,6 +25,7 @@ export default function App() {
         {/* Short aliases — shareable URLs */}
         <Route path="/pres" element={<Navigate to="/webinar/presentation" replace />} />
         <Route path="/book" element={<Navigate to="/webinar/booking" replace />} />
+        <Route path="/brand-wizard" element={<Navigate to="/wizard" replace />} />
         <Route element={<LegalLayout />}>
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
