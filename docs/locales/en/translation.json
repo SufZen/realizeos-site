@@ -682,7 +682,47 @@
       "goToPricing": "View Pricing Options",
       "calendarPlaceholder": "Calendar booking widget will appear here.",
       "successTitle": "Welcome to RealizeOS!",
-      "successMessage": "Your purchase is confirmed. Book your setup session below or join an upcoming webinar."
+      "successMessage": "Your purchase is confirmed. Book your setup session below or join an upcoming webinar.",
+      "hub": {
+        "title": "Welcome to RealizeOS!",
+        "subtitle": "Your purchase is confirmed. Select your package below to continue.",
+        "setupCard": "Setup Assistance",
+        "setupDesc": "Book your 1-on-1 setup call",
+        "liteCard": "RealizeOS Lite",
+        "liteDesc": "Register for your onboarding webinar",
+        "fullCard": "RealizeOS Full",
+        "fullDesc": "Register for your onboarding webinar"
+      },
+      "setup": {
+        "title": "Book Your Setup Call",
+        "subtitle": "Schedule your 1-hour setup session with the RealizeOS builder.",
+        "successTitle": "Purchase Confirmed!",
+        "successMessage": "Your Setup Assistance package is confirmed. Book your 1-hour setup call below.",
+        "calendarHeading": "Choose a Time",
+        "calendarPlaceholder": "Calendar booking widget will appear here."
+      },
+      "lite": {
+        "title": "Join Your Onboarding Webinar",
+        "subtitle": "Register for the next RealizeOS Lite onboarding session.",
+        "successTitle": "Purchase Confirmed!",
+        "successMessage": "Your RealizeOS Lite package is confirmed. Register for your onboarding webinar below.",
+        "chooseLanguage": "Choose Language",
+        "webinarHeading": "Upcoming Sessions",
+        "webinarPlaceholder": "Webinar registration will appear here.",
+        "joinWebinar": "Join Webinar"
+      },
+      "full": {
+        "title": "Join Your Onboarding Webinar",
+        "subtitle": "Register for the next RealizeOS Full onboarding session.",
+        "successTitle": "Purchase Confirmed!",
+        "successMessage": "Your RealizeOS Full package is confirmed. Register for your onboarding webinar below.",
+        "chooseLanguage": "Choose Language",
+        "webinarHeading": "Upcoming Sessions",
+        "webinarPlaceholder": "Webinar registration will appear here.",
+        "joinWebinar": "Join Webinar"
+      },
+      "langEnglish": "English",
+      "langHebrew": "עברית"
     }
   },
   "pres": {

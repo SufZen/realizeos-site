@@ -682,12 +682,53 @@
       "goToPricing": "View Pricing Options",
       "calendarPlaceholder": "Calendar booking widget will appear here.",
       "successTitle": "Welcome to RealizeOS!",
-      "successMessage": "Your purchase is confirmed. Book your setup session below or join an upcoming webinar."
+      "successMessage": "Your purchase is confirmed. Book your setup session below or join an upcoming webinar.",
+      "hub": {
+        "title": "Welcome to RealizeOS!",
+        "subtitle": "Your purchase is confirmed. Select your package below to continue.",
+        "setupCard": "Setup Assistance",
+        "setupDesc": "Book your 1-on-1 setup call",
+        "liteCard": "RealizeOS Lite",
+        "liteDesc": "Register for your onboarding webinar",
+        "fullCard": "RealizeOS Full",
+        "fullDesc": "Register for your onboarding webinar"
+      },
+      "setup": {
+        "title": "Book Your Setup Call",
+        "subtitle": "Schedule your 1-hour setup session with the RealizeOS builder.",
+        "successTitle": "Purchase Confirmed!",
+        "successMessage": "Your Setup Assistance package is confirmed. Book your 1-hour setup call below.",
+        "calendarHeading": "Choose a Time",
+        "calendarPlaceholder": "Calendar booking widget will appear here."
+      },
+      "lite": {
+        "title": "Join Your Onboarding Webinar",
+        "subtitle": "Register for the next RealizeOS Lite onboarding session.",
+        "successTitle": "Purchase Confirmed!",
+        "successMessage": "Your RealizeOS Lite package is confirmed. Register for your onboarding webinar below.",
+        "chooseLanguage": "Choose Language",
+        "webinarHeading": "Upcoming Sessions",
+        "webinarPlaceholder": "Webinar registration will appear here.",
+        "joinWebinar": "Join Webinar"
+      },
+      "full": {
+        "title": "Join Your Onboarding Webinar",
+        "subtitle": "Register for the next RealizeOS Full onboarding session.",
+        "successTitle": "Purchase Confirmed!",
+        "successMessage": "Your RealizeOS Full package is confirmed. Register for your onboarding webinar below.",
+        "chooseLanguage": "Choose Language",
+        "webinarHeading": "Upcoming Sessions",
+        "webinarPlaceholder": "Webinar registration will appear here.",
+        "joinWebinar": "Join Webinar"
+      },
+      "langEnglish": "English",
+      "langHebrew": "עברית"
     }
   },
   "pres": {
     "welcome": {
-      "hook": "What if your AI actually remembered you, understood your brand, and executed like a team?"
+      "title": "Your AI Team Is Ready",
+      "hook": "One engine that remembers your brand, knows your projects, and executes like a coordinated team. No subscriptions. No duct-taping. Just production-grade AI ops you own."
     },
     "stats": {
       "models": "20+",
@@ -700,12 +741,13 @@
       "priceLabel": "One-time"
     },
     "agenda": {
+      "title": "What We'll Cover",
       "items": [
-        "Why most AI setups fail",
-        "The 8 engines inside RealizeOS",
-        "Live system walkthrough",
-        "Your fast track to deployment",
-        "Pricing that makes the decision easy"
+        "The $50K problem you're solving with $249",
+        "8 production engines — live walkthrough",
+        "Real demo: watch agents coordinate in real-time",
+        "From zero to first AI output in under 1 hour",
+        "Exclusive launch pricing + webinar-only offer"
       ]
     },
     "engagement": {
@@ -719,17 +761,18 @@
       "friction": "Your best ideas die in the handoff. Tool A doesn't talk to Tool B. Context evaporates. Momentum dies.",
       "paralysis": "The sheer volume of details paralyzes you. You can't zoom out when you're constantly putting out fires.",
       "bottleneck": "You've become the middleware. Copy-pasting ChatGPT outputs at 2 AM instead of building the future.",
+      "statTitle": "The Real Cost of Tool Chaos",
       "stat1num": "73%",
       "stat1label": "of operators lose context between tools — daily",
       "stat2num": "15 hrs",
       "stat2label": "wasted per week on manual tool coordination"
     },
     "transition": {
-      "title": "The shift",
-      "beforeTitle": "Today",
-      "beforeItems": "Scattered tools with zero coordination,Context lost every session,You are the middleware — duct-taping at 2 AM,Knowledge walks out when you close the tab",
-      "afterTitle": "With RealizeOS",
-      "afterItems": "One coordinated engine — agents work together,Persistent memory across every conversation,You're the architect — the system executes,Knowledge compounds forever"
+      "title": "Same operator. Different reality.",
+      "beforeTitle": "Your Monday, today",
+      "beforeItems": "5 tabs open — copy-pasting between tools,Lost the context from yesterday's conversation,Manually coordinating what should be automated,You closed the browser — knowledge gone",
+      "afterTitle": "Your Monday, with RealizeOS",
+      "afterItems": "One dashboard — full context from every conversation,Agents draft and review and coordinate automatically,Knowledge compounds — nothing is ever lost,You set direction. The system builds."
     },
     "feature": {
       "routing": "4 providers. 20+ models. The right brain for every task — automatically.",
@@ -739,6 +782,7 @@
       "pipelines": "Rigid phases: brief → draft → review → approve → deploy. Like your actual operations.",
       "evolution": "Gets smarter every day. 5 evolution types. Risk scoring. Auto-rollback if quality drops.",
       "multichannel": "WhatsApp. Telegram. Web. Webhooks. Scheduler. One brain, every channel.",
+      "multichannelSubtitle": "Live Demo — Telegram Bot in Action",
       "security": "RBAC. Encrypted vault. Audit trails. Your data stays yours. Period."
     },
     "demo": {
@@ -746,21 +790,47 @@
     },
     "midCta": {
       "title": "Already convinced?",
-      "subtitle": "Links are in the chat. Use code LAUNCH20OFF for 20% off."
+      "subtitle": "Use code LAUNCH20OFF at checkout for 20% off Full & Setup."
+    },
+    "case": {
+      "archName": "Architecture Firm"
+    },
+    "liteIntro": {
+      "title": "RealizeOS Lite — Structure in 15 Minutes",
+      "subtitle": "Stop building from scratch. Open a pre-built vault and your AI team is ready to work."
+    },
+    "lite": {
+      "vault": { "title": "FABRIC Vault", "desc": "30 pre-structured files. Open it and you have a working knowledge base." },
+      "agents": { "title": "4 AI Agents", "desc": "Orchestrator, Writer, Reviewer, Analyst — customize in minutes." },
+      "brand": { "title": "Brand Wizards", "desc": "Identity, voice, and the 130-line Brand Worksheet." },
+      "skills": { "title": "6 Skill Workflows", "desc": "Proposals, campaigns, social, reviews, content, research." },
+      "methods": { "title": "3 Shared Methods", "desc": "Competitive analysis, content repurposing, decision framework." },
+      "claude": { "title": "CLAUDE.md Protocol", "desc": "155 lines that make Claude Code understand your entire business." },
+      "guide": { "title": "Setup Guide", "desc": "15 minutes from download to your first AI conversation." }
+    },
+    "steps": {
+      "items": [
+        "Pick your edition — 30 seconds",
+        "Instant access — Google Drive link arrives immediately",
+        "Define your brand — fill in the templates (5-10 min)",
+        "First conversation — Writer drafts, Reviewer checks, in YOUR voice",
+        "Build your system — add knowledge, workflows, tools. Week 1."
+      ]
     },
     "howItWorksVisual": {
       "title": "From click to first output: under 1 hour"
     },
     "usecase": {
-      "knowledge": "Structure your entire KB. Automate compliance. Create self-executing playbooks.",
+      "knowledge": "Turn scattered documents into an AI-searchable knowledge vault. Automate compliance checks that used to take hours. Build operational playbooks that execute themselves — while you sleep.",
       "content": "Brand-consistent content across every channel. LinkedIn, newsletters, proposals — in YOUR voice.",
       "research": "Market analysis at machine speed. Financial docs, competitive landscapes, executive summaries.",
-      "multiventure": "One control room. Multiple businesses. Full context preserved. This is how we run 5 ventures."
+      "multiventure": "Run 3 ventures with the mental clarity of running 1. Switch contexts instantly. Separate brands, unified control. This isn't theory — it's how we run 5 businesses from one dashboard."
     },
     "pricing": {
       "urgency": "Launch pricing ends March 31st. These prices will never come back."
     },
     "scarcity": {
+      "title": "Act Now",
       "spotsNum": "10",
       "spotsLabel": "Spots left",
       "discountNum": "20%",
@@ -769,8 +839,9 @@
       "expiresLabel": "Code expires"
     },
     "actionCta": {
-      "title": "Drop LAUNCH20OFF in the chat right now",
-      "subtitle": "We'll share the payment links. First 10 only."
-    }
+      "title": "Use code LAUNCH20OFF at checkout",
+      "subtitle": "Apply it when you purchase on the homepage. First 10 guests — 20% off Full & Setup."
+    },
+    "purchaseTitle": "Get Started — Prices Increase April 1st"
   }
 }

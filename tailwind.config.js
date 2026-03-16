@@ -63,6 +63,7 @@ export default {
       },
       fontFamily: {
         sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        hebrew: ['Rubik', 'Poppins', '-apple-system', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       maxWidth: {

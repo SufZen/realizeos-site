@@ -17,6 +17,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/webinar/presentation" element={<WebinarPresentation />} />
         <Route path="/webinar/booking" element={<WebinarBooking />} />
+        <Route path="/webinar/booking/setup" element={<WebinarBooking tier="setup" />} />
+        <Route path="/webinar/booking/lite" element={<WebinarBooking tier="lite" />} />
+        <Route path="/webinar/booking/full" element={<WebinarBooking tier="full" />} />
         {/* Short aliases — shareable URLs */}
         <Route path="/pres" element={<Navigate to="/webinar/presentation" replace />} />
         <Route path="/book" element={<Navigate to="/webinar/booking" replace />} />

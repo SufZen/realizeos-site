@@ -686,7 +686,47 @@
       "goToPricing": "צפו באפשרויות התמחור",
       "calendarPlaceholder": "ווידג'ט הזמנה יופיע כאן.",
       "successTitle": "!ברוכים הבאים ל-RealizeOS",
-      "successMessage": "הרכישה אושרה. קבעו סשן Setup למטה או הצטרפו לוובינר הקרוב."
+      "successMessage": "הרכישה אושרה. קבעו סשן Setup למטה או הצטרפו לוובינר הקרוב.",
+      "hub": {
+        "title": "!ברוכים הבאים ל-RealizeOS",
+        "subtitle": "הרכישה אושרה. בחרו את החבילה שלכם למטה כדי להמשיך.",
+        "setupCard": "ליווי Onboarding מלא",
+        "setupDesc": "קבעו שיחת Setup אישית",
+        "liteCard": "RealizeOS Lite",
+        "liteDesc": "הירשמו לוובינר ה-Onboarding",
+        "fullCard": "RealizeOS Full",
+        "fullDesc": "הירשמו לוובינר ה-Onboarding"
+      },
+      "setup": {
+        "title": "קבעו שיחת Setup",
+        "subtitle": "תאמו את שיחת ה-Setup בת השעה עם בונה RealizeOS.",
+        "successTitle": "!הרכישה אושרה",
+        "successMessage": "חבילת ליווי ה-Onboarding שלכם אושרה. קבעו את שיחת ה-Setup למטה.",
+        "calendarHeading": "בחרו זמן",
+        "calendarPlaceholder": "ווידג'ט הזמנה יופיע כאן."
+      },
+      "lite": {
+        "title": "הצטרפו לוובינר ה-Onboarding",
+        "subtitle": "הירשמו לסשן ה-Onboarding הבא של RealizeOS Lite.",
+        "successTitle": "!הרכישה אושרה",
+        "successMessage": "חבילת RealizeOS Lite שלכם אושרה. הירשמו לוובינר ה-Onboarding למטה.",
+        "chooseLanguage": "בחרו שפה",
+        "webinarHeading": "סשנים קרובים",
+        "webinarPlaceholder": "הרשמה לוובינר תופיע כאן.",
+        "joinWebinar": "הצטרפו לוובינר"
+      },
+      "full": {
+        "title": "הצטרפו לוובינר ה-Onboarding",
+        "subtitle": "הירשמו לסשן ה-Onboarding הבא של RealizeOS Full.",
+        "successTitle": "!הרכישה אושרה",
+        "successMessage": "חבילת RealizeOS Full שלכם אושרה. הירשמו לוובינר ה-Onboarding למטה.",
+        "chooseLanguage": "בחרו שפה",
+        "webinarHeading": "סשנים קרובים",
+        "webinarPlaceholder": "הרשמה לוובינר תופיע כאן.",
+        "joinWebinar": "הצטרפו לוובינר"
+      },
+      "langEnglish": "English",
+      "langHebrew": "עברית"
     }
   },
   "pres": {

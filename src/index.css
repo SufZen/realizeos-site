@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hebrew (RTL) uses Rubik font */
+[dir="rtl"] {
+  font-family: 'Rubik', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
