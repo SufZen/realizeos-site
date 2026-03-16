@@ -28,6 +28,11 @@ function getIllustration(name?: string) {
   return illustrationMap[name] || null;
 }
 
+// Convert \n in i18n strings to <br> for slide readability
+function nl2br(text: string): string {
+  return text.replace(/\n/g, '<br/>');
+}
+
 interface SlideRendererProps {
   slide: Slide;
 }
@@ -41,10 +46,11 @@ function TitleSlide({ slide }: SlideRendererProps) {
         dangerouslySetInnerHTML={{ __html: slide.titleKey ? t(slide.titleKey) : '' }}
       />
       {slide.subtitleKey && (
-        <p className="mt-6 max-w-3xl text-lg text-muted-foreground md:text-2xl">
-          {t(slide.subtitleKey)}
-        </p>
+        <p className="mt-6 max-w-3xl text-lg text-muted-foreground md:text-2xl" dangerouslySetInnerHTML={{ __html: nl2br(t(slide.subtitleKey)) }} />
       )}
+      {slide.bodyKeys?.map((key) => (
+        <p key={key} className="mt-4 max-w-2xl text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: nl2br(t(key)) }} />
+      ))}
     </div>
   );
 }
@@ -63,9 +69,7 @@ function TitleBodySlide({ slide }: SlideRendererProps) {
         </p>
       )}
       {slide.bodyKeys?.map((key) => (
-        <p key={key} className="mb-4 max-w-4xl text-base text-muted-foreground md:text-xl">
-          {t(key)}
-        </p>
+        <p key={key} className="mb-4 max-w-4xl text-base text-muted-foreground md:text-xl" dangerouslySetInnerHTML={{ __html: nl2br(t(key)) }} />
       ))}
       {slide.customData?.promoCode && (
         <div className="animated-border glow-yellow my-4 inline-block rounded-xl px-8 py-3">
@@ -261,7 +265,7 @@ function DemoSlide({ slide }: SlideRendererProps) {
     <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
       {Illust ? (
         <div className="illustration-glow mb-6">
-          <Illust className="h-32 w-32 md:h-40 md:w-40" />
+          <Illust className="h-64 w-64 md:h-80 md:w-80" />
         </div>
       ) : (
         <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-brand-yellow/20">
@@ -337,10 +341,20 @@ function SplitSlide({ slide }: SlideRendererProps) {
           </p>
         )}
         {slide.bodyKeys?.map((key) => (
-          <p key={key} className="mb-3 max-w-2xl text-base text-muted-foreground md:text-lg">
-            {t(key)}
-          </p>
+          <p key={key} className="mb-3 max-w-2xl text-base text-muted-foreground md:text-lg" dangerouslySetInnerHTML={{ __html: nl2br(t(key)) }} />
         ))}
+        {slide.listKeys && slide.listKeys.length > 0 && (
+          <ul className="mt-2 space-y-2">
+            {slide.listKeys.map((key, i) => (
+              <li key={key} className="flex items-start gap-3 text-base text-foreground">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-yellow/20 font-mono text-xs font-bold text-brand-yellow">
+                  {i + 1}
+                </span>
+                <span dangerouslySetInnerHTML={{ __html: t(key) }} />
+              </li>
+            ))}
+          </ul>
+        )}
         {slide.items && slide.items.length > 0 && (
           <ul className="mt-2 space-y-2">
             {slide.items.map((item, i) => (
@@ -366,6 +380,12 @@ function SplitSlide({ slide }: SlideRendererProps) {
 
 function StatGridSlide({ slide }: SlideRendererProps) {
   const { t } = useTranslation();
+  const count = slide.items?.length || 2;
+  const gridClass = count <= 2
+    ? 'flex flex-wrap justify-center gap-12 md:gap-20'
+    : count === 3
+      ? 'grid grid-cols-3 gap-6'
+      : 'grid grid-cols-2 gap-6 lg:grid-cols-4';
   return (
     <div className="dot-grid flex h-full flex-col items-center justify-center px-8 md:px-16">
       {slide.titleKey && (
@@ -373,7 +393,7 @@ function StatGridSlide({ slide }: SlideRendererProps) {
           {t(slide.titleKey)}
         </h2>
       )}
-      <div className="grid w-full max-w-4xl grid-cols-2 gap-6 lg:grid-cols-4">
+      <div className={`w-full max-w-4xl ${gridClass}`}>
         {slide.items?.map((item, i) => (
           <div key={i} className="flex flex-col items-center text-center">
             <span className="font-mono text-5xl font-bold text-brand-yellow md:text-6xl lg:text-7xl">
@@ -385,6 +405,9 @@ function StatGridSlide({ slide }: SlideRendererProps) {
           </div>
         ))}
       </div>
+      {slide.subtitleKey && (
+        <p className="mt-8 max-w-2xl text-center text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: nl2br(t(slide.subtitleKey)) }} />
+      )}
     </div>
   );
 }
@@ -406,10 +429,11 @@ function IllustrationSlide({ slide }: SlideRendererProps) {
         />
       )}
       {slide.subtitleKey && (
-        <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-xl">
-          {t(slide.subtitleKey)}
-        </p>
+        <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-xl" dangerouslySetInnerHTML={{ __html: nl2br(t(slide.subtitleKey)) }} />
       )}
+      {slide.bodyKeys?.map((key) => (
+        <p key={key} className="mt-4 max-w-2xl text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: nl2br(t(key)) }} />
+      ))}
     </div>
   );
 }

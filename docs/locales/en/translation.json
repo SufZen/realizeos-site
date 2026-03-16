@@ -728,7 +728,7 @@
   "pres": {
     "welcome": {
       "title": "Your AI Team Is Ready",
-      "hook": "One engine that remembers your brand, knows your projects, and executes like a coordinated team. No subscriptions. No duct-taping. Just production-grade AI ops you own."
+      "hook": "One engine that remembers your brand.\nKnows your projects.\nExecutes like a coordinated team.\nNo subscriptions.\nNo duct-taping.\nProduction-grade AI ops you own."
     },
     "stats": {
       "models": "20+",
@@ -737,8 +737,10 @@
       "channelsLabel": "Channels",
       "saved": "40 hrs",
       "savedLabel": "Saved / week",
-      "price": "$249",
-      "priceLabel": "One-time"
+      "tools": "13",
+      "toolsLabel": "Google Workspace tools",
+      "agents": "6",
+      "agentsLabel": "Specialized agents"
     },
     "agenda": {
       "title": "What We'll Cover",
@@ -768,14 +770,14 @@
       "stat2label": "wasted per week on manual tool coordination"
     },
     "transition": {
-      "title": "Same operator. Different reality.",
+      "title": "Same operator.\nDifferent reality.",
       "beforeTitle": "Your Monday, today",
-      "beforeItems": "5 tabs open — copy-pasting between tools,Lost the context from yesterday's conversation,Manually coordinating what should be automated,You closed the browser — knowledge gone",
+      "beforeItems": "5 tabs open.\nCopy-pasting between tools,Lost the context from yesterday's conversation,Manually coordinating what should be automated,You closed the browser.\nKnowledge gone",
       "afterTitle": "Your Monday, with RealizeOS",
-      "afterItems": "One dashboard — full context from every conversation,Agents draft and review and coordinate automatically,Knowledge compounds — nothing is ever lost,You set direction. The system builds."
+      "afterItems": "One dashboard.\nFull context from every conversation,Agents draft and review and coordinate — automatically,Knowledge compounds.\nNothing is ever lost,You set direction.\nThe system builds."
     },
     "feature": {
-      "routing": "4 providers. 20+ models. The right brain for every task — automatically.",
+      "routing": "4 providers.\n20+ models.\nThe right brain for every task — automatically.\nWe recommend starting with Claude Code.\nAdd or switch providers anytime.",
       "assembly": "Not a chatbot. Your digital clone. It speaks your language, knows your projects, acts like your best partner.",
       "execution": "One message. Full workflow. From brief to delivery — no babysitting required.",
       "retrieval": "Your entire knowledge base — searchable by intent, not keywords. Millisecond access.",
@@ -827,7 +829,8 @@
       "multiventure": "Run 3 ventures with the mental clarity of running 1. Switch contexts instantly. Separate brands, unified control. This isn't theory — it's how we run 5 businesses from one dashboard."
     },
     "pricing": {
-      "urgency": "Launch pricing ends March 31st. These prices will never come back."
+      "urgency": "Launch pricing ends March 31st.\nThese prices will never come back.",
+      "guarantee": "14-day money-back guarantee.\nNo questions asked.\nThat's how sure I am about the value you're getting."
     },
     "scarcity": {
       "title": "Act Now",

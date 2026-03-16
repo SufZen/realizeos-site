@@ -47,7 +47,7 @@ export function getSlides(): Slide[] {
       bodyKeys: ['pres.welcome.hook'],
       speakerNotes: 'Open with "Your AI Team Is Ready". Pause. Then: "One engine that remembers..." Let it land.',
     },
-    { // 2 — stat-hook
+    { // 2 — stat-hook (user benefits only, no price)
       id: 'stat-hook',
       layout: 'stat-grid',
       block: 'opening',
@@ -55,9 +55,10 @@ export function getSlides(): Slide[] {
         { titleKey: 'pres.stats.models', descKey: 'pres.stats.modelsLabel' },
         { titleKey: 'pres.stats.channels', descKey: 'pres.stats.channelsLabel' },
         { titleKey: 'pres.stats.saved', descKey: 'pres.stats.savedLabel' },
-        { titleKey: 'pres.stats.price', descKey: 'pres.stats.priceLabel' },
+        { titleKey: 'pres.stats.tools', descKey: 'pres.stats.toolsLabel' },
+        { titleKey: 'pres.stats.agents', descKey: 'pres.stats.agentsLabel' },
       ],
-      speakerNotes: 'Pattern interrupt — big numbers create authority.',
+      speakerNotes: 'Pattern interrupt — user benefits only, no price yet.',
     },
     { // 3 — agenda (improved copy + illustration)
       id: 'agenda',
@@ -253,11 +254,10 @@ export function getSlides(): Slide[] {
       bodyKeys: ['pres.feature.security'],
       speakerNotes: 'Enterprise Security.',
     },
-    { // 22 — fabric-system
+    { // 22 — fabric-system (feature-card for better HE text layout)
       id: 'fabric-system',
-      layout: 'split',
+      layout: 'feature-card',
       block: 'solution',
-      illustration: 'FabricDiagram',
       titleKey: 'fabricSystem.header.title',
       subtitleKey: 'fabricSystem.header.subtitle',
       items: [
@@ -351,10 +351,11 @@ export function getSlides(): Slide[] {
       ],
       speakerNotes: 'More Lite: shared methods, CLAUDE.md, setup guide.',
     },
-    { // 31 — how-it-works (improved copy)
+    { // 31 — how-it-works (improved copy + visual)
       id: 'how-it-works',
-      layout: 'list',
+      layout: 'split',
       block: 'lite',
+      illustration: 'ProductMockup',
       titleKey: 'howItWorks.header.title',
       listKeys: [
         'pres.steps.items.0',
@@ -437,14 +438,15 @@ export function getSlides(): Slide[] {
     },
 
     // ===== BLOCK 7: PRICING (38-43) =====
-    { // 38 — pricing-intro (+ illustration)
+    { // 38 — pricing-intro (+ illustration + guarantee)
       id: 'pricing-intro',
       layout: 'illustration',
       block: 'pricing',
       illustration: 'ComparisonRealizeIcon',
       titleKey: 'pricing.header.title',
       subtitleKey: 'pres.pricing.urgency',
-      speakerNotes: 'Pricing section. Emphasize launch pricing and March 31 deadline.',
+      bodyKeys: ['pres.pricing.guarantee'],
+      speakerNotes: 'Pricing section. Emphasize launch pricing, March 31 deadline, and 14-day guarantee.',
     },
     { // 39 — pricing-comparison
       id: 'pricing-comparison',
@@ -454,14 +456,14 @@ export function getSlides(): Slide[] {
       subtitleKey: 'comparison.header.subtitle',
       speakerNotes: 'The Unfair Advantage. Hiring vs. tools vs. RealizeOS.',
     },
-    { // 40 — pricing-tiers
+    { // 40 — pricing-tiers (+ guarantee)
       id: 'pricing-tiers',
       layout: 'pricing-card',
       block: 'pricing',
       titleKey: 'pricing.header.title',
-      subtitleKey: 'pricing.header.promoBadge',
+      subtitleKey: 'pres.pricing.guarantee',
       customData: { showTiers: 'true' },
-      speakerNotes: 'Show all three tiers.',
+      speakerNotes: 'Show all three tiers. Mention 14-day money-back guarantee.',
     },
     { // 41 — exclusive-promo
       id: 'exclusive-promo',
@@ -477,13 +479,14 @@ export function getSlides(): Slide[] {
         { titleKey: 'webinar.presentation.exclusivePromo.details.3' },
       ],
       customData: { promoCode: 'webinar.presentation.exclusivePromo.code' },
-      speakerNotes: 'EXCLUSIVE OFFER. Code: LAUNCH20OFF. Apply at checkout on the homepage.',
+      speakerNotes: 'EXCLUSIVE OFFER. Code: LAUNCH20OFF. Apply at checkout. 14-day money-back guarantee.',
     },
-    { // 42 — scarcity (+ title)
+    { // 42 — scarcity (+ title + guarantee subtitle)
       id: 'scarcity',
       layout: 'stat-grid',
       block: 'pricing',
       titleKey: 'pres.scarcity.title',
+      subtitleKey: 'pres.pricing.guarantee',
       items: [
         { titleKey: 'pres.scarcity.spotsNum', descKey: 'pres.scarcity.spotsLabel' },
         { titleKey: 'pres.scarcity.discountNum', descKey: 'pres.scarcity.discountLabel' },
@@ -491,13 +494,14 @@ export function getSlides(): Slide[] {
       ],
       speakerNotes: 'Pure urgency. 10 spots, 20% off, expires tonight.',
     },
-    { // 43 — action-cta (promo at checkout, not chat)
+    { // 43 — action-cta (promo at checkout + guarantee)
       id: 'action-cta',
       layout: 'title',
       block: 'pricing',
       titleKey: 'pres.actionCta.title',
       subtitleKey: 'pres.actionCta.subtitle',
-      speakerNotes: 'Use code LAUNCH20OFF at checkout on the homepage. Not in chat — at the Stripe checkout.',
+      bodyKeys: ['pres.pricing.guarantee'],
+      speakerNotes: 'Use code LAUNCH20OFF at checkout. 14-day money-back guarantee, no questions asked.',
     },
 
     // ===== BLOCK 8: CLOSING + Q&A (44-49) =====
@@ -510,10 +514,11 @@ export function getSlides(): Slide[] {
       subtitleKey: 'pricing.header.promoBadge',
       speakerNotes: 'Main CTA. Launch Promotion ends March 31st.',
     },
-    { // 45 — next-steps
+    { // 45 — next-steps (+ visual)
       id: 'next-steps',
-      layout: 'list',
+      layout: 'split',
       block: 'closing',
+      illustration: 'ProductMockup',
       titleKey: 'webinar.presentation.nextSteps',
       listKeys: [
         'webinar.presentation.nextStepsItems.0',
@@ -523,13 +528,14 @@ export function getSlides(): Slide[] {
       ],
       speakerNotes: 'Exact next steps. Make it feel easy.',
     },
-    { // 46 — purchase-links (prices change April 1st)
+    { // 46 — purchase-links (prices change April 1st + guarantee)
       id: 'purchase-links',
       layout: 'pricing-card',
       block: 'closing',
       titleKey: 'pres.purchaseTitle',
+      subtitleKey: 'pres.pricing.guarantee',
       customData: { showTiers: 'true' },
-      speakerNotes: 'Final pricing. Prices increase April 1st. Buy now at launch pricing.',
+      speakerNotes: 'Final pricing. Prices increase April 1st. 14-day money-back guarantee.',
     },
     { // 47 — thank-you (+ illustration)
       id: 'thank-you',
