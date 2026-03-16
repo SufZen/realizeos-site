@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Section } from '@/components/layout/Section';
@@ -8,7 +8,40 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { BOOKING_LINKS } from '@/lib/constants';
+/* ------------------------------------------------------------------ */
+/*  TidyCal embed – dynamically loads the script & re-inits on change */
+/* ------------------------------------------------------------------ */
+const TIDYCAL_SCRIPT = 'https://asset-tidycal.b-cdn.net/js/embed.js';
+
+function TidyCalEmbed({ dataPath }: { dataPath: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Clear previous embed content
+    container.innerHTML = '';
+
+    // Create the TidyCal div
+    const embedDiv = document.createElement('div');
+    embedDiv.className = 'tidycal-embed';
+    embedDiv.setAttribute('data-path', dataPath);
+    container.appendChild(embedDiv);
+
+    // Load (or re-run) the TidyCal script
+    const script = document.createElement('script');
+    script.src = TIDYCAL_SCRIPT;
+    script.async = true;
+    container.appendChild(script);
+
+    return () => {
+      container.innerHTML = '';
+    };
+  }, [dataPath]);
+
+  return <div ref={containerRef} className="min-h-[400px] w-full" />;
+}
 
 /* ------------------------------------------------------------------ */
 /*  Access gate – shown when ?token=success is missing                */
@@ -181,17 +214,11 @@ function SetupPage() {
 
           <AnimateOnScroll>
             <div className="mx-auto max-w-2xl">
-              <div className="glass-card rounded-2xl p-8 text-center">
-                <h3 className="mb-6 text-xl font-bold">
+              <div className="glass-card overflow-hidden rounded-2xl p-8">
+                <h3 className="mb-6 text-center text-xl font-bold">
                   {t('webinar.booking.setup.calendarHeading')}
                 </h3>
-                <div className="flex min-h-[300px] items-center justify-center rounded-xl border border-border bg-muted/30 p-6">
-                  {/* Replace placeholder below with real calendar embed:
-                      e.g. <iframe src="https://cal.com/..." /> */}
-                  <p className="text-sm text-muted-foreground">
-                    {t('webinar.booking.setup.calendarPlaceholder')}
-                  </p>
-                </div>
+                <TidyCalEmbed dataPath="team/realizeos/realizeos-setup-assistance-1-1-session" />
               </div>
             </div>
           </AnimateOnScroll>
@@ -205,10 +232,14 @@ function SetupPage() {
 /* ------------------------------------------------------------------ */
 /*  WEBINAR page — used for both Lite and Full tiers                  */
 /* ------------------------------------------------------------------ */
+const TIDYCAL_WEBINAR_PATHS = {
+  en: 'team/realizeos/realizeos-webinar-english',
+  he: 'team/realizeos/realizeos-webinar-hebrew',
+} as const;
+
 function WebinarPage({ tier }: { tier: 'lite' | 'full' }) {
   const { t } = useTranslation();
   const [lang, setLang] = useState<'en' | 'he'>('en');
-  const links = BOOKING_LINKS[tier];
 
   const tierPrefix = `webinar.booking.${tier}`;
 
@@ -233,29 +264,11 @@ function WebinarPage({ tier }: { tier: 'lite' | 'full' }) {
               <LanguageToggle selected={lang} onChange={setLang} />
 
               {/* Webinar card */}
-              <div className="glass-card rounded-2xl p-8 text-center">
-                <h3 className="mb-6 text-xl font-bold">
+              <div className="glass-card overflow-hidden rounded-2xl p-8">
+                <h3 className="mb-6 text-center text-xl font-bold">
                   {t(`${tierPrefix}.webinarHeading`)}
                 </h3>
-
-                <div className="mb-8 flex min-h-[200px] items-center justify-center rounded-xl border border-border bg-muted/30 p-6">
-                  {/* Replace placeholder with real webinar registration embed per language.
-                      The selected lang is: {lang}
-                      Embed code can differ per language. */}
-                  <p className="text-sm text-muted-foreground">
-                    {t(`${tierPrefix}.webinarPlaceholder`)}
-                  </p>
-                </div>
-
-                <Button asChild size="lg">
-                  <a
-                    href={links[lang]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t(`${tierPrefix}.joinWebinar`)}
-                  </a>
-                </Button>
+                <TidyCalEmbed dataPath={TIDYCAL_WEBINAR_PATHS[lang]} />
               </div>
             </div>
           </AnimateOnScroll>
