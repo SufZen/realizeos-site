@@ -684,5 +684,93 @@
       "successTitle": "Welcome to RealizeOS!",
       "successMessage": "Your purchase is confirmed. Book your setup session below or join an upcoming webinar."
     }
+  },
+  "pres": {
+    "welcome": {
+      "hook": "What if your AI actually remembered you, understood your brand, and executed like a team?"
+    },
+    "stats": {
+      "models": "20+",
+      "modelsLabel": "AI Models",
+      "channels": "5",
+      "channelsLabel": "Channels",
+      "saved": "40 hrs",
+      "savedLabel": "Saved / week",
+      "price": "$249",
+      "priceLabel": "One-time"
+    },
+    "agenda": {
+      "items": [
+        "Why most AI setups fail",
+        "The 8 engines inside RealizeOS",
+        "Live system walkthrough",
+        "Your fast track to deployment",
+        "Pricing that makes the decision easy"
+      ]
+    },
+    "engagement": {
+      "raiseHand": "Raise your hand in chat if this sounds like you..."
+    },
+    "founder": {
+      "short": "I run 5 ventures — architecture, real estate, consulting, content, SaaS. I built RealizeOS because the alternative was burning out.",
+      "punchline": "I built this to buy back my freedom — now you can use our exact engine."
+    },
+    "pain": {
+      "friction": "Your best ideas die in the handoff. Tool A doesn't talk to Tool B. Context evaporates. Momentum dies.",
+      "paralysis": "The sheer volume of details paralyzes you. You can't zoom out when you're constantly putting out fires.",
+      "bottleneck": "You've become the middleware. Copy-pasting ChatGPT outputs at 2 AM instead of building the future.",
+      "stat1num": "73%",
+      "stat1label": "of operators lose context between tools — daily",
+      "stat2num": "15 hrs",
+      "stat2label": "wasted per week on manual tool coordination"
+    },
+    "transition": {
+      "title": "The shift",
+      "beforeTitle": "Today",
+      "beforeItems": "Scattered tools with zero coordination,Context lost every session,You are the middleware — duct-taping at 2 AM,Knowledge walks out when you close the tab",
+      "afterTitle": "With RealizeOS",
+      "afterItems": "One coordinated engine — agents work together,Persistent memory across every conversation,You're the architect — the system executes,Knowledge compounds forever"
+    },
+    "feature": {
+      "routing": "4 providers. 20+ models. The right brain for every task — automatically.",
+      "assembly": "Not a chatbot. Your digital clone. It speaks your language, knows your projects, acts like your best partner.",
+      "execution": "One message. Full workflow. From brief to delivery — no babysitting required.",
+      "retrieval": "Your entire knowledge base — searchable by intent, not keywords. Millisecond access.",
+      "pipelines": "Rigid phases: brief → draft → review → approve → deploy. Like your actual operations.",
+      "evolution": "Gets smarter every day. 5 evolution types. Risk scoring. Auto-rollback if quality drops.",
+      "multichannel": "WhatsApp. Telegram. Web. Webhooks. Scheduler. One brain, every channel.",
+      "security": "RBAC. Encrypted vault. Audit trails. Your data stays yours. Period."
+    },
+    "demo": {
+      "intro": "Let me show you the actual system. This is real — running in production every day."
+    },
+    "midCta": {
+      "title": "Already convinced?",
+      "subtitle": "Links are in the chat. Use code LAUNCH20OFF for 20% off."
+    },
+    "howItWorksVisual": {
+      "title": "From click to first output: under 1 hour"
+    },
+    "usecase": {
+      "knowledge": "Structure your entire KB. Automate compliance. Create self-executing playbooks.",
+      "content": "Brand-consistent content across every channel. LinkedIn, newsletters, proposals — in YOUR voice.",
+      "research": "Market analysis at machine speed. Financial docs, competitive landscapes, executive summaries.",
+      "multiventure": "One control room. Multiple businesses. Full context preserved. This is how we run 5 ventures."
+    },
+    "pricing": {
+      "urgency": "Launch pricing ends March 31st. These prices will never come back."
+    },
+    "scarcity": {
+      "spotsNum": "10",
+      "spotsLabel": "Spots left",
+      "discountNum": "20%",
+      "discountLabel": "Off Full & Setup",
+      "expiresNum": "Tonight",
+      "expiresLabel": "Code expires"
+    },
+    "actionCta": {
+      "title": "Drop LAUNCH20OFF in the chat right now",
+      "subtitle": "We'll share the payment links. First 10 only."
+    }
   }
 }

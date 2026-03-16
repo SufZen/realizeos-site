@@ -8,7 +8,11 @@ export type SlideLayout =
   | 'quote'
   | 'stat'
   | 'demo'
-  | 'qa';
+  | 'qa'
+  | 'split'
+  | 'stat-grid'
+  | 'illustration'
+  | 'before-after';
 
 export interface SlideItem {
   titleKey?: string;
@@ -26,20 +30,34 @@ export interface Slide {
   bodyKeys?: string[];
   listKeys?: string[];
   items?: SlideItem[];
+  illustration?: string;
   speakerNotes?: string;
   customData?: Record<string, string>;
 }
 
 export function getSlides(): Slide[] {
   return [
-    // ===== OPENING BLOCK (slides 1-5) =====
+    // ===== BLOCK 1: OPENING (1-6) — "Hook in 2 minutes" =====
     {
       id: 'welcome',
-      layout: 'title',
+      layout: 'split',
       block: 'opening',
+      illustration: 'HeroAgentNetwork',
       titleKey: 'hero.title_highlight',
-      subtitleKey: 'hero.tagline',
-      speakerNotes: 'Welcome everyone. Introduce yourself and the Realization Group.',
+      bodyKeys: ['pres.welcome.hook'],
+      speakerNotes: 'Open with the hook question. Pause. Let it land. Then introduce yourself.',
+    },
+    {
+      id: 'stat-hook',
+      layout: 'stat-grid',
+      block: 'opening',
+      items: [
+        { titleKey: 'pres.stats.models', descKey: 'pres.stats.modelsLabel' },
+        { titleKey: 'pres.stats.channels', descKey: 'pres.stats.channelsLabel' },
+        { titleKey: 'pres.stats.saved', descKey: 'pres.stats.savedLabel' },
+        { titleKey: 'pres.stats.price', descKey: 'pres.stats.priceLabel' },
+      ],
+      speakerNotes: 'Pattern interrupt — big numbers create authority. Let them absorb the stats.',
     },
     {
       id: 'agenda',
@@ -47,164 +65,195 @@ export function getSlides(): Slide[] {
       block: 'opening',
       titleKey: 'webinar.presentation.agenda',
       listKeys: [
-        'painPoints.header.title',
-        'features.header.title',
-        'webinar.presentation.liveDemo',
-        'delivery.models.lite.edition',
-        'webinar.useCases.sectionTitle',
-        'pricing.header.title',
+        'pres.agenda.items.0',
+        'pres.agenda.items.1',
+        'pres.agenda.items.2',
+        'pres.agenda.items.3',
+        'pres.agenda.items.4',
       ],
-      speakerNotes: 'Walk through what we will cover today. ~1 hour presentation + 30 min Q&A.',
+      speakerNotes: '1-hour presentation + 30 min Q&A. Walk through what we cover today.',
     },
     {
       id: 'who-is-this-for',
       layout: 'list',
       block: 'opening',
       titleKey: 'webinar.presentation.whoIsThisFor',
+      subtitleKey: 'pres.engagement.raiseHand',
       listKeys: [
         'webinar.presentation.whoIsThisForItems.0',
         'webinar.presentation.whoIsThisForItems.1',
         'webinar.presentation.whoIsThisForItems.2',
         'webinar.presentation.whoIsThisForItems.3',
       ],
-      speakerNotes: 'Identify the audience. Ask people to raise hands / react in chat.',
+      speakerNotes: 'Engagement moment. Ask people to react in chat. Build connection.',
     },
     {
       id: 'founder-story',
-      layout: 'title-body',
+      layout: 'split',
       block: 'opening',
+      illustration: 'FounderPhotoFrame',
       titleKey: 'founder.title',
-      bodyKeys: ['founder.p1'],
-      speakerNotes: 'Personal story. Why you built this. Credibility through production use.',
+      bodyKeys: ['pres.founder.short'],
+      speakerNotes: 'Personal story. Credibility through real production use. Keep it brief.',
     },
     {
       id: 'founder-why',
       layout: 'quote',
       block: 'opening',
-      titleKey: 'founder.p2',
-      speakerNotes: 'Emotional hook. The alternative was breaking down. This is real, not theoretical.',
+      titleKey: 'pres.founder.punchline',
+      speakerNotes: 'Emotional punchline. The alternative was breaking down. Pause after this.',
     },
 
-    // ===== PROBLEM BLOCK (slides 6-10) =====
+    // ===== BLOCK 2: PROBLEM (7-12) — "Make them feel the pain" =====
     {
       id: 'problem-intro',
-      layout: 'title',
+      layout: 'illustration',
       block: 'problem',
+      illustration: 'PainFragmented',
       titleKey: 'painPoints.header.title',
       subtitleKey: 'painPoints.header.subtitle',
-      speakerNotes: 'Transition to the problem. Paint the picture of current AI tool chaos.',
+      speakerNotes: 'Big visual sets the mood. Let the fragmented tools image speak.',
     },
     {
       id: 'pain-friction',
-      layout: 'title-body',
+      layout: 'split',
       block: 'problem',
+      illustration: 'PainFragmented',
       titleKey: 'painPoints.items.layers.title',
-      bodyKeys: ['painPoints.items.layers.description'],
-      speakerNotes: 'The Friction Trap. Ideas die in handoffs. Ask: "Who has experienced this?"',
+      bodyKeys: ['pres.pain.friction'],
+      speakerNotes: 'The Friction Trap. Ask: "Who has experienced this?" Wait for reactions.',
     },
     {
       id: 'pain-paralysis',
-      layout: 'title-body',
+      layout: 'split',
       block: 'problem',
+      illustration: 'PainLostContext',
       titleKey: 'painPoints.items.clock.title',
-      bodyKeys: ['painPoints.items.clock.description'],
-      speakerNotes: 'Execution Paralysis. The sheer volume of details paralyzes decision-making.',
+      bodyKeys: ['pres.pain.paralysis'],
+      speakerNotes: 'Execution Paralysis. Volume of details paralyzes decision-making.',
     },
     {
       id: 'pain-bottleneck',
-      layout: 'title-body',
+      layout: 'split',
       block: 'problem',
+      illustration: 'PainNoCoordination',
       titleKey: 'painPoints.items.users.title',
-      bodyKeys: ['painPoints.items.users.description'],
-      speakerNotes: 'Middleware Madness. You became the bottleneck. 2 AM duct-taping AI outputs.',
+      bodyKeys: ['pres.pain.bottleneck'],
+      speakerNotes: 'Middleware Madness. You ARE the bottleneck. Copy-pasting at 2 AM.',
     },
     {
-      id: 'problem-transition',
-      layout: 'quote',
+      id: 'pain-stat',
+      layout: 'stat-grid',
       block: 'problem',
-      titleKey: 'painPoints.transition',
-      speakerNotes: 'Transition slide. From problem to solution. "You shouldn\'t feel this way."',
+      items: [
+        { titleKey: 'pres.pain.stat1num', descKey: 'pres.pain.stat1label' },
+        { titleKey: 'pres.pain.stat2num', descKey: 'pres.pain.stat2label' },
+      ],
+      speakerNotes: 'Data validates the emotional pain. Let the numbers sink in.',
+    },
+    {
+      id: 'transition',
+      layout: 'before-after',
+      block: 'problem',
+      titleKey: 'pres.transition.title',
+      customData: {
+        beforeTitle: 'pres.transition.beforeTitle',
+        beforeItems: 'pres.transition.beforeItems',
+        beforeIllustration: 'PainFragmented',
+        afterTitle: 'pres.transition.afterTitle',
+        afterItems: 'pres.transition.afterItems',
+        afterIllustration: 'HeroAgentNetwork',
+      },
+      speakerNotes: 'Before/After contrast. "This is what changes." Transition to solution.',
     },
 
-    // ===== SOLUTION BLOCK (slides 11-19) =====
+    // ===== BLOCK 3: SOLUTION — Features (13-22) — "Show the machinery" =====
     {
       id: 'solution-intro',
-      layout: 'title',
+      layout: 'illustration',
       block: 'solution',
+      illustration: 'HeroAgentNetwork',
       titleKey: 'features.header.title',
       subtitleKey: 'features.header.subtitle',
-      speakerNotes: 'Introduce RealizeOS as the solution. Not a toy, not a wrapper — a complete engine.',
+      speakerNotes: 'Visual transition. The agent network diagram sets up "coordinated team."',
     },
     {
       id: 'feature-routing',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureMultiLLM',
       titleKey: 'features.routing.title',
-      bodyKeys: ['features.routing.promise'],
-      speakerNotes: 'Multi-LLM Routing. 4 providers, 20+ models, 4 strategies. Demo this live.',
+      bodyKeys: ['pres.feature.routing'],
+      speakerNotes: 'Multi-LLM Routing. 4 providers, 20+ models, 4 strategies. Will demo this live.',
     },
     {
       id: 'feature-assembly',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeaturePromptAssembly',
       titleKey: 'features.assembly.title',
-      bodyKeys: ['features.assembly.promise'],
-      speakerNotes: 'Dynamic Identity Assembly. Multi-layer prompt assembly. Your digital clone.',
+      bodyKeys: ['pres.feature.assembly'],
+      speakerNotes: 'Dynamic Identity Assembly. Your digital clone, not a chatbot.',
     },
     {
       id: 'feature-execution',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureSkills',
       titleKey: 'features.execution.title',
-      bodyKeys: ['features.execution.promise'],
-      speakerNotes: 'Multi-Step Execution. Workflow engine, 7 node types, YAML pipelines.',
+      bodyKeys: ['pres.feature.execution'],
+      speakerNotes: 'Multi-Step Execution. One message triggers full workflow.',
     },
     {
       id: 'feature-retrieval',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureKBSearch',
       titleKey: 'features.retrieval.title',
-      bodyKeys: ['features.retrieval.promise'],
-      speakerNotes: 'Hybrid Knowledge Retrieval. FTS5 + vector. Finds intent, not just keywords.',
+      bodyKeys: ['pres.feature.retrieval'],
+      speakerNotes: 'Hybrid Knowledge Retrieval. FTS5 + vector. Intent, not keywords.',
     },
     {
       id: 'feature-pipelines',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureCreativePipeline',
       titleKey: 'features.pipelines.title',
-      bodyKeys: ['features.pipelines.promise'],
+      bodyKeys: ['pres.feature.pipelines'],
       speakerNotes: 'Production Pipelines. Rigid phases for real architecture work.',
     },
     {
       id: 'feature-evolution',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureSelfEvolution',
       titleKey: 'features.evolution.title',
-      bodyKeys: ['features.evolution.promise'],
-      speakerNotes: 'Continuous Evolution. Gets smarter with every interaction. 5 evolution types.',
+      bodyKeys: ['pres.feature.evolution'],
+      speakerNotes: 'Continuous Evolution. Gets smarter. 5 types. Risk scoring. Rollback.',
     },
     {
       id: 'feature-multichannel',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureMultiChannel',
       titleKey: 'features.multichannel.title',
-      bodyKeys: ['features.multichannel.promise'],
-      speakerNotes: 'Multi-Channel Gateway. WhatsApp, Web, Webhooks, Scheduler. One brain, every channel.',
+      bodyKeys: ['pres.feature.multichannel'],
+      speakerNotes: 'Multi-Channel Gateway. One brain, every channel.',
     },
     {
       id: 'feature-security',
-      layout: 'title-body',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FeatureSecurity',
       titleKey: 'features.security.title',
-      bodyKeys: ['features.security.promise'],
-      speakerNotes: 'Enterprise Security. RBAC, encrypted vault, audit logging. Data stays yours.',
+      bodyKeys: ['pres.feature.security'],
+      speakerNotes: 'Enterprise Security. RBAC, vault, audit. Data stays yours.',
     },
-
-    // ===== FABRIC SYSTEM (slide 20) =====
     {
       id: 'fabric-system',
-      layout: 'feature-card',
+      layout: 'split',
       block: 'solution',
+      illustration: 'FabricDiagram',
       titleKey: 'fabricSystem.header.title',
       subtitleKey: 'fabricSystem.header.subtitle',
       items: [
@@ -215,17 +264,36 @@ export function getSlides(): Slide[] {
         { titleKey: 'fabricSystem.items.I.title', descKey: 'fabricSystem.items.I.description' },
         { titleKey: 'fabricSystem.items.C.title', descKey: 'fabricSystem.items.C.description' },
       ],
-      speakerNotes: 'The FABRIC system. 6 directories = 1 coherent intelligence. Key differentiator.',
+      speakerNotes: 'FABRIC system. 6 directories = 1 intelligence. Key differentiator.',
     },
 
-    // ===== DEMO BLOCK (slides 21-22) =====
+    // ===== BLOCK 4: SOCIAL PROOF + DEMO (23-26) — "Peak of interest" =====
+    {
+      id: 'case-boa',
+      layout: 'quote',
+      block: 'demo',
+      titleKey: 'caseStudies.items.boa.quote',
+      subtitleKey: 'caseStudies.items.boa.title',
+      customData: { metric: 'caseStudies.items.boa.metric' },
+      speakerNotes: 'BOA Architects. 40 hrs/week saved. Social proof BEFORE demo.',
+    },
+    {
+      id: 'case-realization',
+      layout: 'quote',
+      block: 'demo',
+      titleKey: 'caseStudies.items.realization.quote',
+      subtitleKey: 'caseStudies.items.realization.title',
+      customData: { metric: 'caseStudies.items.realization.metric' },
+      speakerNotes: 'Realization Group. 5 ventures, 1 operator. Your own proof.',
+    },
     {
       id: 'demo-intro',
       layout: 'demo',
       block: 'demo',
+      illustration: 'ProductMockup',
       titleKey: 'webinar.presentation.liveDemo',
-      subtitleKey: 'webinar.presentation.liveDemoSubtitle',
-      speakerNotes: 'START SCREEN SHARE. Show the actual system. Walk through a real workflow.',
+      subtitleKey: 'pres.demo.intro',
+      speakerNotes: 'START SCREEN SHARE. Show the actual system running in production.',
     },
     {
       id: 'demo-placeholder',
@@ -233,17 +301,25 @@ export function getSlides(): Slide[] {
       block: 'demo',
       titleKey: 'demoVideo.header.title',
       subtitleKey: 'demoVideo.header.subtitle',
-      speakerNotes: 'Continue live demo. Show: agent conversation, knowledge retrieval, brand voice output.',
+      speakerNotes: 'Continue demo. Show: agent conversation, knowledge retrieval, brand voice output.',
     },
 
-    // ===== LITE PACKAGE BLOCK (slides 23-27) =====
+    // ===== BLOCK 5: WHAT YOU GET (27-32) =====
+    {
+      id: 'mid-cta',
+      layout: 'title',
+      block: 'lite',
+      titleKey: 'pres.midCta.title',
+      subtitleKey: 'pres.midCta.subtitle',
+      speakerNotes: 'Mid-presentation CTA. Drop links in chat. Some people are ready NOW.',
+    },
     {
       id: 'lite-intro',
       layout: 'title',
       block: 'lite',
       titleKey: 'delivery.models.lite.edition',
       subtitleKey: 'delivery.models.lite.emotionalPromise',
-      speakerNotes: 'What you actually get with Lite. From scattered chaos to single source of truth.',
+      speakerNotes: 'What you actually get with Lite. Scattered chaos to single source of truth.',
     },
     {
       id: 'lite-vault',
@@ -256,7 +332,7 @@ export function getSlides(): Slide[] {
         { titleKey: 'delivery.models.lite.items.2.title', descKey: 'delivery.models.lite.items.2.description' },
         { titleKey: 'delivery.models.lite.items.3.title', descKey: 'delivery.models.lite.items.3.description' },
       ],
-      speakerNotes: 'Walk through the Lite deliverables: vault, agents, brand templates, workflows.',
+      speakerNotes: 'Walk through Lite deliverables: vault, agents, brand templates, workflows.',
     },
     {
       id: 'lite-more',
@@ -267,7 +343,7 @@ export function getSlides(): Slide[] {
         { titleKey: 'delivery.models.lite.items.5.title', descKey: 'delivery.models.lite.items.5.description' },
         { titleKey: 'delivery.models.lite.items.6.title', descKey: 'delivery.models.lite.items.6.description' },
       ],
-      speakerNotes: 'More Lite deliverables: shared methods, CLAUDE.md protocol, setup guide.',
+      speakerNotes: 'More Lite deliverables: shared methods, CLAUDE.md, setup guide.',
     },
     {
       id: 'how-it-works',
@@ -281,83 +357,87 @@ export function getSlides(): Slide[] {
         'howItWorks.steps.3.title',
         'howItWorks.steps.4.title',
       ],
-      speakerNotes: '5-step deployment process. Emphasize speed: running within the hour.',
+      speakerNotes: '5-step deployment. Emphasize speed: running within the hour.',
+    },
+    {
+      id: 'how-it-works-visual',
+      layout: 'illustration',
+      block: 'lite',
+      illustration: 'ProductMockup',
+      titleKey: 'pres.howItWorksVisual.title',
+      speakerNotes: 'Visual punctuation. From click to output in under 1 hour.',
     },
 
-    // ===== USE CASES BLOCK (slides 28-32) =====
+    // ===== BLOCK 6: USE CASES (33-37) — "See yourself in it" =====
     {
       id: 'usecases-intro',
       layout: 'title',
       block: 'usecases',
       titleKey: 'webinar.useCases.sectionTitle',
       subtitleKey: 'webinar.useCases.sectionSubtitle',
-      speakerNotes: 'Generalized use cases. Not niche-specific. Any industry can use this.',
+      speakerNotes: 'Generalized use cases. Any industry can use this.',
     },
     {
       id: 'usecase-knowledge',
-      layout: 'title-body',
+      layout: 'split',
       block: 'usecases',
+      illustration: 'UseCaseConsulting',
       titleKey: 'webinar.useCases.knowledge.title',
-      bodyKeys: ['webinar.useCases.knowledge.description'],
+      bodyKeys: ['pres.usecase.knowledge'],
       items: [
         { titleKey: 'webinar.useCases.knowledge.items.0' },
         { titleKey: 'webinar.useCases.knowledge.items.1' },
-        { titleKey: 'webinar.useCases.knowledge.items.2' },
-        { titleKey: 'webinar.useCases.knowledge.items.3' },
       ],
-      speakerNotes: 'Knowledge & Operations. Vault, compliance, playbooks, institutional memory.',
+      speakerNotes: 'Knowledge & Operations. Vault, compliance, playbooks.',
     },
     {
       id: 'usecase-content',
-      layout: 'title-body',
+      layout: 'split',
       block: 'usecases',
+      illustration: 'UseCaseAgency',
       titleKey: 'webinar.useCases.content.title',
-      bodyKeys: ['webinar.useCases.content.description'],
+      bodyKeys: ['pres.usecase.content'],
       items: [
         { titleKey: 'webinar.useCases.content.items.0' },
         { titleKey: 'webinar.useCases.content.items.1' },
-        { titleKey: 'webinar.useCases.content.items.2' },
-        { titleKey: 'webinar.useCases.content.items.3' },
       ],
-      speakerNotes: 'Content & Communication. Brand-consistent output across channels.',
+      speakerNotes: 'Content & Communication. Brand-consistent output.',
     },
     {
       id: 'usecase-research',
-      layout: 'title-body',
+      layout: 'split',
       block: 'usecases',
+      illustration: 'UseCaseSaaS',
       titleKey: 'webinar.useCases.research.title',
-      bodyKeys: ['webinar.useCases.research.description'],
+      bodyKeys: ['pres.usecase.research'],
       items: [
         { titleKey: 'webinar.useCases.research.items.0' },
         { titleKey: 'webinar.useCases.research.items.1' },
-        { titleKey: 'webinar.useCases.research.items.2' },
-        { titleKey: 'webinar.useCases.research.items.3' },
       ],
-      speakerNotes: 'Research & Analysis. Market trends, financial docs, executive summaries.',
+      speakerNotes: 'Research & Analysis. Market trends, exec summaries.',
     },
     {
       id: 'usecase-multiventure',
-      layout: 'title-body',
+      layout: 'split',
       block: 'usecases',
+      illustration: 'UseCaseMultiVenture',
       titleKey: 'webinar.useCases.multiVenture.title',
-      bodyKeys: ['webinar.useCases.multiVenture.description'],
+      bodyKeys: ['pres.usecase.multiventure'],
       items: [
         { titleKey: 'webinar.useCases.multiVenture.items.0' },
         { titleKey: 'webinar.useCases.multiVenture.items.1' },
-        { titleKey: 'webinar.useCases.multiVenture.items.2' },
-        { titleKey: 'webinar.useCases.multiVenture.items.3' },
       ],
-      speakerNotes: 'Multi-Venture Management. One control room, multiple businesses.',
+      speakerNotes: 'Multi-Venture. One control room, multiple businesses.',
     },
 
-    // ===== PRICING BLOCK (slides 33-37) =====
+    // ===== BLOCK 7: PRICING (38-43) — "Make the decision easy" =====
     {
       id: 'pricing-intro',
       layout: 'title',
       block: 'pricing',
       titleKey: 'pricing.header.title',
-      subtitleKey: 'pricing.header.promoBadge',
-      speakerNotes: 'Pricing section. Emphasize launch promotion and the March 31 deadline.',
+      subtitleKey: 'pres.pricing.urgency',
+      speakerNotes: 'Pricing section. Emphasize launch promotion and March 31 deadline.',
     },
     {
       id: 'pricing-comparison',
@@ -365,15 +445,16 @@ export function getSlides(): Slide[] {
       block: 'pricing',
       titleKey: 'comparison.header.title',
       subtitleKey: 'comparison.header.subtitle',
-      speakerNotes: 'The Unfair Advantage comparison. Hiring team vs. individual tools vs. RealizeOS.',
+      speakerNotes: 'The Unfair Advantage. Hiring vs. tools vs. RealizeOS.',
     },
     {
       id: 'pricing-tiers',
       layout: 'pricing-card',
       block: 'pricing',
       titleKey: 'pricing.header.title',
+      subtitleKey: 'pricing.header.promoBadge',
       customData: { showTiers: 'true' },
-      speakerNotes: 'Show all three tiers: Lite $79, Full $249, Setup $499. Launch prices.',
+      speakerNotes: 'Show all three tiers. Lite $79, Full $249, Setup $499. Launch prices.',
     },
     {
       id: 'exclusive-promo',
@@ -389,35 +470,36 @@ export function getSlides(): Slide[] {
         { titleKey: 'webinar.presentation.exclusivePromo.details.3' },
       ],
       customData: { promoCode: 'webinar.presentation.exclusivePromo.code' },
-      speakerNotes: 'EXCLUSIVE OFFER. 20% off Full & Setup for first 10 webinar guests. Code: LAUNCH20OFF. Expires TONIGHT at midnight. Create urgency — drop the code in chat NOW.',
+      speakerNotes: 'EXCLUSIVE OFFER. Code: LAUNCH20OFF. Drop it in chat NOW. Create urgency.',
     },
     {
-      id: 'case-study-1',
-      layout: 'quote',
+      id: 'scarcity',
+      layout: 'stat-grid',
       block: 'pricing',
-      titleKey: 'caseStudies.items.boa.quote',
-      subtitleKey: 'caseStudies.items.boa.title',
-      customData: { metric: 'caseStudies.items.boa.metric' },
-      speakerNotes: 'BOA Architects case study. 40 hrs/week saved. Real production result.',
+      items: [
+        { titleKey: 'pres.scarcity.spotsNum', descKey: 'pres.scarcity.spotsLabel' },
+        { titleKey: 'pres.scarcity.discountNum', descKey: 'pres.scarcity.discountLabel' },
+        { titleKey: 'pres.scarcity.expiresNum', descKey: 'pres.scarcity.expiresLabel' },
+      ],
+      speakerNotes: 'Pure urgency. 10 spots, 20% off, expires tonight. Let numbers do the work.',
     },
     {
-      id: 'case-study-2',
-      layout: 'quote',
+      id: 'action-cta',
+      layout: 'title',
       block: 'pricing',
-      titleKey: 'caseStudies.items.realization.quote',
-      subtitleKey: 'caseStudies.items.realization.title',
-      customData: { metric: 'caseStudies.items.realization.metric' },
-      speakerNotes: 'Realization Group case study. 5 ventures, 1 operator. The system the founder uses daily.',
+      titleKey: 'pres.actionCta.title',
+      subtitleKey: 'pres.actionCta.subtitle',
+      speakerNotes: 'Direct call to action. Tell them to type the code in chat RIGHT NOW.',
     },
 
-    // ===== CLOSING BLOCK (slides 38-41) =====
+    // ===== BLOCK 8: CLOSING + Q&A (44-49) =====
     {
       id: 'closing-cta',
       layout: 'title',
       block: 'closing',
       titleKey: 'finalCta.title2',
       subtitleKey: 'pricing.header.promoBadge',
-      speakerNotes: 'Main CTA. Launch Promotion ends March 31st. Time to act.',
+      speakerNotes: 'Main CTA. Launch Promotion ends March 31st.',
     },
     {
       id: 'next-steps',
@@ -430,7 +512,7 @@ export function getSlides(): Slide[] {
         'webinar.presentation.nextStepsItems.2',
         'webinar.presentation.nextStepsItems.3',
       ],
-      speakerNotes: 'Walk through the exact next steps. Make it feel easy and immediate.',
+      speakerNotes: 'Exact next steps. Make it feel easy and immediate.',
     },
     {
       id: 'purchase-links',
@@ -438,7 +520,7 @@ export function getSlides(): Slide[] {
       block: 'closing',
       titleKey: 'webinar.presentation.purchaseNow',
       customData: { showTiers: 'true' },
-      speakerNotes: 'Show purchase links. Drop them in the chat. Help people buy right now.',
+      speakerNotes: 'Show purchase links. Drop them in chat. Help people buy now.',
     },
     {
       id: 'thank-you',
@@ -448,8 +530,6 @@ export function getSlides(): Slide[] {
       subtitleKey: 'webinar.presentation.thankYouSubtitle',
       speakerNotes: 'Thank everyone. Transition to Q&A.',
     },
-
-    // ===== Q&A BLOCK (slides 42-43) =====
     {
       id: 'qa-start',
       layout: 'qa',
@@ -465,7 +545,7 @@ export function getSlides(): Slide[] {
       titleKey: 'webinar.presentation.thankYou',
       subtitleKey: 'webinar.presentation.contactInfo',
       customData: { meetLink: 'webinar.presentation.meetLink' },
-      speakerNotes: 'Final slide. Contact info, Google Meet link for follow-ups. Thank you.',
+      speakerNotes: 'Final slide. Contact info, Google Meet link.',
     },
   ];
 }

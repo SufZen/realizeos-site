@@ -688,5 +688,93 @@
       "successTitle": "!ברוכים הבאים ל-RealizeOS",
       "successMessage": "הרכישה אושרה. קבעו סשן Setup למטה או הצטרפו לוובינר הקרוב."
     }
+  },
+  "pres": {
+    "welcome": {
+      "hook": "מה אם ה-AI שלכם באמת היה זוכר אתכם, מבין את ה-Brand, ומריץ כמו צוות?"
+    },
+    "stats": {
+      "models": "20+",
+      "modelsLabel": "מודלים",
+      "channels": "5",
+      "channelsLabel": "ערוצים",
+      "saved": "40 שעות",
+      "savedLabel": "נחסכות בשבוע",
+      "price": "$249",
+      "priceLabel": "תשלום חד-פעמי"
+    },
+    "agenda": {
+      "items": [
+        "למה רוב ה-AI Setups נכשלים",
+        "8 המנועים בתוך RealizeOS",
+        "הדגמה חיה של המערכת",
+        "ה-Fast Track ל-Deploy שלכם",
+        "תמחור שעושה את ההחלטה קלה"
+      ]
+    },
+    "engagement": {
+      "raiseHand": "תרימו יד בצ'אט אם זה נשמע כמוכם..."
+    },
+    "founder": {
+      "short": "אני מנהל 5 מיזמים — אדריכלות, נדל״ן, ייעוץ, תוכן, SaaS. בניתי את RealizeOS כי האלטרנטיבה הייתה שחיקה.",
+      "punchline": "בניתי את זה כדי לקנות בחזרה את החופש שלי — ועכשיו אתם יכולים להשתמש באותו מנוע בדיוק."
+    },
+    "pain": {
+      "friction": "הרעיונות הכי טובים שלכם מתים בין הכלים. Tool A לא מדבר עם Tool B. הקונטקסט מתאדה. המומנטום נגמר.",
+      "paralysis": "נפח הדיטיילז משתק. אי אפשר לעשות Zoom Out כשכל הזמן מכבים שריפות.",
+      "bottleneck": "הפכתם ל-Middleware. עושים קופי-פייסט מ-ChatGPT בשתיים בלילה במקום לבנות את העתיד.",
+      "stat1num": "73%",
+      "stat1label": "מהאופרייטורז מאבדים קונטקסט בין כלים — כל יום",
+      "stat2num": "15 שעות",
+      "stat2label": "מבוזבזות בשבוע על תיאום כלים ידני"
+    },
+    "transition": {
+      "title": "המעבר",
+      "beforeTitle": "היום",
+      "beforeItems": "כלים מפוזרים בלי שום תיאום,קונטקסט נמחק כל סשן,אתם ה-Middleware — עושים קופי-פייסט בשתיים בלילה,ידע נעלם ברגע שסוגרים את הטאב",
+      "afterTitle": "עם RealizeOS",
+      "afterItems": "מנוע מתואם אחד — הסוכנים עובדים ביחד,זיכרון מתמשך לאורך כל השיחות,אתם הארכיטקט — המערכת מריצה,ידע מצטבר לנצח"
+    },
+    "feature": {
+      "routing": "4 ספקים. 20+ מודלים. המוח הנכון לכל Task — אוטומטית.",
+      "assembly": "לא צ'אטבוט. ה-Clone הדיגיטלי שלכם. מדבר בשפה שלכם, מכיר את הפרויקטים, פועל כמו שותף.",
+      "execution": "הודעה אחת. Workflow מלא. מ-Brief ל-Delivery — בלי בייביסיטינג.",
+      "retrieval": "כל ה-Knowledge Base שלכם — חיפוש לפי Intent, לא Keywords. גישה במילישניות.",
+      "pipelines": "Phases נוקשים: Brief → Draft → Review → Approve → Deploy. כמו האופרציה האמיתית שלכם.",
+      "evolution": "נהיה חכם יותר כל יום. 5 סוגי Auto-Evolution. Risk Scoring מובנה. Rollback אוטומטי.",
+      "multichannel": "WhatsApp. Telegram. Web. Webhooks. Scheduler. מוח אחד, כל הערוצים.",
+      "security": "RBAC. כספת מוצפנת. Audit Trails. הדאטה שלכם נשאר שלכם. נקודה."
+    },
+    "demo": {
+      "intro": "בואו אראה לכם את המערכת האמיתית. זה רץ בפרודקשן — כל יום."
+    },
+    "midCta": {
+      "title": "כבר משוכנעים?",
+      "subtitle": "הלינקים בצ'אט. קוד LAUNCH20OFF ל-20% הנחה."
+    },
+    "howItWorksVisual": {
+      "title": "מקליק עד Output ראשון: פחות משעה"
+    },
+    "usecase": {
+      "knowledge": "מבנו את כל ה-KB. הפכו Compliance לאוטומטי. Playbooks שמריצים את עצמם.",
+      "content": "תוכן עקבי עם ה-Brand בכל ערוץ. LinkedIn, ניוזלטרים, הצעות — בקול שלכם.",
+      "research": "ניתוח שוק במהירות מכונה. דוחות פיננסיים, מודיעין תחרותי, סיכומים מנהליים.",
+      "multiventure": "חדר בקרה אחד. כמה עסקים. קונטקסט מלא נשמר. ככה אנחנו מנהלים 5 מיזמים."
+    },
+    "pricing": {
+      "urgency": "מחירי השקה נגמרים ב-31 במרץ. המחירים האלה לא חוזרים."
+    },
+    "scarcity": {
+      "spotsNum": "10",
+      "spotsLabel": "מקומות נותרו",
+      "discountNum": "20%",
+      "discountLabel": "הנחה על Full ו-Setup",
+      "expiresNum": "הלילה",
+      "expiresLabel": "תוקף הקוד"
+    },
+    "actionCta": {
+      "title": "כתבו LAUNCH20OFF בצ'אט עכשיו",
+      "subtitle": "נשלח לכם את הלינקים. 10 ראשונים בלבד."
+    }
   }
 }

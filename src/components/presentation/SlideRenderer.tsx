@@ -1,10 +1,32 @@
 import { useTranslation } from 'react-i18next';
 import type { Slide } from '@/data/presentationSlides';
 import { usePricing } from '@/data/pricing';
+import {
+  HeroAgentNetwork, FabricDiagram, FeatureMultiLLM, FeaturePromptAssembly,
+  FeatureSkills, FeatureKBSearch, FeatureCreativePipeline, FeatureSelfEvolution,
+  FeatureMultiChannel, FeatureSecurity, PainFragmented, PainLostContext,
+  PainNoCoordination, UseCaseConsulting, UseCaseAgency, UseCaseMultiVenture,
+  UseCaseSaaS, ProductMockup, FounderPhotoFrame, TierLite, TierFull, TierSetup,
+  ComparisonTeamIcon, ComparisonToolsIcon, ComparisonRealizeIcon, PackageLite
+} from '@/components/illustrations';
 
 // Note: dangerouslySetInnerHTML is used only for i18n translation strings from
 // our own translation.json files (developer-controlled, trusted content).
 // Some translation keys contain <br> tags for line breaks.
+
+const illustrationMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  HeroAgentNetwork, FabricDiagram, FeatureMultiLLM, FeaturePromptAssembly,
+  FeatureSkills, FeatureKBSearch, FeatureCreativePipeline, FeatureSelfEvolution,
+  FeatureMultiChannel, FeatureSecurity, PainFragmented, PainLostContext,
+  PainNoCoordination, UseCaseConsulting, UseCaseAgency, UseCaseMultiVenture,
+  UseCaseSaaS, ProductMockup, FounderPhotoFrame, TierLite, TierFull, TierSetup,
+  ComparisonTeamIcon, ComparisonToolsIcon, ComparisonRealizeIcon, PackageLite,
+};
+
+function getIllustration(name?: string) {
+  if (!name) return null;
+  return illustrationMap[name] || null;
+}
 
 interface SlideRendererProps {
   slide: Slide;
@@ -32,16 +54,21 @@ function TitleBodySlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col justify-center px-8 md:px-16 lg:px-24">
       <h2
-        className="text-gradient-yellow mb-6 text-3xl font-bold md:text-5xl"
+        className="text-gradient-yellow mb-4 text-3xl font-bold md:text-5xl"
         dangerouslySetInnerHTML={{ __html: slide.titleKey ? t(slide.titleKey) : '' }}
       />
+      {slide.subtitleKey && (
+        <p className="mb-4 text-base text-muted-foreground md:text-lg">
+          {t(slide.subtitleKey)}
+        </p>
+      )}
       {slide.bodyKeys?.map((key) => (
         <p key={key} className="mb-4 max-w-4xl text-base text-muted-foreground md:text-xl">
           {t(key)}
         </p>
       ))}
       {slide.customData?.promoCode && (
-        <div className="my-4 inline-block rounded-xl border-2 border-brand-yellow bg-brand-yellow/10 px-8 py-3">
+        <div className="animated-border glow-yellow my-4 inline-block rounded-xl px-8 py-3">
           <span className="font-mono text-3xl font-bold tracking-widest text-brand-yellow md:text-5xl">
             {t(slide.customData.promoCode)}
           </span>
@@ -66,9 +93,14 @@ function ListSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col justify-center px-8 md:px-16 lg:px-24">
       {slide.titleKey && (
-        <h2 className="text-gradient-yellow mb-8 text-3xl font-bold md:text-5xl">
+        <h2 className="text-gradient-yellow mb-4 text-3xl font-bold md:text-5xl">
           {t(slide.titleKey)}
         </h2>
+      )}
+      {slide.subtitleKey && (
+        <p className="mb-6 text-base italic text-muted-foreground md:text-lg">
+          {t(slide.subtitleKey)}
+        </p>
       )}
       <ul className="max-w-3xl space-y-4">
         {slide.listKeys?.map((key, i) => (
@@ -224,11 +256,18 @@ function PricingCardSlide({ slide }: SlideRendererProps) {
 
 function DemoSlide({ slide }: SlideRendererProps) {
   const { t } = useTranslation();
+  const Illust = getIllustration(slide.illustration);
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
-      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-brand-yellow/20">
-        <span className="text-4xl">{'\u25B6'}</span>
-      </div>
+      {Illust ? (
+        <div className="illustration-glow mb-6">
+          <Illust className="h-32 w-32 md:h-40 md:w-40" />
+        </div>
+      ) : (
+        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-brand-yellow/20">
+          <span className="text-4xl">{'\u25B6'}</span>
+        </div>
+      )}
       <h2 className="text-gradient-yellow text-glow-yellow text-4xl font-bold md:text-6xl">
         {slide.titleKey ? t(slide.titleKey) : ''}
       </h2>
@@ -261,19 +300,6 @@ function QASlide({ slide }: SlideRendererProps) {
   );
 }
 
-const layoutMap: Record<string, React.ComponentType<SlideRendererProps>> = {
-  title: TitleSlide,
-  'title-body': TitleBodySlide,
-  'two-column': TitleBodySlide,
-  list: ListSlide,
-  'feature-card': FeatureCardSlide,
-  'pricing-card': PricingCardSlide,
-  quote: QuoteSlide,
-  stat: StatSlide,
-  demo: DemoSlide,
-  qa: QASlide,
-};
-
 function StatSlide({ slide }: SlideRendererProps) {
   const { t } = useTranslation();
   return (
@@ -289,6 +315,181 @@ function StatSlide({ slide }: SlideRendererProps) {
     </div>
   );
 }
+
+function SplitSlide({ slide }: SlideRendererProps) {
+  const { t } = useTranslation();
+  const Illust = getIllustration(slide.illustration);
+  const isRTL = typeof document !== 'undefined' && document.documentElement.dir === 'rtl';
+
+  return (
+    <div className={`flex h-full items-center gap-8 px-8 md:px-16 ${isRTL ? 'flex-row-reverse' : 'flex-row'} max-md:flex-col max-md:justify-center`}>
+      {/* Text side - 60% */}
+      <div className="flex w-full flex-col justify-center md:w-3/5">
+        {slide.titleKey && (
+          <h2
+            className="text-gradient-yellow mb-4 text-3xl font-bold md:text-5xl"
+            dangerouslySetInnerHTML={{ __html: t(slide.titleKey) }}
+          />
+        )}
+        {slide.subtitleKey && (
+          <p className="mb-4 text-base text-muted-foreground md:text-lg">
+            {t(slide.subtitleKey)}
+          </p>
+        )}
+        {slide.bodyKeys?.map((key) => (
+          <p key={key} className="mb-3 max-w-2xl text-base text-muted-foreground md:text-lg">
+            {t(key)}
+          </p>
+        ))}
+        {slide.items && slide.items.length > 0 && (
+          <ul className="mt-2 space-y-2">
+            {slide.items.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-base text-foreground">
+                <span className="mt-1 text-brand-yellow">&#10003;</span>
+                <span>{item.titleKey ? t(item.titleKey) : item.title}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      {/* Illustration side - 40% */}
+      {Illust && (
+        <div className="flex w-full items-center justify-center md:w-2/5">
+          <div className="illustration-glow">
+            <Illust className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80" />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StatGridSlide({ slide }: SlideRendererProps) {
+  const { t } = useTranslation();
+  return (
+    <div className="dot-grid flex h-full flex-col items-center justify-center px-8 md:px-16">
+      {slide.titleKey && (
+        <h2 className="text-gradient-yellow mb-10 text-center text-3xl font-bold md:text-5xl">
+          {t(slide.titleKey)}
+        </h2>
+      )}
+      <div className="grid w-full max-w-4xl grid-cols-2 gap-6 lg:grid-cols-4">
+        {slide.items?.map((item, i) => (
+          <div key={i} className="flex flex-col items-center text-center">
+            <span className="font-mono text-5xl font-bold text-brand-yellow md:text-6xl lg:text-7xl">
+              {item.titleKey ? t(item.titleKey) : item.title}
+            </span>
+            <span className="mt-2 text-sm text-muted-foreground md:text-base">
+              {item.descKey ? t(item.descKey) : item.desc}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function IllustrationSlide({ slide }: SlideRendererProps) {
+  const { t } = useTranslation();
+  const Illust = getIllustration(slide.illustration);
+  return (
+    <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
+      {Illust && (
+        <div className="illustration-glow mb-8">
+          <Illust className="h-48 w-48 md:h-64 md:w-64 lg:h-72 lg:w-72" />
+        </div>
+      )}
+      {slide.titleKey && (
+        <h2
+          className="text-gradient-yellow text-glow-yellow text-3xl font-bold md:text-5xl lg:text-6xl"
+          dangerouslySetInnerHTML={{ __html: t(slide.titleKey) }}
+        />
+      )}
+      {slide.subtitleKey && (
+        <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-xl">
+          {t(slide.subtitleKey)}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function BeforeAfterSlide({ slide }: SlideRendererProps) {
+  const { t } = useTranslation();
+  const BeforeIllust = getIllustration(slide.customData?.beforeIllustration);
+  const AfterIllust = getIllustration(slide.customData?.afterIllustration);
+
+  const beforeItems = slide.customData?.beforeItems?.split(',') || [];
+  const afterItems = slide.customData?.afterItems?.split(',') || [];
+
+  return (
+    <div className="flex h-full flex-col items-center justify-center px-8 md:px-16">
+      {slide.titleKey && (
+        <h2 className="text-gradient-yellow mb-8 text-center text-3xl font-bold md:text-5xl">
+          {t(slide.titleKey)}
+        </h2>
+      )}
+      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+        {/* Before panel */}
+        <div className="glass-card rounded-xl border border-destructive/20 p-6">
+          {BeforeIllust && (
+            <div className="mb-4 flex justify-center opacity-60">
+              <BeforeIllust className="h-16 w-16" />
+            </div>
+          )}
+          <h3 className="mb-3 text-center text-lg font-bold text-destructive">
+            {slide.customData?.beforeTitle ? t(slide.customData.beforeTitle) : ''}
+          </h3>
+          <ul className="space-y-2">
+            {beforeItems.map((key, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <span className="mt-0.5 text-destructive">{'\u2717'}</span>
+                {t(key.trim())}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* After panel */}
+        <div className="glass-card rounded-xl border border-brand-yellow/30 p-6">
+          {AfterIllust && (
+            <div className="mb-4 flex justify-center">
+              <AfterIllust className="h-16 w-16" />
+            </div>
+          )}
+          <h3 className="mb-3 text-center text-lg font-bold text-brand-yellow">
+            {slide.customData?.afterTitle ? t(slide.customData.afterTitle) : ''}
+          </h3>
+          <ul className="space-y-2">
+            {afterItems.map((key, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                <span className="mt-0.5 text-brand-yellow">{'\u2713'}</span>
+                {t(key.trim())}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const layoutMap: Record<string, React.ComponentType<SlideRendererProps>> = {
+  title: TitleSlide,
+  'title-body': TitleBodySlide,
+  'two-column': TitleBodySlide,
+  list: ListSlide,
+  'feature-card': FeatureCardSlide,
+  'pricing-card': PricingCardSlide,
+  quote: QuoteSlide,
+  stat: StatSlide,
+  demo: DemoSlide,
+  qa: QASlide,
+  // New visual layouts
+  split: SplitSlide,
+  'stat-grid': StatGridSlide,
+  illustration: IllustrationSlide,
+  'before-after': BeforeAfterSlide,
+};
 
 export function SlideRenderer({ slide }: SlideRendererProps) {
   const Component = layoutMap[slide.layout] || TitleSlide;
