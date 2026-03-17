@@ -40,7 +40,6 @@ export function Home() {
       <main>
         <Hero />
         <Founder />
-        <Methodology />
         <PainPoints />
         <DemoVideo />
         <CaseStudies />
@@ -52,6 +51,7 @@ export function Home() {
         <HowItWorks onOpenWizard={() => setWizardOpen(true)} />
         <Delivery />
         <Testimonials />
+        <Methodology />
         <FAQ />
         <FinalCTA />
       </main>
