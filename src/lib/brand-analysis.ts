@@ -346,350 +346,191 @@ export function getNextQuestion(
 }
 
 // ──────────────────────────────────────────────
-// SMART DEMO SIMULATION
+// SMART DEMO — Regex-based extraction (fallback)
+// Will be replaced by LLM via n8n when available.
+//
+// Design principles:
+// - Tier 1 patterns match explicit labels (HIGH confidence)
+// - Tier 2 patterns match contextual clues (MEDIUM confidence)
+// - Prefer NOT_FOUND over wrong extraction
+// - Per-document extraction with deduplication
+// - Conversation assigns to the ASKED field, not first-missing
 // ──────────────────────────────────────────────
-
-function sleep(ms: number) {
-  return new Promise((r) => setTimeout(r, ms));
-}
-
-// ── Keyword extraction patterns for each field ──
 
 interface FieldPattern {
   key: keyof BrandFieldValues;
-  /** Keywords / patterns to search for in text (case-insensitive) */
-  keywords: RegExp[];
-  /** Extract a snippet around the match */
-  extractSnippet: (text: string, match: RegExpMatchArray) => string;
+  tier1: RegExp[];
+  tier2: RegExp[];
 }
 
 const FIELD_PATTERNS: FieldPattern[] = [
-  {
-    key: 'nameRole',
-    keywords: [
-      /(?:my name is|i'm|i am)\s+([A-Z][a-z]+ [A-Z][a-z]+)/i,
-      /(?:founder|ceo|cto|co-founder|head of|director|manager|lead|owner)\s+(?:at|of|@|&)\s+[\w\s]+/i,
-      /([A-Z][a-z]+ [A-Z][a-z]+)\s*[-–—,]\s*(?:founder|ceo|cto|co-founder|head|director|manager|lead|owner)/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = Math.max(0, (match.index || 0) - 20);
-      const end = Math.min(text.length, (match.index || 0) + match[0].length + 30);
-      return text.slice(start, end).replace(/\n/g, ' ').trim();
-    },
-  },
-  {
-    key: 'bizNameTagline',
-    keywords: [
-      /(?:company|business|brand|startup|product)\s*(?:name|called|is)\s*[:—–-]?\s*(.{3,60})/i,
-      /(?:tagline|slogan|motto)\s*[:—–-]\s*(.{5,80})/i,
-      /^([A-Z][\w\s&]+)\s*[-–—:]\s*(.{10,80})/m,
-    ],
-    extractSnippet: (text, match) => {
-      const start = Math.max(0, (match.index || 0));
-      const end = Math.min(text.length, (match.index || 0) + match[0].length + 20);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'mission',
-    keywords: [
-      /(?:mission|purpose)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:we (?:help|make|enable|empower|build|create|provide|solve))\s+(.{10,150})/i,
-      /(?:our goal|our vision|we exist to)\s*[:—–-]?\s*(.{10,150})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'audience',
-    keywords: [
-      /(?:target (?:audience|market|customer)|ideal (?:customer|client|user))\s*[:—–-]?\s*(.{10,150})/i,
-      /(?:we serve|our (?:customers|clients|users)|designed for|built for)\s+(.{10,150})/i,
-      /(?:(?:small|medium|large) (?:businesses|companies|teams|enterprises))/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 180);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'values',
-    keywords: [
-      /(?:(?:core |our )?values)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:we (?:believe|stand for|value))\s+(.{10,150})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'uvp',
-    keywords: [
-      /(?:unique|value proposition|UVP|USP|what makes us different)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:the only|unlike (?:other|most)|what sets us apart)\s+(.{10,150})/i,
-      /(?:we are the only)\s+(.{10,150})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'positioning',
-    keywords: [
-      /(?:positioning|market position|competitive advantage)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:we are (?:not|the)|we're (?:not|the)|we don't)\s+(.{10,150})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'offerings',
-    keywords: [
-      /(?:(?:our )?(?:products?|services?|offerings?|solutions?|plans?|pricing))\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:\$\d+|free plan|starter|pro|premium|enterprise|basic)\s*[-–—]?\s*(.{5,100})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 250);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'tone',
-    keywords: [
-      /(?:tone (?:of voice)?|voice|brand tone|how (?:we|the brand) sounds?)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:professional|casual|formal|friendly|direct|warm|bold|playful|serious)\s*(?:and|,)\s*(?:professional|casual|formal|friendly|direct|warm|bold|playful)/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'brandPersonality',
-    keywords: [
-      /(?:brand personality|personality|brand (?:is|feels|should feel))\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:(?:we are|our brand is)\s+(?:professional|bold|approachable|innovative|modern|trustworthy|edgy|premium))/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 150);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'strengths',
-    keywords: [
-      /(?:strengths?|good at|best at|excel at|expertise)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:my (?:top )?(?:skills?|abilities|strengths?))\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'gaps',
-    keywords: [
-      /(?:need help|gaps?|weaknesses?|improve|struggle with|challenges?)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:want (?:AI|help|support|automation) (?:for|with))\s+(.{10,150})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'vocabulary',
-    keywords: [
-      /(?:vocabulary|words? (?:to )?(?:use|avoid)|terminology|language|jargon)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:USE|AVOID|SAY|(?:DON'?T|NEVER) (?:USE|SAY))\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'formatting',
-    keywords: [
-      /(?:formatting|format|style (?:guide|rules?))\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:bullet points?|short sentences?|active voice|emoji|headers?)\s*[:—–-]?\s*(.{5,100})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'dosDonts',
-    keywords: [
-      /(?:do'?s?\s*(?:and|&)\s*don'?ts?|rules?|guidelines?)\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:ALWAYS|NEVER|DO|DON'?T)\s*[:—–-]?\s*(.{10,100})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'channelAdjustments',
-    keywords: [
-      /(?:channel|platform|social media|linkedin|twitter|email|newsletter)\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'commPrefs',
-    keywords: [
-      /(?:communication (?:preferences?|style)|how (?:I|you) (?:like|prefer|want))\s*[:—–-]?\s*(.{10,200})/i,
-      /(?:brief|detailed|bullet points?|actionable|recommendations?)\s*(?:and|,)\s*(?:brief|detailed|bullet|concise)/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'personalValues',
-    keywords: [
-      /(?:personal values?|I (?:believe|value|stand for))\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'antiPatterns',
-    keywords: [
-      /(?:anti.?patterns?|frustrat|annoy|hate|can'?t stand|pet peeves?)\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'goodExample',
-    keywords: [
-      /(?:good example|example (?:of )?(?:good|on.?brand))\s*[:—–-]?\s*(.{10,300})/i,
-      /(?:sounds? like (?:us|me|our brand))\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 300);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'badExample',
-    keywords: [
-      /(?:bad example|example (?:of )?(?:bad|off.?brand))\s*[:—–-]?\s*(.{10,300})/i,
-      /(?:doesn'?t sound like (?:us|me)|avoid (?:this|writing like))\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 300);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
-  {
-    key: 'workflows',
-    keywords: [
-      /(?:workflow|weekly (?:tasks?|routine)|recurring|repeating|every week)\s*[:—–-]?\s*(.{10,200})/i,
-    ],
-    extractSnippet: (text, match) => {
-      const start = match.index || 0;
-      const end = Math.min(text.length, start + 200);
-      return text.slice(start, end).replace(/\n+/g, ' ').trim();
-    },
-  },
+  // ── Identity fields ──
+  { key: 'nameRole',
+    tier1: [/(?:name\s*(?:&|and)\s*role|about\s*(?:me|the\s*founder))\s*[:—–-]\s*(.{5,120})/i,
+            /([A-Z][a-z]+ [A-Z][a-z]+)\s*[-–—,]\s*(?:founder|ceo|cto|coo|co-founder|owner|managing\s*director)\s+(?:at|of|@)\s+(.{2,40})/i],
+    tier2: [/(?:my name is|i'm|i am)\s+([A-Z][a-z]+ [A-Z][a-z]+)/i,
+            /(?:founder|ceo|cto|co-founder|owner)\s+(?:at|of|@)\s+([\w\s]{2,40})/i] },
+  { key: 'strengths',
+    tier1: [/(?:(?:my |top |key )?strengths?|what\s+I'?m?\s+(?:best|good)\s+at|my\s+expertise)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:I\s+(?:excel|specialize)\s+(?:at|in))\s+(.{10,150})/i] },
+  { key: 'gaps',
+    tier1: [/(?:(?:where\s+)?I\s+need\s+help|my\s+(?:gaps?|weaknesses?)|areas?\s+(?:for|of)\s+improvement)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:I\s+(?:struggle|need\s+(?:help|support))\s+with)\s+(.{10,150})/i] },
+  { key: 'commPrefs',
+    tier1: [/(?:communication\s+(?:preferences?|style)|how\s+I\s+(?:like|prefer)\s+(?:to\s+)?(?:receive|get)\s+info)\s*[:—–-]\s*(.{10,200})/i],
+    tier2: [] },
+  { key: 'personalValues',
+    tier1: [/(?:(?:my\s+)?personal\s+values?|values?\s+that\s+drive\s+me)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:I\s+(?:deeply\s+)?(?:believe\s+in|stand\s+for))\s+(.{10,150})/i] },
+  { key: 'antiPatterns',
+    tier1: [/(?:(?:my\s+)?(?:anti[- ]?patterns?|pet\s+peeves?|frustrations?)|what\s+(?:frustrates?|annoys?)\s+me)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:I\s+(?:can'?t\s+stand|hate|dislike))\s+(.{10,150})/i] },
+  // ── Business fields ──
+  { key: 'bizNameTagline',
+    tier1: [/(?:(?:company|business|brand|venture)\s+name|tagline|slogan)\s*[:—–-]\s*(.{3,100})/i],
+    tier2: [/(?:(?:our|the)\s+(?:company|business|brand)\s+is\s+called)\s*[:—–-]?\s*(.{3,80})/i,
+            /^([A-Z][\w\s&]{2,30})\s*[-–—:]\s*(.{10,80})/m] },
+  { key: 'mission',
+    tier1: [/(?:(?:our\s+)?mission|(?:our\s+)?purpose)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:we\s+(?:help|enable|empower))\s+(.{10,150})/i] },
+  { key: 'audience',
+    tier1: [/(?:(?:target|ideal)\s+(?:audience|customer|client|market))\s*[:—–-]\s*(.{10,200})/i],
+    tier2: [/(?:(?:we\s+)?(?:serve|built\s+for|designed\s+for))\s*[:—–-]?\s*(.{10,200})/i] },
+  { key: 'values',
+    tier1: [/(?:(?:our\s+)?(?:core|company|brand|business)\s+values?)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:we\s+(?:believe\s+in|stand\s+for|are\s+committed\s+to))\s+(.{10,200})/i] },
+  { key: 'uvp',
+    tier1: [/(?:(?:unique\s+)?value\s+proposition|UVP|USP|what\s+makes\s+us\s+(?:different|unique))\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:we\s+are\s+the\s+only)\s+(.{10,200})/i] },
+  { key: 'positioning',
+    tier1: [/(?:(?:market\s+)?positioning|competitive\s+(?:advantage|position))\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:we\s+(?:are|'re)\s+NOT)\s+(.{10,150})/i] },
+  { key: 'offerings',
+    tier1: [/(?:(?:our|key)\s+(?:offerings?|products?\s+(?:&|and)\s+services?))\s*[:—–-]\s*(.{10,300})/i,
+            /(?:pricing|plans?)\s*[:—–-]\s*(.{10,200})/i],
+    tier2: [/(?:\$\d+(?:\.\d+)?(?:\s*\/\s*(?:mo(?:nth)?|yr|year|user)))/i] },
+  { key: 'brandPersonality',
+    tier1: [/(?:(?:brand|venture|company)\s+personality)\s*[:—–-]\s*(.{10,200})/i],
+    tier2: [/(?:our\s+brand\s+(?:is|feels?|sounds?))\s+(.{10,150})/i] },
+  // ── Voice fields ──
+  { key: 'tone',
+    tier1: [/(?:tone\s+(?:of\s+voice)?|brand\s+tone|voice\s+(?:&|and)\s+tone)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:(?:we|our\s+brand)\s+sound(?:s)?\s+like)\s+(.{10,150})/i] },
+  { key: 'vocabulary',
+    tier1: [/(?:vocabulary|words?\s+(?:to\s+)?(?:use|avoid)|(?:brand\s+)?terminology)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [/(?:(?:we\s+)?(?:USE|SAY))\s*[:—–-]\s*(.{5,200})/,
+            /(?:(?:we\s+)?(?:AVOID|(?:DON'?T|NEVER)\s+(?:USE|SAY)))\s*[:—–-]\s*(.{5,200})/] },
+  { key: 'formatting',
+    tier1: [/(?:formatting\s+(?:rules?|guidelines?|preferences?)|(?:content\s+)?style\s+guide)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [] },
+  { key: 'dosDonts',
+    tier1: [/(?:do'?s?\s*(?:and|&)\s*don'?ts?)\s*[:—–-]\s*(.{10,250})/i,
+            /(?:(?:brand|content|writing)\s+(?:rules?|guidelines?))\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [] },
+  { key: 'channelAdjustments',
+    tier1: [/(?:channel\s+(?:adjustments?|(?:specific\s+)?tone)|(?:tone|voice)\s+(?:per|by)\s+(?:channel|platform))\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [] },
+  // ── Example fields ──
+  { key: 'goodExample',
+    tier1: [/(?:(?:good|on[- ]?brand)\s+example)\s*[:—–-]\s*(.{10,400})/i],
+    tier2: [] },
+  { key: 'badExample',
+    tier1: [/(?:(?:bad|off[- ]?brand)\s+example)\s*[:—–-]\s*(.{10,400})/i],
+    tier2: [] },
+  { key: 'workflows',
+    tier1: [/(?:(?:weekly\s+)?workflows?|weekly\s+(?:tasks?|routine)|recurring\s+tasks?)\s*[:—–-]\s*(.{10,250})/i],
+    tier2: [] },
 ];
 
-// ── Smart Analysis — scans actual document text ──
+// ── Paragraph-aware snippet extraction ──
+
+function extractParagraph(text: string, matchIndex: number, maxLen = 300): string {
+  const paragraphs: { start: number; end: number; text: string }[] = [];
+  let pos = 0;
+  for (const block of text.split(/\n\s*\n/)) {
+    const trimmed = block.trim();
+    if (trimmed) {
+      paragraphs.push({ start: pos, end: pos + block.length, text: trimmed });
+    }
+    pos += block.length + 1;
+  }
+  const para = paragraphs.find((p) => matchIndex >= p.start && matchIndex < p.end);
+  if (!para) return text.slice(matchIndex, matchIndex + maxLen).trim();
+  let result = para.text;
+  if (result.length < 40 && paragraphs.indexOf(para) < paragraphs.length - 1) {
+    result += ' ' + paragraphs[paragraphs.indexOf(para) + 1].text;
+  }
+  return result.length > maxLen ? result.slice(0, maxLen - 1) + '\u2026' : result;
+}
+
+// ── Validation: reject obviously bad extractions ──
+
+function isValidExtraction(value: string): boolean {
+  if (value.length < 5) return false;
+  const content = value.replace(/\b(?:the|a|an|and|or|is|are|was|be|to|of|in|for|with|on|at|by|from|as|it|this|that|we|our|i|my)\b/gi, '').trim();
+  return content.length >= 3;
+}
+
+// ── Per-document field extraction ──
+
+interface DocMatch { value: string; confidence: Confidence; source: string }
+
+function extractFieldFromDocuments(
+  pattern: FieldPattern,
+  documents: Array<{ name: string; text: string }>,
+): DocMatch | null {
+  let best: DocMatch | null = null;
+  for (const doc of documents) {
+    const text = doc.text;
+    if (text.replace(/\[.*?\]/g, '').trim().length < 20) continue;
+    // Tier 1 = HIGH confidence (explicit labels)
+    for (const regex of pattern.tier1) {
+      const match = text.match(regex);
+      if (match) {
+        const value = (match[1] || extractParagraph(text, match.index || 0)).trim();
+        if (isValidExtraction(value)) {
+          return { value, confidence: 'HIGH', source: doc.name };
+        }
+      }
+    }
+    // Tier 2 = MEDIUM confidence (contextual)
+    for (const regex of pattern.tier2) {
+      const match = text.match(regex);
+      if (match) {
+        const value = (match[1] || extractParagraph(text, match.index || 0)).trim();
+        if (isValidExtraction(value) && (!best || best.confidence !== 'HIGH')) {
+          best = { value, confidence: 'MEDIUM', source: doc.name };
+        }
+      }
+    }
+  }
+  return best;
+}
+
+// ── Smart Analysis — per-document extraction with dedup ──
 
 async function smartAnalysis(req: AnalyzeRequest): Promise<AnalysisResult> {
-  await sleep(1500 + Math.random() * 1000);
-
-  // Combine all document text
-  const combinedText = req.documents.map((d) => d.text).join('\n\n---\n\n');
-  const hasRealContent = combinedText.replace(/\[.*?\]/g, '').trim().length > 50;
-
   const fields: Record<string, ExtractedField> = {};
+  const usedValues = new Set<string>();
+  const allText = req.documents.map((d) => d.text).join('\n\n');
 
   for (const fieldDef of FIELDS) {
     const pattern = FIELD_PATTERNS.find((p) => p.key === fieldDef.key);
-
-    if (pattern && hasRealContent) {
-      let bestMatch: { value: string; confidence: Confidence; source: string } | null = null;
-
-      for (const regex of pattern.keywords) {
-        const match = combinedText.match(regex);
-        if (match) {
-          const snippet = pattern.extractSnippet(combinedText, match);
-          const cleaned = snippet.length > 200 ? snippet.slice(0, 197) + '…' : snippet;
-
-          // Determine confidence based on match quality
-          const confidence: Confidence = match[1]
-            ? 'HIGH'
-            : cleaned.length > 40
-              ? 'MEDIUM'
-              : 'LOW';
-
-          // Find which document this came from
-          let source = 'uploaded documents';
-          for (const doc of req.documents) {
-            if (doc.text.includes(match[0])) {
-              source = doc.name;
-              break;
-            }
-          }
-
-          if (!bestMatch || (confidence === 'HIGH' && bestMatch.confidence !== 'HIGH')) {
-            bestMatch = { value: match[1] || cleaned, confidence, source };
-          }
-        }
-      }
-
-      if (bestMatch) {
+    if (pattern) {
+      const match = extractFieldFromDocuments(pattern, req.documents);
+      if (match && !usedValues.has(match.value)) {
+        usedValues.add(match.value);
         fields[fieldDef.key] = {
-          value: bestMatch.value,
-          confidence: bestMatch.confidence,
-          source: bestMatch.source,
-          followUpQuestion: bestMatch.confidence === 'LOW'
-            ? `I found something for "${fieldDef.label}" but I'm not confident. Could you confirm?`
+          value: match.value,
+          confidence: match.confidence,
+          source: match.source,
+          followUpQuestion: match.confidence !== 'HIGH'
+            ? `Could you confirm your ${fieldDef.label.toLowerCase()}? ${fieldDef.hint}`
             : null,
         };
         continue;
       }
     }
-
-    // No match found
     fields[fieldDef.key] = {
       value: null,
       confidence: 'NOT_FOUND',
@@ -698,42 +539,35 @@ async function smartAnalysis(req: AnalyzeRequest): Promise<AnalysisResult> {
     };
   }
 
-  // Detect bonus insights from content
   const toneWords = ['professional', 'casual', 'friendly', 'direct', 'warm', 'bold', 'playful', 'serious', 'formal'];
-  const detectedTone = toneWords.filter((w) => combinedText.toLowerCase().includes(w));
+  const detectedTone = toneWords.filter((w) => allText.toLowerCase().includes(w));
 
   return {
     fields: fields as AnalysisResult['fields'],
     bonusInsights: {
-      competitors: extractCompetitors(combinedText),
+      competitors: extractCompetitors(allText),
       writingPatterns: {
-        toneProfile: detectedTone.length > 0 ? detectedTone.join(', ') : hasRealContent ? 'Professional, balanced' : '',
-        vocabularyFrequent: extractFrequentWords(combinedText),
+        toneProfile: detectedTone.length > 0 ? detectedTone.join(', ') : '',
+        vocabularyFrequent: extractFrequentWords(allText),
         vocabularyAvoided: [],
       },
-      marketClues: hasRealContent ? extractMarketClues(combinedText) : '',
+      marketClues: extractMarketClues(allText),
     },
   };
 }
 
 /** Extract competitor mentions */
 function extractCompetitors(text: string): string[] {
-  const patterns = [
-    /(?:competitors?|vs\.?|versus|compared to|alternative to)\s+([A-Z]\w+(?:\s[A-Z]\w+)?)/gi,
-  ];
+  const re = /(?:competitors?|vs\.?|versus|compared\s+to|alternative\s+to)\s+([A-Z]\w+(?:\s[A-Z]\w+)?)/g;
   const found = new Set<string>();
-  for (const pat of patterns) {
-    let m;
-    while ((m = pat.exec(text)) !== null) {
-      if (m[1] && m[1].length > 2 && m[1].length < 30) {
-        found.add(m[1].trim());
-      }
-    }
+  let m;
+  while ((m = re.exec(text)) !== null) { // eslint-disable-line no-cond-assign
+    if (m[1] && m[1].length > 2 && m[1].length < 30) found.add(m[1].trim());
   }
   return Array.from(found).slice(0, 5);
 }
 
-/** Extract frequently used words (simple word frequency) */
+/** Extract frequently used words */
 function extractFrequentWords(text: string): string[] {
   const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'is', 'in', 'to', 'for', 'of', 'with', 'on', 'at', 'by', 'from', 'as', 'it', 'this', 'that', 'are', 'was', 'be', 'not', 'we', 'our', 'your', 'you', 'i', 'me', 'my', 'will', 'can', 'has', 'have', 'do', 'does', 'did', 'been', 'its', 'all', 'who', 'what', 'if', 'so', 'no', 'more', 'up', 'just', 'about', 'also', 'how', 'when', 'they', 'them', 'their']);
   const words = text.toLowerCase().match(/\b[a-z]{4,15}\b/g) || [];
@@ -749,78 +583,110 @@ function extractFrequentWords(text: string): string[] {
     .map(([word]) => word);
 }
 
-/** Extract market positioning clues */
+/** Extract market clues */
 function extractMarketClues(text: string): string {
-  const patterns = [
-    /(?:market|industry|sector|space|niche)\s*[:—–-]?\s*(.{10,80})/i,
-    /(?:B2B|B2C|SaaS|DTC|agency|startup|enterprise)/i,
+  const pats = [
+    /(?:market|industry|sector|space|niche)\s*[:—–-]\s*(.{10,80})/i,
+    /\b(B2B|B2C|SaaS|DTC|agency|startup|enterprise)\b/i,
   ];
-  for (const pat of patterns) {
+  for (const pat of pats) {
     const m = text.match(pat);
-    if (m) return m[0].trim();
+    if (m) return (m[1] || m[0]).trim();
   }
   return '';
 }
 
-// ── Smart Conversation — fills multiple fields per turn ──
+// ── Smart Conversation — assigns answers to the ASKED field ──
+
+/** Detect which field(s) the last assistant message was asking about */
+function detectAskedFields(messages: Array<{ role: string; content: string }>): (keyof BrandFieldValues)[] {
+  const lastAssistant = [...messages].reverse().find((m) => m.role === 'assistant');
+  if (!lastAssistant) return [];
+  const asked: (keyof BrandFieldValues)[] = [];
+  const content = lastAssistant.content.toLowerCase();
+  for (const field of FIELDS) {
+    if (content.includes(field.label.toLowerCase()) || content.includes(field.hint.toLowerCase())) {
+      asked.push(field.key);
+    }
+  }
+  return asked;
+}
 
 async function smartConversation(req: ConversationRequest): Promise<ConversationResponse> {
-  await sleep(600 + Math.random() * 400);
-
   const lastUserMsg = req.messages.filter((m) => m.role === 'user').pop();
   if (!lastUserMsg) {
     return { reply: 'Tell me more about your business.', fieldUpdates: {}, suggestions: [], fieldsUpdated: [] };
   }
 
   const userText = lastUserMsg.content;
-
-  // Try to match the user's answer to MULTIPLE missing fields
   const fieldUpdates: Partial<BrandFieldValues> = {};
   const fieldsUpdated: (keyof BrandFieldValues)[] = [];
 
-  for (const missingKey of req.missingFields) {
-    const key = missingKey as keyof BrandFieldValues;
-    const pattern = FIELD_PATTERNS.find((p) => p.key === key);
+  // Skip/pass detection
+  if (/^(?:skip|i\s+don'?t\s+know|not\s+sure|pass|next|n\/?a)$/i.test(userText.trim())) {
+    const remaining = req.missingFields.length;
+    return {
+      reply: remaining > 1 ? `No problem, let's move on. ${remaining} more to go.` : "That's okay, let's move on.",
+      fieldUpdates: {},
+      suggestions: [],
+      fieldsUpdated: [],
+    };
+  }
 
-    if (pattern) {
-      for (const regex of pattern.keywords) {
-        const match = userText.match(regex);
-        if (match) {
-          fieldUpdates[key] = match[1] || match[0];
+  // Determine which field(s) were asked about
+  const askedFields = detectAskedFields(req.messages);
+  const askedMissing = askedFields.filter((k) => req.missingFields.includes(k));
+
+  if (askedMissing.length === 1) {
+    // Single field — assign full answer
+    fieldUpdates[askedMissing[0]] = userText;
+    fieldsUpdated.push(askedMissing[0]);
+  } else if (askedMissing.length > 1) {
+    // Multiple fields — try sentence-level assignment
+    const sentences = userText.split(/[.\n]+/).map((s) => s.trim()).filter(Boolean);
+    const unassigned: string[] = [];
+    for (const sentence of sentences) {
+      let matched = false;
+      for (const key of askedMissing) {
+        if (fieldsUpdated.includes(key)) continue;
+        const field = FIELDS.find((f) => f.key === key);
+        if (!field) continue;
+        if (sentence.toLowerCase().includes(field.label.toLowerCase())) {
+          fieldUpdates[key] = sentence;
           fieldsUpdated.push(key);
+          matched = true;
           break;
         }
       }
+      if (!matched) unassigned.push(sentence);
+    }
+    // Distribute unassigned to remaining asked fields
+    const stillMissing = askedMissing.filter((k) => !fieldsUpdated.includes(k));
+    for (let i = 0; i < stillMissing.length && i < unassigned.length; i++) {
+      fieldUpdates[stillMissing[i]] = unassigned[i];
+      fieldsUpdated.push(stillMissing[i]);
     }
   }
 
-  // If no pattern matches, assign the text to the first missing field
-  // (user is directly answering the question we asked)
+  // Fallback: if we couldn't detect asked fields, assign to first missing
   if (fieldsUpdated.length === 0 && req.missingFields.length > 0) {
-    const firstMissing = req.missingFields[0] as keyof BrandFieldValues;
-    fieldUpdates[firstMissing] = userText;
-    fieldsUpdated.push(firstMissing);
+    const target = req.missingFields[0] as keyof BrandFieldValues;
+    fieldUpdates[target] = userText;
+    fieldsUpdated.push(target);
   }
 
   const remaining = req.missingFields.length - fieldsUpdated.length;
 
-  // Build a natural reply
   let reply: string;
   if (fieldsUpdated.length > 1) {
     const labels = fieldsUpdated.map((k) => FIELDS.find((f) => f.key === k)?.label || k);
-    reply = `Nice — I picked up **${fieldsUpdated.length} details** from that: ${labels.join(', ')}.`;
-    if (remaining > 0) {
-      reply += ` Just **${remaining}** more to go!`;
-    } else {
-      reply += ` That's everything — your brand profile is **complete**! 🎉`;
-    }
+    reply = `Great — I captured **${fieldsUpdated.length} details**: ${labels.join(', ')}.`;
+    reply += remaining > 0 ? ` **${remaining}** more to go!` : " That's everything!";
   } else if (fieldsUpdated.length === 1) {
     const label = FIELDS.find((f) => f.key === fieldsUpdated[0])?.label || '';
-    if (remaining > 0) {
-      reply = `Got it — saved to **${label}**. ${remaining} more question${remaining > 1 ? 's' : ''} to go.`;
-    } else {
-      reply = `Perfect — **${label}** is the last one! Your brand profile is **complete**! 🎉`;
-    }
+    reply = remaining > 0
+      ? `Got it — saved to **${label}**. ${remaining} more to go.`
+      : `Perfect — **${label}** completes your profile!`;
   } else {
     reply = "Thanks! Let me note that down.";
   }

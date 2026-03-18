@@ -21,3 +21,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Session prompts (not for version control)
+n8n-vie-workflows-prompt.md
