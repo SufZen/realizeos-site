@@ -2,7 +2,7 @@
  * WizardAnalyzing — Processing animation
  * ───────────────────────────────────────────── */
 import { motion } from 'framer-motion';
-import { Brain, FileSearch, Sparkles, CheckCircle2, Loader2 } from 'lucide-react';
+import { Brain, FileSearch, Sparkles, CheckCircle2, Loader2, AlertTriangle, XCircle } from 'lucide-react';
 import type { UploadedDocument } from '@/types/wizard';
 
 interface WizardAnalyzingProps {
@@ -54,19 +54,40 @@ export function WizardAnalyzing({ documents, fieldsFound, fieldsTotal, isComplet
 
       {/* Document list */}
       <div className="w-full max-w-sm space-y-2">
-        {documents.map((doc, i) => (
-          <motion.div
-            key={doc.id}
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.15 }}
-            className="flex items-center gap-3 rounded-lg border border-border/50 bg-card/30 px-4 py-2.5"
-          >
-            <CheckCircle2 className="h-4 w-4 shrink-0 text-green-400" />
-            <span className="flex-1 truncate text-sm text-foreground">{doc.name}</span>
-            <span className="text-xs text-muted-foreground">analyzed</span>
-          </motion.div>
-        ))}
+        {documents.map((doc, i) => {
+          const hasRealText = doc.extractedText && !doc.extractedText.startsWith('[');
+          let icon: React.ReactNode;
+          let statusLabel: string;
+
+          if (doc.status === 'processing') {
+            icon = <Loader2 className="h-4 w-4 shrink-0 animate-spin text-brand-yellow" />;
+            statusLabel = 'processing...';
+          } else if (doc.status === 'error') {
+            icon = <XCircle className="h-4 w-4 shrink-0 text-red-400" />;
+            statusLabel = 'failed';
+          } else if (doc.status === 'ready' && hasRealText) {
+            icon = <CheckCircle2 className="h-4 w-4 shrink-0 text-green-400" />;
+            statusLabel = 'analyzed';
+          } else {
+            icon = <AlertTriangle className="h-4 w-4 shrink-0 text-yellow-500" />;
+            statusLabel = 'limited';
+          }
+
+          return (
+            <motion.div
+              key={doc.id}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.15 }}
+              className="flex items-center gap-3 rounded-lg border border-border/50 bg-card/30 px-4 py-2.5"
+              title={doc.status === 'error' && doc.errorMessage ? doc.errorMessage : undefined}
+            >
+              {icon}
+              <span className="flex-1 truncate text-sm text-foreground">{doc.name}</span>
+              <span className="text-xs text-muted-foreground">{statusLabel}</span>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Stage indicators */}

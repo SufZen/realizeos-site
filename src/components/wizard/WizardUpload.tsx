@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, FileText, Image, Link2, X, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { UploadedDocument } from '@/types/wizard';
-import { extractTextFromFile } from '@/lib/brand-analysis';
+import { extractTextFromFile, extractTextFromUrl } from '@/lib/brand-analysis';
 
 interface WizardUploadProps {
   documents: UploadedDocument[];
@@ -30,6 +30,21 @@ const ACCEPTED_TYPES: Record<string, UploadedDocument['type']> = {
 };
 
 const ACCEPT_STRING = Object.keys(ACCEPTED_TYPES).join(',');
+
+const BLOCKED_URL_PATTERNS: { pattern: RegExp; message: string }[] = [
+  { pattern: /linkedin\.com/i, message: 'LinkedIn blocks automated access. Export your profile as PDF (Settings > Data Privacy > Get a copy) and upload it here.' },
+  { pattern: /(?:twitter\.com|x\.com)/i, message: 'X/Twitter blocks scraping. Try pasting your bio text directly in the chat step.' },
+  { pattern: /instagram\.com/i, message: "Instagram content can't be extracted. Describe your brand in the chat step instead." },
+  { pattern: /facebook\.com/i, message: "Facebook pages can't be scraped. Upload your About page as a screenshot or describe it in chat." },
+  { pattern: /docs\.google\.com/i, message: 'Make the doc publicly accessible, or export as PDF/DOCX and upload.' },
+];
+
+function getBlockedUrlMessage(url: string): string | null {
+  for (const { pattern, message } of BLOCKED_URL_PATTERNS) {
+    if (pattern.test(url)) return message;
+  }
+  return null;
+}
 
 function fileIcon(type: UploadedDocument['type']) {
   switch (type) {
@@ -100,18 +115,47 @@ export function WizardUpload({ documents, onDocumentsChange, onAnalyze, onSkip }
     onDocumentsChange(updatedDocs);
   }, [documents, onDocumentsChange]);
 
-  const addUrl = useCallback(() => {
+  const [urlWarning, setUrlWarning] = useState('');
+
+  const addUrl = useCallback(async () => {
     const url = urlInput.trim();
     if (!url) return;
+
+    const docId = nextId();
+    const blockedMessage = getBlockedUrlMessage(url);
+
     const doc: UploadedDocument = {
-      id: nextId(),
+      id: docId,
       name: url.replace(/^https?:\/\//, '').slice(0, 60),
       type: 'url',
       size: 0,
-      status: 'ready',
+      status: blockedMessage ? 'error' : 'processing',
+      ...(blockedMessage && { errorMessage: blockedMessage }),
     };
-    onDocumentsChange([...documents, doc]);
+
+    const allDocs = [...documents, doc];
+    onDocumentsChange(allDocs);
     setUrlInput('');
+    setUrlWarning(blockedMessage || '');
+
+    if (blockedMessage) return;
+
+    try {
+      const text = await extractTextFromUrl(url);
+      onDocumentsChange(
+        allDocs.map((d) =>
+          d.id === docId ? { ...d, extractedText: text, status: 'ready' as const } : d,
+        ),
+      );
+    } catch (err) {
+      onDocumentsChange(
+        allDocs.map((d) =>
+          d.id === docId
+            ? { ...d, status: 'error' as const, errorMessage: err instanceof Error ? err.message : 'URL extraction failed' }
+            : d,
+        ),
+      );
+    }
   }, [urlInput, documents, onDocumentsChange]);
 
   const removeDoc = useCallback((id: string) => {
@@ -168,21 +212,32 @@ export function WizardUpload({ documents, onDocumentsChange, onAnalyze, onSkip }
       </motion.div>
 
       {/* URL input */}
-      <div className="flex gap-2">
-        <div className="relative flex-1">
-          <Link2 className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <input
-            type="url"
-            placeholder="Paste a website URL..."
-            value={urlInput}
-            onChange={(e) => setUrlInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && addUrl()}
-            className="w-full rounded-lg border border-border bg-background/40 py-2.5 pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-brand-yellow/60 focus:outline-none focus:ring-1 focus:ring-brand-yellow/30"
-          />
+      <div className="flex flex-col gap-1.5">
+        <div className="flex gap-2">
+          <div className="relative flex-1">
+            <Link2 className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="url"
+              placeholder="Paste a website URL..."
+              value={urlInput}
+              onChange={(e) => {
+                setUrlInput(e.target.value);
+                setUrlWarning(getBlockedUrlMessage(e.target.value.trim()) || '');
+              }}
+              onKeyDown={(e) => e.key === 'Enter' && addUrl()}
+              className="w-full rounded-lg border border-border bg-background/40 py-2.5 pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-brand-yellow/60 focus:outline-none focus:ring-1 focus:ring-brand-yellow/30"
+            />
+          </div>
+          <Button size="sm" variant="outline" onClick={addUrl} disabled={!urlInput.trim()}>
+            Add
+          </Button>
         </div>
-        <Button size="sm" variant="outline" onClick={addUrl} disabled={!urlInput.trim()}>
-          Add
-        </Button>
+        {urlWarning && (
+          <p className="flex items-start gap-1.5 text-xs text-yellow-500">
+            <AlertCircle className="mt-0.5 h-3 w-3 shrink-0" />
+            {urlWarning}
+          </p>
+        )}
       </div>
 
       {/* Uploaded file list */}
@@ -200,6 +255,9 @@ export function WizardUpload({ documents, onDocumentsChange, onAnalyze, onSkip }
               <p className="truncate text-sm font-medium text-foreground">{doc.name}</p>
               {doc.size > 0 && (
                 <p className="text-xs text-muted-foreground">{formatSize(doc.size)}</p>
+              )}
+              {doc.status === 'error' && doc.errorMessage && (
+                <p className="text-xs text-yellow-500">{doc.errorMessage}</p>
               )}
             </div>
             {statusIcon(doc.status)}

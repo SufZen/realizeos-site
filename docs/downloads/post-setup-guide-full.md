@@ -824,7 +824,7 @@ cp .env .env.backup
 
 ```bash
 git pull origin main
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 docker compose build && docker compose up -d
 ```
 

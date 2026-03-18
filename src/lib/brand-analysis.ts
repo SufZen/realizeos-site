@@ -11,6 +11,10 @@
  * and the real endpoints are called instead.
  * ───────────────────────────────────────────── */
 
+import * as pdfjsLib from 'pdfjs-dist';
+import mammoth from 'mammoth';
+import * as XLSX from 'xlsx';
+
 import type {
   BrandFieldValues,
   AnalysisResult,
@@ -19,6 +23,9 @@ import type {
   ChatMessage,
 } from '@/types/wizard';
 import { BRAND_FIELDS as FIELDS } from '@/types/wizard';
+
+// ── pdf.js worker setup ──
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
 // ── Configuration ──
 
@@ -81,35 +88,109 @@ export async function sendConversationMessage(req: ConversationRequest): Promise
 // ── Document text extraction (client-side) ──
 
 export async function extractTextFromFile(file: File): Promise<string> {
-  // Text-based files — real extraction
+  const ext = file.name.split('.').pop()?.toLowerCase() ?? '';
+
+  // Text-based files
   if (
     file.type === 'text/plain' ||
     file.type === 'text/markdown' ||
     file.type === 'text/csv' ||
-    file.name.endsWith('.txt') ||
-    file.name.endsWith('.md') ||
-    file.name.endsWith('.csv')
+    ['txt', 'md', 'csv'].includes(ext)
   ) {
     return file.text();
   }
 
   // JSON files
-  if (file.type === 'application/json' || file.name.endsWith('.json')) {
+  if (file.type === 'application/json' || ext === 'json') {
     return file.text();
   }
 
-  // HTML files
-  if (file.type === 'text/html' || file.name.endsWith('.html') || file.name.endsWith('.htm')) {
+  // HTML files — use DOMParser for safe text extraction
+  if (file.type === 'text/html' || ['html', 'htm'].includes(ext)) {
     const html = await file.text();
-    // Strip HTML tags to get raw text
-    const div = document.createElement('div');
-    div.innerHTML = html;
-    return div.textContent || div.innerText || '';
+    const parsed = new DOMParser().parseFromString(html, 'text/html');
+    return parsed.body.textContent || '';
   }
 
-  // For PDF, DOCX, XLSX — need server-side processing
-  // Return placeholder for now
-  return `[Binary file: ${file.name} — ${(file.size / 1024).toFixed(0)} KB — requires server-side parsing]`;
+  // PDF files
+  if (file.type === 'application/pdf' || ext === 'pdf') {
+    return extractPdf(file);
+  }
+
+  // DOCX files
+  if (
+    file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
+    file.type === 'application/msword' ||
+    ['docx', 'doc'].includes(ext)
+  ) {
+    return extractDocx(file);
+  }
+
+  // XLSX / XLS files
+  if (
+    file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+    file.type === 'application/vnd.ms-excel' ||
+    ['xlsx', 'xls'].includes(ext)
+  ) {
+    return extractXlsx(file);
+  }
+
+  // Image files — can't extract text in browser
+  if (file.type.startsWith('image/')) {
+    return `[Image file — text extraction not available in browser. Upload as PDF or describe in chat.]`;
+  }
+
+  return `[Unsupported file type: ${file.name}]`;
+}
+
+async function extractPdf(file: File): Promise<string> {
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+  const pages: string[] = [];
+
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const text = content.items
+      .map((item) => ('str' in item ? item.str : ''))
+      .join(' ');
+    if (text.trim()) pages.push(text);
+  }
+
+  if (pages.length === 0) {
+    return `[PDF has no extractable text — it may be scanned/image-based. Try OCR or describe in chat.]`;
+  }
+
+  return pages.join('\n\n');
+}
+
+async function extractDocx(file: File): Promise<string> {
+  const arrayBuffer = await file.arrayBuffer();
+  const result = await mammoth.extractRawText({ arrayBuffer });
+  if (!result.value.trim()) {
+    return `[DOCX file appears to be empty or contains only images.]`;
+  }
+  return result.value;
+}
+
+async function extractXlsx(file: File): Promise<string> {
+  const arrayBuffer = await file.arrayBuffer();
+  const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+  const sheets: string[] = [];
+
+  for (const name of workbook.SheetNames) {
+    const sheet = workbook.Sheets[name];
+    const csv = XLSX.utils.sheet_to_csv(sheet);
+    if (csv.trim()) {
+      sheets.push(`--- Sheet: ${name} ---\n${csv}`);
+    }
+  }
+
+  if (sheets.length === 0) {
+    return `[Spreadsheet appears to be empty.]`;
+  }
+
+  return sheets.join('\n\n');
 }
 
 // ── URL content extraction ──
