@@ -445,9 +445,23 @@ sudo apt-get install -y nodejs</code></pre>
         </div>
 
         <p>Verify:</p>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>python --version</code></pre>
+        <div class="plat-mac active">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python3 --version</code></pre>
+          </div>
+        </div>
+        <div class="plat-win">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python --version</code></pre>
+          </div>
+        </div>
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python3 --version</code></pre>
+          </div>
         </div>
 
         <h3>Docker</h3>
@@ -497,7 +511,7 @@ sudo usermod -aG docker $USER</code></pre>
         </div>
 
         <ul class="checklist" data-group="full-1">
-          <li data-key="full-1-python"><code>python --version</code> shows 3.11+</li>
+          <li data-key="full-1-python">Python version check shows 3.11+ (<code>python3</code> on Mac/Linux, <code>python</code> on Windows)</li>
           <li data-key="full-1-docker"><code>docker --version</code> shows a version</li>
           <li data-key="full-1-git"><code>git --version</code> shows a version</li>
         </ul>
@@ -652,10 +666,37 @@ sudo usermod -aG docker $USER</code></pre>
           <pre><code>cd realize-os</code></pre>
         </div>
 
+        <div class="plat-mac active">
+          <div class="card card--warning">
+            <h4>macOS: use <code>python3</code></h4>
+            <p>Homebrew installs Python as <code>python3</code>, not <code>python</code>. Use <code>python3</code> instead of <code>python</code> in <strong>all commands</strong> below.</p>
+          </div>
+        </div>
+        <div class="plat-linux">
+          <div class="card card--warning">
+            <h4>Linux: use <code>python3</code></h4>
+            <p>Most Linux distributions use <code>python3</code>, not <code>python</code>. Use <code>python3</code> instead of <code>python</code> in <strong>all commands</strong> below.</p>
+          </div>
+        </div>
+
         <p>Install dependencies:</p>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>pip install -r requirements.txt</code></pre>
+        <div class="plat-mac active">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python3 -m pip install -r requirements.txt</code></pre>
+          </div>
+        </div>
+        <div class="plat-win">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python -m pip install -r requirements.txt</code></pre>
+          </div>
+        </div>
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>python3 -m pip install -r requirements.txt</code></pre>
+          </div>
         </div>
 
         <div class="card card--success">
@@ -668,9 +709,19 @@ sudo usermod -aG docker $USER</code></pre>
 
         <h3>Option A: Setup file (recommended)</h3>
         <p>Copy the setup template and fill in your API keys and business info:</p>
-        <div class="code-block">
-          <button class="code-block__copy" data-copy>Copy</button>
-          <pre><code>cp setup.yaml.example setup.yaml</code></pre>
+
+        <div class="plat-mac active">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>cp setup.yaml.example setup.yaml</code></pre>
+          </div>
+        </div>
+
+        <div class="plat-linux">
+          <div class="code-block">
+            <button class="code-block__copy" data-copy>Copy</button>
+            <pre><code>cp setup.yaml.example setup.yaml</code></pre>
+          </div>
         </div>
 
         <div class="plat-win">
@@ -732,12 +783,12 @@ GOOGLE_AI_API_KEY=your-google-key-here</code></pre>
         </div>
 
         <div class="tip">
-          <p><strong>Cross-platform:</strong> All commands work identically on macOS, Windows, and Linux. The CLI handles file creation internally — no platform-specific copy commands needed (except for <code>setup.yaml</code> in Option A).</p>
+          <p><strong>Cross-platform:</strong> All <code>python cli.py</code> commands work identically on macOS, Windows, and Linux — just remember to use <code>python3</code> on macOS/Linux. The CLI handles file creation internally.</p>
         </div>
 
         <ul class="checklist" data-group="full-3">
           <li data-key="full-3-clone">Package downloaded and unzipped</li>
-          <li data-key="full-3-deps">Dependencies installed with <code>pip install</code></li>
+          <li data-key="full-3-deps">Dependencies installed with <code>python -m pip install</code></li>
           <li data-key="full-3-init">Initialized with <code>setup.yaml</code> or template</li>
         </ul>
       </section>
@@ -1033,32 +1084,78 @@ GOOGLE_AI_API_KEY=your-google-key-here</code></pre>
         <div class="card card--accent">
           <h4>Test 0: Verify Config</h4>
           <p>Start here — this confirms your server is running and your ventures are loaded.</p>
-          <div class="code-block">
-            <button class="code-block__copy" data-copy>Copy</button>
-            <pre><code>curl http://localhost:8080/status</code></pre>
+          <div class="plat-mac active">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl http://localhost:8080/status</code></pre>
+            </div>
+          </div>
+          <div class="plat-linux">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl http://localhost:8080/status</code></pre>
+            </div>
+          </div>
+          <div class="plat-win">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl.exe http://localhost:8080/status</code></pre>
+            </div>
           </div>
           <p><strong>Expected:</strong> JSON response showing "healthy" status, connected LLM providers, and a non-empty list of systems (your ventures). If systems is empty, re-run <code>python cli.py init</code>.</p>
         </div>
 
         <div class="card card--accent">
           <h4>Test 1: Brand Recognition</h4>
-          <div class="code-block">
-            <button class="code-block__copy" data-copy>Copy</button>
-            <pre><code>curl -X POST http://localhost:8080/api/chat \
+          <div class="plat-mac active">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl -X POST http://localhost:8080/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "What do you know about my business?", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+            </div>
           </div>
-          <p class="plat-win" style="color:var(--color-text-muted); font-size:0.85rem;"><strong>Windows note:</strong> In PowerShell, use double quotes for the outer string and escape inner quotes, or save the JSON to a file and use <code>-d @body.json</code>.</p>
+          <div class="plat-linux">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "What do you know about my business?", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+            </div>
+          </div>
+          <div class="plat-win">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl.exe -X POST http://localhost:8080/api/chat -H "Content-Type: application/json" -d "{\"message\": \"What do you know about my business?\", \"system_key\": \"consulting\", \"user_id\": \"test-user\"}"</code></pre>
+            </div>
+            <p style="color:var(--color-text-muted); font-size:0.85rem;"><strong>Note:</strong> Windows requires <code>curl.exe</code> (not <code>curl</code>) and escaped double quotes. The command above works in both PowerShell and CMD.</p>
+          </div>
           <p><strong>Expected:</strong> The response references your brand identity, business name, and values — not generic filler.</p>
         </div>
 
         <div class="card card--accent">
           <h4>Test 2: Voice Calibration</h4>
-          <div class="code-block">
-            <button class="code-block__copy" data-copy>Copy</button>
-            <pre><code>curl -X POST http://localhost:8080/api/chat \
+          <div class="plat-mac active">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl -X POST http://localhost:8080/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "Write a social media post about why AI agents should work as a team", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+            </div>
+          </div>
+          <div class="plat-linux">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl -X POST http://localhost:8080/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Write a social media post about why AI agents should work as a team", "system_key": "consulting", "user_id": "test-user"}'</code></pre>
+            </div>
+          </div>
+          <div class="plat-win">
+            <div class="code-block">
+              <button class="code-block__copy" data-copy>Copy</button>
+              <pre><code>curl.exe -X POST http://localhost:8080/api/chat -H "Content-Type: application/json" -d "{\"message\": \"Write a social media post about why AI agents should work as a team\", \"system_key\": \"consulting\", \"user_id\": \"test-user\"}"</code></pre>
+            </div>
           </div>
           <p><strong>Expected:</strong> Output matches your voice rules. Short paragraphs if you said so. No exclamation marks if you banned them.</p>
         </div>
