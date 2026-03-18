@@ -147,14 +147,17 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
       setPhase(missing.length > 0 ? 'conversation' : 'review');
     } catch (error) {
       console.error('Analysis failed:', error);
-      // Fallback to conversation mode
+      const isRateLimit = error instanceof Error && error.message.includes('limit');
       setMessages([{
         id: 'error-fallback',
         role: 'assistant',
-        content: "I had trouble analyzing your documents, but no worries — let's build your venture profile through a quick conversation instead. What's your name and role?",
+        content: isRateLimit
+          ? "You've used your analysis attempts for this session. You can edit your profile manually in the review step, or start a new session."
+          : "Analysis is temporarily unavailable — let's build your venture profile through a quick conversation instead. What's your name and role?",
         timestamp: Date.now(),
+        suggestions: isRateLimit ? ['Review my profile'] : undefined,
       }]);
-      setPhase('conversation');
+      setPhase(isRateLimit ? 'review' : 'conversation');
     }
   }, [documents, fields, totalFields]);
 
