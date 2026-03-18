@@ -219,20 +219,16 @@ async function extractXlsxText(file: File): Promise<string> {
 // ── URL content extraction ──
 
 export async function extractTextFromUrl(url: string): Promise<string> {
-  try {
-    const res = await fetch(WIZARD_API.extractUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url }),
-    });
-    if (!res.ok) throw new Error(`URL extraction failed: ${res.statusText}`);
-    const data = await res.json();
-    if (data.error) throw new Error(data.error);
-    return data.text || `[No text extracted from ${url}]`;
-  } catch (err) {
-    console.warn('URL extraction failed:', err);
-    return `[URL content: ${url} — extraction temporarily unavailable]`;
-  }
+  const res = await fetch(WIZARD_API.extractUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url }),
+  });
+  if (!res.ok) throw new Error(`URL extraction failed: ${res.statusText}`);
+  const data = await res.json();
+  if (data.error) throw new Error(data.error);
+  if (!data.text?.trim()) throw new Error('No text content found on this page');
+  return data.text;
 }
 
 // ── Helper: get missing fields ──

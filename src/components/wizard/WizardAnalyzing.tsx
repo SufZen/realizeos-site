@@ -55,7 +55,7 @@ export function WizardAnalyzing({ documents, fieldsFound, fieldsTotal, isComplet
       {/* Document list */}
       <div className="w-full max-w-sm space-y-2">
         {documents.map((doc, i) => {
-          const hasRealText = doc.extractedText && !doc.extractedText.startsWith('[');
+          const hasRealText = !!doc.extractedText && doc.extractedText.length > 10;
           let icon: React.ReactNode;
           let statusLabel: string;
 
