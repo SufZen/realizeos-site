@@ -1,0 +1,10 @@
+{
+  "documents": [
+    {
+      "name": "test.txt",
+      "type": "text",
+      "text": "My name is John and I run a digital marketing agency called GrowthLab. We help SaaS companies grow their user base through content marketing and SEO. Our core values are transparency, data-driven decisions, and creative excellence. I struggle with time management and delegating tasks. My weekly workflow includes content planning on Mondays, client calls on Tuesdays and Thursdays, and analytics review on Fridays."
+    }
+  ],
+  "existingFields": {}
+}
