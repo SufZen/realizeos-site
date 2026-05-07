@@ -16,11 +16,13 @@ import { trackEvent } from '@/lib/analytics';
 interface WizardEmailGateProps {
   fieldsCompleted: number;
   totalFields: number;
+  fields: any;
+  analysisResult: any;
   onContinue: (email?: string) => void;
   onBack: () => void;
 }
 
-export function WizardEmailGate({ fieldsCompleted, totalFields, onContinue, onBack }: WizardEmailGateProps) {
+export function WizardEmailGate({ fieldsCompleted, totalFields, fields, analysisResult, onContinue, onBack }: WizardEmailGateProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -43,6 +45,8 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, onContinue, onBa
           source: 'venture-wizard',
           fieldsCompleted,
           totalFields,
+          profile: fields,
+          architectProposals: analysisResult?.architectProposals || {},
           timestamp: new Date().toISOString(),
         }),
       }).catch(() => {/* swallow — best-effort */});
@@ -77,18 +81,20 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, onContinue, onBa
         </div>
 
         <h3 className="text-xl font-bold text-foreground">
-          Your Venture Files Are Ready!
+          Your FABRIC Package is Ready!
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
           {fieldsCompleted} of {totalFields} fields completed — {Math.round((fieldsCompleted / totalFields) * 100)}% coverage.
         </p>
 
         {/* File preview */}
-        <div className="mt-5 space-y-2">
+        <div className="mt-5 space-y-2 text-left">
+          <p className="text-xs font-semibold text-brand-yellow mb-2 uppercase tracking-wider">Included in your Starter Kit:</p>
           {[
-            { name: 'identity.md', desc: 'Who you are' },
-            { name: 'venture-identity.md', desc: 'Your positioning' },
-            { name: 'venture-voice.md', desc: 'How you sound' },
+            { name: 'F-foundations/', desc: 'Identity, Positioning, and Voice' },
+            { name: 'A-agents/', desc: 'Custom AI agents solving your gaps' },
+            { name: 'R-routines/', desc: 'Automations for your weekly tasks' },
+            { name: 'C-creations/', desc: 'Sample outputs in your exact Voice' },
           ].map((file) => (
             <div
               key={file.name}
@@ -120,7 +126,7 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, onContinue, onBa
             <div className="mb-4 text-center">
               <p className="text-sm text-muted-foreground">
                 <Mail className="mr-1.5 inline-block h-4 w-4" />
-                Enter your email to download your 3 venture files
+                Enter your email to receive your custom FABRIC package
               </p>
             </div>
 
@@ -157,7 +163,7 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, onContinue, onBa
                   'Sending…'
                 ) : (
                   <>
-                    Get My Venture Files <ArrowRight className="h-4 w-4" />
+                    Get My FABRIC Package <ArrowRight className="h-4 w-4" />
                   </>
                 )}
               </Button>

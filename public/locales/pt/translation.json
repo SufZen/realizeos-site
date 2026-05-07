@@ -64,75 +64,70 @@
   },
   "pricing": {
     "header": {
-      "title": "Escolha a Sua Edição",
-      "subtitle": "Compra única. Seu para sempre. Sem assinaturas, sem mensalidades."
+      "title": "Get Started",
+      "subtitle": "RealizeOS is distributed under BSL 1.1. Free for most commercial uses."
     },
-    "compareNote": "Agentes de IA individuais noutras plataformas custam $49-$99 cada. Comunidades de AI Operations cobram $97/mês. O RealizeOS oferece o sistema coordenado completo — uma única vez, para sempre.",
+    "compareNote": "Stop paying recurring subscriptions. Host your own AI operations engine.",
     "tiers": {
-      "lite": {
-        "name": "RealizeOS Lite",
-        "description": "Para quem procura uma estrutura sólida de gestão de conhecimento.",
-        "emotionalPromise": "Deixe de recomeçar do zero. Estabeleça um sistema de operações organizado e interligado — instantaneamente.",
+      "free": {
+        "name": "Open Source (GitHub)",
+        "description": "For developers and operators who want to self-host.",
+        "emotionalPromise": "Full access to the RealizeOS V5 engine. Deploy on your own infrastructure.",
         "features": [
-          "Cofre Obsidian pré-estruturado (FABRIC)",
-          "4 templates de agentes (Orchestrator, Writer, Reviewer, Analyst)",
-          "Wizards de identidade e Venture Voice + Venture Worksheet interativo",
-          "6 workflows de competências (propostas, campanhas, social, revisões, conteúdo, pesquisa)",
-          "3 métodos partilhados (análise competitiva, reciclagem de conteúdo, framework de decisão)",
-          "Protocolo CLAUDE.md melhorado (155 linhas)",
-          "Guia de configuração passo a passo",
-          "Funciona com Claude Pro ($20/mês)"
+          "Complete Python engine (11,000+ lines)",
+          "Docker one-command deploy",
+          "5 channels + 13 Google Workspace tools",
+          "Multi-LLM routing (Claude, Gemini, OpenAI, Ollama)",
+          "BSL 1.1 License (Free for non-competitive use)"
         ],
-        "ctaText": "Obter a Edição Lite",
-        "delivery": "Entrega instantânea via Google Drive",
-        "guarantee": "Garantia de reembolso a 14 dias"
+        "price": "0",
+        "period": "Free forever",
+        "ctaText": "View on GitHub",
+        "delivery": "Instant access via GitHub",
+        "guarantee": ""
       },
-      "full": {
-        "name": "RealizeOS Full",
-        "description": "A infraestrutura de nível de produção que sustenta o grupo Realization.",
-        "emotionalPromise": "Saia do estrangulamento e assuma o papel de visionário. Controlo total e automatizado.",
-        "badge": "Mais Popular",
+      "guided": {
+        "name": "Installation Session",
+        "description": "Direct collaboration with the architect of RealizeOS.",
+        "emotionalPromise": "Fast-track your freedom. We configure the system directly around your unique venture.",
+        "badge": "Recommended",
         "features": {
-          "header": "Tudo na edição Lite, mais:",
+          "header": "Everything in Open Source, plus:",
           "list": [
-            "Routing LLM agnóstico de fornecedor (Claude, Gemini, OpenAI, Ollama)",
-            "20+ modelos com 4 estratégias de routing (custo, qualidade, equilíbrio, velocidade)",
-            "Montagem dinâmica de prompts em múltiplas camadas",
-            "Pesquisa híbrida na Knowledge Base (FTS5 + vetorial)",
-            "Motor de workflow com 7 tipos de nós + triggers",
-            "Multi-canal: WhatsApp, Web/WebSocket, Webhooks, Agendador",
-            "Integração com Google Workspace (13 ferramentas)",
-            "Pesquisa web, automação de browser, MCP",
-            "Tool SDK e framework de extensibilidade",
-            "Segurança: RBAC, cofre encriptado, registo de auditoria",
-            "Processamento de média (análise de imagem, transcrição, geração)",
-            "Motor de auto-evolução com avaliação de risco e rollback",
-            "Deploy com um comando Docker",
-            "Pipeline CI/CD (GitHub Actions + pytest)"
+            "1-hour setup call with the builder",
+            "Custom KB scaffolding for your business",
+            "Agent definitions tailored to your needs",
+            "Venture voice configuration",
+            "First skill workflow set up together",
+            "Priority email support for 30 days"
           ]
         },
-        "ctaText": "Obter a Edição Full",
-        "delivery": "Entrega instantânea via Google Drive",
-        "guarantee": "Garantia de reembolso a 14 dias"
+        "price": "499",
+        "period": "one-time",
+        "ctaText": "Book Setup Session",
+        "delivery": "1-hour setup call via Google Meet",
+        "guarantee": "14-day money-back guarantee"
       },
-      "setup": {
-        "name": "Acompanhamento na Implementação",
-        "description": "Colaboração direta com o arquiteto do RealizeOS.",
-        "emotionalPromise": "Acelere o caminho para a autonomia. Configuramos o sistema em torno do seu negócio específico.",
+      "consulting": {
+        "name": "Enterprise Consulting",
+        "description": "Custom AI operations for large-scale production.",
+        "emotionalPromise": "We build, deploy, and manage your entire AI infrastructure.",
         "features": {
-          "header": "Tudo na edição Full, mais:",
+          "header": "For complex organizations:",
           "list": [
-            "Chamada de configuração de 1 hora com o criador",
-            "Estrutura de Knowledge Base personalizada para o seu negócio",
-            "Definições de agentes adaptadas às suas necessidades",
-            "Configuração da Venture Voice",
-            "Primeiro workflow montado em conjunto",
-            "Suporte prioritário por e-mail durante 30 dias"
+            "Custom agent development",
+            "On-premise secure deployment",
+            "ERP and custom CRM integrations",
+            "Dedicated Slack/Teams support channel",
+            "Ongoing prompt engineering & optimization",
+            "SLA guarantees"
           ]
         },
-        "ctaText": "Obter Acompanhamento",
-        "delivery": "Entrega instantânea + chamada de setup de 1 hora",
-        "guarantee": "Garantia de reembolso a 14 dias"
+        "price": "Custom",
+        "period": "",
+        "ctaText": "Contact Us",
+        "delivery": "Custom timeline",
+        "guarantee": ""
       }
     }
   },
@@ -511,51 +506,35 @@
     "rights": "RealizeOS. Todos os direitos reservados."
   },
   "faq": {
-    "title": "Perguntas Frequentes",
+    "title": "Frequently Asked Questions",
     "items": [
       {
-        "question": "Do que preciso para começar?",
-        "answer": "<p><strong>Lite:</strong> Obsidian (gratuito) e subscrição Claude Pro ($20/mês da Anthropic). Sem necessidade de programação.</p><p><strong>Full:</strong> Python 3.11+, Docker (opcional) e chaves API para os seus fornecedores de LLM (Anthropic, Google AI, OpenAI e/ou Ollama para inferência local).</p>"
+        "question": "Is it really free?",
+        "answer": "<p>RealizeOS V5 is licensed under the Business Source License (BSL) 1.1. It is completely free for internal business use and production. The only restriction is that you cannot offer RealizeOS itself as a competing commercial service (e.g. 'AI operations as a service'). After 4 years, the code transitions to Apache 2.0.</p>"
       },
       {
-        "question": "Posso alojar no meu próprio servidor?",
-        "answer": "<p>Sim. A edição Full foi desenhada para auto-alojamento. Implemente com Docker em qualquer VPS, instância cloud ou máquina local. Os seus dados permanecem na sua infraestrutura.</p>"
+        "question": "What do I need to get started?",
+        "answer": "<p>Python 3.11+, Docker, and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for local inference).</p>"
       },
       {
-        "question": "Que modelos de IA suporta?",
-        "answer": "<p>A edição Full suporta 4 fornecedores — Claude (Anthropic), Gemini (Google), OpenAI e Ollama (local) — com 20+ modelos no total. 4 estratégias de routing (custo, qualidade, equilíbrio, velocidade) selecionam automaticamente o modelo ideal para cada tarefa. 9 modalidades de tarefa garantem que o modelo certo trata do trabalho certo. A edição Lite funciona com qualquer modelo Claude via Claude Code.</p>"
+        "question": "Can I host it on my own server?",
+        "answer": "<p>Yes. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p>"
       },
       {
-        "question": "Os meus dados são privados?",
-        "answer": "<p>Completamente. O RealizeOS funciona na sua máquina ou servidor. A sua Knowledge Base, conversas e dados de negócio nunca saem da sua infraestrutura. As funcionalidades de segurança incluem controlo de acesso baseado em funções (RBAC) com 16 permissões, cofre de credenciais encriptado AES-256 e registo de auditoria completo. Para privacidade máxima, use Ollama para inferência totalmente local — nenhum dado sai da sua rede.</p>"
+        "question": "Is my data private?",
+        "answer": "<p>Completely. RealizeOS runs on your machine or server. For maximum privacy, use Ollama for fully local inference &mdash; no data leaves your network at all.</p>"
       },
       {
-        "question": "E se precisar de ajuda na configuração?",
-        "answer": "<p>O pacote de Acompanhamento ($499) inclui uma chamada de 1 hora onde configuramos o sistema juntos — Venture Voice, agentes, primeiro workflow, tudo. Após a compra, recebe uma checklist de preparação detalhada. Também pode contactar por e-mail a qualquer momento.</p>"
-      },
-      {
-        "question": "Recebo atualizações?",
-        "answer": "<p>Sim. Enquanto proprietário do sistema, tem acesso a todas as atualizações via o repositório GitHub. Faça pull das últimas alterações quando quiser — ao seu ritmo, não ao nosso.</p>"
-      },
-      {
-        "question": "Posso gerir vários negócios com um único sistema?",
-        "answer": "<p>Sem dúvida. O RealizeOS foi construído para operadores multi-venture. Cada negócio tem os seus agentes isolados, Knowledge Base e Venture Voice. Um motor, quantos ventures precisar.</p>"
-      },
-      {
-        "question": "O que acontece depois de comprar?",
-        "answer": "<p>Imediatamente: acesso para descarregar o seu pacote (Lite) ou o repositório GitHub (Full). E-mail de boas-vindas com guia de configuração e vídeo de demonstração.</p><p>Comunidade: Grupo Builders no Telegram e comunidade WhatsApp.</p><p>Ao longo da semana seguinte, receberá e-mails de onboarding com dicas para definir o seu Venture, personalizar agentes e construir o seu primeiro workflow.</p>"
-      },
-      {
-        "question": "Existe política de reembolso?",
-        "answer": "<p>Se não estiver satisfeito nos 14 dias após a compra, contacte-nos e resolvemos. Queremos que tenha sucesso com o RealizeOS, não que se sinta preso.</p>"
+        "question": "Do I get updates?",
+        "answer": "<p>Yes. As an open-source project, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want.</p>"
       }
     ]
   },
   "finalCta": {
-    "title1": "Comece a Construir o",
-    "title2": "Seu Sistema de AI Operations",
-    "subtitle": "Compra única. Propriedade total. Sem mensalidades.",
-    "getRealizeOS": "Obter o RealizeOS",
+    "title1": "Start Building Your",
+    "title2": "AI Operations System",
+    "subtitle": "Join the community and take control of your AI infrastructure.",
+    "getRealizeOS": "Star on GitHub",
     "notReadyTitle": "Ainda não está pronto?",
     "notReadyDesc": "Conte-nos o seu maior desafio operacional. Responderemos com conselhos práticos e honestos — sem discurso de vendas.",
     "thanks": "Obrigado! Vamos analisar o seu desafio e entrar em contacto.",

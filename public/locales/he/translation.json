@@ -64,81 +64,70 @@
   },
   "pricing": {
     "header": {
-      "title": "בחרו את ה-Tier שלכם",
-      "subtitle": "תמחור בלעדי Friends & Family. רכישה חד-פעמית. הקוד שלכם לתמיד.",
-      "promoBadge": "מבצע השקה — עד 31 במרץ",
-      "urgencyText": "המחיר עולה ב-1 באפריל",
-      "countdownLabel": "זמן שנותר"
+      "title": "Get Started",
+      "subtitle": "RealizeOS is distributed under BSL 1.1. Free for most commercial uses."
     },
-    "compareNote": "AI Agents סינגולריים עולים בשוק $49-$99 לכל Agent. קהילות אוטומציה עולות $97 לחודש. RealizeOS נותן לכם Base System מתואם וקומפלט — פעם אחת, לתמיד.",
+    "compareNote": "Stop paying recurring subscriptions. Host your own AI operations engine.",
     "tiers": {
-      "lite": {
-        "name": "RealizeOS Lite",
-        "description": "לאופרייטורז שמחפשים סטרוקטורה ארכיטקטונית נקייה לניהול ידע ואופרציה.",
-        "emotionalPromise": "תפסיקו לבנות מאפס. פשוט תעשו Deploy ל-Single Source of Truth שעושה סדר לכל הידע התפעולי — ברגע.",
+      "free": {
+        "name": "Open Source (GitHub)",
+        "description": "For developers and operators who want to self-host.",
+        "emotionalPromise": "Full access to the RealizeOS V5 engine. Deploy on your own infrastructure.",
         "features": [
-          "Pre-built Obsidian Vault (ארכיטקטורת FABRIC)",
-          "4 תבניות ל-Agents וירטואליים (Orchestrator, Writer, Reviewer, Analyst)",
-          "וויזארדים ל-Venture Identity ו-Voice & Tone + גיליון עבודה אינטראקטיבי",
-          "6 תהליכי Workflows סטנדרטיים (Proposals, קמפיינים, סושיאל, אישורים, תוכן, מחקר)",
-          "3 מתודולוגיות משותפות (Competitive Analysis, Content Repurposing, Decision Framework)",
-          "פרוטוקול CLAUDE.md מתקדם (155 שורות של Context Injection)",
-          "מדריך Setup ו-Onboarding שלב-אחר-שלב",
-          "תומך ב-Claude Pro ($20/חודש)"
+          "Complete Python engine (11,000+ lines)",
+          "Docker one-command deploy",
+          "5 channels + 13 Google Workspace tools",
+          "Multi-LLM routing (Claude, Gemini, OpenAI, Ollama)",
+          "BSL 1.1 License (Free for non-competitive use)"
         ],
-        "originalPrice": "149",
-        "ctaText": "קבלו גישה ל-Lite",
-        "delivery": "אינסטנט דליברי (Instant Setup) דרך Google Drive",
-        "guarantee": "14 יום Money Back Guarantee (החזר כספי מלא)"
+        "price": "0",
+        "period": "Free forever",
+        "ctaText": "View on GitHub",
+        "delivery": "Instant access via GitHub",
+        "guarantee": ""
       },
-      "full": {
-        "name": "RealizeOS Full",
-        "description": "אינפרה ברמת פרודקשן שמניעה את קבוצת Realization כולה.",
-        "emotionalPromise": "צאו מתפקיד צוואר הבקבוק (Bottleneck) לכיסא המייסד שמושך בחוטים. אוטומציה ושליטה מלאה (Full Control).",
-        "badge": "הכי פופולרי",
+      "guided": {
+        "name": "Installation Session",
+        "description": "Direct collaboration with the architect of RealizeOS.",
+        "emotionalPromise": "Fast-track your freedom. We configure the system directly around your unique venture.",
+        "badge": "Recommended",
         "features": {
-          "header": "כל הפיצ'רים של ה-Lite, ובנוסף:",
+          "header": "Everything in Open Source, plus:",
           "list": [
-            "ראוטינג Provider-Agnostic חכם ל-LLMs על פני (Claude, Gemini, OpenAI, Ollama)",
-            "20+ מודלים עם 4 אסטרטגיות חישוב משתנות (Cost, Quality, Balanced, Speed)",
-            "Multi-Layer Dynamic Prompt Assembly ב-Runtime",
-            "מנוע RAG היברידי לחיפוש ב-KB העסקי שלכם (FTS5 + Vector Embeddings)",
-            "מנוע Workflows עם 7 סוגי Nodes (צמתים) + Event Triggers מותאמים אישית",
-            "Multi-channel תומך ב: WhatsApp API, Web/WebSocket, Webhooks ו-Cron Jobs",
-            "אינטגרציות משולבות ל-Google Workspace (תומך ב-13 כלים ו-APIs מובנים)",
-            "תמיכה ב-Web Scraping, אוטומציות Headless Browser ותקן MCP",
-            "Framework מיוחד להרחבה (Tool SDK Base)",
-            "הארדנינג ואבטחה: מבוסס RBAC, כספת Secret Management, ו-Audit Logs מקיפים",
-            "Media Pipeline מבוסס (Vision Analysis עמוק, Transcriptions אודיו, וג'ינרוט מדיה)",
-            "מנוע אבולוציה אלגוריתמי עם תמיכה בהערכת סיכונים ו-Rollback אוטומטי",
-            "One-click Deployment עם Docker Compose",
-            "CI/CD Pipeline קומפלט (GitHub Actions + Pytest Suites)"
+            "1-hour setup call with the builder",
+            "Custom KB scaffolding for your business",
+            "Agent definitions tailored to your needs",
+            "Venture voice configuration",
+            "First skill workflow set up together",
+            "Priority email support for 30 days"
           ]
         },
-        "originalPrice": "449",
-        "ctaText": "קבלו את המערכת המלאה",
-        "delivery": "קבלת קוד ולייסנס מיידית (Drive + Github)",
-        "guarantee": "14 יום Money Back Guarantee במלואו"
+        "price": "499",
+        "period": "one-time",
+        "ctaText": "Book Setup Session",
+        "delivery": "1-hour setup call via Google Meet",
+        "guarantee": "14-day money-back guarantee"
       },
-      "setup": {
-        "name": "ליווי Onboarding מלא",
-        "description": "עבודה שוטפת וישירה מול הארכיטקטים של הפלטפורמה.",
-        "emotionalPromise": "Fast-Track בלתי מתפשר. אנחנו פשוט מקנפגים הכל ספציפית ל-Use-case ולוורטיקל שלכם יחד.",
+      "consulting": {
+        "name": "Enterprise Consulting",
+        "description": "Custom AI operations for large-scale production.",
+        "emotionalPromise": "We build, deploy, and manage your entire AI infrastructure.",
         "features": {
-          "header": "הכל מ-Full, ובנוסף:",
+          "header": "For complex organizations:",
           "list": [
-            "שיחת Setup של שעה מלאה עם היוצרים של המערכת",
-            "הקמה בסיסית של ה-Knowledge Base עבור הצרכים העסקיים שלכם",
-            "Setup ותרגום הגדרות ל-Agents שלכם",
-            "קונפיגורציית Venture Voice (טון דיבור) שישמע בדיוק כמו שצריך",
-            "קינפוג ובניית ה-Workflow / Pipeline הראשון לייב ביחד",
-            "תעדוף (Priority Email Support) מלא ל-30 יום"
+            "Custom agent development",
+            "On-premise secure deployment",
+            "ERP and custom CRM integrations",
+            "Dedicated Slack/Teams support channel",
+            "Ongoing prompt engineering & optimization",
+            "SLA guarantees"
           ]
         },
-        "originalPrice": "849",
-        "ctaText": "קבלו את ליווי ההקמה (Setup)",
-        "delivery": "אינסטנט לייב + תאום שיחת סשן Onboarding בת שעה",
-        "guarantee": "14 יום Money Back Guarantee מלא"
+        "price": "Custom",
+        "period": "",
+        "ctaText": "Contact Us",
+        "delivery": "Custom timeline",
+        "guarantee": ""
       }
     }
   },
@@ -393,7 +382,7 @@
         "time": ""
       },
       {
-        "title": "הגדירו Voice, Tone \u0026 Identity",
+        "title": "הגדירו Voice, Tone & Identity",
         "description": "מלאו מסמכי זהות אישית, Venture Guidelines, ואוריינטציה דרך אשפי המערכת.",
         "time": "5-10 דקות"
       },
@@ -468,7 +457,7 @@
           },
           {
             "title": "אינטגרציות Native ל-Goole Workspace (OAuth)",
-            "description": "Gmail, Calendar, Drive מוטמעים ומוכנים. Pull \u0026 Push של מסמכים וטקסט מהרכבות (Pipelines)."
+            "description": "Gmail, Calendar, Drive מוטמעים ומוכנים. Pull & Push של מסמכים וטקסט מהרכבות (Pipelines)."
           },
           {
             "title": "שכבת Security (Hardenings): RBAC, Secrets, ו-Audit Logs",
@@ -493,7 +482,7 @@
         ]
       }
     },
-    "note": "זמין לרכשים: כל הרפליקות מכילות Sync מיידי לכונן ו-Access ל-Git Repo המאובטח — מיילי Onboarding וגישה לקהילות Builder \u0026 Operators."
+    "note": "זמין לרכשים: כל הרפליקות מכילות Sync מיידי לכונן ו-Access ל-Git Repo המאובטח — מיילי Onboarding וגישה לקהילות Builder & Operators."
   },
   "nav": {
     "getStarted": "התחילו",
@@ -517,55 +506,35 @@
     "rights": "RealizeOS. כל הזכויות שמורות."
   },
   "faq": {
-    "title": "שאלות נפוצות (FAQ)",
+    "title": "Frequently Asked Questions",
     "items": [
       {
-        "question": "האם צריך לדעת תכנות או לכתוב קוד?",
-        "answer": "<p><strong>Lite:</strong> לא. העבודה בסטרוקטורה הניהולית הזו לא דורשת יכולות פיתוח וקוד כלל, זו תשתית Notion ונועדה להיות Drag-n-Drop טהורה (או במקרה של Obsidian). היא מיועדת ל-No-coders מוחלטים.</p><p><strong>Full:</strong> מחייבת ידע בטרמינל ופקודות Shell. הקוד מגיע כ-Repository מלא מבוסס Docker. אם אתם לא במקום הזה טכנית, חבילת ה-Setup תיקח את זה מכם ב-100% ואנחנו פשוט נעשה Deploy לי הכל בשבילכם.</p>"
+        "question": "Is it really free?",
+        "answer": "<p>RealizeOS V5 is licensed under the Business Source License (BSL) 1.1. It is completely free for internal business use and production. The only restriction is that you cannot offer RealizeOS itself as a competing commercial service (e.g. 'AI operations as a service'). After 4 years, the code transitions to Apache 2.0.</p>"
       },
       {
-        "question": "קלאוד או On-Prem?",
-        "answer": "<p>גרסת ה-Full בנויה מראש שתוכלו לארח (Deploy) את הפרויקט בכל תצורה: כ-Self-Hosted על מכונת VPS (כמו Linode, DigitalOcean או AWS EC2) או על מחשב נייח מקומי במשרד שבו תריצו Docker Container. בחירה שלכם.</p>"
+        "question": "What do I need to get started?",
+        "answer": "<p>Python 3.11+, Docker, and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for local inference).</p>"
       },
       {
-        "question": "איך עובד התשלום לספקיות ה-AI (כמו OpenAI)?",
-        "answer": "<p>אנחנו רק תשתית ואתם שמים את ה-API Key המקורי שלכם אצלכם על המכונה באופן מוצפן. המשמעות היא Pay-as-you-go ישירות בעלות אפסית לכל טראנזקציה (ללא Markups שלנו).</p>"
+        "question": "Can I host it on my own server?",
+        "answer": "<p>Yes. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p>"
       },
       {
-        "question": "אני מקבל Data Privacy?",
-        "answer": "<p>לחלוטין כן. ברגע שקניתם, למערכת אין 'טלמטריה' בחזרה לשרתים שלנו (כמובן למעט הלייסנס ולרמת העדכונים של קוד ה-Repository מול GitHub שלנו). תוצר הדאטה שיצא והורץ במנוע RAG של המערכת הוא שלכם – לחלוטין ולנצח. בשביל סופר-אנונימיות (ממשלתי, בריאות) ניתן לרוץ עם מודל מקומי במערכת דרך אפיק ה-Ollama שנתמך פלאפ (Plug and Play).</p>"
+        "question": "Is my data private?",
+        "answer": "<p>Completely. RealizeOS runs on your machine or server. For maximum privacy, use Ollama for fully local inference &mdash; no data leaves your network at all.</p>"
       },
       {
-        "question": "הפיצ'ר הבא של ChatGPT לא יהרוג לכם את הביזנס?",
-        "answer": "<p>לא, ההפך. RealizeOS פשוט יתמוך ב-ChatGPT5 יום אחרי שהוא יוצא ויוכל לעשות ראוטינג לפרומפטים שמתאימים לו, בדיוק כפי שהיא כבר תומכת ב-Anthropic או Google. אנחנו נשארים Provider-Agnostic, מולטי-מודלים, ולעולם לא תהיו 'נעולים' לספק יחיד שגוסס אט אט בהדר אפרינגו. בנוסף, מרווח הפעולה החשוב ביותר פה הוא חיבור הקונטקסט הייחודי למיזם ל-LLM, שזה יתרון מובהק בסטרוקטורת ה-FABRIC של התשתית המוצעת פה.</p>"
-      },
-      {
-        "question": "סבבה, למה לא פשוט לבנות ב-Zapier או Make?",
-        "answer": "<p>Zapier/Make עוזרות כשהאינטרנט דורש 'כניסה פה, יציאה שם', והן יעילות מאוד בהמרת מידע יבש (API Data Flow). RealizeOS היא שכבת לוגיקה שמסוגלת לקבל Decision-making אופרטיבי שדורשות הגיון עמוק במרחב אפרורי שבין 1 ל-0 ולהגיב כמו אנליסט בשר ודם. שוב, ה-Value Point הענק ביותר פה הוא Memory: Zapier לא 'זוכר' מה אישרתם לפני שלושה ימים לפרסם באימייל. ה-Bots ב-RealizeOS כן.</p>"
-      },
-      {
-        "question": "במה הליווי Onboarding (שיחת ה-Setup שעה) עוזרת לי?",
-        "answer": "<p>הליווי Setup נועד ספציפית ללקוחות שמעבירים את האופרציה שלהם מסוויטת פתרונות נפרדים לפתרון הוליסטי ופשוט מרגישים Overwhelmed ומעדיפים לבצע אינטרקציה ויישום מיידי אחד-על-אחד עם ארכיטקט התוכנה (היזם מאחורי המערכת שייעץ להם על Best Practices של יישום מודלי AI לשימושיות הביזנס), בנוסף נכנס לכל ה-Hurdles הטכניים שנדרשים בטרמינל, וישים להם את השרת עובד ב-Production עם API Keys במקום (100% הקמה פיזית של הקוד), סשן של שעה פותר לאנשים פער של חיפוש של 5 שעות בדוקומנטציות סבוכות.</p>"
-      },
-      {
-        "question": "איך קורה תהליך האספקה (Delivary) למעשה, מה מקבלים ב-ZIP?",
-        "answer": "<p>אתם לא מקבלים קובץ בודד במייל (שזה סיוט לעדן במקרי HotFix). ל-Lite אתם מקבלים Share permission מיידי לכספת Google Drive מסודרת שיש לה גרסאות, שאותה ניתן לשאוב ולהוריד, לגרסת ה-Full התהליך מתבצע על ידי Invitation-link ל-Github Private Repository של המערכת, בו מונחים כל קבצי ההתקנה הקוֹדיים ואתם בעתם עושים פקודת Clone אליכם לתיקיה במחשב או בשרת כדי לסרוק/לשנות פונקציות קוֹדיות במערכת ההפעלה שסילקתם (אפשר לעשות את זה כמה ומתי שתרצו, ויש קבצי הסברה/README עשירים שמנחים בדיוק צעדאחרצד לחומש).</p>"
-      },
-      {
-        "question": "איזו יכולת שפה/שפות יש ל-Agents?",
-        "answer": "<p>כל שפה ששולטים בה מודלי ה-AI היום, שווה ליכולות המנוע הזה. במקרה ויגנרטו מסמכים שחייבים עברית טהורה, LLM מתקדמים (דוגמת GPT-4o ודאבלים כגון Sonnet-3.5) מתייחסים להבנת טקסט כמעט בגוון נייטיב מלא. אין כמעט הגבלת שפות בשוק ולפייפליינים (Pipelines) שלכם — זה יותר תלוי בסיבה ואיזה LLM שיבצתם למשימה.</p>"
-      },
-      {
-        "question": "יש מדיניות החזר Money Back Guarantee?",
-        "answer": "<p>כן, בהחלט. כל רוכש מחוסה בשכפץ של Refund תוך 14 יום — בתנאי של אי סיפוק אישי ו/או חוסר תוצאה פרקטית. החזר זה יופעל ללא 'ויכוחים טלפוניים', פשוט בקשת Refund ישירה שמועברת אונליין ולקוח את הדאטה שלו החוצה ויהיה Free — כל אחד צריך להרגיש 100% באזור ה-Comfort שלו כשהוא פורץ למימדים אוטומטיים והמיזמים של חייו. השקעה צריכה לשאת תשואה, ולא להיות Expense חד.</p>"
+        "question": "Do I get updates?",
+        "answer": "<p>Yes. As an open-source project, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want.</p>"
       }
     ]
   },
   "finalCta": {
-    "title1": "התחילו לבנות את",
-    "title2": "מערכת ה-AI Operations שלכם",
-    "subtitle": "רכישה חד-פעמית (One-time purchase). בעלות קוד מלאה (Full Ownership). ללא ריטיינרים או MRR לשום פלטפורמת SaaS שוחקת.",
-    "getRealizeOS": "קבלו את הבייס של RealizeOS",
+    "title1": "Start Building Your",
+    "title2": "AI Operations System",
+    "subtitle": "Join the community and take control of your AI infrastructure.",
+    "getRealizeOS": "Star on GitHub",
     "notReadyTitle": "עוד नहीं מוכנים לעשות Deploy?",
     "notReadyDesc": "ספרו לנו מה צוואר הבקבוק (Bottleneck) מונע האופרציה שלכם היום — נחזור עם עצה מעשית טהורה שנופלת ב-Inbox שלכם (אפס Bullshit במכירות).",
     "thanks": "תודה רבה! נכנס לקריאה ונחזיר תשובה תוך יומיים גג.",
@@ -807,13 +776,34 @@
       "subtitle": "תפסיקו לבנות מאפס. פתחו כספת מוכנה והצוות שלכם מתחיל לעבוד."
     },
     "lite": {
-      "vault": { "title": "כספת FABRIC", "desc": "30 קבצים מובנים. פתחו את התיקייה — ויש לכם Knowledge Base עובד." },
-      "agents": { "title": "4 סוכני AI", "desc": "Orchestrator, Writer, Reviewer, Analyst — התאמה אישית בדקות." },
-      "brand": { "title": "אשפי Venture", "desc": "Identity, Voice, וגיליון העבודה האינטראקטיבי בן 130 שורות." },
-      "skills": { "title": "6 תהליכי Skills", "desc": "הצעות, קמפיינים, סושיאל, אישורים, תוכן, מחקר." },
-      "methods": { "title": "3 מתודולוגיות", "desc": "ניתוח תחרותי, המרת תוכן, Framework החלטות." },
-      "claude": { "title": "פרוטוקול CLAUDE.md", "desc": "155 שורות שגורמות ל-Claude Code להבין את כל העסק שלכם." },
-      "guide": { "title": "מדריך Setup", "desc": "15 דקות מהורדה לשיחת AI ראשונה." }
+      "vault": {
+        "title": "כספת FABRIC",
+        "desc": "30 קבצים מובנים. פתחו את התיקייה — ויש לכם Knowledge Base עובד."
+      },
+      "agents": {
+        "title": "4 סוכני AI",
+        "desc": "Orchestrator, Writer, Reviewer, Analyst — התאמה אישית בדקות."
+      },
+      "brand": {
+        "title": "אשפי Venture",
+        "desc": "Identity, Voice, וגיליון העבודה האינטראקטיבי בן 130 שורות."
+      },
+      "skills": {
+        "title": "6 תהליכי Skills",
+        "desc": "הצעות, קמפיינים, סושיאל, אישורים, תוכן, מחקר."
+      },
+      "methods": {
+        "title": "3 מתודולוגיות",
+        "desc": "ניתוח תחרותי, המרת תוכן, Framework החלטות."
+      },
+      "claude": {
+        "title": "פרוטוקול CLAUDE.md",
+        "desc": "155 שורות שגורמות ל-Claude Code להבין את כל העסק שלכם."
+      },
+      "guide": {
+        "title": "מדריך Setup",
+        "desc": "15 דקות מהורדה לשיחת AI ראשונה."
+      }
     },
     "steps": {
       "items": [

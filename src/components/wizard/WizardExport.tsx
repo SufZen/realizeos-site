@@ -156,13 +156,22 @@ export function WizardExport({ fields, analysisResult, onReset, onBack, userEmai
         <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-brand-yellow/10">
           <Sparkles className="h-6 w-6 text-brand-yellow" />
         </div>
-        <h3 className="text-lg font-semibold text-foreground">Your Venture Files Are Ready</h3>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {files.length} file{files.length > 1 ? 's' : ''} generated.{' '}
-          {userEmail
-            ? <>We'll also send them to <strong className="text-brand-yellow">{userEmail}</strong>.</>
-            : 'Download and place them in your RealizeOS vault.'
-          }
+        <h3 className="text-lg font-semibold text-foreground">
+          {userEmail ? 'Your FABRIC Package is on its way!' : 'Your Foundations are Ready'}
+        </h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          {userEmail ? (
+            <>
+              We are generating your custom agents, routines, and creations.<br/>
+              They will be emailed to <strong className="text-brand-yellow">{userEmail}</strong> shortly.
+              <br/><br/>
+              In the meantime, you can download your raw Foundation files below.
+            </>
+          ) : (
+            <>
+              {files.length} file{files.length > 1 ? 's' : ''} generated. Download and place them in your RealizeOS vault.
+            </>
+          )}
         </p>
       </motion.div>
 

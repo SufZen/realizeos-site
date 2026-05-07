@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter';
-import { STRIPE_URLS } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
 import { HeroAgentNetwork } from '@/components/illustrations/HeroAgentNetwork';
 import { useTranslation } from 'react-i18next';
+import { Github, PlayCircle } from 'lucide-react';
 
 const stagger = {
   hidden: {},
@@ -41,9 +41,12 @@ export function Hero() {
           initial="hidden"
           animate="show"
         >
-          <motion.div variants={fadeUp}>
-            <Badge variant="secondary" className="mb-6 text-xs font-medium">
-              {t('hero.badge')}
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-6">
+            <Badge variant="secondary" className="text-xs font-medium bg-secondary/80 hover:bg-secondary transition-colors">
+              <a href="https://github.com/SufZen/RealizeOS-5" target="_blank" rel="noreferrer" className="flex items-center gap-1.5">
+                <Github size={14} />
+                {t('hero.github_badge', 'Star us on GitHub')}
+              </a>
             </Badge>
           </motion.div>
 
@@ -51,7 +54,7 @@ export function Hero() {
             variants={fadeUp}
             className="mb-4 text-sm font-medium tracking-wide text-brand-yellow/80 italic md:text-base"
           >
-            {t('hero.tagline')}
+            {t('hero.tagline', 'AI operations you own and control.')}
           </motion.p>
 
           <motion.h1
@@ -71,22 +74,17 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-            <Button asChild size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-cta-full' })}>
-              <a href={STRIPE_URLS.full}>{t('hero.cta_full')}</a>
+            <Button asChild size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-get-started' })}>
+              <a href="#quickstart" className="gap-2">
+                <PlayCircle size={18} />
+                {t('hero.cta_free', 'Get Started (free)')}
+              </a>
             </Button>
-            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-wizard-cta' })}>
-              <a href="/wizard">✨ {t('hero.cta_wizard')}</a>
+            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-book-setup' })}>
+              <a href="https://tidycal.com/sufz/realizeos-setup" target="_blank" rel="noreferrer">
+                {t('hero.cta_setup', 'Book Expert Setup')}
+              </a>
             </Button>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-4 flex justify-center lg:justify-start">
-            <a
-              href="#fabric"
-              className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-yellow"
-            >
-              {t('hero.cta_how')}
-              <span className="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
           </motion.div>
 
           <motion.div

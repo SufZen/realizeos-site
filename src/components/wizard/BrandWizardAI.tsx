@@ -152,8 +152,8 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
         id: 'error-fallback',
         role: 'assistant',
         content: isRateLimit
-          ? "You've used your analysis attempts for this session. You can edit your profile manually in the review step, or start a new session."
-          : "Analysis is temporarily unavailable — let's build your venture profile through a quick conversation instead. What's your name and role?",
+          ? "You've used your analysis attempts for this session. You can edit your Foundations manually in the review step, or start a new session."
+          : "Analysis is temporarily unavailable — let's build your FABRIC package through a quick conversation instead. What's your name and role?",
         timestamp: Date.now(),
         suggestions: isRateLimit ? ['Review my profile'] : undefined,
       }]);
@@ -223,9 +223,9 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
         const doneMsg: ChatMessage = {
           id: `done-${Date.now()}`,
           role: 'assistant',
-          content: '🎉 All fields are complete! Your venture profile is ready for review.',
+          content: '🎉 All fields are complete! Your FABRIC package building blocks are ready for review.',
           timestamp: Date.now(),
-          suggestions: ['Review my profile'],
+          suggestions: ['Review my package building blocks'],
         };
         setMessages((prev) => [...prev, doneMsg]);
       } else {
@@ -415,6 +415,8 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
               <WizardEmailGate
                 fieldsCompleted={filledCount}
                 totalFields={totalFields}
+                fields={fields}
+                analysisResult={analysisResult}
                 onContinue={(email) => {
                   if (email) setUserEmail(email);
                   setPhase('export');

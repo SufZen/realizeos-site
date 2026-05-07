@@ -25,6 +25,12 @@ export function PrivacyPolicy() {
           <li><strong>Contact data:</strong> Name, email address, phone number, and any other information you voluntarily provide when contacting us through our website, chatbot, or email.</li>
           <li><strong>Communication data:</strong> Records of correspondence if you contact us, including messages sent through our chatbot (Chatbase) or support channels.</li>
         </ul>
+        <p className="text-muted-foreground mt-4 font-semibold text-foreground">
+          Note on Self-Hosted Data:
+        </p>
+        <p className="text-muted-foreground mt-2">
+          RealizeOS V5 is designed to operate on your own infrastructure. Any business data, documents, AI prompts, or user information processed by your self-hosted instance of RealizeOS remains stored locally on your servers (or your configured cloud provider). <strong>We do not have access to, collect, or store this operational data.</strong> Our data collection is strictly limited to user interactions with this website.
+        </p>
         <p className="text-muted-foreground mt-4">
           We do not collect technical data such as IP addresses or browser information directly. However, third-party services we use (see section 5) may collect certain technical data as described in their respective privacy policies.
         </p>

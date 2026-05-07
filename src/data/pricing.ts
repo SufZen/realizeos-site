@@ -9,7 +9,7 @@ export interface PricingTier {
   name: string;
   description: string;
   emotionalPromise: string;
-  price: number;
+  price: number | string;
   originalPrice?: string;
   period: string;
   features: PricingFeature[];
@@ -27,54 +27,51 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
 
   const pricingTiers: PricingTier[] = [
     {
-      name: t('pricing.tiers.lite.name'),
-      description: t('pricing.tiers.lite.description'),
-      emotionalPromise: t('pricing.tiers.lite.emotionalPromise'),
-      price: 79,
-      originalPrice: t('pricing.tiers.lite.originalPrice', { defaultValue: '' }) || undefined,
-      period: 'one-time',
-      features: (t('pricing.tiers.lite.features', { returnObjects: true }) as string[]).map(feature => ({ text: feature })),
-      ctaText: t('pricing.tiers.lite.ctaText'),
-      ctaUrl: 'https://buy.stripe.com/9B64gAcPFcgscma6G56Ri0c',
-      trackId: 'pricing-lite',
-      delivery: t('pricing.tiers.lite.delivery'),
-      guarantee: t('pricing.tiers.lite.guarantee'),
+      name: t('pricing.tiers.free.name'),
+      description: t('pricing.tiers.free.description'),
+      emotionalPromise: t('pricing.tiers.free.emotionalPromise'),
+      price: t('pricing.tiers.free.price'),
+      period: t('pricing.tiers.free.period'),
+      features: (t('pricing.tiers.free.features', { returnObjects: true }) as string[]).map(feature => ({ text: feature })),
+      ctaText: t('pricing.tiers.free.ctaText'),
+      ctaUrl: '/webinar/booking/lite?mode=open',
+      trackId: 'pricing-free',
+      delivery: t('pricing.tiers.free.delivery'),
+      guarantee: t('pricing.tiers.free.guarantee'),
     },
     {
-      name: t('pricing.tiers.full.name'),
-      description: t('pricing.tiers.full.description'),
-      emotionalPromise: t('pricing.tiers.full.emotionalPromise'),
-      price: 249,
-      originalPrice: t('pricing.tiers.full.originalPrice', { defaultValue: '' }) || undefined,
-      period: 'one-time',
+      name: t('pricing.tiers.guided.name'),
+      description: t('pricing.tiers.guided.description'),
+      emotionalPromise: t('pricing.tiers.guided.emotionalPromise'),
+      price: t('pricing.tiers.guided.price'),
+      period: t('pricing.tiers.guided.period'),
       featured: true,
-      badge: t('pricing.tiers.full.badge'),
+      badge: t('pricing.tiers.guided.badge'),
       features: [
-        { text: t('pricing.tiers.full.features.header'), bold: true },
-        ...(t('pricing.tiers.full.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
+        { text: t('pricing.tiers.guided.features.header'), bold: true },
+        ...(t('pricing.tiers.guided.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
       ],
-      ctaText: t('pricing.tiers.full.ctaText'),
-      ctaUrl: 'https://buy.stripe.com/dRm14odTJbcocma3tT6Ri0d',
-      trackId: 'pricing-full',
-      delivery: t('pricing.tiers.full.delivery'),
-      guarantee: t('pricing.tiers.full.guarantee'),
+      ctaText: t('pricing.tiers.guided.ctaText'),
+      ctaUrl: 'https://tidycal.com/realization',
+      trackId: 'pricing-guided',
+      delivery: t('pricing.tiers.guided.delivery'),
+      guarantee: t('pricing.tiers.guided.guarantee'),
     },
     {
-      name: t('pricing.tiers.setup.name'),
-      description: t('pricing.tiers.setup.description'),
-      emotionalPromise: t('pricing.tiers.setup.emotionalPromise'),
-      price: 499,
-      originalPrice: t('pricing.tiers.setup.originalPrice', { defaultValue: '' }) || undefined,
-      period: 'one-time',
+      name: t('pricing.tiers.consulting.name'),
+      description: t('pricing.tiers.consulting.description'),
+      emotionalPromise: t('pricing.tiers.consulting.emotionalPromise'),
+      price: t('pricing.tiers.consulting.price'),
+      period: t('pricing.tiers.consulting.period'),
       features: [
-        { text: t('pricing.tiers.setup.features.header'), bold: true },
-        ...(t('pricing.tiers.setup.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
+        { text: t('pricing.tiers.consulting.features.header'), bold: true },
+        ...(t('pricing.tiers.consulting.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
       ],
-      ctaText: t('pricing.tiers.setup.ctaText'),
-      ctaUrl: 'https://buy.stripe.com/4gM14o5nddkwgCqd4t6Ri0e',
-      trackId: 'pricing-setup',
-      delivery: t('pricing.tiers.setup.delivery'),
-      guarantee: t('pricing.tiers.setup.guarantee'),
+      ctaText: t('pricing.tiers.consulting.ctaText'),
+      ctaUrl: 'mailto:info@realizeos.ai',
+      trackId: 'pricing-consulting',
+      delivery: t('pricing.tiers.consulting.delivery'),
+      guarantee: t('pricing.tiers.consulting.guarantee'),
     },
   ];
 

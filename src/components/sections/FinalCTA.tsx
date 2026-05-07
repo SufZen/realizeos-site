@@ -3,7 +3,7 @@ import { Section } from '@/components/layout/Section';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { STRIPE_URLS, WEBHOOK_URL } from '@/lib/constants';
+import { WEBHOOK_URL } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
 import { useTranslation } from 'react-i18next';
 
@@ -58,9 +58,9 @@ export function FinalCTA() {
             <Button
               asChild
               size="lg"
-              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta' })}
+              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-github' })}
             >
-              <a href={STRIPE_URLS.full}>{t('finalCta.getRealizeOS')}</a>
+              <a href="https://github.com/RealizeOS/RealizeOS-5" target="_blank" rel="noopener noreferrer">{t('finalCta.getRealizeOS')}</a>
             </Button>
           </div>
         </div>

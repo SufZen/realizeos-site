@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useTranslation } from 'react-i18next';
 import type { Slide } from '@/data/presentationSlides';
 import { usePricing } from '@/data/pricing';

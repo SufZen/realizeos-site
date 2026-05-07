@@ -127,18 +127,11 @@ function HubPage() {
     },
     {
       key: 'lite',
-      name: t('webinar.booking.hub.liteCard'),
-      desc: t('webinar.booking.hub.liteDesc'),
-      icon: '⚡',
-      color: 'from-blue-500/20 to-cyan-500/20 border-blue-500/30',
-    },
-    {
-      key: 'full',
-      name: t('webinar.booking.hub.fullCard'),
-      desc: t('webinar.booking.hub.fullDesc'),
+      name: t('webinar.booking.hub.liteCard') || 'Lite Edition',
+      desc: t('webinar.booking.hub.liteDesc') || 'Beginner friendly first step',
       icon: '🚀',
-      color: 'from-purple-500/20 to-pink-500/20 border-purple-500/30',
-    },
+      color: 'from-blue-500/20 to-cyan-500/20 border-blue-500/30',
+    }
   ];
 
   return (
@@ -214,56 +207,6 @@ function SetupPage() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  WEBINAR page — used for both Lite and Full tiers                  */
-/* ------------------------------------------------------------------ */
-const TIDYCAL_WEBINAR_PATHS = {
-  en: 'team/realizeos/realizeos-webinar-english',
-  he: 'team/realizeos/realizeos-webinar-hebrew',
-} as const;
-
-function WebinarPage({ tier }: { tier: 'lite' | 'full' }) {
-  const { t } = useTranslation();
-  const [lang, setLang] = useState<'en' | 'he'>('en');
-
-  const tierPrefix = `webinar.booking.${tier}`;
-
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-      <main className="flex-1 pt-24">
-        <SuccessBanner
-          titleKey={`${tierPrefix}.successTitle`}
-          messageKey={`${tierPrefix}.successMessage`}
-        />
-
-        <Section>
-          <SectionHeader
-            title={t(`${tierPrefix}.title`)}
-            subtitle={t(`${tierPrefix}.subtitle`)}
-          />
-
-          <AnimateOnScroll>
-            <div className="mx-auto max-w-2xl">
-              {/* Language toggle */}
-              <LanguageToggle selected={lang} onChange={setLang} />
-
-              {/* Webinar card */}
-              <div className="glass-card overflow-hidden rounded-2xl p-8">
-                <h3 className="mb-6 text-center text-xl font-bold">
-                  {t(`${tierPrefix}.webinarHeading`)}
-                </h3>
-                <TidyCalEmbed dataPath={TIDYCAL_WEBINAR_PATHS[lang]} />
-              </div>
-            </div>
-          </AnimateOnScroll>
-        </Section>
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-/* ------------------------------------------------------------------ */
 /*  Main exported component — routing logic                           */
 /* ------------------------------------------------------------------ */
 export default function WebinarBooking({ tier }: { tier?: 'setup' | 'lite' | 'full' }) {
@@ -278,9 +221,8 @@ export default function WebinarBooking({ tier }: { tier?: 'setup' | 'lite' | 'fu
 
   // Per-tier pages
   if (tier === 'setup') return <SetupPage />;
-  if (tier === 'lite') return <WebinarPage tier="lite" />;
-  if (tier === 'full') return <WebinarPage tier="full" />;
+  if (tier === 'lite') return <LitePage />;
 
-  // Hub fallback — show tier selector
+  // Hub fallback — show tier selector (now just Setup)
   return <HubPage />;
 }

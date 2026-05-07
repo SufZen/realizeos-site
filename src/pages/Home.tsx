@@ -2,21 +2,16 @@ import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
-import { DemoVideo } from '@/components/sections/DemoVideo';
+import { GithubDemo } from '@/components/sections/GithubDemo';
 import { FabricSystem } from '@/components/sections/FabricSystem';
 import { Features } from '@/components/sections/Features';
-import { UseCases } from '@/components/sections/UseCases';
-import { Pricing } from '@/components/sections/Pricing';
-import { Comparison } from '@/components/sections/Comparison';
-import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Delivery } from '@/components/sections/Delivery';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { FAQ } from '@/components/sections/FAQ';
 import { Founder } from '@/components/sections/Founder';
+import { UseCases } from '@/components/sections/UseCases';
+import { GetStarted } from '@/components/sections/GetStarted';
+import { CommunityDocs } from '@/components/sections/CommunityDocs';
+import { FAQ } from '@/components/sections/FAQ';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
-import { CaseStudies } from '@/components/sections/CaseStudies';
-import { Methodology } from '@/components/sections/Methodology';
 import { ExitIntentPopup } from '@/components/shared/ExitIntentPopup';
 import { MobileStickyBar } from '@/components/shared/MobileStickyBar';
 import { BrandWizard } from '@/components/wizard/BrandWizard';
@@ -28,7 +23,7 @@ export function Home() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('openWizard') === '1') {
-      setWizardOpen(true);
+      setTimeout(() => setWizardOpen(true), 0);
       // Clean up URL
       window.history.replaceState({}, '', '/');
     }
@@ -39,19 +34,14 @@ export function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Founder />
         <PainPoints />
-        <DemoVideo />
-        <CaseStudies />
+        <GithubDemo />
         <FabricSystem />
         <Features />
+        <Founder />
         <UseCases />
-        <Pricing />
-        <Comparison />
-        <HowItWorks onOpenWizard={() => setWizardOpen(true)} />
-        <Delivery />
-        <Testimonials />
-        <Methodology />
+        <GetStarted />
+        <CommunityDocs />
         <FAQ />
         <FinalCTA />
       </main>

@@ -64,68 +64,35 @@
   },
   "pricing": {
     "header": {
-      "title": "Choose Your Edition",
-      "subtitle": "Friends & Family launch pricing. One-time purchase. Own it forever.",
-      "promoBadge": "Launch Promotion — Ends March 31st",
-      "urgencyText": "Price increases April 1st",
-      "countdownLabel": "Time remaining"
+      "title": "Get Started",
+      "subtitle": "RealizeOS is distributed under BSL 1.1. Free for most commercial uses."
     },
-    "compareNote": "Individual AI agents elsewhere cost $49-99 each. AI operation communities charge $97/month. RealizeOS gives you the complete coordinated system — once, forever.",
+    "compareNote": "Stop paying recurring subscriptions. Host your own AI operations engine.",
     "tiers": {
-      "lite": {
-        "name": "RealizeOS Lite",
-        "description": "For operators seeking pure knowledge management structure.",
-        "emotionalPromise": "Stop starting from scratch. Establish a pristine, interconnected operations vault instantly.",
+      "free": {
+        "name": "Open Source (GitHub)",
+        "description": "For developers and operators who want to self-host.",
+        "emotionalPromise": "Full access to the RealizeOS V5 engine. Deploy on your own infrastructure.",
         "features": [
-          "Pre-structured Obsidian vault (FABRIC)",
-          "4 agent templates (Orchestrator, Writer, Reviewer, Analyst)",
-          "Brand identity & voice wizards + interactive Brand Worksheet",
-          "6 skill workflows (proposals, campaigns, social, reviews, content, research)",
-          "3 shared methods (competitive analysis, content repurposing, decision framework)",
-          "Enhanced CLAUDE.md protocol (155 lines)",
-          "Step-by-step setup guide",
-          "Works with Claude Pro ($20/mo)"
+          "Complete Python engine (11,000+ lines)",
+          "Docker one-command deploy",
+          "5 channels + 13 Google Workspace tools",
+          "Multi-LLM routing (Claude, Gemini, OpenAI, Ollama)",
+          "BSL 1.1 License (Free for non-competitive use)"
         ],
-        "originalPrice": "149",
-        "ctaText": "Get Lite Edition",
-        "delivery": "Instant delivery via Google Drive",
-        "guarantee": "14-day money-back guarantee"
+        "price": "0",
+        "period": "Free forever",
+        "ctaText": "View on GitHub",
+        "delivery": "Instant access via GitHub",
+        "guarantee": ""
       },
-      "full": {
-        "name": "RealizeOS Full",
-        "description": "The production-grade infrastructure powering the Realization group.",
-        "emotionalPromise": "Step securely out of the bottleneck constraint into the visionary seat. Complete automated control.",
-        "badge": "Most Popular",
-        "features": {
-          "header": "Everything in Lite, plus:",
-          "list": [
-            "Provider-agnostic LLM routing (Claude, Gemini, OpenAI, Ollama)",
-            "20+ models with 4 routing strategies (cost, quality, balanced, speed)",
-            "multi-layer dynamic prompt assembly",
-            "Hybrid KB search (FTS5 + vector)",
-            "Workflow engine with 7 node types + triggers",
-            "Multi-channel: WhatsApp, Web/WebSocket, Webhooks, Scheduler",
-            "Google Workspace integration (13 tools)",
-            "Web search, browser automation, MCP",
-            "Tool SDK & extensibility framework",
-            "Security: RBAC, encrypted vault, audit logging",
-            "Media processing (image analysis, transcription, generation)",
-            "Auto-evolution engine with risk assessment & rollback",
-            "Docker one-command deploy",
-            "CI/CD pipeline (GitHub Actions + pytest)"
-          ]
-        },
-        "originalPrice": "449",
-        "ctaText": "Get Full Edition",
-        "delivery": "Instant delivery via Google Drive",
-        "guarantee": "14-day money-back guarantee"
-      },
-      "setup": {
-        "name": "Setup Assistance",
+      "guided": {
+        "name": "Installation Session",
         "description": "Direct collaboration with the architect of RealizeOS.",
         "emotionalPromise": "Fast-track your freedom. We configure the system directly around your unique venture.",
+        "badge": "Recommended",
         "features": {
-          "header": "Everything in Full, plus:",
+          "header": "Everything in Open Source, plus:",
           "list": [
             "1-hour setup call with the builder",
             "Custom KB scaffolding for your business",
@@ -135,10 +102,32 @@
             "Priority email support for 30 days"
           ]
         },
-        "originalPrice": "849",
-        "ctaText": "Get Setup Assistance",
-        "delivery": "Instant delivery + 1-hour setup call",
+        "price": "499",
+        "period": "one-time",
+        "ctaText": "Book Setup Session",
+        "delivery": "1-hour setup call via Google Meet",
         "guarantee": "14-day money-back guarantee"
+      },
+      "consulting": {
+        "name": "Enterprise Consulting",
+        "description": "Custom AI operations for large-scale production.",
+        "emotionalPromise": "We build, deploy, and manage your entire AI infrastructure.",
+        "features": {
+          "header": "For complex organizations:",
+          "list": [
+            "Custom agent development",
+            "On-premise secure deployment",
+            "ERP and custom CRM integrations",
+            "Dedicated Slack/Teams support channel",
+            "Ongoing prompt engineering & optimization",
+            "SLA guarantees"
+          ]
+        },
+        "price": "Custom",
+        "period": "",
+        "ctaText": "Contact Us",
+        "delivery": "Custom timeline",
+        "guarantee": ""
       }
     }
   },
@@ -520,48 +509,32 @@
     "title": "Frequently Asked Questions",
     "items": [
       {
+        "question": "Is it really free?",
+        "answer": "<p>RealizeOS V5 is licensed under the Business Source License (BSL) 1.1. It is completely free for internal business use and production. The only restriction is that you cannot offer RealizeOS itself as a competing commercial service (e.g. 'AI operations as a service'). After 4 years, the code transitions to Apache 2.0.</p>"
+      },
+      {
         "question": "What do I need to get started?",
-        "answer": "<p><strong>Lite:</strong> Obsidian (free) and a Claude Pro subscription ($20/mo from Anthropic). No coding required.</p><p><strong>Full:</strong> Python 3.11+, Docker (optional), and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for local inference).</p>"
+        "answer": "<p>Python 3.11+, Docker, and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for local inference).</p>"
       },
       {
         "question": "Can I host it on my own server?",
-        "answer": "<p>Yes. The Full edition is designed for self-hosting. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p>"
-      },
-      {
-        "question": "Which AI models does it support?",
-        "answer": "<p>The Full edition supports 4 providers — Claude (Anthropic), Gemini (Google), OpenAI, and Ollama (local) — with 20+ models total. 4 routing strategies (cost, quality, balanced, speed) automatically select the optimal model for each task. 9 task modalities ensure the right model handles the right work. The Lite edition works with any Claude model through Claude Code.</p>"
+        "answer": "<p>Yes. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p>"
       },
       {
         "question": "Is my data private?",
-        "answer": "<p>Completely. RealizeOS runs on your machine or server. Your knowledge base, conversations, and business data never leave your infrastructure. Security features include role-based access control (RBAC) with 16 permissions, AES-256 encrypted credential vault, and full audit logging. For maximum privacy, use Ollama for fully local inference — no data leaves your network at all.</p>"
-      },
-      {
-        "question": "What if I need help setting up?",
-        "answer": "<p>The Setup Assistance package ($499) includes a 1-hour call where we configure your system together — venture voice, agents, first workflow, everything. After purchase, you'll receive a detailed prep checklist. You can also reach out via email at any time.</p>"
+        "answer": "<p>Completely. RealizeOS runs on your machine or server. For maximum privacy, use Ollama for fully local inference &mdash; no data leaves your network at all.</p>"
       },
       {
         "question": "Do I get updates?",
-        "answer": "<p>Yes. As an owner of the system, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want — on your schedule, not ours.</p>"
-      },
-      {
-        "question": "Can I manage multiple businesses with one system?",
-        "answer": "<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own system with isolated agents, knowledge base, and venture voice. One engine, as many ventures as you need.</p>"
-      },
-      {
-        "question": "What happens after I purchase?",
-        "answer": "<p>Immediately: you'll get access to download your package (Lite) or the GitHub repo (Full). You'll also receive a welcome email with your setup guide and a video walkthrough.</p><p>Join the community: Telegram Builders Group &amp; WhatsApp Community</p><p>Over the next week, you'll get onboarding emails with tips for defining your venture, customizing agents, and building your first workflow.</p>"
-      },
-      {
-        "question": "Is there a refund policy?",
-        "answer": "<p>If you're not satisfied within 14 days of purchase, reach out and we'll make it right. We want you to succeed with RealizeOS, not feel trapped.</p>"
+        "answer": "<p>Yes. As an open-source project, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want.</p>"
       }
     ]
   },
   "finalCta": {
     "title1": "Start Building Your",
     "title2": "AI Operations System",
-    "subtitle": "One-time purchase. Complete ownership. No recurring fees.",
-    "getRealizeOS": "Get RealizeOS",
+    "subtitle": "Join the community and take control of your AI infrastructure.",
+    "getRealizeOS": "Star on GitHub",
     "notReadyTitle": "Not ready yet?",
     "notReadyDesc": "Tell us about your biggest operations challenge. We'll get back to you with honest, practical advice — no sales pitch.",
     "thanks": "Thanks! We'll review your challenge and get back to you.",
@@ -803,13 +776,34 @@
       "subtitle": "Stop building from scratch. Open a pre-built vault and your AI team is ready to work."
     },
     "lite": {
-      "vault": { "title": "FABRIC Vault", "desc": "30 pre-structured files. Open it and you have a working knowledge base." },
-      "agents": { "title": "4 AI Agents", "desc": "Orchestrator, Writer, Reviewer, Analyst — customize in minutes." },
-      "brand": { "title": "Venture Wizards", "desc": "Identity, voice, and the 130-line Venture Worksheet." },
-      "skills": { "title": "6 Skill Workflows", "desc": "Proposals, campaigns, social, reviews, content, research." },
-      "methods": { "title": "3 Shared Methods", "desc": "Competitive analysis, content repurposing, decision framework." },
-      "claude": { "title": "CLAUDE.md Protocol", "desc": "155 lines that make Claude Code understand your entire business." },
-      "guide": { "title": "Setup Guide", "desc": "15 minutes from download to your first AI conversation." }
+      "vault": {
+        "title": "FABRIC Vault",
+        "desc": "30 pre-structured files. Open it and you have a working knowledge base."
+      },
+      "agents": {
+        "title": "4 AI Agents",
+        "desc": "Orchestrator, Writer, Reviewer, Analyst — customize in minutes."
+      },
+      "brand": {
+        "title": "Venture Wizards",
+        "desc": "Identity, voice, and the 130-line Venture Worksheet."
+      },
+      "skills": {
+        "title": "6 Skill Workflows",
+        "desc": "Proposals, campaigns, social, reviews, content, research."
+      },
+      "methods": {
+        "title": "3 Shared Methods",
+        "desc": "Competitive analysis, content repurposing, decision framework."
+      },
+      "claude": {
+        "title": "CLAUDE.md Protocol",
+        "desc": "155 lines that make Claude Code understand your entire business."
+      },
+      "guide": {
+        "title": "Setup Guide",
+        "desc": "15 minutes from download to your first AI conversation."
+      }
     },
     "steps": {
       "items": [
