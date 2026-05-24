@@ -49,7 +49,7 @@ export function ExitIntentPopup() {
 
   return (
     <Dialog open={visible} onOpenChange={(open) => !open && dismiss()}>
-      <DialogContent className="glass border-border sm:max-w-md">
+      <DialogContent className="fx-glass border-border sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-xl">{t('exitPopup.title')}</DialogTitle>
           <DialogDescription className="text-muted-foreground">
@@ -77,7 +77,7 @@ export function ExitIntentPopup() {
               {status === 'loading' ? t('exitPopup.sending') : t('exitPopup.cta')}
             </Button>
             {status === 'error' && (
-              <p className="text-xs text-red-400">{t('exitPopup.error')}</p>
+              <p className="text-xs text-danger">{t('exitPopup.error')}</p>
             )}
           </form>
         )}

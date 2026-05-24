@@ -27,7 +27,7 @@ export function StepBuildIcon({ className }: Props) {
         height={10}
         rx={3}
         fill="rgba(255,204,0,0.06)"
-        stroke="rgba(255,204,0,0.2)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={{
           hidden: { opacity: 0, y: 10 },
@@ -42,8 +42,8 @@ export function StepBuildIcon({ className }: Props) {
         width={36}
         height={10}
         rx={3}
-        fill="rgba(255,204,0,0.1)"
-        stroke="rgba(255,204,0,0.25)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={{
           hidden: { opacity: 0, y: 10 },
@@ -58,8 +58,8 @@ export function StepBuildIcon({ className }: Props) {
         width={36}
         height={10}
         rx={3}
-        fill="rgba(255,204,0,0.18)"
-        stroke="#ffcc00"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={{
           hidden: { opacity: 0, y: 10 },
@@ -75,13 +75,13 @@ export function StepBuildIcon({ className }: Props) {
         >
           <path
             d="M32 14 L32 6"
-            stroke="#ffcc00"
+            stroke="var(--rz-accent)"
             strokeWidth={1.5}
             strokeLinecap="round"
           />
           <path
             d="M28 9 L32 5 L36 9"
-            stroke="#ffcc00"
+            stroke="var(--rz-accent)"
             strokeWidth={1.5}
             strokeLinecap="round"
             strokeLinejoin="round"

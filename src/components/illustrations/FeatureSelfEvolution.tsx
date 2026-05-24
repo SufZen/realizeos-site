@@ -45,7 +45,7 @@ export function FeatureSelfEvolution({ className }: Props) {
       >
         <motion.path
           d={arcD}
-          stroke="#ffcc00"
+          stroke="var(--rz-accent)"
           strokeWidth={1.5}
           strokeLinecap="round"
           fill="none"
@@ -54,7 +54,7 @@ export function FeatureSelfEvolution({ className }: Props) {
         {/* Arrowhead at the end of the arc (at the top, 40, 18) */}
         <motion.path
           d="M36 22 L40 18 L44 22"
-          stroke="#ffcc00"
+          stroke="var(--rz-accent)"
           strokeWidth={1.5}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -66,7 +66,7 @@ export function FeatureSelfEvolution({ className }: Props) {
       {/* Upward-trending graph line inside circle — draws in */}
       <motion.path
         d="M30 48 L36 42 L42 44 L50 32"
-        stroke="rgba(255,204,0,0.5)"
+        stroke="var(--rz-accent)"
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

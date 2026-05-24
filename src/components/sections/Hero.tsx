@@ -30,9 +30,9 @@ export function Hero() {
   return (
     <header className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28" id="hero">
       {/* Dot grid background */}
-      <div className="dot-grid pointer-events-none absolute inset-0" />
+      <div className="fx-dot-grid pointer-events-none absolute inset-0" />
       {/* Radial glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/4 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-yellow/5 blur-[120px]" />
+      <div className="fx-radial-halo" />
 
       <div className="relative mx-auto max-w-site px-5 flex flex-col lg:flex-row lg:items-center lg:gap-12">
         <motion.div
@@ -63,7 +63,7 @@ export function Hero() {
           >
             {t('hero.title_main')}
             <br />
-            <span className="text-gradient-yellow text-glow-yellow">{t('hero.title_highlight')}</span>
+            <span className="fx-gradient-text fx-text-glow">{t('hero.title_highlight')}</span>
           </motion.h1>
 
           <motion.p
@@ -102,7 +102,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <HeroAgentNetwork className="mx-auto mt-10 w-full max-w-[400px] lg:mt-0 lg:flex-1 illustration-glow" />
+        <HeroAgentNetwork className="mx-auto mt-10 w-full max-w-[400px] lg:mt-0 lg:flex-1 fx-illustration-glow" />
       </div>
     </header>
   );

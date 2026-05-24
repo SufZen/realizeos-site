@@ -26,18 +26,18 @@ export function FeatureSkills({ className }: Props) {
           cy={40}
           r={10}
           fill="rgba(26,26,36,0.8)"
-          stroke="rgba(255,204,0,0.25)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
         />
         {/* Magnifier icon */}
-        <circle cx={16} cy={38} r={3.5} stroke="#9a9ab0" strokeWidth={1} fill="none" />
-        <line x1={18.5} y1={40.5} x2={21} y2={43} stroke="#9a9ab0" strokeWidth={1} strokeLinecap="round" />
+        <circle cx={16} cy={38} r={3.5} stroke="var(--rz-fg-muted)" strokeWidth={1} fill="none" />
+        <line x1={18.5} y1={40.5} x2={21} y2={43} stroke="var(--rz-fg-muted)" strokeWidth={1} strokeLinecap="round" />
       </motion.g>
 
       {/* Arrow 1→2 */}
       <motion.path
         d="M28 40 L32 40"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         markerEnd="url(#arrowSkills)"
@@ -51,19 +51,19 @@ export function FeatureSkills({ className }: Props) {
           cy={40}
           r={10}
           fill="rgba(26,26,36,0.8)"
-          stroke="rgba(255,204,0,0.25)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
         />
         {/* Document lines icon */}
-        <line x1={36} y1={37} x2={44} y2={37} stroke="#9a9ab0" strokeWidth={1} strokeLinecap="round" />
-        <line x1={36} y1={40} x2={43} y2={40} stroke="#9a9ab0" strokeWidth={1} strokeLinecap="round" />
-        <line x1={36} y1={43} x2={41} y2={43} stroke="#9a9ab0" strokeWidth={1} strokeLinecap="round" />
+        <line x1={36} y1={37} x2={44} y2={37} stroke="var(--rz-fg-muted)" strokeWidth={1} strokeLinecap="round" />
+        <line x1={36} y1={40} x2={43} y2={40} stroke="var(--rz-fg-muted)" strokeWidth={1} strokeLinecap="round" />
+        <line x1={36} y1={43} x2={41} y2={43} stroke="var(--rz-fg-muted)" strokeWidth={1} strokeLinecap="round" />
       </motion.g>
 
       {/* Arrow 2→3 */}
       <motion.path
         d="M50 40 L54 40"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         markerEnd="url(#arrowSkills)"
@@ -77,13 +77,13 @@ export function FeatureSkills({ className }: Props) {
           cy={40}
           r={10}
           fill="rgba(26,26,36,0.8)"
-          stroke="rgba(255,204,0,0.25)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
         />
         {/* Checkmark icon */}
         <polyline
           points="57,40 60,43 67,36"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.2}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -94,7 +94,7 @@ export function FeatureSkills({ className }: Props) {
       {/* Travelling signal dot */}
       <motion.circle
         r={2}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         animate={{
           cx: [18, 40, 62, 62, 40, 18],
           cy: [40, 40, 40, 40, 40, 40],
@@ -110,7 +110,7 @@ export function FeatureSkills({ className }: Props) {
       {/* Curving return path below (dashed) */}
       <motion.path
         d="M62 50 Q40 66 18 50"
-        stroke="rgba(255,204,0,0.12)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeDasharray="3 3"
         fill="none"
@@ -127,7 +127,7 @@ export function FeatureSkills({ className }: Props) {
           refY="3"
           orient="auto"
         >
-          <path d="M0 0 L6 3 L0 6" fill="none" stroke="#ffcc00" strokeWidth={1} />
+          <path d="M0 0 L6 3 L0 6" fill="none" stroke="var(--rz-accent)" strokeWidth={1} />
         </marker>
       </defs>
     </motion.svg>

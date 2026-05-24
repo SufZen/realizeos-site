@@ -23,7 +23,7 @@ export function FeatureSecurity({ className }: Props) {
       <motion.path
         d="M40 10 L62 22 L62 44 Q62 60 40 70 Q18 60 18 44 L18 22 Z"
         fill="rgba(255,204,0,0.06)"
-        stroke="rgba(255,204,0,0.3)"
+        stroke="var(--rz-accent)"
         strokeWidth={1.5}
         strokeLinejoin="round"
         variants={fadeInChild}
@@ -33,7 +33,7 @@ export function FeatureSecurity({ className }: Props) {
       <motion.path
         d="M40 18 L56 27 L56 43 Q56 55 40 63 Q24 55 24 43 L24 27 Z"
         fill="rgba(255,204,0,0.04)"
-        stroke="rgba(255,204,0,0.15)"
+        stroke="var(--rz-accent)"
         strokeWidth={0.75}
         strokeLinejoin="round"
         variants={fadeInChild}
@@ -46,8 +46,8 @@ export function FeatureSecurity({ className }: Props) {
         width={12}
         height={10}
         rx={2}
-        fill="rgba(255,204,0,0.15)"
-        stroke="rgba(255,204,0,0.5)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -56,7 +56,7 @@ export function FeatureSecurity({ className }: Props) {
       <motion.path
         d="M36 38 L36 33 Q36 28 40 28 Q44 28 44 33 L44 38"
         fill="none"
-        stroke="rgba(255,204,0,0.5)"
+        stroke="var(--rz-accent)"
         strokeWidth={1.5}
         strokeLinecap="round"
         variants={{
@@ -74,7 +74,7 @@ export function FeatureSecurity({ className }: Props) {
         cx={40}
         cy={43}
         r={1.5}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
         animate={{
           opacity: [0.5, 1, 0.5],

@@ -37,7 +37,7 @@ export function FeatureKBSearch({ className }: Props) {
             cx={34}
             cy={34}
             r={18}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={2}
             fill="none"
           />
@@ -47,15 +47,15 @@ export function FeatureKBSearch({ className }: Props) {
             y1={47}
             x2={58}
             y2={58}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={2}
             strokeLinecap="round"
           />
 
           {/* Inside lens — text search lines */}
-          <line x1={24} y1={24} x2={38} y2={24} stroke="rgba(255,255,255,0.12)" strokeWidth={1.5} strokeLinecap="round" />
-          <line x1={24} y1={28} x2={35} y2={28} stroke="rgba(255,255,255,0.12)" strokeWidth={1.5} strokeLinecap="round" />
-          <line x1={24} y1={42} x2={40} y2={42} stroke="rgba(255,255,255,0.12)" strokeWidth={1.5} strokeLinecap="round" />
+          <line x1={24} y1={24} x2={38} y2={24} stroke="var(--rz-border)" strokeWidth={1.5} strokeLinecap="round" />
+          <line x1={24} y1={28} x2={35} y2={28} stroke="var(--rz-border)" strokeWidth={1.5} strokeLinecap="round" />
+          <line x1={24} y1={42} x2={40} y2={42} stroke="var(--rz-border)" strokeWidth={1.5} strokeLinecap="round" />
 
           {/* Inside lens — vector embedding dots with wave pulse */}
           {dots.map((d, i) => (
@@ -84,7 +84,7 @@ export function FeatureKBSearch({ className }: Props) {
         <text
           x={58}
           y={44}
-          fill="#ffcc00"
+          fill="var(--rz-accent)"
           fontSize={10}
           fontFamily="monospace"
           fontWeight="bold"
@@ -94,7 +94,7 @@ export function FeatureKBSearch({ className }: Props) {
         <text
           x={64}
           y={44}
-          fill="#ffcc00"
+          fill="var(--rz-accent)"
           fontSize={10}
           fontFamily="monospace"
           fontWeight="bold"

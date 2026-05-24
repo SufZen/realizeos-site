@@ -26,8 +26,8 @@ export function StepPurchaseIcon({ className }: Props) {
         width={40}
         height={28}
         rx={3}
-        fill="rgba(255,255,255,0.03)"
-        stroke="#9a9ab0"
+        fill="var(--rz-border)"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
         variants={fadeInChild}
       />
@@ -39,7 +39,7 @@ export function StepPurchaseIcon({ className }: Props) {
         width={8}
         height={6}
         rx={1}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
       />
 
@@ -49,7 +49,7 @@ export function StepPurchaseIcon({ className }: Props) {
         y1={36}
         x2={52}
         y2={36}
-        stroke="rgba(255,255,255,0.1)"
+        stroke="var(--rz-border)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -57,7 +57,7 @@ export function StepPurchaseIcon({ className }: Props) {
       {/* Sparkle — 4-pointed star at (48,14) */}
       <motion.path
         d="M48 10 L49 13 L52 14 L49 15 L48 18 L47 15 L44 14 L47 13 Z"
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
         animate={{
           scale: [0.8, 1.2, 0.8],

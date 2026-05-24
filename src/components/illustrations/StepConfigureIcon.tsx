@@ -26,8 +26,8 @@ export function StepConfigureIcon({ className }: Props) {
         width={30}
         height={48}
         rx={3}
-        fill="rgba(255,255,255,0.03)"
-        stroke="#9a9ab0"
+        fill="var(--rz-border)"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
         variants={fadeInChild}
       />
@@ -38,7 +38,7 @@ export function StepConfigureIcon({ className }: Props) {
         y1={20}
         x2={38}
         y2={20}
-        stroke="rgba(255,255,255,0.12)"
+        stroke="var(--rz-border)"
         strokeWidth={1.5}
         strokeLinecap="round"
         variants={{
@@ -55,7 +55,7 @@ export function StepConfigureIcon({ className }: Props) {
         y1={30}
         x2={38}
         y2={30}
-        stroke="rgba(255,255,255,0.12)"
+        stroke="var(--rz-border)"
         strokeWidth={1.5}
         strokeLinecap="round"
         variants={{
@@ -72,7 +72,7 @@ export function StepConfigureIcon({ className }: Props) {
         y1={40}
         x2={38}
         y2={40}
-        stroke="rgba(255,255,255,0.12)"
+        stroke="var(--rz-border)"
         strokeWidth={1.5}
         strokeLinecap="round"
         variants={{
@@ -100,7 +100,7 @@ export function StepConfigureIcon({ className }: Props) {
       >
         <path
           d="M42 54 L50 46 L53 49 L45 57 L42 57 Z"
-          stroke="#ffcc00"
+          stroke="var(--rz-accent)"
           strokeWidth={1.5}
           strokeLinejoin="round"
           fill="none"
@@ -110,7 +110,7 @@ export function StepConfigureIcon({ className }: Props) {
           y1={46}
           x2={53}
           y2={49}
-          stroke="#ffcc00"
+          stroke="var(--rz-accent)"
           strokeWidth={1.5}
           strokeLinecap="round"
         />

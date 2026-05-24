@@ -60,9 +60,9 @@ function statusIcon(status: UploadedDocument['status']) {
     case 'processing':
       return <Loader2 className="h-4 w-4 animate-spin text-brand-yellow" />;
     case 'ready':
-      return <CheckCircle2 className="h-4 w-4 text-green-400" />;
+      return <CheckCircle2 className="h-4 w-4 text-success" />;
     case 'error':
-      return <AlertCircle className="h-4 w-4 text-red-400" />;
+      return <AlertCircle className="h-4 w-4 text-danger" />;
   }
 }
 
@@ -233,7 +233,7 @@ export function WizardUpload({ documents, onDocumentsChange, onAnalyze, onSkip }
           </Button>
         </div>
         {urlWarning && (
-          <p className="flex items-start gap-1.5 text-xs text-yellow-500">
+          <p className="flex items-start gap-1.5 text-xs text-warning">
             <AlertCircle className="mt-0.5 h-3 w-3 shrink-0" />
             {urlWarning}
           </p>
@@ -257,7 +257,7 @@ export function WizardUpload({ documents, onDocumentsChange, onAnalyze, onSkip }
                 <p className="text-xs text-muted-foreground">{formatSize(doc.size)}</p>
               )}
               {doc.status === 'error' && doc.errorMessage && (
-                <p className="text-xs text-yellow-500">{doc.errorMessage}</p>
+                <p className="text-xs text-warning">{doc.errorMessage}</p>
               )}
             </div>
             {statusIcon(doc.status)}

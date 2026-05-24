@@ -66,7 +66,7 @@ export function GithubDemo() {
               href="https://github.com/SufZen/RealizeOS-5" 
               target="_blank" 
               rel="noreferrer"
-              className="flex items-center justify-between p-4 mb-4 rounded-xl glass-card border-brand-yellow/30 hover:border-brand-yellow/60 transition-colors group"
+              className="flex items-center justify-between p-4 mb-4 rounded-xl fx-glass-card border-brand-yellow/30 hover:border-brand-yellow/60 transition-colors group"
             >
               <div className="flex items-center gap-3">
                 <Github size={24} className="text-foreground" />
@@ -103,20 +103,20 @@ export function GithubDemo() {
             ))}
           </div>
 
-          <div className="md:col-span-8 glass-card rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
+          <div className="md:col-span-8 fx-glass-card rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
             <div className="flex items-center justify-between px-4 py-3 bg-card/60 border-b border-border/50">
               <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="w-3 h-3 rounded-full bg-danger/80" />
+                <div className="w-3 h-3 rounded-full bg-warning/80" />
+                <div className="w-3 h-3 rounded-full bg-success/80" />
               </div>
               <div className="text-xs font-mono text-muted-foreground flex items-center gap-2">
                 <Terminal size={14} />
                 Terminal
               </div>
             </div>
-            <div className="p-6 bg-[#0E1117] min-h-[180px] relative group">
-              <pre className="text-sm font-mono text-gray-300 whitespace-pre-wrap leading-relaxed">
+            <div className="p-6 bg-[var(--rz-bg)] min-h-[180px] relative group">
+              <pre className="text-sm font-mono text-muted-foreground whitespace-pre-wrap leading-relaxed">
                 {activeMethod.command}
               </pre>
               

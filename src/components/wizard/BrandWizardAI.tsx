@@ -286,7 +286,7 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       {/* ── Header ── */}
-      <header className="sticky top-0 z-50 border-b border-border glass">
+      <header className="sticky top-0 z-50 border-b border-border fx-glass">
         <div className="mx-auto flex max-w-3xl items-center gap-4 px-4 py-3">
           {onClose && (
             <button onClick={onClose} className="rounded p-1 text-muted-foreground hover:text-foreground">
@@ -355,7 +355,7 @@ export function BrandWizardAI({ onClose }: BrandWizardAIProps) {
             {phase === 'upload' && (
               <div className="space-y-6">
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold text-gradient-yellow text-glow-yellow">
+                  <h2 className="text-2xl font-bold fx-gradient-text fx-text-glow">
                     Define Your Venture, Intelligently
                   </h2>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-md mx-auto">

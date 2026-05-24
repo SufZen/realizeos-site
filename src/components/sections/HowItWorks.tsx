@@ -45,7 +45,7 @@ export function HowItWorks({ onOpenWizard }: HowItWorksProps) {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
         {steps.map((step, i) => (
           <AnimateOnScroll key={step.number} delay={i * 0.08}>
-            <div className="glass-card flex h-full flex-col rounded-xl p-5 text-center">
+            <div className="fx-glass-card flex h-full flex-col rounded-xl p-5 text-center">
               {(() => {
                 const StepIcon = stepIcons[i];
                 return StepIcon ? <StepIcon className="mx-auto mb-2 h-12 w-12" /> : null;

@@ -43,7 +43,7 @@ function TitleSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
       <h1
-        className="text-gradient-yellow text-glow-yellow text-4xl font-bold leading-tight md:text-6xl lg:text-7xl"
+        className="fx-gradient-text fx-text-glow text-4xl font-bold leading-tight md:text-6xl lg:text-7xl"
         dangerouslySetInnerHTML={{ __html: slide.titleKey ? t(slide.titleKey) : '' }}
       />
       {slide.subtitleKey && (
@@ -61,7 +61,7 @@ function TitleBodySlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col justify-center px-8 md:px-16 lg:px-24">
       <h2
-        className="text-gradient-yellow mb-4 text-3xl font-bold md:text-5xl"
+        className="fx-gradient-text mb-4 text-3xl font-bold md:text-5xl"
         dangerouslySetInnerHTML={{ __html: slide.titleKey ? t(slide.titleKey) : '' }}
       />
       {slide.subtitleKey && (
@@ -73,7 +73,7 @@ function TitleBodySlide({ slide }: SlideRendererProps) {
         <p key={key} className="mb-4 max-w-4xl text-base text-muted-foreground md:text-xl" dangerouslySetInnerHTML={{ __html: nl2br(t(key)) }} />
       ))}
       {slide.customData?.promoCode && (
-        <div className="animated-border glow-yellow my-4 inline-block rounded-xl px-8 py-3">
+        <div className="fx-animated-border fx-glow my-4 inline-block rounded-xl px-8 py-3">
           <span className="font-mono text-3xl font-bold tracking-widest text-brand-yellow md:text-5xl">
             {t(slide.customData.promoCode)}
           </span>
@@ -98,7 +98,7 @@ function ListSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col justify-center px-8 md:px-16 lg:px-24">
       {slide.titleKey && (
-        <h2 className="text-gradient-yellow mb-4 text-3xl font-bold md:text-5xl">
+        <h2 className="fx-gradient-text mb-4 text-3xl font-bold md:text-5xl">
           {t(slide.titleKey)}
         </h2>
       )}
@@ -129,7 +129,7 @@ function FeatureCardSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col justify-center px-8 md:px-16">
       {slide.titleKey && (
-        <h2 className="text-gradient-yellow mb-8 text-center text-3xl font-bold md:text-5xl">
+        <h2 className="fx-gradient-text mb-8 text-center text-3xl font-bold md:text-5xl">
           {t(slide.titleKey)}
         </h2>
       )}
@@ -140,7 +140,7 @@ function FeatureCardSlide({ slide }: SlideRendererProps) {
       )}
       <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {slide.items?.map((item, i) => (
-          <div key={i} className="glass-card rounded-xl p-5">
+          <div key={i} className="fx-glass-card rounded-xl p-5">
             <h3 className="mb-2 text-sm font-bold text-brand-yellow">
               {item.titleKey ? t(item.titleKey) : item.title}
             </h3>
@@ -185,7 +185,7 @@ function PricingCardSlide({ slide }: SlideRendererProps) {
 
   return (
     <div className="flex h-full flex-col justify-center px-8 md:px-16">
-      <h2 className="text-gradient-yellow mb-8 text-center text-3xl font-bold md:text-5xl">
+      <h2 className="fx-gradient-text mb-8 text-center text-3xl font-bold md:text-5xl">
         {slide.titleKey ? t(slide.titleKey) : ''}
       </h2>
       {slide.subtitleKey && (
@@ -198,7 +198,7 @@ function PricingCardSlide({ slide }: SlideRendererProps) {
           {tiers.map((tier) => (
             <div
               key={tier.trackId}
-              className={`glass-card flex flex-col items-center rounded-xl p-6 text-center ${
+              className={`fx-glass-card flex flex-col items-center rounded-xl p-6 text-center ${
                 tier.featured ? 'ring-2 ring-brand-yellow' : ''
               }`}
             >
@@ -226,7 +226,7 @@ function PricingCardSlide({ slide }: SlideRendererProps) {
           {['traditional', 'tools', 'realize'].map((col) => (
             <div
               key={col}
-              className={`glass-card flex flex-col rounded-xl p-6 ${
+              className={`fx-glass-card flex flex-col rounded-xl p-6 ${
                 col === 'realize' ? 'ring-2 ring-brand-yellow' : ''
               }`}
             >
@@ -265,7 +265,7 @@ function DemoSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
       {Illust ? (
-        <div className="illustration-glow mb-6">
+        <div className="fx-illustration-glow mb-6">
           <Illust className="h-64 w-64 md:h-80 md:w-80" />
         </div>
       ) : (
@@ -273,7 +273,7 @@ function DemoSlide({ slide }: SlideRendererProps) {
           <span className="text-4xl">{'\u25B6'}</span>
         </div>
       )}
-      <h2 className="text-gradient-yellow text-glow-yellow text-4xl font-bold md:text-6xl">
+      <h2 className="fx-gradient-text fx-text-glow text-4xl font-bold md:text-6xl">
         {slide.titleKey ? t(slide.titleKey) : ''}
       </h2>
       {slide.subtitleKey && (
@@ -290,7 +290,7 @@ function QASlide({ slide }: SlideRendererProps) {
   const meetLink = slide.customData?.meetLink ? t(slide.customData.meetLink) : undefined;
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
-      <h2 className="text-gradient-yellow text-glow-yellow mb-6 text-4xl font-bold md:text-6xl">
+      <h2 className="fx-gradient-text fx-text-glow mb-6 text-4xl font-bold md:text-6xl">
         {slide.titleKey ? t(slide.titleKey) : ''}
       </h2>
       {slide.subtitleKey && (
@@ -332,7 +332,7 @@ function SplitSlide({ slide }: SlideRendererProps) {
       <div className="flex w-full flex-col justify-center md:w-3/5">
         {slide.titleKey && (
           <h2
-            className="text-gradient-yellow mb-4 text-3xl font-bold md:text-5xl"
+            className="fx-gradient-text mb-4 text-3xl font-bold md:text-5xl"
             dangerouslySetInnerHTML={{ __html: t(slide.titleKey) }}
           />
         )}
@@ -370,7 +370,7 @@ function SplitSlide({ slide }: SlideRendererProps) {
       {/* Illustration side - 40% */}
       {Illust && (
         <div className="flex w-full items-center justify-center md:w-2/5">
-          <div className="illustration-glow">
+          <div className="fx-illustration-glow">
             {slide.illustration === 'FounderPhotoFrame' ? (
               <FounderPhotoFrame
                 className="h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80"
@@ -395,9 +395,9 @@ function StatGridSlide({ slide }: SlideRendererProps) {
       ? 'grid grid-cols-3 gap-6'
       : 'grid grid-cols-2 gap-6 lg:grid-cols-4';
   return (
-    <div className="dot-grid flex h-full flex-col items-center justify-center px-8 md:px-16">
+    <div className="fx-dot-grid flex h-full flex-col items-center justify-center px-8 md:px-16">
       {slide.titleKey && (
-        <h2 className="text-gradient-yellow mb-10 text-center text-3xl font-bold md:text-5xl">
+        <h2 className="fx-gradient-text mb-10 text-center text-3xl font-bold md:text-5xl">
           {t(slide.titleKey)}
         </h2>
       )}
@@ -426,13 +426,13 @@ function IllustrationSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 text-center md:px-16">
       {Illust && (
-        <div className="illustration-glow mb-8">
+        <div className="fx-illustration-glow mb-8">
           <Illust className="h-48 w-48 md:h-64 md:w-64 lg:h-72 lg:w-72" />
         </div>
       )}
       {slide.titleKey && (
         <h2
-          className="text-gradient-yellow text-glow-yellow text-3xl font-bold md:text-5xl lg:text-6xl"
+          className="fx-gradient-text fx-text-glow text-3xl font-bold md:text-5xl lg:text-6xl"
           dangerouslySetInnerHTML={{ __html: t(slide.titleKey) }}
         />
       )}
@@ -457,13 +457,13 @@ function BeforeAfterSlide({ slide }: SlideRendererProps) {
   return (
     <div className="flex h-full flex-col items-center justify-center px-8 md:px-16">
       {slide.titleKey && (
-        <h2 className="text-gradient-yellow mb-8 text-center text-3xl font-bold md:text-5xl">
+        <h2 className="fx-gradient-text mb-8 text-center text-3xl font-bold md:text-5xl">
           {t(slide.titleKey)}
         </h2>
       )}
       <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
         {/* Before panel */}
-        <div className="glass-card rounded-xl border border-destructive/20 p-6">
+        <div className="fx-glass-card rounded-xl border border-destructive/20 p-6">
           {BeforeIllust && (
             <div className="mb-4 flex justify-center opacity-60">
               <BeforeIllust className="h-16 w-16" />
@@ -482,7 +482,7 @@ function BeforeAfterSlide({ slide }: SlideRendererProps) {
           </ul>
         </div>
         {/* After panel */}
-        <div className="glass-card rounded-xl border border-brand-yellow/30 p-6">
+        <div className="fx-glass-card rounded-xl border border-brand-yellow/30 p-6">
           {AfterIllust && (
             <div className="mb-4 flex justify-center">
               <AfterIllust className="h-16 w-16" />

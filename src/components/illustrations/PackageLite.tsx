@@ -26,17 +26,17 @@ export function PackageLite({ className }: Props) {
       {/* Folder — back panel */}
       <motion.path
         d="M16 32h48v28a2 2 0 01-2 2H18a2 2 0 01-2-2V32z"
-        stroke="#9a9ab0"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
-        fill="rgba(255,255,255,0.03)"
+        fill="var(--rz-border)"
         variants={fadeInChild}
       />
       {/* Folder — tab */}
       <motion.path
         d="M16 32V26a2 2 0 012-2h12l4 4h28v4H16z"
-        stroke="#9a9ab0"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
-        fill="rgba(255,255,255,0.03)"
+        fill="var(--rz-border)"
         variants={fadeInChild}
       />
       {/* Folder gentle float */}
@@ -44,9 +44,9 @@ export function PackageLite({ className }: Props) {
         {/* Folder front panel (open) */}
         <path
           d="M14 38h52a2 2 0 012 2v18a2 2 0 01-2 2H14a2 2 0 01-2-2V40a2 2 0 012-2z"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
       </motion.g>
 
@@ -57,8 +57,8 @@ export function PackageLite({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         transform="rotate(-8 33 21)"
@@ -69,8 +69,8 @@ export function PackageLite({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -80,8 +80,8 @@ export function PackageLite({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         transform="rotate(8 47 21)"
@@ -94,15 +94,15 @@ export function PackageLite({ className }: Props) {
         width={14}
         height={8}
         rx={2}
-        fill="rgba(255,204,0,0.15)"
-        stroke="#ffcc00"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
       <motion.text
         x={59}
         y={61.5}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         fontSize={5}
         fontWeight={600}
         textAnchor="middle"

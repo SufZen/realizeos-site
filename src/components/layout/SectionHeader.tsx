@@ -13,7 +13,7 @@ export function SectionHeader({ title, subtitle, gradient = true, className }: S
       <h2
         className={cn(
           'text-3xl font-bold md:text-4xl lg:text-[2.75rem]',
-          gradient && 'text-gradient-yellow'
+          gradient && 'fx-gradient-text'
         )}
         dangerouslySetInnerHTML={{ __html: title }}
       />

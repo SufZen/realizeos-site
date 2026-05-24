@@ -6,13 +6,13 @@ interface Props {
 }
 
 const layers = [
-  { width: 28, fill: 'rgba(255,204,0,0.05)', stroke: 'none' },
-  { width: 32, fill: 'rgba(255,204,0,0.1)', stroke: 'none' },
-  { width: 36, fill: 'rgba(255,204,0,0.05)', stroke: 'none' },
-  { width: 42, fill: 'rgba(255,204,0,0.1)', stroke: 'none' },
-  { width: 48, fill: 'rgba(255,204,0,0.05)', stroke: 'none' },
-  { width: 54, fill: 'rgba(255,204,0,0.1)', stroke: 'none' },
-  { width: 60, fill: 'rgba(255,204,0,0.18)', stroke: '#ffcc00' },
+  { width: 28, fill: 'var(--rz-accent-soft)', stroke: 'none' },
+  { width: 32, fill: 'var(--rz-accent-soft)', stroke: 'none' },
+  { width: 36, fill: 'var(--rz-accent-soft)', stroke: 'none' },
+  { width: 42, fill: 'var(--rz-accent-soft)', stroke: 'none' },
+  { width: 48, fill: 'var(--rz-accent-soft)', stroke: 'none' },
+  { width: 54, fill: 'var(--rz-accent-soft)', stroke: 'none' },
+  { width: 60, fill: 'var(--rz-accent-soft)', stroke: 'var(--rz-accent)' },
 ] as const;
 
 const layerHeight = 5;
@@ -76,13 +76,13 @@ export function FeaturePromptAssembly({ className }: Props) {
           y1={startY + 2}
           x2={8}
           y2={startY + totalHeight - 2}
-          stroke="rgba(255,204,0,0.3)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
           strokeLinecap="round"
         />
         <path
           d={`M5 ${startY + totalHeight - 6} L8 ${startY + totalHeight - 2} L11 ${startY + totalHeight - 6}`}
-          stroke="rgba(255,204,0,0.3)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
           strokeLinecap="round"
           strokeLinejoin="round"

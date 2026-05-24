@@ -28,7 +28,7 @@ export function StepConnector({ className }: Props) {
         y1={8}
         x2={24}
         y2={8}
-        stroke="rgba(255,204,0,0.15)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeDasharray="3 3"
       />
@@ -36,7 +36,7 @@ export function StepConnector({ className }: Props) {
       {/* Chevron arrow */}
       <path
         d="M24 4 L30 8 L24 12"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

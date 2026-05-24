@@ -32,8 +32,8 @@ export function ProductMockup({ className }: Props) {
       {/* ---- Browser chrome frame ---- */}
       <motion.rect
         x={0} y={0} width={640} height={400} rx={12}
-        fill="#0a0a0f"
-        stroke="rgba(255,255,255,0.06)"
+        fill="var(--rz-bg)"
+        stroke="var(--rz-border)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -41,23 +41,23 @@ export function ProductMockup({ className }: Props) {
       {/* ---- Title bar ---- */}
       <motion.g variants={fadeInChild}>
         {/* 3 dots */}
-        <circle cx={16} cy={18} r={4} fill="#9a9ab0" opacity={0.3} />
-        <circle cx={28} cy={18} r={4} fill="#9a9ab0" opacity={0.3} />
-        <circle cx={40} cy={18} r={4} fill="#9a9ab0" opacity={0.3} />
+        <circle cx={16} cy={18} r={4} fill="var(--rz-fg-muted)" opacity={0.3} />
+        <circle cx={28} cy={18} r={4} fill="var(--rz-fg-muted)" opacity={0.3} />
+        <circle cx={40} cy={18} r={4} fill="var(--rz-fg-muted)" opacity={0.3} />
         {/* URL bar */}
-        <rect x={60} y={8} width={340} height={20} rx={4} fill="rgba(255,255,255,0.04)" />
-        <text x={70} y={22} fill="#9a9ab0" fontSize={10} fontFamily="JetBrains Mono, monospace">
+        <rect x={60} y={8} width={340} height={20} rx={4} fill="var(--rz-border)" />
+        <text x={70} y={22} fill="var(--rz-fg-muted)" fontSize={10} fontFamily="JetBrains Mono, monospace">
           realizeos.ai
         </text>
         {/* Separator */}
-        <line x1={0} y1={36} x2={640} y2={36} stroke="rgba(255,255,255,0.06)" />
+        <line x1={0} y1={36} x2={640} y2={36} stroke="var(--rz-border)" />
       </motion.g>
 
       {/* ---- Left sidebar ---- */}
       <motion.g variants={fadeInChild}>
-        <rect x={0} y={36} width={140} height={364} fill="rgba(255,255,255,0.02)" />
+        <rect x={0} y={36} width={140} height={364} fill="var(--rz-border)" />
         {/* Vertical separator */}
-        <line x1={140} y1={36} x2={140} y2={400} stroke="rgba(255,255,255,0.04)" />
+        <line x1={140} y1={36} x2={140} y2={400} stroke="var(--rz-border)" />
       </motion.g>
 
       {/* Nav items — stagger in */}
@@ -69,7 +69,7 @@ export function ProductMockup({ className }: Props) {
           width={80}
           height={8}
           rx={2}
-          fill="rgba(255,255,255,0.06)"
+          fill="var(--rz-border)"
           variants={fadeInChild}
         />
       ))}
@@ -83,11 +83,11 @@ export function ProductMockup({ className }: Props) {
           visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.5 } },
         }}
       >
-        <rect x={400} y={60} width={200} height={40} rx={8} fill="rgba(255,255,255,0.05)" />
-        <text x={416} y={78} fill="#9a9ab0" fontSize={9} fontFamily="sans-serif">
+        <rect x={400} y={60} width={200} height={40} rx={8} fill="var(--rz-border)" />
+        <text x={416} y={78} fill="var(--rz-fg-muted)" fontSize={9} fontFamily="sans-serif">
           Create a blog post about our new
         </text>
-        <text x={416} y={90} fill="#9a9ab0" fontSize={9} fontFamily="sans-serif">
+        <text x={416} y={90} fill="var(--rz-fg-muted)" fontSize={9} fontFamily="sans-serif">
           product launch for next week
         </text>
       </motion.g>
@@ -100,7 +100,7 @@ export function ProductMockup({ className }: Props) {
         }}
       >
         {/* Yellow left border */}
-        <rect x={160} y={120} width={2} height={70} rx={1} fill="#ffcc00" />
+        <rect x={160} y={120} width={2} height={70} rx={1} fill="var(--rz-accent)" />
         <rect x={162} y={120} width={318} height={70} rx={8} fill="rgba(255,204,0,0.04)" />
         <text x={178} y={140} fill="#c0c0d0" fontSize={9} fontFamily="sans-serif">
           I&apos;ll draft that blog post. I found 3 relevant
@@ -120,8 +120,8 @@ export function ProductMockup({ className }: Props) {
           visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 1.1 } },
         }}
       >
-        <rect x={420} y={210} width={180} height={30} rx={8} fill="rgba(255,255,255,0.05)" />
-        <text x={436} y={229} fill="#9a9ab0" fontSize={9} fontFamily="sans-serif">
+        <rect x={420} y={210} width={180} height={30} rx={8} fill="var(--rz-border)" />
+        <text x={436} y={229} fill="var(--rz-fg-muted)" fontSize={9} fontFamily="sans-serif">
           Great, also schedule it for Tuesday
         </text>
       </motion.g>
@@ -138,7 +138,7 @@ export function ProductMockup({ className }: Props) {
           cx={180}
           cy={265}
           r={3}
-          fill="#9a9ab0"
+          fill="var(--rz-fg-muted)"
           animate={{ opacity: [0.3, 0.8, 0.3] }}
           transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const, delay: 0 }}
         />
@@ -147,7 +147,7 @@ export function ProductMockup({ className }: Props) {
           cx={192}
           cy={265}
           r={3}
-          fill="#9a9ab0"
+          fill="var(--rz-fg-muted)"
           animate={{ opacity: [0.3, 0.8, 0.3] }}
           transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const, delay: 0.2 }}
         />
@@ -156,7 +156,7 @@ export function ProductMockup({ className }: Props) {
           cx={204}
           cy={265}
           r={3}
-          fill="#9a9ab0"
+          fill="var(--rz-fg-muted)"
           animate={{ opacity: [0.3, 0.8, 0.3] }}
           transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' as const, delay: 0.4 }}
         />
@@ -169,7 +169,7 @@ export function ProductMockup({ className }: Props) {
         width={3}
         height={8}
         rx={1.5}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         opacity={0.5}
         variants={fadeInChild}
       />

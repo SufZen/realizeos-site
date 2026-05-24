@@ -22,8 +22,8 @@ export function StepAccessIcon({ className }: Props) {
       {/* Envelope body */}
       <motion.path
         d="M10 22 L10 48 L54 48 L54 22 Z"
-        fill="rgba(255,255,255,0.03)"
-        stroke="#9a9ab0"
+        fill="var(--rz-border)"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
         strokeLinejoin="round"
         variants={fadeInChild}
@@ -32,7 +32,7 @@ export function StepAccessIcon({ className }: Props) {
       {/* Envelope flap */}
       <motion.path
         d="M10 22 L32 10 L54 22"
-        stroke="#9a9ab0"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
         strokeLinejoin="round"
         fill="none"
@@ -46,8 +46,8 @@ export function StepAccessIcon({ className }: Props) {
         width={20}
         height={20}
         rx={2}
-        fill="rgba(255,204,0,0.1)"
-        stroke="#ffcc00"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         animate={{
@@ -63,7 +63,7 @@ export function StepAccessIcon({ className }: Props) {
       {/* Lightning bolt */}
       <motion.path
         d="M49 12 L46 17 L49 17 L47 22 L52 16 L49 16 Z"
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
         animate={{
           opacity: [0.5, 1, 0.5],

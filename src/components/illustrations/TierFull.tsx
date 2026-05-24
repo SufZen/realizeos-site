@@ -32,8 +32,8 @@ export function TierFull({ className }: Props) {
           width={36}
           height={32}
           rx={4}
-          fill="rgba(255,204,0,0.08)"
-          stroke="#ffcc00"
+          fill="var(--rz-accent-soft)"
+          stroke="var(--rz-accent)"
           strokeWidth={1.5}
           variants={pulseVariants}
           animate="animate"
@@ -46,7 +46,7 @@ export function TierFull({ className }: Props) {
         y1={26}
         x2={44}
         y2={26}
-        stroke="rgba(255,204,0,0.2)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -55,7 +55,7 @@ export function TierFull({ className }: Props) {
         y1={32}
         x2={44}
         y2={32}
-        stroke="rgba(255,204,0,0.2)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -64,7 +64,7 @@ export function TierFull({ className }: Props) {
         y1={38}
         x2={44}
         y2={38}
-        stroke="rgba(255,204,0,0.2)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -73,7 +73,7 @@ export function TierFull({ className }: Props) {
       {/* Ray right-up */}
       <motion.path
         d="M50 24l8-8"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         pathLength={1}
@@ -81,7 +81,7 @@ export function TierFull({ className }: Props) {
       />
       <motion.path
         d="M56 16l2 0 0 2"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -93,7 +93,7 @@ export function TierFull({ className }: Props) {
       {/* Ray right */}
       <motion.path
         d="M50 32l10 0"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         pathLength={1}
@@ -101,7 +101,7 @@ export function TierFull({ className }: Props) {
       />
       <motion.path
         d="M58 30l2 2-2 2"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -113,7 +113,7 @@ export function TierFull({ className }: Props) {
       {/* Ray right-down */}
       <motion.path
         d="M50 40l8 8"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         pathLength={1}
@@ -121,7 +121,7 @@ export function TierFull({ className }: Props) {
       />
       <motion.path
         d="M58 46l0 2-2 0"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"

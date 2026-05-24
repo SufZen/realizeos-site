@@ -46,7 +46,7 @@ export function FinalCTA() {
     <Section id="final-cta">
       <AnimateOnScroll>
         <div className="text-center">
-          <h2 className="text-gradient-yellow text-3xl font-bold md:text-4xl">
+          <h2 className="fx-gradient-text text-3xl font-bold md:text-4xl">
             {t('finalCta.title1')}
             <br />
             {t('finalCta.title2')}
@@ -68,7 +68,7 @@ export function FinalCTA() {
 
       <AnimateOnScroll delay={0.2}>
         <div className="mx-auto mt-16 max-w-lg">
-          <div className="glass-card rounded-xl p-6 text-center">
+          <div className="fx-glass-card rounded-xl p-6 text-center">
             <h3 className="mb-2 text-lg font-semibold">{t('finalCta.notReadyTitle')}</h3>
             <p className="mb-4 text-sm text-muted-foreground">
               {t('finalCta.notReadyDesc')}

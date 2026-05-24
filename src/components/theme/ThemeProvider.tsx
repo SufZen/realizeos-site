@@ -43,10 +43,14 @@ export function ThemeProvider({
         : "light"
 
       root.classList.add(systemTheme)
+      // Unified design system uses data-mode attribute
+      root.setAttribute("data-mode", systemTheme)
       return
     }
 
     root.classList.add(theme)
+    // Unified design system uses data-mode attribute
+    root.setAttribute("data-mode", theme)
   }, [theme])
 
   const value = {

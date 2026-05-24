@@ -59,7 +59,7 @@ export function FabricDiagram({ className }: Props) {
         y1={380}
         x2={SPINE_X}
         y2={40}
-        stroke="rgba(255,204,0,0.15)"
+        stroke="var(--rz-accent)"
         strokeWidth={2}
         variants={drawVariants}
       />
@@ -67,7 +67,7 @@ export function FabricDiagram({ className }: Props) {
       {/* 2. Small upward arrow at top of spine */}
       <motion.polyline
         points="154,42 160,33 166,42"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -80,7 +80,7 @@ export function FabricDiagram({ className }: Props) {
         <motion.polyline
           key={`chev-${y}`}
           points={`156,${y + 4} 160,${y} 164,${y + 4}`}
-          stroke="rgba(255,204,0,0.2)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -136,7 +136,7 @@ export function FabricDiagram({ className }: Props) {
                 y1={layer.y}
                 x2={connectorStartX}
                 y2={layer.y}
-                stroke="rgba(255,204,0,0.1)"
+                stroke="var(--rz-accent)"
                 strokeWidth={1}
               />
               {/* Rounded rect background */}
@@ -147,14 +147,14 @@ export function FabricDiagram({ className }: Props) {
                 height={NODE_H}
                 rx={NODE_RX}
                 fill="rgba(26,26,36,0.9)"
-                stroke="rgba(255,204,0,0.15)"
+                stroke="var(--rz-accent)"
                 strokeWidth={1}
               />
               {/* Letter */}
               <text
                 x={nodeX + 12}
                 y={layer.y + 5}
-                fill="#ffcc00"
+                fill="var(--rz-accent)"
                 fontFamily="JetBrains Mono, monospace"
                 fontSize={14}
                 fontWeight={700}
@@ -165,7 +165,7 @@ export function FabricDiagram({ className }: Props) {
               <text
                 x={nodeX + 28}
                 y={layer.y + 4}
-                fill="#e8e8ed"
+                fill="var(--rz-fg)"
                 fontFamily="Poppins, sans-serif"
                 fontSize={11}
               >

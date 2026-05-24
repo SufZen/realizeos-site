@@ -39,8 +39,8 @@ export function GetStarted() {
           <AnimateOnScroll key={tier.name} delay={i * 0.1}>
             <div
               className={cn(
-                'glass-card relative flex h-full flex-col rounded-2xl p-6',
-                tier.featured && 'animated-border'
+                'fx-glass-card relative flex h-full flex-col rounded-2xl p-6',
+                tier.featured && 'fx-animated-border'
               )}
             >
               {tier.badge && (

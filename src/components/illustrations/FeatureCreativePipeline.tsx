@@ -25,7 +25,7 @@ export function FeatureCreativePipeline({ className }: Props) {
         y1={40}
         x2={57}
         y2={40}
-        stroke="rgba(255,204,0,0.12)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
@@ -40,7 +40,7 @@ export function FeatureCreativePipeline({ className }: Props) {
       {/* Flow arrows on the line */}
       <motion.path
         d="M30 37 L33 40 L30 43"
-        stroke="rgba(255,204,0,0.25)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -49,7 +49,7 @@ export function FeatureCreativePipeline({ className }: Props) {
       />
       <motion.path
         d="M50 37 L53 40 L50 43"
-        stroke="rgba(255,204,0,0.25)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -72,7 +72,7 @@ export function FeatureCreativePipeline({ className }: Props) {
         <path
           d="M15 32 L23 40 L15 48 L7 40 Z"
           fill="rgba(255,204,0,0.06)"
-          stroke="rgba(255,204,0,0.2)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
         />
       </motion.g>
@@ -96,7 +96,7 @@ export function FeatureCreativePipeline({ className }: Props) {
           height={10}
           rx={2}
           fill="rgba(255,204,0,0.06)"
-          stroke="rgba(255,204,0,0.2)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
         />
         {/* Tiny pencil inside */}
@@ -105,7 +105,7 @@ export function FeatureCreativePipeline({ className }: Props) {
           y1={43}
           x2={43}
           y2={37}
-          stroke="rgba(255,204,0,0.4)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
           strokeLinecap="round"
         />
@@ -133,13 +133,13 @@ export function FeatureCreativePipeline({ className }: Props) {
           cy={40}
           r={8}
           fill="rgba(255,204,0,0.12)"
-          stroke="#ffcc00"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
         />
         {/* Checkmark */}
         <motion.polyline
           points="60,40 63,43 70,36"
-          stroke="#ffcc00"
+          stroke="var(--rz-accent)"
           strokeWidth={1.5}
           strokeLinecap="round"
           strokeLinejoin="round"

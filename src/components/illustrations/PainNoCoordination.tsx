@@ -68,7 +68,7 @@ export function PainNoCoordination({ className }: Props) {
 
       {/* ---- Left figure (facing left) ---- */}
       <motion.g variants={fadeInChild}>
-        <g stroke="#9a9ab0" strokeWidth={1.5} strokeLinecap="round" fill="none">
+        <g stroke="var(--rz-fg-muted)" strokeWidth={1.5} strokeLinecap="round" fill="none">
           {/* Head */}
           <circle cx={16} cy={30} r={5} />
           {/* Body */}
@@ -107,7 +107,7 @@ export function PainNoCoordination({ className }: Props) {
 
       {/* ---- Right figure (facing right) ---- */}
       <motion.g variants={fadeInChild}>
-        <g stroke="#9a9ab0" strokeWidth={1.5} strokeLinecap="round" fill="none">
+        <g stroke="var(--rz-fg-muted)" strokeWidth={1.5} strokeLinecap="round" fill="none">
           {/* Head */}
           <circle cx={64} cy={30} r={5} />
           {/* Body */}

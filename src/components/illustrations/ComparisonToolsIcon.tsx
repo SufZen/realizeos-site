@@ -27,11 +27,11 @@ export function ComparisonToolsIcon({ className }: Props) {
           width={14}
           height={10}
           rx={1.5}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
-        <circle cx={7} cy={6.5} r={0.8} fill="#9a9ab0" />
+        <circle cx={7} cy={6.5} r={0.8} fill="var(--rz-fg-muted)" />
       </motion.g>
 
       {/* App window 2 — top-right */}
@@ -42,11 +42,11 @@ export function ComparisonToolsIcon({ className }: Props) {
           width={14}
           height={10}
           rx={1.5}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
-        <circle cx={27} cy={4.5} r={0.8} fill="#9a9ab0" />
+        <circle cx={27} cy={4.5} r={0.8} fill="var(--rz-fg-muted)" />
       </motion.g>
 
       {/* App window 3 — bottom-left */}
@@ -57,11 +57,11 @@ export function ComparisonToolsIcon({ className }: Props) {
           width={14}
           height={10}
           rx={1.5}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
-        <circle cx={9} cy={26.5} r={0.8} fill="#9a9ab0" />
+        <circle cx={9} cy={26.5} r={0.8} fill="var(--rz-fg-muted)" />
       </motion.g>
 
       {/* App window 4 — bottom-right */}
@@ -72,11 +72,11 @@ export function ComparisonToolsIcon({ className }: Props) {
           width={14}
           height={10}
           rx={1.5}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
-        <circle cx={29} cy={24.5} r={0.8} fill="#9a9ab0" />
+        <circle cx={29} cy={24.5} r={0.8} fill="var(--rz-fg-muted)" />
       </motion.g>
     </motion.svg>
   );

@@ -24,10 +24,10 @@ const SECTION_META = {
 
 function confidenceStyle(c: Confidence | undefined) {
   switch (c) {
-    case 'HIGH': return { icon: <CheckCircle2 className="h-3.5 w-3.5 text-green-400" />, label: 'Auto-filled', bg: 'bg-green-400/10' };
+    case 'HIGH': return { icon: <CheckCircle2 className="h-3.5 w-3.5 text-success" />, label: 'Auto-filled', bg: 'bg-success-soft' };
     case 'MEDIUM': return { icon: <Sparkles className="h-3.5 w-3.5 text-brand-yellow" />, label: 'Needs review', bg: 'bg-brand-yellow/10' };
     case 'LOW': return { icon: <AlertTriangle className="h-3.5 w-3.5 text-orange-400" />, label: 'Low confidence', bg: 'bg-orange-400/10' };
-    case 'NOT_FOUND': return { icon: <Edit3 className="h-3.5 w-3.5 text-red-400" />, label: 'Manual entry', bg: 'bg-red-400/10' };
+    case 'NOT_FOUND': return { icon: <Edit3 className="h-3.5 w-3.5 text-danger" />, label: 'Manual entry', bg: 'bg-danger-soft' };
     default: return { icon: <Edit3 className="h-3.5 w-3.5 text-muted-foreground" />, label: 'Manual', bg: 'bg-muted/30' };
   }
 }

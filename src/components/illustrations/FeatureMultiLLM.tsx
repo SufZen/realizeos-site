@@ -32,7 +32,7 @@ export function FeatureMultiLLM({ className }: Props) {
       <motion.path
         d={hexPath(40, 22, 12)}
         fill="rgba(255,204,0,0.06)"
-        stroke="rgba(255,204,0,0.25)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -40,8 +40,8 @@ export function FeatureMultiLLM({ className }: Props) {
       {/* Hexagon bottom-left */}
       <motion.path
         d={hexPath(22, 54, 12)}
-        fill="rgba(255,204,0,0.1)"
-        stroke="rgba(255,204,0,0.25)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -49,8 +49,8 @@ export function FeatureMultiLLM({ className }: Props) {
       {/* Hexagon bottom-right */}
       <motion.path
         d={hexPath(58, 54, 12)}
-        fill="rgba(255,204,0,0.15)"
-        stroke="rgba(255,204,0,0.25)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -59,7 +59,7 @@ export function FeatureMultiLLM({ className }: Props) {
       {/* Top to bottom-left */}
       <motion.path
         d="M34 32 L26 44"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         markerEnd="url(#arrowMultiLLM)"
@@ -75,7 +75,7 @@ export function FeatureMultiLLM({ className }: Props) {
       {/* Top to bottom-right */}
       <motion.path
         d="M46 32 L54 44"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         markerEnd="url(#arrowMultiLLM)"
@@ -91,7 +91,7 @@ export function FeatureMultiLLM({ className }: Props) {
       {/* Bottom-left to bottom-right */}
       <motion.path
         d="M34 54 L46 54"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeLinecap="round"
         markerEnd="url(#arrowMultiLLM)"
@@ -110,7 +110,7 @@ export function FeatureMultiLLM({ className }: Props) {
         cx={40}
         cy={43}
         r={3}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
         animate={{
           opacity: [0.4, 1, 0.4],
@@ -134,7 +134,7 @@ export function FeatureMultiLLM({ className }: Props) {
           refY="3"
           orient="auto"
         >
-          <path d="M0 0 L6 3 L0 6" fill="none" stroke="#ffcc00" strokeWidth={1} />
+          <path d="M0 0 L6 3 L0 6" fill="none" stroke="var(--rz-accent)" strokeWidth={1} />
         </marker>
       </defs>
     </motion.svg>

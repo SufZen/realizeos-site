@@ -121,7 +121,7 @@ export function WizardChat({
                 {msg.fieldsUpdated && msg.fieldsUpdated.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {msg.fieldsUpdated.map((f) => (
-                      <span key={f} className="inline-flex items-center gap-1 rounded-full bg-green-500/10 px-2 py-0.5 text-[10px] font-medium text-green-400">
+                      <span key={f} className="inline-flex items-center gap-1 rounded-full bg-success-soft px-2 py-0.5 text-[10px] font-medium text-success">
                         <Sparkles className="h-2.5 w-2.5" /> {f}
                       </span>
                     ))}

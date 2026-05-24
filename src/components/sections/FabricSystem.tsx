@@ -23,13 +23,13 @@ export function FabricSystem() {
         subtitle={t('fabricSystem.header.subtitle')}
       />
       <AnimateOnScroll>
-        <FabricDiagram className="mx-auto mb-12 w-full max-w-[320px] illustration-glow" />
+        <FabricDiagram className="mx-auto mb-12 w-full max-w-[320px] fx-illustration-glow" />
       </AnimateOnScroll>
       <div className="grid gap-5 md:grid-cols-2">
         {items.map((item, i) => (
           <AnimateOnScroll key={item.letter} delay={i * 0.08}>
-            <div className="glass-card flex items-start gap-5 rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5">
-              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-yellow/10 font-mono text-xl font-bold text-brand-yellow glow-yellow">
+            <div className="fx-glass-card flex items-start gap-5 rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5">
+              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-brand-yellow/10 font-mono text-xl font-bold text-brand-yellow fx-glow">
                 {item.letter}
               </span>
               <div className="min-w-0 text-start">

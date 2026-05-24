@@ -171,7 +171,7 @@ export default function WebinarPresentation() {
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ duration: 0.2 }}
-            className="glass absolute inset-x-0 bottom-0 z-40 max-h-[30vh] overflow-auto border-t border-border p-4"
+            className="fx-glass absolute inset-x-0 bottom-0 z-40 max-h-[30vh] overflow-auto border-t border-border p-4"
           >
             <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-brand-yellow/60">
               Speaker Notes

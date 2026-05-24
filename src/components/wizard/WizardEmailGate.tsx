@@ -118,8 +118,8 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, fields, analysis
         className="w-full max-w-md"
       >
         {status === 'success' ? (
-          <div className="rounded-xl border border-green-500/20 bg-green-500/5 p-5 text-center">
-            <p className="font-medium text-green-400">✓ Got it! Preparing your files…</p>
+          <div className="rounded-xl border border-success/20 bg-success-soft p-5 text-center">
+            <p className="font-medium text-success">✓ Got it! Preparing your files…</p>
           </div>
         ) : (
           <>
@@ -170,7 +170,7 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, fields, analysis
             </form>
 
             {status === 'error' && (
-              <p className="mt-2 text-center text-xs text-red-400">
+              <p className="mt-2 text-center text-xs text-danger">
                 Something went wrong. Please try again.
               </p>
             )}

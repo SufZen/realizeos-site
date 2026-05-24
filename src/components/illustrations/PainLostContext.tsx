@@ -42,7 +42,7 @@ export function PainLostContext({ className }: Props) {
              C18 14, 10 22, 10 32
              C10 42, 16 52, 24 56
              C28 58, 30 56, 30 54"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
           strokeLinecap="round"
           fill="none"
@@ -52,7 +52,7 @@ export function PainLostContext({ className }: Props) {
           d="M30 14
              C36 14, 42 16, 46 20
              C48 22, 49 26, 48 30"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
           strokeLinecap="round"
           fill="none"
@@ -62,7 +62,7 @@ export function PainLostContext({ className }: Props) {
           d="M46 38
              C47 42, 44 48, 40 52
              C36 56, 32 56, 30 54"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
           strokeLinecap="round"
           fill="none"
@@ -70,7 +70,7 @@ export function PainLostContext({ className }: Props) {
         {/* Cortex fold details */}
         <path
           d="M30 20 C34 20, 38 22, 40 26"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={0.8}
           strokeLinecap="round"
           fill="none"
@@ -78,7 +78,7 @@ export function PainLostContext({ className }: Props) {
         />
         <path
           d="M30 30 C34 30, 36 34, 34 38"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={0.8}
           strokeLinecap="round"
           fill="none"
@@ -87,7 +87,7 @@ export function PainLostContext({ className }: Props) {
         {/* Center dividing line */}
         <line
           x1={30} y1={16} x2={30} y2={52}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={0.6}
           opacity={0.3}
         />
@@ -115,22 +115,22 @@ export function PainLostContext({ className }: Props) {
 
       {/* ---- Clock icon (top right) ---- */}
       <motion.g variants={fadeInChild}>
-        <circle cx={64} cy={14} r={6} stroke="#9a9ab0" strokeWidth={1} fill="none" />
+        <circle cx={64} cy={14} r={6} stroke="var(--rz-fg-muted)" strokeWidth={1} fill="none" />
         <line
           x1={64} y1={14} x2={64} y2={10.5}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={0.8}
           strokeLinecap="round"
         />
         <line
           x1={64} y1={14} x2={67} y2={14}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={0.8}
           strokeLinecap="round"
         />
         {/* Small tick marks */}
-        <line x1={64} y1={8.5} x2={64} y2={9} stroke="#9a9ab0" strokeWidth={0.5} />
-        <line x1={69.5} y1={14} x2={69} y2={14} stroke="#9a9ab0" strokeWidth={0.5} />
+        <line x1={64} y1={8.5} x2={64} y2={9} stroke="var(--rz-fg-muted)" strokeWidth={0.5} />
+        <line x1={69.5} y1={14} x2={69} y2={14} stroke="var(--rz-fg-muted)" strokeWidth={0.5} />
       </motion.g>
     </motion.svg>
   );

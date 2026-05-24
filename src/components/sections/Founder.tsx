@@ -12,7 +12,7 @@ export function Founder() {
     <Section id="founder">
       <AnimateOnScroll>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-gradient-yellow mb-6 text-3xl font-bold md:text-4xl">
+          <h2 className="fx-gradient-text mb-6 text-3xl font-bold md:text-4xl">
             {t('founder.title')}
           </h2>
           <p className="text-muted-foreground">

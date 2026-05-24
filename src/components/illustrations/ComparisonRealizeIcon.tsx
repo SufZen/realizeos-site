@@ -34,8 +34,8 @@ export function ComparisonRealizeIcon({ className }: Props) {
       {/* Hexagon — scales from 0.8 to 1 */}
       <motion.polygon
         points={hexPoints}
-        fill="rgba(255,204,0,0.08)"
-        stroke="#ffcc00"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={{
           hidden: { opacity: 0, scale: 0.8 },
@@ -51,7 +51,7 @@ export function ComparisonRealizeIcon({ className }: Props) {
       {/* Checkmark — draws via pathLength */}
       <motion.path
         d="M17 24l4 4 10-10"
-        stroke="#ffcc00"
+        stroke="var(--rz-accent)"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -62,12 +62,12 @@ export function ComparisonRealizeIcon({ className }: Props) {
       {/* 4-pointed sparkle at (38,8) — pulses */}
       <motion.path
         d="M38 4l1 3 3 1-3 1-1 3-1-3-3-1 3-1z"
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
       />
       <motion.path
         d="M38 4l1 3 3 1-3 1-1 3-1-3-3-1 3-1z"
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={pulseVariants}
         animate="animate"
       />

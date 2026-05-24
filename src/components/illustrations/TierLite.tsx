@@ -33,21 +33,21 @@ export function TierLite({ className }: Props) {
             width={32}
             height={48}
             rx={4}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1.5}
-            fill="rgba(255,255,255,0.03)"
+            fill="var(--rz-border)"
           />
 
           {/* Small grid inside (2 columns x 3 rows of 6x6 squares) */}
           {/* Row 1 */}
-          <rect x={22} y={16} width={6} height={6} rx={1} fill="rgba(255,204,0,0.15)" />
-          <rect x={32} y={16} width={6} height={6} rx={1} fill="rgba(255,204,0,0.15)" />
+          <rect x={22} y={16} width={6} height={6} rx={1} fill="var(--rz-accent-soft)" />
+          <rect x={32} y={16} width={6} height={6} rx={1} fill="var(--rz-accent-soft)" />
           {/* Row 2 */}
-          <rect x={22} y={26} width={6} height={6} rx={1} fill="rgba(255,204,0,0.15)" />
-          <rect x={32} y={26} width={6} height={6} rx={1} fill="rgba(255,204,0,0.15)" />
+          <rect x={22} y={26} width={6} height={6} rx={1} fill="var(--rz-accent-soft)" />
+          <rect x={32} y={26} width={6} height={6} rx={1} fill="var(--rz-accent-soft)" />
           {/* Row 3 */}
-          <rect x={22} y={36} width={6} height={6} rx={1} fill="rgba(255,204,0,0.15)" />
-          <rect x={32} y={36} width={6} height={6} rx={1} fill="rgba(255,204,0,0.15)" />
+          <rect x={22} y={36} width={6} height={6} rx={1} fill="var(--rz-accent-soft)" />
+          <rect x={32} y={36} width={6} height={6} rx={1} fill="var(--rz-accent-soft)" />
         </motion.g>
       </motion.g>
     </motion.svg>

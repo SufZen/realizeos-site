@@ -35,7 +35,7 @@ export function WizardAnalyzing({ documents, fieldsFound, fieldsTotal, isComplet
         className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-yellow/10"
       >
         {isComplete ? (
-          <CheckCircle2 className="h-10 w-10 text-green-400" />
+          <CheckCircle2 className="h-10 w-10 text-success" />
         ) : (
           <Brain className="h-10 w-10 text-brand-yellow" />
         )}
@@ -63,13 +63,13 @@ export function WizardAnalyzing({ documents, fieldsFound, fieldsTotal, isComplet
             icon = <Loader2 className="h-4 w-4 shrink-0 animate-spin text-brand-yellow" />;
             statusLabel = 'processing...';
           } else if (doc.status === 'error') {
-            icon = <XCircle className="h-4 w-4 shrink-0 text-red-400" />;
+            icon = <XCircle className="h-4 w-4 shrink-0 text-danger" />;
             statusLabel = 'failed';
           } else if (doc.status === 'ready' && hasRealText) {
-            icon = <CheckCircle2 className="h-4 w-4 shrink-0 text-green-400" />;
+            icon = <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />;
             statusLabel = 'analyzed';
           } else {
-            icon = <AlertTriangle className="h-4 w-4 shrink-0 text-yellow-500" />;
+            icon = <AlertTriangle className="h-4 w-4 shrink-0 text-warning" />;
             statusLabel = 'limited';
           }
 
@@ -100,17 +100,17 @@ export function WizardAnalyzing({ documents, fieldsFound, fieldsTotal, isComplet
           return (
             <div key={stage.id} className="flex items-center gap-3">
               <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                isDone ? 'bg-green-400/10' : isActive ? 'bg-brand-yellow/10' : 'bg-muted/30'
+                isDone ? 'bg-success-soft' : isActive ? 'bg-brand-yellow/10' : 'bg-muted/30'
               }`}>
                 {isDone ? (
-                  <CheckCircle2 className="h-4 w-4 text-green-400" />
+                  <CheckCircle2 className="h-4 w-4 text-success" />
                 ) : isActive ? (
                   <Loader2 className="h-4 w-4 animate-spin text-brand-yellow" />
                 ) : (
                   <Icon className="h-4 w-4 text-muted-foreground" />
                 )}
               </div>
-              <span className={`text-sm ${isDone ? 'text-green-400' : isActive ? 'text-foreground' : 'text-muted-foreground'}`}>
+              <span className={`text-sm ${isDone ? 'text-success' : isActive ? 'text-foreground' : 'text-muted-foreground'}`}>
                 {stage.label}
               </span>
             </div>

@@ -31,15 +31,15 @@ export function StepConversationIcon({ className }: Props) {
             width={32}
             height={24}
             rx={6}
-            fill="rgba(255,204,0,0.08)"
-            stroke="rgba(255,204,0,0.25)"
+            fill="var(--rz-accent-soft)"
+            stroke="var(--rz-accent)"
             strokeWidth={1}
           />
           {/* Tail triangle at bottom-left */}
           <path
             d="M14 32 L10 38 L20 32"
-            fill="rgba(255,204,0,0.08)"
-            stroke="rgba(255,204,0,0.25)"
+            fill="var(--rz-accent-soft)"
+            stroke="var(--rz-accent)"
             strokeWidth={1}
             strokeLinejoin="round"
           />
@@ -59,14 +59,14 @@ export function StepConversationIcon({ className }: Props) {
             height={24}
             rx={6}
             fill="rgba(26,26,36,0.8)"
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1}
           />
           {/* Tail at bottom-right */}
           <path
             d="M48 48 L54 54 L44 48"
             fill="rgba(26,26,36,0.8)"
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1}
             strokeLinejoin="round"
           />
@@ -76,7 +76,7 @@ export function StepConversationIcon({ className }: Props) {
             cx={34}
             cy={36}
             r={2}
-            fill="#9a9ab0"
+            fill="var(--rz-fg-muted)"
             animate={{
               opacity: [0.3, 1, 0.3],
             }}
@@ -91,7 +91,7 @@ export function StepConversationIcon({ className }: Props) {
             cx={40}
             cy={36}
             r={2}
-            fill="#9a9ab0"
+            fill="var(--rz-fg-muted)"
             animate={{
               opacity: [0.3, 1, 0.3],
             }}
@@ -106,7 +106,7 @@ export function StepConversationIcon({ className }: Props) {
             cx={46}
             cy={36}
             r={2}
-            fill="#9a9ab0"
+            fill="var(--rz-fg-muted)"
             animate={{
               opacity: [0.3, 1, 0.3],
             }}

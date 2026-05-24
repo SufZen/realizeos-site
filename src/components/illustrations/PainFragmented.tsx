@@ -68,14 +68,14 @@ export function PainFragmented({ className }: Props) {
             width={14}
             height={12}
             rx={2}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1}
-            fill="rgba(255,255,255,0.03)"
+            fill="var(--rz-border)"
           />
           {/* Chat bubble icon */}
           <path
             d="M3 3.5h8M3 6h5M3 8.5h3l1.5 2 0-2h0.5"
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={0.6}
             strokeLinecap="round"
             fill="none"
@@ -94,14 +94,14 @@ export function PainFragmented({ className }: Props) {
             width={14}
             height={12}
             rx={2}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1}
-            fill="rgba(255,255,255,0.03)"
+            fill="var(--rz-border)"
           />
           {/* Envelope lines */}
           <path
             d="M2 3l5 3.5 5-3.5M2 9.5l3.5-2.5M12 9.5l-3.5-2.5"
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={0.6}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -121,18 +121,18 @@ export function PainFragmented({ className }: Props) {
             width={14}
             height={12}
             rx={2}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1}
-            fill="rgba(255,255,255,0.03)"
+            fill="var(--rz-border)"
           />
           {/* Search icon */}
-          <circle cx={6} cy={5.5} r={2.5} stroke="#9a9ab0" strokeWidth={0.6} fill="none" />
+          <circle cx={6} cy={5.5} r={2.5} stroke="var(--rz-fg-muted)" strokeWidth={0.6} fill="none" />
           <line
             x1={8}
             y1={7.5}
             x2={10.5}
             y2={10}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={0.6}
             strokeLinecap="round"
           />
@@ -150,14 +150,14 @@ export function PainFragmented({ className }: Props) {
             width={14}
             height={12}
             rx={2}
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={1}
-            fill="rgba(255,255,255,0.03)"
+            fill="var(--rz-border)"
           />
           {/* Pencil line */}
           <path
             d="M4 9l5-5.5 1.5 1.5-5 5.5zM9 3.5l1.5-1 1 1-1.5 1"
-            stroke="#9a9ab0"
+            stroke="var(--rz-fg-muted)"
             strokeWidth={0.6}
             strokeLinecap="round"
             strokeLinejoin="round"

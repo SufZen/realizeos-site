@@ -35,7 +35,7 @@ export function FounderPhotoFrame({ className, src }: Props) {
         cx={80}
         cy={80}
         r={74}
-        stroke="rgba(255,204,0,0.15)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         strokeDasharray="8 4"
         variants={fadeInChild}
@@ -50,7 +50,7 @@ export function FounderPhotoFrame({ className, src }: Props) {
         cy={80}
         r={66}
         fill="rgba(26,26,36,0.8)"
-        stroke="rgba(255,255,255,0.06)"
+        stroke="var(--rz-border)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -70,11 +70,11 @@ export function FounderPhotoFrame({ className, src }: Props) {
       ) : (
         <motion.g variants={fadeInChild}>
           {/* Head */}
-          <circle cx={80} cy={56} r={16} fill="#9a9ab0" opacity={0.3} />
+          <circle cx={80} cy={56} r={16} fill="var(--rz-fg-muted)" opacity={0.3} />
           {/* Shoulders arc */}
           <path
             d="M52 100 C52 82, 66 76, 80 76 C94 76, 108 82, 108 100"
-            fill="#9a9ab0"
+            fill="var(--rz-fg-muted)"
             opacity={0.3}
           />
         </motion.g>
@@ -87,7 +87,7 @@ export function FounderPhotoFrame({ className, src }: Props) {
         width={8}
         height={8}
         rx={1}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         transform="rotate(45 80 152)"
         variants={fadeInChild}
       />
@@ -97,7 +97,7 @@ export function FounderPhotoFrame({ className, src }: Props) {
         width={8}
         height={8}
         rx={1}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         transform="rotate(45 80 152)"
         variants={pulseVariants}
         animate="animate"

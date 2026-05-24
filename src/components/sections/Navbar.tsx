@@ -16,10 +16,9 @@ export function Navbar() {
 
   return (
     <nav
-      className="glass fixed inset-x-0 top-0 z-50 transition-all duration-300"
-      style={{
-        borderBottom: `1px solid rgba(255,255,255,${scrollY > 50 ? 0.1 : 0.05})`,
-      }}
+      className={`fx-glass fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+        scrollY > 50 ? 'border-border' : 'border-border/50'
+      }`}
     >
       <div className="mx-auto flex max-w-site items-center gap-4 justify-between px-5 py-3">
         <a href="#" className="flex items-center gap-0">
@@ -54,7 +53,7 @@ export function Navbar() {
                 <span className="sr-only">{t('nav.toggleMenu')}</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="glass w-64 border-border">
+            <SheetContent side="right" className="fx-glass w-64 border-border">
               <SheetTitle className="sr-only">Navigation</SheetTitle>
               <div className="mt-8 flex flex-col gap-6">
                 {NAV_ITEMS.map((item) => (

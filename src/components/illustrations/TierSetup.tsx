@@ -28,7 +28,7 @@ export function TierSetup({ className }: Props) {
         <motion.g variants={floatVariants} animate="animate">
           <path
             d="M34 6a5 5 0 00-4 8l-2 2 3 3 2-2a5 5 0 008-4 5 5 0 00-5-5l-1 3 2 2-2 2-2-2 3-1a3 3 0 01-2-6z"
-            stroke="#ffcc00"
+            stroke="var(--rz-accent)"
             strokeWidth={1.5}
             fill="none"
             strokeLinejoin="round"
@@ -42,7 +42,7 @@ export function TierSetup({ className }: Props) {
         {/* Left hand */}
         <path
           d="M10 36h10l6-6 4 4-4 4h-2l-2 2v6H10z"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
           fill="none"
           strokeLinejoin="round"
@@ -51,7 +51,7 @@ export function TierSetup({ className }: Props) {
         {/* Right hand */}
         <path
           d="M54 36H44l-6-6-4 4 4 4h2l2 2v6H54z"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
           fill="none"
           strokeLinejoin="round"
@@ -60,7 +60,7 @@ export function TierSetup({ className }: Props) {
         {/* Central grip */}
         <path
           d="M28 34l4-4 4 4"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
           fill="none"
           strokeLinejoin="round"

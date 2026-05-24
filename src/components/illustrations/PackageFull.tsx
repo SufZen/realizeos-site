@@ -27,26 +27,26 @@ export function PackageFull({ className }: Props) {
       {/* Folder — back panel */}
       <motion.path
         d="M14 34h52v26a2 2 0 01-2 2H16a2 2 0 01-2-2V34z"
-        stroke="#9a9ab0"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
-        fill="rgba(255,255,255,0.03)"
+        fill="var(--rz-border)"
         variants={fadeInChild}
       />
       {/* Folder — tab */}
       <motion.path
         d="M14 34V28a2 2 0 012-2h12l4 4h30v4H14z"
-        stroke="#9a9ab0"
+        stroke="var(--rz-fg-muted)"
         strokeWidth={1.5}
-        fill="rgba(255,255,255,0.03)"
+        fill="var(--rz-border)"
         variants={fadeInChild}
       />
       {/* Folder front panel (open) */}
       <motion.g variants={floatSlowVariants} animate="animate">
         <path
           d="M12 40h56a2 2 0 012 2v16a2 2 0 01-2 2H12a2 2 0 01-2-2V42a2 2 0 012-2z"
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1.5}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
       </motion.g>
 
@@ -57,8 +57,8 @@ export function PackageFull({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         transform="rotate(-12 27 23)"
@@ -69,8 +69,8 @@ export function PackageFull({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         transform="rotate(-5 33 21)"
@@ -81,8 +81,8 @@ export function PackageFull({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -92,8 +92,8 @@ export function PackageFull({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         transform="rotate(5 47 21)"
@@ -104,8 +104,8 @@ export function PackageFull({ className }: Props) {
         width={10}
         height={14}
         rx={1}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.2)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
         transform="rotate(12 53 23)"
@@ -118,8 +118,8 @@ export function PackageFull({ className }: Props) {
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
           style={{ transformOrigin: '66px 10px' }}
         >
-          <circle cx={66} cy={10} r={5} stroke="#ffcc00" strokeWidth={1} fill="none" />
-          <circle cx={66} cy={10} r={2} stroke="#ffcc00" strokeWidth={0.8} fill="none" />
+          <circle cx={66} cy={10} r={5} stroke="var(--rz-accent)" strokeWidth={1} fill="none" />
+          <circle cx={66} cy={10} r={2} stroke="var(--rz-accent)" strokeWidth={0.8} fill="none" />
           {[0, 60, 120, 180, 240, 300].map((deg) => {
             const rad = (deg * Math.PI) / 180;
             const x1 = 66 + 5 * Math.cos(rad);
@@ -133,7 +133,7 @@ export function PackageFull({ className }: Props) {
                 y1={y1}
                 x2={x2}
                 y2={y2}
-                stroke="#ffcc00"
+                stroke="var(--rz-accent)"
                 strokeWidth={1}
                 strokeLinecap="round"
               />
@@ -151,14 +151,14 @@ export function PackageFull({ className }: Props) {
             width={14}
             height={10}
             rx={2}
-            stroke="#ffcc00"
+            stroke="var(--rz-accent)"
             strokeWidth={1}
             fill="none"
           />
           <text
             x={7}
             y={12}
-            fill="#ffcc00"
+            fill="var(--rz-accent)"
             fontSize={6}
             fontFamily="monospace"
             fontWeight={600}
@@ -170,7 +170,7 @@ export function PackageFull({ className }: Props) {
             y1={8}
             x2={13}
             y2={12}
-            stroke="#ffcc00"
+            stroke="var(--rz-accent)"
             strokeWidth={1}
             animate={{ opacity: [1, 0, 1] }}
             transition={{ duration: 1, repeat: Infinity, ease: 'linear' as const }}

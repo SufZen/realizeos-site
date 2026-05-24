@@ -25,7 +25,7 @@ export function ComparisonTeamIcon({ className }: Props) {
           cx={38}
           cy={12}
           r={6}
-          stroke="rgba(255,255,255,0.1)"
+          stroke="var(--rz-border)"
           strokeWidth={1}
           fill="none"
         />
@@ -35,7 +35,7 @@ export function ComparisonTeamIcon({ className }: Props) {
           y1={12}
           x2={38}
           y2={8.5}
-          stroke="rgba(255,255,255,0.1)"
+          stroke="var(--rz-border)"
           strokeWidth={0.8}
           strokeLinecap="round"
         />
@@ -44,7 +44,7 @@ export function ComparisonTeamIcon({ className }: Props) {
           y1={12}
           x2={41}
           y2={12}
-          stroke="rgba(255,255,255,0.1)"
+          stroke="var(--rz-border)"
           strokeWidth={0.8}
           strokeLinecap="round"
         />
@@ -56,18 +56,18 @@ export function ComparisonTeamIcon({ className }: Props) {
           cx={14}
           cy={16}
           r={4}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
         <ellipse
           cx={14}
           cy={30}
           rx={6}
           ry={8}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
       </motion.g>
 
@@ -77,18 +77,18 @@ export function ComparisonTeamIcon({ className }: Props) {
           cx={24}
           cy={16}
           r={4}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
         <ellipse
           cx={24}
           cy={30}
           rx={6}
           ry={8}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
       </motion.g>
 
@@ -98,18 +98,18 @@ export function ComparisonTeamIcon({ className }: Props) {
           cx={34}
           cy={16}
           r={4}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
         <ellipse
           cx={34}
           cy={30}
           rx={6}
           ry={8}
-          stroke="#9a9ab0"
+          stroke="var(--rz-fg-muted)"
           strokeWidth={1}
-          fill="rgba(255,255,255,0.03)"
+          fill="var(--rz-border)"
         />
       </motion.g>
     </motion.svg>

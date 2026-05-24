@@ -41,8 +41,8 @@ export function AvatarPlaceholder({ initials, size, className }: Props) {
         cx={24}
         cy={24}
         r={22}
-        fill="rgba(255,204,0,0.08)"
-        stroke="rgba(255,204,0,0.18)"
+        fill="var(--rz-accent-soft)"
+        stroke="var(--rz-accent)"
         strokeWidth={1}
         variants={fadeInChild}
       />
@@ -54,7 +54,7 @@ export function AvatarPlaceholder({ initials, size, className }: Props) {
           cx={d.cx}
           cy={d.cy}
           r={d.r}
-          fill="rgba(255,204,0,0.1)"
+          fill="var(--rz-accent-soft)"
           variants={fadeInChild}
         />
       ))}
@@ -63,7 +63,7 @@ export function AvatarPlaceholder({ initials, size, className }: Props) {
       <motion.text
         x={24}
         y={24}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         fontFamily="Poppins"
         fontWeight={600}
         fontSize={14}

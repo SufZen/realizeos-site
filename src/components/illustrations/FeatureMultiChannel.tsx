@@ -25,7 +25,7 @@ export function FeatureMultiChannel({ className }: Props) {
         cy={40}
         r={10}
         fill="rgba(255,204,0,0.12)"
-        stroke="rgba(255,204,0,0.4)"
+        stroke="var(--rz-accent)"
         strokeWidth={1.5}
         variants={fadeInChild}
       />
@@ -35,7 +35,7 @@ export function FeatureMultiChannel({ className }: Props) {
         cx={40}
         cy={40}
         r={3.5}
-        fill="#ffcc00"
+        fill="var(--rz-accent)"
         variants={fadeInChild}
         animate={{
           opacity: [0.5, 1, 0.5],
@@ -62,8 +62,8 @@ export function FeatureMultiChannel({ className }: Props) {
           cx={pos.cx}
           cy={pos.cy}
           r={5}
-          fill="rgba(255,204,0,0.08)"
-          stroke="rgba(255,204,0,0.3)"
+          fill="var(--rz-accent-soft)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
           variants={fadeInChild}
         />
@@ -80,7 +80,7 @@ export function FeatureMultiChannel({ className }: Props) {
         <motion.path
           key={`line-${i}`}
           d={d}
-          stroke="rgba(255,204,0,0.35)"
+          stroke="var(--rz-accent)"
           strokeWidth={1}
           strokeLinecap="round"
           strokeDasharray="3 2"

@@ -37,7 +37,7 @@ function AccessRequired() {
       <Navbar />
       <main className="flex flex-1 items-center justify-center px-5 pt-24">
         <AnimateOnScroll>
-          <div className="glass-card mx-auto max-w-md rounded-2xl p-8 text-center">
+          <div className="fx-glass-card mx-auto max-w-md rounded-2xl p-8 text-center">
             <h2 className="mb-4 text-2xl font-bold">{t('webinar.booking.accessRequired')}</h2>
             <p className="mb-6 text-muted-foreground">{t('webinar.booking.accessMessage')}</p>
             <Button asChild size="lg">
@@ -149,7 +149,7 @@ function HubPage() {
               <AnimateOnScroll key={tier.key}>
                 <button
                   onClick={() => navigate(`/webinar/booking/${tier.key}?token=success`)}
-                  className={`group glass-card flex w-full flex-col items-center rounded-2xl border bg-gradient-to-br p-8 text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-xl ${tier.color}`}
+                  className={`group fx-glass-card flex w-full flex-col items-center rounded-2xl border bg-gradient-to-br p-8 text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-xl ${tier.color}`}
                 >
                   <span className="mb-4 text-4xl">{tier.icon}</span>
                   <h3 className="mb-2 text-lg font-bold">{tier.name}</h3>
@@ -191,7 +191,7 @@ function SetupPage() {
 
           <AnimateOnScroll>
             <div className="mx-auto max-w-2xl">
-              <div className="glass-card overflow-hidden rounded-2xl p-8">
+              <div className="fx-glass-card overflow-hidden rounded-2xl p-8">
                 <h3 className="mb-6 text-center text-xl font-bold">
                   {t('webinar.booking.setup.calendarHeading')}
                 </h3>
