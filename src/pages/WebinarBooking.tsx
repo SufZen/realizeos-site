@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Section } from '@/components/layout/Section';
@@ -51,45 +51,7 @@ function AccessRequired() {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Language toggle segmented control (EN / HE)                       */
-/* ------------------------------------------------------------------ */
-function LanguageToggle({
-  selected,
-  onChange,
-}: {
-  selected: 'en' | 'he';
-  onChange: (lang: 'en' | 'he') => void;
-}) {
-  const { t } = useTranslation();
 
-  return (
-    <div className="mx-auto mb-8 flex w-fit items-center gap-1 rounded-full border border-border bg-muted/30 p-1">
-      <button
-        onClick={() => onChange('en')}
-        className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-          selected === 'en'
-            ? 'bg-brand-yellow text-primary-foreground shadow-md'
-            : 'text-muted-foreground hover:text-foreground'
-        }`}
-      >
-        <span className="text-base">🇬🇧</span>
-        {t('webinar.booking.langEnglish')}
-      </button>
-      <button
-        onClick={() => onChange('he')}
-        className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-          selected === 'he'
-            ? 'bg-brand-yellow text-primary-foreground shadow-md'
-            : 'text-muted-foreground hover:text-foreground'
-        }`}
-      >
-        <span className="text-base">🇮🇱</span>
-        {t('webinar.booking.langHebrew')}
-      </button>
-    </div>
-  );
-}
 
 /* ------------------------------------------------------------------ */
 /*  Success banner                                                     */
@@ -221,7 +183,7 @@ export default function WebinarBooking({ tier }: { tier?: 'setup' | 'lite' | 'fu
 
   // Per-tier pages
   if (tier === 'setup') return <SetupPage />;
-  if (tier === 'lite') return <LitePage />;
+  if (tier === 'lite') return <HubPage />;
 
   // Hub fallback — show tier selector (now just Setup)
   return <HubPage />;

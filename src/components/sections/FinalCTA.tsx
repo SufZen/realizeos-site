@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { WEBHOOK_URL } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
 import { useTranslation } from 'react-i18next';
+import { Github, CalendarCheck } from 'lucide-react';
 
 export function FinalCTA() {
   const { t } = useTranslation();
@@ -54,13 +55,27 @@ export function FinalCTA() {
           <p className="mt-4 text-muted-foreground">
             {t('finalCta.subtitle')}
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
             <Button
               asChild
               size="lg"
               onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-github' })}
             >
-              <a href="https://github.com/RealizeOS/RealizeOS-5" target="_blank" rel="noopener noreferrer">{t('finalCta.getRealizeOS')}</a>
+              <a href="https://github.com/SufZen/RealizeOS-5" target="_blank" rel="noopener noreferrer" className="gap-2">
+                <Github size={18} />
+                {t('finalCta.getRealizeOS', 'Star on GitHub')}
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-book' })}
+            >
+              <a href="https://tidycal.com/sufz/realizeos-setup" target="_blank" rel="noopener noreferrer" className="gap-2">
+                <CalendarCheck size={18} />
+                {t('finalCta.bookSession', 'Book Setup Session')}
+              </a>
             </Button>
           </div>
         </div>

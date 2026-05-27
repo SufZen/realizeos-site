@@ -6,12 +6,14 @@ interface SectionProps {
   className?: string;
   children: ReactNode;
   background?: 'default' | 'elevated' | 'card';
+  'aria-label'?: string;
 }
 
-export function Section({ id, className, children, background = 'default' }: SectionProps) {
+export function Section({ id, className, children, background = 'default', 'aria-label': ariaLabel }: SectionProps) {
   return (
     <section
       id={id}
+      aria-label={ariaLabel || id}
       className={cn(
         'py-20 md:py-28',
         background === 'elevated' && 'bg-muted',

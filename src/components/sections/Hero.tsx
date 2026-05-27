@@ -21,10 +21,10 @@ export function Hero() {
   const { t } = useTranslation();
 
   const stats = [
-    { value: 20, suffix: '+', label: t('hero.stats.models') },
-    { value: 5, suffix: '', label: t('hero.stats.channels') },
-    { value: 13, suffix: '', label: t('hero.stats.tools') },
-    { value: 4, suffix: '', label: t('hero.stats.strategies') },
+    { value: 7, suffix: '', label: t('hero.stats.subsystems', 'Core Subsystems') },
+    { value: 3, suffix: '', label: t('hero.stats.dashboards', 'Dashboard Pages') },
+    { value: 100, suffix: '%', label: t('hero.stats.localFirst', 'Local-First') },
+    { value: 0, suffix: '', label: t('hero.stats.cost', 'Lock-In'), prefix: '$' },
   ];
 
   return (
@@ -48,29 +48,32 @@ export function Hero() {
                 {t('hero.github_badge', 'Star us on GitHub')}
               </a>
             </Badge>
+            <Badge variant="outline" className="text-xs font-medium border-brand-yellow/40 text-brand-yellow">
+              v5.5.0 · BSL 1.1
+            </Badge>
           </motion.div>
 
           <motion.p
             variants={fadeUp}
             className="mb-4 text-sm font-medium tracking-wide text-brand-yellow/80 italic md:text-base"
           >
-            {t('hero.tagline', 'AI operations you own and control.')}
+            {t('hero.tagline', 'The AI operations system you own.')}
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
             className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
           >
-            {t('hero.title_main')}
+            {t('hero.title_main', 'Own the Heart.')}
             <br />
-            <span className="fx-gradient-text fx-text-glow">{t('hero.title_highlight')}</span>
+            <span className="fx-gradient-text fx-text-glow">{t('hero.title_highlight', 'Swap Everything Else.')}</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg lg:mx-0"
           >
-            {t('hero.description')}
+            {t('hero.description', 'Your FABRIC knowledge graph, event log, and identity stay yours forever. Agent runtimes, models, channels, and even the dashboard are swappable adapters. Local-first. Open source.')}
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
@@ -94,6 +97,7 @@ export function Hero() {
             {stats.map((s) => (
               <div key={s.label} className="flex items-baseline gap-1.5">
                 <strong className="text-lg font-semibold text-foreground">
+                  {s.prefix && <span>{s.prefix}</span>}
                   <AnimatedCounter target={s.value} suffix={s.suffix} />
                 </strong>
                 {s.label}

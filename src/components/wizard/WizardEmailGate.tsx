@@ -12,12 +12,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { WEBHOOK_URL } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
+import type { BrandFieldValues, AnalysisResult } from '@/types/wizard';
 
 interface WizardEmailGateProps {
   fieldsCompleted: number;
   totalFields: number;
-  fields: any;
-  analysisResult: any;
+  fields: BrandFieldValues;
+  analysisResult: AnalysisResult | null;
   onContinue: (email?: string) => void;
   onBack: () => void;
 }
@@ -46,7 +47,7 @@ export function WizardEmailGate({ fieldsCompleted, totalFields, fields, analysis
           fieldsCompleted,
           totalFields,
           profile: fields,
-          architectProposals: analysisResult?.architectProposals || {},
+          architectProposals: analysisResult?.bonusInsights || {},
           timestamp: new Date().toISOString(),
         }),
       }).catch(() => {/* swallow — best-effort */});

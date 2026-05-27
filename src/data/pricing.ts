@@ -34,7 +34,7 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
       period: t('pricing.tiers.free.period'),
       features: (t('pricing.tiers.free.features', { returnObjects: true }) as string[]).map(feature => ({ text: feature })),
       ctaText: t('pricing.tiers.free.ctaText'),
-      ctaUrl: '/webinar/booking/lite?mode=open',
+      ctaUrl: 'https://github.com/SufZen/RealizeOS-5',
       trackId: 'pricing-free',
       delivery: t('pricing.tiers.free.delivery'),
       guarantee: t('pricing.tiers.free.guarantee'),

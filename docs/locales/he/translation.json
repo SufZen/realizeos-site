@@ -1,845 +1,473 @@
 {
   "hero": {
     "badge": "מבית Realization",
-    "tagline": "אופרציית AI שבשליטתכם המלאה.",
-    "title_main": "תבנו,",
-    "title_highlight": "בצורה חכמה שחוסכת עבודה שחורה!",
-    "description": "קחו בחזרה את הזמן שלכם. הפכו ויז'ן לפרודקשן עם AI Team שמבין את המיינדסט והמתודולוגיה שלכם.",
-    "cta_full": "קבלו את RealizeOS ב- $249",
-    "cta_wizard": "קבלו 3 קבצי Venture בחינם",
-    "cta_how": "ראו איך זה עובד (Demo)",
+    "tagline": "מערכת הפעלה ל-AI שבבעלותך.",
+    "github_badge": "כוכב ב-GitHub",
+    "title_main": "בעלות על הלב.",
+    "title_highlight": "החלף את כל השאר.",
+    "description": "גרף הידע FABRIC, יומן האירועים והזהות שלך נשארים שלך לנצח. סביבות הריצה, מודלים, ערוצים ואפילו לוח המחוונים הם מתאמים להחלפה. מקומי-קודם. קוד פתוח.",
+    "cta_free": "התחל (חינם)",
+    "cta_setup": "הזמן הגדרה מומחית",
     "stats": {
-      "models": "AI Models",
-      "channels": "Channels (API, TG, WA)",
-      "tools": "Tools/Integrations",
-      "strategies": "Routing Strategies"
+      "subsystems": "תת-מערכות ליבה",
+      "dashboards": "דפי לוח מחוונים",
+      "localFirst": "מקומי-קודם",
+      "cost": "נעילת ספק"
     }
   },
   "features": {
     "header": {
-      "title": "Built for Production Operations",
-      "subtitle": "לא צעצוע. לא עוד איזה Wrapper. מנוע AI אופרטיבי מלא עם העומק וה-Scale הנדרשים לניהול הביזנס שלכם."
+      "title": "נבנה לתפעול אמיתי",
+      "subtitle": "נשלח בגרסה 5.5.0 — לא עטיפה, לא צעצוע. מנוע תפעול AI מלא שניתן לפרוס היום."
+    },
+    "fabric": {
+      "title": "מערכת ישויות FABRIC",
+      "promise": "גרף הידע שלך הוא הלב — ישויות, קשרים והקשר שבבעלותך לנצח.",
+      "technical": "מערכת ישויות FABRIC מאחסנת את כל ידע המיזם כישויות מובנות עם קשרים מוקלדים. API מלא ל-CRUD. מגובה ב-SQLite עם חיפוש טקסט מלא FTS5."
+    },
+    "synapse": {
+      "title": "אינדקס ידע Synapse",
+      "promise": "חיפוש היברידי בכל בסיס הידע — מילות מפתח + סמנטי. אחזור במילישניות.",
+      "technical": "חיפוש FTS5 משולב עם הטמעות וקטוריות. סוכני ה-AI שלך מוצאים את המסמך המדויק בכל פעם — מבינים כוונה, לא רק מילים."
     },
     "routing": {
-      "title": "Multi-LLM Routing",
-      "promise": "אינטליגנציה מיידית ומאובטחת לכל פעולה ב-Scale ארגוני. המערכת עושה ראוטינג של הבקשות שלכם למודל המתאים ביותר — אוטומטית, לחלוטין מחוץ לקופסה.",
-      "technical": "ראוטינג Provider-Agnostic על פני 4 ספקים (Claude, Gemini, OpenAI, Ollama) עם 20+ מודלים. 4 אסטרטגיות ניתוב דינמיות — עלות (Cost), איכות (Quality), מאוזן (Balanced), מהירות (Latency) — הבוחרות אוטומטית את המודל האופטימלי לכל Task. 9 מודליות Tasking עם מסווג (Classifier) חכם ומעקב אחרי Spend לכל קריאה."
+      "title": "ניתוב רב-מודלי",
+      "promise": "נתב בקשות למודל ה-AI הנכון אוטומטית. עלות, איכות, מהירות — אתה קובע את האסטרטגיה.",
+      "technical": "שכבת מתאם זמן ריצה עם ניתוב אגנוסטי לספק. תבנית רישום תומכת בכל backend של LLM. מעקב עלות לכל קריאה ובחירת מודל חכמה."
     },
-    "assembly": {
-      "title": "הרכבת זהות דינמית ב-Runtime",
-      "promise": "המערכת מדברת בשפה שלכם, מכירה את הסטטוס של הפרויקטים שלכם, ופועלת כמו ה-Co-founder הוירטואלי שלכם. זה לא סתם צ׳אטבוט — זה ה-Digital Twin שלכם.",
-      "technical": "כל response נבנה על ידי הרכבת Prompt מרובת שכבות. המערכת מושכת דינמית את הקונטקסט העסקי, Venture Voice, הבנת תפקיד (Role), ידע רלוונטי (Vector Search), Memory והקשר שיחה (Conversation Context) — עוד לפני הפנייה ל-LLM."
+    "missions": {
+      "title": "מנוע משימות",
+      "promise": "הגדר יעדים, עקוב אחר התקדמות, תאם סוכנים. תהליכי עבודה רב-שלביים עם שערי סקירה אנושית.",
+      "technical": "מחזור חיים מלא של משימה: הגדרה → תכנון → ביצוע → סקירה → השלמה. דף לוח מחוונים ב-/missions עם מעקב סטטוס בזמן אמת."
     },
-    "execution": {
-      "title": "Multi-Step Execution",
-      "promise": "שלחו פקודה אחת וצפו בצוות שלם מריץ פלואו מקצה לקצה — מ-Logic עד דוקומנטציה סופית — בלי מיקרו-מנג'מנט.",
-      "technical": "מנוע Workflows עם 7 סוגי Nodes (Agent, Tool, Condition, Loop, Parallel, Human-in-the-loop, Sub-workflow) בתוספת Events/Triggers. הגדרת פייפליינים (Pipelines) ב-YAML משרשרת Agents וכלים: Web Scraping, Parsing, הרצת סקריפטים (Code Execution), Draft ויצירת תוכן — הכל מופעל מטריגר קטן או Cronjob."
+    "dreaming": {
+      "title": "חלימה ומדיניות אמון",
+      "promise": "רפלקציה ברקע ושיפור מתמיד. המערכת נהיית חכמה יותר בזמן שאתה ישן.",
+      "technical": "תת-מערכת החלימה מעבדת אינטראקציות יומיות ומציעה שיפורים. מדיניות האמון מדרגת כל הצעה. לוח מחוונים ב-/dreams."
     },
-    "retrieval": {
-      "title": "Hybrid Knowledge Retrieval (RAG)",
-      "promise": "כל ההיסטוריה העסקית, ה-Playbooks והדאטה שלכם — ממופים בצורה מאובטחת בשלמות, ושליפים במילי-שניות.",
-      "technical": "חיפוש Hybrid המשלב FTS5 Keyword Search יחד עם מנוע Vector Embeddings עמוק. סוכני ה-AI שולפים בדיוק את הדוקומנט או ה-Memory החסר בצורה קונטקסטואלית — ומבינים את כוונת המשתמש (Intent), לא רק string matching."
-    },
-    "pipelines": {
-      "title": "Production Pipelines",
-      "promise": "ארכיטקטורת Scale אמיתית ובניית סטארטאפים דורשים Phases נוקשים ועבודה מסודרת. RealizeOS פשוט מרימה רפליקה דיגיטלית שמריצה את האופרציה שלכם בדיוק.",
-      "technical": "סשנים של ריבוי Agents (Multi-Agent) עוברים בשלבים סטרקטורליים: מ-Brief התחלתי, דרך Data Drafting, איטרציות מרובות (Iterative Analysis), אל Review סופי שמחכה רק לאישור שלכם לפני Deployment/Delivery למיינסטרים."
-    },
-    "evolution": {
-      "title": "Continuous Evolution (למידה מתמדת)",
-      "promise": "מנוע האופרציה שלכם נהיה חכם, מהיר ויעיל יותר אחרי כל טראנזקציה — סוגר פערים, ומשחיז את מה שמוגדר אצלכם ב-Playbook.",
-      "technical": "5 סוגי אוטומציית למידה (Auto-Evolution): Prompt Tuning, Skill Creation (גנרוט Capabilities נוספים), זיהוי Knowledge Gaps, אופטימיזציית Workflows, וחידוד ההתנהגות של ה-Agents השונים. מנגנון Risk Scoring מובנה המונע רגרסיה ורץ תמיד עם Rollback Feature עובד."
-    },
-    "multichannel": {
-      "title": "Multi-Channel Gateway",
-      "promise": "גשו לצוות ה-AI שלכם ולמנוע הידע שלכם מכל מקום — דרך Telegram, WhatsApp, Webhooks או Scheduled CRONs. 'מוח' אחד מרכזי, פרוס על כל הערוצים.",
-      "technical": "תמיכה מלאה וגמישה ב-5 מתאמים מוכנים: Full REST API Backend, טלגרם, WhatsApp Cloud API, התממשקות ב-WebSockets לזמן אמת ו-Webhooks מובנים מאובטחי HMAC לאינטגרציות צד ג'. ניהול ותעדוף (Queuing) עם Handling מלא לקבצים ותמונות מכל סוג."
+    "eventlog": {
+      "title": "יומן אירועים וזהות SOUL",
+      "promise": "מסלול ביקורת מלא של כל פעולה. זהות המיזם שלך מקודדת ומנוהלת גרסאות.",
+      "technical": "רישום אירועים מובנה עם אירועים מוקלדים. שכבת זהות SOUL מאחסנת קול מיזם, מתודולוגיה וכללים כחפצים ניתנים לגרסאות."
     },
     "security": {
-      "title": "אבטחה Enterprise-Grade",
-      "promise": "שליטת הרשאות (Access Control), ניהול סודות/API Keys מאובטח, ולוגי ביקורת בלתי ניתנים לעריכה (Audit Trails). האופרציה שלכם — נעולה וכספת.",
-      "technical": "Role-Based Access Control (RBAC) עם עשרות הרשאות גרנולריות על בסיס 5 Roles דפולטיביים. אחסון סודות (Secrets Vault) שמצפין הכל ברמת AES-256. Audit Log מובנה השומר הכל וקורא כל רשומה באמצעות Structured Events קליאים למערכות חיצוניות (SIEM). כולל סינון פרואקטיבי נגד Prompt Injection / Jailbreaks פוטנציאלי."
+      "title": "אבטחה ארגונית",
+      "promise": "מקומי-קודם מתוך עיצוב. הנתונים שלך לעולם לא עוזבים את התשתית שלך.",
+      "technical": "בקרת גישה מבוססת תפקידים. כספת אישורים מוצפנת AES-256. זיהוי הזרקת פרומפט. רישום ביקורת מלא."
     },
-    "view_flow": "צפו בתרשים הארכיטקטורה (Tech Flow)"
+    "cli": {
+      "title": "CLI מפעיל FABRIC",
+      "promise": "נהל את המערכת שלך משורת הפקודה. Init, serve, index, status — הכל בקצות האצבעות.",
+      "technical": "CLI פייתון עם פקודות init, serve, bot, status ו-index. אינטגרציית Docker Compose. תבניות GitHub Actions CI/CD."
+    },
+    "voice": {
+      "title": "ערוץ קולי",
+      "promise": "דבר עם צוות ה-AI שלך בטבעיות. יגיע בגרסה עתידית."
+    },
+    "mobile": {
+      "title": "אפליקציה ניידת",
+      "promise": "אפליקציית React Native לגישה מכל מקום. בקרוב."
+    },
+    "view_flow": "הצג פרטים טכניים",
+    "roadmapTitle": "בקרוב",
+    "roadmapBadge": "מפת דרכים"
   },
   "pricing": {
     "header": {
-      "title": "Get Started",
-      "subtitle": "RealizeOS is distributed under BSL 1.1. Free for most commercial uses."
+      "title": "התחל עכשיו",
+      "subtitle": "RealizeOS מופץ תחת רישיון BSL 1.1. חינם לרוב השימושים המסחריים."
     },
-    "compareNote": "Stop paying recurring subscriptions. Host your own AI operations engine.",
+    "compareNote": "הפסק לשלם מנויי AI חוזרים. ארח את מנוע התפעול שלך. הנתונים שלך בבעלותך.",
+    "whatsIncluded": "מה כלול",
     "tiers": {
       "free": {
-        "name": "Open Source (GitHub)",
-        "description": "For developers and operators who want to self-host.",
-        "emotionalPromise": "Full access to the RealizeOS V5 engine. Deploy on your own infrastructure.",
+        "name": "קוד פתוח (GitHub)",
+        "description": "למפתחים ומפעילים שרוצים לארח עצמאית.",
+        "emotionalPromise": "גישה מלאה למנוע RealizeOS V5.5. פרוס על התשתית שלך.",
         "features": [
-          "Complete Python engine (11,000+ lines)",
-          "Docker one-command deploy",
-          "5 channels + 13 Google Workspace tools",
-          "Multi-LLM routing (Claude, Gemini, OpenAI, Ollama)",
-          "BSL 1.1 License (Free for non-competitive use)"
+          "מנוע פייתון מלא עם מערכת ישויות FABRIC",
+          "פריסה בפקודה אחת עם Docker",
+          "ניתוב רב-מודלי (שכבת מתאם זמן ריצה)",
+          "מנוע משימות + תת-מערכת חלימה",
+          "אינדקס ידע Synapse + יומן אירועים",
+          "CLI מפעיל FABRIC",
+          "לוח מחוונים: /missions, /knowledge, /dreams",
+          "רישיון BSL 1.1 (חינם לשימוש לא-תחרותי)"
         ],
         "price": "0",
-        "period": "Free forever",
-        "ctaText": "View on GitHub",
-        "delivery": "Instant access via GitHub",
+        "period": "חינם לנצח",
+        "ctaText": "צפה ב-GitHub",
+        "delivery": "גישה מיידית דרך GitHub",
         "guarantee": ""
       },
       "guided": {
-        "name": "Installation Session",
-        "description": "Direct collaboration with the architect of RealizeOS.",
-        "emotionalPromise": "Fast-track your freedom. We configure the system directly around your unique venture.",
-        "badge": "Recommended",
+        "name": "פגישת התקנה",
+        "description": "שיתוף פעולה ישיר עם ארכיטקט RealizeOS.",
+        "emotionalPromise": "קיצור דרך לחופש. אנחנו מגדירים את המערכת ישירות סביב המיזם הייחודי שלך.",
+        "badge": "מומלץ",
         "features": {
-          "header": "Everything in Open Source, plus:",
+          "header": "הכל בקוד פתוח, בתוספת:",
           "list": [
-            "1-hour setup call with the builder",
-            "Custom KB scaffolding for your business",
-            "Agent definitions tailored to your needs",
-            "Venture voice configuration",
-            "First skill workflow set up together",
-            "Priority email support for 30 days"
+            "שיחת הגדרה של שעה עם הבונה",
+            "פיגום FABRIC מותאם לעסק שלך",
+            "הגדרות סוכנים מותאמות לצרכיך",
+            "הגדרת קול מיזם",
+            "תהליך עבודה ראשון של Mission מוגדר יחד",
+            "תמיכה בדוא\"ל עדיפות ל-30 יום"
           ]
         },
         "price": "499",
-        "period": "one-time",
-        "ctaText": "Book Setup Session",
-        "delivery": "1-hour setup call via Google Meet",
-        "guarantee": "14-day money-back guarantee"
+        "period": "חד-פעמי",
+        "ctaText": "הזמן פגישת הגדרה",
+        "delivery": "שיחת הגדרה של שעה דרך Google Meet",
+        "guarantee": "אחריות החזר כספי 14 יום"
       },
       "consulting": {
-        "name": "Enterprise Consulting",
-        "description": "Custom AI operations for large-scale production.",
-        "emotionalPromise": "We build, deploy, and manage your entire AI infrastructure.",
+        "name": "ייעוץ ארגוני",
+        "description": "תפעול AI מותאם לייצור בקנה מידה גדול.",
+        "emotionalPromise": "אנחנו בונים, פורסים ומנהלים את כל תשתית ה-AI שלך.",
         "features": {
-          "header": "For complex organizations:",
+          "header": "לארגונים מורכבים:",
           "list": [
-            "Custom agent development",
-            "On-premise secure deployment",
-            "ERP and custom CRM integrations",
-            "Dedicated Slack/Teams support channel",
-            "Ongoing prompt engineering & optimization",
-            "SLA guarantees"
+            "פיתוח סוכנים מותאם",
+            "פריסה מאובטחת On-Premise",
+            "אינטגרציות ERP ו-CRM מותאמות",
+            "ערוץ תמיכה ייעודי",
+            "הנדסת פרומפט ואופטימיזציה שוטפת",
+            "ערבויות SLA"
           ]
         },
-        "price": "Custom",
+        "price": "מותאם",
         "period": "",
-        "ctaText": "Contact Us",
-        "delivery": "Custom timeline",
+        "ctaText": "צור קשר",
+        "delivery": "לוח זמנים מותאם",
         "guarantee": ""
       }
+    },
+    "gemGpt": {
+      "title": "אשף מיזמים חינמי",
+      "description": "צור את קבצי ה-FABRIC שלך בחינם באמצעות Google Gem או Custom GPT. רץ על מנוי ה-AI שלך — אפס עלות עבורנו.",
+      "emailPlaceholder": "your@email.com",
+      "unlock": "פתח",
+      "sending": "...",
+      "thanks": "✓ בדוק את הדוא\"ל שלך! הקישורים בדרך.",
+      "openGem": "פתח Google Gem",
+      "openGpt": "פתח Custom GPT",
+      "error": "משהו השתבש. נסה שוב."
     }
   },
   "usecases": {
     "header": {
-      "title": "בנוי לצורת העבודה שלכם",
-      "subtitle": "בין אם אתם מנהלים מיזם אחד או חמישה, RealizeOS מתאימה את עצמה לתפעול שלכם."
+      "title": "נבנה לאופן שבו אתה עובד",
+      "subtitle": "בין אם אתה מנהל מיזם אחד או חמישה, RealizeOS מתאים את עצמו לתפעול שלך."
     },
     "arch": {
       "title": "משרדי אדריכלות",
-      "description": "תפסיקו לטבוע ברגולציה ובמיילים מספקים. פנו את הזמן שלכם חזרה למה שאתם באמת אוהבים: לעצב את העתיד.",
+      "description": "הפסק לטבוע בבדיקות תאימות ומיילים לספקים. שחרר זמן להתמקד במה שאתה באמת אוהב: לעצב את העתיד.",
       "tasks": [
-        "ניסוח תשובות ל-RFQ על בסיס הצעות זוכות מהעבר",
-        "אוטומציה של בדיקות ייעוד קרקע ותאימות ראשוניות",
-        "יצירת תיאורי פרויקט מתוך פרוטוקולים גולמיים של פגישות",
-        "חילוץ תובנות מתוך חוקי בנייה מוניציפליים מורכבים",
-        "ניהול מיילים מול ספקים בטון ובסגנון שלכם"
+        "כתוב תגובות ל-RFQ בהתבסס על הצעות מוצלחות קודמות",
+        "אוטומציה של בדיקות ייעוד ותאימות ראשוניות",
+        "יצירת נרטיבי פרויקט מתוך הערות פגישה גולמיות",
+        "חילוץ תובנות מקודי בנייה עירוניים מורכבים",
+        "ניהול מיילים לתיאום ספקים בטון שלך"
       ]
     },
     "realestate": {
       "title": "השקעות נדל\"ן",
-      "description": "הפכו חרדה לבהירות מוחלטת. קבלו החלטות הרות גורל עם מנוע ששולף מיידית את התובנות המדויקות שאתם צריכים.",
+      "description": "הפוך חרדה לבהירות מוחלטת. קבל החלטות בסיכון גבוה עם מנוע שמעלה בדיוק את התובנות שאתה צריך.",
       "tasks": [
-        "חילוץ מדדי מפתח מתוך תשקיפים פיננסיים",
-        "ניסוח סיכומים לוועדת השקעות מתוך נתונים גולמיים",
-        "ניתוח מגמות שוק לזיהוי הזדמנויות תשואה מתפתחות",
-        "סטנדרטיזציה של דוחות Due Diligence לנכסים",
-        "סיכום ביצועי תיק השקעות רבעוני"
+        "חילוץ מדדים מרכזיים מתשקיפים פיננסיים",
+        "כתיבת מזכרים לוועדת השקעות מנתונים גולמיים",
+        "ניתוח מגמות שוק לאיתור הזדמנויות תשואה",
+        "סטנדרטיזציה של דוחות בדיקת נאותות נכסים",
+        "סיכום ביצועי תיק רבעוניים"
       ]
     },
     "venture": {
-      "title": "סטודיו ליזמות (Venture Studios)",
-      "description": "להשיג את הבלתי אפשרי: סקייל בלי שחיקה. תנהלו שלושה מיזמים עם הצלילות של אחד.",
+      "title": "סטודיו מיזמים",
+      "description": "השג את הבלתי אפשרי: סקייל קיצוני ללא שחיקה. נהל שלושה מיזמים עם הבהירות המנטלית של ניהול אחד.",
       "tasks": [
         "מעבר בין מיזמים בלי לאבד הקשר",
-        "ניסוח אסטרטגיות Go-to-Market ל-Spin-offs חדשים",
+        "כתיבת אסטרטגיות Go-to-Market לחברות בת חדשות",
         "יצירת עדכוני משקיעים לכל מיזם בנפרד",
-        "מחקר הזדמנויות שוק חדשות על פני כל הוורטיקלים",
-        "שמירה על כללי מיתוג אחידים בין צוותים נפרדים"
+        "מחקר הזדמנויות שוק חדשות בכל הוורטיקלים",
+        "שמירה על כללי מיזם אחידים בין צוותים נפרדים"
       ]
     },
     "engineering": {
       "title": "הנדסה ותפעול",
-      "description": "תכניסו סדר לכאוס של ביצוע פיזי. תרגישו את ההקלה של לדעת שכל פרט מפוזר — מובנה ומתועד.",
+      "description": "הבא סדר לכאוס של פריסה פיזית. הרגש את ההקלה המוחלטת של לדעת שכל פרט מפוצל מובנה ועוקב.",
       "tasks": [
-        "תרגום מפרטים טכניים לעדכונים ידידותיים ללקוח",
-        "מיבנה דוחות שטח מפוזרים ליומנים קוהרנטיים",
-        "כתיבת נהלי עבודה ופרוצדורות סטנדרטיות",
-        "בדיקת הצעות קבלנים מול דרישות הפרויקט",
-        "אוטומציה של Follow-up על משימות פתוחות"
+        "תרגום מפרטים טכניים לעדכוני לקוחות ידידותיים",
+        "מבנה דוחות אתר מפוצלים ליומנים קוהרנטיים",
+        "כתיבת מדריכי תפעול ונהלים סטנדרטיים",
+        "סקירת הצעות קבלנים מול דרישות פרויקט",
+        "אוטומציה של מעקב אחר תוצרי פרויקט חסרים"
       ]
     },
     "urban": {
       "title": "תכנון עירוני",
-      "description": "נווטו במבוך הבירוקרטיה הציבורית ומשוב קהילתי עם מנוע שמסנתז אלפי קולות לכיוון ברור.",
+      "description": "נווט במבוך מדיניות ציבורית ומשוב קהילתי עם מנוע שמסנתז אלפי קולות לכיוון ברור.",
       "tasks": [
-        "תמצות שעות של פרוטוקולי ישיבות פתוחות",
-        "ניסוח דוחות מעורבות ציבורית וסיכומים",
-        "הצלבת תוכניות מתאר מול חוקי ייעוד קרקע חדשים",
-        "יצירת ניוזלטרים נגישים לעדכוני קהילה",
-        "ניתוח נתונים דמוגרפיים להערכת השפעה שכונתית"
+        "סיכום שעות של תמלילי ישיבות עירייה",
+        "כתיבת דוחות מעורבות ציבורית וסיכומים",
+        "הצלבת תוכניות אב עם חוקי ייעוד חדשים",
+        "יצירת עדכוני קהילה נגישים",
+        "ניתוח נתונים דמוגרפיים להשפעה שכונתית"
       ]
     },
     "asset": {
       "title": "ניהול נכסים",
-      "description": "שקט נפשי מוחלט. הגנו על ערך הפורטפוליו שלכם עם שכבה תפעולית שפועלת 24/7 ואף פרט לא נופל בין הכיסאות.",
+      "description": "השג שקט נפשי מוחלט. הגן על ערך התיק שלך עם שכבת תפעול פעילה תמיד שלא מפספסת פרט.",
       "tasks": [
-        "אוטומציה של תקשורת עם דיירים וניתוב תחזוקה",
-        "יצירת דוחות חודשיים לבעלי נכסים עם ניתוח מילולי",
-        "מעקב פרואקטיבי אחרי לוחות זמנים של תפוגת חוזי שכירות",
-        "ניסוח RFP לקבלנים לפרויקטי השבחת נכסים",
-        "ניתוח סטיות בהוצאות תפעול על פני נכסים שונים"
+        "אוטומציה של תקשורת דיירים וניתוב תחזוקה",
+        "יצירת דוחות חודשיים לבעלים ודוחות נרטיביים",
+        "ניטור לוחות זמנים של פקיעת חוזי שכירות באופן יזום",
+        "כתיבת RFP לספקים לפרויקטי שיפור הון",
+        "ניתוח שונויות הוצאות תפעול בין נכסים"
       ]
     }
   },
   "founder": {
-    "title": "נבנה מתוך עבודה יומיומית אמיתית",
-    "p1": "RealizeOS נולדה מתוך העבודה והאתגרים היום-יומיים של קבוצת Realization, שאובה ממנוע ייצור שמריץ פעילות בינלאומית באדריכלות, נדל\"ן ויזמות — כל יום.",
-    "p2": "בניתי את זה כי האלטרנטיבה הייתה קריסה. לנסות לנהל מיזמים פיזיים ומורכבים עם כלי AI מפוזרים וגנריים היה מתיש. הכל הרגיש שביר. הייתי צריך בהירות מוחלטת ושליטה מלאה. בניתי את RealizeOS כדי לקנות בחזרה את החופש שלי — ועכשיו אתם יכולים להשתמש באותו מנוע בדיוק כדי להחזיר את שלכם.",
-    "role": "מייסד,"
-  },
-  "methodology": {
-    "header": {
-      "title": "מרחב. עסק. סיפור.",
-      "subtitle": "המתודולוגיה של Realization — Framework מוכח לבניית מיזמים מבוססי AI שמרגישים אנושיים ומתפקדים כמו מכונות."
-    },
-    "pillars": {
-      "space": {
-        "title": "מרחב (Space)",
-        "promise": "כל מיזם גדול מתחיל במרחב — פיזי או דיגיטלי. אנחנו עוזרים לכם להגדיר את הגבולות, את הזרימה ואת מבנה הפעילות כך ששום דבר לא קורה במקרה.",
-        "technical": "שכבת ה-Foundations ב-FABRIC ממפה את הטופולוגיה התפעולית: תפקידי צוות, אינטגרציות כלים, זרימות תקשורת ומאגרי ידע. זה יוצר מודל מרחבי שבו סוכני ה-AI מנווטים כדי להבין הקשר וסמכות."
-      },
-      "business": {
-        "title": "עסק (Business)",
-        "promise": "אסטרטגיה בלי ביצוע זה מצגת. אנחנו מתרגמים את החזון שלכם לפעולות AI מתואמות שמגדילות הכנסות, הופכות צמיחה לאוטומטית ומשחררים אתכם מהעבודה השחורה.",
-        "technical": "שכבות ה-Agents וה-Routines מקודדות את הלוגיקה העסקית: מודלים של תמחור, בדיקות תאימות, תהליכי ניתוח שוק, קדנסיות תקשורת ללקוח, ותיאום מול ספקים. כל תהליך הופך ל-AI Skill שניתן לשחזור, לבדיקה ולסקייל (Scale)."
-      },
-      "story": {
-        "title": "סיפור (Story)",
-        "promise": "הקול של ה-Venture שלכם, הסמכות שלכם, הנרטיב שלכם — מוגברים בכל ערוץ בלי שתכתבו שורה אחת. המערכת מדברת בשמכם, כי היא למדה מכם.",
-        "technical": "שכבות ה-Venture וה-Creations מחזיקות את זהות הקול שלכם (אוצר מילים, טון, גריד עיצובי, דוגמאות). כל Output — פוסט בלינקדאין, הצעת מחיר, עדכון משקיעים — עובר דרך סוכן QA (Reviewer) שאוכף אחידות מותגית לפני ה-Delivery."
-      }
-    },
-    "footer": "נבנה מעשור של ניסיון מעשי באדריכלות, נדל\"ן ויזמות.<br />מקודד עכשיו לתוך מנוע AI שניתן לפרוס תוך ימים."
-  },
-  "painPoints": {
-    "header": {
-      "title": "תפסיקו להדביק כלי AI<br>ששוכחים אתכם",
-      "subtitle": "רוב ה-Setups של AI הם בלגן של צ׳אטבוטים מנותקים, אובדן הקשר וקופי-פייסט ידני. ה-AI שלכם צריך לעבוד כצוות — לא כאוסף של זרים."
-    },
-    "items": {
-      "layers": {
-        "title": "מלכודת החיכוך (Friction Trap)",
-        "description": "הרעיונות הטובים ביותר שלכם מתים ב-Context Switching בין כלים שונים. אתם מעבירים מידע ידנית בין מערכות Siloed, צופים במומנטום נעצר ובלוחות זמנים נשרפים."
-      },
-      "clock": {
-        "title": "שיתוק ביצועי (Execution Paralysis)",
-        "description": "להרים אופרציה מאפס זה עסק מסובך. נפח הדיטיילז המפוזרים גורם לצוואר בקבוק, ומשתק את היכולת שלכם לעשות Zoom-out ולהוביל."
-      },
-      "users": {
-        "title": "סיוט צוואר הבקבוק (The Bottleneck Nightmare)",
-        "description": "אתם ה-Single Point of Failure של התהליך. במקום לעצב אסטרטגיה, אתם עושים קופי-פייסט לפלטים גנריים של ChatGPT מדי לילה. זה שוחק ולא סקיילבילי."
-      }
-    },
-    "transition": "זה לא חייב להיראות ככה. צאו מתפקיד ה-Data Entry וחזרו לכיסא ה-Founder. הרימו מנוע אופרציה שרץ על אוטומט ומייצר את הוויז׳ן שלכם עבורכם."
-  },
-  "demoVideo": {
-    "header": {
-      "title": "ראו את זה רץ בלייב (Demo)",
-      "subtitle": "צפו איך RealizeOS לוקחת פרומפט אחד והופכת אותו לסטייל-שיט של סוכנים מתזמרים. הכל מבוסס על ה-DB וה-Voice הארגוני שלכם."
-    },
-    "comingSoon": "Video Demo Drop — ממש בקרוב",
-    "duration": "Quick 3-min Walkthrough"
-  },
-  "caseStudies": {
-    "header": {
-      "title": "מהאקוסיסטם שבנה את המערכת",
-      "subtitle": "אלו לא תרחישים תיאורטיים — אלו פעולות חיות שרצות על אותו מנוע שאתם עומדים לפרוס."
-    },
-    "howItWorks": "Tech Breakdown",
-    "items": {
-      "boa": {
-        "title": "BOA Architects",
-        "industry": "Architecture & Design",
-        "metric": "40H/week Saved",
-        "quote": "הפסקנו לטבוע בניירות רגולציה מייגעים. המערכת מנסחת, מתייקת ומוודאת Compliance — ואנחנו מתמקדים בלעצב חללים שאנשים רוצים לחיות בהם באמת.",
-        "technical": "Multi-agent Workflow: סוכן Research סורק תקנוני עירייה מורכבים ועדכניים לפי Zoning ספציפי. סוכן Draft מנסח דוקומנטציה שמוגשת לרשויות (Compliance Docs). סוכן QA Reviewer מעיף דגלים ומתריע על Validation מול מפרטי הפרויקט הראשיים. Integration Agent מגבה ב-Google Drive. ה-Vault מחזיק מעל 200 תבניות API / תקנים עבור ספרד, פורטוגל וישראל."
-      },
-      "burtucala": {
-        "title": "Burtucala Real Estate",
-        "industry": "Real Estate Investments",
-        "metric": "3x Faster Deal Flow",
-        "quote": "כל אופורטיוניטי בשוק נסרק, מנותח (Analyzed), ומונח לנו על השולחן לפני שהקפה של הבוקר מתקרר. הפכנו לחברה סופר-פרואקטיבית ו-Data-driven בן לילה.",
-        "technical": "Scheduled CRON pipelines רצים כל יום ب-06:00: סוכן Data Extraction דוגם נתוני שוק דרך ה-APIs של idealista, INE, והבנק המרכזי של פורטוגל. סוכן Writer מכניס את הכל לתוך Executive Summary נקי ב-JSON. סוכן Knowledge עושה Cross-reference עם מגבלות תיק ההשקעות (Portfolio Parameters) ב-Vault המקומי. נוטיפיקציות Push נדחפות אוטומטית לערוץ טלגרם ארגוני עם לחצני One-click-approval (HITL) כדי להריץ רזולוציות עמוקות יותר על נכסים עם פוטנציאל גבוה."
-      },
-      "realization": {
-        "title": "Realization Group",
-        "industry": "Venture Consulting & Operations",
-        "metric": "5 Ventures, 1 Operator",
-        "quote": "אני מנהל אופרציית נדל״ן, ייעוץ יזמות, מערך Content ותוכנת SaaS — הכל ממסך Dashboard יחיד (Mission Control). המערכת לא עוזרת, היא מפעילה את הביזנס איתי.",
-        "technical": "Full FABRIC Architecture: שכבת ה-Foundations משמשת כ-Single Source of Truth, המאחסנת זהות ערוצים, טון ופיצ'ים של אסטרטגיה ואוריינטציה לכל פרויקט. שכבת ה-Agents מתזמרת ומרמזת ל-6 סוכנים מיומנים בסביבות Multi-tenant. מודול ה-Brain אוכף Tone Uniformity ל-4 מותגים לחלוטין שונים. ה-Routines מזין לופים פנימיים אוטומטיים שמקליד עדכונים פנימיים (Investor Updates/LinkedIn Drops/Weekly recaps) — עצמאית, ללא תלות אנושית. שכבת Insights עושה מעקב אחר רווח והפסד רוחבי (KPI tracking), ושכבת ה-Creations מג׳נרטת Pitch Decks, בלוגים ו-Client Proposals בתצורה סופית — מראשית ועד קצה."
-      }
+    "title": "נבנה מתוך תפעול אמיתי",
+    "p1": "RealizeOS נולד מהעבודה היומיומית של קבוצת Realization — מנוע ייצור המפעיל אדריכלות בינלאומית, נדל\"ן ותפעול מיזמים מדי יום ב-3 אזורים.",
+    "p2": "בניתי את זה כי האלטרנטיבה הייתה להתמוטט. ניסיון לגדול מיזמים פיזיים ומורכבים באמצעות כלי AI מפוזרים היה מתיש. הייתי צריך בהירות מוחלטת ושליטה מלאה. RealizeOS הוא המנוע שבניתי כדי לקנות בחזרה את החופש שלי — עכשיו הוא קוד פתוח כדי שתוכל לדרוש את שלך.",
+    "role": "מייסד,",
+    "proof": {
+      "badge": "Walk the Talk",
+      "regions": "3 אזורים",
+      "regionsLabel": "IL · PT · US",
+      "agents": "6+ סוכנים",
+      "agentsLabel": "בייצור",
+      "usage": "יומי",
+      "usageLabel": "בשימוש Realization"
     }
   },
   "fabricSystem": {
     "header": {
       "title": "מערכת FABRIC",
-      "subtitle": "כל מערכת ב-RealizeOS מאורגנת בארכיטקטורת ידע מובנית. שש תיקיות. אינטליגנציה אחת קוהרנטית."
+      "subtitle": "ה-AI-OS שלך בנוי על ארכיטקטורה שכבתית. הלב שלך לנצח — כל השאר להחלפה."
+    },
+    "architecture": {
+      "title": "מודל ה-AI-OS השכבתי",
+      "heart": {
+        "title": "הלב (בבעלותך)",
+        "description": "גרף ידע FABRIC, יומן אירועים, זהות SOUL. נייד, מקומי-קודם, שלך לנצח.",
+        "badge": "שלך לנצח"
+      },
+      "limbs": {
+        "title": "גפיים (להחלפה)",
+        "description": "סביבות ריצה לסוכנים, ספקי LLM, מנוע משימות. החלף או שדרג בכל עת."
+      },
+      "skin": {
+        "title": "עור (להחלפה)",
+        "description": "לוח מחוונים, ערוצים, CLI. החלף את הממשק מבלי לגעת בנתונים שלך."
+      }
     },
     "items": {
       "F": {
-        "title": "Foundations (יסודות)",
-        "description": "מתודולוגיה, זהות (Identity) וחוקים שכל Agent עוקב אחריהם. הצוות בונה בדיוק לפי ה-Spec שלכם — תמיד."
+        "title": "יסודות",
+        "description": "מתודולוגיית מערכת, זהות וכללים שכל סוכן עוקב אחריהם. הצוות שלך בונה למפרט המדויק שלך, תמיד."
       },
       "A": {
-        "title": "Agents (סוכנים)",
-        "description": "צוות ה-AI המומחה — Copywriter, Analyst, QA Reviewer, Orchestrator. כולם מקונפגים במבנה שאתם שולטים בו פנימית."
+        "title": "סוכנים",
+        "description": "צוות ה-AI המתמחה שלך — כותב, אנליסט, סוקר, מתזמר. כל אחד מוגדר במבנה שאתה שולט בו."
       },
       "B": {
-        "title": "Brain (מוח)",
-        "description": "ידע מקצועי רוחבי שהצוות באמת זוכר. נתוני שוק, Domain Expertise, היסטוריית טראנזקציות — נגיש מהקונטקסט של כל שיחה."
+        "title": "מוח",
+        "description": "ידע תחום שהצוות שלך באמת זוכר. נתוני שוק, מומחיות, היסטוריית עסקאות — נגיש בכל שיחה."
       },
       "R": {
-        "title": "Routines (שגרות)",
-        "description": "Workflows שמשרשרים Agents ו-Tools. טריגר של 'נסח סיכום פרויקט' מפעיל Writer ואז Reviewer — על אוטומט, בלי שתגעו."
+        "title": "שגרות",
+        "description": "תהליכי עבודה שמשרשרים סוכנים וכלים יחד. \"כתוב נרטיב פרויקט\" מפעיל כותב, ואז סוקר — אוטומטית."
       },
       "I": {
-        "title": "Insights (תובנות)",
-        "description": "לוג למידה אבולוציוני שהופך את הצוות לחכם ומהיר יותר לאורך זמן. משוב, החלטות Logging, ו-Execution Patterns — הכל נשמר."
+        "title": "תובנות",
+        "description": "יומן למידה שעושה את הצוות חכם יותר לאורך זמן. משוב, החלטות ביצוע ודפוסים — שום דבר לא הולך לאיבוד."
       },
       "C": {
-        "title": "Creations (יצירות)",
-        "description": "Outputs שעומדים בסטנדרט ה-QA שלכם. כל תוצר נשמר במבנה מסודר — מוכן ל-Review שלכם ו-Delivery קצה."
+        "title": "יצירות",
+        "description": "פריסות שעומדות בסטנדרטים שלך. כל פלט נוחת במבנה מאורגן וניתן לסקירה."
       }
     }
   },
-  "comparison": {
+  "painPoints": {
     "header": {
-      "title": "היתרון הבלתי הוגן (Unfair Advantage)",
-      "subtitle": "איך מנוע מתואם ו-Data-driven משתווה לאופרציה מסורתית."
+      "title": "הפסק להדביק כלי AI<br>שמשכחים אותך",
+      "subtitle": "רוב הגדרות ה-AI הן בלגן של צ'אטבוטים מנותקים, הקשר אבוד והעתק-הדבק ידני. ה-AI שלך צריך לעבוד כצוות, לא כאוסף זרים."
     },
-    "columns": {
-      "traditional": {
-        "header": "גיוס צוות בשר ודם",
-        "price": "$50,000+",
-        "priceSuffix": "/שנה",
-        "items": [
-          "2-4 שבועות Onboarding לכל עובד",
-          "מוגבל לשעות עבודה 9-to-5",
-          "ידע נמחק שעובדים עוזבים / חולים",
-          "תקורת מיקרו-מנג'מנט (Overhead)"
-        ]
+    "items": {
+      "layers": {
+        "title": "מלכודת החיכוך",
+        "description": "הרעיונות הטובים שלך מתים בהעברה. אתה כל הזמן מתרגם בין כלים מנותקים, צופה במומנטום נעצר ובדדליינים חומקים."
       },
-      "tools": {
-        "header": "Tooling ו-SaaS מפוזרים",
-        "price": "$1,200+",
-        "priceSuffix": "/שנה",
-        "items": [
-          "$97/חודש פלוס Subscriptions נלווים",
-          "$49-99 לכל Agent שרת ייעודי",
-          "אפס Integration עמוק או Shared Memory",
-          "הקשר (Context) נמחק בין Sessions כליל"
-        ]
+      "clock": {
+        "title": "שיתוק ביצוע",
+        "description": "החרדה המוחצת של להפוך פרויקט פיזי עצום למציאות. הנפח העצום של פרטים לא מובנים משתק את היכולת שלך להוביל."
       },
-      "realize": {
-        "header": "Deploying RealizeOS",
-        "price": "$249",
-        "priceSuffix": " פעם אחת",
-        "items": [
-          "Deployment מהיר תוך שעות",
-          "אופרציה זמינה 24/7",
-          "ידע אופרטיבי מצטבר (Compounding) לנצח",
-          "צוות תחת Orchestrator אחד מסונכרן"
-        ]
+      "users": {
+        "title": "טירוף Middleware",
+        "description": "הפכת לצוואר הבקבוק. במקום לעצב את העתיד, אתה מדביק ידנית פלטי AI גנריים ב-2 בלילה. זה מתיש."
+      }
+    },
+    "transition": "לא צריך להרגיש ככה. צא מה-middleware והיכנס לכיסא החזון. פקד מנוע תפעולי מתואם שבונה את המציאות שלך."
+  },
+  "community": {
+    "title": "קהילה ומסמכים",
+    "subtitle": "הצטרף לאקוסיסטם הקוד הפתוח של RealizeOS. קבל עזרה, תרום והתחבר.",
+    "cards": {
+      "github": {
+        "title": "קוד מקור",
+        "description": "עיין בקוד המלא, פתח issues ותרום ב-GitHub."
+      },
+      "docs": {
+        "title": "תיעוד",
+        "description": "מדריכי התחלה מהירה, הפניית API ומסמכי הגדרות."
+      },
+      "discussions": {
+        "title": "דיונים",
+        "description": "שאל שאלות, שתף מקרי שימוש והתחבר למפעילים אחרים."
+      },
+      "telegram": {
+        "title": "קהילת טלגרם",
+        "description": "צ'אט בזמן אמת עם הבונה ומשתמשי RealizeOS אחרים."
+      },
+      "license": {
+        "title": "רישיון BSL 1.1",
+        "description": "חינם לשימוש פנימי. ללא תחרות SaaS. Apache 2.0 ב-2030."
+      },
+      "officeHours": {
+        "title": "שעות קבלה",
+        "description": "הזמן שיחה חינמית של 15 דקות לדון במקרה השימוש שלך."
       }
     }
   },
-  "howItWorks": {
-    "header": {
-      "title": "תהליך ה-Deployment האופטימלי",
-      "subtitle": "איך אנחנו מעבירים אתכם מבלגן תפעולי ל-Engine קומפלט בשבוע."
-    },
-    "steps": [
-      {
-        "title": "בחרו Edition",
-        "description": "תשלום ב-Stripe לוקח 30 שניות. בחרו Lite, Full או ליווי Setup מלא על ידינו.",
-        "time": ""
-      },
-      {
-        "title": "Instant Delivery",
-        "description": "קישור ל-Google Drive אישי + Code Push ל-Github + כניסה ל-Community קורית מיד.",
-        "time": ""
-      },
-      {
-        "title": "הגדירו Voice, Tone & Identity",
-        "description": "מלאו מסמכי זהות אישית, Venture Guidelines, ואוריינטציה דרך אשפי המערכת.",
-        "time": "5-10 דקות"
-      },
-      {
-        "title": "הדאבאג (Debugging) הראשון",
-        "description": "שלחו טריגר לצוות ה-AI לכתוב משימה. צפו ב-Writer מנסח וב-Reviewer קורע אותו לביקורת קפדנית — בקול שלכם בדיוק.",
-        "time": "5 דקות"
-      },
-      {
-        "title": "Scale and Connect",
-        "description": "תזריקו ידע תחומי ל-RAG, בנו Workflows מורכבים ב-YAML, צרו אינטגרציות. המערכת עושה Compounding למידה ויעילות.",
-        "time": "שבוע 1"
-      }
-    ]
-  },
-  "delivery": {
-    "header": {
-      "title": "מה אתם מקבלים (Deliverables)",
-      "subtitle": "אנחנו לא מוכרים מנויי תוכנה (Software License). אנחנו בונים ומוסרים מנוע אופרציה שמייצר Production שאתם מחזיקים בקוד שלו ב-100%."
-    },
-    "models": {
-      "lite": {
-        "edition": "מהדורת Lite",
-        "emotionalPromise": "מ-Data מפוזר ל-Single Source of Truth. אינפרה מיידית וסדר לניהול האופרציה שלכם.",
-        "items": [
-          {
-            "title": "כספת Obsidian (Vault) מובנית",
-            "description": "~30 קבצי Markdowns מאורגנים לפי ארכיטקטורת FABRIC. פתחו את התיקייה — ויש לכם KB שמוכן ל-Knowledge Injection להרצה ב-Cursor או Claude."
-          },
-          {
-            "title": "4 הגדרות Base (סוכני AI)",
-            "description": "Orchestrator, Writer, Reviewer, Analyst. קבצי Role-prompt סטרוקטורליים שמתאימים את עצמם לוורטיקל שאתם מגדירים."
-          },
-          {
-            "title": "וויזארדים ל-Voice & Tone ו-Identity",
-            "description": "venture-identity.md, venture-voice.md, ותבנית-על לעיצוב הזהות בת 130 שורות. לקנפג את ה-Venture Positioning שלכם בעשר דקות טס אל ה-Agents."
-          },
-          {
-            "title": "6 תהליכי Runbooks (ליבת Skills)",
-            "description": "Proposals, Marketing Campaigns, חוקים לרשתות, Review Loops, Content Pipeline (קבצי YAML) שמוכנים לשיבוץ."
-          },
-          {
-            "title": "3 מתודולוגיות חשיבה משותפות",
-            "description": "Competitive Analysis, Content Repurposing, Decision Matrix. רכיבים שמשרתים Workflows מרובים באופן רוחבי."
-          },
-          {
-            "title": "פרוטוקול CLAUDE.md מתקדם (155 שורות)",
-            "description": "הזריקו לפרויקטים (Cursor/Claude Code) והצ'אט המוצלב שלכם מתיישר מיידית לפי כל ההקשר וה-Guidelines הארגוני."
-          },
-          {
-            "title": "מדריך Onboarding שלב-אחר-שלב",
-            "description": "15 דקות מקליק להורדה (Download) עד לקימוט של Output ראשון שעבר את ביקורת ה-Venture Voice של המערכת."
-          }
-        ]
-      },
-      "full": {
-        "edition": "מהדורת Full",
-        "includesNote": "כולל את כל אינפרת ה-Lite, ובנוסף:",
-        "emotionalPromise": "ממיקרו-מנג'ר טבוע ל-Architect ממוקד. מנוע תפעולי אוטומטי שמשתלט על שרתי ה-Production.",
-        "items": [
-          {
-            "title": "מערכת Python End-to-end (~11,000 שורות ב-OOP)",
-            "description": "מנוע ראוטינג ל-Models מרובים (Multi-LLM), הרכבת Prompt דינמית בזמן-אמת לחלוקת שכבות ידע (RAG), אבטחה וכספת, וניהול זיכרון — קוד ברמת שרת. Production-Ready."
-          },
-          {
-            "title": "Deploy מבוסס Docker בלחיצה",
-            "description": "ריצו docker compose up — ויש לכם שרת AI Operations קומפלט פועם ומאזין."
-          },
-          {
-            "title": "5 מתאמי Frontend (טלגרם, קליינט Web, ווטסאפ API, Webhooks) + מנוע CRON",
-            "description": "Access לבוטים ומידע מכל מכשיר או סקריפט אוטומציה אחר."
-          },
-          {
-            "title": "אינטגרציות Native ל-Goole Workspace (OAuth)",
-            "description": "Gmail, Calendar, Drive מוטמעים ומוכנים. Pull & Push של מסמכים וטקסט מהרכבות (Pipelines)."
-          },
-          {
-            "title": "שכבת Security (Hardenings): RBAC, Secrets, ו-Audit Logs",
-            "description": "16 סוגי רשומות על פני 5 Roles. AES-256 לקוד והגנה פרואקטיבית נגד Prompt Injection."
-          },
-          {
-            "title": "Framework Tooling (SDK) להרחבה",
-            "description": "7 Toolkit Base classes מובנים + תמיכה בתקן MCP. בנו והוסיפו Custom integrations למוצרי ה-SaaS שלכם בדקות."
-          },
-          {
-            "title": "Media Processing Pipeline עמוק",
-            "description": "Vision Analysis לתמונות, Audio Transcriptions להודעות קוליות שמוזרמים ל-RAG."
-          },
-          {
-            "title": "8 ארכיטקטורות טמפלייטים לפי מיזמים (Verticals)",
-            "description": "Agency, Multi-tenant Venture, SaaS, E-Commerces... שלפו Base template ותרכזו עליו."
-          },
-          {
-            "title": "CLI Tooling + סביבת CI/CD מלאה",
-            "description": "פקודות בייסק דרך הטרמינל ל-init, serve, status... פלוס פייפליינים של אקשנס ב-Github להריץ Test Suites. למיומנים בלבד."
-          }
-        ]
-      }
-    },
-    "note": "זמין לרכשים: כל הרפליקות מכילות Sync מיידי לכונן ו-Access ל-Git Repo המאובטח — מיילי Onboarding וגישה לקהילות Builder & Operators."
+  "quickstart": {
+    "title": "מאפס לפעולה ב-10 דקות",
+    "subtitle": "קוד פתוח לחלוטין. פרוס מקומית או על השרת שלך. הנתונים בבעלותך.",
+    "install_methods": "אפשרויות התקנה",
+    "requires": "דרישות:",
+    "copy": "העתק",
+    "copied": "הועתק",
+    "view_full_guide": "צפה במדריך המלא →"
   },
   "nav": {
-    "getStarted": "התחילו",
-    "toggleMenu": "תפריט"
+    "getStarted": "התחל עכשיו",
+    "toggleMenu": "פתח/סגור תפריט"
   },
   "navItems": {
+    "quickstart": "התחלה מהירה",
     "fabric": "FABRIC",
     "features": "יכולות",
-    "pricing": "תמחור",
+    "pricing": "מחירון",
+    "community": "קהילה",
     "faq": "שאלות נפוצות"
   },
   "footer": {
-    "partOf": "חלק מ-",
+    "partOf": "חלק מ",
     "ecosystem": "אקוסיסטם.",
     "realization": "Realization",
     "links": {
-      "telegram": "Telegram",
+      "telegram": "טלגרם",
       "support": "תמיכה",
       "faq": "שאלות נפוצות"
     },
     "rights": "RealizeOS. כל הזכויות שמורות."
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "שאלות נפוצות",
     "items": [
       {
-        "question": "Is it really free?",
-        "answer": "<p>RealizeOS V5 is licensed under the Business Source License (BSL) 1.1. It is completely free for internal business use and production. The only restriction is that you cannot offer RealizeOS itself as a competing commercial service (e.g. 'AI operations as a service'). After 4 years, the code transitions to Apache 2.0.</p>"
+        "question": "האם RealizeOS באמת חינמי?",
+        "answer": "<p>כן. RealizeOS V5.5 מורשה תחת Business Source License (BSL) 1.1. הוא חינמי לחלוטין לשימוש עסקי פנימי ופריסת ייצור. ההגבלה היחידה היא שאסור להציע את RealizeOS עצמו כשירות SaaS מסחרי מתחרה. אחרי 4 שנים, הקוד עובר ל-Apache 2.0 — קוד פתוח לחלוטין.</p>"
       },
       {
-        "question": "What do I need to get started?",
-        "answer": "<p>Python 3.11+, Docker, and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for local inference).</p>"
+        "question": "מה אני צריך כדי להתחיל?",
+        "answer": "<p>Python 3.11+, Docker (מומלץ), ומפתחות API לספקי ה-LLM שבחרת (Anthropic, Google AI, OpenAI, ו/או Ollama להסקה מקומית לחלוטין ללא קריאות חיצוניות).</p>"
       },
       {
-        "question": "Can I host it on my own server?",
-        "answer": "<p>Yes. Deploy with Docker on any VPS, cloud instance, or local machine. Your data stays on your infrastructure.</p>"
+        "question": "אפשר לארח על השרת שלי?",
+        "answer": "<p>כן. RealizeOS מיועד לאירוח עצמי. פרוס עם Docker על כל VPS, מכונת ענן או מחשב מקומי. נתוני ה-FABRIC, יומן האירועים וזהות ה-SOUL נשארים על התשתית שלך.</p>"
       },
       {
-        "question": "Is my data private?",
-        "answer": "<p>Completely. RealizeOS runs on your machine or server. For maximum privacy, use Ollama for fully local inference &mdash; no data leaves your network at all.</p>"
+        "question": "האם הנתונים שלי פרטיים?",
+        "answer": "<p>לחלוטין. RealizeOS רץ על המחשב או השרת שלך — מקומי-קודם מתוך עיצוב. לפרטיות מקסימלית, השתמש ב-Ollama להסקה מקומית לחלוטין — אף נתון לא עוזב את הרשת שלך. הקריאות החיצוניות היחידות הן ל-API של ה-LLM שאתה מגדיר במפורש.</p>"
       },
       {
-        "question": "Do I get updates?",
-        "answer": "<p>Yes. As an open-source project, you get access to all updates via the GitHub repository. Pull the latest changes whenever you want.</p>"
+        "question": "מהי מערכת ישויות FABRIC?",
+        "answer": "<p>FABRIC הוא הלב של RealizeOS — גרף ידע מובנה שמאחסן את הישויות, הקשרים וההקשר של המיזם שלך. הוא נייד, מקומי-קודם ושלך לנצח. גם אם תחליף את לוח המחוונים, ספק ה-LLM או סביבת הריצה של הסוכן, נתוני ה-FABRIC נשארים שלמים.</p>"
+      },
+      {
+        "question": "מהן פגישות ההתקנה?",
+        "answer": "<p>שיחה של שעה ($499) שבה הבונה מגדיר את RealizeOS ישירות סביב המיזם שלך: פיגום FABRIC, הגדרות סוכנים, קול מיזם, תהליך עבודה ראשון של Mission. אתה מקבל 30 יום תמיכה בדוא\"ל עדיפות אחרי הפגישה.</p>"
+      },
+      {
+        "question": "מהי ארכיטקטורה 'אגנוסטית לסביבת ריצה'?",
+        "answer": "<p>RealizeOS משתמש בשכבת מתאם זמן ריצה — תבנית רישום שתומכת בכל backend של LLM (Claude, Gemini, OpenAI, Ollama ועוד). אתה יכול להחליף ספקים או להוסיף חדשים מבלי לגעת בבסיס הידע או בתהליכי העבודה שלך. הלב נשאר אותו דבר; הגפיים להחלפה.</p>"
+      },
+      {
+        "question": "אני מקבל עדכונים?",
+        "answer": "<p>כן. כפרויקט קוד פתוח ב-GitHub, יש לך גישה לכל העדכונים. משוך את השינויים האחרונים מתי שתרצה — בלוח הזמנים שלך, לא שלנו.</p>"
+      },
+      {
+        "question": "אפשר לנהל מספר עסקים?",
+        "answer": "<p>בהחלט. RealizeOS בנוי למפעילי מיזמים מרובים. כל עסק מקבל מרחב ישויות FABRIC משלו עם סוכנים מבודדים, בסיס ידע וקול מיזם. מנוע אחד, כמה מיזמים שתצטרך.</p>"
       }
     ]
   },
   "finalCta": {
-    "title1": "Start Building Your",
-    "title2": "AI Operations System",
-    "subtitle": "Join the community and take control of your AI infrastructure.",
-    "getRealizeOS": "Star on GitHub",
-    "notReadyTitle": "עוד नहीं מוכנים לעשות Deploy?",
-    "notReadyDesc": "ספרו לנו מה צוואר הבקבוק (Bottleneck) מונע האופרציה שלכם היום — נחזור עם עצה מעשית טהורה שנופלת ב-Inbox שלכם (אפס Bullshit במכירות).",
-    "thanks": "תודה רבה! נכנס לקריאה ונחזיר תשובה תוך יומיים גג.",
-    "namePlaceholder": "השם המלא או ה-Venture",
-    "emailPlaceholder": "founder@venture.io",
-    "challengePlaceholder": "באיזה תהליך Manual אתם 'שורפים' הכי הרבה שעות ו-Overhead כרגע?",
-    "sending": "מבצע PUSH...",
-    "submit": "שגרו אלינו את האתגר",
-    "error": "Error Request Code: המערכת פספסה איזה Endpoint... נסו למלא שוב או לרשום לנו למייל התמיכה הישיר."
+    "title1": "התחל לבנות את",
+    "title2": "מערכת תפעול ה-AI שלך",
+    "subtitle": "הצטרף לקהילה וקח שליטה על תשתית ה-AI שלך.",
+    "getRealizeOS": "כוכב ב-GitHub",
+    "bookSession": "הזמן פגישת הגדרה",
+    "notReadyTitle": "עוד לא מוכן?",
+    "notReadyDesc": "ספר לנו על האתגר התפעולי הגדול ביותר שלך. נחזור אליך עם עצה כנה ומעשית — בלי מכירות.",
+    "thanks": "תודה! נסקור את האתגר שלך ונחזור אליך.",
+    "namePlaceholder": "השם שלך",
+    "emailPlaceholder": "your@email.com",
+    "challengePlaceholder": "מהו האתגר הגדול ביותר שלך בתפעול AI?",
+    "sending": "שולח...",
+    "submit": "שלח את האתגר שלי",
+    "error": "משהו השתבש. אנא נסה שוב או שלח לנו מייל ישירות."
   },
   "exitPopup": {
-    "title": "רגע לפני שסוגרים ת'טאב (Wait)",
-    "description": "השאירו כתובת ומקראו ב-Inbox טיפים טכנולוגיים של שורות Operations מובהקות מפי יוצרי המערכת (שנשלחו כ-Drip email מסודר אליכם) — יאפשרו לכם לקחת Insights להטמעת חכמה במיזמים שלכם ללא רכישת אפילו רכיב מהמערכת.",
-    "namePlaceholder": "השם (או כינוי)",
-    "emailPlaceholder": "email@startup.io",
-    "cta": "Stay in the loop",
-    "sending": "מעבד PUSH...",
-    "success": "הבקשה אושרה. נעלה אתכם מיד ל-Queue של הלופ הבא בסינכרונים.",
-    "error": "אופס. נפלה שגיאה ב-API של ה-Subscribe. רפרשו (Refresh) עמוד ונסו לאשר שוב.",
-    "disclaimer": "שום ספאם. לא מוכרים פרטים אישיים, אפס התפשרות על פרטיות לקוח (Privacy Base)."
+    "title": "רגע — לפני שאתה הולך",
+    "description": "השאר את המייל שלך ונשלח לך טיפים מעשיים לתפעול AI וגישה מוקדמת לתכונות חדשות.",
+    "namePlaceholder": "השם שלך",
+    "emailPlaceholder": "your@email.com",
+    "cta": "הישאר בתמונה",
+    "sending": "שולח...",
+    "success": "אתה בפנים! נהיה בקשר.",
+    "error": "משהו השתבש. אנא נסה שוב.",
+    "disclaimer": "ללא ספאם. רק ערך אמיתי ועדכונים."
   },
   "webinar": {
-    "useCases": {
-      "sectionTitle": "מה אפשר לבנות?",
-      "sectionSubtitle": "ארבע קטגוריות אוניברסליות. כל תעשייה. חבילות ספציפיות לתחומים — בקרוב.",
-      "knowledge": {
-        "title": "ידע ותפעול",
-        "description": "מבנו את כל הידע העסקי שלכם והפכו תהליכים תפעוליים לאוטומטיים.",
-        "items": [
-          "בנו כספת ידע מובנית שסוכני AI באמת משתמשים בה",
-          "אוטומציה של בדיקות Compliance, דוחות ותיעוד",
-          "צרו Playbooks תפעוליים שמריצים את עצמם",
-          "עקבו ושלפו ידע ארגוני מצטבר בין צוותים"
-        ]
-      },
-      "content": {
-        "title": "תוכן ותקשורת",
-        "description": "הפיקו תוכן עקבי עם המותג שלכם בכל ערוץ — בלי לכתוב טיוטות.",
-        "items": [
-          "ג'נרוט פוסטים ללינקדאין, ניוזלטרים והצעות מחיר בקול שלכם",
-          "שמירה אוטומטית על עקביות מותגית בכל הפלטים",
-          "ניסוח תקשורת ללקוחות ועדכוני משקיעים",
-          "המרת תוכן בין פורמטים וערוצים"
-        ]
-      },
-      "research": {
-        "title": "מחקר וניתוח",
-        "description": "שלפו תובנות מנתונים, מסמכים ושווקים במהירות מכונה.",
-        "items": [
-          "ניתוח מגמות שוק ונופים תחרותיים",
-          "חילוץ מדדי מפתח ממסמכים ודוחות פיננסיים",
-          "הצלבת מקורות מידע לתובנות עמוקות יותר",
-          "יצירת סיכומים מנהליים ממאגרי נתונים מורכבים"
-        ]
-      },
-      "multiVenture": {
-        "title": "ניהול מולטי-מיזמי",
-        "description": "נהלו מספר עסקים מחדר בקרה אחד בלי לאבד הקשר.",
-        "items": [
-          "מעבר בין מיזמים עם שמירה מלאה על הקשר",
-          "שמירה על קולות מותג ומאגרי ידע נפרדים",
-          "יצירת דוחות ועדכוני משקיעים לכל מיזם בנפרד",
-          "תיאום אסטרטגיה ותפעול חוצה-מיזמים"
-        ]
-      }
-    },
-    "presentation": {
-      "speakerNotesToggle": "הצג/הסתר הערות מציג (N)",
-      "progress": "{{current}} / {{total}}",
-      "exitPresentation": "יציאה",
-      "liveDemo": "הדגמה חיה",
-      "liveDemoSubtitle": "שיתוף מסך — סיור במערכת האמיתית",
-      "agenda": "סדר יום",
-      "whoIsThisFor": "למי זה מתאים?",
-      "whoIsThisForItems": [
-        "מייסדים שמנהלים אופרציות מורכבות",
-        "מפעילי מולטי-מיזמים שמחפשים בהירות",
-        "צוותים שטובעים בכלי AI מנותקים",
-        "כל מי שרוצה AI שבאמת זוכר אותו"
-      ],
-      "whatYouGet": "מה מקבלים",
-      "purchaseNow": "רכשו עכשיו",
-      "nextSteps": "הצעדים הבאים",
-      "nextStepsItems": [
-        "בחרו מהדורה (Lite / Full / Setup)",
-        "קבלו גישה מיידית דרך Google Drive",
-        "הגדירו את זהות ה-Venture שלכם (5-10 דקות)",
-        "שיחת AI ראשונה תוך שעה"
-      ],
-      "questionsTitle": "שאלות ותשובות",
-      "questionsSubtitle": "בואו נדבר — שאלו הכל",
-      "contactInfo": "info@realizeos.ai",
-      "meetLink": "https://meet.google.com/vcr-zgsw-xix",
-      "thankYou": "תודה רבה",
-      "thankYouSubtitle": "בואו נבנה יחד את מערכת ה-AI Operations שלכם.",
-      "exclusivePromo": {
-        "title": "הצעה בלעדית למשתתפי הוובינר",
-        "subtitle": "20% הנחה על Full ו-Setup Assistance — 10 ראשונים בלבד",
-        "code": "LAUNCH20OFF",
-        "codeLabel": "הזינו קוד קופון בתשלום:",
-        "details": [
-          "20% הנחה על RealizeOS Full — $199 במקום $249",
-          "20% הנחה על ליווי Setup — $399 במקום $499",
-          "מוגבל ל-10 רוכשים ראשונים בלבד",
-          "בתוקף עד הלילה בחצות"
-        ],
-        "urgency": "בתוקף עד הלילה בחצות בלבד. 10 ראשונים בלבד."
-      }
-    },
     "booking": {
-      "title": "קבעו סשן",
-      "subtitle": "תאמו שיחת Setup בת שעה או הירשמו לוובינר הבא.",
-      "setupCall": "קבעו שיחת הקמה",
+      "title": "הזמן את הפגישה שלך",
+      "subtitle": "תזמן שיחת הגדרה של שעה או הירשם לוובינר הבא.",
+      "setupCall": "הזמן שיחת הגדרה",
       "upcoming": "וובינרים קרובים",
-      "upcomingDescription": "הצטרפו לסשן Friends & Family הבא וראו את RealizeOS בפעולה.",
-      "joinWebinar": "הצטרפו דרך Google Meet",
+      "upcomingDescription": "הצטרף לפגישה הבאה וראה את RealizeOS בפעולה.",
+      "joinWebinar": "הצטרף דרך Google Meet",
       "accessRequired": "נדרשת גישה",
-      "accessMessage": "רכשו חבילת RealizeOS כדי לקבל גישה להזמנת סשן.",
-      "goToPricing": "צפו באפשרויות התמחור",
-      "calendarPlaceholder": "ווידג'ט הזמנה יופיע כאן.",
-      "successTitle": "!ברוכים הבאים ל-RealizeOS",
-      "successMessage": "הרכישה אושרה. קבעו סשן Setup למטה או הצטרפו לוובינר הקרוב.",
-      "hub": {
-        "title": "!ברוכים הבאים ל-RealizeOS",
-        "subtitle": "הרכישה אושרה. בחרו את החבילה שלכם למטה כדי להמשיך.",
-        "setupCard": "ליווי Onboarding מלא",
-        "setupDesc": "קבעו שיחת Setup אישית",
-        "liteCard": "RealizeOS Lite",
-        "liteDesc": "הירשמו לוובינר ה-Onboarding",
-        "fullCard": "RealizeOS Full",
-        "fullDesc": "הירשמו לוובינר ה-Onboarding"
-      },
-      "setup": {
-        "title": "קבעו שיחת Setup",
-        "subtitle": "תאמו את שיחת ה-Setup בת השעה עם בונה RealizeOS.",
-        "successTitle": "!הרכישה אושרה",
-        "successMessage": "חבילת ליווי ה-Onboarding שלכם אושרה. קבעו את שיחת ה-Setup למטה.",
-        "calendarHeading": "בחרו זמן",
-        "calendarPlaceholder": "ווידג'ט הזמנה יופיע כאן."
-      },
-      "lite": {
-        "title": "הצטרפו לוובינר ה-Onboarding",
-        "subtitle": "הירשמו לסשן ה-Onboarding הבא של RealizeOS Lite.",
-        "successTitle": "!הרכישה אושרה",
-        "successMessage": "חבילת RealizeOS Lite שלכם אושרה. הירשמו לוובינר ה-Onboarding למטה.",
-        "chooseLanguage": "בחרו שפה",
-        "webinarHeading": "סשנים קרובים",
-        "webinarPlaceholder": "הרשמה לוובינר תופיע כאן.",
-        "joinWebinar": "הצטרפו לוובינר"
-      },
+      "accessMessage": "הזמן פגישת התקנה כדי לקבל גישה.",
+      "goToPricing": "צפה באפשרויות מחירים",
+      "calendarPlaceholder": "ווידג'ט הזמנת לוח שנה יופיע כאן.",
       "full": {
-        "title": "הצטרפו לוובינר ה-Onboarding",
-        "subtitle": "הירשמו לסשן ה-Onboarding הבא של RealizeOS Full.",
-        "successTitle": "!הרכישה אושרה",
-        "successMessage": "חבילת RealizeOS Full שלכם אושרה. הירשמו לוובינר ה-Onboarding למטה.",
-        "chooseLanguage": "בחרו שפה",
-        "webinarHeading": "סשנים קרובים",
+        "title": "הצטרף לוובינר RealizeOS",
+        "subtitle": "הירשם לפגישת ההכשרה הבאה לגרסה המלאה.",
+        "chooseLanguage": "בחר שפה",
+        "webinarHeading": "פגישות קרובות",
         "webinarPlaceholder": "הרשמה לוובינר תופיע כאן.",
-        "joinWebinar": "הצטרפו לוובינר"
+        "joinWebinar": "הצטרף לוובינר"
       },
       "langEnglish": "English",
       "langHebrew": "עברית"
     }
   },
-  "pres": {
-    "welcome": {
-      "title": "צוות ה-AI שלכם מוכן",
-      "hook": "מנוע אחד שזוכר את ה-Venture.\nמכיר את הפרויקטים.\nמריץ כמו צוות מתואם.\nבלי מנויים.\nבלי קופי-פייסט.\nמערכת AI Operations ברמת Production שהיא שלכם."
-    },
-    "stats": {
-      "models": "20+",
-      "modelsLabel": "מודלים",
-      "channels": "5",
-      "channelsLabel": "ערוצים",
-      "saved": "40 שעות",
-      "savedLabel": "נחסכות בשבוע",
-      "tools": "13",
-      "toolsLabel": "כלי Google Workspace",
-      "agents": "6",
-      "agentsLabel": "סוכנים מומחים"
-    },
-    "agenda": {
-      "title": "מה נכסה היום",
-      "items": [
-        "הבעיה של $50K שאתם פותרים ב-$249",
-        "8 מנועי Production — סיור חי",
-        "הדגמה: צפו בסוכנים מתואמים ב-Real-time",
-        "מאפס ל-Output ראשון תוך פחות משעה",
-        "מחירי השקה בלעדיים + הצעה למשתתפי הוובינר בלבד"
-      ]
-    },
-    "engagement": {
-      "raiseHand": "תרימו יד בצ'אט אם זה נשמע כמוכם..."
-    },
-    "founder": {
-      "short": "אני מנהל 5 מיזמים — אדריכלות, נדל״ן, ייעוץ, תוכן, SaaS. בניתי את RealizeOS כי האלטרנטיבה הייתה שחיקה.",
-      "punchline": "בניתי את זה כדי לקנות בחזרה את החופש שלי — ועכשיו אתם יכולים להשתמש באותו מנוע בדיוק."
-    },
-    "pain": {
-      "friction": "הרעיונות הכי טובים שלכם מתים בין הכלים. Tool A לא מדבר עם Tool B. הקונטקסט מתאדה. המומנטום נגמר.",
-      "paralysis": "נפח הדיטיילז משתק. אי אפשר לעשות Zoom Out כשכל הזמן מכבים שריפות.",
-      "bottleneck": "הפכתם ל-Middleware. עושים קופי-פייסט מ-ChatGPT בשתיים בלילה במקום לבנות את העתיד.",
-      "statTitle": "המחיר האמיתי של כאוס הכלים",
-      "stat1num": "73%",
-      "stat1label": "מהאופרייטורז מאבדים קונטקסט בין כלים — כל יום",
-      "stat2num": "15 שעות",
-      "stat2label": "מבוזבזות בשבוע על תיאום כלים ידני"
-    },
-    "transition": {
-      "title": "אותו אופרייטור.\nמציאות אחרת.",
-      "beforeTitle": "יום ראשון שלכם, היום",
-      "beforeItems": "5 טאבים פתוחים.\nקופי-פייסט בין כלים,אבדתם את הקונטקסט מהשיחה של אתמול,מתאמים ידנית מה שצריך לרוץ אוטומטי,סגרתם את הדפדפן.\nהידע נעלם",
-      "afterTitle": "יום ראשון שלכם, עם RealizeOS",
-      "afterItems": "Dashboard אחד.\nקונטקסט מלא מכל שיחה,סוכנים מנסחים ובודקים ומתאמים — אוטומטית,ידע מצטבר.\nשום דבר לא הולך לאיבוד,אתם קובעים כיוון.\nהמערכת בונה."
-    },
-    "feature": {
-      "routing": "4 ספקים.\n20+ מודלים.\nהמוח הנכון לכל Task — אוטומטית.\nאנחנו ממליצים להתחיל עם Claude Code.\nלהוסיף או להחליף ספקים בכל רגע.",
-      "assembly": "לא צ'אטבוט. ה-Clone הדיגיטלי שלכם. מדבר בשפה שלכם, מכיר את הפרויקטים, פועל כמו שותף.",
-      "execution": "הודעה אחת. Workflow מלא. מ-Brief ל-Delivery — בלי בייביסיטינג.",
-      "retrieval": "כל ה-Knowledge Base שלכם — חיפוש לפי Intent, לא Keywords. גישה במילישניות.",
-      "pipelines": "Phases נוקשים: Brief → Draft → Review → Approve → Deploy. כמו האופרציה האמיתית שלכם.",
-      "evolution": "נהיה חכם יותר כל יום. 5 סוגי Auto-Evolution. Risk Scoring מובנה. Rollback אוטומטי.",
-      "multichannel": "WhatsApp. Telegram. Web. Webhooks. Scheduler. מוח אחד, כל הערוצים.",
-      "multichannelSubtitle": "הדגמה חיה — בוט טלגרם בפעולה",
-      "security": "RBAC. כספת מוצפנת. Audit Trails. הדאטה שלכם נשאר שלכם. נקודה."
-    },
-    "demo": {
-      "intro": "בואו אראה לכם את המערכת האמיתית. זה רץ בפרודקשן — כל יום."
-    },
-    "midCta": {
-      "title": "כבר משוכנעים?",
-      "subtitle": "השתמשו בקוד LAUNCH20OFF בקופה ל-20% הנחה על Full ו-Setup."
-    },
-    "case": {
-      "archName": "משרד אדריכלות"
-    },
-    "liteIntro": {
-      "title": "RealizeOS Lite — סדר תוך 15 דקות",
-      "subtitle": "תפסיקו לבנות מאפס. פתחו כספת מוכנה והצוות שלכם מתחיל לעבוד."
-    },
-    "lite": {
-      "vault": {
-        "title": "כספת FABRIC",
-        "desc": "30 קבצים מובנים. פתחו את התיקייה — ויש לכם Knowledge Base עובד."
-      },
-      "agents": {
-        "title": "4 סוכני AI",
-        "desc": "Orchestrator, Writer, Reviewer, Analyst — התאמה אישית בדקות."
-      },
-      "brand": {
-        "title": "אשפי Venture",
-        "desc": "Identity, Voice, וגיליון העבודה האינטראקטיבי בן 130 שורות."
-      },
-      "skills": {
-        "title": "6 תהליכי Skills",
-        "desc": "הצעות, קמפיינים, סושיאל, אישורים, תוכן, מחקר."
-      },
-      "methods": {
-        "title": "3 מתודולוגיות",
-        "desc": "ניתוח תחרותי, המרת תוכן, Framework החלטות."
-      },
-      "claude": {
-        "title": "פרוטוקול CLAUDE.md",
-        "desc": "155 שורות שגורמות ל-Claude Code להבין את כל העסק שלכם."
-      },
-      "guide": {
-        "title": "מדריך Setup",
-        "desc": "15 דקות מהורדה לשיחת AI ראשונה."
-      }
-    },
-    "steps": {
-      "items": [
-        "בחרו מהדורה — 30 שניות",
-        "גישה מיידית — לינק ל-Google Drive מגיע ברגע",
-        "הגדירו את ה-Venture — מלאו את התבניות (5-10 דקות)",
-        "שיחה ראשונה — Writer מנסח, Reviewer בודק, בקול שלכם",
-        "בנו את המערכת — הוסיפו ידע, Workflows, כלים. שבוע 1."
-      ]
-    },
-    "howItWorksVisual": {
-      "title": "מקליק עד Output ראשון: פחות משעה"
-    },
-    "usecase": {
-      "knowledge": "הפכו מסמכים מפוזרים לכספת ידע שה-AI חופר בתוכה. אוטומציה של בדיקות Compliance שלקחו שעות. Playbooks תפעוליים שרצים לבד — בזמן שאתם ישנים.",
-      "content": "תוכן עקבי עם ה-Venture בכל ערוץ. LinkedIn, ניוזלטרים, הצעות — בקול שלכם.",
-      "research": "ניתוח שוק במהירות מכונה. דוחות פיננסיים, מודיעין תחרותי, סיכומים מנהליים.",
-      "multiventure": "נהלו 3 מיזמים עם הצלילות של אחד. החלפת קונטקסט ברגע. מותגים נפרדים, שליטה אחודה. זה לא תיאוריה — ככה אנחנו מנהלים 5 עסקים מ-Dashboard אחד."
-    },
-    "pricing": {
-      "urgency": "מחירי השקה נגמרים ב-31 במרץ.\nהמחירים האלה לא חוזרים.",
-      "guarantee": "14 יום החזר כספי מלא.\nבלי שאלות.\nככה אני בטוח בערך שאתם מקבלים."
-    },
-    "scarcity": {
-      "title": "פעלו עכשיו",
-      "spotsNum": "10",
-      "spotsLabel": "מקומות נותרו",
-      "discountNum": "20%",
-      "discountLabel": "הנחה על Full ו-Setup",
-      "expiresNum": "הלילה",
-      "expiresLabel": "תוקף הקוד"
-    },
-    "actionCta": {
-      "title": "השתמשו בקוד LAUNCH20OFF בתשלום",
-      "subtitle": "הזינו אותו בקופה כשאתם רוכשים מהאתר. 10 ראשונים — 20% הנחה על Full ו-Setup."
-    },
-    "purchaseTitle": "התחילו — המחירים עולים ב-1 באפריל"
+  "design": {
+    "title": "מערכת עיצוב RealizeOS",
+    "subtitle": "טוקנים קנוניים, אפקטים ורכיבים שמפעילים את אתר RealizeOS. בנוי על @realizeos/design-system עם משתני CSS מותאמים --rz-*."
   }
 }
