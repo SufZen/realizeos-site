@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface AnimateOnScrollProps {
@@ -23,7 +23,13 @@ export function AnimateOnScroll({
   delay = 0,
   direction = 'up',
 }: AnimateOnScrollProps) {
+  const prefersReducedMotion = useReducedMotion();
   const offset = directionMap[direction];
+
+  // Skip animation entirely when user prefers reduced motion
+  if (prefersReducedMotion) {
+    return <div className={cn(className)}>{children}</div>;
+  }
 
   return (
     <motion.div

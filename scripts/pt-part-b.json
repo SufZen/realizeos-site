@@ -1,0 +1,220 @@
+{
+  "usecases": {
+    "header": {
+      "title": "Construído Para a Sua Forma de Trabalhar",
+      "subtitle": "Quer opere um empreendimento ou cinco, o RealizeOS adapta-se às suas operações."
+    },
+    "arch": {
+      "title": "Gabinetes de Arquitetura",
+      "description": "Deixe de se afogar em verificações de conformidade e e-mails de fornecedores. Recupere o seu tempo para se focar no que realmente ama: projetar o futuro.",
+      "tasks": [
+        "Redigir respostas a RFQs com base em propostas anteriores bem-sucedidas",
+        "Automatizar verificações preliminares de zonamento e conformidade",
+        "Gerar descritivos de projeto a partir de notas brutas de reunião",
+        "Extrair insights de códigos municipais complexos de construção",
+        "Gerir e-mails de coordenação com fornecedores no seu tom"
+      ]
+    },
+    "realestate": {
+      "title": "Investimento Imobiliário",
+      "description": "Transforme ansiedade em clareza absoluta. Tome decisões de alto impacto com um motor que apresenta instantaneamente as informações exatas de que precisa.",
+      "tasks": [
+        "Extrair métricas-chave de prospeções financeiras",
+        "Elaborar memorandos para o comité de investimento a partir de dados brutos",
+        "Analisar tendências de mercado para identificar oportunidades de retorno emergentes",
+        "Padronizar relatórios de due diligence imobiliária",
+        "Resumir o desempenho trimestral do portefólio"
+      ]
+    },
+    "venture": {
+      "title": "Estúdios de Empreendedorismo",
+      "description": "Alcance o impossível: escala extrema sem esgotamento. Opere três empreendimentos com a clareza mental de gerir apenas um.",
+      "tasks": [
+        "Alternar entre empreendimentos sem perder o contexto",
+        "Elaborar estratégias de go-to-market para novos spin-offs",
+        "Gerar relatórios para investidores de cada empreendimento separadamente",
+        "Investigar novas oportunidades de mercado em todos os setores",
+        "Manter diretrizes de Venture unificadas entre equipas distintas"
+      ]
+    },
+    "engineering": {
+      "title": "Engenharia e Operações",
+      "description": "Traga ordem ao caos da execução física. Sinta o alívio total de saber que cada detalhe está estruturado e monitorizado.",
+      "tasks": [
+        "Traduzir especificações técnicas em atualizações compreensíveis para clientes",
+        "Estruturar relatórios fragmentados de obra em registos coerentes",
+        "Redigir manuais operacionais e procedimentos normalizados",
+        "Analisar propostas de empreiteiros face aos requisitos do projeto",
+        "Automatizar follow-ups de entregáveis pendentes do projeto"
+      ]
+    },
+    "urban": {
+      "title": "Planeamento Urbano",
+      "description": "Navegue pelo labirinto da política pública e do feedback comunitário com um motor que sintetiza milhares de vozes numa direção clara.",
+      "tasks": [
+        "Resumir horas de transcrições de assembleias públicas",
+        "Elaborar relatórios de participação pública e sínteses",
+        "Cruzar planos diretores com nova legislação de zonamento",
+        "Gerar newsletters acessíveis para atualização da comunidade",
+        "Analisar dados demográficos para avaliar o impacto no bairro"
+      ]
+    },
+    "asset": {
+      "title": "Gestão de Ativos",
+      "description": "Tranquilidade total. Proteja o valor do seu portefólio com uma camada operacional permanente que não deixa escapar nenhum detalhe.",
+      "tasks": [
+        "Automatizar a comunicação com inquilinos e o encaminhamento de manutenção",
+        "Gerar extratos mensais para proprietários com relatórios narrativos",
+        "Monitorizar proativamente prazos de término de contratos de arrendamento",
+        "Redigir cadernos de encargos para projetos de beneficiação de imóveis",
+        "Analisar desvios nas despesas operacionais em todos os imóveis"
+      ]
+    }
+  },
+  "founder": {
+    "title": "Construído a Partir de Operações Reais",
+    "p1": "O RealizeOS nasceu do trabalho diário do Realization Group — um motor de produção que gere operações internacionais de arquitetura, imobiliário e empreendedorismo diariamente em 3 regiões.",
+    "p2": "Construí isto porque a alternativa era colapsar. Tentar escalar empreendimentos físicos e complexos com ferramentas de IA dispersas era exaustivo. Precisava de clareza absoluta e controlo total. O RealizeOS é o motor que construí para reconquistar a minha liberdade — agora é open source para que possa reconquistar a sua.",
+    "role": "Fundador,",
+    "proof": {
+      "badge": "Prática Real",
+      "regions": "3 Regiões",
+      "regionsLabel": "IL · PT · US",
+      "agents": "6+ Agentes",
+      "agentsLabel": "em produção",
+      "usage": "Diário",
+      "usageLabel": "usado pela Realization"
+    }
+  },
+  "fabricSystem": {
+    "header": {
+      "title": "O Sistema FABRIC",
+      "subtitle": "O seu AI-OS é construído sobre uma arquitetura em camadas. O Coração é seu para sempre — todo o resto é substituível."
+    },
+    "architecture": {
+      "title": "O Modelo AI-OS em Camadas",
+      "heart": {
+        "title": "O Coração (É Seu)",
+        "description": "Grafo de conhecimento FABRIC, registo de eventos, identidade SOUL. Portável, local-first, seu para sempre.",
+        "badge": "É Seu Para Sempre"
+      },
+      "limbs": {
+        "title": "Membros (Substituíveis)",
+        "description": "Runtimes de agentes, fornecedores LLM, Motor de Missões. Troque ou atualize a qualquer momento."
+      },
+      "skin": {
+        "title": "Pele (Substituível)",
+        "description": "Painel, canais, CLI. Substitua a interface sem tocar nos seus dados."
+      }
+    },
+    "items": {
+      "F": {
+        "title": "Foundations (Fundações)",
+        "description": "Metodologia do sistema, identidade e regras que cada agente segue. A sua equipa constrói segundo as suas especificações — sempre."
+      },
+      "A": {
+        "title": "Agents (Agentes)",
+        "description": "A sua equipa de IA especializada — redator, analista, revisor, orquestrador. Todos definidos por uma estrutura que controla."
+      },
+      "B": {
+        "title": "Brain (Cérebro)",
+        "description": "Conhecimento de domínio que a equipa memoriza. Dados de mercado, expertise, histórico — acessível em cada conversa."
+      },
+      "R": {
+        "title": "Routines (Rotinas)",
+        "description": "Workflows que encadeiam agentes e ferramentas. 'Redigir resumo de projeto' aciona o escritor, depois o revisor — automaticamente."
+      },
+      "I": {
+        "title": "Insights",
+        "description": "Um registo de aprendizagem que torna a equipa mais inteligente com o tempo. Feedback, decisões de execução e padrões — nada se perde."
+      },
+      "C": {
+        "title": "Creations (Criações)",
+        "description": "Outputs que cumprem os seus padrões de qualidade. Cada resultado fica numa estrutura organizada, pronto para revisão."
+      }
+    }
+  },
+  "painPoints": {
+    "header": {
+      "title": "Pare de Remendar Ferramentas de IA<br>Que Se Esquecem de Si",
+      "subtitle": "A maioria dos setups de IA são uma confusão de chatbots desligados, contexto perdido e copiar-colar manual. A sua IA devia funcionar como equipa, não como um conjunto de estranhos."
+    },
+    "items": {
+      "layers": {
+        "title": "A Armadilha da Fricção",
+        "description": "As suas melhores ideias morrem na transição. Está constantemente a traduzir contexto entre ferramentas isoladas, a ver o momento parar e prazos a escapar."
+      },
+      "clock": {
+        "title": "Paralisia de Execução",
+        "description": "A ansiedade avassaladora de transformar um projeto físico enorme em realidade. O volume imenso de detalhes não estruturados paralisa a sua capacidade de liderar."
+      },
+      "users": {
+        "title": "O Pesadelo do Intermediário",
+        "description": "Tornou-se no estrangulamento. Em vez de projetar o futuro, anda a colar outputs genéricos de IA às duas da manhã. É extenuante."
+      }
+    },
+    "transition": "Não tem de ser assim. Saia do papel de intermediário e ocupe o lugar de visionário. Comande um motor operacional coordenado que constrói a sua realidade por si."
+  },
+  "community": {
+    "title": "Comunidade e Documentação",
+    "subtitle": "Junte-se ao ecossistema open-source do RealizeOS. Obtenha ajuda, contribua e conecte-se.",
+    "cards": {
+      "github": {
+        "title": "Código Fonte",
+        "description": "Explore o código completo, abra issues e contribua no GitHub."
+      },
+      "docs": {
+        "title": "Documentação",
+        "description": "Guias de início rápido, referência de API e documentação de configuração."
+      },
+      "discussions": {
+        "title": "Discussões",
+        "description": "Faça perguntas, partilhe casos de uso e conecte-se com outros operadores."
+      },
+      "telegram": {
+        "title": "Comunidade Telegram",
+        "description": "Chat em tempo real com o criador e outros utilizadores do RealizeOS."
+      },
+      "license": {
+        "title": "Licença BSL 1.1",
+        "description": "Gratuito para uso interno. Cláusula anti-competição SaaS. Apache 2.0 em 2030."
+      },
+      "officeHours": {
+        "title": "Horário de Atendimento",
+        "description": "Agende uma chamada gratuita de 15 minutos para discutir o seu caso de uso."
+      }
+    }
+  },
+  "quickstart": {
+    "title": "De Zero a Funcional em 10 Minutos",
+    "subtitle": "Totalmente open source. Implemente localmente ou no seu próprio servidor. Os dados são seus.",
+    "install_methods": "Opções de Instalação",
+    "requires": "Requisitos:",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "view_full_guide": "Ver Guia Completo →"
+  },
+  "nav": {
+    "getStarted": "Começar",
+    "toggleMenu": "Alternar menu"
+  },
+  "navItems": {
+    "quickstart": "Início Rápido",
+    "fabric": "FABRIC",
+    "features": "Funcionalidades",
+    "pricing": "Preços",
+    "community": "Comunidade",
+    "faq": "FAQ"
+  },
+  "footer": {
+    "partOf": "Parte do",
+    "ecosystem": "ecossistema.",
+    "realization": "Realization",
+    "links": {
+      "telegram": "Telegram",
+      "support": "Suporte",
+      "faq": "FAQ"
+    },
+    "rights": "RealizeOS. Todos os direitos reservados."
+  }
+}

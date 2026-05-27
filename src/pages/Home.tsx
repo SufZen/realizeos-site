@@ -1,20 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
 import { GithubDemo } from '@/components/sections/GithubDemo';
-import { FabricSystem } from '@/components/sections/FabricSystem';
-import { Features } from '@/components/sections/Features';
-import { Founder } from '@/components/sections/Founder';
-import { UseCases } from '@/components/sections/UseCases';
-import { GetStarted } from '@/components/sections/GetStarted';
-import { CommunityDocs } from '@/components/sections/CommunityDocs';
-import { FAQ } from '@/components/sections/FAQ';
-import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
 import { ExitIntentPopup } from '@/components/shared/ExitIntentPopup';
 import { MobileStickyBar } from '@/components/shared/MobileStickyBar';
-import { BrandWizard } from '@/components/wizard/BrandWizard';
+
+/* Below-the-fold sections — lazy-loaded for faster initial paint */
+const FabricSystem = lazy(() => import('@/components/sections/FabricSystem').then(m => ({ default: m.FabricSystem })));
+const Features = lazy(() => import('@/components/sections/Features').then(m => ({ default: m.Features })));
+const Founder = lazy(() => import('@/components/sections/Founder').then(m => ({ default: m.Founder })));
+const UseCases = lazy(() => import('@/components/sections/UseCases').then(m => ({ default: m.UseCases })));
+const GetStarted = lazy(() => import('@/components/sections/GetStarted').then(m => ({ default: m.GetStarted })));
+const CommunityDocs = lazy(() => import('@/components/sections/CommunityDocs').then(m => ({ default: m.CommunityDocs })));
+const FAQ = lazy(() => import('@/components/sections/FAQ').then(m => ({ default: m.FAQ })));
+const FinalCTA = lazy(() => import('@/components/sections/FinalCTA').then(m => ({ default: m.FinalCTA })));
+const BrandWizard = lazy(() => import('@/components/wizard/BrandWizard').then(m => ({ default: m.BrandWizard })));
 
 export function Home() {
   const [wizardOpen, setWizardOpen] = useState(false);
@@ -36,19 +38,23 @@ export function Home() {
         <Hero />
         <PainPoints />
         <GithubDemo />
-        <FabricSystem />
-        <Features />
-        <Founder />
-        <UseCases />
-        <GetStarted />
-        <CommunityDocs />
-        <FAQ />
-        <FinalCTA />
+        <Suspense>
+          <FabricSystem />
+          <Features />
+          <Founder />
+          <UseCases />
+          <GetStarted />
+          <CommunityDocs />
+          <FAQ />
+          <FinalCTA />
+        </Suspense>
       </main>
       <Footer />
       <ExitIntentPopup />
       <MobileStickyBar />
-      <BrandWizard open={wizardOpen} onOpenChange={setWizardOpen} />
+      <Suspense>
+        <BrandWizard open={wizardOpen} onOpenChange={setWizardOpen} />
+      </Suspense>
     </>
   );
 }
