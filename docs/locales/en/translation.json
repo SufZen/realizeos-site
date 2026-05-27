@@ -1,11 +1,11 @@
 {
   "hero": {
     "badge": "By Realization",
-    "tagline": "The AI operations system you own.",
+    "tagline": "Run AI agents on your own infrastructure. Own your data forever.",
     "github_badge": "Star us on GitHub",
-    "title_main": "Own the Heart.",
+    "title_main": "Own the Core.",
     "title_highlight": "Swap Everything Else.",
-    "description": "Your FABRIC knowledge graph, event log, and identity stay yours forever. Agent runtimes, models, channels, and even the dashboard are swappable adapters. Local-first. Open source.",
+    "description": "Deploy a complete AI operations engine in minutes. Your knowledge, agents, and workflows stay on your machine — local-first, open source, zero vendor lock-in. Models, dashboards, and channels are swappable adapters.",
     "cta_free": "Get Started (free)",
     "cta_setup": "Book Expert Setup",
     "stats": {
@@ -83,7 +83,7 @@
       "free": {
         "name": "Open Source (GitHub)",
         "description": "For developers and operators who want to self-host.",
-        "emotionalPromise": "Full access to the RealizeOS V5.5 engine. Deploy on your own infrastructure.",
+        "emotionalPromise": "Deploy in 10 minutes, no credit card. Full AI operations engine on your machine.",
         "features": [
           "Complete Python engine with FABRIC entity system",
           "Docker one-command deploy",
@@ -103,7 +103,7 @@
       "guided": {
         "name": "Installation Session",
         "description": "Direct collaboration with the architect of RealizeOS.",
-        "emotionalPromise": "Fast-track your freedom. We configure the system directly around your unique venture.",
+        "emotionalPromise": "1-on-1 setup with the builder. Your FABRIC configured, agents deployed, first workflow running — in one hour.",
         "badge": "Recommended",
         "features": {
           "header": "Everything in Open Source, plus:",
@@ -125,7 +125,7 @@
       "consulting": {
         "name": "Enterprise Consulting",
         "description": "Custom AI operations for large-scale production.",
-        "emotionalPromise": "We build, deploy, and manage your entire AI infrastructure.",
+        "emotionalPromise": "We build it, deploy it, and run it. Your team gets a fully managed AI operations layer.",
         "features": {
           "header": "For complex organizations:",
           "list": [
@@ -251,16 +251,16 @@
     "architecture": {
       "title": "The Layered AI-OS Model",
       "heart": {
-        "title": "The Heart (You Own)",
+        "title": "The Core (You Own)",
         "description": "FABRIC knowledge graph, event log, SOUL identity. Portable, local-first, yours forever.",
         "badge": "You Own This Forever"
       },
       "limbs": {
-        "title": "Limbs (Swappable)",
+        "title": "Execution Layer (Swappable)",
         "description": "Agent runtimes, LLM providers, Mission Engine. Swap or upgrade anytime."
       },
       "skin": {
-        "title": "Skin (Swappable)",
+        "title": "Interface Layer (Swappable)",
         "description": "Dashboard, channels, CLI. Replace the interface without touching your data."
       }
     },
@@ -298,19 +298,19 @@
     },
     "items": {
       "layers": {
-        "title": "The Friction Trap",
-        "description": "Your best ideas die in the handoff. You're constantly translating between disconnected tools, watching momentum stall and deadlines slip entirely."
+        "title": "Your Tools Don't Talk to Each Other",
+        "description": "You copy-paste between ChatGPT, Notion, Slack, and email all day. Context gets lost, ideas die in transit, and nothing connects."
       },
       "clock": {
-        "title": "Execution Paralysis",
-        "description": "The overwhelming anxiety of turning a massive physical project into reality. The sheer volume of unstructured details paralyzes your ability to lead."
+        "title": "AI Without Memory is Useless",
+        "description": "Every conversation starts from scratch. Your AI doesn't know your business, your tone, or what you discussed yesterday. You re-explain everything, every time."
       },
       "users": {
-        "title": "Middleware Madness",
-        "description": "You've become the bottleneck. Instead of designing the future, you're manually duct-taping generic AI outputs together at 2 AM. It's exhausting."
+        "title": "You're the Bottleneck",
+        "description": "Instead of leading your business, you're manually assembling AI outputs at 2 AM. You became the glue between disconnected tools. It's exhausting."
       }
     },
-    "transition": "You shouldn't feel this way. Step out of the middleware and into the visionary seat. Command a coordinated operational engine that builds your reality for you."
+    "transition": "There's a better way. Deploy a single AI engine that remembers everything, coordinates your agents, and delivers production-ready work — automatically."
   },
   "community": {
     "title": "Community & Docs",
@@ -325,8 +325,8 @@
         "description": "Quickstart guides, API reference, and configuration docs."
       },
       "discussions": {
-        "title": "Discussions",
-        "description": "Ask questions, share use cases, and connect with other operators."
+        "title": "Community Chat",
+        "description": "Join the Telegram community. Ask questions, share wins, get help from operators."
       },
       "telegram": {
         "title": "Telegram Community",
@@ -337,8 +337,8 @@
         "description": "Free for internal use. No-compete-SaaS clause. Apache 2.0 in 2030."
       },
       "officeHours": {
-        "title": "Office Hours",
-        "description": "Book a free 15-minute call to discuss your use case."
+        "title": "Book a Free Call",
+        "description": "Schedule a 15-minute intro call to discuss your use case."
       }
     }
   },

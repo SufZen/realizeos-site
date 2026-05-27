@@ -84,7 +84,7 @@ export function Hero() {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-book-setup' })}>
-              <a href="https://tidycal.com/sufz/realizeos-setup" target="_blank" rel="noreferrer">
+              <a href="https://tidycal.com/realization/realizeos-setup" target="_blank" rel="noreferrer">
                 {t('hero.cta_setup', 'Book Expert Setup')}
               </a>
             </Button>

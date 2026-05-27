@@ -7,10 +7,10 @@ import { Github, BookOpen, Users, MessageCircle, Scale, CalendarClock } from 'lu
 const communityCards = [
   { icon: Github, key: 'github', href: 'https://github.com/SufZen/RealizeOS-5' },
   { icon: BookOpen, key: 'docs', href: 'https://github.com/SufZen/RealizeOS-5/blob/main/README.md' },
-  { icon: Users, key: 'discussions', href: 'https://github.com/SufZen/RealizeOS-5/discussions' },
   { icon: MessageCircle, key: 'telegram', href: 'https://t.me/+5r8zjoOignRmOTI0' },
+  { icon: Users, key: 'discussions', href: 'https://t.me/+5r8zjoOignRmOTI0' },
   { icon: Scale, key: 'license', href: 'https://github.com/SufZen/RealizeOS-5/blob/main/LICENSE' },
-  { icon: CalendarClock, key: 'officeHours', href: 'https://tidycal.com/sufz/realizeos-setup' },
+  { icon: CalendarClock, key: 'officeHours', href: 'https://tidycal.com/realization/realizeos-setup' },
 ];
 
 export function CommunityDocs() {

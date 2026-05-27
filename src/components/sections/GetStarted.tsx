@@ -92,7 +92,11 @@ export function GetStarted() {
 
               <div className="mb-6 text-center">
                 <span className="text-4xl font-bold">
-                  {tier.price === '0' || tier.price === 0 ? 'Free' : tier.price === 'Custom' ? 'Custom' : `$${tier.price}`}
+                  {tier.price === '0' || tier.price === 0
+                    ? t('pricing.tiers.free.period', 'Free')
+                    : /^\d+$/.test(String(tier.price))
+                      ? `$${tier.price}`
+                      : tier.price}
                 </span>
                 {tier.period && (
                   <span className="ms-1 text-sm text-muted-foreground">{tier.period}</span>

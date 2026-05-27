@@ -1,11 +1,11 @@
 {
   "hero": {
     "badge": "Por Realization",
-    "tagline": "O sistema de operações de IA que é seu.",
-    "github_badge": "Estrela no GitHub",
-    "title_main": "Seja Dono do Coração.",
+    "tagline": "Execute agentes de IA na sua infraestrutura. Os seus dados são seus — para sempre.",
+    "github_badge": "Dê uma Estrela no GitHub",
+    "title_main": "O Núcleo É Seu.",
     "title_highlight": "Troque Todo o Resto.",
-    "description": "O seu grafo de conhecimento FABRIC, registo de eventos e identidade permanecem seus para sempre. Runtimes de agentes, modelos, canais e até o painel são adaptadores substituíveis. Local-first. Open source.",
+    "description": "Implemente um motor completo de operações de IA em minutos. O conhecimento, agentes e workflows ficam na sua máquina — local-first, open source, zero dependência de fornecedor. Modelos, painéis e canais são módulos substituíveis.",
     "cta_free": "Começar (grátis)",
     "cta_setup": "Agendar Sessão de Configuração",
     "stats": {
@@ -137,7 +137,7 @@
             "Garantias SLA"
           ]
         },
-        "price": "Personalizado",
+        "price": "Sob consulta",
         "period": "",
         "ctaText": "Contacte-nos",
         "delivery": "Cronograma personalizado",
@@ -246,21 +246,21 @@
   "fabricSystem": {
     "header": {
       "title": "O Sistema FABRIC",
-      "subtitle": "O seu AI-OS é construído sobre uma arquitetura em camadas. O Coração é seu para sempre — todo o resto é substituível."
+      "subtitle": "O seu AI-OS é construído sobre uma arquitetura em camadas. O Núcleo é seu para sempre — todo o resto é modular."
     },
     "architecture": {
       "title": "O Modelo AI-OS em Camadas",
       "heart": {
-        "title": "O Coração (É Seu)",
+        "title": "O Núcleo (É Seu)",
         "description": "Grafo de conhecimento FABRIC, registo de eventos, identidade SOUL. Portável, local-first, seu para sempre.",
         "badge": "É Seu Para Sempre"
       },
       "limbs": {
-        "title": "Membros (Substituíveis)",
+        "title": "Camada de Execução (Substituível)",
         "description": "Runtimes de agentes, fornecedores LLM, Motor de Missões. Troque ou atualize a qualquer momento."
       },
       "skin": {
-        "title": "Pele (Substituível)",
+        "title": "Camada de Interface (Substituível)",
         "description": "Painel, canais, CLI. Substitua a interface sem tocar nos seus dados."
       }
     },

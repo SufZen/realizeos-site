@@ -17,7 +17,7 @@ export const LINKS = {
   github: 'https://github.com/SufZen',
   githubRepo: 'https://github.com/SufZen/RealizeOS-5',
   realization: 'https://realization.co.il',
-  tidycal: 'https://tidycal.com/sufz/realizeos-setup',
+  tidycal: 'https://tidycal.com/realization/realizeos-setup',
   gemGpt: 'https://github.com/SufZen/RealizeOS-5#venture-wizard', // Gem/GPT self-serve link
 } as const;
 
