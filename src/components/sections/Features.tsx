@@ -2,6 +2,7 @@ import { Section } from '@/components/layout/Section';
 import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { GlowCard } from '@/components/shared/GlowCard';
+import { Badge } from '@/components/ui/badge';
 import {
   Accordion,
   AccordionContent,
@@ -20,21 +21,32 @@ import {
   FeatureSecurity,
 } from '@/components/illustrations';
 import { useTranslation } from 'react-i18next';
+import {
+  Database, Brain, Zap, Target, Moon, ScrollText, Shield, Terminal, Mic, Smartphone,
+} from 'lucide-react';
 
+const iconMap: Record<string, React.FC<{ size?: number; className?: string }>> = {
+  Database, Brain, Zap, Target, Moon, ScrollText, Shield, Terminal, Mic, Smartphone,
+};
+
+// Keep illustration map for features that have dedicated SVG illustrations
 const illustrationMap: Record<string, React.FC<{ className?: string }>> = {
   Zap: FeatureMultiLLM,
-  LayoutGrid: FeaturePromptAssembly,
-  Shuffle: FeatureSkills,
-  SearchPlus: FeatureKBSearch,
-  PenTool: FeatureCreativePipeline,
-  RefreshCw: FeatureSelfEvolution,
-  Radio: FeatureMultiChannel,
   Shield: FeatureSecurity,
+  Brain: FeatureKBSearch,
+  Database: FeaturePromptAssembly,
+  Target: FeatureSkills,
+  Moon: FeatureSelfEvolution,
+  ScrollText: FeatureCreativePipeline,
+  Terminal: FeatureMultiChannel,
 };
 
 export function Features() {
   const features = useFeatures();
   const { t } = useTranslation();
+
+  const shipped = features.filter(f => !f.roadmap);
+  const roadmap = features.filter(f => f.roadmap);
 
   return (
     <Section id="features">
@@ -43,7 +55,7 @@ export function Features() {
         subtitle={t('features.header.subtitle')}
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {features.map((f, i) => {
+        {shipped.map((f, i) => {
           const Illustration = illustrationMap[f.icon];
           return (
             <AnimateOnScroll key={f.title} delay={i * 0.08}>
@@ -73,6 +85,32 @@ export function Features() {
           );
         })}
       </div>
+
+      {/* Roadmap section */}
+      {roadmap.length > 0 && (
+        <div className="mt-12">
+          <h3 className="text-center text-lg font-semibold text-muted-foreground mb-6">
+            {t('features.roadmapTitle', 'Coming Soon')}
+          </h3>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mx-auto max-w-2xl">
+            {roadmap.map((f, i) => {
+              const LucideIcon = iconMap[f.icon];
+              return (
+                <AnimateOnScroll key={f.title} delay={i * 0.08}>
+                  <div className="fx-glass-card rounded-xl p-4 opacity-70 flex flex-col items-center text-center relative">
+                    <Badge variant="outline" className="absolute -top-2 text-[10px] border-muted-foreground/40 text-muted-foreground">
+                      {t('features.roadmapBadge', 'Roadmap')}
+                    </Badge>
+                    {LucideIcon && <LucideIcon size={24} className="mb-2 mt-2 text-muted-foreground" />}
+                    <h4 className="text-sm font-semibold mb-1">{f.title}</h4>
+                    <p className="text-xs text-muted-foreground">{f.promise}</p>
+                  </div>
+                </AnimateOnScroll>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </Section>
   );
 }

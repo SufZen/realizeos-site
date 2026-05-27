@@ -1,0 +1,98 @@
+{
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "items": [
+      {
+        "question": "O RealizeOS é mesmo gratuito?",
+        "answer": "<p>Sim. O RealizeOS V5.5 é licenciado sob a Business Source License (BSL) 1.1. É completamente gratuito para uso interno e implantação em produção. A única restrição é que não pode oferecer o RealizeOS como um serviço SaaS comercial concorrente. Após 4 anos, o código transita para Apache 2.0 — totalmente open source.</p>"
+      },
+      {
+        "question": "O que preciso para começar?",
+        "answer": "<p>Python 3.11+, Docker (recomendado) e chaves API para os fornecedores LLM escolhidos (Anthropic, Google AI, OpenAI e/ou Ollama para inferência totalmente local sem chamadas externas).</p>"
+      },
+      {
+        "question": "Posso alojar no meu próprio servidor?",
+        "answer": "<p>Sim. O RealizeOS foi desenhado para auto-alojamento. Implemente com Docker em qualquer VPS, instância cloud ou máquina local. Os seus dados FABRIC, registo de eventos e identidade SOUL ficam na sua infraestrutura.</p>"
+      },
+      {
+        "question": "Os meus dados são privados?",
+        "answer": "<p>Completamente. O RealizeOS funciona na sua máquina ou servidor — local-first por design. Para máxima privacidade, use Ollama para inferência totalmente local &mdash; nenhum dado sai da sua rede. As únicas chamadas externas são para as APIs LLM que configurar explicitamente.</p>"
+      },
+      {
+        "question": "O que é o Sistema de Entidades FABRIC?",
+        "answer": "<p>FABRIC é o Coração do RealizeOS — um grafo de conhecimento estruturado que armazena as entidades, relações e contexto do seu empreendimento. É portável, local-first e seu para sempre. Mesmo que troque o painel, o fornecedor LLM ou o runtime de agentes, os seus dados FABRIC permanecem intactos.</p>"
+      },
+      {
+        "question": "O que são sessões de instalação?",
+        "answer": "<p>Uma chamada de 1 hora (499€) onde o criador configura o RealizeOS diretamente à volta do seu empreendimento: scaffolding FABRIC, definições de agentes, voz do empreendimento, primeiro workflow de Missão. Inclui 30 dias de suporte prioritário por email após a sessão.</p>"
+      },
+      {
+        "question": "O que é a arquitetura 'runtime-agnostic'?",
+        "answer": "<p>O RealizeOS usa um Runtime Adapter Layer — um padrão de registo que suporta qualquer backend LLM (Claude, Gemini, OpenAI, Ollama e mais). Pode trocar de fornecedor ou adicionar novos sem tocar na sua base de conhecimento ou workflows. O Coração permanece o mesmo; os Membros são substituíveis.</p>"
+      },
+      {
+        "question": "Recebo atualizações?",
+        "answer": "<p>Sim. Como projeto open-source no GitHub, tem acesso a todas as atualizações. Puxe as últimas alterações quando quiser — no seu ritmo, não no nosso.</p>"
+      },
+      {
+        "question": "Posso gerir múltiplos negócios?",
+        "answer": "<p>Absolutamente. O RealizeOS foi construído para operadores multi-empreendimento. Cada negócio tem o seu próprio espaço de entidades FABRIC com agentes, base de conhecimento e voz do empreendimento isolados. Um motor, tantos empreendimentos quantos precisar.</p>"
+      }
+    ]
+  },
+  "finalCta": {
+    "title1": "Comece a Construir o Seu",
+    "title2": "Sistema de Operações de IA",
+    "subtitle": "Junte-se à comunidade e assuma o controlo da sua infraestrutura de IA.",
+    "getRealizeOS": "Estrela no GitHub",
+    "bookSession": "Agendar Sessão de Configuração",
+    "notReadyTitle": "Ainda não está pronto?",
+    "notReadyDesc": "Conte-nos o seu maior desafio operacional. Responderemos com conselhos práticos e honestos — sem discurso de vendas.",
+    "thanks": "Obrigado! Vamos analisar o seu desafio e entrar em contacto.",
+    "namePlaceholder": "O seu nome",
+    "emailPlaceholder": "o-seu@email.com",
+    "challengePlaceholder": "Qual é o seu maior desafio em operações de IA?",
+    "sending": "A enviar...",
+    "submit": "Enviar o Meu Desafio",
+    "error": "Algo correu mal. Por favor, tente novamente ou envie-nos um e-mail diretamente."
+  },
+  "exitPopup": {
+    "title": "Espere — antes de sair",
+    "description": "Deixe o seu e-mail e enviaremos dicas práticas sobre operações com IA e acesso antecipado a novas funcionalidades.",
+    "namePlaceholder": "O seu nome",
+    "emailPlaceholder": "o-seu@email.com",
+    "cta": "Manter-me Atualizado",
+    "sending": "A enviar...",
+    "success": "Está dentro! Entraremos em contacto.",
+    "error": "Algo correu mal. Tente novamente.",
+    "disclaimer": "Sem spam. Apenas valor real e atualizações."
+  },
+  "webinar": {
+    "booking": {
+      "title": "Agende a Sua Sessão",
+      "subtitle": "Marque a sua chamada de configuração de 1 hora ou registe-se para o próximo webinar.",
+      "setupCall": "Agende a Sua Chamada de Configuração",
+      "upcoming": "Próximos Webinars",
+      "upcomingDescription": "Junte-se à próxima sessão e veja o RealizeOS em ação.",
+      "joinWebinar": "Entrar via Google Meet",
+      "accessRequired": "Acesso Necessário",
+      "accessMessage": "Agende uma sessão de instalação para obter acesso.",
+      "goToPricing": "Ver Opções de Preço",
+      "calendarPlaceholder": "O widget de agendamento aparecerá aqui.",
+      "full": {
+        "title": "Junte-se ao Webinar RealizeOS",
+        "subtitle": "Registe-se para a próxima sessão de onboarding da versão completa.",
+        "chooseLanguage": "Escolher Idioma",
+        "webinarHeading": "Próximas Sessões",
+        "webinarPlaceholder": "O registo do webinar aparecerá aqui.",
+        "joinWebinar": "Entrar no Webinar"
+      },
+      "langEnglish": "English",
+      "langHebrew": "עברית"
+    }
+  },
+  "design": {
+    "title": "Sistema de Design RealizeOS",
+    "subtitle": "Tokens canónicos, efeitos e componentes que alimentam o site RealizeOS. Construído sobre @realizeos/design-system com propriedades CSS personalizadas --rz-*."
+  }
+}

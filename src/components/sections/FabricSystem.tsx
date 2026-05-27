@@ -22,6 +22,42 @@ export function FabricSystem() {
         title={t('fabricSystem.header.title')}
         subtitle={t('fabricSystem.header.subtitle')}
       />
+
+      {/* AI-OS Architecture Framing */}
+      <AnimateOnScroll>
+        <div className="mx-auto mb-14 max-w-3xl">
+          <div className="fx-glass-card rounded-2xl p-6 md:p-8">
+            <h3 className="text-center text-lg font-bold mb-6 fx-gradient-text">
+              {t('fabricSystem.architecture.title', 'The Layered AI-OS Model')}
+            </h3>
+            <div className="grid gap-4 md:grid-cols-3">
+              {(['heart', 'limbs', 'skin'] as const).map((layer) => (
+                <div key={layer} className={`rounded-xl p-4 text-center transition-all ${
+                  layer === 'heart' 
+                    ? 'bg-brand-yellow/10 border border-brand-yellow/30 ring-1 ring-brand-yellow/20' 
+                    : 'bg-muted/50 border border-border/50'
+                }`}>
+                  <div className="text-2xl mb-2">
+                    {layer === 'heart' ? '❤️' : layer === 'limbs' ? '🔄' : '🖥️'}
+                  </div>
+                  <h4 className={`font-semibold text-sm mb-1 ${layer === 'heart' ? 'text-brand-yellow' : 'text-foreground'}`}>
+                    {t(`fabricSystem.architecture.${layer}.title`)}
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    {t(`fabricSystem.architecture.${layer}.description`)}
+                  </p>
+                  {layer === 'heart' && (
+                    <span className="mt-2 inline-block text-[10px] font-semibold uppercase tracking-wider text-brand-yellow/80">
+                      {t('fabricSystem.architecture.heart.badge', 'You Own This Forever')}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </AnimateOnScroll>
+
       <AnimateOnScroll>
         <FabricDiagram className="mx-auto mb-12 w-full max-w-[320px] fx-illustration-glow" />
       </AnimateOnScroll>

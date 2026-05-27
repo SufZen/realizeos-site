@@ -10,6 +10,7 @@ import { CookieBanner } from '@/components/shared/CookieBanner';
 const WebinarPresentation = lazy(() => import('@/pages/WebinarPresentation'));
 const WebinarBooking = lazy(() => import('@/pages/WebinarBooking'));
 const BrandWizardPage = lazy(() => import('@/pages/BrandWizardPage'));
+const DesignSystemPage = lazy(() => import('@/pages/DesignSystemPage'));
 
 export default function App() {
   return (
@@ -17,11 +18,13 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/wizard" element={<BrandWizardPage />} />
+        <Route path="/design" element={<DesignSystemPage />} />
         <Route path="/webinar/presentation" element={<WebinarPresentation />} />
         <Route path="/webinar/booking" element={<WebinarBooking />} />
-        <Route path="/webinar/booking/setup" element={<WebinarBooking tier="setup" />} />
-        <Route path="/webinar/booking/lite" element={<WebinarBooking tier="lite" />} />
         <Route path="/webinar/booking/full" element={<WebinarBooking tier="full" />} />
+        {/* Retired routes → redirect */}
+        <Route path="/webinar/booking/setup" element={<Navigate to="/#pricing" replace />} />
+        <Route path="/webinar/booking/lite" element={<Navigate to="/webinar/booking/full" replace />} />
         {/* Short aliases — shareable URLs */}
         <Route path="/pres" element={<Navigate to="/webinar/presentation" replace />} />
         <Route path="/book" element={<Navigate to="/webinar/booking" replace />} />

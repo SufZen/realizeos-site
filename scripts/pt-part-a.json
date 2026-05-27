@@ -1,0 +1,159 @@
+{
+  "hero": {
+    "badge": "Por Realization",
+    "tagline": "O sistema de operações de IA que é seu.",
+    "github_badge": "Estrela no GitHub",
+    "title_main": "Seja Dono do Coração.",
+    "title_highlight": "Troque Todo o Resto.",
+    "description": "O seu grafo de conhecimento FABRIC, registo de eventos e identidade permanecem seus para sempre. Runtimes de agentes, modelos, canais e até o painel são adaptadores substituíveis. Local-first. Open source.",
+    "cta_free": "Começar (grátis)",
+    "cta_setup": "Agendar Sessão de Configuração",
+    "stats": {
+      "subsystems": "Subsistemas Core",
+      "dashboards": "Páginas do Painel",
+      "localFirst": "Local-First",
+      "cost": "Sem Lock-In"
+    }
+  },
+  "features": {
+    "header": {
+      "title": "Construído Para Operações Reais",
+      "subtitle": "Entregue na v5.5.0 — não é um wrapper, não é um brinquedo. Um motor de operações de IA completo que pode implementar hoje."
+    },
+    "fabric": {
+      "title": "Sistema de Entidades FABRIC",
+      "promise": "O seu grafo de conhecimento é o Coração — entidades, relações e contexto que são seus para sempre.",
+      "technical": "O sistema de entidades FABRIC armazena todo o conhecimento do empreendimento como entidades estruturadas com relações tipadas. API REST completa para operações CRUD. Suportado por SQLite com pesquisa de texto completo FTS5."
+    },
+    "synapse": {
+      "title": "Índice de Conhecimento Synapse",
+      "promise": "Pesquisa híbrida em toda a sua base de conhecimento — palavra-chave + semântica. Recuperação em milissegundos.",
+      "technical": "Pesquisa por palavras-chave FTS5 combinada com embeddings vetoriais. Os seus agentes de IA encontram o documento ou memória exata — compreendendo intenção, não apenas palavras-chave."
+    },
+    "routing": {
+      "title": "Routing Multi-LLM",
+      "promise": "Direcione pedidos para o modelo de IA correto automaticamente. Custo, qualidade, velocidade — você define a estratégia.",
+      "technical": "Runtime Adapter Layer com routing agnóstico de fornecedor. Padrão de registo suporta qualquer backend LLM. Rastreamento de custos por chamada e seleção inteligente de modelo."
+    },
+    "missions": {
+      "title": "Motor de Missões",
+      "promise": "Defina objetivos, acompanhe progresso, coordene agentes. Workflows multi-etapas com portões de revisão humana.",
+      "technical": "Ciclo completo de missão: definir → planear → executar → rever → concluir. Página do painel em /missions com acompanhamento de estado em tempo real."
+    },
+    "dreaming": {
+      "title": "Dreaming e Política de Confiança",
+      "promise": "Reflexão em segundo plano e melhoria contínua. O sistema fica mais inteligente enquanto dorme.",
+      "technical": "O subsistema Dreaming processa interações diárias e sugere melhorias. A Política de Confiança pontua cada proposta. Painel em /dreams."
+    },
+    "eventlog": {
+      "title": "Registo de Eventos e Identidade SOUL",
+      "promise": "Trilho de auditoria completo de cada ação. A identidade do seu empreendimento codificada e versionada.",
+      "technical": "Registo de eventos estruturado com eventos tipados. A camada de identidade SOUL armazena a voz, metodologia e regras do empreendimento como artefactos versionáveis."
+    },
+    "security": {
+      "title": "Segurança Empresarial",
+      "promise": "Local-first por design. Os seus dados nunca saem da sua infraestrutura.",
+      "technical": "Controlo de acesso baseado em funções. Cofre de credenciais encriptado AES-256. Deteção de prompt injection. Registo completo de auditoria."
+    },
+    "cli": {
+      "title": "FABRIC Operator CLI",
+      "promise": "Gerencie o seu sistema pela linha de comandos. Init, serve, index, status — tudo ao seu alcance.",
+      "technical": "CLI Python com comandos init, serve, bot, status e index. Integração Docker compose. Templates CI/CD para GitHub Actions."
+    },
+    "voice": {
+      "title": "Canal de Voz",
+      "promise": "Fale com a sua equipa de IA naturalmente. Em breve."
+    },
+    "mobile": {
+      "title": "Aplicação Móvel",
+      "promise": "Aplicação React Native para acesso em movimento. Em breve."
+    },
+    "view_flow": "Ver Detalhes Técnicos",
+    "roadmapTitle": "Em Breve",
+    "roadmapBadge": "Roadmap"
+  },
+  "pricing": {
+    "header": {
+      "title": "Começar",
+      "subtitle": "O RealizeOS é distribuído sob licença BSL 1.1. Gratuito para a maioria dos usos comerciais."
+    },
+    "compareNote": "Pare de pagar subscrições recorrentes de IA. Aloje o seu próprio motor de operações. Seja dono dos seus dados.",
+    "whatsIncluded": "O Que Está Incluído",
+    "tiers": {
+      "free": {
+        "name": "Open Source (GitHub)",
+        "description": "Para programadores e operadores que querem auto-alojar.",
+        "emotionalPromise": "Acesso completo ao motor RealizeOS V5.5. Implemente na sua própria infraestrutura.",
+        "features": [
+          "Motor Python completo com sistema de entidades FABRIC",
+          "Deploy com um comando Docker",
+          "Routing Multi-LLM (Runtime Adapter Layer)",
+          "Motor de Missões + subsistema Dreaming",
+          "Índice de conhecimento Synapse + Registo de Eventos",
+          "FABRIC operator CLI",
+          "Painel: /missions, /knowledge, /dreams",
+          "Licença BSL 1.1 (Gratuito para uso não-competitivo)"
+        ],
+        "price": "0",
+        "period": "Gratuito para sempre",
+        "ctaText": "Ver no GitHub",
+        "delivery": "Acesso instantâneo via GitHub",
+        "guarantee": ""
+      },
+      "guided": {
+        "name": "Sessão de Instalação",
+        "description": "Colaboração direta com o arquiteto do RealizeOS.",
+        "emotionalPromise": "Acelere a sua liberdade. Configuramos o sistema diretamente à volta do seu empreendimento único.",
+        "badge": "Recomendado",
+        "features": {
+          "header": "Tudo no Open Source, mais:",
+          "list": [
+            "Chamada de configuração de 1 hora com o criador",
+            "Scaffolding FABRIC personalizado para o seu negócio",
+            "Definições de agentes adaptadas às suas necessidades",
+            "Configuração da voz do empreendimento",
+            "Primeiro workflow de Missão configurado em conjunto",
+            "Suporte prioritário por email durante 30 dias"
+          ]
+        },
+        "price": "499",
+        "period": "pagamento único",
+        "ctaText": "Agendar Sessão de Configuração",
+        "delivery": "Chamada de configuração de 1 hora via Google Meet",
+        "guarantee": "Garantia de reembolso de 14 dias"
+      },
+      "consulting": {
+        "name": "Consultoria Empresarial",
+        "description": "Operações de IA personalizadas para produção em larga escala.",
+        "emotionalPromise": "Construímos, implementamos e gerimos toda a sua infraestrutura de IA.",
+        "features": {
+          "header": "Para organizações complexas:",
+          "list": [
+            "Desenvolvimento personalizado de agentes",
+            "Deploy seguro on-premise",
+            "Integrações ERP e CRM personalizadas",
+            "Canal de suporte dedicado",
+            "Engenharia de prompts e otimização contínua",
+            "Garantias SLA"
+          ]
+        },
+        "price": "Personalizado",
+        "period": "",
+        "ctaText": "Contacte-nos",
+        "delivery": "Cronograma personalizado",
+        "guarantee": ""
+      }
+    },
+    "gemGpt": {
+      "title": "Wizard Venture Gratuito",
+      "description": "Gere os seus ficheiros FABRIC gratuitamente usando Google Gem ou Custom GPT. Funciona com a sua própria subscrição de IA — custo zero para nós.",
+      "emailPlaceholder": "o-seu@email.com",
+      "unlock": "Desbloquear",
+      "sending": "...",
+      "thanks": "✓ Verifique o seu email! Os links estão a caminho.",
+      "openGem": "Abrir Google Gem",
+      "openGpt": "Abrir Custom GPT",
+      "error": "Algo correu mal. Tente novamente."
+    }
+  }
+}
