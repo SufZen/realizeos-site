@@ -105,6 +105,17 @@
   --rz-text-5xl:  3rem;       /* 48 */
   --rz-text-6xl:  3.75rem;    /* 60 — hero h1 */
 
+  /* Heading line-heights — prevent descender clipping on Poppins Bold.
+   * These MUST be used on any heading that uses background-clip:text
+   * or italic/bold variants where g, y, p, q descenders are prominent.  */
+  --rz-lh-heading:      1.25;   /* default for h2–h6 */
+  --rz-lh-heading-hero: 1.15;   /* tight for hero h1 (non-gradient) */
+  --rz-lh-heading-lg:   1.2;    /* h1, h2 at 3xl+ sizes */
+
+  /* Heading-to-body gap — minimum spacing below a heading before body text */
+  --rz-heading-gap:     1.5rem; /* 24px — prevents title-subtitle crowding */
+  --rz-heading-gap-sm:  1rem;   /* 16px — compact contexts */
+
   /* Font families */
   --rz-font-sans:    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --rz-font-display: "Poppins", -apple-system, sans-serif;

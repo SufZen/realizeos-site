@@ -60,7 +60,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 40px rgba(255, 204, 0, 0.3);
+  /* Prevent descender clipping caused by background-clip:text */
+  padding-bottom: 0.1em;
+  text-shadow: none; /* text-shadow conflicts with background-clip:text */
 }
 [data-mode="light"] .fx-gradient-text,
 .light .fx-gradient-text {

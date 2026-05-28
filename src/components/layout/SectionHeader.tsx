@@ -18,7 +18,7 @@ export function SectionHeader({ title, subtitle, gradient = true, className }: S
         dangerouslySetInnerHTML={{ __html: title }}
       />
       {subtitle && (
-        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+        <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
           {subtitle}
         </p>
       )}
