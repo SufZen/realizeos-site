@@ -6,9 +6,13 @@ import { Input } from '@/components/ui/input';
 import { WEBHOOK_URL } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
 import { useTranslation } from 'react-i18next';
-import { Github, CalendarCheck } from 'lucide-react';
+import { Github, CalendarCheck, Sparkles } from 'lucide-react';
 
-export function FinalCTA() {
+interface FinalCTAProps {
+  onOpenVentureWizard?: () => void;
+}
+
+export function FinalCTA({ onOpenVentureWizard }: FinalCTAProps) {
   const { t } = useTranslation();
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [name, setName] = useState('');
@@ -78,14 +82,16 @@ export function FinalCTA() {
               </a>
             </Button>
             <Button
-              asChild
               variant="ghost"
               size="lg"
-              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-wizard' })}
+              onClick={() => {
+                trackEvent('cta_click', { cta_name: 'final-cta-wizard' });
+                onOpenVentureWizard?.();
+              }}
+              className="gap-2 text-brand-yellow hover:text-brand-yellow-hover border border-brand-yellow/30 hover:border-brand-yellow/60 hover:bg-brand-yellow/5 transition-all"
             >
-              <a href="#pricing" className="gap-2 text-brand-yellow hover:text-brand-yellow-hover">
-                {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
-              </a>
+              <Sparkles size={16} className="animate-pulse" />
+              {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
             </Button>
           </div>
         </div>

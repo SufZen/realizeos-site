@@ -60,9 +60,13 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Prevent descender clipping caused by background-clip:text */
-  padding-bottom: 0.1em;
   text-shadow: none; /* text-shadow conflicts with background-clip:text */
+  /* Prevent descender clipping caused by background-clip:text.
+   * display:inline-block ensures padding renders; overflow:visible
+   * prevents parent containers from re-clipping.                 */
+  display: inline-block;
+  padding-bottom: 0.15em;
+  overflow: visible;
 }
 [data-mode="light"] .fx-gradient-text,
 .light .fx-gradient-text {

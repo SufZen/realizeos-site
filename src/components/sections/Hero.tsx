@@ -5,7 +5,7 @@ import { AnimatedCounter } from '@/components/shared/AnimatedCounter';
 import { trackEvent } from '@/lib/analytics';
 import { HeroAgentNetwork } from '@/components/illustrations/HeroAgentNetwork';
 import { useTranslation } from 'react-i18next';
-import { Github, PlayCircle } from 'lucide-react';
+import { Github, PlayCircle, Sparkles } from 'lucide-react';
 
 const stagger = {
   hidden: {},
@@ -17,7 +17,11 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
-export function Hero() {
+interface HeroProps {
+  onOpenVentureWizard?: () => void;
+}
+
+export function Hero({ onOpenVentureWizard }: HeroProps) {
   const { t } = useTranslation();
 
   const stats = [
@@ -88,10 +92,17 @@ export function Hero() {
                 {t('hero.cta_setup', 'Book Expert Setup')}
               </a>
             </Button>
-            <Button asChild variant="ghost" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-wizard' })}>
-              <a href="#pricing" className="gap-2 text-brand-yellow hover:text-brand-yellow-hover">
-                {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
-              </a>
+            <Button
+              variant="ghost"
+              size="lg"
+              onClick={() => {
+                trackEvent('cta_click', { cta_name: 'hero-wizard' });
+                onOpenVentureWizard?.();
+              }}
+              className="gap-2 text-brand-yellow hover:text-brand-yellow-hover border border-brand-yellow/30 hover:border-brand-yellow/60 hover:bg-brand-yellow/5 transition-all"
+            >
+              <Sparkles size={16} className="animate-pulse" />
+              {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
             </Button>
           </motion.div>
 

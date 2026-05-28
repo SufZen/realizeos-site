@@ -4,16 +4,9 @@ import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { FounderPhotoFrame } from '@/components/illustrations/FounderPhotoFrame';
 import { Separator } from '@/components/ui/separator';
 import { LINKS } from '@/lib/constants';
-import { Globe, Bot, Calendar } from 'lucide-react';
 
 export function Founder() {
   const { t } = useTranslation();
-
-  const proofStats = [
-    { icon: Globe, value: t('founder.proof.regions', '3 Regions'), label: t('founder.proof.regionsLabel', 'IL · PT · US') },
-    { icon: Bot, value: t('founder.proof.agents', '6+ Agents'), label: t('founder.proof.agentsLabel', 'in production') },
-    { icon: Calendar, value: t('founder.proof.usage', 'Daily'), label: t('founder.proof.usageLabel', 'used by Realization') },
-  ];
 
   return (
     <Section id="founder">
@@ -29,28 +22,7 @@ export function Founder() {
             {t('founder.p2')}
           </p>
 
-          {/* Walk the Talk proof badge */}
-          <div className="mt-8 mb-6 mx-auto max-w-md">
-            <div className="fx-glass-card rounded-xl p-4">
-              <p className="text-xs uppercase tracking-wider text-brand-yellow/70 font-semibold mb-3">
-                {t('founder.proof.badge', 'Walk the Talk')}
-              </p>
-              <div className="flex items-center justify-center gap-6 text-sm">
-                {proofStats.map((stat) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div key={stat.value} className="flex flex-col items-center gap-1">
-                      <Icon size={16} className="text-brand-yellow" />
-                      <strong className="text-foreground">{stat.value}</strong>
-                      <span className="text-xs text-muted-foreground">{stat.label}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          <FounderPhotoFrame className="mx-auto mb-4 h-24 w-24" src="/img/founder.png" />
+          <FounderPhotoFrame className="mx-auto mt-8 mb-4 h-24 w-24" src="/img/founder.png" />
           <Separator className="mx-auto my-6 w-16" />
           <div>
             <strong>Asaf Eyzenkot</strong>

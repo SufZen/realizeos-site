@@ -29,6 +29,13 @@ export default function App() {
         {/* Retired routes → redirect */}
         <Route path="/webinar/booking/setup" element={<Navigate to="/#pricing" replace />} />
         <Route path="/webinar/booking/lite" element={<Navigate to="/webinar/booking/full" replace />} />
+        {/* Legacy static HTML pages — deleted, redirect to React routes */}
+        <Route path="/guide.html" element={<Navigate to="/guide" replace />} />
+        <Route path="/guide-full.html" element={<Navigate to="/guide" replace />} />
+        <Route path="/guide-lite.html" element={<Navigate to="/guide" replace />} />
+        <Route path="/setup.html" element={<Navigate to="/#pricing" replace />} />
+        <Route path="/thank-you.html" element={<Navigate to="/" replace />} />
+        <Route path="/venture-worksheet.html" element={<Navigate to="/wizard" replace />} />
         {/* Short aliases — shareable URLs */}
         <Route path="/pres" element={<Navigate to="/webinar/presentation" replace />} />
         <Route path="/book" element={<Navigate to="/webinar/booking" replace />} />

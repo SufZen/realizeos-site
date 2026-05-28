@@ -85,32 +85,6 @@ export function Features() {
           );
         })}
       </div>
-
-      {/* Roadmap section */}
-      {roadmap.length > 0 && (
-        <div className="mt-12">
-          <h3 className="text-center text-lg font-semibold text-muted-foreground mb-6">
-            {t('features.roadmapTitle', 'Coming Soon')}
-          </h3>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mx-auto max-w-2xl">
-            {roadmap.map((f, i) => {
-              const LucideIcon = iconMap[f.icon];
-              return (
-                <AnimateOnScroll key={f.title} delay={i * 0.08}>
-                  <div className="fx-glass-card rounded-xl p-4 opacity-70 flex flex-col items-center text-center relative">
-                    <Badge variant="outline" className="absolute -top-2 text-[10px] border-muted-foreground/40 text-muted-foreground">
-                      {t('features.roadmapBadge', 'Roadmap')}
-                    </Badge>
-                    {LucideIcon && <LucideIcon size={24} className="mb-2 mt-2 text-muted-foreground" />}
-                    <h4 className="text-sm font-semibold mb-1">{f.title}</h4>
-                    <p className="text-xs text-muted-foreground">{f.promise}</p>
-                  </div>
-                </AnimateOnScroll>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </Section>
   );
 }

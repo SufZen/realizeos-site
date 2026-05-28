@@ -6,6 +6,7 @@ import { GithubDemo } from '@/components/sections/GithubDemo';
 import { Footer } from '@/components/sections/Footer';
 import { ExitIntentPopup } from '@/components/shared/ExitIntentPopup';
 import { MobileStickyBar } from '@/components/shared/MobileStickyBar';
+import { VentureWizardPopup } from '@/components/shared/VentureWizardPopup';
 
 /* Below-the-fold sections — lazy-loaded for faster initial paint */
 const FabricSystem = lazy(() => import('@/components/sections/FabricSystem').then(m => ({ default: m.FabricSystem })));
@@ -15,11 +16,13 @@ const UseCases = lazy(() => import('@/components/sections/UseCases').then(m => (
 const GetStarted = lazy(() => import('@/components/sections/GetStarted').then(m => ({ default: m.GetStarted })));
 const CommunityDocs = lazy(() => import('@/components/sections/CommunityDocs').then(m => ({ default: m.CommunityDocs })));
 const FAQ = lazy(() => import('@/components/sections/FAQ').then(m => ({ default: m.FAQ })));
+const Roadmap = lazy(() => import('@/components/sections/Roadmap').then(m => ({ default: m.Roadmap })));
 const FinalCTA = lazy(() => import('@/components/sections/FinalCTA').then(m => ({ default: m.FinalCTA })));
 const BrandWizard = lazy(() => import('@/components/wizard/BrandWizard').then(m => ({ default: m.BrandWizard })));
 
 export function Home() {
   const [wizardOpen, setWizardOpen] = useState(false);
+  const [venturePopupOpen, setVenturePopupOpen] = useState(false);
 
   // Auto-open old wizard when /?openWizard=1 is used (fallback from AI wizard)
   useEffect(() => {
@@ -35,7 +38,7 @@ export function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <Hero onOpenVentureWizard={() => setVenturePopupOpen(true)} />
         <PainPoints />
         <GithubDemo />
         <Suspense>
@@ -46,12 +49,14 @@ export function Home() {
           <GetStarted />
           <CommunityDocs />
           <FAQ />
-          <FinalCTA />
+          <Roadmap />
+          <FinalCTA onOpenVentureWizard={() => setVenturePopupOpen(true)} />
         </Suspense>
       </main>
       <Footer />
       <ExitIntentPopup />
       <MobileStickyBar />
+      <VentureWizardPopup open={venturePopupOpen} onOpenChange={setVenturePopupOpen} />
       <Suspense>
         <BrandWizard open={wizardOpen} onOpenChange={setWizardOpen} />
       </Suspense>
