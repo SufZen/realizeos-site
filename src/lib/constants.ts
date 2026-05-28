@@ -17,8 +17,9 @@ export const LINKS = {
   github: 'https://github.com/SufZen',
   githubRepo: 'https://github.com/SufZen/RealizeOS-5',
   realization: 'https://realization.co.il',
-  tidycal: 'https://tidycal.com/sufz/realizeos-setup',
-  gemGpt: 'https://github.com/SufZen/RealizeOS-5#venture-wizard', // Gem/GPT self-serve link
+  tidycal: 'https://tidycal.com/realization/realizeos-setup',
+  gem: 'https://gemini.google.com/gem/1mEuuDUxPVlwV_I-ctKqKMI0hZL3GLO0-?usp=sharing', // Google Gem Venture Wizard
+  gpt: 'https://chatgpt.com/g/g-6a17e2ad77988191a471b1bbdef534e1-realizeos-venture-intelligence-builder', // Custom GPT Venture Wizard
 } as const;
 
 // Navigation items

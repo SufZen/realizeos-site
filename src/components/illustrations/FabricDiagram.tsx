@@ -146,7 +146,7 @@ export function FabricDiagram({ className }: Props) {
                 width={NODE_W}
                 height={NODE_H}
                 rx={NODE_RX}
-                fill="rgba(26,26,36,0.9)"
+                fill="var(--rz-bg-raised)"
                 stroke="var(--rz-accent)"
                 strokeWidth={1}
               />

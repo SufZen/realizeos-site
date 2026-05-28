@@ -52,7 +52,7 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
         ...(t('pricing.tiers.guided.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
       ],
       ctaText: t('pricing.tiers.guided.ctaText'),
-      ctaUrl: 'https://tidycal.com/realization',
+      ctaUrl: 'https://tidycal.com/realization/realizeos-setup',
       trackId: 'pricing-guided',
       delivery: t('pricing.tiers.guided.delivery'),
       guarantee: t('pricing.tiers.guided.guarantee'),

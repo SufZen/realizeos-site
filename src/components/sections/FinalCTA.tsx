@@ -72,7 +72,7 @@ export function FinalCTA() {
               size="lg"
               onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-book' })}
             >
-              <a href="https://tidycal.com/sufz/realizeos-setup" target="_blank" rel="noopener noreferrer" className="gap-2">
+              <a href="https://tidycal.com/realization/realizeos-setup" target="_blank" rel="noopener noreferrer" className="gap-2">
                 <CalendarCheck size={18} />
                 {t('finalCta.bookSession', 'Book Setup Session')}
               </a>
