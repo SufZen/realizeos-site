@@ -167,7 +167,7 @@ export function GetStarted() {
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://github.com/SufZen/RealizeOS-5#venture-wizard" target="_blank" rel="noopener noreferrer" className="gap-1.5">
+                    <a href="https://chatgpt.com/g/g-6a17e2ad77988191a471b1bbdef534e1-realizeos-venture-intelligence-builder" target="_blank" rel="noopener noreferrer" className="gap-1.5">
                       <Sparkles size={14} />
                       {t('pricing.gemGpt.openGpt', 'Open Custom GPT')}
                     </a>
