@@ -78,6 +78,7 @@
       "subtitle": "RealizeOS is distributed under BSL 1.1. Free for most commercial uses."
     },
     "compareNote": "Stop paying recurring AI subscriptions. Host your own operations engine. Own your data.",
+    "free": "Free",
     "whatsIncluded": "What's Included",
     "tiers": {
       "free": {
@@ -325,8 +326,8 @@
         "description": "Quickstart guides, API reference, and configuration docs."
       },
       "discussions": {
-        "title": "Community Chat",
-        "description": "Join the Telegram community. Ask questions, share wins, get help from operators."
+        "title": "WhatsApp Community",
+        "description": "Join the WhatsApp group. Ask questions, share wins, get help from operators."
       },
       "telegram": {
         "title": "Telegram Community",

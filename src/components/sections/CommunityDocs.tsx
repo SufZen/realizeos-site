@@ -8,7 +8,7 @@ const communityCards = [
   { icon: Github, key: 'github', href: 'https://github.com/SufZen/RealizeOS-5' },
   { icon: BookOpen, key: 'docs', href: 'https://github.com/SufZen/RealizeOS-5/blob/main/README.md' },
   { icon: MessageCircle, key: 'telegram', href: 'https://t.me/+5r8zjoOignRmOTI0' },
-  { icon: Users, key: 'discussions', href: 'https://t.me/+5r8zjoOignRmOTI0' },
+  { icon: Users, key: 'discussions', href: 'https://chat.whatsapp.com/CDD01Xqt56lAbJZTEtfxqd' },
   { icon: Scale, key: 'license', href: 'https://github.com/SufZen/RealizeOS-5/blob/main/LICENSE' },
   { icon: CalendarClock, key: 'officeHours', href: 'https://tidycal.com/realization/realizeos-setup' },
 ];

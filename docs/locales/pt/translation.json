@@ -78,6 +78,7 @@
       "subtitle": "O RealizeOS é distribuído sob licença BSL 1.1. Gratuito para a maioria dos usos comerciais."
     },
     "compareNote": "Pare de pagar subscrições recorrentes de IA. Aloje o seu próprio motor de operações. Seja dono dos seus dados.",
+    "free": "Gratuito",
     "whatsIncluded": "O Que Está Incluído",
     "tiers": {
       "free": {
@@ -325,8 +326,8 @@
         "description": "Guias de início rápido, referência de API e documentação de configuração."
       },
       "discussions": {
-        "title": "Discussões",
-        "description": "Faça perguntas, partilhe casos de uso e conecte-se com outros operadores."
+        "title": "Comunidade WhatsApp",
+        "description": "Junte-se ao grupo WhatsApp. Faça perguntas, partilhe sucessos, obtenha ajuda de operadores."
       },
       "telegram": {
         "title": "Comunidade Telegram",

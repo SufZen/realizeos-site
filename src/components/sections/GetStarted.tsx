@@ -17,7 +17,7 @@ import { TierSetup } from '@/components/illustrations/TierSetup';
 import { usePricing } from '@/data/pricing';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from '@/lib/analytics';
-import { WEBHOOK_URL } from '@/lib/constants';
+import { WEBHOOK_URL, LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { Sparkles, Mail } from 'lucide-react';
 
@@ -93,13 +93,16 @@ export function GetStarted() {
               <div className="mb-6 text-center">
                 <span className="text-4xl font-bold">
                   {tier.price === '0' || tier.price === 0
-                    ? t('pricing.tiers.free.period', 'Free')
+                    ? t('pricing.free', 'Free')
                     : /^\d+$/.test(String(tier.price))
                       ? `$${tier.price}`
                       : tier.price}
                 </span>
-                {tier.period && (
+                {tier.period && tier.price !== '0' && tier.price !== 0 && (
                   <span className="ms-1 text-sm text-muted-foreground">{tier.period}</span>
+                )}
+                {(tier.price === '0' || tier.price === 0) && tier.period && (
+                  <p className="mt-1 text-sm text-muted-foreground">{tier.period}</p>
                 )}
               </div>
 
@@ -161,13 +164,13 @@ export function GetStarted() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2 justify-center">
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://gemini.google.com/gem/1mEuuDUxPVlwV_I-ctKqKMI0hZL3GLO0-?usp=sharing" target="_blank" rel="noopener noreferrer" className="gap-1.5">
+                    <a href={LINKS.gem} target="_blank" rel="noopener noreferrer" className="gap-1.5">
                       <Sparkles size={14} />
                       {t('pricing.gemGpt.openGem', 'Open Google Gem')}
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://chatgpt.com/g/g-6a17e2ad77988191a471b1bbdef534e1-realizeos-venture-intelligence-builder" target="_blank" rel="noopener noreferrer" className="gap-1.5">
+                    <a href={LINKS.gpt} target="_blank" rel="noopener noreferrer" className="gap-1.5">
                       <Sparkles size={14} />
                       {t('pricing.gemGpt.openGpt', 'Open Custom GPT')}
                     </a>
