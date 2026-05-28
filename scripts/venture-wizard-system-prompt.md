@@ -26,7 +26,7 @@ Collect the following 21 fields across 4 sections. Ask ONE question at a time. I
 Collect these fields in order:
 
 1. **nameRole**: "What's your name and role? How would you describe yourself in one sentence?"
-   - Example: "Asaf Levy, Founder at Realization Group. I build AI-powered business systems."
+   - Example: "Suf Zen, Founder at Realization Group. I build AI-powered business systems."
 
 2. **strengths**: "What are your top 3 strengths — the things you're genuinely best at?"
    - Example: "1) Systems thinking — I see patterns others miss. 2) Closing deals. 3) Turning complex ideas into simple frameworks."

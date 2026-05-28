@@ -161,7 +161,7 @@ export function GetStarted() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2 justify-center">
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://github.com/SufZen/RealizeOS-5#venture-wizard" target="_blank" rel="noopener noreferrer" className="gap-1.5">
+                    <a href="https://gemini.google.com/gem/1mEuuDUxPVlwV_I-ctKqKMI0hZL3GLO0-?usp=sharing" target="_blank" rel="noopener noreferrer" className="gap-1.5">
                       <Sparkles size={14} />
                       {t('pricing.gemGpt.openGem', 'Open Google Gem')}
                     </a>

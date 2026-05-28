@@ -6,11 +6,11 @@
 RealizeOS is an open-source AI operations engine that lets you deploy a team of specialized AI agents on your own infrastructure. Unlike generic chatbots, RealizeOS agents share a persistent knowledge base, follow your business rules, and work together on multi-step workflows.
 
 **Key facts:**
-- Version: 5.5.0
+- Version: 5.5.0 (Released May 2026)
 - License: BSL 1.1 (free for non-competitive use, Apache 2.0 in 2030)
 - Architecture: Local-first, self-hosted
 - GitHub: https://github.com/SufZen/RealizeOS-5
-- Website: https://sufzen.github.io/realizeos-site/
+- Website: https://realizeos.ai
 
 ## The FABRIC Architecture
 FABRIC is the knowledge structure at the heart of RealizeOS. It has 6 layers:
@@ -88,9 +88,11 @@ Python CLI with `init`, `serve`, `bot`, `status`, and `index` commands. Docker C
 
 ## Use Cases
 RealizeOS is built for operators managing complex, multi-venture businesses:
+- SME's that are scaling rapidly.
+- Startups that want to scale and organize their knowledge better.
+- Venture studios (multi-venture context switching, investor updates)
 - Architecture firms (compliance, RFQ responses, vendor coordination)
 - Real estate investors (deal analysis, due diligence, portfolio reporting)
-- Venture studios (multi-venture context switching, investor updates)
 - Engineering & operations (project tracking, SOPs, site reports)
 - Urban planning (public engagement, zoning analysis, community updates)
 - Asset management (tenant communication, lease tracking, vendor RFPs)
