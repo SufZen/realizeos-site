@@ -8,6 +8,7 @@
     "description": "Deploy a complete AI operations engine in minutes. Your knowledge, agents, and workflows stay on your machine — local-first, open source, zero vendor lock-in. Models, dashboards, and channels are swappable adapters.",
     "cta_free": "Get Started (free)",
     "cta_setup": "Book Expert Setup",
+    "cta_wizard": "🔮 Build Your Venture Profile",
     "stats": {
       "subsystems": "Core Subsystems",
       "dashboards": "Dashboard Pages",
@@ -78,6 +79,7 @@
       "subtitle": "RealizeOS is distributed under BSL 1.1. Free for most commercial uses."
     },
     "compareNote": "Stop paying recurring AI subscriptions. Host your own operations engine. Own your data.",
+    "promoDeadline": "50% off — ends July 1st",
     "free": "Free",
     "whatsIncluded": "What's Included",
     "tiers": {
@@ -117,7 +119,8 @@
             "Priority email support for 30 days"
           ]
         },
-        "price": "499",
+        "price": "249",
+        "originalPrice": "499",
         "period": "one-time",
         "ctaText": "Book Setup Session",
         "delivery": "1-hour setup call via Google Meet",
@@ -357,6 +360,7 @@
     "toggleMenu": "Toggle menu"
   },
   "navItems": {
+    "guide": "Guide",
     "quickstart": "Quickstart",
     "fabric": "FABRIC",
     "features": "Features",

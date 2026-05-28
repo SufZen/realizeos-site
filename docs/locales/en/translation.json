@@ -357,6 +357,7 @@
     "toggleMenu": "Toggle menu"
   },
   "navItems": {
+    "guide": "Guide",
     "quickstart": "Quickstart",
     "fabric": "FABRIC",
     "features": "Features",

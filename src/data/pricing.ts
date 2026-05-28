@@ -44,6 +44,7 @@ export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
       description: t('pricing.tiers.guided.description'),
       emotionalPromise: t('pricing.tiers.guided.emotionalPromise'),
       price: t('pricing.tiers.guided.price'),
+      originalPrice: t('pricing.tiers.guided.originalPrice'),
       period: t('pricing.tiers.guided.period'),
       featured: true,
       badge: t('pricing.tiers.guided.badge'),

@@ -1,0 +1,48 @@
+import type { GuideSectionData } from '../guideTypes';
+
+export const integrations: GuideSectionData = {
+  id: 'integrations',
+  title: 'Recommended Integrations',
+  icon: 'Link2',
+  description: 'Connect Telegram, Google Workspace, web search, Make.com, webhooks, and more.',
+  readTime: '12 min',
+  content: [
+    { type: 'heading', text: 'Integration Overview', level: 2, id: 'integration-overview' },
+    { type: 'paragraph', text: 'RealizeOS connects to external services through built-in tools, channels, and webhook endpoints. All integrations share the same authentication and audit logging.' },
+    { type: 'heading', text: 'Telegram Bot', level: 2, id: 'telegram' },
+    { type: 'list', text: '', ordered: true, items: [
+      'Open Telegram and message @BotFather',
+      'Send /newbot and follow the prompts',
+      'Copy the bot token and add to your .env',
+    ]},
+    { type: 'code', text: '', code: 'TELEGRAM_BOT_TOKEN=your_token_here', language: 'bash' },
+    { type: 'code', text: '', code: 'python cli.py bot\n# Or add to Docker and restart:\ndocker compose up -d', language: 'bash' },
+    { type: 'paragraph', text: 'Message your bot on Telegram — it routes through the same agent system as the API.' },
+    { type: 'heading', text: 'Google Workspace', level: 2, id: 'google-workspace' },
+    { type: 'paragraph', text: 'Gmail, Calendar, and Drive — 13 tools total.' },
+    { type: 'list', text: '', ordered: true, items: [
+      'Go to Google Cloud Console → Create/select project',
+      'Enable Gmail API, Google Calendar API, Google Drive API',
+      'Create OAuth 2.0 credentials (Desktop app) → download JSON',
+      'Save as .credentials/credentials.json',
+      'Run: python cli.py auth google',
+    ]},
+    { type: 'table', text: '', headers: ['Service', 'Available Tools'], rows: [
+      ['Gmail', 'gmail_search, gmail_read, gmail_send, gmail_create_draft'],
+      ['Calendar', 'calendar_list_events, calendar_create_event, calendar_update_event, calendar_find_free_time'],
+      ['Drive', 'drive_search, drive_list_folder, drive_read_content, drive_create_doc, drive_append_doc'],
+    ]},
+    { type: 'callout', text: 'Write operations (send, create, update) always require confirmation before executing.', calloutType: 'info' },
+    { type: 'heading', text: 'Web Search (Brave API)', level: 2, id: 'web-search' },
+    { type: 'code', text: '', code: 'BRAVE_API_KEY=your_key_here', language: 'bash' },
+    { type: 'paragraph', text: 'Restart the server. Web search becomes available in skills and direct queries.' },
+    { type: 'heading', text: 'Make.com / n8n / Zapier', level: 2, id: 'automation' },
+    { type: 'paragraph', text: 'Connect any automation platform via the REST API:' },
+    { type: 'code', text: '', code: 'URL:     http://YOUR_SERVER_IP:8080/api/chat\nMethod:  POST\nHeaders: Content-Type: application/json\n         Authorization: Bearer YOUR_API_KEY\nBody:\n{\n  "message": "{{trigger_data}}",\n  "system_key": "consulting",\n  "user_id": "make-automation"\n}', language: 'json', title: 'HTTP Module Config' },
+    { type: 'paragraph', text: 'Example flow: New email in Gmail → summarize with RealizeOS → post summary to Slack.' },
+    { type: 'heading', text: 'Inbound Webhooks', level: 2, id: 'webhooks' },
+    { type: 'paragraph', text: 'External services (GitHub, Stripe, forms) can trigger your agents by posting to /api/chat. Works with any HTTP-capable system.' },
+    { type: 'heading', text: 'MCP Tool Servers', level: 2, id: 'mcp-tools' },
+    { type: 'paragraph', text: 'RealizeOS auto-discovers and registers all tools exposed by external MCP servers. Add them in your realize-os.yaml under the mcp section to extend your agent capabilities.' },
+  ],
+};

@@ -91,6 +91,11 @@ export function GetStarted() {
               </div>
 
               <div className="mb-6 text-center">
+                {tier.originalPrice && (
+                  <div className="mb-1">
+                    <span className="text-lg text-muted-foreground line-through">${tier.originalPrice}</span>
+                  </div>
+                )}
                 <span className="text-4xl font-bold">
                   {tier.price === '0' || tier.price === 0
                     ? t('pricing.free', 'Free')
@@ -103,6 +108,11 @@ export function GetStarted() {
                 )}
                 {(tier.price === '0' || tier.price === 0) && tier.period && (
                   <p className="mt-1 text-sm text-muted-foreground">{tier.period}</p>
+                )}
+                {tier.originalPrice && (
+                  <p className="mt-2 text-xs font-medium text-brand-yellow animate-pulse">
+                    🔥 {t('pricing.promoDeadline', '50% off — ends July 1st')}
+                  </p>
                 )}
               </div>
 

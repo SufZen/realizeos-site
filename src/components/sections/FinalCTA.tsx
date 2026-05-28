@@ -77,6 +77,16 @@ export function FinalCTA() {
                 {t('finalCta.bookSession', 'Book Setup Session')}
               </a>
             </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-wizard' })}
+            >
+              <a href="#pricing" className="gap-2 text-brand-yellow hover:text-brand-yellow-hover">
+                {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
+              </a>
+            </Button>
           </div>
         </div>
       </AnimateOnScroll>

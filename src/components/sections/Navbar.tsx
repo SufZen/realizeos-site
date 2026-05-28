@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
@@ -27,15 +28,25 @@ export function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden items-center gap-8 md:flex">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {t(`navItems.${item.label.toLowerCase()}`)}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item) =>
+            item.href.startsWith('/') ? (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {t(`navItems.${item.label.toLowerCase()}`)}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {t(`navItems.${item.label.toLowerCase()}`)}
+              </a>
+            )
+          )}
         </div>
 
         <div className="flex items-center gap-3 ms-auto md:ms-0">
@@ -56,16 +67,27 @@ export function Navbar() {
             <SheetContent side="right" className="fx-glass w-64 border-border">
               <SheetTitle className="sr-only">Navigation</SheetTitle>
               <div className="mt-8 flex flex-col gap-6">
-                {NAV_ITEMS.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
-                  >
-                    {t(`navItems.${item.label.toLowerCase()}`)}
-                  </a>
-                ))}
+                {NAV_ITEMS.map((item) =>
+                  item.href.startsWith('/') ? (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
+                    >
+                      {t(`navItems.${item.label.toLowerCase()}`)}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
+                    >
+                      {t(`navItems.${item.label.toLowerCase()}`)}
+                    </a>
+                  )
+                )}
                 <Button asChild className="mt-4">
                   <a href="#pricing" onClick={() => setOpen(false)}>
                     {t('nav.getStarted')}

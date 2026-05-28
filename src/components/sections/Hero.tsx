@@ -88,6 +88,11 @@ export function Hero() {
                 {t('hero.cta_setup', 'Book Expert Setup')}
               </a>
             </Button>
+            <Button asChild variant="ghost" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-wizard' })}>
+              <a href="#pricing" className="gap-2 text-brand-yellow hover:text-brand-yellow-hover">
+                {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
+              </a>
+            </Button>
           </motion.div>
 
           <motion.div

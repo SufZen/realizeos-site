@@ -357,6 +357,7 @@
     "toggleMenu": "פתח/סגור תפריט"
   },
   "navItems": {
+    "guide": "מדריך",
     "quickstart": "התחלה מהירה",
     "fabric": "FABRIC",
     "features": "יכולות",

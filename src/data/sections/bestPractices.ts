@@ -1,0 +1,61 @@
+import type { GuideSectionData } from '../guideTypes';
+
+export const bestPractices: GuideSectionData = {
+  id: 'best-practices',
+  title: 'Best Practices',
+  icon: 'Award',
+  description: 'Proven patterns for agent design, knowledge management, and daily operations.',
+  readTime: '8 min',
+  content: [
+    { type: 'heading', text: 'Knowledge Base', level: 2, id: 'kb-best-practices' },
+    { type: 'list', text: '', items: [
+      'Start with the Venture Wizard — use the Google Gem or Custom GPT to generate your FABRIC profile before configuring agents',
+      'Save your vault in Documents, not in a cloud-synced folder (OneDrive, iCloud, Google Drive). Cloud sync causes conflicts',
+      'Keep identity.md honest and specific. "I prefer direct communication with no fluff" is better than "I like good communication"',
+      'Use the FABRIC structure consistently: F-foundations for rules, A-agents for team, B-brain for domain knowledge',
+      'Review and update B-brain/ quarterly — stale knowledge degrades output quality',
+    ]},
+    { type: 'heading', text: 'Agent Design', level: 2, id: 'agent-design' },
+    { type: 'list', text: '', items: [
+      'Keep agents focused — one clear role per agent performs better than generalist agents',
+      'Use tool gating (allowlists/denylists) to prevent agents from accessing tools outside their scope',
+      'Define clear trigger keywords in agent_routing for reliable auto-routing',
+      'Test new agents in the REPL before deploying to production',
+      'Use the QA-pass/fail handoff type for content that needs review before delivery',
+    ]},
+    { type: 'heading', text: 'LLM Cost Optimization', level: 2, id: 'cost-optimization' },
+    { type: 'list', text: '', items: [
+      'Let the router do its job — simple→Flash ($), content→Sonnet ($$), complex→Opus ($$$)',
+      'Use Gemini Flash for quick lookups and triage — it has a generous free tier',
+      'Add Ollama for local inference on non-sensitive tasks to reduce API costs',
+      'Monitor usage patterns via the evolution engine suggestions',
+      'Set up cost alerts on your LLM provider dashboards',
+    ]},
+    { type: 'heading', text: 'Daily Workflow', level: 2, id: 'daily-workflow' },
+    { type: 'paragraph', text: 'Establish a rhythm with your AI team for maximum productivity:' },
+    { type: 'table', text: '', headers: ['When', 'What to Ask', 'What Happens'], rows: [
+      ['Morning', '"What\'s on my calendar today and what should I prioritize?"', 'System checks calendar, reviews pending tasks, suggests priorities'],
+      ['Working', '"Draft a client proposal for the Acme Corp engagement"', 'Skills auto-trigger — content pipeline handles drafting and review'],
+      ['End of Day', '"Summarize what I accomplished today and plan tomorrow"', 'Reviews conversations, logs learnings, creates action items'],
+      ['Weekly', '"Plan my week — review last week and set priorities"', 'Weekly Review skill — cross-references outcomes with goals'],
+    ]},
+    { type: 'heading', text: 'Security', level: 2, id: 'security-practices' },
+    { type: 'list', text: '', items: [
+      'Always use JWT auth in production (REALIZE_JWT_ENABLED=true)',
+      'Use a 32+ character JWT secret — the server enforces this in production mode',
+      'Keep MCP admin tools disabled unless specifically needed (allow_admin: false)',
+      'Review audit logs regularly: GET /api/security/audit',
+      'Use human-in-the-loop approval gates for consequential actions (email sends, data writes)',
+    ]},
+    { type: 'heading', text: 'Environment Configuration', level: 2, id: 'env-practices' },
+    { type: 'callout', text: 'Common .env mistakes: No spaces around the = sign. No quotes around values. No inline comments — Docker cannot parse them. Put comments on their own line.', calloutType: 'warning' },
+    { type: 'heading', text: 'Getting Help', level: 2, id: 'getting-help' },
+    { type: 'paragraph', text: 'Need personalized help getting started? Book a 1-on-1 setup session with the RealizeOS team. Limited-time launch offer: $249 (50% off, valid until July 1st 2025).' },
+    { type: 'list', text: '', items: [
+      'Report bugs: github.com/SufZen/RealizeOS-5/issues',
+      'Join the community: Telegram and WhatsApp groups',
+      'Read the full docs: github.com/SufZen/RealizeOS-5/docs',
+      'Run realize-os doctor to diagnose common issues',
+    ]},
+  ],
+};

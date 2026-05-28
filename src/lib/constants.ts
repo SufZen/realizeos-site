@@ -24,6 +24,7 @@ export const LINKS = {
 
 // Navigation items
 export const NAV_ITEMS = [
+  { label: 'Guide', href: '/guide' },
   { label: 'Quickstart', href: '#quickstart' },
   { label: 'FABRIC', href: '#fabric' },
   { label: 'Features', href: '#features' },

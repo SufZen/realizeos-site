@@ -357,6 +357,7 @@
     "toggleMenu": "Alternar menu"
   },
   "navItems": {
+    "guide": "Guia",
     "quickstart": "Início Rápido",
     "fabric": "FABRIC",
     "features": "Funcionalidades",
