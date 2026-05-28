@@ -8,6 +8,7 @@
     "description": "Implemente um motor completo de operações de IA em minutos. O conhecimento, agentes e workflows ficam na sua máquina — local-first, open source, zero dependência de fornecedor. Modelos, painéis e canais são módulos substituíveis.",
     "cta_free": "Começar (grátis)",
     "cta_setup": "Agendar Sessão de Configuração",
+    "cta_wizard": "🔮 Crie o Seu Perfil de Empreendimento",
     "stats": {
       "subsystems": "Subsistemas Core",
       "dashboards": "Páginas do Painel",
@@ -78,6 +79,7 @@
       "subtitle": "O RealizeOS é distribuído sob licença BSL 1.1. Gratuito para a maioria dos usos comerciais."
     },
     "compareNote": "Pare de pagar subscrições recorrentes de IA. Aloje o seu próprio motor de operações. Seja dono dos seus dados.",
+    "promoDeadline": "50% de desconto — até 1 de julho",
     "free": "Gratuito",
     "whatsIncluded": "O Que Está Incluído",
     "tiers": {
@@ -117,7 +119,8 @@
             "Suporte prioritário por email durante 30 dias"
           ]
         },
-        "price": "499",
+        "price": "249",
+        "originalPrice": "499",
         "period": "pagamento único",
         "ctaText": "Agendar Sessão de Configuração",
         "delivery": "Chamada de configuração de 1 hora via Google Meet",

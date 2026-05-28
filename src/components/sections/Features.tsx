@@ -2,7 +2,6 @@ import { Section } from '@/components/layout/Section';
 import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { GlowCard } from '@/components/shared/GlowCard';
-import { Badge } from '@/components/ui/badge';
 import {
   Accordion,
   AccordionContent,
@@ -21,13 +20,8 @@ import {
   FeatureSecurity,
 } from '@/components/illustrations';
 import { useTranslation } from 'react-i18next';
-import {
-  Database, Brain, Zap, Target, Moon, ScrollText, Shield, Terminal, Mic, Smartphone,
-} from 'lucide-react';
 
-const iconMap: Record<string, React.FC<{ size?: number; className?: string }>> = {
-  Database, Brain, Zap, Target, Moon, ScrollText, Shield, Terminal, Mic, Smartphone,
-};
+
 
 // Keep illustration map for features that have dedicated SVG illustrations
 const illustrationMap: Record<string, React.FC<{ className?: string }>> = {
@@ -46,7 +40,6 @@ export function Features() {
   const { t } = useTranslation();
 
   const shipped = features.filter(f => !f.roadmap);
-  const roadmap = features.filter(f => f.roadmap);
 
   return (
     <Section id="features">
