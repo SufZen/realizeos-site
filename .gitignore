@@ -24,3 +24,6 @@ dist-ssr
 
 # Session prompts (not for version control)
 n8n-vie-workflows-prompt.md
+
+# Local Claude Code permissions (machine-local; can record command strings incl. secrets)
+.claude/settings.local.json

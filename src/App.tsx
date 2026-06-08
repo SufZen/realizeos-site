@@ -13,12 +13,14 @@ const BrandWizardPage = lazy(() => import('@/pages/BrandWizardPage'));
 const DesignSystemPage = lazy(() => import('@/pages/DesignSystemPage'));
 const GuideHub = lazy(() => import('@/pages/GuideHub'));
 const GuideSectionPage = lazy(() => import('@/pages/GuideSectionPage'));
+const Bootcamp = lazy(() => import('@/pages/Bootcamp'));
 
 export default function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/bootcamp" element={<Bootcamp />} />
         <Route path="/wizard" element={<BrandWizardPage />} />
         <Route path="/design" element={<DesignSystemPage />} />
         <Route path="/guide" element={<GuideHub />} />
@@ -39,6 +41,7 @@ export default function App() {
         {/* Short aliases — shareable URLs */}
         <Route path="/pres" element={<Navigate to="/webinar/presentation" replace />} />
         <Route path="/book" element={<Navigate to="/webinar/booking" replace />} />
+        <Route path="/event" element={<Navigate to="/bootcamp" replace />} />
         <Route path="/brand-wizard" element={<Navigate to="/wizard" replace />} />
         <Route element={<LegalLayout />}>
           <Route path="/terms" element={<TermsAndConditions />} />

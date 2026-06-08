@@ -1,4 +1,206 @@
 {
+  "bootcamp": {
+    "seo": {
+      "title": "RealizeOS Bootcamp · Workshop de IA para a Comunidade Israelita em Portugal",
+      "desc": "Três sessões de manhã para construir um sistema de IA vivo e adaptado ao seu negócio — para a comunidade israelita em Setúbal e no centro de Portugal. Saia com o RealizeOS a funcionar e a capacidade de o manter sozinho."
+    },
+    "hero": {
+      "badge": "Workshop de IA · Setúbal · Centro de Portugal",
+      "title1": "Não vem aprender sobre IA.",
+      "title2": "Vem sair com um sistema que funciona.",
+      "lead1": "Três sessões de manhã.",
+      "lead2": "No final do workshop sai com o RealizeOS ativo, adaptado ao seu negócio — e com a capacidade de o manter e expandir sozinho.",
+      "cta": "Quero um lugar",
+      "cta2": "O que tem o programa?",
+      "chip1": "3 sessões de manhã",
+      "chip2": "3 horas cada",
+      "chip3": "Apenas 12 lugares",
+      "chip4": "100% saem com um sistema vivo"
+    },
+    "logistics": {
+      "dates": "17–19 de junho de 2026",
+      "time": "10:00–13:00",
+      "place": "Audax Workspace · Setúbal"
+    },
+    "pain": {
+      "1": {
+        "t": "Responder a clientes em português",
+        "b": "Cada mensagem exige tradução, redação e atenção — uma e outra vez."
+      },
+      "2": {
+        "t": "Coordenar prestadores de serviços",
+        "b": "Agendamentos, confirmações e seguimentos que consomem o seu dia."
+      },
+      "3": {
+        "t": "Preparar orçamentos e tabelas de preços",
+        "b": "Trabalho manual repetitivo que pode delegar a um sistema."
+      },
+      "4": {
+        "t": "Acompanhar leads e contactos",
+        "b": "As coisas perdem-se quando está sozinho a tratar de tudo."
+      }
+    },
+    "problem": {
+      "title": "Quantas horas por semana desperdiça<br/>no que um computador podia fazer por si?"
+    },
+    "what": {
+      "title": "Não é mais um chatbot.<br/>É o sistema operativo do seu negócio.",
+      "sub": "Uma equipa de agentes de IA que conhece profundamente o seu negócio, recorda as suas preferências e executa processos inteiros de ponta a ponta — local, privado e totalmente seu."
+    },
+    "cap": {
+      "1": {
+        "t": "FABRIC — um sistema de conhecimento",
+        "b": "Todo o conhecimento do negócio organizado em seis camadas: identidade, agentes, conhecimento, processos, insights e resultados."
+      },
+      "2": {
+        "t": "Encaminhamento inteligente entre modelos",
+        "b": "Cada tarefa é encaminhada automaticamente para o modelo ideal — Claude, Gemini ou um modelo local."
+      },
+      "3": {
+        "t": "Servidor MCP integrado",
+        "b": "Liga-se a Gmail, Calendar, Drive, Stripe, pesquisa e qualquer ferramenta compatível com MCP."
+      },
+      "4": {
+        "t": "Governação e controlo",
+        "b": "Aprovações humanas para ações críticas, um registo de auditoria completo e proteção contra prompt injection."
+      }
+    },
+    "flow": {
+      "1": "O cliente escreve\nem português",
+      "2": "O agente responde\nem segundos",
+      "3": "Você recebe um resumo\nem hebraico no Telegram",
+      "title": "Um cliente escreve. O agente responde. Você recebe um resumo.",
+      "note": "Isto constrói você mesmo no workshop — e sai com ele a funcionar."
+    },
+    "why": {
+      "title": "Não é uma palestra. Não são slides. É um workshop prático."
+    },
+    "diff": {
+      "1": {
+        "t": "Um sistema, não teoria",
+        "b": "Em cada sessão constrói um componente real e funcional. No final — o RealizeOS está ativo, ligado ao seu negócio e pronto a trabalhar."
+      },
+      "2": {
+        "t": "Em hebraico, para o seu contexto",
+        "b": "Clientes que falam português, faturas locais, AL, imobiliário — exemplos da sua realidade, aqui mesmo."
+      },
+      "3": {
+        "t": "A propriedade é sua — para sempre",
+        "b": "Local-first, sem telemetria. É o dono do Heart: o conhecimento, a identidade e o registo. Sem dependência."
+      },
+      "4": {
+        "t": "Uma comunidade que continua",
+        "b": "Depois do workshop — um canal comunitário ativo para entreajuda e desenvolvimento contínuo."
+      }
+    },
+    "layers": {
+      "title": "5 camadas. Do contexto à automação total.",
+      "fabric": "No coração do sistema — o grafo de conhecimento que liga tudo"
+    },
+    "layer": {
+      "1": {
+        "t": "Contexto",
+        "b": "Quem é, qual o negócio, em que línguas"
+      },
+      "2": {
+        "t": "Dados",
+        "b": "Os seus documentos, tabelas de preços e conhecimento"
+      },
+      "3": {
+        "t": "Inteligência",
+        "b": "O motor que compreende e responde corretamente"
+      },
+      "4": {
+        "t": "Agentes",
+        "b": "Maria · Antonio · Bruno"
+      },
+      "5": {
+        "t": "Automações",
+        "b": "O sistema funciona sozinho, 24/7"
+      }
+    },
+    "program": {
+      "title": "Três manhãs. De uma base viva à independência total.",
+      "outLabel": "No final da sessão terá:"
+    },
+    "ev": {
+      "1": {
+        "when": "Primeira sessão · 17 de junho · 10:00–13:00",
+        "title": "Fundamentos e configuração",
+        "i1": "A metodologia das 5 camadas em linguagem simples",
+        "i2": "Criar uma conta RealizeOS pessoal e definir o contexto do negócio",
+        "i3": "Escolher e configurar o primeiro agente — Maria / Antonio / Bruno",
+        "i4": "Ligar um bot pessoal de Telegram — e a primeira pergunta real",
+        "out": "Conta ativa · primeiro agente · bot de Telegram ligado"
+      },
+      "2": {
+        "when": "Segunda sessão · 18 de junho · 10:00–13:00",
+        "title": "Adaptação ao negócio",
+        "i1": "Ligar os seus dados reais — documentos, tabelas de preços, perguntas frequentes",
+        "i2": "Construir 2–3 agentes adaptados com personalidade, tom e limites",
+        "i3": "Gestão multilingue — português entra, hebraico sai",
+        "i4": "Controlo de qualidade — garantir que o agente responde corretamente e não \"inventa\"",
+        "out": "2–3 agentes a funcionar · ligados a dados reais"
+      },
+      "3": {
+        "when": "Terceira sessão · 19 de junho · 10:00–13:00",
+        "title": "Automação e independência",
+        "i1": "Criar automações — lead entra ← agente responde ← resumo para si",
+        "i2": "Manutenção própria — atualizar, adicionar conhecimento e corrigir sozinho",
+        "i3": "Gerir custos, utilização e segurança básica",
+        "i4": "Um plano de continuação de 30/60/90 dias + abertura da comunidade",
+        "out": "Automação ativa · independência total · plano de continuação"
+      }
+    },
+    "take": {
+      "1": "Um sistema RealizeOS vivo e adaptado ao seu negócio — não um demo, algo que funciona desde o primeiro dia",
+      "2": "2–3 agentes de IA que conhecem o seu negócio, respondem a clientes e executam tarefas por si",
+      "3": "Um bot pessoal de Telegram — o seu negócio no bolso, a partir de qualquer lugar",
+      "4": "Pelo menos uma automação a funcionar sozinha — entra um lead, é tratado, e você recebe um resumo",
+      "5": "Um guia de manutenção para expandir, atualizar e corrigir sozinho — sem depender de ninguém",
+      "6": "Um plano de ação claro para os próximos 30/60/90 dias",
+      "7": "Acesso a uma comunidade ativa que continua a apoiá-lo depois do workshop",
+      "title": "7 coisas que leva para casa — e são suas, para sempre."
+    },
+    "value": {
+      "1": "Um sistema de IA personalizado — seu para sempre",
+      "2": "Três sessões de configuração com acompanhamento próximo, passo a passo",
+      "3": "Poupar horas de trabalho todos os meses — acumulando ao longo do tempo",
+      "4": "Independência total — um guia de manutenção e a capacidade de o expandir sozinho",
+      "5": "Uma comunidade de apoio e acompanhamento que continua após o workshop",
+      "title": "Não está a comprar um workshop.<br/>Está a comprar os próximos 12 meses.",
+      "getTitle": "O que recebe",
+      "payTitle": "O que paga",
+      "priceSub": "As 3 sessões · investimento único",
+      "perSession": "ou €150 por sessão individual",
+      "roi": "ROI que se paga logo no primeiro mês.",
+      "1a": "Milhares de €",
+      "2a": "Milhares de €",
+      "3a": "Acumulado",
+      "4a": "Sem dependência",
+      "5a": "Contínuo"
+    },
+    "who": {
+      "1": "Gestores de alojamento · AL / STR",
+      "2": "Imobiliário e mediação",
+      "3": "Freelancers e empresários",
+      "4": "Prestadores de serviços",
+      "5": "Expats que começam um negócio",
+      "6": "Quem quer poupar tempo",
+      "title": "Para a comunidade israelita no centro de Portugal.",
+      "sub": "Se tem um negócio que quer que funcione de forma mais inteligente — isto é para si."
+    },
+    "cta": {
+      "eyebrow": "Adesão",
+      "title": "Apenas 12 lugares.",
+      "sub": "O grupo é pequeno de propósito — para que cada um saia com um sistema que realmente funciona.",
+      "button": "Quero um lugar",
+      "note": "Audax Workspace, Av. Luísa Todi, Setúbal · 17–19 de junho de 2026 · 10:00–13:00"
+    },
+    "sticky": {
+      "text": "RealizeOS Bootcamp · apenas 12 lugares"
+    }
+  },
   "hero": {
     "badge": "Por Realization",
     "tagline": "Execute agentes de IA na sua infraestrutura. Os seus dados são seus — para sempre.",
