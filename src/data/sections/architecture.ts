@@ -8,9 +8,9 @@ export const architecture: GuideSectionData = {
   readTime: '10 min',
   content: [
     { type: 'heading', text: 'Overview', level: 2, id: 'overview' },
-    { type: 'paragraph', text: 'RealizeOS is a self-hosted AI operations system that gives your business a coordinated team of AI agents. Unlike generic chatbots, RealizeOS agents know your venture, run multi-step workflows, route to the optimal model, and respect governance with approval gates and audit logs.' },
+    { type: 'paragraph', text: 'RealizeOS is not another AI agent. It is what agents connect to: your company\'s memory (FABRIC), its rules and its approvals, running on your own server. Its own agents and any external agent that connects over MCP work from the same knowledge, under the same roles, approval queue and audit log.' },
     { type: 'heading', text: 'Request Flow', level: 2, id: 'request-flow' },
-    { type: 'code', text: '', code: 'Message → Channel (API / Telegram / Webhook)\n→ Base Handler (Session → Skill → Agent routing)\n→ LLM Router (simple→Flash, content→Sonnet, complex→Opus)\n→ Prompt Builder (12 layers from KB)\n→ Tools (Google / Web / Browser / MCP)\n→ Evolution Engine → Response', language: 'text', title: 'Architecture Flow' },
+    { type: 'code', text: '', code: 'Message → Channel (Dashboard / API / MCP / Webhook)\n→ Base Handler (Session → Skill → Agent routing)\n→ LLM Router (simple→Flash, content→Sonnet, complex→Opus)\n→ Prompt Builder (12 layers from KB)\n→ Tools (Google / Sheets / ClickUp / MCP) → trust ladder → approval gate\n→ Response + trail (sources, tools)', language: 'text', title: 'Architecture Flow' },
     { type: 'heading', text: 'FABRIC Knowledge System', level: 2, id: 'fabric' },
     { type: 'paragraph', text: 'Every venture\'s AI knowledge is organized into six FABRIC layers — the knowledge graph that makes your AI team context-aware.' },
     { type: 'table', text: '', headers: ['Layer', 'Folder', 'Purpose'], rows: [
@@ -21,14 +21,15 @@ export const architecture: GuideSectionData = {
       ['Insights', 'I-insights/', 'Learning log, patterns, performance data'],
       ['Creations', 'C-creations/', 'Generated content, deliverables, outputs'],
     ]},
-    { type: 'heading', text: 'Multi-LLM Routing', level: 2, id: 'llm-routing' },
-    { type: 'paragraph', text: 'The engine classifies every task and selects the optimal model. Providers are auto-discovered at startup.' },
+    { type: 'heading', text: 'Model Routing', level: 2, id: 'llm-routing' },
+    { type: 'callout', text: 'Available, not under active development.', calloutType: 'info' },
+    { type: 'paragraph', text: 'The engine can classify a task and pick a model for it. Providers are discovered at startup.' },
     { type: 'table', text: '', headers: ['Task Class', 'Default Model', 'When Used'], rows: [
       ['simple', 'Gemini Flash', 'Quick lookups, simple questions'],
       ['content', 'Claude Sonnet', 'Writing, analysis, reasoning'],
       ['complex', 'Claude Opus', 'Strategy, multi-step planning'],
     ]},
-    { type: 'paragraph', text: 'Supports Claude, Gemini, OpenAI, and Ollama (local models).' },
+    { type: 'paragraph', text: 'Supports Claude, Gemini, OpenAI and Ollama (local models). Agent tool use needs Claude.' },
     { type: 'heading', text: 'Agent System', level: 2, id: 'agent-system' },
     { type: 'list', text: '', items: [
       'Composable agents with scope, inputs, outputs, guardrails, and tools',
@@ -50,9 +51,10 @@ export const architecture: GuideSectionData = {
     { type: 'heading', text: 'Security & Governance', level: 2, id: 'security' },
     { type: 'list', text: '', items: [
       '5-layer security middleware: Security headers → Audit → Rate limiting → Injection guard → JWT auth',
-      'RBAC with 6 roles: owner, admin, operator, user, viewer, guest',
+      'Five roles you can assign (owner, admin, operator, user, viewer) and per-user venture limits, enforced the same way in the dashboard, REST API and MCP',
       'Prompt injection scanner — pattern + heuristic + Unicode normalization',
-      'Human-in-the-loop approval gates for consequential actions',
+      'Approvals that hold, then execute: gated writes wait for a person and run exactly once; fails closed',
+      'A "What I used" trail and [S1] citations on every answer',
       'Audit logging — JSONL persistent logs with SSE streaming',
       'Secret redaction in error responses and logs',
     ]},

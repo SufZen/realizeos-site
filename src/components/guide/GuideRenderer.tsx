@@ -1,6 +1,7 @@
 import type { GuideBlock } from '@/data/guideTypes';
 import { CodeBlock } from './CodeBlock';
 import { Callout } from './Callout';
+import { PlatformTabs } from './PlatformTabs';
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -66,6 +67,17 @@ export function GuideRenderer({ blocks }: { blocks: GuideBlock[] }) {
               <ul key={i} className="my-4 list-disc pl-6 space-y-2 text-muted-foreground">
                 {(block.items || []).map((item, j) => <li key={j} className="leading-relaxed">{item}</li>)}
               </ul>
+            );
+          case 'tabs':
+            return (
+              <PlatformTabs
+                key={i}
+                tabs={(block.tabs || []).map((tab) => ({
+                  id: tab.id,
+                  label: tab.label,
+                  content: <GuideRenderer blocks={tab.blocks} />,
+                }))}
+              />
             );
           default:
             return null;

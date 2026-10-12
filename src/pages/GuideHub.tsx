@@ -5,10 +5,12 @@ import { GuideSearch } from '@/components/guide/GuideSearch';
 import { guideSections } from '@/data/guideContent';
 import {
   Rocket, Layers, Plug, Settings, Wand2, Link2, Server, Award,
+  Bot, ShieldCheck, Users, Building2, Languages,
 } from 'lucide-react';
 
 const iconMap: Record<string, typeof Rocket> = {
   Rocket, Layers, Plug, Settings, Wand2, Link2, Server, Award,
+  Bot, ShieldCheck, Users, Building2, Languages,
 };
 
 export default function GuideHub() {

@@ -7,9 +7,19 @@ import { skillAuthoring } from './sections/skillAuthoring';
 import { integrations } from './sections/integrations';
 import { selfHosting } from './sections/selfHosting';
 import { bestPractices } from './sections/bestPractices';
+import { connectAgent } from './sections/connectAgent';
+import { approvalsTrail } from './sections/approvalsTrail';
+import { usersRoles } from './sections/usersRoles';
+import { fieldPacks } from './sections/fieldPacks';
+import { hebrewRtl } from './sections/hebrewRtl';
 
 export const guideSections: GuideSectionData[] = [
   gettingStarted,
+  connectAgent,
+  approvalsTrail,
+  usersRoles,
+  fieldPacks,
+  hebrewRtl,
   architecture,
   connectors,
   configuration,
