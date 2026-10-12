@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { LINKS } from '@/lib/constants';
 
 export interface PricingFeature {
   text: string;
@@ -9,72 +10,47 @@ export interface PricingTier {
   name: string;
   description: string;
   emotionalPromise: string;
-  price: number | string;
-  originalPrice?: string;
+  /** '0' renders as "Free"; any other value is shown as written (currency included). */
+  price: string;
   period: string;
   features: PricingFeature[];
   ctaText: string;
   ctaUrl: string;
   trackId: string;
   delivery: string;
-  guarantee: string;
   featured?: boolean;
   badge?: string;
 }
 
+type TierKey = 'free' | 'audit' | 'implement' | 'operate';
+
+const TIERS: { key: TierKey; ctaUrl: string; featured?: boolean }[] = [
+  { key: 'free', ctaUrl: LINKS.githubRepo },
+  { key: 'audit', ctaUrl: LINKS.auditSprint, featured: true },
+  { key: 'implement', ctaUrl: LINKS.auditSprint },
+  { key: 'operate', ctaUrl: LINKS.auditSprint },
+];
+
 export const usePricing = (): { tiers: PricingTier[], compareNote: string } => {
   const { t } = useTranslation();
 
-  const pricingTiers: PricingTier[] = [
-    {
-      name: t('pricing.tiers.free.name'),
-      description: t('pricing.tiers.free.description'),
-      emotionalPromise: t('pricing.tiers.free.emotionalPromise'),
-      price: t('pricing.tiers.free.price'),
-      period: t('pricing.tiers.free.period'),
-      features: (t('pricing.tiers.free.features', { returnObjects: true }) as string[]).map(feature => ({ text: feature })),
-      ctaText: t('pricing.tiers.free.ctaText'),
-      ctaUrl: 'https://github.com/SufZen/RealizeOS-5',
-      trackId: 'pricing-free',
-      delivery: t('pricing.tiers.free.delivery'),
-      guarantee: t('pricing.tiers.free.guarantee'),
-    },
-    {
-      name: t('pricing.tiers.guided.name'),
-      description: t('pricing.tiers.guided.description'),
-      emotionalPromise: t('pricing.tiers.guided.emotionalPromise'),
-      price: t('pricing.tiers.guided.price'),
-      originalPrice: t('pricing.tiers.guided.originalPrice'),
-      period: t('pricing.tiers.guided.period'),
-      featured: true,
-      badge: t('pricing.tiers.guided.badge'),
-      features: [
-        { text: t('pricing.tiers.guided.features.header'), bold: true },
-        ...(t('pricing.tiers.guided.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
-      ],
-      ctaText: t('pricing.tiers.guided.ctaText'),
-      ctaUrl: 'https://tidycal.com/realization/realizeos-setup',
-      trackId: 'pricing-guided',
-      delivery: t('pricing.tiers.guided.delivery'),
-      guarantee: t('pricing.tiers.guided.guarantee'),
-    },
-    {
-      name: t('pricing.tiers.consulting.name'),
-      description: t('pricing.tiers.consulting.description'),
-      emotionalPromise: t('pricing.tiers.consulting.emotionalPromise'),
-      price: t('pricing.tiers.consulting.price'),
-      period: t('pricing.tiers.consulting.period'),
-      features: [
-        { text: t('pricing.tiers.consulting.features.header'), bold: true },
-        ...(t('pricing.tiers.consulting.features.list', { returnObjects: true }) as string[]).map(feature => ({ text: feature }))
-      ],
-      ctaText: t('pricing.tiers.consulting.ctaText'),
-      ctaUrl: 'mailto:info@realizeos.ai',
-      trackId: 'pricing-consulting',
-      delivery: t('pricing.tiers.consulting.delivery'),
-      guarantee: t('pricing.tiers.consulting.guarantee'),
-    },
-  ];
+  const pricingTiers: PricingTier[] = TIERS.map(({ key, ctaUrl, featured }) => {
+    const base = `pricing.tiers.${key}`;
+    return {
+      name: t(`${base}.name`),
+      description: t(`${base}.description`),
+      emotionalPromise: t(`${base}.emotionalPromise`),
+      price: t(`${base}.price`),
+      period: t(`${base}.period`),
+      featured,
+      badge: featured ? t(`${base}.badge`) : undefined,
+      features: (t(`${base}.features`, { returnObjects: true }) as string[]).map(text => ({ text })),
+      ctaText: t(`${base}.ctaText`),
+      ctaUrl,
+      trackId: `pricing-${key}`,
+      delivery: t(`${base}.delivery`),
+    };
+  });
 
   return {
     tiers: pricingTiers,

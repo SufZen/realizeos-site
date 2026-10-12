@@ -14,6 +14,7 @@ import {
 import { TierLite } from '@/components/illustrations/TierLite';
 import { TierFull } from '@/components/illustrations/TierFull';
 import { TierSetup } from '@/components/illustrations/TierSetup';
+import { PackageFull } from '@/components/illustrations/PackageFull';
 import { usePricing } from '@/data/pricing';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from '@/lib/analytics';
@@ -23,8 +24,9 @@ import { Sparkles, Mail } from 'lucide-react';
 
 const tierIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'pricing-free': TierLite,
-  'pricing-guided': TierFull,
-  'pricing-consulting': TierSetup,
+  'pricing-audit': TierSetup,
+  'pricing-implement': PackageFull,
+  'pricing-operate': TierFull,
 };
 
 export function GetStarted() {
@@ -63,7 +65,7 @@ export function GetStarted() {
         subtitle={t('pricing.header.subtitle')}
       />
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {pricingTiers.map((tier, i) => (
           <AnimateOnScroll key={tier.name} delay={i * 0.1}>
             <div
@@ -91,28 +93,11 @@ export function GetStarted() {
               </div>
 
               <div className="mb-6 text-center">
-                {tier.originalPrice && (
-                  <div className="mb-1">
-                    <span className="text-lg text-muted-foreground line-through">${tier.originalPrice}</span>
-                  </div>
-                )}
-                <span className="text-4xl font-bold">
-                  {tier.price === '0' || tier.price === 0
-                    ? t('pricing.free', 'Free')
-                    : /^\d+$/.test(String(tier.price))
-                      ? `$${tier.price}`
-                      : tier.price}
+                <span className="text-3xl font-bold">
+                  {tier.price === '0' ? t('pricing.free', 'Free') : tier.price}
                 </span>
-                {tier.period && tier.price !== '0' && tier.price !== 0 && (
-                  <span className="ms-1 text-sm text-muted-foreground">{tier.period}</span>
-                )}
-                {(tier.price === '0' || tier.price === 0) && tier.period && (
+                {tier.period && (
                   <p className="mt-1 text-sm text-muted-foreground">{tier.period}</p>
-                )}
-                {tier.originalPrice && (
-                  <p className="mt-2 text-xs font-medium text-brand-yellow animate-pulse">
-                    🔥 {t('pricing.promoDeadline', '50% off — ends July 1st')}
-                  </p>
                 )}
               </div>
 
@@ -148,9 +133,6 @@ export function GetStarted() {
                 </a>
               </Button>
               <p className="mt-3 text-center text-xs text-muted-foreground">{tier.delivery}</p>
-              {tier.guarantee && (
-                <p className="mt-1 text-center text-xs text-muted-foreground">{tier.guarantee}</p>
-              )}
             </div>
           </AnimateOnScroll>
         ))}

@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter';
 import { trackEvent } from '@/lib/analytics';
+import { LINKS } from '@/lib/constants';
 import { HeroAgentNetwork } from '@/components/illustrations/HeroAgentNetwork';
 import { useTranslation } from 'react-i18next';
 import { Github, PlayCircle, Sparkles } from 'lucide-react';
@@ -25,8 +26,6 @@ export function Hero({ onOpenVentureWizard }: HeroProps) {
   const { t } = useTranslation();
 
   const stats = [
-    { value: 7, suffix: '', label: t('hero.stats.subsystems', 'Core Subsystems') },
-    { value: 3, suffix: '', label: t('hero.stats.dashboards', 'Dashboard Pages') },
     { value: 100, suffix: '%', label: t('hero.stats.localFirst', 'Local-First') },
     { value: 0, suffix: '', label: t('hero.stats.cost', 'Lock-In'), prefix: '$' },
   ];
@@ -53,7 +52,7 @@ export function Hero({ onOpenVentureWizard }: HeroProps) {
               </a>
             </Badge>
             <Badge variant="outline" className="text-xs font-medium border-brand-yellow/40 text-brand-yellow">
-              v5.5.0 · BSL 1.1
+              {t('hero.license_badge', 'Free to download · BSL 1.1')}
             </Badge>
           </motion.div>
 
@@ -87,9 +86,9 @@ export function Hero({ onOpenVentureWizard }: HeroProps) {
                 {t('hero.cta_free', 'Get Started (free)')}
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-book-setup' })}>
-              <a href="https://tidycal.com/realization/realizeos-setup" target="_blank" rel="noreferrer">
-                {t('hero.cta_setup', 'Book Expert Setup')}
+            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-audit-sprint' })}>
+              <a href={LINKS.auditSprint} target="_blank" rel="noreferrer">
+                {t('hero.cta_setup', 'Book an Audit Sprint')}
               </a>
             </Button>
             <Button

@@ -16,7 +16,6 @@ const UseCases = lazy(() => import('@/components/sections/UseCases').then(m => (
 const GetStarted = lazy(() => import('@/components/sections/GetStarted').then(m => ({ default: m.GetStarted })));
 const CommunityDocs = lazy(() => import('@/components/sections/CommunityDocs').then(m => ({ default: m.CommunityDocs })));
 const FAQ = lazy(() => import('@/components/sections/FAQ').then(m => ({ default: m.FAQ })));
-const Roadmap = lazy(() => import('@/components/sections/Roadmap').then(m => ({ default: m.Roadmap })));
 const FinalCTA = lazy(() => import('@/components/sections/FinalCTA').then(m => ({ default: m.FinalCTA })));
 const BrandWizard = lazy(() => import('@/components/wizard/BrandWizard').then(m => ({ default: m.BrandWizard })));
 
@@ -49,7 +48,6 @@ export function Home() {
           <GetStarted />
           <CommunityDocs />
           <FAQ />
-          <Roadmap />
           <FinalCTA onOpenVentureWizard={() => setVenturePopupOpen(true)} />
         </Suspense>
       </main>

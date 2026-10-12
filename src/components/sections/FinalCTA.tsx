@@ -3,7 +3,7 @@ import { Section } from '@/components/layout/Section';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { WEBHOOK_URL } from '@/lib/constants';
+import { WEBHOOK_URL, LINKS } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
 import { useTranslation } from 'react-i18next';
 import { Github, CalendarCheck, Sparkles } from 'lucide-react';
@@ -74,11 +74,11 @@ export function FinalCTA({ onOpenVentureWizard }: FinalCTAProps) {
               asChild
               variant="outline"
               size="lg"
-              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-book' })}
+              onClick={() => trackEvent('cta_click', { cta_name: 'final-cta-audit-sprint' })}
             >
-              <a href="https://tidycal.com/realization/realizeos-setup" target="_blank" rel="noopener noreferrer" className="gap-2">
+              <a href={LINKS.auditSprint} target="_blank" rel="noopener noreferrer" className="gap-2">
                 <CalendarCheck size={18} />
-                {t('finalCta.bookSession', 'Book Setup Session')}
+                {t('finalCta.bookSession', 'Book an Audit Sprint')}
               </a>
             </Button>
             <Button

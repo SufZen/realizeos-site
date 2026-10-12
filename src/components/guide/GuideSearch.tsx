@@ -82,6 +82,13 @@ export function GuideSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
+
+  // Closing also clears the search, so the next open starts fresh.
+  const close = useCallback(() => {
+    setOpen(false);
+    setQuery('');
+    setResults([]);
+  }, []);
   const inputRef = useRef<HTMLInputElement>(null);
   const index = useMemo(() => buildIndex(), []);
 
@@ -92,19 +99,14 @@ export function GuideSearch() {
         e.preventDefault();
         setOpen(true);
       }
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Escape') close();
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, []);
+  }, [close]);
 
   useEffect(() => {
-    if (open) {
-      setTimeout(() => inputRef.current?.focus(), 50);
-    } else {
-      setQuery('');
-      setResults([]);
-    }
+    if (open) setTimeout(() => inputRef.current?.focus(), 50);
   }, [open]);
 
   const handleSearch = useCallback((q: string) => {
@@ -116,7 +118,7 @@ export function GuideSearch() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') { e.preventDefault(); setSelectedIdx(i => Math.min(i + 1, results.length - 1)); }
     if (e.key === 'ArrowUp') { e.preventDefault(); setSelectedIdx(i => Math.max(i - 1, 0)); }
-    if (e.key === 'Enter' && results[selectedIdx]) { setOpen(false); }
+    if (e.key === 'Enter' && results[selectedIdx]) { close(); }
   };
 
   // Inline trigger for the hub page
@@ -139,7 +141,7 @@ export function GuideSearch() {
     <>
       {InlineTrigger}
       {/* Modal overlay */}
-      <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh] px-4" onClick={() => setOpen(false)}>
+      <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh] px-4" onClick={() => close()}>
         <div className="fixed inset-0 bg-background/80 backdrop-blur-sm" />
         <div
           className="relative w-full max-w-xl rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
@@ -157,7 +159,7 @@ export function GuideSearch() {
               placeholder="Search documentation…"
               className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
             />
-            <button onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">
+            <button onClick={() => close()} className="text-muted-foreground hover:text-foreground">
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -171,7 +173,7 @@ export function GuideSearch() {
               <Link
                 key={`${r.sectionId}-${r.heading}-${i}`}
                 to={`/guide/${r.sectionId}`}
-                onClick={() => setOpen(false)}
+                onClick={() => close()}
                 className={`flex items-start gap-3 rounded-lg px-4 py-3 transition-colors ${
                   i === selectedIdx ? 'bg-brand-yellow/10 text-foreground' : 'text-muted-foreground hover:bg-surface'
                 }`}

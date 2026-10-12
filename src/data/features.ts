@@ -5,7 +5,6 @@ export interface Feature {
   title: string;
   promise: string;
   technical?: string;
-  roadmap?: boolean;
 }
 
 export const useFeatures = (): Feature[] => {
@@ -59,19 +58,6 @@ export const useFeatures = (): Feature[] => {
       title: t('features.cli.title', 'FABRIC Operator CLI'),
       promise: t('features.cli.promise', 'Manage your system from the command line. Init, serve, index, status — everything at your fingertips.'),
       technical: t('features.cli.technical', 'Python CLI with init, serve, bot, status, and index commands. Docker compose integration. GitHub Actions CI/CD templates.'),
-    },
-    // Roadmap items
-    {
-      icon: 'Mic',
-      title: t('features.voice.title', 'Voice Channel'),
-      promise: t('features.voice.promise', 'Talk to your AI team naturally. Coming to a future release.'),
-      roadmap: true,
-    },
-    {
-      icon: 'Smartphone',
-      title: t('features.mobile.title', 'Mobile Companion'),
-      promise: t('features.mobile.promise', 'React Native app for on-the-go access. Coming soon.'),
-      roadmap: true,
     },
   ];
 };

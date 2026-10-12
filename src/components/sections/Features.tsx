@@ -39,7 +39,6 @@ export function Features() {
   const features = useFeatures();
   const { t } = useTranslation();
 
-  const shipped = features.filter(f => !f.roadmap);
 
   return (
     <Section id="features">
@@ -48,7 +47,7 @@ export function Features() {
         subtitle={t('features.header.subtitle')}
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {shipped.map((f, i) => {
+        {features.map((f, i) => {
           const Illustration = illustrationMap[f.icon];
           return (
             <AnimateOnScroll key={f.title} delay={i * 0.08}>

@@ -1,205 +1,40 @@
 {
-  "bootcamp": {
+  "workshops": {
     "seo": {
-      "title": "RealizeOS Bootcamp · Workshop de IA para a Comunidade Israelita em Portugal",
-      "desc": "Três sessões de manhã para construir um sistema de IA vivo e adaptado ao seu negócio — para a comunidade israelita em Setúbal e no centro de Portugal. Saia com o RealizeOS a funcionar e a capacidade de o manter sozinho."
+      "title": "Workshops anteriores · RealizeOS",
+      "desc": "Workshops de RealizeOS que já realizámos, e onde encontrar a próxima sessão."
     },
-    "hero": {
-      "badge": "Workshop de IA · Setúbal · Centro de Portugal",
-      "title1": "Não vem aprender sobre IA.",
-      "title2": "Vem sair com um sistema que funciona.",
-      "lead1": "Três sessões de manhã.",
-      "lead2": "No final do workshop sai com o RealizeOS ativo, adaptado ao seu negócio — e com a capacidade de o manter e expandir sozinho.",
-      "cta": "Quero um lugar",
-      "cta2": "O que tem o programa?",
-      "chip1": "3 sessões de manhã",
-      "chip2": "3 horas cada",
-      "chip3": "Apenas 12 lugares",
-      "chip4": "100% saem com um sistema vivo"
+    "eyebrow": "Workshops",
+    "title": "Workshops anteriores",
+    "intro": "Ensinamos de forma aberta. Estes são os workshops que já realizámos, e aqui encontra a próxima sessão.",
+    "completed": "Concluído",
+    "bootcamp": {
+      "name": "RealizeOS Bootcamp",
+      "when": "17–19 de junho de 2026 · três manhãs",
+      "where": "Audax Workspace, Setúbal, Portugal",
+      "lang": "Em hebraico",
+      "desc": "Um workshop prático para a comunidade israelita na região centro de Portugal. O programa incluiu instalar o RealizeOS, ligá-lo aos documentos e dados do próprio negócio e criar uma primeira automação.",
+      "topicsTitle": "Programa",
+      "topics": [
+        "Fundamentos e instalação",
+        "Adaptar ao seu negócio",
+        "Automação e autonomia"
+      ]
     },
-    "logistics": {
-      "dates": "17–19 de junho de 2026",
-      "time": "10:00–13:00",
-      "place": "Audax Workspace · Setúbal"
+    "next": {
+      "upcomingTitle": "A seguir: um webinar gratuito em direto",
+      "upcomingDesc": "20 de outubro de 2026, 18:00 em Lisboa (20:00 em Israel), em hebraico. Como promotores imobiliários e gabinetes de arquitetura põem a IA a trabalhar no terreno, com as pessoas no controlo.",
+      "pastTitle": "Veja a gravação do webinar",
+      "pastDesc": "A gravação do webinar de outubro de 2026 e outros vídeos estão no nosso canal de YouTube.",
+      "ctaUpcoming": "Inscrever-me no webinar",
+      "ctaPast": "Ver no YouTube"
     },
-    "pain": {
-      "1": {
-        "t": "Responder a clientes em português",
-        "b": "Cada mensagem exige tradução, redação e atenção — uma e outra vez."
-      },
-      "2": {
-        "t": "Coordenar prestadores de serviços",
-        "b": "Agendamentos, confirmações e seguimentos que consomem o seu dia."
-      },
-      "3": {
-        "t": "Preparar orçamentos e tabelas de preços",
-        "b": "Trabalho manual repetitivo que pode delegar a um sistema."
-      },
-      "4": {
-        "t": "Acompanhar leads e contactos",
-        "b": "As coisas perdem-se quando está sozinho a tratar de tudo."
-      }
+    "audit": {
+      "title": "Quer isto na sua empresa?",
+      "desc": "Comece com um Audit Sprint: um mapa de onde se perde tempo e dinheiro, com prioridades e ganhos rápidos.",
+      "cta": "Marcar um Audit Sprint"
     },
-    "problem": {
-      "title": "Quantas horas por semana desperdiça<br/>no que um computador podia fazer por si?"
-    },
-    "what": {
-      "title": "Não é mais um chatbot.<br/>É o sistema operativo do seu negócio.",
-      "sub": "Uma equipa de agentes de IA que conhece profundamente o seu negócio, recorda as suas preferências e executa processos inteiros de ponta a ponta — local, privado e totalmente seu."
-    },
-    "cap": {
-      "1": {
-        "t": "FABRIC — um sistema de conhecimento",
-        "b": "Todo o conhecimento do negócio organizado em seis camadas: identidade, agentes, conhecimento, processos, insights e resultados."
-      },
-      "2": {
-        "t": "Encaminhamento inteligente entre modelos",
-        "b": "Cada tarefa é encaminhada automaticamente para o modelo ideal — Claude, Gemini ou um modelo local."
-      },
-      "3": {
-        "t": "Servidor MCP integrado",
-        "b": "Liga-se a Gmail, Calendar, Drive, Stripe, pesquisa e qualquer ferramenta compatível com MCP."
-      },
-      "4": {
-        "t": "Governação e controlo",
-        "b": "Aprovações humanas para ações críticas, um registo de auditoria completo e proteção contra prompt injection."
-      }
-    },
-    "flow": {
-      "1": "O cliente escreve\nem português",
-      "2": "O agente responde\nem segundos",
-      "3": "Você recebe um resumo\nem hebraico no Telegram",
-      "title": "Um cliente escreve. O agente responde. Você recebe um resumo.",
-      "note": "Isto constrói você mesmo no workshop — e sai com ele a funcionar."
-    },
-    "why": {
-      "title": "Não é uma palestra. Não são slides. É um workshop prático."
-    },
-    "diff": {
-      "1": {
-        "t": "Um sistema, não teoria",
-        "b": "Em cada sessão constrói um componente real e funcional. No final — o RealizeOS está ativo, ligado ao seu negócio e pronto a trabalhar."
-      },
-      "2": {
-        "t": "Em hebraico, para o seu contexto",
-        "b": "Clientes que falam português, faturas locais, AL, imobiliário — exemplos da sua realidade, aqui mesmo."
-      },
-      "3": {
-        "t": "A propriedade é sua — para sempre",
-        "b": "Local-first, sem telemetria. É o dono do Heart: o conhecimento, a identidade e o registo. Sem dependência."
-      },
-      "4": {
-        "t": "Uma comunidade que continua",
-        "b": "Depois do workshop — um canal comunitário ativo para entreajuda e desenvolvimento contínuo."
-      }
-    },
-    "layers": {
-      "title": "5 camadas. Do contexto à automação total.",
-      "fabric": "No coração do sistema — o grafo de conhecimento que liga tudo"
-    },
-    "layer": {
-      "1": {
-        "t": "Contexto",
-        "b": "Quem é, qual o negócio, em que línguas"
-      },
-      "2": {
-        "t": "Dados",
-        "b": "Os seus documentos, tabelas de preços e conhecimento"
-      },
-      "3": {
-        "t": "Inteligência",
-        "b": "O motor que compreende e responde corretamente"
-      },
-      "4": {
-        "t": "Agentes",
-        "b": "Maria · Antonio · Bruno"
-      },
-      "5": {
-        "t": "Automações",
-        "b": "O sistema funciona sozinho, 24/7"
-      }
-    },
-    "program": {
-      "title": "Três manhãs. De uma base viva à independência total.",
-      "outLabel": "No final da sessão terá:"
-    },
-    "ev": {
-      "1": {
-        "when": "Primeira sessão · 17 de junho · 10:00–13:00",
-        "title": "Fundamentos e configuração",
-        "i1": "A metodologia das 5 camadas em linguagem simples",
-        "i2": "Criar uma conta RealizeOS pessoal e definir o contexto do negócio",
-        "i3": "Escolher e configurar o primeiro agente — Maria / Antonio / Bruno",
-        "i4": "Ligar um bot pessoal de Telegram — e a primeira pergunta real",
-        "out": "Conta ativa · primeiro agente · bot de Telegram ligado"
-      },
-      "2": {
-        "when": "Segunda sessão · 18 de junho · 10:00–13:00",
-        "title": "Adaptação ao negócio",
-        "i1": "Ligar os seus dados reais — documentos, tabelas de preços, perguntas frequentes",
-        "i2": "Construir 2–3 agentes adaptados com personalidade, tom e limites",
-        "i3": "Gestão multilingue — português entra, hebraico sai",
-        "i4": "Controlo de qualidade — garantir que o agente responde corretamente e não \"inventa\"",
-        "out": "2–3 agentes a funcionar · ligados a dados reais"
-      },
-      "3": {
-        "when": "Terceira sessão · 19 de junho · 10:00–13:00",
-        "title": "Automação e independência",
-        "i1": "Criar automações — lead entra ← agente responde ← resumo para si",
-        "i2": "Manutenção própria — atualizar, adicionar conhecimento e corrigir sozinho",
-        "i3": "Gerir custos, utilização e segurança básica",
-        "i4": "Um plano de continuação de 30/60/90 dias + abertura da comunidade",
-        "out": "Automação ativa · independência total · plano de continuação"
-      }
-    },
-    "take": {
-      "1": "Um sistema RealizeOS vivo e adaptado ao seu negócio — não um demo, algo que funciona desde o primeiro dia",
-      "2": "2–3 agentes de IA que conhecem o seu negócio, respondem a clientes e executam tarefas por si",
-      "3": "Um bot pessoal de Telegram — o seu negócio no bolso, a partir de qualquer lugar",
-      "4": "Pelo menos uma automação a funcionar sozinha — entra um lead, é tratado, e você recebe um resumo",
-      "5": "Um guia de manutenção para expandir, atualizar e corrigir sozinho — sem depender de ninguém",
-      "6": "Um plano de ação claro para os próximos 30/60/90 dias",
-      "7": "Acesso a uma comunidade ativa que continua a apoiá-lo depois do workshop",
-      "title": "7 coisas que leva para casa — e são suas, para sempre."
-    },
-    "value": {
-      "1": "Um sistema de IA personalizado — seu para sempre",
-      "2": "Três sessões de configuração com acompanhamento próximo, passo a passo",
-      "3": "Poupar horas de trabalho todos os meses — acumulando ao longo do tempo",
-      "4": "Independência total — um guia de manutenção e a capacidade de o expandir sozinho",
-      "5": "Uma comunidade de apoio e acompanhamento que continua após o workshop",
-      "title": "Não está a comprar um workshop.<br/>Está a comprar os próximos 12 meses.",
-      "getTitle": "O que recebe",
-      "payTitle": "O que paga",
-      "priceSub": "As 3 sessões · investimento único",
-      "perSession": "ou €150 por sessão individual",
-      "roi": "ROI que se paga logo no primeiro mês.",
-      "1a": "Milhares de €",
-      "2a": "Milhares de €",
-      "3a": "Acumulado",
-      "4a": "Sem dependência",
-      "5a": "Contínuo"
-    },
-    "who": {
-      "1": "Gestores de alojamento · AL / STR",
-      "2": "Imobiliário e mediação",
-      "3": "Freelancers e empresários",
-      "4": "Prestadores de serviços",
-      "5": "Expats que começam um negócio",
-      "6": "Quem quer poupar tempo",
-      "title": "Para a comunidade israelita no centro de Portugal.",
-      "sub": "Se tem um negócio que quer que funcione de forma mais inteligente — isto é para si."
-    },
-    "cta": {
-      "eyebrow": "Adesão",
-      "title": "Apenas 12 lugares.",
-      "sub": "O grupo é pequeno de propósito — para que cada um saia com um sistema que realmente funciona.",
-      "button": "Quero um lugar",
-      "note": "Audax Workspace, Av. Luísa Todi, Setúbal · 17–19 de junho de 2026 · 10:00–13:00"
-    },
-    "sticky": {
-      "text": "RealizeOS Bootcamp · apenas 12 lugares"
-    }
+    "back": "Voltar ao início"
   },
   "hero": {
     "badge": "Por Realization",
@@ -209,19 +44,18 @@
     "title_highlight": "Troque Todo o Resto.",
     "description": "Implemente um motor completo de operações de IA em minutos. O conhecimento, agentes e workflows ficam na sua máquina — local-first, open source, zero dependência de fornecedor. Modelos, painéis e canais são módulos substituíveis.",
     "cta_free": "Começar (grátis)",
-    "cta_setup": "Agendar Sessão de Configuração",
+    "cta_setup": "Marcar um Audit Sprint",
     "cta_wizard": "🔮 Crie o Seu Perfil de Empreendimento",
     "stats": {
-      "subsystems": "Subsistemas Core",
-      "dashboards": "Páginas do Painel",
       "localFirst": "Local-First",
       "cost": "Sem Lock-In"
-    }
+    },
+    "license_badge": "Download gratuito · BSL 1.1"
   },
   "features": {
     "header": {
       "title": "Construído Para Operações Reais",
-      "subtitle": "Entregue na v5.5.0 — não é um wrapper, não é um brinquedo. Um motor de operações de IA completo que pode implementar hoje."
+      "subtitle": "Já em produção hoje. Não é um invólucro nem um brinquedo. Download gratuito, para correr na sua própria infraestrutura."
     },
     "fabric": {
       "title": "Sistema de Entidades FABRIC",
@@ -263,91 +97,78 @@
       "promise": "Gerencie o seu sistema pela linha de comandos. Init, serve, index, status — tudo ao seu alcance.",
       "technical": "CLI Python com comandos init, serve, bot, status e index. Integração Docker compose. Templates CI/CD para GitHub Actions."
     },
-    "voice": {
-      "title": "Canal de Voz",
-      "promise": "Fale com a sua equipa de IA naturalmente. Em breve."
-    },
-    "mobile": {
-      "title": "Aplicação Móvel",
-      "promise": "Aplicação React Native para acesso em movimento. Em breve."
-    },
-    "view_flow": "Ver Detalhes Técnicos",
-    "roadmapTitle": "Em Breve",
-    "roadmapBadge": "Roadmap"
+    "view_flow": "Ver Detalhes Técnicos"
   },
   "pricing": {
     "header": {
       "title": "Começar",
-      "subtitle": "O RealizeOS é distribuído sob licença BSL 1.1. Gratuito para a maioria dos usos comerciais."
+      "subtitle": "O software é gratuito para descarregar e correr por conta própria. Quando quiser a nossa ajuda, trabalhamos em três passos: auditoria, implementação, operação."
     },
-    "compareNote": "Pare de pagar subscrições recorrentes de IA. Aloje o seu próprio motor de operações. Seja dono dos seus dados.",
-    "promoDeadline": "50% de desconto — até 1 de julho",
+    "compareNote": "O RealizeOS continua gratuito. Paga apenas pelo trabalho à volta dele: a auditoria, a instalação e a manutenção contínua.",
     "free": "Gratuito",
     "whatsIncluded": "O Que Está Incluído",
     "tiers": {
       "free": {
-        "name": "Open Source (GitHub)",
-        "description": "Para programadores e operadores que querem auto-alojar.",
-        "emotionalPromise": "Acesso completo ao motor RealizeOS V5.5. Implemente na sua própria infraestrutura.",
-        "features": [
-          "Motor Python completo com sistema de entidades FABRIC",
-          "Deploy com um comando Docker",
-          "Routing Multi-LLM (Runtime Adapter Layer)",
-          "Motor de Missões + subsistema Dreaming",
-          "Índice de conhecimento Synapse + Registo de Eventos",
-          "FABRIC operator CLI",
-          "Painel: /missions, /knowledge, /dreams",
-          "Licença BSL 1.1 (Gratuito para uso não-competitivo)"
-        ],
+        "name": "RealizeOS",
+        "description": "Descarregue e corra por conta própria.",
+        "emotionalPromise": "O núcleo completo, na sua máquina ou servidor. Os seus ficheiros, as suas chaves, as suas regras.",
         "price": "0",
-        "period": "Gratuito para sempre",
-        "ctaText": "Ver no GitHub",
-        "delivery": "Acesso instantâneo via GitHub",
-        "guarantee": ""
+        "period": "Download gratuito · BSL 1.1",
+        "features": [
+          "O cérebro da empresa (FABRIC) em ficheiros que são seus",
+          "Aprovações, rasto com fontes, perfis e registo de auditoria",
+          "Servidor MCP incluído para Claude, n8n e outros agentes",
+          "Instalação com Docker, Python ou um só comando",
+          "Guia passo a passo e ajuda da comunidade"
+        ],
+        "ctaText": "Descarregar no GitHub",
+        "delivery": "Alojado por si"
       },
-      "guided": {
-        "name": "Sessão de Instalação",
-        "description": "Colaboração direta com o arquiteto do RealizeOS.",
-        "emotionalPromise": "Acelere a sua liberdade. Configuramos o sistema diretamente à volta do seu empreendimento único.",
-        "badge": "Recomendado",
-        "features": {
-          "header": "Tudo no Open Source, mais:",
-          "list": [
-            "Chamada de configuração de 1 hora com o criador",
-            "Scaffolding FABRIC personalizado para o seu negócio",
-            "Definições de agentes adaptadas às suas necessidades",
-            "Configuração da voz do empreendimento",
-            "Primeiro workflow de Missão configurado em conjunto",
-            "Suporte prioritário por email durante 30 dias"
-          ]
-        },
-        "price": "249",
-        "originalPrice": "499",
-        "period": "pagamento único",
-        "ctaText": "Agendar Sessão de Configuração",
-        "delivery": "Chamada de configuração de 1 hora via Google Meet",
-        "guarantee": "Garantia de reembolso de 14 dias"
+      "audit": {
+        "name": "Audit Sprint",
+        "description": "Descubra onde se perde tempo e dinheiro.",
+        "emotionalPromise": "Um mapa de onde se perde tempo e dinheiro na sua empresa, com prioridades e ganhos rápidos.",
+        "price": "€495",
+        "period": "Descontado na implementação",
+        "badge": "Comece aqui",
+        "features": [
+          "Um mapa de onde se perde tempo e dinheiro",
+          "Prioridades sobre as quais pode agir",
+          "Ganhos rápidos para aplicar de imediato",
+          "O valor é descontado se avançar para a implementação"
+        ],
+        "ctaText": "Marcar um Audit Sprint",
+        "delivery": "Marcação online"
       },
-      "consulting": {
-        "name": "Consultoria Empresarial",
-        "description": "Operações de IA personalizadas para produção em larga escala.",
-        "emotionalPromise": "Construímos, implementamos e gerimos toda a sua infraestrutura de IA.",
-        "features": {
-          "header": "Para organizações complexas:",
-          "list": [
-            "Desenvolvimento personalizado de agentes",
-            "Deploy seguro on-premise",
-            "Integrações ERP e CRM personalizadas",
-            "Canal de suporte dedicado",
-            "Engenharia de prompts e otimização contínua",
-            "Garantias SLA"
-          ]
-        },
-        "price": "Sob consulta",
-        "period": "",
-        "ctaText": "Contacte-nos",
-        "delivery": "Cronograma personalizado",
-        "guarantee": ""
+      "implement": {
+        "name": "Implementação",
+        "description": "Instalamos e construímos o cérebro da sua empresa.",
+        "emotionalPromise": "O RealizeOS instalado na sua empresa e alimentado com os seus próprios documentos.",
+        "price": "Âmbito fechado",
+        "period": "Orçamento após a auditoria",
+        "features": [
+          "Instalação na sua infraestrutura",
+          "O cérebro da empresa, construído a partir dos seus documentos",
+          "2–3 pacotes de terreno, por exemplo registo de requisitos de concurso, verificação de pedidos de pagamento ou relatório para investidores",
+          "Trabalho em hebraico, inglês ou português"
+        ],
+        "ctaText": "Comece pela auditoria",
+        "delivery": "Após o Audit Sprint"
+      },
+      "operate": {
+        "name": "Operação",
+        "description": "Mantemos tudo atual e útil.",
+        "emotionalPromise": "Uma avença: mantemos o cérebro atualizado e acrescentamos o que o seu trabalho precisar a seguir.",
+        "price": "Avença",
+        "period": "Orçamento após a auditoria",
+        "features": [
+          "O cérebro da empresa sempre atualizado",
+          "Novas competências à medida que o trabalho muda",
+          "Acompanhamento regular com uma pessoa",
+          "Um relatório de valor mensal"
+        ],
+        "ctaText": "Comece pela auditoria",
+        "delivery": "Mensal"
       }
     },
     "gemGpt": {
@@ -528,7 +349,7 @@
       },
       "docs": {
         "title": "Documentação",
-        "description": "Guias de início rápido, referência de API e documentação de configuração."
+        "description": "Guias passo a passo: instalar, ligar os seus agentes, configurar e correr em produção."
       },
       "discussions": {
         "title": "Comunidade WhatsApp",
@@ -543,8 +364,8 @@
         "description": "Gratuito para uso interno. Cláusula anti-competição SaaS. Apache 2.0 em 2030."
       },
       "officeHours": {
-        "title": "Horário de Atendimento",
-        "description": "Agende uma chamada gratuita de 15 minutos para discutir o seu caso de uso."
+        "title": "Marcar um Audit Sprint",
+        "description": "Um olhar focado sobre onde se perde tempo e dinheiro na sua empresa. €495, descontados na implementação."
       }
     }
   },
@@ -586,7 +407,7 @@
     "items": [
       {
         "question": "O RealizeOS é mesmo gratuito?",
-        "answer": "<p>Sim. O RealizeOS V5.5 é licenciado sob a Business Source License (BSL) 1.1. É completamente gratuito para uso interno e implantação em produção. A única restrição é que não pode oferecer o RealizeOS como um serviço SaaS comercial concorrente. Após 4 anos, o código transita para Apache 2.0 — totalmente open source.</p>"
+        "answer": "<p>Sim. O RealizeOS é gratuito para descarregar e usar. É distribuído sob a Business Source License (BSL) 1.1, que permite usá-lo em produção no seu próprio negócio. A única coisa que não pode fazer é oferecer o RealizeOS a terceiros como serviço alojado ou gerido. Cada versão passa a Apache 2.0 quatro anos após o seu lançamento, e todo o código o mais tardar a 26 de março de 2030.</p>"
       },
       {
         "question": "O que preciso para começar?",
@@ -605,8 +426,8 @@
         "answer": "<p>FABRIC é o Coração do RealizeOS — um grafo de conhecimento estruturado que armazena as entidades, relações e contexto do seu empreendimento. É portável, local-first e seu para sempre. Mesmo que troque o painel, o fornecedor LLM ou o runtime de agentes, os seus dados FABRIC permanecem intactos.</p>"
       },
       {
-        "question": "O que são sessões de instalação?",
-        "answer": "<p>Uma chamada de 1 hora (499€) onde o criador configura o RealizeOS diretamente à volta do seu empreendimento: scaffolding FABRIC, definições de agentes, voz do empreendimento, primeiro workflow de Missão. Inclui 30 dias de suporte prioritário por email após a sessão.</p>"
+        "question": "O que é um Audit Sprint?",
+        "answer": "<p>Um trabalho curto e pago (€495). Mapeamos onde se perde tempo e dinheiro na sua empresa e entregamos prioridades e ganhos rápidos. Se avançar para a implementação, os €495 são descontados. A implementação e a operação contínua têm âmbito fechado e são orçamentadas após a auditoria.</p>"
       },
       {
         "question": "O que é a arquitetura 'runtime-agnostic'?",
@@ -627,7 +448,7 @@
     "title2": "Sistema de Operações de IA",
     "subtitle": "Junte-se à comunidade e assuma o controlo da sua infraestrutura de IA.",
     "getRealizeOS": "Estrela no GitHub",
-    "bookSession": "Agendar Sessão de Configuração",
+    "bookSession": "Marcar um Audit Sprint",
     "notReadyTitle": "Ainda não está pronto?",
     "notReadyDesc": "Conte-nos o seu maior desafio operacional. Responderemos com conselhos práticos e honestos — sem discurso de vendas.",
     "thanks": "Obrigado! Vamos analisar o seu desafio e entrar em contacto.",
@@ -639,15 +460,19 @@
     "error": "Algo correu mal. Por favor, tente novamente ou envie-nos um e-mail diretamente."
   },
   "exitPopup": {
-    "title": "Espere — antes de sair",
-    "description": "Deixe o seu e-mail e enviaremos dicas práticas sobre operações com IA e acesso antecipado a novas funcionalidades.",
+    "title": "Antes de sair",
+    "description": "Ou deixe o seu email para receber novidades práticas sobre o RealizeOS.",
     "namePlaceholder": "O seu nome",
     "emailPlaceholder": "o-seu@email.com",
-    "cta": "Manter-me Atualizado",
+    "cta": "Manter-me informado",
     "sending": "A enviar...",
     "success": "Está dentro! Entraremos em contacto.",
     "error": "Algo correu mal. Tente novamente.",
-    "disclaimer": "Sem spam. Apenas valor real e atualizações."
+    "disclaimer": "Sem spam. Apenas valor real e atualizações.",
+    "webinarUpcoming": "Webinar gratuito em direto · 20 de outubro · 18:00 Lisboa / 20:00 Israel · em hebraico. Como promotores imobiliários e gabinetes de arquitetura põem a IA a trabalhar no terreno, com as pessoas no controlo.",
+    "webinarPast": "Veja a gravação do nosso webinar de outubro: IA a trabalhar no terreno em empresas de imobiliário e arquitetura, com as pessoas no controlo.",
+    "webinarCtaUpcoming": "Inscrever-me grátis",
+    "webinarCtaPast": "Ver no YouTube"
   },
   "webinar": {
     "booking": {
