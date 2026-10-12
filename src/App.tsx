@@ -6,6 +6,7 @@ import { TermsAndConditions } from '@/pages/TermsAndConditions';
 import { PrivacyPolicy } from '@/pages/PrivacyPolicy';
 import { Accessibility } from '@/pages/Accessibility';
 import { CookieBanner } from '@/components/shared/CookieBanner';
+import { RouteEffects } from '@/seo/RouteEffects';
 
 // Webinar pages (src/pages/WebinarPresentation.tsx, WebinarBooking.tsx) are kept
 // in the repo but hidden for now; their routes redirect home. Registration for the
@@ -19,9 +20,15 @@ const Workshops = lazy(() => import('@/pages/Workshops'));
 export default function App() {
   return (
     <>
+      <RouteEffects />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/workshops" element={<Workshops />} />
+        {/* Hebrew and Portuguese versions of the translated pages (hreflang alternates) */}
+        <Route path="/he" element={<Home />} />
+        <Route path="/pt" element={<Home />} />
+        <Route path="/he/workshops" element={<Workshops />} />
+        <Route path="/pt/workshops" element={<Workshops />} />
         <Route path="/wizard" element={<BrandWizardPage />} />
         <Route path="/design" element={<DesignSystemPage />} />
         <Route path="/guide" element={<GuideHub />} />

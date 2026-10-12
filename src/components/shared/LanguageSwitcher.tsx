@@ -7,9 +7,20 @@ import {
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Globe } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { isLocalizedPage, localizedPath, splitLangPath, type Lang } from '@/seo/lang';
 
 export function LanguageSwitcher() {
     const { i18n } = useTranslation();
+    const { pathname, hash } = useLocation();
+    const navigate = useNavigate();
+
+    // On pages that exist in every language, switching language means going to that page's URL.
+    const switchTo = (code: Lang) => {
+        const { base } = splitLangPath(pathname);
+        if (isLocalizedPage(base)) navigate(localizedPath(base, code) + hash);
+        void i18n.changeLanguage(code);
+    };
 
     const languages = [
         { code: 'en', label: 'English' },
@@ -29,8 +40,9 @@ export function LanguageSwitcher() {
                 {languages.map((lang) => (
                     <DropdownMenuItem
                         key={lang.code}
-                        onClick={() => i18n.changeLanguage(lang.code)}
-                        className={i18n.language === lang.code ? 'font-bold' : ''}
+                        onClick={() => switchTo(lang.code as Lang)}
+                        className={i18n.resolvedLanguage === lang.code ? 'font-bold' : ''}
+                        lang={lang.code}
                     >
                         {lang.label}
                     </DropdownMenuItem>

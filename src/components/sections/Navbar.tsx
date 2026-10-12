@@ -9,11 +9,13 @@ import { useTranslation } from 'react-i18next';
 import { NAV_ITEMS } from '@/lib/constants';
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import { useLangPrefix } from '@/seo/lang';
 
 export function Navbar() {
   const scrollY = useScrollPosition();
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
+  const prefix = useLangPrefix();
 
   return (
     <nav
@@ -22,7 +24,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-site items-center gap-4 justify-between px-5 py-3">
-        <a href="/" className="flex items-center gap-0" aria-label="RealizeOS home">
+        <a href={prefix || '/'} className="flex items-center gap-0" aria-label="RealizeOS home">
           <Logo />
         </a>
 
@@ -40,7 +42,7 @@ export function Navbar() {
             ) : (
               <a
                 key={item.href}
-                href={`/${item.href}`}
+                href={`${prefix}/${item.href}`}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {t(`navItems.${item.label}`)}
@@ -53,7 +55,7 @@ export function Navbar() {
           <ThemeToggle />
           <LanguageSwitcher />
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <a href="/#pricing">{t('nav.getStarted')}</a>
+            <a href={`${prefix}/#pricing`}>{t('nav.getStarted')}</a>
           </Button>
 
           {/* Mobile menu */}
@@ -80,7 +82,7 @@ export function Navbar() {
                   ) : (
                     <a
                       key={item.href}
-                      href={`/${item.href}`}
+                      href={`${prefix}/${item.href}`}
                       onClick={() => setOpen(false)}
                       className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
                     >
@@ -89,7 +91,7 @@ export function Navbar() {
                   )
                 )}
                 <Button asChild className="mt-4">
-                  <a href="/#pricing" onClick={() => setOpen(false)}>
+                  <a href={`${prefix}/#pricing`} onClick={() => setOpen(false)}>
                     {t('nav.getStarted')}
                   </a>
                 </Button>

@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# realizeos.ai
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The marketing site and user guide for [RealizeOS](https://github.com/SufZen/RealizeOS-5): what AI agents connect to — a company's memory, rules and approvals — built by [Realization](https://realization.world).
 
-Currently, two official plugins are available:
+React 19 · Vite · TypeScript · Tailwind · Radix UI · Framer Motion · i18next (English, Hebrew, Portuguese).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run it
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm ci
+npm run dev        # http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run build      # type-check → client build (docs/) → SSR build (dist-ssr/) → prerender
+npm run preview    # serve docs/ on http://localhost:4173
+npm run lint
+node scripts/check-locale-parity.cjs
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+`npm run build` prerenders every public route (`scripts/prerender.mjs`, using `src/entry-server.tsx`) so each URL ships real HTML with its own title, description, canonical and hreflang. It also writes `docs/sitemap.xml` and `docs/robots.txt`. `docs/` is build output and is not committed.
+
+## Deploy
+
+Every push to `main` deploys to production: `.github/workflows/deploy.yml` builds the site and publishes `docs/` to GitHub Pages (`realizeos.ai`, see `public/CNAME`). Work on a branch, open a pull request, and let the owner merge.
+
+## Edit the content
+
+| What | Where |
+| --- | --- |
+| Homepage and page copy (all three languages) | `public/locales/{en,he,pt}/translation.json` — keep keys in sync; check with `node scripts/check-locale-parity.cjs` |
+| Offer ladder, use cases | `src/data/pricing.ts`, `src/data/usecases.ts` (text lives in the locale files) |
+| Guide pages (English) | `src/data/sections/*.ts`, listed in `src/data/guideContent.ts` |
+| Page titles, descriptions, sitemap | `src/seo/routes.ts` (and `seo.*` / `workshops.seo` keys in the locale files) |
+| Links (audit booking, webinar, GitHub, community) | `src/lib/constants.ts` |
+| AI-readable summary | `public/llms.txt` |
+
+Rules for copy: every claim, command and number must be traceable to the RealizeOS repo, the product direction, or the owner. No invented testimonials, user counts or certifications. Say what RealizeOS doesn't do.
+
+## Routes
+
+`/`, `/he`, `/pt` (homepage) · `/workshops` (+ `/he`, `/pt`) · `/guide` and `/guide/:sectionId` · `/wizard` · `/terms`, `/privacy`, `/accessibility`. Hidden for now (files kept): `/webinar/*`. Internal: `/design`.
+
+## Structure
+
+```
+src/
+  pages/            route components
+  components/       sections/ (homepage), guide/, wizard/, shared/, ui/, illustrations/
+  data/             structured content (guide sections, pricing, use cases)
+  seo/              route table, language helpers, <head> sync
+  design-system/    --rz-* tokens
+  entry-server.tsx  build-time renderer for prerendering
+scripts/            prerender.mjs, check-locale-parity.cjs
+public/             static files, locales, llms.txt, 404.html (SPA fallback)
 ```

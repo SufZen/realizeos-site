@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home": {
+      "title": "RealizeOS — Traga qualquer agente. Guarde o cérebro da sua empresa.",
+      "desc": "O RealizeOS é aquilo a que os seus agentes de IA se ligam: a memória, as regras e as aprovações da sua empresa, no seu próprio servidor. Download gratuito. Para empresas de imobiliário, arquitetura e construção."
+    }
+  },
   "workshops": {
     "seo": {
       "title": "Workshops anteriores · RealizeOS",

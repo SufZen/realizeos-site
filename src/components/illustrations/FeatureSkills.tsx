@@ -93,8 +93,11 @@ export function FeatureSkills({ className }: Props) {
 
       {/* Travelling signal dot */}
       <motion.circle
+        cx={18}
+        cy={40}
         r={2}
         fill="var(--rz-accent)"
+        initial={{ cx: 18, cy: 40, opacity: 0 }}
         animate={{
           cx: [18, 40, 62, 62, 40, 18],
           cy: [40, 40, 40, 40, 40, 40],

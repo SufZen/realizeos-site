@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { CalendarDays, MapPin, Languages, PlayCircle, CalendarCheck, ArrowLeft } from 'lucide-react';
@@ -8,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { LINKS, isWebinarUpcoming, webinarLink } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
+import { useLangPrefix } from '@/seo/lang';
 
 /* ============================================================================
  * Past workshops — /workshops (formerly the /bootcamp landing page).
@@ -17,26 +17,15 @@ import { trackEvent } from '@/lib/analytics';
 export default function Workshops() {
   const { t } = useTranslation();
   const upcoming = isWebinarUpcoming();
+  const prefix = useLangPrefix();
   const topics = t('workshops.bootcamp.topics', { returnObjects: true }) as string[];
-
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = t('workshops.seo.title');
-    const meta = document.querySelector('meta[name="description"]');
-    const prevDesc = meta?.getAttribute('content') ?? '';
-    meta?.setAttribute('content', t('workshops.seo.desc'));
-    return () => {
-      document.title = prevTitle;
-      meta?.setAttribute('content', prevDesc);
-    };
-  }, [t]);
 
   return (
     <>
       <Navbar />
       <main className="min-h-screen pt-28 pb-20">
         <div className="mx-auto max-w-3xl px-5">
-          <Link to="/" className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand-yellow">
+          <Link to={prefix || '/'} className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand-yellow">
             <ArrowLeft size={14} className="rtl:rotate-180" />
             {t('workshops.back')}
           </Link>
