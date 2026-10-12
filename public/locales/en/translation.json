@@ -383,40 +383,64 @@
     "title": "Frequently Asked Questions",
     "items": [
       {
-        "question": "Is RealizeOS really free?",
+        "question": "Is RealizeOS free?",
         "answer": "<p>Yes. RealizeOS is free to download and run. It is licensed under the Business Source License (BSL) 1.1, which lets you use it in production for your own business. The one thing you can't do is offer RealizeOS to others as a hosted or managed service. Each version becomes Apache 2.0 four years after its release, and the whole codebase on 26 March 2030 at the latest.</p>"
       },
       {
-        "question": "What do I need to get started?",
-        "answer": "<p>Python 3.11+, Docker (recommended), and API keys for your chosen LLM providers (Anthropic, Google AI, OpenAI, and/or Ollama for fully local inference with zero external calls).</p>"
+        "question": "Is RealizeOS another AI agent?",
+        "answer": "<p>No. RealizeOS is what your agents connect to: your company's memory, rules and approvals. You keep using the AI tools you like; they all work from the same company brain, under the same roles and approvals. RealizeOS has agents of its own too, but its job is to be the brain and the control layer, not one more chat app.</p>"
       },
       {
-        "question": "Can I host it on my own server?",
-        "answer": "<p>Yes. RealizeOS is designed for self-hosting. Deploy with Docker on any VPS, cloud instance, or local machine. Your FABRIC data, event log, and SOUL identity stay on your infrastructure.</p>"
+        "question": "Can I use it from Claude.ai, Claude Desktop, ChatGPT or n8n?",
+        "answer": "<p>Claude.ai and Claude Desktop connect as a custom connector, with a normal sign-in. Claude Code connects with a short config file. n8n can use MCP or the REST API. Other agents that speak MCP (the open standard agents use to call tools) can connect too; we only name clients we have documented setups for, and ChatGPT is not one of them yet. See <a href=\"/guide/connect-your-agent\">Connect your agent</a>.</p>"
       },
       {
-        "question": "Is my data private?",
-        "answer": "<p>Completely. RealizeOS runs on your machine or server — local-first by design. For maximum privacy, use Ollama for fully local inference &mdash; no data leaves your network at all. The only external calls are to the LLM APIs you explicitly configure.</p>"
+        "question": "What can a connected agent do, and what needs my approval?",
+        "answer": "<p>A connected agent acts as the person who signed in, with their role and projects. It can search your company brain, ask RealizeOS's agents, run skills and, if that person may approve, handle the approval queue. Reading is free. Writing (sending an email, adding rows to a sheet, creating a document or task) goes through the approvals you set: at the default level it waits for a person, runs exactly once when approved, and reports back. If something fails, nothing runs.</p>"
       },
       {
-        "question": "What is the FABRIC Entity System?",
-        "answer": "<p>FABRIC is the Heart of RealizeOS — a structured knowledge graph that stores your venture's entities, relationships, and context. It's portable, local-first, and yours forever. Even if you swap the dashboard, the LLM provider, or the agent runtime, your FABRIC data stays intact.</p>"
+        "question": "How do I know where an answer came from?",
+        "answer": "<p>Every answer can show a \"What I used\" trail: the documents it drew on and the tools it ran. With citations on, each figure taken from a document carries a numbered marker such as [S1] that points to its source.</p>"
       },
       {
-        "question": "What is an Audit Sprint?",
-        "answer": "<p>A short, paid engagement (€495). We map where time and money leak in your firm and give you priorities and quick wins. If you go on to implementation, the €495 is credited. Implementation and ongoing operation are fixed in scope and quoted after the audit.</p>"
+        "question": "Who on my team can see what?",
+        "answer": "<p>There are five roles: owner, admin, operator, user and viewer. A viewer can only read; a user can chat and edit files; an operator can also approve held actions; admins and owners can change settings. You can limit anyone to specific ventures (projects). The same rules apply in the dashboard, the API and every connected agent.</p>"
       },
       {
-        "question": "What is 'runtime-agnostic' architecture?",
-        "answer": "<p>RealizeOS uses a Runtime Adapter Layer — a registry pattern that supports any LLM backend (Claude, Gemini, OpenAI, Ollama, and more). You can switch providers or add new ones without touching your knowledge base or workflows. Your Heart stays the same; the Limbs are swappable.</p>"
+        "question": "Where does my data live? Can I leave with it?",
+        "answer": "<p>On your own server or computer. Your company brain is stored as plain files (FABRIC) that belong to you: you can copy them, back them up and take them with you. When you use a cloud model such as Claude or Gemini, the text of each request goes to that provider under your own API key; with a local model, it stays on your machine.</p>"
       },
       {
-        "question": "Do I get updates?",
-        "answer": "<p>Yes. As an open-source project on GitHub, you get access to all updates. Pull the latest changes whenever you want — on your schedule, not ours.</p>"
+        "question": "Does it work in Hebrew? In Portuguese?",
+        "answer": "<p>Yes. Agents answer in the language you use, and the real-estate developer pack understands Hebrew requests out of the box. A venture set to Hebrew turns the dashboard right-to-left (its labels are still in English). You can work in Portuguese the same way, and this site is available in English, Hebrew and Portuguese.</p>"
       },
       {
-        "question": "Can I manage multiple businesses?",
-        "answer": "<p>Absolutely. RealizeOS is built for multi-venture operators. Each business gets its own FABRIC entity space with isolated agents, knowledge base, and venture voice. One engine, as many ventures as you need.</p>"
+        "question": "Which models does it use? Can I run it fully local?",
+        "answer": "<p>You bring your own keys: Claude, Gemini or OpenAI. Ollama runs models locally. To be clear about the limits: agents use tools (reading Drive, writing to sheets) only with Claude today, so a fully local setup gives you chat over your company brain without tool use.</p>"
+      },
+      {
+        "question": "What is an Audit Sprint, and what does it cost?",
+        "answer": "<p>A short, paid engagement for €495. We map where time and money leak in your firm and give you priorities and quick wins. If you go on to implementation, the €495 is credited toward it.</p>"
+      },
+      {
+        "question": "What happens after the audit?",
+        "answer": "<p>If it makes sense, implementation: we install RealizeOS on infrastructure you control, build your company brain from your documents, and set up 2–3 field packs. Then, if you want, we operate it on a retainer: we keep the brain current, add skills as your work changes, check in regularly, and send a monthly value report. Both are fixed in scope and quoted after the audit.</p>"
+      },
+      {
+        "question": "Do I need to be technical? Can you set it up for us?",
+        "answer": "<p>Installing it yourself takes some comfort with Docker or the command line; the <a href=\"/guide/getting-started\">guide</a> walks through it. If that isn't you, we do it for you during implementation, on your server or your cloud account. You don't need to be technical to use it: people work in their usual AI tool and approve actions in a simple dashboard.</p>"
+      },
+      {
+        "question": "What can't RealizeOS do?",
+        "answer": "<p>It doesn't replace an appraiser, a lawyer or an engineer's sign-off, and it doesn't make decisions for you. It prepares the work, finds the sources and shows where every figure came from; people decide. Today one field pack ships (for real-estate developers); packs for other teams are built with each client.</p>"
+      },
+      {
+        "question": "How is it secured?",
+        "answer": "<p>It runs on your own infrastructure, behind sign-in. Roles and venture limits decide who sees what, approvals fail closed, and every action and sign-in goes to an audit log. Connector sign-ins are rate-limited and their tokens are stored only as hashes. Recent releases were security-reviewed and hardened. RealizeOS has no third-party security certification.</p>"
+      },
+      {
+        "question": "How do I get updates?",
+        "answer": "<p>New versions are published on GitHub. Read the <a href=\"https://github.com/SufZen/RealizeOS-5/blob/main/CHANGELOG.md\" target=\"_blank\" rel=\"noopener noreferrer\">changelog</a>, then pull the new version and restart. Releases are listed at <a href=\"https://github.com/SufZen/RealizeOS-5/releases\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/SufZen/RealizeOS-5/releases</a>.</p>"
       }
     ]
   },

@@ -9,12 +9,28 @@ import {
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from '@/lib/analytics';
 
+const stripHtml = (html: string) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
 export function FAQ() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const faqList: { question: string, answer: string }[] = t('faq.items', { returnObjects: true }) as { question: string, answer: string }[];
+
+  // FAQPage structured data for the English FAQ (the canonical, indexed version).
+  const jsonLd = i18n.resolvedLanguage === 'en' && Array.isArray(faqList)
+    ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqList.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: { '@type': 'Answer', text: stripHtml(item.answer) },
+        })),
+      }).replace(/</g, String.fromCharCode(92) + 'u003c') // keep '</script>' out of the JSON
+    : null;
 
   return (
     <Section id="faq">
+      {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />}
       <SectionHeader title={t('faq.title')} />
       <div className="mx-auto max-w-2xl">
         <Accordion type="single" collapsible>
@@ -32,7 +48,7 @@ export function FAQ() {
               </AccordionTrigger>
               <AccordionContent>
                 <div
-                  className="prose prose-sm prose-invert max-w-none text-muted-foreground"
+                  className="prose prose-sm prose-invert max-w-none text-muted-foreground [&_a]:text-brand-yellow [&_a]:underline"
                   dangerouslySetInnerHTML={{ __html: item.answer }}
                 />
               </AccordionContent>
