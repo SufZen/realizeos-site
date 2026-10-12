@@ -90,7 +90,7 @@ export function BringAnyAgent() {
       </div>
 
       <p className="mt-10 text-center">
-        <Link to="/guide/connectors" className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-yellow hover:underline">
+        <Link to="/guide/connect-your-agent" className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-yellow hover:underline">
           {t('agents.link')}
           <ArrowRight size={14} className="rtl:rotate-180" />
         </Link>

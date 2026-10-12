@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Building2, DraftingCompass, HardHat, ArrowRight } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
@@ -5,7 +6,6 @@ import { SectionHeader } from '@/components/layout/SectionHeader';
 import { AnimateOnScroll } from '@/components/shared/AnimateOnScroll';
 import { GlowCard } from '@/components/shared/GlowCard';
 import { useUseCases, usePackExample, PACK_INSTALL_COMMAND } from '@/data/usecases';
-import { LINKS } from '@/lib/constants';
 
 const iconMap = {
   developer: Building2,
@@ -83,15 +83,13 @@ export function UseCases() {
             <pre dir="ltr" className="overflow-x-auto rounded-lg bg-background px-4 py-3 text-start font-mono text-xs md:text-sm">
               <code>{PACK_INSTALL_COMMAND}</code>
             </pre>
-            <a
-              href={`${LINKS.githubRepo}/blob/main/docs/webinar-demo.md`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/guide/field-packs"
               className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-yellow hover:underline"
             >
               {t('usecases.example.guideLink')}
               <ArrowRight size={14} className="rtl:rotate-180" />
-            </a>
+            </Link>
           </div>
         </div>
       </AnimateOnScroll>
