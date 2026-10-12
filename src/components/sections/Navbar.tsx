@@ -22,7 +22,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-site items-center gap-4 justify-between px-5 py-3">
-        <a href="#" className="flex items-center gap-0">
+        <a href="/" className="flex items-center gap-0" aria-label="RealizeOS home">
           <Logo />
         </a>
 
@@ -35,15 +35,15 @@ export function Navbar() {
                 to={item.href}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                {t(`navItems.${item.label.toLowerCase()}`)}
+                {t(`navItems.${item.label}`)}
               </Link>
             ) : (
               <a
                 key={item.href}
-                href={item.href}
+                href={`/${item.href}`}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                {t(`navItems.${item.label.toLowerCase()}`)}
+                {t(`navItems.${item.label}`)}
               </a>
             )
           )}
@@ -53,7 +53,7 @@ export function Navbar() {
           <ThemeToggle />
           <LanguageSwitcher />
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <a href="#pricing">{t('nav.getStarted')}</a>
+            <a href="/#pricing">{t('nav.getStarted')}</a>
           </Button>
 
           {/* Mobile menu */}
@@ -75,21 +75,21 @@ export function Navbar() {
                       onClick={() => setOpen(false)}
                       className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
                     >
-                      {t(`navItems.${item.label.toLowerCase()}`)}
+                      {t(`navItems.${item.label}`)}
                     </Link>
                   ) : (
                     <a
                       key={item.href}
-                      href={item.href}
+                      href={`/${item.href}`}
                       onClick={() => setOpen(false)}
                       className="text-lg font-medium text-foreground transition-colors hover:text-brand-yellow"
                     >
-                      {t(`navItems.${item.label.toLowerCase()}`)}
+                      {t(`navItems.${item.label}`)}
                     </a>
                   )
                 )}
                 <Button asChild className="mt-4">
-                  <a href="#pricing" onClick={() => setOpen(false)}>
+                  <a href="/#pricing" onClick={() => setOpen(false)}>
                     {t('nav.getStarted')}
                   </a>
                 </Button>

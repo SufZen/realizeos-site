@@ -2,15 +2,15 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
-import { GithubDemo } from '@/components/sections/GithubDemo';
 import { Footer } from '@/components/sections/Footer';
 import { ExitIntentPopup } from '@/components/shared/ExitIntentPopup';
 import { MobileStickyBar } from '@/components/shared/MobileStickyBar';
 import { VentureWizardPopup } from '@/components/shared/VentureWizardPopup';
 
 /* Below-the-fold sections — lazy-loaded for faster initial paint */
-const FabricSystem = lazy(() => import('@/components/sections/FabricSystem').then(m => ({ default: m.FabricSystem })));
-const Features = lazy(() => import('@/components/sections/Features').then(m => ({ default: m.Features })));
+const BringAnyAgent = lazy(() => import('@/components/sections/BringAnyAgent').then(m => ({ default: m.BringAnyAgent })));
+const ValueLayers = lazy(() => import('@/components/sections/ValueLayers').then(m => ({ default: m.ValueLayers })));
+const TrustControl = lazy(() => import('@/components/sections/TrustControl').then(m => ({ default: m.TrustControl })));
 const Founder = lazy(() => import('@/components/sections/Founder').then(m => ({ default: m.Founder })));
 const UseCases = lazy(() => import('@/components/sections/UseCases').then(m => ({ default: m.UseCases })));
 const GetStarted = lazy(() => import('@/components/sections/GetStarted').then(m => ({ default: m.GetStarted })));
@@ -39,15 +39,15 @@ export function Home() {
       <main>
         <Hero onOpenVentureWizard={() => setVenturePopupOpen(true)} />
         <PainPoints />
-        <GithubDemo />
         <Suspense>
-          <FabricSystem />
-          <Features />
-          <Founder />
+          <BringAnyAgent />
+          <ValueLayers />
           <UseCases />
+          <TrustControl />
           <GetStarted />
-          <CommunityDocs />
+          <Founder />
           <FAQ />
+          <CommunityDocs />
           <FinalCTA onOpenVentureWizard={() => setVenturePopupOpen(true)} />
         </Suspense>
       </main>

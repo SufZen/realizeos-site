@@ -173,21 +173,21 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint="The AI will address you and reference your role in context."
                 value={state.nameRole}
                 onChange={(v) => set('nameRole', v)}
-                placeholder="E.g. Asaf Levy, Founder at Realization Group. I build AI-powered business systems."
+                placeholder="E.g. Dana Cohen, managing partner at a 20-person architecture firm. I run design and client relationships."
               />
               <Field
                 label="What are your top 3 strengths?"
                 hint="What you're best at — the AI will amplify these."
                 value={state.strengths}
                 onChange={(v) => set('strengths', v)}
-                placeholder="E.g. 1) Systems thinking — I see patterns others miss. 2) Closing deals. 3) Turning complex ideas into simple frameworks."
+                placeholder="E.g. 1) Reading a site and a plan quickly. 2) Winning competitions and tenders. 3) Explaining complex projects to clients and authorities."
               />
               <Field
                 label="Where do you need the most help?"
                 hint="Your gaps — where the AI should focus for highest leverage."
                 value={state.gaps}
                 onChange={(v) => set('gaps', v)}
-                placeholder="E.g. Content creation takes too long. I struggle with detailed financial analysis. Staying organized across projects."
+                placeholder="E.g. Tender paperwork takes too long. Tracking consultant comments across revisions. Keeping budgets and payment requests in order."
               />
               <Field
                 label="How do you like to receive information?"
@@ -223,7 +223,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint="The tagline should capture what you do in one memorable sentence."
                 value={state.bizNameTagline}
                 onChange={(v) => set('bizNameTagline', v)}
-                placeholder="E.g. Realization Group — We help ambitious operators build AI-powered business systems."
+                placeholder="E.g. Studio North — We design and manage residential and mixed-use projects from feasibility to handover."
                 rows={2}
               />
               <Field
@@ -231,14 +231,14 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint="The problem you solve and the outcome you create. Be specific."
                 value={state.mission}
                 onChange={(v) => set('mission', v)}
-                placeholder="E.g. Most businesses waste hours on repetitive work AI can handle. We build the systems that free them to focus on what only humans can do."
+                placeholder="E.g. Good buildings come from clear decisions. We keep every project decision documented, so clients and contractors always know where things stand."
               />
               <Field
                 label="Who is your ideal customer?"
                 hint="Role, industry, company size, pain points. Picture one real person."
                 value={state.audience}
                 onChange={(v) => set('audience', v)}
-                placeholder="E.g. A 38-year-old agency founder running a team of 5-15. Tired of being the content quality bottleneck."
+                placeholder="E.g. A residential developer running 2-4 projects at once, managing contractors from abroad, who wants to know where the money stands without waiting for the next site meeting."
               />
               <Field
                 label="What are your 3-5 core values?"
@@ -252,14 +252,14 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint='"We are the only [category] that [benefit] for [audience] by [method]."'
                 value={state.uvp}
                 onChange={(v) => set('uvp', v)}
-                placeholder="E.g. We are the only AI consultancy that ships a working multi-agent system in 7 days for operators managing 3+ ventures."
+                placeholder="E.g. We are the only firm in our region that handles feasibility, permits and tender documents in Hebrew, English and Portuguese."
               />
               <Field
                 label="Where do you sit in the market?"
                 hint="We ARE: [what you stand for]. We are NOT: [what you're not]."
                 value={state.positioning}
                 onChange={(v) => set('positioning', v)}
-                placeholder="E.g. We ARE the premium, done-for-you option. We are NOT the cheapest option, a generic chatbot agency, or a subscription tool."
+                placeholder="E.g. We ARE a full-service design and project-management partner. We are NOT the cheapest drafting service or a general contractor."
                 rows={2}
               />
               <Field
@@ -333,7 +333,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint="A real example from your content, or write one now. This is the single most powerful input."
                 value={state.goodExample}
                 onChange={(v) => set('goodExample', v)}
-                placeholder={`E.g. "Most AI setups are a mess of disconnected chatbots. Your AI should work as a team — a Writer, a Reviewer, an Analyst — all knowing your business. That's what RealizeOS builds."`}
+                placeholder={`E.g. "Every project decision is written down, with its source. When a client asks why, we can show them in a minute."`}
                 rows={4}
               />
               <Field
@@ -349,7 +349,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint="These become your first AI skills. Be specific."
                 value={state.workflows}
                 onChange={(v) => set('workflows', v)}
-                placeholder="E.g. 1) Writing 3-4 LinkedIn posts per week. 2) Drafting client proposals from meeting notes. 3) Weekly competitor research digest."
+                placeholder="E.g. 1) Building a requirements register from each tender. 2) Checking contractor payment requests against milestones. 3) A monthly progress report for investors."
               />
             </>
           )}

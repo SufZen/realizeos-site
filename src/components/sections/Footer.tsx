@@ -40,7 +40,7 @@ export function Footer() {
             >
               {t('footer.links.support')}
             </a>
-            <a href="#faq" className="text-muted-foreground hover:text-brand-yellow">
+            <a href="/#faq" className="text-muted-foreground hover:text-brand-yellow">
               {t('footer.links.faq')}
             </a>
           </div>

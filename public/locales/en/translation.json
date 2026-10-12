@@ -38,66 +38,23 @@
   },
   "hero": {
     "badge": "By Realization",
-    "tagline": "Run AI agents on your own infrastructure. Own your data forever.",
     "github_badge": "Star us on GitHub",
-    "title_main": "Own the Core.",
-    "title_highlight": "Swap Everything Else.",
-    "description": "Deploy a complete AI operations engine in minutes. Your knowledge, agents, and workflows stay on your machine — local-first, open source, zero vendor lock-in. Models, dashboards, and channels are swappable adapters.",
-    "cta_free": "Get Started (free)",
+    "license_badge": "Free to download · BSL 1.1",
+    "tagline": "For real-estate developers, architecture firms and construction teams",
+    "title_main": "Bring any agent. Keep your company's brain.",
+    "title_highlight": "Stay in control, with people who know your field.",
+    "description": "RealizeOS is not another AI agent. It's what your agents connect to: your company's memory, rules and approvals, running on your own server. The software is free. Realization's team installs it, fills it with your documents and keeps it working.",
     "cta_setup": "Book an Audit Sprint",
-    "cta_wizard": "🔮 Build Your Venture Profile",
-    "stats": {
-      "localFirst": "Local-First",
-      "cost": "Lock-In"
-    },
-    "license_badge": "Free to download · BSL 1.1"
-  },
-  "features": {
-    "header": {
-      "title": "Built for Real Operations",
-      "subtitle": "Running in production today — not a wrapper, not a toy. Free to download and run on your own infrastructure."
-    },
-    "fabric": {
-      "title": "FABRIC Entity System",
-      "promise": "Your knowledge graph is the Heart — entities, relationships, and context you own forever.",
-      "technical": "The FABRIC entity system stores all venture knowledge as structured entities with typed relationships. Full REST API for CRUD operations. SQLite-backed with FTS5 full-text search."
-    },
-    "synapse": {
-      "title": "Synapse Knowledge Index",
-      "promise": "Hybrid search across your entire knowledge base — keyword + semantic. Millisecond retrieval.",
-      "technical": "FTS5 keyword search combined with vector embeddings. Your AI agents find the exact right document or memory every time — understanding intent, not just keywords."
-    },
-    "routing": {
-      "title": "Multi-LLM Routing",
-      "promise": "Route requests to the right AI model automatically. Cost, quality, speed — you set the strategy.",
-      "technical": "Runtime Adapter Layer with provider-agnostic routing. Registry pattern supports any LLM backend. Per-call cost tracking and intelligent model selection."
-    },
-    "missions": {
-      "title": "Mission Engine",
-      "promise": "Define objectives, track progress, coordinate agents. Multi-step workflows with human review gates.",
-      "technical": "Full mission lifecycle: define → plan → execute → review → complete. Dashboard page at /missions with real-time status tracking."
-    },
-    "dreaming": {
-      "title": "Dreaming & Trust Policy",
-      "promise": "Background reflection and continuous improvement. The system gets smarter while you sleep.",
-      "technical": "Dreaming subsystem processes daily interactions and suggests improvements. Trust Policy scores each proposal. Dashboard at /dreams."
-    },
-    "eventlog": {
-      "title": "Event Log & SOUL Identity",
-      "promise": "Full audit trail of every action. Your venture identity encoded and versioned.",
-      "technical": "Structured event logging with typed events. SOUL identity layer stores venture voice, methodology, and rules as versionable artifacts."
-    },
-    "security": {
-      "title": "Enterprise Security",
-      "promise": "Local-first by design. Your data never leaves your infrastructure.",
-      "technical": "Role-based access control. AES-256 encrypted credential vault. Prompt injection detection. Full audit logging."
-    },
-    "cli": {
-      "title": "FABRIC Operator CLI",
-      "promise": "Manage your system from the command line. Init, serve, index, status — everything at your fingertips.",
-      "technical": "Python CLI with init, serve, bot, status, and index commands. Docker compose integration. GitHub Actions CI/CD templates."
-    },
-    "view_flow": "View Technical Details"
+    "cta_webinar_upcoming": "Free webinar · 20 Oct",
+    "cta_webinar_past": "Watch the webinar",
+    "cta_free": "Self-host free on GitHub",
+    "cta_wizard": "Build your firm's profile (free)",
+    "chips": {
+      "selfHosted": "On your own server",
+      "languages": "Hebrew · English · Portuguese",
+      "approvals": "Approval before actions that matter",
+      "sources": "Sources on every answer"
+    }
   },
   "pricing": {
     "header": {
@@ -185,159 +142,189 @@
   },
   "usecases": {
     "header": {
-      "title": "Built For How You Work",
-      "subtitle": "Whether you run one venture or five, RealizeOS adapts to your operations."
+      "title": "Built for real estate, architecture and construction",
+      "subtitle": "One field pack ships today: the real-estate developer pack. Packs for other teams are built with each client during implementation."
     },
-    "arch": {
-      "title": "Architecture Firms",
-      "description": "Stop drowning in compliance checks and vendor emails. Reclaim your time to focus on what you actually love: designing the future.",
+    "developer": {
+      "title": "Real-estate developers",
+      "description": "Know where the money stands without waiting for the next site meeting.",
       "tasks": [
-        "Draft RFQ responses based on past successful bids",
-        "Automate preliminary zoning and compliance checks",
-        "Generate project narratives from raw meeting notes",
-        "Extract insights from complex municipal building codes",
-        "Manage vendor coordination emails in your tone"
+        "Register every requirement in a tender file, with its source",
+        "Check each payment request against its contract milestone",
+        "Draft investor reports where every figure names its source",
+        "Ask budget questions and get answers with citations"
       ]
     },
-    "realestate": {
-      "title": "Real Estate Investment",
-      "description": "Transform anxiety into absolute clarity. Make high-stakes decisions with an engine that instantly surfaces the exact insights you need.",
+    "architecture": {
+      "title": "Architecture and planning firms",
+      "description": "One shared brain, so no one starts from a blank page.",
       "tasks": [
-        "Extract key metrics from financial prospectuses",
-        "Draft investment committee memos from raw data",
-        "Analyze market trends to spot emerging yield opportunities",
-        "Standardize property due diligence reports",
-        "Summarize quarterly portfolio performance"
+        "Build a requirements register from a brief or tender",
+        "Keep project decisions and revisions in one searchable place",
+        "Prepare documents in Hebrew, English or Portuguese",
+        "Spot contradictions between documents"
       ]
     },
-    "venture": {
-      "title": "Venture Studios",
-      "description": "Achieve the impossible: extreme scale without the burnout. Run three ventures with the mental clarity of running one.",
+    "construction": {
+      "title": "Construction and project management",
+      "description": "A clear record of what was agreed, requested and approved.",
       "tasks": [
-        "Switch between ventures without losing context",
-        "Draft go-to-market strategies for new spin-offs",
-        "Generate investor updates for each venture separately",
-        "Research new market opportunities across all verticals",
-        "Maintain unified venture rules across discrete teams"
+        "Track milestones and payment requests against the contract",
+        "Hold writes to a sheet or system until someone approves",
+        "Turn site notes and emails into a project log",
+        "Give each person access only to their projects"
       ]
     },
-    "engineering": {
-      "title": "Engineering & Operations",
-      "description": "Bring order to the chaos of physical deployment. Feel the total relief of knowing every fragmented detail is structured and tracked.",
-      "tasks": [
-        "Translate technical specs into client-friendly updates",
-        "Structure fragmented site reports into coherent logs",
-        "Draft operational playbooks and standard procedures",
-        "Review contractor bids against project requirements",
-        "Automate follow-ups for outstanding project deliverables"
-      ]
-    },
-    "urban": {
-      "title": "Urban Planning",
-      "description": "Navigate the labyrinth of public policy and community feedback with an engine that synthesizes thousands of voices into clear direction.",
-      "tasks": [
-        "Summarize hours of town hall meeting transcripts",
-        "Draft public engagement reports and summaries",
-        "Cross-reference master plans with new zoning laws",
-        "Generate accessible community update newsletters",
-        "Analyze demographic data for neighborhood impact"
-      ]
-    },
-    "asset": {
-      "title": "Asset Management",
-      "description": "Gain ultimate peace of mind. Protect your portfolio's value with an always-on operational layer that never misses a detail.",
-      "tasks": [
-        "Automate tenant communication and maintenance routing",
-        "Generate monthly owner statements and narrative reports",
-        "Monitor lease expiration schedules proactively",
-        "Draft vendor RFPs for capital improvement projects",
-        "Analyze operating expense variances across properties"
-      ]
+    "example": {
+      "title": "Worked example: the real-estate developer pack",
+      "subtitle": "Three skills, shown live in our October 2026 webinar on demo data.",
+      "colSkill": "Skill",
+      "colIn": "Goes in",
+      "colOut": "Comes out",
+      "colHeld": "Held for approval",
+      "rows": [
+        {
+          "skill": "Tender requirements register",
+          "in": "The tender file",
+          "out": "A requirements register, each line with its source, contradictions flagged",
+          "held": "Writing the rows to the project sheet"
+        },
+        {
+          "skill": "Payment request check",
+          "in": "A payment request and the contract milestones",
+          "out": "A verdict against the matching milestone",
+          "held": "The payment row. The system never pays."
+        },
+        {
+          "skill": "Investor report",
+          "in": "The budget summary",
+          "out": "A draft report where every figure names its source",
+          "held": "Nothing is sent: a person reviews the draft"
+        }
+      ],
+      "installLabel": "Start a new RealizeOS with this pack:",
+      "guideLink": "Read the field pack guide"
     }
   },
   "founder": {
-    "title": "Built from Real Operations",
-    "p1": "RealizeOS was born from the Realization Group's everyday work — a production engine running international architecture, real estate, and venture operations daily across 3 regions.",
-    "p2": "I built this because the alternative was breaking down. Trying to scale physical, complex ventures using scattered AI tools was exhausting. I needed absolute clarity and total control. RealizeOS is the engine I built to buy back my freedom — now it's open source so you can reclaim yours.",
+    "title": "Built by people who work in the field",
+    "p1": "RealizeOS comes out of Realization’s daily work in architecture, real-estate development and planning, between Israel and Portugal. Our own work runs on it.",
+    "p2": "We built it because scattered AI tools couldn’t carry real projects: no shared memory, no sources, no control. Now the core is free, and we help other firms put it to work.",
     "role": "Founder,",
+    "proofTitle": "From our field work",
     "proof": {
-      "badge": "Walk the Talk",
-      "regions": "3 Regions",
-      "regionsLabel": "IL · PT · US",
-      "agents": "6+ Agents",
-      "agentsLabel": "in production",
-      "usage": "Daily",
-      "usageLabel": "used by Realization"
-    }
-  },
-  "fabricSystem": {
-    "header": {
-      "title": "The FABRIC System",
-      "subtitle": "Your AI-OS is built on a layered architecture. The Heart is yours forever — everything else is swappable."
-    },
-    "architecture": {
-      "title": "The Layered AI-OS Model",
-      "heart": {
-        "title": "The Core (You Own)",
-        "description": "FABRIC knowledge graph, event log, SOUL identity. Portable, local-first, yours forever.",
-        "badge": "You Own This Forever"
-      },
-      "limbs": {
-        "title": "Execution Layer (Swappable)",
-        "description": "Agent runtimes, LLM providers, Mission Engine. Swap or upgrade anytime."
-      },
-      "skin": {
-        "title": "Interface Layer (Swappable)",
-        "description": "Dashboard, channels, CLI. Replace the interface without touching your data."
-      }
-    },
-    "items": {
-      "F": {
-        "title": "Foundations",
-        "description": "System methodology, identity, and rules that every agent follows. Your team builds to your exact specifications, always."
-      },
-      "A": {
-        "title": "Agents",
-        "description": "Your specialized AI team — drafter, analyst, reviewer, orchestrator. Each defined by a structure you control."
-      },
-      "B": {
-        "title": "Brain",
-        "description": "Domain knowledge your team actually remembers. Market data, expertise, deal history — accessible every conversation."
-      },
-      "R": {
-        "title": "Routines",
-        "description": "Workflows that chain agents and tools together. \"Draft project narrative\" triggers writer, then reviewer — automatically."
-      },
-      "I": {
-        "title": "Insights",
-        "description": "A learning log that makes your team smarter over time. Feedback, execution decisions, and patterns — nothing gets lost."
-      },
-      "C": {
-        "title": "Creations",
-        "description": "Deployments that meet your quality standards. Every output lands in an organized, reviewable structure."
-      }
+      "tender": "Hundreds of tender documents analyzed and a comprehensive, professional tender file prepared in a foreign language in two days, for a project worth hundreds of millions of euros.",
+      "arena": "Arena: a residential building in Barreiro, on Lisbon’s south bank.",
+      "firm": "An Israeli architecture firm of about 25 people told us: “Everyone works alone. There’s no shared brain. And there’s no time.”"
     }
   },
   "painPoints": {
     "header": {
-      "title": "Stop Duct-Taping AI Tools<br>That Forget You",
-      "subtitle": "Most AI setups are a mess of disconnected chatbots, lost context, and manual copy-pasting. Your AI should work as a team, not a collection of strangers."
+      "title": "Your projects run on documents.<br>Your AI doesn’t know them.",
+      "subtitle": "Real-estate, architecture and construction teams decide from contracts, tenders, drawings and spreadsheets spread across many places."
     },
     "items": {
       "layers": {
-        "title": "Your Tools Don't Talk to Each Other",
-        "description": "You copy-paste between ChatGPT, Notion, Slack, and email all day. Context gets lost, ideas die in transit, and nothing connects."
+        "title": "Scattered across email, Drive and WhatsApp",
+        "description": "Documents and decisions live in email threads, shared folders and chat groups. When it matters, nobody is sure which version is the latest."
       },
       "clock": {
-        "title": "AI Without Memory is Useless",
-        "description": "Every conversation starts from scratch. Your AI doesn't know your business, your tone, or what you discussed yesterday. You re-explain everything, every time."
+        "title": "AI answers nobody can stand behind",
+        "description": "A chatbot can draft a reply to a payment request or a tender, but it can’t show where its numbers came from. When money or contracts are involved, that isn’t good enough."
       },
       "users": {
-        "title": "You're the Bottleneck",
-        "description": "Instead of leading your business, you're manually assembling AI outputs at 2 AM. You became the glue between disconnected tools. It's exhausting."
+        "title": "The same work, rebuilt by hand",
+        "description": "Tender requirements, quote comparisons, payment checks and investor updates are put together from scratch on every project."
       }
     },
-    "transition": "There's a better way. Deploy a single AI engine that remembers everything, coordinates your agents, and delivers production-ready work — automatically."
+    "transition": "RealizeOS gives every agent your firm uses one place to read from, and one set of rules to follow."
+  },
+  "agents": {
+    "title": "Bring any agent",
+    "subtitle": "Use the AI tools your team already likes. They all connect to the same company brain through MCP, the open standard AI agents use to call outside tools.",
+    "diagram": {
+      "agentsLabel": "Your agents",
+      "anyClient": "Any MCP client",
+      "mcp": "MCP",
+      "core": "RealizeOS",
+      "brain": "Company brain",
+      "approvals": "Approvals",
+      "trail": "Trail with sources",
+      "toolsLabel": "Your tools",
+      "mcpServers": "Other MCP servers"
+    },
+    "points": [
+      {
+        "t": "One brain, many agents",
+        "b": "Switch agents, or use several at once. The memory, rules and history stay with you."
+      },
+      {
+        "t": "Sign in, don’t paste keys",
+        "b": "Claude.ai and Claude Desktop connect with a normal sign-in. The connector gets exactly the role and projects of the person who signed in."
+      },
+      {
+        "t": "People get a simple screen",
+        "b": "Approvals and the trail live in a dashboard that switches to right-to-left for Hebrew projects."
+      }
+    ],
+    "link": "How to connect your agent"
+  },
+  "layers": {
+    "title": "What you keep, whatever agent you use",
+    "subtitle": "Four layers. Each one is something you can see.",
+    "seeLabel": "What you see",
+    "items": {
+      "brain": {
+        "t": "Your company brain",
+        "b": "Your documents, decisions and rules, organized in FABRIC: plain files that belong to you. If you leave, you take them with you.",
+        "see": "Files on your own server"
+      },
+      "governed": {
+        "t": "Action under control",
+        "b": "Agents can read freely. Writing goes through the approvals you set: it waits for a person, runs once when approved, and reports back. Every answer can show its sources.",
+        "see": "An approval queue, a trail with sources, roles, an audit log"
+      },
+      "packs": {
+        "t": "Your field’s method, built in",
+        "b": "Field packs for the work AEC firms repeat: tender requirements, payment checks against milestones, investor reports. In Hebrew, English and Portuguese.",
+        "see": "Finished documents and sheet rows, held for approval"
+      },
+      "practice": {
+        "t": "People who know your field",
+        "b": "We find where time and money leak, set RealizeOS up with your documents, and keep it running and useful.",
+        "see": "Audit → implement → operate"
+      }
+    }
+  },
+  "trust": {
+    "title": "You stay in control",
+    "subtitle": "The system prepares. People decide.",
+    "items": {
+      "approvals": {
+        "t": "Approvals that hold, then run",
+        "b": "An action that needs approval waits in a queue. Once approved it runs exactly once and reports back. If something fails, nothing runs."
+      },
+      "trail": {
+        "t": "“What I used”",
+        "b": "Every answer can show the documents it used and the tools it ran, with numbered citations like [S1]."
+      },
+      "roles": {
+        "t": "Roles and projects",
+        "b": "Five roles, from owner to viewer. Each person can be limited to their own ventures, and the same rules apply in the dashboard, the API and every connected agent."
+      },
+      "selfhosted": {
+        "t": "On your own server",
+        "b": "Runs on your server or computer, with your own model keys. Your files stay yours."
+      },
+      "hardened": {
+        "t": "Reviewed and hardened",
+        "b": "Recent releases were security-reviewed and hardened. Every action and sign-in goes to an audit log."
+      }
+    },
+    "cant": {
+      "title": "What RealizeOS doesn’t do",
+      "body": "It doesn’t replace an appraiser, a lawyer or an engineer’s sign-off. It prepares the work, finds the sources and shows where every figure came from. People decide."
+    }
   },
   "community": {
     "title": "Community & Docs",
@@ -369,26 +356,16 @@
       }
     }
   },
-  "quickstart": {
-    "title": "Zero to Running in 10 Minutes",
-    "subtitle": "Fully open source. Deploy locally or on your own server. You own the data.",
-    "install_methods": "Install Options",
-    "requires": "Requires:",
-    "copy": "Copy",
-    "copied": "Copied",
-    "view_full_guide": "View Full Guide →"
-  },
   "nav": {
     "getStarted": "Get Started",
     "toggleMenu": "Toggle menu"
   },
   "navItems": {
     "guide": "Guide",
-    "quickstart": "Quickstart",
-    "fabric": "FABRIC",
-    "features": "Features",
+    "agents": "Agents",
+    "fieldpacks": "Field packs",
+    "trust": "Control",
     "pricing": "Pricing",
-    "community": "Community",
     "faq": "FAQ"
   },
   "footer": {
@@ -444,10 +421,10 @@
     ]
   },
   "finalCta": {
-    "title1": "Start Building Your",
-    "title2": "AI Operations System",
-    "subtitle": "Join the community and take control of your AI infrastructure.",
-    "getRealizeOS": "Star on GitHub",
+    "title1": "Keep your company’s brain.",
+    "title2": "Bring any agent.",
+    "subtitle": "Start with an Audit Sprint, or download RealizeOS and run it yourself.",
+    "getRealizeOS": "Download on GitHub",
     "bookSession": "Book an Audit Sprint",
     "notReadyTitle": "Not ready yet?",
     "notReadyDesc": "Tell us about your biggest operations challenge. We'll get back to you with honest, practical advice — no sales pitch.",
@@ -501,5 +478,18 @@
   "design": {
     "title": "RealizeOS Design System",
     "subtitle": "Canonical tokens, effects, and components that power the RealizeOS site. Built on @realizeos/design-system with --rz-* CSS custom properties."
+  },
+  "wizardPopup": {
+    "title": "Build your firm's profile",
+    "description": "A free guided wizard that turns your firm's identity, services and way of working into FABRIC files: the starting point of your company brain. Works for developers, architecture firms and construction teams. Enter your email to unlock it.",
+    "thanks": "✓ You're in! Choose your wizard below.",
+    "openGem": "Open the Google Gem wizard",
+    "openGpt": "Open the ChatGPT wizard",
+    "note": "Runs on your own AI subscription, at no cost.",
+    "emailPlaceholder": "your@email.com",
+    "sending": "Unlocking...",
+    "unlock": "Unlock the free wizard",
+    "privacy": "We'll email you the wizard links. No spam.",
+    "error": "Something went wrong. Please try again."
   }
 }
