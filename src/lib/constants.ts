@@ -36,13 +36,12 @@ export function webinarLink(now: Date = new Date()): string {
   return isWebinarUpcoming(now) ? LINKS.webinar : LINKS.youtube;
 }
 
-// Navigation items
+// Navigation items (label = key under navItems.* in the locale files)
 export const NAV_ITEMS = [
-  { label: 'Guide', href: '/guide' },
-  { label: 'Quickstart', href: '#quickstart' },
-  { label: 'FABRIC', href: '#fabric' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Community', href: '#community' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'guide', href: '/guide' },
+  { label: 'agents', href: '#agents' },
+  { label: 'fieldpacks', href: '#fieldpacks' },
+  { label: 'trust', href: '#trust' },
+  { label: 'pricing', href: '#pricing' },
+  { label: 'faq', href: '#faq' },
 ] as const;

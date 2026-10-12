@@ -38,66 +38,23 @@
   },
   "hero": {
     "badge": "Por Realization",
-    "tagline": "Execute agentes de IA na sua infraestrutura. Os seus dados são seus — para sempre.",
-    "github_badge": "Dê uma Estrela no GitHub",
-    "title_main": "O Núcleo É Seu.",
-    "title_highlight": "Troque Todo o Resto.",
-    "description": "Implemente um motor completo de operações de IA em minutos. O conhecimento, agentes e workflows ficam na sua máquina — local-first, open source, zero dependência de fornecedor. Modelos, painéis e canais são módulos substituíveis.",
-    "cta_free": "Começar (grátis)",
+    "github_badge": "Dê uma estrela no GitHub",
+    "license_badge": "Download gratuito · BSL 1.1",
+    "tagline": "Para promotores imobiliários, gabinetes de arquitetura e equipas de construção",
+    "title_main": "Traga qualquer agente. Guarde o cérebro da sua empresa.",
+    "title_highlight": "Mantenha o controlo, com pessoas que conhecem o seu setor.",
+    "description": "O RealizeOS não é mais um agente de IA. É aquilo a que os seus agentes se ligam: a memória, as regras e as aprovações da sua empresa, no seu próprio servidor. O software é gratuito. A equipa da Realization instala-o, alimenta-o com os seus documentos e mantém-no a funcionar.",
     "cta_setup": "Marcar um Audit Sprint",
-    "cta_wizard": "🔮 Crie o Seu Perfil de Empreendimento",
-    "stats": {
-      "localFirst": "Local-First",
-      "cost": "Sem Lock-In"
-    },
-    "license_badge": "Download gratuito · BSL 1.1"
-  },
-  "features": {
-    "header": {
-      "title": "Construído Para Operações Reais",
-      "subtitle": "Já em produção hoje. Não é um invólucro nem um brinquedo. Download gratuito, para correr na sua própria infraestrutura."
-    },
-    "fabric": {
-      "title": "Sistema de Entidades FABRIC",
-      "promise": "O seu grafo de conhecimento é o Coração — entidades, relações e contexto que são seus para sempre.",
-      "technical": "O sistema de entidades FABRIC armazena todo o conhecimento do empreendimento como entidades estruturadas com relações tipadas. API REST completa para operações CRUD. Suportado por SQLite com pesquisa de texto completo FTS5."
-    },
-    "synapse": {
-      "title": "Índice de Conhecimento Synapse",
-      "promise": "Pesquisa híbrida em toda a sua base de conhecimento — palavra-chave + semântica. Recuperação em milissegundos.",
-      "technical": "Pesquisa por palavras-chave FTS5 combinada com embeddings vetoriais. Os seus agentes de IA encontram o documento ou memória exata — compreendendo intenção, não apenas palavras-chave."
-    },
-    "routing": {
-      "title": "Routing Multi-LLM",
-      "promise": "Direcione pedidos para o modelo de IA correto automaticamente. Custo, qualidade, velocidade — você define a estratégia.",
-      "technical": "Runtime Adapter Layer com routing agnóstico de fornecedor. Padrão de registo suporta qualquer backend LLM. Rastreamento de custos por chamada e seleção inteligente de modelo."
-    },
-    "missions": {
-      "title": "Motor de Missões",
-      "promise": "Defina objetivos, acompanhe progresso, coordene agentes. Workflows multi-etapas com portões de revisão humana.",
-      "technical": "Ciclo completo de missão: definir → planear → executar → rever → concluir. Página do painel em /missions com acompanhamento de estado em tempo real."
-    },
-    "dreaming": {
-      "title": "Dreaming e Política de Confiança",
-      "promise": "Reflexão em segundo plano e melhoria contínua. O sistema fica mais inteligente enquanto dorme.",
-      "technical": "O subsistema Dreaming processa interações diárias e sugere melhorias. A Política de Confiança pontua cada proposta. Painel em /dreams."
-    },
-    "eventlog": {
-      "title": "Registo de Eventos e Identidade SOUL",
-      "promise": "Trilho de auditoria completo de cada ação. A identidade do seu empreendimento codificada e versionada.",
-      "technical": "Registo de eventos estruturado com eventos tipados. A camada de identidade SOUL armazena a voz, metodologia e regras do empreendimento como artefactos versionáveis."
-    },
-    "security": {
-      "title": "Segurança Empresarial",
-      "promise": "Local-first por design. Os seus dados nunca saem da sua infraestrutura.",
-      "technical": "Controlo de acesso baseado em funções. Cofre de credenciais encriptado AES-256. Deteção de prompt injection. Registo completo de auditoria."
-    },
-    "cli": {
-      "title": "FABRIC Operator CLI",
-      "promise": "Gerencie o seu sistema pela linha de comandos. Init, serve, index, status — tudo ao seu alcance.",
-      "technical": "CLI Python com comandos init, serve, bot, status e index. Integração Docker compose. Templates CI/CD para GitHub Actions."
-    },
-    "view_flow": "Ver Detalhes Técnicos"
+    "cta_webinar_upcoming": "Webinar gratuito · 20 out",
+    "cta_webinar_past": "Ver o webinar",
+    "cta_free": "Alojar grátis a partir do GitHub",
+    "cta_wizard": "Crie o perfil da sua empresa (grátis)",
+    "chips": {
+      "selfHosted": "No seu próprio servidor",
+      "languages": "Hebraico · Inglês · Português",
+      "approvals": "Aprovação antes das ações que importam",
+      "sources": "Fontes em cada resposta"
+    }
   },
   "pricing": {
     "header": {
@@ -185,159 +142,189 @@
   },
   "usecases": {
     "header": {
-      "title": "Construído Para a Sua Forma de Trabalhar",
-      "subtitle": "Quer opere um empreendimento ou cinco, o RealizeOS adapta-se às suas operações."
+      "title": "Feito para imobiliário, arquitetura e construção",
+      "subtitle": "Um pacote de terreno já está disponível: o pacote para promotores imobiliários. Pacotes para outras equipas são construídos com cada cliente durante a implementação."
     },
-    "arch": {
-      "title": "Gabinetes de Arquitetura",
-      "description": "Deixe de se afogar em verificações de conformidade e e-mails de fornecedores. Recupere o seu tempo para se focar no que realmente ama: projetar o futuro.",
+    "developer": {
+      "title": "Promotores imobiliários",
+      "description": "Saber onde está o dinheiro sem esperar pela próxima reunião de obra.",
       "tasks": [
-        "Redigir respostas a RFQs com base em propostas anteriores bem-sucedidas",
-        "Automatizar verificações preliminares de zonamento e conformidade",
-        "Gerar descritivos de projeto a partir de notas brutas de reunião",
-        "Extrair insights de códigos municipais complexos de construção",
-        "Gerir e-mails de coordenação com fornecedores no seu tom"
+        "Registar cada requisito de um processo de concurso, com a sua fonte",
+        "Verificar cada pedido de pagamento face ao marco contratual",
+        "Redigir relatórios para investidores em que cada número indica a fonte",
+        "Fazer perguntas sobre o orçamento e obter respostas com referências"
       ]
     },
-    "realestate": {
-      "title": "Investimento Imobiliário",
-      "description": "Transforme ansiedade em clareza absoluta. Tome decisões de alto impacto com um motor que apresenta instantaneamente as informações exatas de que precisa.",
+    "architecture": {
+      "title": "Gabinetes de arquitetura e planeamento",
+      "description": "Um cérebro partilhado, para que ninguém comece de uma folha em branco.",
       "tasks": [
-        "Extrair métricas-chave de prospeções financeiras",
-        "Elaborar memorandos para o comité de investimento a partir de dados brutos",
-        "Analisar tendências de mercado para identificar oportunidades de retorno emergentes",
-        "Padronizar relatórios de due diligence imobiliária",
-        "Resumir o desempenho trimestral do portefólio"
+        "Criar um registo de requisitos a partir de um programa ou concurso",
+        "Guardar decisões e revisões do projeto num único sítio pesquisável",
+        "Preparar documentos em hebraico, inglês ou português",
+        "Detetar contradições entre documentos"
       ]
     },
-    "venture": {
-      "title": "Estúdios de Empreendedorismo",
-      "description": "Alcance o impossível: escala extrema sem esgotamento. Opere três empreendimentos com a clareza mental de gerir apenas um.",
+    "construction": {
+      "title": "Construção e gestão de projetos",
+      "description": "Um registo claro do que foi acordado, pedido e aprovado.",
       "tasks": [
-        "Alternar entre empreendimentos sem perder o contexto",
-        "Elaborar estratégias de go-to-market para novos spin-offs",
-        "Gerar relatórios para investidores de cada empreendimento separadamente",
-        "Investigar novas oportunidades de mercado em todos os setores",
-        "Manter diretrizes de Venture unificadas entre equipas distintas"
+        "Acompanhar marcos e pedidos de pagamento face ao contrato",
+        "Reter escritas numa folha ou sistema até alguém aprovar",
+        "Transformar notas de obra e emails num diário do projeto",
+        "Dar a cada pessoa acesso apenas aos seus projetos"
       ]
     },
-    "engineering": {
-      "title": "Engenharia e Operações",
-      "description": "Traga ordem ao caos da execução física. Sinta o alívio total de saber que cada detalhe está estruturado e monitorizado.",
-      "tasks": [
-        "Traduzir especificações técnicas em atualizações compreensíveis para clientes",
-        "Estruturar relatórios fragmentados de obra em registos coerentes",
-        "Redigir manuais operacionais e procedimentos normalizados",
-        "Analisar propostas de empreiteiros face aos requisitos do projeto",
-        "Automatizar follow-ups de entregáveis pendentes do projeto"
-      ]
-    },
-    "urban": {
-      "title": "Planeamento Urbano",
-      "description": "Navegue pelo labirinto da política pública e do feedback comunitário com um motor que sintetiza milhares de vozes numa direção clara.",
-      "tasks": [
-        "Resumir horas de transcrições de assembleias públicas",
-        "Elaborar relatórios de participação pública e sínteses",
-        "Cruzar planos diretores com nova legislação de zonamento",
-        "Gerar newsletters acessíveis para atualização da comunidade",
-        "Analisar dados demográficos para avaliar o impacto no bairro"
-      ]
-    },
-    "asset": {
-      "title": "Gestão de Ativos",
-      "description": "Tranquilidade total. Proteja o valor do seu portefólio com uma camada operacional permanente que não deixa escapar nenhum detalhe.",
-      "tasks": [
-        "Automatizar a comunicação com inquilinos e o encaminhamento de manutenção",
-        "Gerar extratos mensais para proprietários com relatórios narrativos",
-        "Monitorizar proativamente prazos de término de contratos de arrendamento",
-        "Redigir cadernos de encargos para projetos de beneficiação de imóveis",
-        "Analisar desvios nas despesas operacionais em todos os imóveis"
-      ]
+    "example": {
+      "title": "Exemplo completo: o pacote para promotores imobiliários",
+      "subtitle": "Três competências, mostradas em direto no nosso webinar de outubro de 2026, com dados de demonstração.",
+      "colSkill": "Competência",
+      "colIn": "O que entra",
+      "colOut": "O que sai",
+      "colHeld": "À espera de aprovação",
+      "rows": [
+        {
+          "skill": "Registo de requisitos do concurso",
+          "in": "O processo de concurso",
+          "out": "Um registo de requisitos, cada linha com a sua fonte e contradições assinaladas",
+          "held": "Escrever as linhas na folha do projeto"
+        },
+        {
+          "skill": "Verificação de pedido de pagamento",
+          "in": "Um pedido de pagamento e os marcos do contrato",
+          "out": "Um parecer face ao marco correspondente",
+          "held": "A linha do pagamento. O sistema nunca paga."
+        },
+        {
+          "skill": "Relatório para investidores",
+          "in": "O resumo do orçamento",
+          "out": "Um rascunho em que cada número indica a fonte",
+          "held": "Nada é enviado: uma pessoa revê o rascunho"
+        }
+      ],
+      "installLabel": "Instale-o no seu próprio RealizeOS:",
+      "guideLink": "Ler o guia dos pacotes de terreno"
     }
   },
   "founder": {
-    "title": "Construído a Partir de Operações Reais",
-    "p1": "O RealizeOS nasceu do trabalho diário do Realization Group — um motor de produção que gere operações internacionais de arquitetura, imobiliário e empreendedorismo diariamente em 3 regiões.",
-    "p2": "Construí isto porque a alternativa era colapsar. Tentar escalar empreendimentos físicos e complexos com ferramentas de IA dispersas era exaustivo. Precisava de clareza absoluta e controlo total. O RealizeOS é o motor que construí para reconquistar a minha liberdade — agora é open source para que possa reconquistar a sua.",
+    "title": "Feito por quem trabalha no terreno",
+    "p1": "O RealizeOS nasceu do trabalho diário da Realization em arquitetura, promoção imobiliária e planeamento, entre Israel e Portugal. O nosso próprio trabalho corre nele.",
+    "p2": "Construímo-lo porque ferramentas de IA dispersas não aguentavam projetos reais: sem memória partilhada, sem fontes, sem controlo. Hoje o núcleo é gratuito, e ajudamos outras empresas a pô-lo a trabalhar.",
     "role": "Fundador,",
+    "proofTitle": "Do nosso trabalho no terreno",
     "proof": {
-      "badge": "Prática Real",
-      "regions": "3 Regiões",
-      "regionsLabel": "IL · PT · US",
-      "agents": "6+ Agentes",
-      "agentsLabel": "em produção",
-      "usage": "Diário",
-      "usageLabel": "usado pela Realization"
-    }
-  },
-  "fabricSystem": {
-    "header": {
-      "title": "O Sistema FABRIC",
-      "subtitle": "O seu AI-OS é construído sobre uma arquitetura em camadas. O Núcleo é seu para sempre — todo o resto é modular."
-    },
-    "architecture": {
-      "title": "O Modelo AI-OS em Camadas",
-      "heart": {
-        "title": "O Núcleo (É Seu)",
-        "description": "Grafo de conhecimento FABRIC, registo de eventos, identidade SOUL. Portável, local-first, seu para sempre.",
-        "badge": "É Seu Para Sempre"
-      },
-      "limbs": {
-        "title": "Camada de Execução (Substituível)",
-        "description": "Runtimes de agentes, fornecedores LLM, Motor de Missões. Troque ou atualize a qualquer momento."
-      },
-      "skin": {
-        "title": "Camada de Interface (Substituível)",
-        "description": "Painel, canais, CLI. Substitua a interface sem tocar nos seus dados."
-      }
-    },
-    "items": {
-      "F": {
-        "title": "Foundations (Fundações)",
-        "description": "Metodologia do sistema, identidade e regras que cada agente segue. A sua equipa constrói segundo as suas especificações — sempre."
-      },
-      "A": {
-        "title": "Agents (Agentes)",
-        "description": "A sua equipa de IA especializada — redator, analista, revisor, orquestrador. Todos definidos por uma estrutura que controla."
-      },
-      "B": {
-        "title": "Brain (Cérebro)",
-        "description": "Conhecimento de domínio que a equipa memoriza. Dados de mercado, expertise, histórico — acessível em cada conversa."
-      },
-      "R": {
-        "title": "Routines (Rotinas)",
-        "description": "Workflows que encadeiam agentes e ferramentas. 'Redigir resumo de projeto' aciona o escritor, depois o revisor — automaticamente."
-      },
-      "I": {
-        "title": "Insights",
-        "description": "Um registo de aprendizagem que torna a equipa mais inteligente com o tempo. Feedback, decisões de execução e padrões — nada se perde."
-      },
-      "C": {
-        "title": "Creations (Criações)",
-        "description": "Outputs que cumprem os seus padrões de qualidade. Cada resultado fica numa estrutura organizada, pronto para revisão."
-      }
+      "tender": "Centenas de documentos de concurso analisados e um processo completo e profissional preparado numa língua estrangeira em dois dias, para um projeto de centenas de milhões de euros.",
+      "arena": "Arena: um edifício residencial no Barreiro, na margem sul de Lisboa.",
+      "firm": "Um gabinete de arquitetura israelita com cerca de 25 pessoas disse-nos: “Cada um trabalha sozinho. Não há um cérebro partilhado. E não há tempo.”"
     }
   },
   "painPoints": {
     "header": {
-      "title": "Pare de Remendar Ferramentas de IA<br>Que Se Esquecem de Si",
-      "subtitle": "A maioria dos setups de IA são uma confusão de chatbots desligados, contexto perdido e copiar-colar manual. A sua IA devia funcionar como equipa, não como um conjunto de estranhos."
+      "title": "Os seus projetos vivem de documentos.<br>A sua IA não os conhece.",
+      "subtitle": "Equipas de imobiliário, arquitetura e construção decidem com base em contratos, concursos, desenhos e folhas de cálculo espalhados por muitos sítios."
     },
     "items": {
       "layers": {
-        "title": "A Armadilha da Fricção",
-        "description": "As suas melhores ideias morrem na transição. Está constantemente a traduzir contexto entre ferramentas isoladas, a ver o momento parar e prazos a escapar."
+        "title": "Espalhado entre email, Drive e WhatsApp",
+        "description": "Documentos e decisões vivem em conversas de email, pastas partilhadas e grupos. Quando importa, ninguém tem a certeza de qual é a última versão."
       },
       "clock": {
-        "title": "Paralisia de Execução",
-        "description": "A ansiedade avassaladora de transformar um projeto físico enorme em realidade. O volume imenso de detalhes não estruturados paralisa a sua capacidade de liderar."
+        "title": "Respostas de IA que ninguém pode assinar",
+        "description": "Um chatbot consegue redigir uma resposta a um pedido de pagamento ou a um concurso, mas não mostra de onde vêm os números. Quando há dinheiro ou contratos em jogo, isso não chega."
       },
       "users": {
-        "title": "O Pesadelo do Intermediário",
-        "description": "Tornou-se no estrangulamento. Em vez de projetar o futuro, anda a colar outputs genéricos de IA às duas da manhã. É extenuante."
+        "title": "O mesmo trabalho, refeito à mão",
+        "description": "Requisitos de concurso, comparação de propostas, verificação de pagamentos e relatórios para investidores são montados do zero em cada projeto."
       }
     },
-    "transition": "Não tem de ser assim. Saia do papel de intermediário e ocupe o lugar de visionário. Comande um motor operacional coordenado que constrói a sua realidade por si."
+    "transition": "O RealizeOS dá a cada agente que a sua empresa usa um único sítio onde ler, e um único conjunto de regras a seguir."
+  },
+  "agents": {
+    "title": "Traga qualquer agente",
+    "subtitle": "Use as ferramentas de IA de que a sua equipa já gosta. Todas se ligam ao mesmo cérebro da empresa através do MCP, a norma aberta que os agentes de IA usam para chamar ferramentas externas.",
+    "diagram": {
+      "agentsLabel": "Os seus agentes",
+      "anyClient": "Qualquer cliente MCP",
+      "mcp": "MCP",
+      "core": "RealizeOS",
+      "brain": "Cérebro da empresa",
+      "approvals": "Aprovações",
+      "trail": "Rasto com fontes",
+      "toolsLabel": "As suas ferramentas",
+      "mcpServers": "Outros servidores MCP"
+    },
+    "points": [
+      {
+        "t": "Um cérebro, muitos agentes",
+        "b": "Mude de agente, ou use vários ao mesmo tempo. A memória, as regras e o histórico ficam consigo."
+      },
+      {
+        "t": "Inicie sessão, não cole chaves",
+        "b": "O Claude.ai e o Claude Desktop ligam-se com um início de sessão normal. O conector recebe exatamente o perfil e os projetos de quem iniciou sessão."
+      },
+      {
+        "t": "As pessoas têm um ecrã simples",
+        "b": "As aprovações e o rasto ficam num painel que também funciona em hebraico, da direita para a esquerda."
+      }
+    ],
+    "link": "Como ligar o seu agente"
+  },
+  "layers": {
+    "title": "O que fica consigo, seja qual for o agente",
+    "subtitle": "Quatro camadas. Cada uma é algo que se vê.",
+    "seeLabel": "O que vê",
+    "items": {
+      "brain": {
+        "t": "O cérebro da sua empresa",
+        "b": "Os seus documentos, decisões e regras, organizados em FABRIC: ficheiros simples que lhe pertencem. Se sair, leva-os consigo.",
+        "see": "Ficheiros no seu próprio servidor"
+      },
+      "governed": {
+        "t": "Ação sob controlo",
+        "b": "Os agentes leem livremente. A escrita passa pelas aprovações que definir: espera por uma pessoa, corre uma vez depois de aprovada e informa de volta. Cada resposta pode mostrar as suas fontes.",
+        "see": "Uma fila de aprovações, rasto com fontes, perfis, registo de auditoria"
+      },
+      "packs": {
+        "t": "O método do seu setor, incorporado",
+        "b": "Pacotes de terreno para o trabalho que se repete em imobiliário, arquitetura e construção: requisitos de concurso, verificação de pagamentos face a marcos, relatórios para investidores. Em hebraico, inglês e português.",
+        "see": "Documentos prontos e linhas de folha de cálculo, à espera de aprovação"
+      },
+      "practice": {
+        "t": "Pessoas que conhecem o seu setor",
+        "b": "Descobrimos onde se perde tempo e dinheiro, instalamos o RealizeOS com os seus documentos e mantemo-lo a funcionar e útil.",
+        "see": "Auditoria → implementação → operação"
+      }
+    }
+  },
+  "trust": {
+    "title": "Mantém o controlo",
+    "subtitle": "O sistema prepara. As pessoas decidem.",
+    "items": {
+      "approvals": {
+        "t": "Aprovações que esperam, e depois correm",
+        "b": "Uma ação que precisa de aprovação espera numa fila. Depois de aprovada corre exatamente uma vez e informa de volta. Se algo falhar, nada corre."
+      },
+      "trail": {
+        "t": "“O que usei”",
+        "b": "Cada resposta pode mostrar os documentos que usou e as ferramentas que correu, com referências numeradas como [S1]."
+      },
+      "roles": {
+        "t": "Perfis e projetos",
+        "b": "Cinco perfis, de proprietário a leitor. Cada pessoa pode ficar limitada aos seus empreendimentos, e as mesmas regras valem no painel, na API e em cada agente ligado."
+      },
+      "selfhosted": {
+        "t": "No seu próprio servidor",
+        "b": "Corre no seu servidor ou computador, com as suas próprias chaves de modelo. Os ficheiros continuam seus."
+      },
+      "hardened": {
+        "t": "Revisto e reforçado",
+        "b": "As versões recentes foram revistas e reforçadas em segurança. Cada ação e início de sessão fica num registo de auditoria."
+      }
+    },
+    "cant": {
+      "title": "O que o RealizeOS não faz",
+      "body": "Não substitui um avaliador, um advogado ou a assinatura de um engenheiro. Prepara o trabalho, encontra as fontes e mostra de onde veio cada número. As pessoas decidem."
+    }
   },
   "community": {
     "title": "Comunidade e Documentação",
@@ -369,26 +356,16 @@
       }
     }
   },
-  "quickstart": {
-    "title": "De Zero a Funcional em 10 Minutos",
-    "subtitle": "Totalmente open source. Implemente localmente ou no seu próprio servidor. Os dados são seus.",
-    "install_methods": "Opções de Instalação",
-    "requires": "Requisitos:",
-    "copy": "Copiar",
-    "copied": "Copiado",
-    "view_full_guide": "Ver Guia Completo →"
-  },
   "nav": {
     "getStarted": "Começar",
     "toggleMenu": "Alternar menu"
   },
   "navItems": {
     "guide": "Guia",
-    "quickstart": "Início Rápido",
-    "fabric": "FABRIC",
-    "features": "Funcionalidades",
+    "agents": "Agentes",
+    "fieldpacks": "Pacotes",
+    "trust": "Controlo",
     "pricing": "Preços",
-    "community": "Comunidade",
     "faq": "FAQ"
   },
   "footer": {
@@ -444,10 +421,10 @@
     ]
   },
   "finalCta": {
-    "title1": "Comece a Construir o Seu",
-    "title2": "Sistema de Operações de IA",
-    "subtitle": "Junte-se à comunidade e assuma o controlo da sua infraestrutura de IA.",
-    "getRealizeOS": "Estrela no GitHub",
+    "title1": "Guarde o cérebro da sua empresa.",
+    "title2": "Traga qualquer agente.",
+    "subtitle": "Comece com um Audit Sprint, ou descarregue o RealizeOS e use-o por conta própria.",
+    "getRealizeOS": "Descarregar no GitHub",
     "bookSession": "Marcar um Audit Sprint",
     "notReadyTitle": "Ainda não está pronto?",
     "notReadyDesc": "Conte-nos o seu maior desafio operacional. Responderemos com conselhos práticos e honestos — sem discurso de vendas.",
@@ -501,5 +478,18 @@
   "design": {
     "title": "Sistema de Design RealizeOS",
     "subtitle": "Tokens canónicos, efeitos e componentes que alimentam o site RealizeOS. Construído sobre @realizeos/design-system com propriedades CSS personalizadas --rz-*."
+  },
+  "wizardPopup": {
+    "title": "Crie o perfil da sua empresa",
+    "description": "Um assistente guiado e gratuito que transforma a identidade, os serviços e a forma de trabalhar da sua empresa em ficheiros FABRIC: o ponto de partida do cérebro da empresa. Serve promotores, gabinetes de arquitetura e equipas de construção. Introduza o seu email para o desbloquear.",
+    "thanks": "✓ Já está! Escolha o assistente abaixo.",
+    "openGem": "Abrir o assistente no Google Gem",
+    "openGpt": "Abrir o assistente no ChatGPT",
+    "note": "Corre na sua própria subscrição de IA, sem custos.",
+    "emailPlaceholder": "o.seu@email.com",
+    "sending": "A desbloquear...",
+    "unlock": "Desbloquear o assistente gratuito",
+    "privacy": "Enviamos-lhe os links por email. Sem spam.",
+    "error": "Algo correu mal. Tente novamente."
   }
 }

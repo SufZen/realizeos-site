@@ -209,6 +209,9 @@ export function WizardUpload({ documents, onDocumentsChange, onAnalyze, onSkip }
         <p className="mt-1 text-xs text-muted-foreground">
           PDF, DOCX, XLSX, images, or plain text
         </p>
+        <p className="mt-3 text-xs text-muted-foreground">
+          For example: your company profile, a project brochure, a past tender submission or a fee proposal.
+        </p>
       </motion.div>
 
       {/* URL input */}

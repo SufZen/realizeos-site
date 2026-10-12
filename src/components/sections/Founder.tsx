@@ -22,6 +22,19 @@ export function Founder() {
             {t('founder.p2')}
           </p>
 
+          <div className="mt-10 text-start">
+            <h3 className="mb-4 text-center text-sm font-semibold uppercase tracking-widest text-brand-yellow">
+              {t('founder.proofTitle')}
+            </h3>
+            <ul className="space-y-3">
+              {(['tender', 'arena', 'firm'] as const).map((key) => (
+                <li key={key} className="fx-glass-card rounded-xl px-5 py-4 text-sm text-foreground">
+                  {t(`founder.proof.${key}`)}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <FounderPhotoFrame className="mx-auto mt-8 mb-4 h-24 w-24" src="/img/founder.png" />
           <Separator className="mx-auto my-6 w-16" />
           <div>

@@ -87,14 +87,14 @@ export function VentureWizardPopup({ open, onOpenChange }: VentureWizardPopupPro
                   <a href={LINKS.gem} target="_blank" rel="noopener noreferrer">
                     <Sparkles size={16} />
                     {t('wizardPopup.openGem', 'Open Google Gem Wizard')}
-                    <ExternalLink size={14} className="ml-auto opacity-50" />
+                    <ExternalLink size={14} className="ms-auto opacity-50" />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="w-full gap-2">
                   <a href={LINKS.gpt} target="_blank" rel="noopener noreferrer">
                     <Sparkles size={16} />
                     {t('wizardPopup.openGpt', 'Open ChatGPT Wizard')}
-                    <ExternalLink size={14} className="ml-auto opacity-50" />
+                    <ExternalLink size={14} className="ms-auto opacity-50" />
                   </a>
                 </Button>
               </div>
@@ -105,14 +105,14 @@ export function VentureWizardPopup({ open, onOpenChange }: VentureWizardPopupPro
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="relative">
-                <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <Mail size={16} className="absolute start-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="email"
                   placeholder={t('wizardPopup.emailPlaceholder', 'your@email.com')}
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 h-12 text-base"
+                  className="ps-10 h-12 text-base"
                 />
               </div>
               <Button

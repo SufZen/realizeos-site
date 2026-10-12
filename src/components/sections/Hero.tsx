@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { AnimatedCounter } from '@/components/shared/AnimatedCounter';
 import { trackEvent } from '@/lib/analytics';
-import { LINKS } from '@/lib/constants';
+import { LINKS, isWebinarUpcoming, webinarLink } from '@/lib/constants';
 import { HeroAgentNetwork } from '@/components/illustrations/HeroAgentNetwork';
 import { useTranslation } from 'react-i18next';
-import { Github, PlayCircle, Sparkles } from 'lucide-react';
+import { CalendarCheck, Check, Github, PlayCircle, Sparkles } from 'lucide-react';
 
 const stagger = {
   hidden: {},
@@ -24,10 +23,13 @@ interface HeroProps {
 
 export function Hero({ onOpenVentureWizard }: HeroProps) {
   const { t } = useTranslation();
+  const upcoming = isWebinarUpcoming();
 
-  const stats = [
-    { value: 100, suffix: '%', label: t('hero.stats.localFirst', 'Local-First') },
-    { value: 0, suffix: '', label: t('hero.stats.cost', 'Lock-In'), prefix: '$' },
+  const chips = [
+    t('hero.chips.selfHosted'),
+    t('hero.chips.languages'),
+    t('hero.chips.approvals'),
+    t('hero.chips.sources'),
   ];
 
   return (
@@ -39,86 +41,96 @@ export function Hero({ onOpenVentureWizard }: HeroProps) {
 
       <div className="relative mx-auto max-w-site px-5 flex flex-col lg:flex-row lg:items-center lg:gap-12">
         <motion.div
-          className="lg:flex-1 text-center lg:text-start"
+          className="lg:flex-[1.4] text-center lg:text-start"
           variants={stagger}
           initial="hidden"
           animate="show"
         >
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-6">
             <Badge variant="secondary" className="text-xs font-medium bg-secondary/80 hover:bg-secondary transition-colors">
-              <a href="https://github.com/SufZen/RealizeOS-5" target="_blank" rel="noreferrer" className="flex items-center gap-1.5">
+              <a href={LINKS.githubRepo} target="_blank" rel="noreferrer" className="flex items-center gap-1.5">
                 <Github size={14} />
-                {t('hero.github_badge', 'Star us on GitHub')}
+                {t('hero.github_badge')}
               </a>
             </Badge>
             <Badge variant="outline" className="text-xs font-medium border-brand-yellow/40 text-brand-yellow">
-              {t('hero.license_badge', 'Free to download · BSL 1.1')}
+              {t('hero.license_badge')}
             </Badge>
           </motion.div>
 
           <motion.p
             variants={fadeUp}
-            className="mb-4 text-sm font-medium tracking-wide text-brand-yellow/80 italic md:text-base"
+            className="mb-4 text-sm font-medium tracking-wide text-brand-yellow/80 md:text-base"
           >
-            {t('hero.tagline', 'The AI operations system you own.')}
+            {t('hero.tagline')}
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
-            className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+            className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-[3.25rem]"
           >
-            {t('hero.title_main', 'Own the Heart.')}
+            {t('hero.title_main')}
             <br />
-            <span className="fx-gradient-text fx-text-glow">{t('hero.title_highlight', 'Swap Everything Else.')}</span>
+            <span className="fx-gradient-text fx-text-glow">{t('hero.title_highlight')}</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg lg:mx-0"
           >
-            {t('hero.description', 'Your FABRIC knowledge graph, event log, and identity stay yours forever. Agent runtimes, models, channels, and even the dashboard are swappable adapters. Local-first. Open source.')}
+            {t('hero.description')}
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-            <Button asChild size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-get-started' })}>
-              <a href="#quickstart" className="gap-2">
+            <Button asChild size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-audit-sprint' })}>
+              <a href={LINKS.auditSprint} target="_blank" rel="noreferrer" className="gap-2">
+                <CalendarCheck size={18} />
+                {t('hero.cta_setup')}
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: upcoming ? 'hero-webinar' : 'hero-recording' })}>
+              <a href={webinarLink()} target="_blank" rel="noreferrer" className="gap-2">
                 <PlayCircle size={18} />
-                {t('hero.cta_free', 'Get Started (free)')}
+                {upcoming ? t('hero.cta_webinar_upcoming') : t('hero.cta_webinar_past')}
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" onClick={() => trackEvent('cta_click', { cta_name: 'hero-audit-sprint' })}>
-              <a href={LINKS.auditSprint} target="_blank" rel="noreferrer">
-                {t('hero.cta_setup', 'Book an Audit Sprint')}
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm lg:justify-start">
+            <a
+              href={LINKS.githubRepo}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent('cta_click', { cta_name: 'hero-github' })}
+              className="inline-flex items-center gap-1.5 text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+            >
+              <Github size={15} />
+              {t('hero.cta_free')}
+            </a>
+            <button
+              type="button"
               onClick={() => {
                 trackEvent('cta_click', { cta_name: 'hero-wizard' });
                 onOpenVentureWizard?.();
               }}
-              className="gap-2 text-brand-yellow hover:text-brand-yellow-hover border border-brand-yellow/30 hover:border-brand-yellow/60 hover:bg-brand-yellow/5 transition-all"
+              className="inline-flex items-center gap-1.5 text-brand-yellow underline-offset-4 hover:underline"
             >
-              <Sparkles size={16} className="animate-pulse" />
-              {t('hero.cta_wizard', '🔮 Build Your Venture Profile')}
-            </Button>
+              <Sparkles size={15} />
+              {t('hero.cta_wizard')}
+            </button>
           </motion.div>
 
-          <motion.div
+          <motion.ul
             variants={fadeUp}
-            className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground md:gap-10 lg:justify-start"
+            className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground lg:justify-start"
           >
-            {stats.map((s) => (
-              <div key={s.label} className="flex items-baseline gap-1.5">
-                <strong className="text-lg font-semibold text-foreground">
-                  {s.prefix && <span>{s.prefix}</span>}
-                  <AnimatedCounter target={s.value} suffix={s.suffix} />
-                </strong>
-                {s.label}
-              </div>
+            {chips.map((chip) => (
+              <li key={chip} className="flex items-center gap-1.5">
+                <Check size={15} className="text-brand-yellow" />
+                {chip}
+              </li>
             ))}
-          </motion.div>
+          </motion.ul>
         </motion.div>
 
         <HeroAgentNetwork className="mx-auto mt-10 w-full max-w-[400px] lg:mt-0 lg:flex-1 fx-illustration-glow" />
