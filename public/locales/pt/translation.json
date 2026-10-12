@@ -383,40 +383,64 @@
     "title": "Perguntas Frequentes",
     "items": [
       {
-        "question": "O RealizeOS é mesmo gratuito?",
+        "question": "O RealizeOS é gratuito?",
         "answer": "<p>Sim. O RealizeOS é gratuito para descarregar e usar. É distribuído sob a Business Source License (BSL) 1.1, que permite usá-lo em produção no seu próprio negócio. A única coisa que não pode fazer é oferecer o RealizeOS a terceiros como serviço alojado ou gerido. Cada versão passa a Apache 2.0 quatro anos após o seu lançamento, e todo o código o mais tardar a 26 de março de 2030.</p>"
       },
       {
-        "question": "O que preciso para começar?",
-        "answer": "<p>Python 3.11+, Docker (recomendado) e chaves API para os fornecedores LLM escolhidos (Anthropic, Google AI, OpenAI e/ou Ollama para inferência totalmente local sem chamadas externas).</p>"
+        "question": "O RealizeOS é mais um agente de IA?",
+        "answer": "<p>Não. O RealizeOS é aquilo a que os seus agentes se ligam: a memória, as regras e as aprovações da sua empresa. Continua a usar as ferramentas de IA de que gosta; todas trabalham a partir do mesmo cérebro da empresa, com os mesmos perfis e aprovações. O RealizeOS também tem agentes próprios, mas o seu papel é ser o cérebro e a camada de controlo, não mais uma aplicação de chat.</p>"
       },
       {
-        "question": "Posso alojar no meu próprio servidor?",
-        "answer": "<p>Sim. O RealizeOS foi desenhado para auto-alojamento. Implemente com Docker em qualquer VPS, instância cloud ou máquina local. Os seus dados FABRIC, registo de eventos e identidade SOUL ficam na sua infraestrutura.</p>"
+        "question": "Posso usá-lo a partir do Claude.ai, do Claude Desktop, do ChatGPT ou do n8n?",
+        "answer": "<p>O Claude.ai e o Claude Desktop ligam-se como conector personalizado, com um início de sessão normal. O Claude Code liga-se com um pequeno ficheiro de configuração. O n8n pode usar MCP ou a API REST. Outros agentes que falem MCP (a norma aberta que os agentes usam para chamar ferramentas) também se podem ligar; só nomeamos clientes com configuração documentada, e o ChatGPT ainda não é um deles. Veja <a href=\"/guide/connect-your-agent\">Ligar o seu agente</a> (em inglês).</p>"
       },
       {
-        "question": "Os meus dados são privados?",
-        "answer": "<p>Completamente. O RealizeOS funciona na sua máquina ou servidor — local-first por design. Para máxima privacidade, use Ollama para inferência totalmente local &mdash; nenhum dado sai da sua rede. As únicas chamadas externas são para as APIs LLM que configurar explicitamente.</p>"
+        "question": "O que pode fazer um agente ligado, e o que precisa da minha aprovação?",
+        "answer": "<p>Um agente ligado age como a pessoa que iniciou sessão, com o seu perfil e projetos. Pode pesquisar o cérebro da empresa, perguntar aos agentes do RealizeOS, correr competências e, se essa pessoa puder aprovar, tratar da fila de aprovações. Ler é livre. Escrever (enviar um email, acrescentar linhas a uma folha, criar um documento ou tarefa) passa pelas aprovações que definir: no nível predefinido espera por uma pessoa, corre exatamente uma vez depois de aprovado e informa de volta. Se algo falhar, nada corre.</p>"
       },
       {
-        "question": "O que é o Sistema de Entidades FABRIC?",
-        "answer": "<p>FABRIC é o Coração do RealizeOS — um grafo de conhecimento estruturado que armazena as entidades, relações e contexto do seu empreendimento. É portável, local-first e seu para sempre. Mesmo que troque o painel, o fornecedor LLM ou o runtime de agentes, os seus dados FABRIC permanecem intactos.</p>"
+        "question": "Como sei de onde veio uma resposta?",
+        "answer": "<p>Cada resposta pode mostrar um rasto \"O que usei\": os documentos em que se baseou e as ferramentas que correu. Com as referências ativas, cada número tirado de um documento leva um marcador numerado como [S1] que aponta para a fonte.</p>"
       },
       {
-        "question": "O que é um Audit Sprint?",
-        "answer": "<p>Um trabalho curto e pago (€495). Mapeamos onde se perde tempo e dinheiro na sua empresa e entregamos prioridades e ganhos rápidos. Se avançar para a implementação, os €495 são descontados. A implementação e a operação contínua têm âmbito fechado e são orçamentadas após a auditoria.</p>"
+        "question": "Quem na minha equipa vê o quê?",
+        "answer": "<p>Há cinco perfis: proprietário, administrador, operador, utilizador e leitor. Um leitor só pode ler; um utilizador pode conversar e editar ficheiros; um operador pode também aprovar ações pendentes; administradores e proprietários podem alterar definições. Pode limitar qualquer pessoa a empreendimentos (projetos) específicos. As mesmas regras valem no painel, na API e em cada agente ligado.</p>"
       },
       {
-        "question": "O que é a arquitetura 'runtime-agnostic'?",
-        "answer": "<p>O RealizeOS usa um Runtime Adapter Layer — um padrão de registo que suporta qualquer backend LLM (Claude, Gemini, OpenAI, Ollama e mais). Pode trocar de fornecedor ou adicionar novos sem tocar na sua base de conhecimento ou workflows. O Coração permanece o mesmo; os Membros são substituíveis.</p>"
+        "question": "Onde ficam os meus dados? Posso sair com eles?",
+        "answer": "<p>No seu próprio servidor ou computador. O cérebro da empresa é guardado em ficheiros simples (FABRIC) que lhe pertencem: pode copiá-los, fazer cópias de segurança e levá-los consigo. Quando usa um modelo na nuvem como o Claude ou o Gemini, o texto de cada pedido vai para esse fornecedor com a sua própria chave de API; com um modelo local, fica na sua máquina.</p>"
       },
       {
-        "question": "Recebo atualizações?",
-        "answer": "<p>Sim. Como projeto open-source no GitHub, tem acesso a todas as atualizações. Puxe as últimas alterações quando quiser — no seu ritmo, não no nosso.</p>"
+        "question": "Funciona em hebraico? E em português?",
+        "answer": "<p>Sim. Os agentes respondem na língua em que escreve, e o pacote para promotores imobiliários entende pedidos em hebraico de raiz. Um empreendimento definido em hebraico põe o painel a ler da direita para a esquerda (as etiquetas continuam em inglês). Pode trabalhar em português da mesma forma, e este site está disponível em inglês, hebraico e português.</p>"
       },
       {
-        "question": "Posso gerir múltiplos negócios?",
-        "answer": "<p>Absolutamente. O RealizeOS foi construído para operadores multi-empreendimento. Cada negócio tem o seu próprio espaço de entidades FABRIC com agentes, base de conhecimento e voz do empreendimento isolados. Um motor, tantos empreendimentos quantos precisar.</p>"
+        "question": "Que modelos usa? Posso correr tudo localmente?",
+        "answer": "<p>Traz as suas próprias chaves: Claude, Gemini ou OpenAI. O Ollama corre modelos localmente. Para ser claro sobre os limites: hoje os agentes só usam ferramentas (ler o Drive, escrever em folhas) com o Claude, por isso uma instalação totalmente local dá-lhe conversa sobre o cérebro da empresa, sem uso de ferramentas.</p>"
+      },
+      {
+        "question": "O que é um Audit Sprint, e quanto custa?",
+        "answer": "<p>Um trabalho curto e pago, de €495. Mapeamos onde se perde tempo e dinheiro na sua empresa e entregamos prioridades e ganhos rápidos. Se avançar para a implementação, os €495 são descontados.</p>"
+      },
+      {
+        "question": "O que acontece depois da auditoria?",
+        "answer": "<p>Se fizer sentido, a implementação: instalamos o RealizeOS numa infraestrutura sob o seu controlo, construímos o cérebro da empresa a partir dos seus documentos e montamos 2–3 pacotes de terreno. Depois, se quiser, operamo-lo em avença: mantemos o cérebro atualizado, acrescentamos competências à medida que o trabalho muda, fazemos acompanhamento regular e enviamos um relatório de valor mensal. Ambos têm âmbito fechado e são orçamentados após a auditoria.</p>"
+      },
+      {
+        "question": "Preciso de ser técnico? Podem instalar por nós?",
+        "answer": "<p>Instalar por conta própria pede algum à-vontade com Docker ou com a linha de comandos; o <a href=\"/guide/getting-started\">guia</a> (em inglês) explica passo a passo. Se não for o seu caso, fazemo-lo por si durante a implementação, no seu servidor ou na sua conta na nuvem. Para usar não precisa de ser técnico: as pessoas trabalham na sua ferramenta de IA habitual e aprovam ações num painel simples.</p>"
+      },
+      {
+        "question": "O que é que o RealizeOS não faz?",
+        "answer": "<p>Não substitui um avaliador, um advogado ou a assinatura de um engenheiro, e não decide por si. Prepara o trabalho, encontra as fontes e mostra de onde veio cada número; as pessoas decidem. Hoje existe um pacote de terreno (para promotores imobiliários); pacotes para outras equipas são construídos com cada cliente.</p>"
+      },
+      {
+        "question": "Como está protegido?",
+        "answer": "<p>Corre na sua própria infraestrutura, com início de sessão. Perfis e limites por empreendimento decidem quem vê o quê, as aprovações falham fechadas, e cada ação e início de sessão fica num registo de auditoria. Os inícios de sessão de conectores têm limite de tentativas e os seus tokens são guardados apenas como hash. As versões recentes foram revistas e reforçadas em segurança. O RealizeOS não tem certificação de segurança de terceiros.</p>"
+      },
+      {
+        "question": "Como recebo atualizações?",
+        "answer": "<p>As novas versões são publicadas no GitHub. Leia o <a href=\"https://github.com/SufZen/RealizeOS-5/blob/main/CHANGELOG.md\" target=\"_blank\" rel=\"noopener noreferrer\">registo de alterações</a>, depois obtenha a nova versão e reinicie. A lista de versões está em <a href=\"https://github.com/SufZen/RealizeOS-5/releases\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/SufZen/RealizeOS-5/releases</a>.</p>"
       }
     ]
   },
