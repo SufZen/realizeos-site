@@ -28,7 +28,8 @@ export default function GuideSectionPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-20 pb-16">
+      {/* Guide content is English-only: keep it left-to-right whatever the UI language. */}
+      <main className="min-h-screen pt-20 pb-16" dir="ltr" lang="en">
         {/* Header */}
         <section className="border-b border-border">
           <div className="mx-auto max-w-site px-5 py-8">

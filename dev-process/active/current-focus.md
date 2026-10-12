@@ -21,7 +21,7 @@ Goal: make realizeos.ai accurate for v5.14.0, aligned with the direction ("Bring
 
 - [ ] After deploy: `curl -I` every URL in the sitemap (expect 200). Check that `/guide` and `/guide/` both resolve on GitHub Pages; if `/guide` redirects, switch canonicals to trailing slashes in `src/seo/lang.ts`.
 - [ ] Submit `https://realizeos.ai/sitemap.xml` in Google Search Console.
-- [ ] Phase 6: full HE/PT review by a native speaker; cookie banner is English-only; guide pages are English-only (and render RTL when the stored language is Hebrew).
+- [ ] Phase 6: full HE/PT review by a native speaker. (Done in #8: cookie banner translated; guide pages stay left-to-right in Hebrew.) The guide itself is English-only.
 - [ ] After 20.10.2026: confirm the YouTube recording is up (CTAs switch automatically at 21:30 IDT).
 - [ ] Owner decisions: keep the Apollo tracker (it costs Lighthouse Best Practices: third-party cookie + console 400)? Remove `legacy/`, `update_translations.py`, `test-analyze-body.json`? Refresh or delete the hidden webinar presentation (it references removed keys).
 - [ ] Product repo follow-ups found while writing the guide (see PR #6): `OLLAMA_HOST` vs `OLLAMA_BASE_URL`, `users.yaml` not mounted in compose, `venture create --template` routing, "fails open" wording, install-script image name, stale tool count.

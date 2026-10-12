@@ -521,5 +521,10 @@
     "unlock": "Desbloquear o assistente gratuito",
     "privacy": "Enviamos-lhe os links por email. Sem spam.",
     "error": "Algo correu mal. Tente novamente."
+  },
+  "cookieBanner": {
+    "text": "Usamos cookies para melhorar a sua experiência e cumprir as leis de privacidade europeias. Ao continuar a usar o site, concorda com a nossa",
+    "policy": "Política de Privacidade",
+    "accept": "Aceitar cookies"
   }
 }
