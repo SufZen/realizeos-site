@@ -8,10 +8,11 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useExitIntent } from '@/hooks/useExitIntent';
-import { WEBHOOK_URL } from '@/lib/constants';
+import { WEBHOOK_URL, isWebinarUpcoming, webinarLink } from '@/lib/constants';
 import { trackEvent } from '@/lib/analytics';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { PlayCircle } from 'lucide-react';
 
 export function ExitIntentPopup() {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ export function ExitIntentPopup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const upcoming = isWebinarUpcoming();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -53,9 +55,16 @@ export function ExitIntentPopup() {
         <DialogHeader>
           <DialogTitle className="text-xl">{t('exitPopup.title')}</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            {t('exitPopup.description')}
+            {upcoming ? t('exitPopup.webinarUpcoming') : t('exitPopup.webinarPast')}
           </DialogDescription>
         </DialogHeader>
+        <Button asChild size="lg" className="w-full" onClick={() => trackEvent('cta_click', { cta_name: upcoming ? 'exit-popup-webinar' : 'exit-popup-recording' })}>
+          <a href={webinarLink()} target="_blank" rel="noopener noreferrer" className="gap-2">
+            <PlayCircle size={18} />
+            {upcoming ? t('exitPopup.webinarCtaUpcoming') : t('exitPopup.webinarCtaPast')}
+          </a>
+        </Button>
+        <p className="mt-2 text-sm text-muted-foreground">{t('exitPopup.description')}</p>
         {status === 'success' ? (
           <p className="py-2 font-medium text-brand-yellow">{t('exitPopup.success')}</p>
         ) : (
@@ -73,7 +82,7 @@ export function ExitIntentPopup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button type="submit" disabled={status === 'loading'} className="w-full">
+            <Button type="submit" variant="outline" disabled={status === 'loading'} className="w-full">
               {status === 'loading' ? t('exitPopup.sending') : t('exitPopup.cta')}
             </Button>
             {status === 'error' && (

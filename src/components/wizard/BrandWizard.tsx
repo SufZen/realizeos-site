@@ -267,7 +267,7 @@ export function BrandWizard({ open, onOpenChange }: BrandWizardProps) {
                 hint="2-4 key offerings with a one-line description each."
                 value={state.offerings}
                 onChange={(v) => set('offerings', v)}
-                placeholder="E.g. 1) RealizeOS Lite — $79 AI operating system. 2) RealizeOS Full — $249 self-hosted version. 3) Setup Assistance — hands-on onboarding."
+                placeholder="E.g. 1) Feasibility studies for residential projects. 2) Tender and permit preparation. 3) Construction project management."
               />
               <Field
                 label="If your venture were a person, pick 3-5 adjectives"

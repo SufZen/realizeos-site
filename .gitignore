@@ -27,3 +27,11 @@ n8n-vie-workflows-prompt.md
 
 # Local Claude Code permissions (machine-local; can record command strings incl. secrets)
 .claude/settings.local.json
+
+# Build output — GitHub Pages builds this in CI (.github/workflows/deploy.yml)
+docs/
+
+# Local lint/build logs
+build_logs.txt
+lint_output.*
+lint_results.json

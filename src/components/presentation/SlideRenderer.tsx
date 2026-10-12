@@ -194,7 +194,7 @@ function PricingCardSlide({ slide }: SlideRendererProps) {
         </p>
       )}
       {showTiers && (
-        <div className="mx-auto grid max-w-4xl gap-4 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {tiers.map((tier) => (
             <div
               key={tier.trackId}
@@ -204,12 +204,9 @@ function PricingCardSlide({ slide }: SlideRendererProps) {
             >
               <h3 className="mb-2 text-lg font-bold">{tier.name}</h3>
               <div className="mb-2">
-                {tier.originalPrice && (
-                  <span className="me-2 text-sm text-muted-foreground line-through">
-                    ${tier.originalPrice}
-                  </span>
-                )}
-                <span className="text-3xl font-bold text-brand-yellow">${tier.price}</span>
+                <span className="text-3xl font-bold text-brand-yellow">
+                  {tier.price === '0' ? t('pricing.free', 'Free') : tier.price}
+                </span>
               </div>
               <p className="text-xs text-muted-foreground">{tier.period}</p>
               {tier.featured && (

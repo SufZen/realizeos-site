@@ -7,30 +7,28 @@ import { PrivacyPolicy } from '@/pages/PrivacyPolicy';
 import { Accessibility } from '@/pages/Accessibility';
 import { CookieBanner } from '@/components/shared/CookieBanner';
 
-const WebinarPresentation = lazy(() => import('@/pages/WebinarPresentation'));
-const WebinarBooking = lazy(() => import('@/pages/WebinarBooking'));
+// Webinar pages (src/pages/WebinarPresentation.tsx, WebinarBooking.tsx) are kept
+// in the repo but hidden for now; their routes redirect home. Registration for the
+// October 2026 webinar lives on realization.world/webinar.
 const BrandWizardPage = lazy(() => import('@/pages/BrandWizardPage'));
 const DesignSystemPage = lazy(() => import('@/pages/DesignSystemPage'));
 const GuideHub = lazy(() => import('@/pages/GuideHub'));
 const GuideSectionPage = lazy(() => import('@/pages/GuideSectionPage'));
-const Bootcamp = lazy(() => import('@/pages/Bootcamp'));
+const Workshops = lazy(() => import('@/pages/Workshops'));
 
 export default function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/bootcamp" element={<Bootcamp />} />
+        <Route path="/workshops" element={<Workshops />} />
         <Route path="/wizard" element={<BrandWizardPage />} />
         <Route path="/design" element={<DesignSystemPage />} />
         <Route path="/guide" element={<GuideHub />} />
         <Route path="/guide/:sectionId" element={<GuideSectionPage />} />
-        <Route path="/webinar/presentation" element={<WebinarPresentation />} />
-        <Route path="/webinar/booking" element={<WebinarBooking />} />
-        <Route path="/webinar/booking/full" element={<WebinarBooking tier="full" />} />
-        {/* Retired routes → redirect */}
-        <Route path="/webinar/booking/setup" element={<Navigate to="/#pricing" replace />} />
-        <Route path="/webinar/booking/lite" element={<Navigate to="/webinar/booking/full" replace />} />
+        {/* Retired or hidden routes → redirect */}
+        <Route path="/bootcamp" element={<Navigate to="/workshops" replace />} />
+        <Route path="/webinar/*" element={<Navigate to="/" replace />} />
         {/* Legacy static HTML pages — deleted, redirect to React routes */}
         <Route path="/guide.html" element={<Navigate to="/guide" replace />} />
         <Route path="/guide-full.html" element={<Navigate to="/guide" replace />} />
@@ -39,9 +37,9 @@ export default function App() {
         <Route path="/thank-you.html" element={<Navigate to="/" replace />} />
         <Route path="/venture-worksheet.html" element={<Navigate to="/wizard" replace />} />
         {/* Short aliases — shareable URLs */}
-        <Route path="/pres" element={<Navigate to="/webinar/presentation" replace />} />
-        <Route path="/book" element={<Navigate to="/webinar/booking" replace />} />
-        <Route path="/event" element={<Navigate to="/bootcamp" replace />} />
+        <Route path="/pres" element={<Navigate to="/" replace />} />
+        <Route path="/book" element={<Navigate to="/#pricing" replace />} />
+        <Route path="/event" element={<Navigate to="/workshops" replace />} />
         <Route path="/brand-wizard" element={<Navigate to="/wizard" replace />} />
         <Route element={<LegalLayout />}>
           <Route path="/terms" element={<TermsAndConditions />} />

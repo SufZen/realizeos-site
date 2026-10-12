@@ -50,11 +50,11 @@ export const bestPractices: GuideSectionData = {
     { type: 'heading', text: 'Environment Configuration', level: 2, id: 'env-practices' },
     { type: 'callout', text: 'Common .env mistakes: No spaces around the = sign. No quotes around values. No inline comments — Docker cannot parse them. Put comments on their own line.', calloutType: 'warning' },
     { type: 'heading', text: 'Getting Help', level: 2, id: 'getting-help' },
-    { type: 'paragraph', text: 'Need personalized help getting started? Book a 1-on-1 setup session with the RealizeOS team. Limited-time launch offer: $249 (50% off, valid until July 1st 2025).' },
+    { type: 'paragraph', text: 'Want help setting RealizeOS up for your firm? Start with an Audit Sprint: a map of where time and money leak, with priorities and quick wins. Book it at tidycal.com/team/realizeos/realizeos-auditsprint.' },
     { type: 'list', text: '', items: [
       'Report bugs: github.com/SufZen/RealizeOS-5/issues',
       'Join the community: Telegram and WhatsApp groups',
-      'Read the full docs: github.com/SufZen/RealizeOS-5/docs',
+      'Read the full docs: realizeos.ai/guide and github.com/SufZen/RealizeOS-5/tree/main/docs',
       'Run realize-os doctor to diagnose common issues',
     ]},
   ],
