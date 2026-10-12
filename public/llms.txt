@@ -1,0 +1,35 @@
+# RealizeOS
+
+> RealizeOS is what AI agents connect to: a company's memory, rules and approvals, running on the company's own server. Bring any agent, keep your company's brain, stay in control. Built by Realization for real-estate development, architecture and planning, and construction firms (Israel and Portugal/EU; Hebrew, English and Portuguese). The software is free to download under BSL 1.1; Realization's practice audits, implements and operates it.
+
+Key facts:
+
+- RealizeOS is not another chat agent. Claude.ai and Claude Desktop (custom connector with OAuth sign-in), Claude Code, n8n and other MCP clients connect to it through its built-in MCP server (Streamable HTTP on /mcp).
+- The company brain (FABRIC) is stored as plain files the company owns and can take with it.
+- Governed action: agents read freely; writes go through approvals and a trust ladder. An approved action runs exactly once and reports back; on errors, writes are blocked (fail closed).
+- Every answer can show a "What I used" trail with numbered source citations such as [S1].
+- Five roles (owner, admin, operator, user, viewer) and per-user venture limits apply in the dashboard, the REST API and MCP.
+- One field pack ships today: real-estate-developer (tender requirements register, payment request check against contract milestones, investor report).
+- Agent tool use requires Claude. Ollama is supported for local chat without tools.
+- RealizeOS does not replace an appraiser, a lawyer or an engineer's sign-off. It prepares the work and shows its sources; people decide.
+- Offer: RealizeOS is free. Audit Sprint €495, credited toward implementation. Implementation and Operate (retainer) are fixed in scope and quoted after the audit.
+
+## Guide
+
+- [Getting Started](https://realizeos.ai/guide/getting-started): install with Docker, Python, npx or the Windows one-liner
+- [Connect Your Agent](https://realizeos.ai/guide/connect-your-agent): Claude.ai / Claude Desktop connector via OAuth, Claude Code, n8n, reverse proxy, troubleshooting
+- [Approvals & the Trail](https://realizeos.ai/guide/approvals-and-trail): what waits for a person, how to approve, citations
+- [Users, Roles & Ventures](https://realizeos.ai/guide/users-and-roles): users.yaml, the five roles, venture limits
+- [Field Packs](https://realizeos.ai/guide/field-packs): the real-estate developer pack
+- [Hebrew & Right-to-Left](https://realizeos.ai/guide/hebrew-and-rtl): venture locale and RTL dashboard
+- [Configuration](https://realizeos.ai/guide/configuration): .env, feature flags, trust ladder, MCP, LLM providers
+- [Self-Hosting & Production](https://realizeos.ai/guide/self-hosting): production settings, HTTPS, reverse proxy
+- [CLI & REST API](https://realizeos.ai/guide/connectors): operator CLI and REST endpoints
+
+## Links
+
+- [Homepage](https://realizeos.ai/): overview, field packs, offer and FAQ (also in [Hebrew](https://realizeos.ai/he) and [Portuguese](https://realizeos.ai/pt))
+- [Source code](https://github.com/SufZen/RealizeOS-5): GitHub repository (BSL 1.1)
+- [Changelog](https://github.com/SufZen/RealizeOS-5/blob/main/CHANGELOG.md)
+- [Book an Audit Sprint](https://tidycal.com/team/realizeos/realizeos-auditsprint)
+- [Realization](https://realization.world): the practice behind RealizeOS

@@ -11,9 +11,6 @@
  * sent to the backend.
  * ───────────────────────────────────────────── */
 
-import * as pdfjsLib from 'pdfjs-dist';
-import mammoth from 'mammoth';
-import * as XLSX from 'xlsx';
 
 import type {
   BrandFieldValues,
@@ -26,7 +23,6 @@ import { BRAND_FIELDS as FIELDS } from '@/types/wizard';
 import { WIZARD_API } from '@/lib/constants';
 
 // ── pdf.js worker setup ──
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
 // ── Rate limiting ──
 
@@ -167,6 +163,9 @@ export async function extractTextFromFile(file: File): Promise<string> {
 }
 
 async function extractPdfText(file: File): Promise<string> {
+  // Parsers are loaded on demand: they are large, and pdfjs needs browser APIs at import time.
+  const pdfjsLib = await import('pdfjs-dist');
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
   const arrayBuffer = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
   const pages: string[] = [];
@@ -188,6 +187,7 @@ async function extractPdfText(file: File): Promise<string> {
 }
 
 async function extractDocxText(file: File): Promise<string> {
+  const { default: mammoth } = await import('mammoth');
   const arrayBuffer = await file.arrayBuffer();
   const result = await mammoth.extractRawText({ arrayBuffer });
   if (!result.value.trim()) {
@@ -197,6 +197,7 @@ async function extractDocxText(file: File): Promise<string> {
 }
 
 async function extractXlsxText(file: File): Promise<string> {
+  const XLSX = await import('xlsx');
   const arrayBuffer = await file.arrayBuffer();
   const workbook = XLSX.read(arrayBuffer, { type: 'array' });
   const sheets: string[] = [];

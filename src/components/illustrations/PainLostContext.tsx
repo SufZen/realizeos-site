@@ -97,8 +97,11 @@ export function PainLostContext({ className }: Props) {
       {particles.map((p, i) => (
         <motion.circle
           key={`particle-${i}`}
+          cx={p.cx}
+          cy={p.cy}
           r={p.r}
           fill="rgba(255,204,0,0.25)"
+          initial={{ cx: p.cx, cy: p.cy, opacity: 0.4 }}
           animate={{
             cx: [p.cx, p.cx + 15, p.cx + 28],
             cy: [p.cy, p.cy + (i % 2 === 0 ? -3 : 3), p.cy + (i % 2 === 0 ? -5 : 5)],

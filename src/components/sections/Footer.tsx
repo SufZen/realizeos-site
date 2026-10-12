@@ -1,10 +1,12 @@
 import { Logo } from '@/components/layout/Logo';
 import { LINKS } from '@/lib/constants';
 import { useTranslation } from 'react-i18next';
+import { useLangPrefix } from '@/seo/lang';
 import { Link } from 'react-router-dom';
 
 export function Footer() {
   const { t } = useTranslation();
+  const prefix = useLangPrefix();
 
   return (
     <footer className="border-t border-border py-10">
@@ -18,7 +20,7 @@ export function Footer() {
                 href={LINKS.realization}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand-yellow hover:underline"
+                className="text-brand-yellow underline underline-offset-2"
               >
                 {t('footer.realization')}
               </a>{' '}
@@ -40,7 +42,7 @@ export function Footer() {
             >
               {t('footer.links.support')}
             </a>
-            <a href="/#faq" className="text-muted-foreground hover:text-brand-yellow">
+            <a href={`${prefix}/#faq`} className="text-muted-foreground hover:text-brand-yellow">
               {t('footer.links.faq')}
             </a>
           </div>

@@ -17,7 +17,8 @@ export default function GuideHub() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-20 pb-16">
+      {/* Guide content is English-only: keep it left-to-right whatever the UI language. */}
+      <main className="min-h-screen pt-20 pb-16" dir="ltr" lang="en">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-yellow/5 via-transparent to-transparent pointer-events-none" />

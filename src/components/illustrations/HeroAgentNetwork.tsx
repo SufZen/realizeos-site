@@ -186,8 +186,11 @@ export function HeroAgentNetwork({ className }: Props) {
       {satellites.map((s, i) => (
         <motion.circle
           key={`signal-${i}`}
+          cx={200}
+          cy={180}
           r={2.5}
           fill="var(--rz-accent)"
+          initial={{ cx: 200, cy: 180, opacity: 0 }}
           animate={{
             cx: [200, s.cx, 200],
             cy: [180, s.cy, 180],

@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home": {
+      "title": "RealizeOS — Bring any agent. Keep your company's brain.",
+      "desc": "RealizeOS is what your AI agents connect to: your company's memory, rules and approvals, on your own server. Free to download. For real-estate, architecture and construction firms."
+    }
+  },
   "workshops": {
     "seo": {
       "title": "Past Workshops · RealizeOS",
@@ -515,5 +521,10 @@
     "unlock": "Unlock the free wizard",
     "privacy": "We'll email you the wizard links. No spam.",
     "error": "Something went wrong. Please try again."
+  },
+  "cookieBanner": {
+    "text": "We use cookies to improve your experience and ensure compliance with European privacy laws. By continuing to use our website, you agree to our",
+    "policy": "Privacy Policy",
+    "accept": "Accept Cookies"
   }
 }
