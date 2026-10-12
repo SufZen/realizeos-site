@@ -32,4 +32,6 @@ export const usePackExample = (): PackExampleRow[] => {
   return t('usecases.example.rows', { returnObjects: true }) as PackExampleRow[];
 };
 
-export const PACK_INSTALL_COMMAND = 'realize-os venture create --key my-project --template real-estate-developer';
+// `init` applies the whole template (agents, skills, routing, features). `venture create --template`
+// copies the files but keeps default routing, so it is not the documented path for this pack.
+export const PACK_INSTALL_COMMAND = 'realize-os init --template real-estate-developer';

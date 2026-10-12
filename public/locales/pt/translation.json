@@ -202,7 +202,7 @@
           "held": "Nada é enviado: uma pessoa revê o rascunho"
         }
       ],
-      "installLabel": "Instale-o no seu próprio RealizeOS:",
+      "installLabel": "Comece um novo RealizeOS com este pacote:",
       "guideLink": "Ler o guia dos pacotes de terreno"
     }
   },
@@ -264,7 +264,7 @@
       },
       {
         "t": "As pessoas têm um ecrã simples",
-        "b": "As aprovações e o rasto ficam num painel que também funciona em hebraico, da direita para a esquerda."
+        "b": "As aprovações e o rasto ficam num painel que passa a ler da direita para a esquerda em projetos em hebraico."
       }
     ],
     "link": "Como ligar o seu agente"
